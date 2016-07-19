@@ -15,9 +15,10 @@ Params:
   showsRSS: false
   profile: "/blog/images/prof.jpg"
   logo: "/blog/images/prof.jpg"
-  Copyright: "Written by Yuki Yoshioka"
   copyright: "Written by Yuki Yoshioka"
   #analytics: "UA-XXXXXXXX-X"
   #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-  blackfriday:
-    hrefTargetBlank: true
+#blackfriday:
+#  hrefTargetBlank: true
+
+Copyright: "Written by Yuki Yoshioka"
