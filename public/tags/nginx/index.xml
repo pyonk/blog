@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on pyonk Blog</title>
-    <link>http://pyonk.github.io/blog/tags/nginx/</link>
+    <link>https://pyonk.github.io/blog/tags/nginx/</link>
     <description>Recent content in Nginx on pyonk Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 15 Jul 2016 15:28:45 +0900</lastBuildDate>
-    <atom:link href="http://pyonk.github.io/blog/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pyonk.github.io/blog/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nginxのimage_filterを使って画像を動的に縮小するには</title>
-      <link>http://pyonk.github.io/blog/post/nginx-image-filter/</link>
+      <link>https://pyonk.github.io/blog/post/nginx-image-filter/</link>
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
-      <guid>http://pyonk.github.io/blog/post/nginx-image-filter/</guid>
+      <guid>https://pyonk.github.io/blog/post/nginx-image-filter/</guid>
       <description>
 
 &lt;h1 id=&#34;image-filterを使えるようにモジュールを指定する:a60d664650339cdda3703b53d8a6160d&#34;&gt;image_filterを使えるようにモジュールを指定する&lt;/h1&gt;

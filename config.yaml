@@ -1,4 +1,4 @@
-baseurl: "http://pyonk.github.io/blog"
+baseurl: "https://pyonk.github.io/blog/"
 config: "config.yaml"
 languageCode: "ja"
 title: "pyonk Blog"
