@@ -15,7 +15,7 @@ Params:
   showsRSS: false
   profile: "/blog/images/prof.jpg"
   logo: "/blog/images/prof.jpg"
-  #copyright: "Written by Asuka Suzuki"
+  copyright: "Written by Yuki Yoshioka"
   #analytics: "UA-XXXXXXXX-X"
   #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   blackfriday:
