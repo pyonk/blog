@@ -6,18 +6,8 @@
     <description>Recent content in Posts on pyonk Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 20 Jul 2016 01:45:52 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jul 2016 15:28:45 +0900</lastBuildDate>
     <atom:link href="https://pyonk.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>testです</title>
-      <link>https://pyonk.github.io/blog/post/testr/</link>
-      <pubDate>Wed, 20 Jul 2016 01:45:52 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/post/testr/</guid>
-      <description>&lt;p&gt;testです&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>nginxのimage_filterを使って画像を動的に縮小するには</title>
