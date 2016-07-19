@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://pyonk.github.io/</loc>
+    <loc>http://pyonk.github.io/blog/</loc>
     <lastmod>2016-07-15T15:28:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://pyonk.github.io/post/nginx-image-filter/</loc>
+    <loc>http://pyonk.github.io/blog/post/nginx-image-filter/</loc>
     <lastmod>2016-07-15T15:28:45+09:00</lastmod>
   </url>
   
