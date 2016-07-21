@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://pyonk.github.io/blog/</loc>
-    <lastmod>2016-07-15T15:28:45+09:00</lastmod>
+    <lastmod>2016-07-21T19:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/post/kinpri-ouen-jouen/</loc>
+    <lastmod>2016-07-21T19:00:00+09:00</lastmod>
   </url>
   
   <url>
