@@ -1,6 +1,6 @@
 ---
 date:  2016-07-21T19:00:00+09:00
-draft: false
+draft: true
 title: 最終週のキンプリ応援上映にいってきた
 description:
 categories:
