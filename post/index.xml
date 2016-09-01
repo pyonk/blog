@@ -6,330 +6,119 @@
     <description>Recent content in Posts on pyonk Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>Written by Yuki Yoshioka</copyright>
-    <lastBuildDate>Thu, 21 Jul 2016 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 Aug 2016 10:48:43 +0900</lastBuildDate>
     <atom:link href="https://pyonk.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>最終週のキンプリ応援上映にいってきた</title>
-      <link>https://pyonk.github.io/blog/post/kinpri-ouen-jouen/</link>
-      <pubDate>Thu, 21 Jul 2016 19:00:00 +0900</pubDate>
+      <title>javascriptのよくわからない書き方【連想配列編】</title>
+      <link>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</link>
+      <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/kinpri-ouen-jouen/</guid>
+      <guid>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</guid>
       <description>
 
-&lt;p&gt;来る2016年七夕の日。&lt;br /&gt;
-七夕のお祭りを楽しんでいたところ、会社の後輩がわざわざ近所のゲオから借りてきたという&lt;a href=&#34;http://kinpri.com&#34;&gt;KING OF PRISM&lt;/a&gt;が会社で上映されたわけです。&lt;br /&gt;
-何の気なしにみていたのですが、笑いが止まらない感じの映画でして、宴どころではなくなりました。&lt;br /&gt;
-もうほんとにやばい、世界がかがやいてみえるようになりましたね。&lt;/p&gt;
+&lt;p&gt;react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。&lt;/p&gt;
 
-&lt;p&gt;見終わった後もキンプリの話題で持ちきりで、気になって色々調べてみました。&lt;/p&gt;
+&lt;h1 id=&#34;連想配列のなにかっぽい:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;連想配列のなにかっぽい&lt;/h1&gt;
 
-&lt;p&gt;プリティーリズム・レインボーライブのOver The Rainbowという男性ユニットに焦点をあてたスピンオフ映画で、2016年1月9日に公開されるやいなや、Twitterでバズりにバズったらしく、がんがんと上映会場が増えていったそうです。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function myfunc(hoge, fuga) {
+    var {hogehoge} = hoge;
+    var {
+        hogeKey: hogeValue,
+    } = hogehoge || {
+        hogeKey: &#39;&#39;,
+    }
+    return {
+        hogeKey,
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;ul&gt;
-&lt;li&gt;プリズムショーはすごい！&lt;/li&gt;
-&lt;li&gt;トチ狂ってる&lt;/li&gt;
-&lt;li&gt;お尻から蜂蜜が出た&lt;/li&gt;
-&lt;li&gt;無限ハグに抱かれたい&lt;/li&gt;
-&lt;li&gt;電車にのってハリウッド&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;上記が件のコード。&lt;/p&gt;
 
-&lt;p&gt;だの&lt;br /&gt;
-いろいろな感想が飛び交うなか心惹かれたのが&lt;/p&gt;
+&lt;h1 id=&#34;けっか:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;けっか&lt;/h1&gt;
 
-&lt;ul&gt;
-&lt;li&gt;応援上演はいいぞ！&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict1 = {keyA: {key1: 1}};
+var dict2 = {keyB: {key1: 2}};
+var dict3 = {keyA: {key2: 3}};
+var dict4 = {keyC: {key2: 4}};
+function myfunc(hoge) {
+    var {keyA} = hoge;
+    console.log(keyA); //hoge.keyAの値
+    console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列
+    var {
+        key1: key1,
+    } = keyA || {
+        key1: &#39;&#39;,
+    }
+    console.log(key1); //keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
+    return {
+        key1, //key1をキーに、key1に代入されている値をバリューにした連想配列
+    }
+}
+myfunc(dict1);
+// {key1: 1}
+// {keyA: {key1: 1}}
+// 1
+myfunc(dict2);
+// undefined
+// {keyA: undefined}
+// &#39;&#39;
+myfunc(dict3);
+// {key2: 3}
+// {keyA: {key2: 3}}
+// undefined
+myfunc(dict4);
+// undefined
+// {keyA: undefined}
+// &#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;って&lt;strong&gt;応援上映&lt;/strong&gt;ってなんやねん。&lt;/p&gt;
+&lt;p&gt;書いててよくわからなくなってきた。&lt;/p&gt;
 
-&lt;h1 id=&#34;ということで応援上映いってきた:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;ということで応援上映いってきた&lt;/h1&gt;
+&lt;h1 id=&#34;つまり:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;つまり&lt;/h1&gt;
 
-&lt;p&gt;近場ではみなとみらいでやってるらしく、しかも4dxというなにやらすごい設備のところで応援するらしい。&lt;br /&gt;
-これは行くしかないっということで、この前行ってきました。&lt;br /&gt;
-会社の有志たちでいったのですが、うち男性は僕一人。&lt;br /&gt;
-事前情報から仕入れていたサイリウムはキチンと100均で買ってはいたのですが、会場につくと、まわりはルェ〜〜〜ヴェルが違うようで、七色にひかるサイリウムやら、棒状ではない光るなにかなど、余計に肩身が狭くなりました。&lt;br /&gt;
-ただそんなかんじでも、上映がはじまってからはそんなのおかまいなしで、我を忘れて応援してしまってたんだからほんとに、&lt;/p&gt;
+&lt;h2 id=&#34;keya-dict:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;{keyA}=dict&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;プリズムショーはすごい&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。&lt;/p&gt;
 
-&lt;h2 id=&#34;やはり女性がおおかった:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;やはり女性がおおかった&lt;/h2&gt;
+&lt;h3 id=&#34;これって:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
 
-&lt;p&gt;平日の夜だからそんなに観客も多くなくて、全部で20人ちょっとくらいかなという感じ。&lt;br /&gt;
-最初から分かってはいたのだけど、女性が8割くらいでした。&lt;br /&gt;
-それよりも2割くらい男性がいて（自分含む）本当にびっくりしました。&lt;br /&gt;
-最悪男性一人っていうのも覚悟していたのだけど、ちょっぴり心強かったですね。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict = {keyA: &#39;keyAだよ&#39;};
+var keyA = dict.keyA;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;コマーシャルのときもすごい:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;コマーシャルのときもすごい&lt;/h2&gt;
+&lt;p&gt;と一緒ですね。&lt;/p&gt;
 
-&lt;p&gt;映画の前ってCMがながれるじゃないですか。&lt;br /&gt;
-あのときから、いろいろ突っ込みを入れる感じの声がとびかってて、きわめつけはスポンサーのこれ。&lt;br /&gt;
+&lt;h2 id=&#34;key1-key1-dict-key1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;{key1: key1} = dict || {key1: &amp;ldquo;}&lt;/h2&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/avex-min.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;avex&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;br /&gt;
-&lt;strong&gt;\えいべっくすーーーーーーっ！！！/&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。&lt;/p&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/takara-t-a-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;TAKARA TOMY ARTS&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;br /&gt;
-&lt;strong&gt;\たからとみーあーつーーーっ！！/&lt;/strong&gt;&lt;br /&gt;
+&lt;h3 id=&#34;これって-1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/tatsunoko-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;タツノコプロ&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;br /&gt;
-&lt;strong&gt;\タツノコプローーーっ！！ありがとーーーーーー！！！！/&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict = {key1: &#39;key1だよ&#39;};
+var key1 = dict.key1 ? key1: &#39;&#39;;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;もうなんやねんおまえら、すごすぎるわ。&lt;br /&gt;
-これがキンプリエリートかって再認識しました。&lt;/p&gt;
+&lt;p&gt;と一緒ですね。&lt;/p&gt;
 
-&lt;h2 id=&#34;始まってからももちろんすごい:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;始まってからももちろんすごい&lt;/h2&gt;
+&lt;h2 id=&#34;return-key1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;return {key1}&lt;/h2&gt;
 
-&lt;p&gt;登場人物がしょっぱなから全裸だし、それにあわせて&lt;br /&gt;
-&lt;strong&gt;\あ〜〜りがとうございま〜す！/&lt;/strong&gt;&lt;br /&gt;
-ってより一層大きな声が響きました。&lt;br /&gt;
-ここは居酒屋か！！&lt;/p&gt;
+&lt;p&gt;変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。&lt;/p&gt;
 
-&lt;p&gt;ほかにも、尻から蜂蜜出すのに合わせて&lt;br /&gt;
-&lt;strong&gt;\たべた〜〜〜い/&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;\甘い！！！/&lt;/strong&gt;&lt;br /&gt;
-だの、自分が思っていることをおのおの気にせず叫んでいます。&lt;br /&gt;
-4dxだったので、ここで蜂蜜の匂いが微妙にしたような気もしましたが、はっきりいって、周りに圧倒されすぎてて覚えていません。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var key1 = &#39;hogehoge&#39;;
+return {key1}; // {key1: &#39;hogehoge&#39;}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;作成側も意図して&lt;br /&gt;
+&lt;h3 id=&#34;これって-2:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/a-n-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;あ〜ん♡&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var key1 = &#39;key1だよ&#39;;
+return {key1: key1};
+&lt;/code&gt;&lt;/pre&gt;
 
-こんなシーンも用意していただく徹底っぷり。&lt;br /&gt;
-もちろんみんなで&lt;br /&gt;
-&lt;strong&gt;\あ〜〜〜〜〜ん！！/&lt;/strong&gt;&lt;br /&gt;
-ですよね。&lt;br /&gt;
-なかには&lt;strong&gt;前見てっ！！！&lt;/strong&gt;なんていう優しい方もいらっしゃいましたよ。&lt;/p&gt;
+&lt;p&gt;と一緒ですね。&lt;/p&gt;
 
-&lt;p&gt;個人的におもしろかったのが、学園（キンプリの人らは学校に所属してアイドル活動をおこなっている）の理事長、氷室聖。&lt;br /&gt;
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/himuro-min.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;仕事して！&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;br /&gt;
-なんともこのお方は経営がヘッタクソなのか、運が悪かっただけなのか、借金が&lt;strong&gt;100億円以上&lt;/strong&gt;あるんですね。&lt;br /&gt;
-だいたいこの人が登場してくると、&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;\仕事してっ！！！！/&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;という厳しいお声がかかります。&lt;br /&gt;
-２回目以降は僕も一緒になって応援しましたよ。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、&lt;br /&gt;
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/kakeru-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;カズオじゃないって&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;br /&gt;
-この十王院-カズオ-カケルくん。総資産は200兆円を超えます。&lt;br /&gt;
-すこしでも払っていただけると理事長も救われるのだと思ったのですが、そういうツッコミは野暮ですよね。&lt;/p&gt;
-
-&lt;h2 id=&#34;アツい戦闘シーン:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;アツい戦闘シーン&lt;/h2&gt;
-
-&lt;p&gt;個人的に会社で見たときから推していたアレクというキャラとカヅキが戦うシーンがあるんですね。ダンスで。&lt;br /&gt;
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/areku-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;アレク様&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/kazuki-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;カズキ&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-二人とも見ての通り、アイドル系というより、ストリート系なのですが、&lt;br /&gt;
-アレクさんは&lt;br /&gt;
-「おまえはストリートの面汚しだ！もう踊れないように体をバラバラにしてやる！！」&lt;br /&gt;
-などと煽っていきます。&lt;/p&gt;
-
-&lt;p&gt;その勝負、このタイガが仕切ろうとするのですが、&lt;br /&gt;
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/taiga-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;タイガ&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;br /&gt;
-この子の手のひらクルーっっぷりもキレッキレなのでよかったですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、このダンス勝負、二人とも必殺技以外は一緒の動きで、ほとんどストリート要素がないんです。&lt;br /&gt;
-そんなアレクさんまじでかわいい。&lt;/p&gt;
-
-&lt;p&gt;結局アレクさん負けちゃうんですが、そこでもキンプリエリートたちは違いました。&lt;br /&gt;
-&lt;strong&gt;\明日は勝てるよアレク！！/&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;いやぁ、ほんとにすごいなあ。&lt;/p&gt;
-
-&lt;h2 id=&#34;最後まですごい:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;最後まですごい&lt;/h2&gt;
-
-&lt;p&gt;学校へ行こう！の未成年の主張丸出しのシーンとか、
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/shuchou-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;みんなに言いたいことがありま〜す&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-&lt;strong&gt;\な〜〜〜に〜〜〜〜/&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;ギリシャ神話なシーンとか、
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/greece-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;たのしそう&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-&lt;strong&gt;\ふぅ〜〜〜〜〜〜！！！！/&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;電車でハリウッドに行ってしまったと思ったら星座になっちゃったりとか
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/goto-hollywood-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Go to HollyWood&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-&lt;strong&gt;\いかないで〜〜〜〜！！！/&lt;/strong&gt;
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://pyonk.github.io/blog/blog/images/kinpri/star-min.jpg&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;なぜか星座になる&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;p&gt;もうラストスパートがすごいのなんの。
-みんなの息もぴったりでした。
-最後は最後で、
-&lt;strong&gt;\グロリアスシュヴァルツ！！/&lt;/strong&gt;
-&lt;strong&gt;\グロリアスシュヴァルツ！！/&lt;/strong&gt;
-の大合唱で幕が閉じるわけです。&lt;/p&gt;
-
-&lt;p&gt;。。。と思いきや、どこからともなく&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;\アンコール！アンコール！！！/&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しばらくみんなで叫んでいると
-最後に映画のトレーラがながれました。映画館の粋な計らいなのか、もうこれが定番なのかよくわからないですが、これで試合終了です。&lt;/p&gt;
-
-&lt;p&gt;いや本当にすごい。プリズムショーはいいぞ。&lt;/p&gt;
-
-&lt;h1 id=&#34;またいきたいと思える:80e064f4a94eedda7ca7cba4ec700062&#34;&gt;またいきたいと思える&lt;/h1&gt;
-
-&lt;p&gt;初めて応援上映なるものに参加したわけですが、4dxもさることながら本当に楽しい上映でしたね。
-正直最初は乗り気ではなかったのですが、一緒に行った有志のなかでも一番盛り上がってしまいました。
-映画をただ単に見るのも好きですが、こういう体感型の映画って、何回も回数重ねていくにつれて覚えたり、慣れてくるので何回も行きたいって自然に思えますね。&lt;/p&gt;
-
-&lt;p&gt;場所によってはまだやっているところもあるようなので、ぜひ機会があればもう一度行きたいですね。&lt;/p&gt;
-
-&lt;p&gt;本当に素晴らしい映画、否、プリズムショーでした。
-一緒に見に行った会社の有志、映画館でのキンプリエリートたち、本当にありがとうございました。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;という見解であってるんでしょうか・・・。&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
