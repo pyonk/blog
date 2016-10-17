@@ -19,7 +19,7 @@
 
 &lt;p&gt;react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。&lt;/p&gt;
 
-&lt;h1 id=&#34;連想配列のなにかっぽい:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;連想配列のなにかっぽい&lt;/h1&gt;
+&lt;h1 id=&#34;連想配列のなにかっぽい&#34;&gt;連想配列のなにかっぽい&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function myfunc(hoge, fuga) {
     var {hogehoge} = hoge;
@@ -36,7 +36,7 @@
 
 &lt;p&gt;上記が件のコード。&lt;/p&gt;
 
-&lt;h1 id=&#34;けっか:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;けっか&lt;/h1&gt;
+&lt;h1 id=&#34;けっか&#34;&gt;けっか&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict1 = {keyA: {key1: 1}};
 var dict2 = {keyB: {key1: 2}};
@@ -76,13 +76,13 @@ myfunc(dict4);
 
 &lt;p&gt;書いててよくわからなくなってきた。&lt;/p&gt;
 
-&lt;h1 id=&#34;つまり:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;つまり&lt;/h1&gt;
+&lt;h1 id=&#34;つまり&#34;&gt;つまり&lt;/h1&gt;
 
-&lt;h2 id=&#34;keya-dict:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;{keyA}=dict&lt;/h2&gt;
+&lt;h2 id=&#34;keya-dict&#34;&gt;{keyA}=dict&lt;/h2&gt;
 
 &lt;p&gt;連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。&lt;/p&gt;
 
-&lt;h3 id=&#34;これって:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
+&lt;h3 id=&#34;これって&#34;&gt;これって&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict = {keyA: &#39;keyAだよ&#39;};
 var keyA = dict.keyA;
@@ -90,11 +90,11 @@ var keyA = dict.keyA;
 
 &lt;p&gt;と一緒ですね。&lt;/p&gt;
 
-&lt;h2 id=&#34;key1-key1-dict-key1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;{key1: key1} = dict || {key1: &amp;ldquo;}&lt;/h2&gt;
+&lt;h2 id=&#34;key1-key1-dict-key1&#34;&gt;{key1: key1} = dict || {key1: &amp;ldquo;}&lt;/h2&gt;
 
 &lt;p&gt;連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。&lt;/p&gt;
 
-&lt;h3 id=&#34;これって-1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
+&lt;h3 id=&#34;これって-1&#34;&gt;これって&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict = {key1: &#39;key1だよ&#39;};
 var key1 = dict.key1 ? key1: &#39;&#39;;
@@ -102,7 +102,7 @@ var key1 = dict.key1 ? key1: &#39;&#39;;
 
 &lt;p&gt;と一緒ですね。&lt;/p&gt;
 
-&lt;h2 id=&#34;return-key1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;return {key1}&lt;/h2&gt;
+&lt;h2 id=&#34;return-key1&#34;&gt;return {key1}&lt;/h2&gt;
 
 &lt;p&gt;変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。&lt;/p&gt;
 
@@ -110,7 +110,7 @@ var key1 = dict.key1 ? key1: &#39;&#39;;
 return {key1}; // {key1: &#39;hogehoge&#39;}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;これって-2:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
+&lt;h3 id=&#34;これって-2&#34;&gt;これって&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var key1 = &#39;key1だよ&#39;;
 return {key1: key1};
@@ -130,7 +130,7 @@ return {key1: key1};
       <guid>https://pyonk.github.io/blog/post/nginx-image-filter/</guid>
       <description>
 
-&lt;h1 id=&#34;image-filterを使えるようにモジュールを指定する:a60d664650339cdda3703b53d8a6160d&#34;&gt;image_filterを使えるようにモジュールを指定する&lt;/h1&gt;
+&lt;h1 id=&#34;image-filterを使えるようにモジュールを指定する&#34;&gt;image_filterを使えるようにモジュールを指定する&lt;/h1&gt;
 
 &lt;p&gt;nginxをソースからインストールする際に&lt;code&gt;--with-http_image_filter_module&lt;/code&gt;をつけてインストールします。&lt;/p&gt;
 
@@ -156,7 +156,7 @@ $ sudo kill -QUIT 10576
 
 &lt;p&gt;とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。&lt;/p&gt;
 
-&lt;h1 id=&#34;confを変更:a60d664650339cdda3703b53d8a6160d&#34;&gt;confを変更&lt;/h1&gt;
+&lt;h1 id=&#34;confを変更&#34;&gt;confを変更&lt;/h1&gt;
 
 &lt;p&gt;image_filterを加えます。
 くわしいことは&lt;a href=&#34;http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter&#34;&gt;ここ&lt;/a&gt;をみてください。&lt;/p&gt;
