@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.16" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="pyonk Blog">
+<title>javascriptのよくわからない書き方【連想配列編】 - pyonk Blog</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/blog/images/prof.jpg" width="60" height="60" alt="pyonk Blog"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">javascriptのよくわからない書き方【連想配列編】</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2016-08-30">August 30, 2016</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。</p>
+
+<h1 id="連想配列のなにかっぽい">連想配列のなにかっぽい</h1>
+
+<pre><code class="language-js">function myfunc(hoge, fuga) {
+    var {hogehoge} = hoge;
+    var {
+        hogeKey: hogeValue,
+    } = hogehoge || {
+        hogeKey: '',
+    }
+    return {
+        hogeKey,
+    }
+}
+</code></pre>
+
+<p>上記が件のコード。</p>
+
+<h1 id="けっか">けっか</h1>
+
+<pre><code class="language-js">var dict1 = {keyA: {key1: 1}};
+var dict2 = {keyB: {key1: 2}};
+var dict3 = {keyA: {key2: 3}};
+var dict4 = {keyC: {key2: 4}};
+function myfunc(hoge) {
+    var {keyA} = hoge;
+    console.log(keyA); //hoge.keyAの値
+    console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列
+    var {
+        key1: key1,
+    } = keyA || {
+        key1: '',
+    }
+    console.log(key1); //keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
+    return {
+        key1, //key1をキーに、key1に代入されている値をバリューにした連想配列
+    }
+}
+myfunc(dict1);
+// {key1: 1}
+// {keyA: {key1: 1}}
+// 1
+myfunc(dict2);
+// undefined
+// {keyA: undefined}
+// ''
+myfunc(dict3);
+// {key2: 3}
+// {keyA: {key2: 3}}
+// undefined
+myfunc(dict4);
+// undefined
+// {keyA: undefined}
+// ''
+</code></pre>
+
+<p>書いててよくわからなくなってきた。</p>
+
+<h1 id="つまり">つまり</h1>
+
+<h2 id="keya-dict">{keyA}=dict</h2>
+
+<p>連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。</p>
+
+<h3 id="これって">これって</h3>
+
+<pre><code class="language-js">var dict = {keyA: 'keyAだよ'};
+var keyA = dict.keyA;
+</code></pre>
+
+<p>と一緒ですね。</p>
+
+<h2 id="key1-key1-dict-key1">{key1: key1} = dict || {key1: &ldquo;}</h2>
+
+<p>連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。</p>
+
+<h3 id="これって-1">これって</h3>
+
+<pre><code class="language-js">var dict = {key1: 'key1だよ'};
+var key1 = dict.key1 ? key1: '';
+</code></pre>
+
+<p>と一緒ですね。</p>
+
+<h2 id="return-key1">return {key1}</h2>
+
+<p>変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。</p>
+
+<pre><code class="language-js">var key1 = 'hogehoge';
+return {key1}; // {key1: 'hogehoge'}
+</code></pre>
+
+<h3 id="これって-2">これって</h3>
+
+<pre><code class="language-js">var key1 = 'key1だよ';
+return {key1: key1};
+</code></pre>
+
+<p>と一緒ですね。</p>
+
+<p><strong>という見解であってるんでしょうか・・・。</strong></p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/yukieroero" target="_blank">Twitter</a>
+			<a href="https://facebook.com/yukiyoshiokap" target="_blank">Facebook</a>
+			
+		</div>
+		<div class="copyright">Copyright &copy; </div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
