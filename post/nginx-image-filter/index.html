@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.16" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="pyonk Blog">
+<title>nginxのimage_filterを使って画像を動的に縮小するには - pyonk Blog</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/blog/images/prof.jpg" width="60" height="60" alt="pyonk Blog"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">nginxのimage_filterを使って画像を動的に縮小するには</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2016-07-15">July 15, 2016</time></span>
+			<section itemprop="entry-text">
+				
+
+<h1 id="image-filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する</h1>
+
+<p>nginxをソースからインストールする際に<code>--with-http_image_filter_module</code>をつけてインストールします。</p>
+
+<pre><code class="language-bash">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+$ tar -xvzf nginx-1.10.1.tar.gz
+$ cd nginx-1.10.1
+$ ./configure --with-http_image_filter_module
+$ make
+$ sudo make install
+</code></pre>
+
+<p>ほかのオプションモジュールをつける場合は随時つけてください。</p>
+
+<p>すでにnginxがインストールされている場合は、</p>
+
+<pre><code class="language-bash">$ sudo cp objs/nginx /usr/sbin/nginx
+$ cat /var/run/nginx.pid
+10576
+$ sudo kill -USR2 10576
+$ sudo kill -WINCH 10576
+$ sudo kill -QUIT 10576
+</code></pre>
+
+<p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。</p>
+
+<h1 id="confを変更">confを変更</h1>
+
+<p>image_filterを加えます。
+くわしいことは<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ</a>をみてください。</p>
+
+<pre><code class="language-nginx:hoge.conf">location ~ /image/(.*\.png)$ {
+        alias /path/to/image/$1;
+            image_filter resize 100 -; # 横幅100pxでリサイズする
+}
+</code></pre>
+
+<p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/yukieroero" target="_blank">Twitter</a>
+			<a href="https://facebook.com/yukiyoshiokap" target="_blank">Facebook</a>
+			
+		</div>
+		<div class="copyright">Copyright &copy; </div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
