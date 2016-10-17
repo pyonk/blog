@@ -45,18 +45,16 @@
 <li><p>返信</p>
 
 <ul>
-<li>テキスト
-<a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a><br></li>
-</ul>
+<li><p>テキスト
+<a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></p>
 
 <pre><code>res.reply
-    type: 'text'
-    content: 'nyaa'
-</code></pre>
+type: 'text'
+content: 'nyaa'
+</code></pre></li>
 
-<ul>
-<li>画像
-<a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a></li>
+<li><p>画像
+<a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a></p></li>
 </ul>
 
 <pre><code>res.reply
@@ -82,6 +80,33 @@
             label: 'Open in Browser'
             uri: 'http://example.com/'
         ]
+</code></pre>
+
+<ul>
+<li>カルーセル
+<a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></li>
+</ul>
+
+<pre><code>res.reply
+    type: 'carousel'
+    content:[
+        image: 'https://example.com/images/image.jpg'
+        title: 'this is Buttons'
+        text: 'buttons description'
+        actions:[
+            type: 'uri'
+            label: 'Open in Browser'
+            uri: 'http://example.com/'
+        ],
+        image: 'https://example.com/images/image.jpg'
+        title: 'this is Buttons'
+        text: 'buttons description'
+        actions:[
+            type: 'uri'
+            label: 'Open in Browser'
+            uri: 'http://example.com/'
+        ]...
+    ]
 </code></pre></li>
 </ul>
 

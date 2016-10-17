@@ -21,8 +21,7 @@ slug: "hubot-line-message-api"
 
 * 返信
     * テキスト
-    [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)<br>
-
+    [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)
     ```
     res.reply
         type: 'text'
@@ -55,6 +54,32 @@ slug: "hubot-line-message-api"
                 label: 'Open in Browser'
                 uri: 'http://example.com/'
             ]
+    ```
+
+    * カルーセル
+    [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
+
+    ```
+    res.reply
+        type: 'carousel'
+        content:[
+            image: 'https://example.com/images/image.jpg'
+            title: 'this is Buttons'
+            text: 'buttons description'
+            actions:[
+                type: 'uri'
+                label: 'Open in Browser'
+                uri: 'http://example.com/'
+            ],
+            image: 'https://example.com/images/image.jpg'
+            title: 'this is Buttons'
+            text: 'buttons description'
+            actions:[
+                type: 'uri'
+                label: 'Open in Browser'
+                uri: 'http://example.com/'
+            ]...
+        ]
     ```
 
 # 使い方
