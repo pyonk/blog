@@ -21,7 +21,20 @@
 
 &lt;h1 id=&#34;使い方:485f19e5141a5c321e525d086b19ad4d&#34;&gt;使い方&lt;/h1&gt;
 
-&lt;p&gt;後でちゃんと書くけどとりあえずREADME（書きかけ）をあげとく。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ git clone https://github.com/pyonk/hubot-line-message-api.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;からの&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json:package.json&#34;&gt;&amp;quot;dependencies&amp;quot;: {
+    &amp;quot;bar&amp;quot;: &amp;quot;file:./hubot-line-message-api&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;からの&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ hubot -a line-message-api&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;でいけると思います。&lt;/p&gt;
 
 &lt;h1 id=&#34;hubot-line-message-api:485f19e5141a5c321e525d086b19ad4d&#34;&gt;hubot-line-message-api&lt;/h1&gt;
 
@@ -60,31 +73,36 @@
 
 &lt;h2 id=&#34;できること:485f19e5141a5c321e525d086b19ad4d&#34;&gt;できること&lt;/h2&gt;
 
-&lt;p&gt;まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。
-* 返信
-    * テキスト &lt;a href=&#34;https://devdocs.line.me/ja/#text&#34;&gt;https://devdocs.line.me/ja/#text&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;```
-res.reply
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;返信&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;テキスト &lt;a href=&#34;https://devdocs.line.me/ja/#text&#34;&gt;https://devdocs.line.me/ja/#text&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;res.reply
     type: &#39;text&#39;
     content: &#39;nyaa&#39;
-```
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-* 画像 [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
-* 画像はhttpsでないとline側で弾かれます。
+&lt;li&gt;&lt;p&gt;画像 &lt;a href=&#34;https://devdocs.line.me/ja/#image&#34;&gt;https://devdocs.line.me/ja/#image&lt;/a&gt;&lt;/p&gt;
 
-```
-res.reply
+&lt;ul&gt;
+&lt;li&gt;画像はhttpsでないとline側で弾かれます。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;res.reply
     type:&#39;image&#39;
     content:
         original: &#39;https://example.com/images/image.jpg&#39;
         preview: &#39;https://example.com/images/image.jpg&#39;
-```
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-* ボタン [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
+&lt;li&gt;&lt;p&gt;ボタン &lt;a href=&#34;https://devdocs.line.me/ja/#buttons&#34;&gt;https://devdocs.line.me/ja/#buttons&lt;/a&gt;&lt;/p&gt;
 
-```
-res.reply
+&lt;pre&gt;&lt;code&gt;res.reply
     type: &#39;buttons&#39;
     content:
         image: &#39;https://example.com/images/image.jpg&#39;
@@ -95,13 +113,16 @@ res.reply
             label: &#39;Open in Browser&#39;
             uri: &#39;http://example.com/&#39;
         ]
-```
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-* カルーセル [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
-* `content.length &amp;lt;= 5`である必要があります。`&amp;gt; 5`の場合line側で怒られます。
-* `type: &#39;postback&#39;`に関してはまだ試してないのでわかりません。そのうちやります。
-```
-res.reply
+&lt;li&gt;&lt;p&gt;カルーセル &lt;a href=&#34;https://devdocs.line.me/ja/#carousel&#34;&gt;https://devdocs.line.me/ja/#carousel&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;content.length &amp;lt;= 5&lt;/code&gt;である必要があります。&lt;code&gt;&amp;gt; 5&lt;/code&gt;の場合line側で怒られます。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;type: &#39;postback&#39;&lt;/code&gt;に関してはまだ試してないのでわかりません。そのうちやります。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;res.reply
     type: &#39;carousel&#39;
     content:[
         image: &#39;https://example.com/images/image.jpg&#39;
@@ -121,8 +142,8 @@ res.reply
             uri: &#39;http://example.com/&#39;
         ]...
     ]
-```
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&#34;所感:485f19e5141a5c321e525d086b19ad4d&#34;&gt;所感&lt;/h1&gt;
 
@@ -130,7 +151,8 @@ res.reply
 タイトルにもある通り、まだ&lt;strong&gt;作ってみている&lt;/strong&gt;最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。&lt;br&gt;
 とりあえず、最低限はできているような気もするので、公開してみる。&lt;br&gt;&lt;br&gt;
 初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^&lt;br&gt;&lt;br&gt;
-けどたのしい。&lt;/p&gt;
+けどたのしい。&lt;br&gt;&lt;br&gt;&lt;br&gt;
+後から気づいたけど&lt;code&gt;message-api&lt;/code&gt;でなくて&lt;code&gt;messaging-api&lt;/code&gt;だったね。&lt;/p&gt;
 </description>
     </item>
     

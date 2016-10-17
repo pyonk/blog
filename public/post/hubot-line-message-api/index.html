@@ -35,7 +35,20 @@
 
 <h1 id="使い方:485f19e5141a5c321e525d086b19ad4d">使い方</h1>
 
-<p>後でちゃんと書くけどとりあえずREADME（書きかけ）をあげとく。</p>
+<p><code>$ git clone https://github.com/pyonk/hubot-line-message-api.git</code></p>
+
+<p>からの</p>
+
+<pre><code class="language-json:package.json">&quot;dependencies&quot;: {
+    &quot;bar&quot;: &quot;file:./hubot-line-message-api&quot;
+}
+</code></pre>
+
+<p>からの</p>
+
+<p><code>$ hubot -a line-message-api</code></p>
+
+<p>でいけると思います。</p>
 
 <h1 id="hubot-line-message-api:485f19e5141a5c321e525d086b19ad4d">hubot-line-message-api</h1>
 
@@ -74,31 +87,36 @@
 
 <h2 id="できること:485f19e5141a5c321e525d086b19ad4d">できること</h2>
 
-<p>まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。
-* 返信
-    * テキスト <a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></p>
+<p>まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。</p>
 
-<pre><code>```
-res.reply
+<ul>
+<li><p>返信</p>
+
+<ul>
+<li>テキスト <a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></li>
+</ul>
+
+<pre><code>res.reply
     type: 'text'
     content: 'nyaa'
-```
+</code></pre></li>
 
-* 画像 [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
-* 画像はhttpsでないとline側で弾かれます。
+<li><p>画像 <a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a></p>
 
-```
-res.reply
+<ul>
+<li>画像はhttpsでないとline側で弾かれます。</li>
+</ul>
+
+<pre><code>res.reply
     type:'image'
     content:
         original: 'https://example.com/images/image.jpg'
         preview: 'https://example.com/images/image.jpg'
-```
+</code></pre></li>
 
-* ボタン [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
+<li><p>ボタン <a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></p>
 
-```
-res.reply
+<pre><code>res.reply
     type: 'buttons'
     content:
         image: 'https://example.com/images/image.jpg'
@@ -109,13 +127,16 @@ res.reply
             label: 'Open in Browser'
             uri: 'http://example.com/'
         ]
-```
+</code></pre></li>
 
-* カルーセル [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
-* `content.length &lt;= 5`である必要があります。`&gt; 5`の場合line側で怒られます。
-* `type: 'postback'`に関してはまだ試してないのでわかりません。そのうちやります。
-```
-res.reply
+<li><p>カルーセル <a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></p>
+
+<ul>
+<li><code>content.length &lt;= 5</code>である必要があります。<code>&gt; 5</code>の場合line側で怒られます。</li>
+<li><code>type: 'postback'</code>に関してはまだ試してないのでわかりません。そのうちやります。</li>
+</ul>
+
+<pre><code>res.reply
     type: 'carousel'
     content:[
         image: 'https://example.com/images/image.jpg'
@@ -135,8 +156,8 @@ res.reply
             uri: 'http://example.com/'
         ]...
     ]
-```
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h1 id="所感:485f19e5141a5c321e525d086b19ad4d">所感</h1>
 
@@ -144,7 +165,8 @@ res.reply
 タイトルにもある通り、まだ<strong>作ってみている</strong>最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。<br>
 とりあえず、最低限はできているような気もするので、公開してみる。<br><br>
 初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^<br><br>
-けどたのしい。</p>
+けどたのしい。<br><br><br>
+後から気づいたけど<code>message-api</code>でなくて<code>messaging-api</code>だったね。</p>
 
 			</section>
 		</article>

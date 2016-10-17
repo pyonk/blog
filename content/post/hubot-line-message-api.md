@@ -2,7 +2,7 @@
 date: 2016-10-17T10:38:19+09:00
 draft: false
 title: "hubot-line-message-apiをつくってみてます"
-description: "line trial botからmessageAPIに移行しつつあるようなのでやってみました。"
+description: "Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。"
 categories:
   - つくってみた
 tags:
@@ -14,7 +14,21 @@ slug: "hubot-line-message-api"
 [ここです。](https://github.com/pyonk/hubot-line-message-api)
 
 # 使い方
-後でちゃんと書くけどとりあえずREADME（書きかけ）をあげとく。
+`$ git clone https://github.com/pyonk/hubot-line-message-api.git`
+
+からの
+
+```json:package.json
+"dependencies": {
+    "bar": "file:./hubot-line-message-api"
+}
+```
+
+からの
+
+`$ hubot -a line-message-api`
+
+でいけると思います。
 
 # hubot-line-message-api
 結構ガバガバ実装なので[API Reference](https://devdocs.line.me/ja/)をしっかり読んでからやるのをオススメします。
@@ -35,6 +49,7 @@ slug: "hubot-line-message-api"
 
 ## できること
 まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。
+
 * 返信
     * テキスト [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)
 
@@ -44,7 +59,7 @@ slug: "hubot-line-message-api"
         content: 'nyaa'
     ```
 
-    * 画像 [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
+* 画像 [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
     * 画像はhttpsでないとline側で弾かれます。
 
     ```
@@ -55,7 +70,7 @@ slug: "hubot-line-message-api"
             preview: 'https://example.com/images/image.jpg'
     ```
 
-    * ボタン [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
+* ボタン [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
 
     ```
     res.reply
@@ -71,9 +86,10 @@ slug: "hubot-line-message-api"
             ]
     ```
 
-    * カルーセル [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
+* カルーセル [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
     * `content.length <= 5`である必要があります。`> 5`の場合line側で怒られます。
     * `type: 'postback'`に関してはまだ試してないのでわかりません。そのうちやります。
+
     ```
     res.reply
         type: 'carousel'
@@ -102,4 +118,5 @@ hubotつかって新しくlinebot作ろうと思ってたらBOT API Trialから�
 タイトルにもある通り、まだ**作ってみている**最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。<br>
 とりあえず、最低限はできているような気もするので、公開してみる。<br><br>
 初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^<br><br>
-けどたのしい。
+けどたのしい。<br><br><br>
+後から気づいたけど`message-api`でなくて`messaging-api`だったね。
