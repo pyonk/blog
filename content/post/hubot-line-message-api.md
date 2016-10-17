@@ -7,6 +7,7 @@ categories:
   - つくってみた
 tags:
   - coffeescript
+  - javascript
   - hubot
   - line
 slug: "hubot-line-message-api"
