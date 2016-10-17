@@ -6,6 +6,7 @@ disqusShortname: "pyonk"
 enableEmoji: true
 metaDataFormat: "yaml"
 noTimes: true
+GoogleAnalytics: "UA-85825684-1"
 
 Params:
   subtitle: "いろいろ"
@@ -16,7 +17,7 @@ Params:
   profile: "/blog/images/prof.jpg"
   logo: "/blog/images/prof.jpg"
   copyright: "pyonk All rights reserved."
-  analytics: "UA-85825684-1"
+  # analytics: "UA-85825684-1"
   #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   blackfriday:
    hrefTargetBlank: true
