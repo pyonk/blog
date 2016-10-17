@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>つくってみた on pyonk Blog</title>
+    <link>https://pyonk.github.io/blog/categories/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+    <description>Recent content in つくってみた on pyonk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate>
+    <atom:link href="https://pyonk.github.io/blog/categories/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hubot-line-message-apiをつくってみてます</title>
+      <link>https://pyonk.github.io/blog/post/hubot-line-message-api/</link>
+      <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/post/hubot-line-message-api/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;ここです。&#34;&gt;https://github.com/pyonk/hubot-line-message-api&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;使い方&#34;&gt;使い方&lt;/h1&gt;
+
+&lt;p&gt;後でちゃんと書くけどとりあえずREADME（書きかけ）をあげとく。&lt;/p&gt;
+
+&lt;h1 id=&#34;hubot-line-message-api&#34;&gt;hubot-line-message-api&lt;/h1&gt;
+
+&lt;h2 id=&#34;できること&#34;&gt;できること&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;返信
+
+&lt;ul&gt;
+&lt;li&gt;テキスト
+&lt;a href=&#34;https://devdocs.line.me/ja/#text&#34;&gt;https://devdocs.line.me/ja/#text&lt;/a&gt;
+&lt;code&gt;
+res.reply
+type: &#39;text&#39;
+content: &#39;nyaa&#39;
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;画像
+&lt;a href=&#34;https://devdocs.line.me/ja/#image&#34;&gt;https://devdocs.line.me/ja/#image&lt;/a&gt;
+&lt;code&gt;
+res.reply
+type:&#39;image&#39;
+content:
+    original: &#39;https://example.com/images/image.jpg&#39;
+    preview: &#39;https://example.com/images/image.jpg&#39;
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ボタン
+&lt;a href=&#34;https://devdocs.line.me/ja/#buttons&#34;&gt;https://devdocs.line.me/ja/#buttons&lt;/a&gt;
+&lt;code&gt;
+res.reply
+type: &#39;buttons&#39;
+content:
+    image: &#39;https://example.com/images/image.jpg&#39;
+    title: &#39;this is Buttons&#39;
+    text: &#39;buttons description&#39;
+    actions:[
+        type: &#39;uri&#39;
+        label: &#39;Open in Browser&#39;
+        uri: &#39;http://example.com/
+    ]
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#️ 所感
+hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。
+タイトルにもある通り、まだ&lt;strong&gt;作ってみている&lt;/strong&gt;最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。
+とりあえず、最低限はできているような気もするので、公開してみる。
+初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^
+けどたのしい。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
