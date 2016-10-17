@@ -31,7 +31,7 @@
 			<section itemprop="entry-text">
 				
 
-<p><a href="ここです。">https://github.com/pyonk/hubot-line-message-api</a></p>
+<p><a href="https://github.com/pyonk/hubot-line-message-api">ここです。</a></p>
 
 <h1 id="使い方">使い方</h1>
 
@@ -42,49 +42,55 @@
 <h2 id="できること">できること</h2>
 
 <ul>
-<li>返信
+<li><p>返信</p>
 
 <ul>
 <li>テキスト
-<a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a>
-<code>
-res.reply
-type: 'text'
-content: 'nyaa'
-</code></li>
-<li>画像
-<a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a>
-<code>
-res.reply
-type:'image'
-content:
-    original: 'https://example.com/images/image.jpg'
-    preview: 'https://example.com/images/image.jpg'
-</code></li>
-<li>ボタン
-<a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a>
-<code>
-res.reply
-type: 'buttons'
-content:
-    image: 'https://example.com/images/image.jpg'
-    title: 'this is Buttons'
-    text: 'buttons description'
-    actions:[
-        type: 'uri'
-        label: 'Open in Browser'
-        uri: 'http://example.com/
-    ]
-</code></li>
-</ul></li>
+<a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a><br></li>
 </ul>
 
-<p>#️ 所感</p>
+<pre><code>res.reply
+    type: 'text'
+    content: 'nyaa'
+</code></pre>
 
-<p>hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。
-タイトルにもある通り、まだ<strong>作ってみている</strong>最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。
-とりあえず、最低限はできているような気もするので、公開してみる。
-初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^
+<ul>
+<li>画像
+<a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a></li>
+</ul>
+
+<pre><code>res.reply
+    type:'image'
+    content:
+        original: 'https://example.com/images/image.jpg'
+        preview: 'https://example.com/images/image.jpg'
+</code></pre>
+
+<ul>
+<li>ボタン
+<a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></li>
+</ul>
+
+<pre><code>res.reply
+    type: 'buttons'
+    content:
+        image: 'https://example.com/images/image.jpg'
+        title: 'this is Buttons'
+        text: 'buttons description'
+        actions:[
+            type: 'uri'
+            label: 'Open in Browser'
+            uri: 'http://example.com/
+        ]
+</code></pre></li>
+</ul>
+
+<h1 id="使い方-1">使い方</h1>
+
+<p>hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。<br>
+タイトルにもある通り、まだ<strong>作ってみている</strong>最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。<br>
+とりあえず、最低限はできているような気もするので、公開してみる。<br><br>
+初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^<br><br>
 けどたのしい。</p>
 
 			</section>
