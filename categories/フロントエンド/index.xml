@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>フロントエンド on pyonk Blog</title>
+    <title>フロントエンド on わいがかいた</title>
     <link>https://pyonk.github.io/blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/</link>
-    <description>Recent content in フロントエンド on pyonk Blog</description>
+    <description>Recent content in フロントエンド on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 30 Aug 2016 10:48:43 +0900</lastBuildDate>
