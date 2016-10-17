@@ -65,8 +65,9 @@ content:
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;#️ 所感
-hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。
+&lt;p&gt;#️ 所感&lt;/p&gt;
+
+&lt;p&gt;hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。
 タイトルにもある通り、まだ&lt;strong&gt;作ってみている&lt;/strong&gt;最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。
 とりあえず、最低限はできているような気もするので、公開してみる。
 初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^

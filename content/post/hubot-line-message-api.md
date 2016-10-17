@@ -17,6 +17,7 @@ slug: "hubot-line-message-api"
 
 # hubot-line-message-api
 ## できること
+
 * 返信
     * テキスト
     [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)
@@ -51,6 +52,7 @@ slug: "hubot-line-message-api"
     ```
 
 #️ 所感
+
 hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。
 タイトルにもある通り、まだ**作ってみている**最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。
 とりあえず、最低限はできているような気もするので、公開してみる。
