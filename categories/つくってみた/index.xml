@@ -31,18 +31,16 @@
 &lt;li&gt;&lt;p&gt;返信&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;テキスト
-&lt;a href=&#34;https://devdocs.line.me/ja/#text&#34;&gt;https://devdocs.line.me/ja/#text&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;テキスト
+&lt;a href=&#34;https://devdocs.line.me/ja/#text&#34;&gt;https://devdocs.line.me/ja/#text&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;res.reply
-    type: &#39;text&#39;
-    content: &#39;nyaa&#39;
-&lt;/code&gt;&lt;/pre&gt;
+type: &#39;text&#39;
+content: &#39;nyaa&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;画像
-&lt;a href=&#34;https://devdocs.line.me/ja/#image&#34;&gt;https://devdocs.line.me/ja/#image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;画像
+&lt;a href=&#34;https://devdocs.line.me/ja/#image&#34;&gt;https://devdocs.line.me/ja/#image&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;res.reply
@@ -68,6 +66,33 @@
             label: &#39;Open in Browser&#39;
             uri: &#39;http://example.com/&#39;
         ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;カルーセル
+&lt;a href=&#34;https://devdocs.line.me/ja/#carousel&#34;&gt;https://devdocs.line.me/ja/#carousel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;res.reply
+    type: &#39;carousel&#39;
+    content:[
+        image: &#39;https://example.com/images/image.jpg&#39;
+        title: &#39;this is Buttons&#39;
+        text: &#39;buttons description&#39;
+        actions:[
+            type: &#39;uri&#39;
+            label: &#39;Open in Browser&#39;
+            uri: &#39;http://example.com/&#39;
+        ],
+        image: &#39;https://example.com/images/image.jpg&#39;
+        title: &#39;this is Buttons&#39;
+        text: &#39;buttons description&#39;
+        actions:[
+            type: &#39;uri&#39;
+            label: &#39;Open in Browser&#39;
+            uri: &#39;http://example.com/&#39;
+        ]...
+    ]
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
