@@ -11,7 +11,8 @@ tags:
   - line
 slug: "hubot-line-message-api"
 ---
-[https://github.com/pyonk/hubot-line-message-api](ここです。)
+[ここです。](https://github.com/pyonk/hubot-line-message-api)
+
 # 使い方
 後でちゃんと書くけどとりあえずREADME（書きかけ）をあげとく。
 
@@ -20,14 +21,17 @@ slug: "hubot-line-message-api"
 
 * 返信
     * テキスト
-    [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)
+    [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)<br>
+
     ```
     res.reply
         type: 'text'
         content: 'nyaa'
     ```
+
     * 画像
     [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
+
     ```
     res.reply
         type:'image'
@@ -35,8 +39,10 @@ slug: "hubot-line-message-api"
             original: 'https://example.com/images/image.jpg'
             preview: 'https://example.com/images/image.jpg'
     ```
+
     * ボタン
     [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
+
     ```
     res.reply
         type: 'buttons'
@@ -51,11 +57,10 @@ slug: "hubot-line-message-api"
             ]
     ```
 
-#️ 所感
-
-hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。
-タイトルにもある通り、まだ**作ってみている**最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。
-とりあえず、最低限はできているような気もするので、公開してみる。
-初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^
+# 使い方
+hubotつかってlinebot作ろうと思ってたらtrialbotからmessageAPIになるとかだったので、hubotのアダプター作っちゃえってなって作ってみた。<br>
+タイトルにもある通り、まだ**作ってみている**最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。<br>
+とりあえず、最低限はできているような気もするので、公開してみる。<br><br>
+初めてcoffeescriptちゃんと触ったし、hubotのアダプターも初めて作るので探り探りすぎて疲れた^q^<br><br>
 けどたのしい。
 
