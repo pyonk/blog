@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nginx on pyonk Blog</title>
+    <title>Nginx on わいがかいた</title>
     <link>https://pyonk.github.io/blog/tags/nginx/</link>
-    <description>Recent content in Nginx on pyonk Blog</description>
+    <description>Recent content in Nginx on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 15 Jul 2016 15:28:45 +0900</lastBuildDate>
