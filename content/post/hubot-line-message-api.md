@@ -53,7 +53,7 @@ slug: "hubot-line-message-api"
             actions:[
                 type: 'uri'
                 label: 'Open in Browser'
-                uri: 'http://example.com/
+                uri: 'http://example.com/'
             ]
     ```
 
