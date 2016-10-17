@@ -11,12 +11,12 @@ Params:
   subtitle: "いろいろ"
   facebook: "https://facebook.com/yukiyoshiokap"
   twitter: "https://twitter.com/yukieroero"
-  #github: "https://github.com/foobar"
+  github: "https://github.com/pyonk"
   showsRSS: false
   profile: "/blog/images/prof.jpg"
   logo: "/blog/images/prof.jpg"
   copyright: "pyonk All rights reserved."
-  #analytics: "UA-XXXXXXXX-X"
+  analytics: "UA-85825684-1"
   #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   blackfriday:
    hrefTargetBlank: true

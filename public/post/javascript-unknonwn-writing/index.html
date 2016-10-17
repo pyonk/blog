@@ -2,14 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.16" />
+<meta name="generator" content="Hugo 0.15" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
-<link rel="alternate" href="/index.xml" type="application/rss+xml" title="pyonk Blog">
+<link rel="alternate" href="/blog/index.xml" type="application/rss+xml" title="pyonk Blog">
 <title>javascriptのよくわからない書き方【連想配列編】 - pyonk Blog</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 	<header role="banner">
 		<div class="header-logo">
-			<a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="pyonk Blog"></a>
+			<a href="/blog/"><img src="/blog/images/prof.jpg" width="60" height="60" alt="pyonk Blog"></a>
 		</div>
 		
 	</header>
@@ -33,7 +33,7 @@
 
 <p>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。</p>
 
-<h1 id="連想配列のなにかっぽい">連想配列のなにかっぽい</h1>
+<h1 id="連想配列のなにかっぽい:ecd5a95b3c1540aeab8bc6e072998431">連想配列のなにかっぽい</h1>
 
 <pre><code class="language-js">function myfunc(hoge, fuga) {
     var {hogehoge} = hoge;
@@ -50,7 +50,7 @@
 
 <p>上記が件のコード。</p>
 
-<h1 id="けっか">けっか</h1>
+<h1 id="けっか:ecd5a95b3c1540aeab8bc6e072998431">けっか</h1>
 
 <pre><code class="language-js">var dict1 = {keyA: {key1: 1}};
 var dict2 = {keyB: {key1: 2}};
@@ -90,13 +90,13 @@ myfunc(dict4);
 
 <p>書いててよくわからなくなってきた。</p>
 
-<h1 id="つまり">つまり</h1>
+<h1 id="つまり:ecd5a95b3c1540aeab8bc6e072998431">つまり</h1>
 
-<h2 id="keya-dict">{keyA}=dict</h2>
+<h2 id="keya-dict:ecd5a95b3c1540aeab8bc6e072998431">{keyA}=dict</h2>
 
 <p>連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。</p>
 
-<h3 id="これって">これって</h3>
+<h3 id="これって:ecd5a95b3c1540aeab8bc6e072998431">これって</h3>
 
 <pre><code class="language-js">var dict = {keyA: 'keyAだよ'};
 var keyA = dict.keyA;
@@ -104,11 +104,11 @@ var keyA = dict.keyA;
 
 <p>と一緒ですね。</p>
 
-<h2 id="key1-key1-dict-key1">{key1: key1} = dict || {key1: &ldquo;}</h2>
+<h2 id="key1-key1-dict-key1:ecd5a95b3c1540aeab8bc6e072998431">{key1: key1} = dict || {key1: &ldquo;}</h2>
 
 <p>連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。</p>
 
-<h3 id="これって-1">これって</h3>
+<h3 id="これって-1:ecd5a95b3c1540aeab8bc6e072998431">これって</h3>
 
 <pre><code class="language-js">var dict = {key1: 'key1だよ'};
 var key1 = dict.key1 ? key1: '';
@@ -116,7 +116,7 @@ var key1 = dict.key1 ? key1: '';
 
 <p>と一緒ですね。</p>
 
-<h2 id="return-key1">return {key1}</h2>
+<h2 id="return-key1:ecd5a95b3c1540aeab8bc6e072998431">return {key1}</h2>
 
 <p>変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。</p>
 
@@ -124,7 +124,7 @@ var key1 = dict.key1 ? key1: '';
 return {key1}; // {key1: 'hogehoge'}
 </code></pre>
 
-<h3 id="これって-2">これって</h3>
+<h3 id="これって-2:ecd5a95b3c1540aeab8bc6e072998431">これって</h3>
 
 <pre><code class="language-js">var key1 = 'key1だよ';
 return {key1: key1};
@@ -145,7 +145,7 @@ return {key1: key1};
 			
 			<a href="https://twitter.com/yukieroero" target="_blank">Twitter</a>
 			<a href="https://facebook.com/yukiyoshiokap" target="_blank">Facebook</a>
-			
+			<a href="https://github.com/pyonk" target="_blank">GitHub</a>
 		</div>
 		<div class="copyright">Copyright &copy; </div>
 	</footer>
