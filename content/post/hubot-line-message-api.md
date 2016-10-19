@@ -49,52 +49,59 @@ slug: "hubot-line-message-api"
     * 出力されるIPアドレスを`Server IP Whitelist`に設定してあげてください。
 
 ## できること
-まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。
+今のところpushで送信は対応できておらず、返信しかできません。
 
 * 返信
-    * テキスト [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)
+    * テキスト
 
-    ```
+    [https://devdocs.line.me/ja/#text](https://devdocs.line.me/ja/#text)
+
+    ```coffee
     res.reply
         type: 'text'
-        content: 'nyaa'
+        contents: ['nyaa']
     ```
+    * 画像と動画
 
-* 画像 [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
-    * 画像はhttpsでないとline側で弾かれます。
+    [https://devdocs.line.me/ja/#image](https://devdocs.line.me/ja/#image)
+    [https://devdocs.line.me/ja/#video](https://devdocs.line.me/ja/#video)
 
-    ```
+    ```coffee
     res.reply
         type:'image'
-        content:
+        content: [
             original: 'https://example.com/images/image.jpg'
             preview: 'https://example.com/images/image.jpg'
+        ]
     ```
+    * ボタン
 
-* ボタン [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
+    [https://devdocs.line.me/ja/#buttons](https://devdocs.line.me/ja/#buttons)
 
-    ```
+    ```coffee
     res.reply
         type: 'buttons'
-        content:
+        altText: 'hogehoge'
+        contents: [
             image: 'https://example.com/images/image.jpg'
             title: 'this is Buttons'
             text: 'buttons description'
-            actions: [
+            actions:[
                 type: 'uri'
                 label: 'Open in Browser'
                 uri: 'http://example.com/'
             ]
+        ]
     ```
+    * カルーセル
 
-* カルーセル [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
-    * `content.length <= 5`である必要があります。`> 5`の場合line側で怒られます。
-    * `type: 'postback'`に関してはまだ試してないのでわかりません。そのうちやります。
+    [https://devdocs.line.me/ja/#carousel](https://devdocs.line.me/ja/#carousel)
 
-    ```
+    ```coffee
     res.reply
         type: 'carousel'
-        content:[
+        altText: 'hogehoge'
+        contents: [
             image: 'https://example.com/images/image.jpg'
             title: 'this is Buttons'
             text: 'buttons description'
@@ -113,6 +120,32 @@ slug: "hubot-line-message-api"
             ]...
         ]
     ```
+    * くみあわせ
+
+    ```coffee
+    res.reply {
+        type: 'text'
+        contents: ['nyaa']
+    },
+    {
+        type: 'buttons'
+        contents: [
+            image: 'https://example.com/images/image.jpg'
+            title: 'this is Buttons'
+            text: 'buttons description'
+            actions: [
+                type: 'uri'
+                label: 'Open in Browser'
+                uri: 'http://example.com/'
+            ]
+        ]
+    }
+    ```
+
+# 注意点
+* `contents.length <= 5`にしないとLINEに怒られます。
+    * くみあわせて使う場合はcontents.lengthを足し算した値が5を超えないようにしないと怒られます。
+* 画像のURLなどはhttpsでないと怒られます。
 
 # 所感
 hubotつかって新しくlinebot作ろうと思ってたらBOT API TrialからよりリッチなMessaging APIが発表されたらしいので、hubotのアダプター作っちゃえってなって作ってみた。<br>

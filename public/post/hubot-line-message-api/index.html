@@ -2,14 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.16" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
-<link rel="alternate" href="/blog/index.xml" type="application/rss+xml" title="わいがかいた">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
 <title>hubot-line-message-apiをつくってみてます - わいがかいた</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 	<header role="banner">
 		<div class="header-logo">
-			<a href="/blog/"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
+			<a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
 		</div>
 		
 	</header>
@@ -33,7 +33,7 @@
 
 <p><a href="https://github.com/pyonk/hubot-line-message-api">ここです。</a></p>
 
-<h1 id="使い方:485f19e5141a5c321e525d086b19ad4d">使い方</h1>
+<h1 id="使い方">使い方</h1>
 
 <p><code>$ git clone https://github.com/pyonk/hubot-line-message-api.git</code></p>
 
@@ -50,13 +50,13 @@
 
 <p>でいけると思います。</p>
 
-<h1 id="hubot-line-message-api:485f19e5141a5c321e525d086b19ad4d">hubot-line-message-api</h1>
+<h1 id="hubot-line-message-api">hubot-line-message-api</h1>
 
 <p>結構ガバガバ実装なので<a href="https://devdocs.line.me/ja/">API Reference</a>をしっかり読んでからやるのをオススメします。</p>
 
-<h2 id="設定:485f19e5141a5c321e525d086b19ad4d">設定</h2>
+<h2 id="設定">設定</h2>
 
-<h3 id="必須:485f19e5141a5c321e525d086b19ad4d">必須</h3>
+<h3 id="必須">必須</h3>
 
 <ul>
 <li>LINE_CHANNEL_ACCESS_TOKEN
@@ -66,7 +66,7 @@
 </ul></li>
 </ul>
 
-<h3 id="任意:485f19e5141a5c321e525d086b19ad4d">任意</h3>
+<h3 id="任意">任意</h3>
 
 <ul>
 <li>HUBOT_ENDPOINT
@@ -85,60 +85,70 @@
 </ul></li>
 </ul>
 
-<h2 id="できること:485f19e5141a5c321e525d086b19ad4d">できること</h2>
+<h2 id="できること">できること</h2>
 
-<p>まだreplyメッセージのみの対応です。そのうちpushメッセージも手をつけようと思います。</p>
+<p>今のところpushで送信は対応できておらず、返信しかできません。</p>
 
 <ul>
 <li><p>返信</p>
 
 <ul>
-<li>テキスト <a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></li>
+<li>テキスト</li>
 </ul>
 
-<pre><code>res.reply
-    type: 'text'
-    content: 'nyaa'
-</code></pre></li>
+<p><a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></p>
 
-<li><p>画像 <a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a></p>
+<pre><code class="language-coffee">res.reply
+    type: 'text'
+    contents: ['nyaa']
+</code></pre>
 
 <ul>
-<li>画像はhttpsでないとline側で弾かれます。</li>
+<li>画像と動画</li>
 </ul>
 
-<pre><code>res.reply
+<p><a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a>
+<a href="https://devdocs.line.me/ja/#video">https://devdocs.line.me/ja/#video</a></p>
+
+<pre><code class="language-coffee">res.reply
     type:'image'
-    content:
+    content: [
         original: 'https://example.com/images/image.jpg'
         preview: 'https://example.com/images/image.jpg'
-</code></pre></li>
+    ]
+</code></pre>
 
-<li><p>ボタン <a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></p>
+<ul>
+<li>ボタン</li>
+</ul>
 
-<pre><code>res.reply
+<p><a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></p>
+
+<pre><code class="language-coffee">res.reply
     type: 'buttons'
-    content:
+    altText: 'hogehoge'
+    contents: [
         image: 'https://example.com/images/image.jpg'
         title: 'this is Buttons'
         text: 'buttons description'
-        actions: [
+        actions:[
             type: 'uri'
             label: 'Open in Browser'
             uri: 'http://example.com/'
         ]
-</code></pre></li>
-
-<li><p>カルーセル <a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></p>
+    ]
+</code></pre>
 
 <ul>
-<li><code>content.length &lt;= 5</code>である必要があります。<code>&gt; 5</code>の場合line側で怒られます。</li>
-<li><code>type: 'postback'</code>に関してはまだ試してないのでわかりません。そのうちやります。</li>
+<li>カルーセル</li>
 </ul>
 
-<pre><code>res.reply
+<p><a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></p>
+
+<pre><code class="language-coffee">res.reply
     type: 'carousel'
-    content:[
+    altText: 'hogehoge'
+    contents: [
         image: 'https://example.com/images/image.jpg'
         title: 'this is Buttons'
         text: 'buttons description'
@@ -156,10 +166,44 @@
             uri: 'http://example.com/'
         ]...
     ]
+</code></pre>
+
+<ul>
+<li>くみあわせ</li>
+</ul>
+
+<pre><code class="language-coffee">res.reply {
+    type: 'text'
+    contents: ['nyaa']
+},
+{
+    type: 'buttons'
+    contents: [
+        image: 'https://example.com/images/image.jpg'
+        title: 'this is Buttons'
+        text: 'buttons description'
+        actions: [
+            type: 'uri'
+            label: 'Open in Browser'
+            uri: 'http://example.com/'
+        ]
+    ]
+}
 </code></pre></li>
 </ul>
 
-<h1 id="所感:485f19e5141a5c321e525d086b19ad4d">所感</h1>
+<h1 id="注意点">注意点</h1>
+
+<ul>
+<li><code>contents.length &lt;= 5</code>にしないとLINEに怒られます。
+
+<ul>
+<li>くみあわせて使う場合はcontents.lengthを足し算した値が5を超えないようにしないと怒られます。</li>
+</ul></li>
+<li>画像のURLなどはhttpsでないと怒られます。</li>
+</ul>
+
+<h1 id="所感">所感</h1>
 
 <p>hubotつかって新しくlinebot作ろうと思ってたらBOT API TrialからよりリッチなMessaging APIが発表されたらしいので、hubotのアダプター作っちゃえってなって作ってみた。<br>
 タイトルにもある通り、まだ<strong>作ってみている</strong>最中なのでちゃんとnpmにあげられるくらいちゃんと作ってみたい。<br>
