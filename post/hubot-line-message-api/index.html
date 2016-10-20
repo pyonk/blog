@@ -98,9 +98,11 @@
 
 <p><a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></p>
 
-<pre><code class="language-coffee">res.reply
-    type: 'text'
-    contents: ['nyaa']
+<pre><code class="language-coffee">module.exports = (robot) -&gt;
+    robot.hear /^テキスト$/, (res) -&gt;
+        res.reply
+            type: 'text'
+            contents: ['nyaa']
 </code></pre>
 
 <ul>
@@ -110,12 +112,14 @@
 <p><a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a>
 <a href="https://devdocs.line.me/ja/#video">https://devdocs.line.me/ja/#video</a></p>
 
-<pre><code class="language-coffee">res.reply
-    type:'image'
-    content: [
-        original: 'https://example.com/images/image.jpg'
-        preview: 'https://example.com/images/image.jpg'
-    ]
+<pre><code class="language-coffee">module.exports = (robot) -&gt;
+    robot.hear /^画像$/, (res) -&gt;
+        res.reply
+            type:'image'# 'video'
+            content: [
+                original: 'https://example.com/images/image.jpg'
+                preview: 'https://example.com/images/image.jpg'
+            ]
 </code></pre>
 
 <ul>
@@ -124,19 +128,21 @@
 
 <p><a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></p>
 
-<pre><code class="language-coffee">res.reply
-    type: 'buttons'
-    altText: 'hogehoge'
-    contents: [
-        image: 'https://example.com/images/image.jpg'
-        title: 'this is Buttons'
-        text: 'buttons description'
-        actions:[
-            type: 'uri'
-            label: 'Open in Browser'
-            uri: 'http://example.com/'
-        ]
-    ]
+<pre><code class="language-coffee">module.exports = (robot) -&gt;
+    robot.hear /^テキスト$/, (res) -&gt;
+        res.reply
+            type: 'buttons'
+            altText: 'hogehoge'
+            contents: [
+                image: 'https://example.com/images/image.jpg'
+                title: 'this is Buttons'
+                text: 'buttons description'
+                actions:[
+                    type: 'uri'
+                    label: 'Open in Browser'
+                    uri: 'http://example.com/'
+                ]
+            ]
 </code></pre>
 
 <ul>
@@ -145,50 +151,54 @@
 
 <p><a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></p>
 
-<pre><code class="language-coffee">res.reply
-    type: 'carousel'
-    altText: 'hogehoge'
-    contents: [
-        image: 'https://example.com/images/image.jpg'
-        title: 'this is Buttons'
-        text: 'buttons description'
-        actions:[
-            type: 'uri'
-            label: 'Open in Browser'
-            uri: 'http://example.com/'
-        ],
-        image: 'https://example.com/images/image.jpg'
-        title: 'this is Buttons'
-        text: 'buttons description'
-        actions:[
-            type: 'uri'
-            label: 'Open in Browser'
-            uri: 'http://example.com/'
-        ]...
-    ]
+<pre><code class="language-coffee">module.exports = (robot) -&gt;
+    robot.hear /^カルーセル$/, (res) -&gt;
+        res.reply
+            type: 'carousel'
+            altText: 'hogehoge'
+            contents: [
+                image: 'https://example.com/images/image.jpg'
+                title: 'this is Buttons'
+                text: 'buttons description'
+                actions:[
+                    type: 'uri'
+                    label: 'Open in Browser'
+                    uri: 'http://example.com/'
+                ],
+                image: 'https://example.com/images/image.jpg'
+                title: 'this is Buttons'
+                text: 'buttons description'
+                actions:[
+                    type: 'uri'
+                    label: 'Open in Browser'
+                    uri: 'http://example.com/'
+                ]...
+            ]
 </code></pre>
 
 <ul>
 <li>くみあわせ</li>
 </ul>
 
-<pre><code class="language-coffee">res.reply {
-    type: 'text'
-    contents: ['nyaa']
-},
-{
-    type: 'buttons'
-    contents: [
-        image: 'https://example.com/images/image.jpg'
-        title: 'this is Buttons'
-        text: 'buttons description'
-        actions: [
-            type: 'uri'
-            label: 'Open in Browser'
-            uri: 'http://example.com/'
-        ]
-    ]
-}
+<pre><code class="language-coffee">module.exports = (robot) -&gt;
+    robot.hear /^くみあわせ$/, (res) -&gt;
+        res.reply {
+            type: 'text'
+            contents: ['nyaa']
+        },
+        {
+            type: 'buttons'
+            contents: [
+                image: 'https://example.com/images/image.jpg'
+                title: 'this is Buttons'
+                text: 'buttons description'
+                actions: [
+                    type: 'uri'
+                    label: 'Open in Browser'
+                    uri: 'http://example.com/'
+                ]
+            ]
+        }
 </code></pre></li>
 </ul>
 

@@ -84,9 +84,11 @@
 
 &lt;p&gt;&lt;a href=&#34;https://devdocs.line.me/ja/#text&#34;&gt;https://devdocs.line.me/ja/#text&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;res.reply
-    type: &#39;text&#39;
-    contents: [&#39;nyaa&#39;]
+&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;module.exports = (robot) -&amp;gt;
+    robot.hear /^テキスト$/, (res) -&amp;gt;
+        res.reply
+            type: &#39;text&#39;
+            contents: [&#39;nyaa&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
@@ -96,12 +98,14 @@
 &lt;p&gt;&lt;a href=&#34;https://devdocs.line.me/ja/#image&#34;&gt;https://devdocs.line.me/ja/#image&lt;/a&gt;
 &lt;a href=&#34;https://devdocs.line.me/ja/#video&#34;&gt;https://devdocs.line.me/ja/#video&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;res.reply
-    type:&#39;image&#39;
-    content: [
-        original: &#39;https://example.com/images/image.jpg&#39;
-        preview: &#39;https://example.com/images/image.jpg&#39;
-    ]
+&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;module.exports = (robot) -&amp;gt;
+    robot.hear /^画像$/, (res) -&amp;gt;
+        res.reply
+            type:&#39;image&#39;# &#39;video&#39;
+            content: [
+                original: &#39;https://example.com/images/image.jpg&#39;
+                preview: &#39;https://example.com/images/image.jpg&#39;
+            ]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
@@ -110,19 +114,21 @@
 
 &lt;p&gt;&lt;a href=&#34;https://devdocs.line.me/ja/#buttons&#34;&gt;https://devdocs.line.me/ja/#buttons&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;res.reply
-    type: &#39;buttons&#39;
-    altText: &#39;hogehoge&#39;
-    contents: [
-        image: &#39;https://example.com/images/image.jpg&#39;
-        title: &#39;this is Buttons&#39;
-        text: &#39;buttons description&#39;
-        actions:[
-            type: &#39;uri&#39;
-            label: &#39;Open in Browser&#39;
-            uri: &#39;http://example.com/&#39;
-        ]
-    ]
+&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;module.exports = (robot) -&amp;gt;
+    robot.hear /^テキスト$/, (res) -&amp;gt;
+        res.reply
+            type: &#39;buttons&#39;
+            altText: &#39;hogehoge&#39;
+            contents: [
+                image: &#39;https://example.com/images/image.jpg&#39;
+                title: &#39;this is Buttons&#39;
+                text: &#39;buttons description&#39;
+                actions:[
+                    type: &#39;uri&#39;
+                    label: &#39;Open in Browser&#39;
+                    uri: &#39;http://example.com/&#39;
+                ]
+            ]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
@@ -131,50 +137,54 @@
 
 &lt;p&gt;&lt;a href=&#34;https://devdocs.line.me/ja/#carousel&#34;&gt;https://devdocs.line.me/ja/#carousel&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;res.reply
-    type: &#39;carousel&#39;
-    altText: &#39;hogehoge&#39;
-    contents: [
-        image: &#39;https://example.com/images/image.jpg&#39;
-        title: &#39;this is Buttons&#39;
-        text: &#39;buttons description&#39;
-        actions:[
-            type: &#39;uri&#39;
-            label: &#39;Open in Browser&#39;
-            uri: &#39;http://example.com/&#39;
-        ],
-        image: &#39;https://example.com/images/image.jpg&#39;
-        title: &#39;this is Buttons&#39;
-        text: &#39;buttons description&#39;
-        actions:[
-            type: &#39;uri&#39;
-            label: &#39;Open in Browser&#39;
-            uri: &#39;http://example.com/&#39;
-        ]...
-    ]
+&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;module.exports = (robot) -&amp;gt;
+    robot.hear /^カルーセル$/, (res) -&amp;gt;
+        res.reply
+            type: &#39;carousel&#39;
+            altText: &#39;hogehoge&#39;
+            contents: [
+                image: &#39;https://example.com/images/image.jpg&#39;
+                title: &#39;this is Buttons&#39;
+                text: &#39;buttons description&#39;
+                actions:[
+                    type: &#39;uri&#39;
+                    label: &#39;Open in Browser&#39;
+                    uri: &#39;http://example.com/&#39;
+                ],
+                image: &#39;https://example.com/images/image.jpg&#39;
+                title: &#39;this is Buttons&#39;
+                text: &#39;buttons description&#39;
+                actions:[
+                    type: &#39;uri&#39;
+                    label: &#39;Open in Browser&#39;
+                    uri: &#39;http://example.com/&#39;
+                ]...
+            ]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;くみあわせ&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;res.reply {
-    type: &#39;text&#39;
-    contents: [&#39;nyaa&#39;]
-},
-{
-    type: &#39;buttons&#39;
-    contents: [
-        image: &#39;https://example.com/images/image.jpg&#39;
-        title: &#39;this is Buttons&#39;
-        text: &#39;buttons description&#39;
-        actions: [
-            type: &#39;uri&#39;
-            label: &#39;Open in Browser&#39;
-            uri: &#39;http://example.com/&#39;
-        ]
-    ]
-}
+&lt;pre&gt;&lt;code class=&#34;language-coffee&#34;&gt;module.exports = (robot) -&amp;gt;
+    robot.hear /^くみあわせ$/, (res) -&amp;gt;
+        res.reply {
+            type: &#39;text&#39;
+            contents: [&#39;nyaa&#39;]
+        },
+        {
+            type: &#39;buttons&#39;
+            contents: [
+                image: &#39;https://example.com/images/image.jpg&#39;
+                title: &#39;this is Buttons&#39;
+                text: &#39;buttons description&#39;
+                actions: [
+                    type: &#39;uri&#39;
+                    label: &#39;Open in Browser&#39;
+                    uri: &#39;http://example.com/&#39;
+                ]
+            ]
+        }
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
