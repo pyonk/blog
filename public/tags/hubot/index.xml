@@ -6,6 +6,7 @@
     <description>Recent content in Hubot on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>pyonk</copyright>
     <lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate>
     <atom:link href="https://pyonk.github.io/blog/tags/hubot/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +18,7 @@
       <guid>https://pyonk.github.io/blog/post/hubot-line-message-api/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/pyonk/hubot-line-message-api&#34;&gt;ここです。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ソースは&lt;a href=&#34;https://github.com/pyonk/hubot-line-message-api&#34;&gt;ここです。&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;使い方&#34;&gt;使い方&lt;/h1&gt;
 

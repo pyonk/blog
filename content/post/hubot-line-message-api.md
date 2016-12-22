@@ -12,7 +12,7 @@ tags:
   - line
 slug: "hubot-line-message-api"
 ---
-[ここです。](https://github.com/pyonk/hubot-line-message-api)
+ソースは[ここです。](https://github.com/pyonk/hubot-line-message-api)
 
 # 使い方
 `$ git clone https://github.com/pyonk/hubot-line-message-api.git`

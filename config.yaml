@@ -21,3 +21,5 @@ Params:
   #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   blackfriday:
    hrefTargetBlank: true
+
+Copyright: "pyonk"
