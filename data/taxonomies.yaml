@@ -1,0 +1,12 @@
+infrastructure: "インフラ"
+created: "つくってみた"
+frontend: "フロントエンド"
+journal: "日記"
+# {{ with .Params.categories }}
+# <dl class="entry-categories">
+#     {{ range . }}
+#     {{ $taxo := index $.Site.Data.taxonomies (printf "%s" .) }}
+#     <dt class="category"><a href="/blog/categories/{{ . }}">{{ $taxo }}</a></dt>
+#     {{ end }}
+# </dl>
+# {{ end }}

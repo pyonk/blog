@@ -1,13 +1,13 @@
 ---
 date: 2016-07-15T15:28:45+09:00
 draft: false
-title: "nginxのimage_filterを使って画像を動的に縮小するには"
-description: "nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。"
+title: nginxのimage_filterを使って画像を動的に縮小するには
+description: nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。
 categories:
-  - "インフラ"
+  - バックエンド
 tags:
-  - "nginx"
-slug: "nginx-image-filter"
+  - nginx
+slug: nginx-image-filter
 ---
 
 # image_filterを使えるようにモジュールを指定する

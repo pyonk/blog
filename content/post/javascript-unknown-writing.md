@@ -1,13 +1,13 @@
 ---
 date: 2016-08-30T10:48:43+09:00
 draft: false
-title: "javascriptのよくわからない書き方【連想配列編】"
-description: "javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。"
+title: javascriptのよくわからない書き方【連想配列編】
+description: javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。
 categories:
-  - フロントエンド
+  - フロント
 tags:
   - javascript
-slug: "javascript-unknonwn-writing"
+slug: javascript-unknonwn-writing
 ---
 
 

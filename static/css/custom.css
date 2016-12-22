@@ -174,3 +174,9 @@ dt.tag {
     margin-right: 5px;
     font-size: 1.3rem;
 }
+
+
+/* list */
+.list-title i{
+    margin-right: 10px;
+}

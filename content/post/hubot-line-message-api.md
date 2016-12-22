@@ -1,8 +1,8 @@
 ---
 date: 2016-10-17T10:38:19+09:00
 draft: false
-title: "hubot-line-message-apiをつくってみてます"
-description: "Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。"
+title: hubot-line-message-apiをつくってみてます
+description: Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。
 categories:
   - つくってみた
 tags:
@@ -10,7 +10,7 @@ tags:
   - javascript
   - hubot
   - line
-slug: "hubot-line-message-api"
+slug: hubot-line-message-api
 ---
 ソースは[ここです。](https://github.com/pyonk/hubot-line-message-api)
 
