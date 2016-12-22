@@ -1,14 +1,14 @@
 ---
 date:  2016-07-21T19:00:00+09:00
 draft: true
-title: 最終週のキンプリ応援上映にいってきた
-description:
+title: "最終週のキンプリ応援上映にいってきた"
+description: "最終週のキンプリ応援上映を4DXでみてきました"
 categories:
-  - 日記
+  - "日記"
 tags:
-  - キンプリ
-  - 映画
-slug: kinpri-ouen-jouen
+  - "キンプリ"
+  - "映画"
+slug: "kinpri-ouen-jouen"
 ---
 
 来る2016年七夕の日。  
