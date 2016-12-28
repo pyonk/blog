@@ -4,7 +4,7 @@ draft: true
 title: Hugofyにプルリクおくってみた
 description: Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。
 categories:
-  - ○○してみた
+  - してみた
 tags:
   - Sublime Text
   - Hugo

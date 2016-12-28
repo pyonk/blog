@@ -4,7 +4,7 @@ draft: false
 title: hubot-line-message-apiをつくってみてます
 description: Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。
 categories:
-  - ○○してみた
+  - してみた
 tags:
   - coffeescript
   - javascript
