@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime Text on わいがかいた</title>
+    <link>https://pyonk.github.io/blog/tags/sublime-text/</link>
+    <description>Recent content in Sublime Text on わいがかいた</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>pyonk</copyright>
+    <lastBuildDate>Wed, 28 Dec 2016 10:34:47 +0900</lastBuildDate>
+    <atom:link href="https://pyonk.github.io/blog/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugofyにプルリクおくってみた</title>
+      <link>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</link>
+      <pubDate>Wed, 28 Dec 2016 10:34:47 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</guid>
+      <description>&lt;p&gt;ふごfy&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
