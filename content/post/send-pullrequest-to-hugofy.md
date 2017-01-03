@@ -6,8 +6,8 @@ description: Sublime Textのhugo用パッケージをつかってみたところ
 categories:
   - してみた
 tags:
-  - Sublime Text
-  - Hugo
+  - sublimetext
+  - hugo
 slug: send-pullrequest-to-hugofy
 ---
 2017年明けましておめでとうございます。
