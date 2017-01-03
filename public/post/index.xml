@@ -7,8 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>pyonk</copyright>
-    <lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Dec 2016 10:34:47 +0900</lastBuildDate>
     <atom:link href="https://pyonk.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugofyにプルリクおくってみた</title>
+      <link>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</link>
+      <pubDate>Wed, 28 Dec 2016 10:34:47 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</guid>
+      <description>&lt;p&gt;2017年明けましておめでとうございます。&lt;/p&gt;
+
+&lt;p&gt;昨年末になんとなく&lt;a href=&#34;https://github.com/akmittal/Hugofy&#34;&gt;Hugofy&lt;/a&gt;にプルリクを送ってみました。&lt;/p&gt;
+
+&lt;p&gt;ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。&lt;/p&gt;
+
+&lt;p&gt;やらなきゃいけないことは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows環境でのテスト&lt;/li&gt;
+&lt;li&gt;typo確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;軽い気持ちでプルリク送るもんではないですね〜〜〜。&lt;/p&gt;
+
+&lt;p&gt;いい経験になりました。
+Thank you &lt;a href=&#34;https://github.com/akmittal&#34;&gt;@akmittal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみにmacで動くやつはこちらにあるのでよければどうぞ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/pyonk/Hugofy&#34;&gt;pyonk/Hugofy&lt;/a&gt;
+少しだけ機能追加してます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;hugo serve&lt;/code&gt;で立ち上げたサーバをkillする機能&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;github pagesへのdeploy機能&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;settingに&lt;code&gt;Repository&lt;/code&gt;を追加してからどうぞ&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;もうすこしちゃんと作りこんでから出直します。反省。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
