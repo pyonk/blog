@@ -1,5 +1,5 @@
 ---
-date: 2016-12-28T10:34:47+09:00
+date: 2017-01-03T10:34:47+09:00
 draft: false
 title: Hugofyにプルリクおくってみた
 description: Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。
