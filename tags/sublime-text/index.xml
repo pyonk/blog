@@ -16,13 +16,17 @@
       <pubDate>Wed, 28 Dec 2016 10:34:47 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</guid>
-      <description>&lt;p&gt;2017年明けましておめでとうございます。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;2017年明けましておめでとうございます。&lt;/p&gt;
+
+&lt;h1 id=&#34;初プルリク&#34;&gt;初プルリク&lt;/h1&gt;
 
 &lt;p&gt;昨年末になんとなく&lt;a href=&#34;https://github.com/akmittal/Hugofy&#34;&gt;Hugofy&lt;/a&gt;にプルリクを送ってみました。&lt;/p&gt;
 
 &lt;p&gt;ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。&lt;/p&gt;
 
-&lt;p&gt;やらなきゃいけないことは、&lt;/p&gt;
+&lt;h2 id=&#34;どうすればよかったのか&#34;&gt;どうすればよかったのか&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Windows環境でのテスト&lt;/li&gt;
@@ -34,10 +38,14 @@
 &lt;p&gt;いい経験になりました。
 Thank you &lt;a href=&#34;https://github.com/akmittal&#34;&gt;@akmittal&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;ちなみにmacで動くやつはこちらにあるのでよければどうぞ。&lt;/p&gt;
+&lt;h1 id=&#34;ちなみに&#34;&gt;ちなみに&lt;/h1&gt;
+
+&lt;p&gt;macで動くやつはこちらにあるのでよければどうぞ。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/pyonk/Hugofy&#34;&gt;pyonk/Hugofy&lt;/a&gt;
 少しだけ機能追加してます。&lt;/p&gt;
+
+&lt;h2 id=&#34;追加した機能&#34;&gt;追加した機能&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;hugo serve&lt;/code&gt;で立ち上げたサーバをkillする機能&lt;/p&gt;&lt;/li&gt;
