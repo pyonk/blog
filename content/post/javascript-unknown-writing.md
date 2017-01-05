@@ -4,7 +4,7 @@ draft: false
 title: javascriptのよくわからない書き方【連想配列編】
 description: javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。
 categories:
-  - フロント
+  - フロントエンド
 tags:
   - javascript
 slug: javascript-unknonwn-writing
