@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/tags/python/</link>
-    <description>Recent content in Python on わいがかいた</description>
+    <title>Django on わいがかいた</title>
+    <link>https://pyonk.github.io/blog/tags/django/</link>
+    <description>Recent content in Django on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>pyonk</copyright>
     <lastBuildDate>Fri, 06 Jan 2017 12:05:29 +0900</lastBuildDate>
-    <atom:link href="https://pyonk.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pyonk.github.io/blog/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Djangoでどうしても非同期でコマンドを実行したくなった</title>
@@ -192,101 +192,6 @@ def add_some_number.delay(request):
 &lt;p&gt;該当箇所を&lt;code&gt;str&lt;/code&gt;に変えてしまうと無事起動しました。&lt;/p&gt;
 
 &lt;p&gt;疲れました。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>pythonでtupleをつくる</title>
-      <link>https://pyonk.github.io/blog/post/python-tuple/</link>
-      <pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/post/python-tuple/</guid>
-      <description>
-
-&lt;h1 id=&#34;pythonのthreadで引数を渡したい&#34;&gt;pythonのthreadで引数を渡したい&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/salexkidd/20090918&#34;&gt;Djangoで時間のかかる処理をスレッド化して逃げ&lt;/a&gt;ようとしたのですがうまくいかなかったのでメモ。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;threading.Thread&lt;/code&gt;にはいくつか引数が渡せます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;group&lt;/li&gt;
-&lt;li&gt;target&lt;/li&gt;
-&lt;li&gt;name&lt;/li&gt;
-&lt;li&gt;args&lt;/li&gt;
-&lt;li&gt;kwargs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;詳しくは&lt;a href=&#34;http://docs.python.jp/2/library/threading.html&#34;&gt;ここ&lt;/a&gt;で。&lt;/p&gt;
-
-&lt;p&gt;で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def command_execute(cmd):
-    print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)
-    subprocess.Popen(cmd, shell=True)
-    return
-
-cmd = &#39;sleep 10;echo aaa&#39;
-t = threading.Thread(target=command_execute, args=(cmd))
-t.daemon = True
-t.start()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;すると、printされた文字列が
-&lt;code&gt;(&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)&lt;/code&gt;
-となるわけです。
-何が起きてるんだ状態です。&lt;/p&gt;
-
-&lt;p&gt;調べてみると原因は「&lt;code&gt;args&lt;/code&gt;にtupleを渡してあげる」というところにありました。&lt;/p&gt;
-
-&lt;h2 id=&#34;pythonでtupleをつくる&#34;&gt;pythonでtupleをつくる&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;tuple = (1, 2)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;基本はこれ。&lt;/p&gt;
-
-&lt;p&gt;では、今回のように長さ1のtupleはどうやってつくるか&lt;/p&gt;
-
-&lt;h2 id=&#34;長さ1のtuple&#34;&gt;長さ1のtuple&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;tuple = (1)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;普通のpythonist&lt;/strong&gt;であればこれは違うとわかるでしょうが、これだと思うでしょう？&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tuple = (1)
-print tuple # 1
-print type(tuple) # &amp;lt;type &#39;int&#39;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なんですよね。&lt;/p&gt;
-
-&lt;h3 id=&#34;どうするのか&#34;&gt;どうするのか&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;tuple = (1,)&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tuple = (1,)
-print tuple # (1,)
-print type(tuple) # &amp;lt;type &#39;tuple&#39;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうでした。&lt;/p&gt;
-
-&lt;h1 id=&#34;けっか&#34;&gt;けっか&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;def command_execute(cmd):
-    print cmd # sleep 10;echo aaa
-    subprocess.Popen(cmd, shell=True)
-    return
-
-cmd = &#39;sleep 10;echo aaa&#39;
-t = threading.Thread(target=command_execute, args=(cmd,))
-t.daemon = True
-t.start()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうしてあげることによって期待通りの動きをしてくれました。&lt;/p&gt;
-
-&lt;p&gt;tupleの作り方に注意しなさい的な記述をどこかで見たような気がしたのですが、すっかり失念しておりました。猛省。&lt;/p&gt;
 </description>
     </item>
     
