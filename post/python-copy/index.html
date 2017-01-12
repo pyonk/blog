@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.16" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/blog/css/normalize.css">
+<link rel="stylesheet" href="/blog/css/skeleton.css">
+<link rel="stylesheet" href="/blog/css/custom.css">
+<link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
+<title>pythonの参照渡しをどうすれば回避できるのか - わいがかいた</title>
+</head>
+<body>
+
+<div class="container">
+
+    <header role="banner">
+        <div class="header-logo">
+            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
+        </div>
+        
+    </header>
+
+
+    <main role="main">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">pythonの参照渡しをどうすれば回避できるのか</h1>
+            <span class="entry-meta"><time itemprop="datePublished" datetime="2017-01-12">January 12, 2017</time><dl class="entry-categories"><dt class="category"><a href="/blog/categories/%e3%83%90%e3%83%83%e3%82%af%e3%82%a8%e3%83%b3%e3%83%89">バックエンド</a></dt></dl></span>
+            
+            <dl class="entry-tags">
+                
+                <dt class="tag"><a href="/blog/tags/python">#python</a></dt>
+                
+            </dl>
+            
+            <section itemprop="entry-text">
+                
+
+<p>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
+たとえば</p>
+
+<pre><code class="language-python">hoge = {1:1, 2:2, 3:3}
+print id(hoge) # 140418104920496
+
+fuga = hoge
+print id(fuga) # 140418104920496
+
+fuga.update({
+    4:4
+})
+
+print hoge == fuga # True
+</code></pre>
+
+<p><a href="http://note.crohaco.net/2014/python-argument-intro/">Pythonistなら常識</a>ですよね。</p>
+
+<h1 id="どうすれば回避できるのか">どうすれば回避できるのか</h1>
+
+<p>割と単純です。</p>
+
+<pre><code class="language-python">hoge = {1:1, 2:2, 3:3}
+print id(hoge) # 140418104920496
+
+fuga = hoge.copy()
+print id(fuga) # 140418107009728
+
+fuga.update({
+    4:4
+})
+
+print hoge == fuga # False
+
+print hoge # {1:1, 2:2, 3:3}
+
+print fuga # {1:1, 2:2, 3:3, 4:4}
+</code></pre>
+
+<p>辞書の浅いコピーを取るには<code>copy_dict = dict.copy()</code>が簡単ですね。</p>
+
+<p><em>ちなみに、リストの場合は<code>copy_list = original_list[:]</code>でコピーが取れます。</em></p>
+
+<p>ただこれだと浅いコピーになります。</p>
+
+<p>なので</p>
+
+<pre><code class="language-python">hoge = {1:{2:2, 3:3}}
+print id(hoge) # 140418104920496
+
+fuga = hoge.copy()
+print id(fuga) # 140418107009728
+
+fuga[1].update({
+    4:4
+})
+
+print hoge == fuga # True
+
+print hoge # {1: {2: 2, 3: 3, 4: 4}}
+
+print fuga # {1: {2: 2, 3: 3, 4: 4}}
+</code></pre>
+
+<p>となってしまいます。</p>
+
+<p>浅いコピーの場合は</p>
+
+<ul>
+<li>元のオブジェクト中に見つかったオブジェクトに対する 参照 を挿入</li>
+</ul>
+
+<p>するようです。</p>
+
+<h1 id="深いコピー">深いコピー</h1>
+
+<p>上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。</p>
+
+<p>それを回避するために、copyモジュールをimportして、深いコピーを利用します。</p>
+
+<pre><code class="language-python">import copy
+
+hoge = {1:{2:2, 3:3}}
+print id(hoge) # 140418104920496
+
+fuga = copy.deepcopy(hoge)
+print id(fuga) # 140418107009728
+
+fuga[1].update({
+    4:4
+})
+
+print hoge == fuga # False
+
+print hoge # {1: {2: 2, 3: 3}}
+
+print fuga # {1: {2: 2, 3: 3, 4: 4}}
+</code></pre>
+
+<p>あら素敵。</p>
+
+<p>結構厄介な場面も多いのできちんと覚えたいものです。</p>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="http://docs.python.jp/2.6/library/copy.html">8.17. copy — 浅いコピーおよび深いコピー操作 — Python 2.6ja2 documentation</a></p>
+
+            </section>
+        </article>
+    </main>
+
+
+    <footer role="contentinfo">
+        <div class="hr"></div>
+        <div class="footer-link">
+            
+            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
+            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
+            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+        </div>
+        <div class="copyright">Copyright &copy; pyonk</div>
+    </footer>
+
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85825684-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
+
