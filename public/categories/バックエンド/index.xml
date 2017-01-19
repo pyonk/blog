@@ -276,8 +276,8 @@ def add_wait(x, y):
 &lt;p&gt;app/views.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;from tasks import add_wait
-def add_some_number.delay(request):
-    result = add_wait(2,3)
+def add_some_number(request):
+    result = add_wait.delay(2,3)
     return render(rerquest, &#39;result.html&#39;, {
         &#39;result&#39;: result,
     })
