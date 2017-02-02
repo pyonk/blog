@@ -1,6 +1,6 @@
 ---
 date: 2017-02-02T18:40:16+09:00
-draft: true
+draft: false
 title: あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！
 description: あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？
 categories:
