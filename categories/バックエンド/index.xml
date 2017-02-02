@@ -7,8 +7,181 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>pyonk</copyright>
-    <lastBuildDate>Thu, 12 Jan 2017 18:21:36 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Feb 2017 18:40:16 +0900</lastBuildDate>
     <atom:link href="https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title>
+      <link>https://pyonk.github.io/blog/post/yasei-no-sslerror/</link>
+      <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/post/yasei-no-sslerror/</guid>
+      <description>
+
+&lt;p&gt;あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。&lt;/p&gt;
+
+&lt;h1 id=&#34;ナゾのrequests-exceptions-sslerror&#34;&gt;ナゾのrequests.exceptions.SSLError&lt;/h1&gt;
+
+&lt;p&gt;それなりにpythonの&lt;a href=&#34;http://docs.python-requests.org/en/master/&#34;&gt;requests&lt;/a&gt;をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの&lt;code&gt;requests.exceptions.SSLError&lt;/code&gt;が発生しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
+さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。&lt;/p&gt;
+
+&lt;p&gt;とりあえず&lt;code&gt;verify=False&lt;/code&gt;を指定しても一度チャレンジです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import requests
+ 
+req = requests.get(&#39;https://damedayo.com/&#39;, verify=False)
+print req.text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;するとresponseが帰ってきました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;はーーーーんんんんんんん&lt;/p&gt;
+
+&lt;p&gt;何はともあれ、ググります。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors&#34;&gt;みっけた&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;ん〜〜〜やはりバーチャルホスト周りっぽい。
+というか&lt;strong&gt;pythonのバージョンが&lt;code&gt;2.7.9&lt;/code&gt;以上であれば問題ないんか&lt;/strong&gt;。コレ。&lt;/p&gt;
+
+&lt;p&gt;解決策として&lt;a href=&#34;https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484&#34;&gt;Stack Overflowへのリンク&lt;/a&gt;が貼ってありますね。こういうこともあるのね。初めて見た。&lt;/p&gt;
+
+&lt;h1 id=&#34;pip-install-pyopensslで詰む&#34;&gt;pip install pyOpenSSLで詰む&lt;/h1&gt;
+
+&lt;p&gt;pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。&lt;/p&gt;
+
+&lt;p&gt;idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install pyOpenSSL --upgrade
+.....前略.....
+1 warning and 20 errors generated.
+error: command &#39;cc&#39; failed with exit status 1
+
+----------------------------------------
+Failed building wheel for cryptography
+.....中略.....
+----------------------------------------
+Command &amp;quot;/usr/bin/python -c &amp;quot;import setuptools, tokenize;__file__=&#39;/private/tmp/pip-build-OtiuE0/cryptography/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read().replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&amp;quot; failed with error code 1 in /private/tmp/pip-build-OtiuE0/cryptography
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。&lt;/p&gt;
+
+&lt;p&gt;ともあれcryptographyのインストールに失敗しているみたいです。&lt;/p&gt;
+
+&lt;p&gt;ぐぐります。&lt;/p&gt;
+
+&lt;p&gt;例によって&lt;a href=&#34;http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py&#34;&gt;Stack Overflow&lt;/a&gt;です。&lt;/p&gt;
+
+&lt;h2 id=&#34;opensslのアップデートで詰まる&#34;&gt;openSSLのアップデートで詰まる&lt;/h2&gt;
+
+&lt;p&gt;openSSLのバージョンが古いのかもと思ってアップデートしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew upgrade openssl
+$ brew link openssl --force
+Warning: Refusing to link: openssl
+Linking keg-only openssl means you may end up linking against the insecure,
+deprecated system OpenSSL while using the headers from Homebrew&#39;s openssl.
+Instead, pass the full include/library paths to your compiler e.g.:
+  -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
+$ which openssl
+/usr/bin/openssl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ウーーン詰まる詰まる。&lt;/p&gt;
+
+&lt;p&gt;いまはこの方法で&lt;a href=&#34;http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4&#34;&gt;opensslへのリンクがはれない&lt;/a&gt;ようです。。&lt;/p&gt;
+
+&lt;p&gt;PATHを通してあげます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export PATH=&amp;quot;/usr/local/opt/openssl/bin:$HOME/.pyenv/bin:$PATH&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確認します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which openssl
+/usr/local/opt/openssl/bin/openssl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;つぎ！&lt;/p&gt;
+
+&lt;h2 id=&#34;pipのアップデート&#34;&gt;pipのアップデート&lt;/h2&gt;
+
+&lt;p&gt;さきほどのStack Overflowでは、pipのバージョンあげなよとあったのでアップデートです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install --upgrade pip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;さっくり詰まることなくクリアしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;そして大本営に突撃&#34;&gt;そして大本営に突撃&lt;/h2&gt;
+
+&lt;p&gt;ようやくcryptograph(おぼえた)をインストールする手はずが整いました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install pyOpenSSL --upgrade
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ばっちり！！アップデートできたっぽい！！！！&lt;/p&gt;
+
+&lt;p&gt;いざ！！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import requests
+ 
+req = requests.get(&#39;https://damedayo.com/&#39;, verify=False)
+print req.text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Traceback (most recent call last):
+  File &amp;quot;eroge_translation_helpman.py&amp;quot;, line 3, in &amp;lt;module&amp;gt;
+    import requests
+  File &amp;quot;/Library/Python/2.7/site-packages/requests/__init__.py&amp;quot;, line 52, in &amp;lt;module&amp;gt;
+    from .packages.urllib3.contrib import pyopenssl
+  File &amp;quot;/Library/Python/2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py&amp;quot;, line 48, in &amp;lt;module&amp;gt;
+    from cryptography import x509
+  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/x509/__init__.py&amp;quot;, line 7, in &amp;lt;module&amp;gt;
+    from cryptography.x509.base import (
+  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/x509/base.py&amp;quot;, line 15, in &amp;lt;module&amp;gt;
+    from cryptography.hazmat.primitives.asymmetric import dsa, ec, rsa
+  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py&amp;quot;, line 14, in &amp;lt;module&amp;gt;
+    from cryptography.hazmat.backends.interfaces import RSABackend
+  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/hazmat/backends/__init__.py&amp;quot;, line 7, in &amp;lt;module&amp;gt;
+    import pkg_resources
+  File &amp;quot;/Library/Python/2.7/site-packages/pkg_resources/__init__.py&amp;quot;, line 72, in &amp;lt;module&amp;gt;
+    import packaging.requirements
+  File &amp;quot;/Library/Python/2.7/site-packages/packaging/requirements.py&amp;quot;, line 59, in &amp;lt;module&amp;gt;
+    MARKER_EXPR = originalTextFor(MARKER_EXPR())(&amp;quot;marker&amp;quot;)
+TypeError: __call__() takes exactly 2 arguments (1 given)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;・・・・・・・・・・・。&lt;/p&gt;
+
+&lt;p&gt;もう。&lt;/p&gt;
+
+&lt;p&gt;ぐぐります・・・・・。&lt;/p&gt;
+
+&lt;p&gt;見つけました。&lt;a href=&#34;http://stackoverflow.com/a/41841210&#34;&gt;Stack Overflow&lt;/a&gt;本当にありがとう。&lt;/p&gt;
+
+&lt;p&gt;setuptoolsが原因だったみたいですね。バージョンによってはエラーが出るようです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install setuptools == 33.1.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ということでこれでようやくプログラムを書き進められそうです。&lt;/p&gt;
+
+&lt;h1 id=&#34;さいごに&#34;&gt;さいごに&lt;/h1&gt;
+
+&lt;p&gt;というか&lt;code&gt;/etc/hosts&lt;/code&gt;をかえたらできたのではないか疑惑が・・・。&lt;/p&gt;
+
+&lt;p&gt;さすがにないかしら。今度時間があったら試してみるでござる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>pythonの参照渡しをどうすれば回避できるのか</title>
