@@ -20,7 +20,7 @@
 
 &lt;p&gt;あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。&lt;/p&gt;
 
-&lt;h1 id=&#34;ナゾのrequests-exceptions-sslerror&#34;&gt;ナゾのrequests.exceptions.SSLError&lt;/h1&gt;
+&lt;h1 id=&#34;ナゾのrequests-exceptions-sslerror:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;ナゾのrequests.exceptions.SSLError&lt;/h1&gt;
 
 &lt;p&gt;それなりにpythonの&lt;a href=&#34;http://docs.python-requests.org/en/master/&#34;&gt;requests&lt;/a&gt;をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの&lt;code&gt;requests.exceptions.SSLError&lt;/code&gt;が発生しました。&lt;/p&gt;
 
@@ -54,7 +54,7 @@ print req.text
 
 &lt;p&gt;解決策として&lt;a href=&#34;https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484&#34;&gt;Stack Overflowへのリンク&lt;/a&gt;が貼ってありますね。こういうこともあるのね。初めて見た。&lt;/p&gt;
 
-&lt;h1 id=&#34;pip-install-pyopensslで詰む&#34;&gt;pip install pyOpenSSLで詰む&lt;/h1&gt;
+&lt;h1 id=&#34;pip-install-pyopensslで詰む:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;pip install pyOpenSSLで詰む&lt;/h1&gt;
 
 &lt;p&gt;pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。&lt;/p&gt;
 
@@ -80,7 +80,7 @@ Command &amp;quot;/usr/bin/python -c &amp;quot;import setuptools, tokenize;__fil
 
 &lt;p&gt;例によって&lt;a href=&#34;http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py&#34;&gt;Stack Overflow&lt;/a&gt;です。&lt;/p&gt;
 
-&lt;h2 id=&#34;opensslのアップデートで詰まる&#34;&gt;openSSLのアップデートで詰まる&lt;/h2&gt;
+&lt;h2 id=&#34;opensslのアップデートで詰まる:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;openSSLのアップデートで詰まる&lt;/h2&gt;
 
 &lt;p&gt;openSSLのバージョンが古いのかもと思ってアップデートしました。&lt;/p&gt;
 
@@ -112,7 +112,7 @@ $ which openssl
 
 &lt;p&gt;つぎ！&lt;/p&gt;
 
-&lt;h2 id=&#34;pipのアップデート&#34;&gt;pipのアップデート&lt;/h2&gt;
+&lt;h2 id=&#34;pipのアップデート:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;pipのアップデート&lt;/h2&gt;
 
 &lt;p&gt;さきほどのStack Overflowでは、pipのバージョンあげなよとあったのでアップデートです。&lt;/p&gt;
 
@@ -121,7 +121,7 @@ $ which openssl
 
 &lt;p&gt;さっくり詰まることなくクリアしました。&lt;/p&gt;
 
-&lt;h2 id=&#34;そして大本営に突撃&#34;&gt;そして大本営に突撃&lt;/h2&gt;
+&lt;h2 id=&#34;そして大本営に突撃:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;そして大本営に突撃&lt;/h2&gt;
 
 &lt;p&gt;ようやくcryptograph(おぼえた)をインストールする手はずが整いました。&lt;/p&gt;
 
@@ -175,7 +175,7 @@ TypeError: __call__() takes exactly 2 arguments (1 given)
 
 &lt;p&gt;ということでこれでようやくプログラムを書き進められそうです。&lt;/p&gt;
 
-&lt;h1 id=&#34;さいごに&#34;&gt;さいごに&lt;/h1&gt;
+&lt;h1 id=&#34;さいごに:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;さいごに&lt;/h1&gt;
 
 &lt;p&gt;というか&lt;code&gt;/etc/hosts&lt;/code&gt;をかえたらできたのではないか疑惑が・・・。&lt;/p&gt;
 
@@ -209,7 +209,7 @@ print hoge == fuga # True
 
 &lt;p&gt;&lt;a href=&#34;http://note.crohaco.net/2014/python-argument-intro/&#34;&gt;Pythonistなら常識&lt;/a&gt;ですよね。&lt;/p&gt;
 
-&lt;h1 id=&#34;どうすれば回避できるのか&#34;&gt;どうすれば回避できるのか&lt;/h1&gt;
+&lt;h1 id=&#34;どうすれば回避できるのか:f6ff338df65264cf8f022b3fd5652e11&#34;&gt;どうすれば回避できるのか&lt;/h1&gt;
 
 &lt;p&gt;割と単純です。&lt;/p&gt;
 
@@ -265,7 +265,7 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
 
 &lt;p&gt;するようです。&lt;/p&gt;
 
-&lt;h1 id=&#34;深いコピー&#34;&gt;深いコピー&lt;/h1&gt;
+&lt;h1 id=&#34;深いコピー:f6ff338df65264cf8f022b3fd5652e11&#34;&gt;深いコピー&lt;/h1&gt;
 
 &lt;p&gt;上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。&lt;/p&gt;
 
@@ -294,7 +294,7 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
 
 &lt;p&gt;結構厄介な場面も多いのできちんと覚えたいものです。&lt;/p&gt;
 
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;h2 id=&#34;参考:f6ff338df65264cf8f022b3fd5652e11&#34;&gt;参考&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://docs.python.jp/2.6/library/copy.html&#34;&gt;8.17. copy — 浅いコピーおよび深いコピー操作 — Python 2.6ja2 documentation&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -308,17 +308,17 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
       <guid>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</guid>
       <description>
 
-&lt;h1 id=&#34;経緯&#34;&gt;経緯&lt;/h1&gt;
+&lt;h1 id=&#34;経緯:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;経緯&lt;/h1&gt;
 
 &lt;p&gt;あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。&lt;/p&gt;
 
 &lt;p&gt;コマンドの設計見直せっていうのは今回は置いといてください・・・。&lt;/p&gt;
 
-&lt;h1 id=&#34;どうしたのか&#34;&gt;どうしたのか&lt;/h1&gt;
+&lt;h1 id=&#34;どうしたのか:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;どうしたのか&lt;/h1&gt;
 
 &lt;p&gt;いくつかの方法を試しました。&lt;/p&gt;
 
-&lt;h2 id=&#34;pythonからコマンドを叩く&#34;&gt;pythonからコマンドを叩く&lt;/h2&gt;
+&lt;h2 id=&#34;pythonからコマンドを叩く:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;pythonからコマンドを叩く&lt;/h2&gt;
 
 &lt;p&gt;まず思い浮かんだのがコマンドを&lt;code&gt;nohup &amp;amp;&lt;/code&gt;でpythonから叩く。&lt;/p&gt;
 
@@ -334,7 +334,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;つぎ！&lt;/p&gt;
 
-&lt;h2 id=&#34;thread化して逃げる&#34;&gt;thread化して逃げる&lt;/h2&gt;
+&lt;h2 id=&#34;thread化して逃げる:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;thread化して逃げる&lt;/h2&gt;
 
 &lt;p&gt;この前書いたような感じです。&lt;/p&gt;
 
@@ -345,7 +345,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;つぎ！！&lt;/p&gt;
 
-&lt;h2 id=&#34;celeryを使う&#34;&gt;celeryを使う&lt;/h2&gt;
+&lt;h2 id=&#34;celeryを使う:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;celeryを使う&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://docs.celeryproject.org/en/latest/index.html&#34;&gt;Celery - Distributed Task Queue — Celery 4.0.2 documentation&lt;/a&gt;&lt;/p&gt;
 
@@ -357,7 +357,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;結構面倒くさかったので備忘録代わりに。&lt;/p&gt;
 
-&lt;h3 id=&#34;install&#34;&gt;install&lt;/h3&gt;
+&lt;h3 id=&#34;install:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;install&lt;/h3&gt;
 
 &lt;p&gt;まずは本体をインストールしていきます。&lt;/p&gt;
 
@@ -377,7 +377,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;&lt;code&gt;pip install -U &amp;quot;celery[redis]&amp;quot;&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;how-to&#34;&gt;how to&lt;/h3&gt;
+&lt;h3 id=&#34;how-to:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;how to&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/celery/celery/tree/master/examples/django/&#34;&gt;ここ&lt;/a&gt;を参考にモリモリかいていきます。&lt;/p&gt;
 
@@ -456,7 +456,7 @@ def add_some_number(request):
     })
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;うごかしていきます&#34;&gt;うごかしていきます&lt;/h4&gt;
+&lt;h4 id=&#34;うごかしていきます:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;うごかしていきます&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;redisの起動&lt;/li&gt;
@@ -493,7 +493,7 @@ def add_some_number(request):
       <guid>https://pyonk.github.io/blog/post/python-tuple/</guid>
       <description>
 
-&lt;h1 id=&#34;pythonのthreadで引数を渡したい&#34;&gt;pythonのthreadで引数を渡したい&lt;/h1&gt;
+&lt;h1 id=&#34;pythonのthreadで引数を渡したい:e15518e858ee2d087c419c703a031e94&#34;&gt;pythonのthreadで引数を渡したい&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/salexkidd/20090918&#34;&gt;Djangoで時間のかかる処理をスレッド化して逃げ&lt;/a&gt;ようとしたのですがうまくいかなかったのでメモ。&lt;/p&gt;
 
@@ -529,7 +529,7 @@ t.start()
 
 &lt;p&gt;調べてみると原因は「&lt;code&gt;args&lt;/code&gt;にtupleを渡してあげる」というところにありました。&lt;/p&gt;
 
-&lt;h2 id=&#34;pythonでtupleをつくる&#34;&gt;pythonでtupleをつくる&lt;/h2&gt;
+&lt;h2 id=&#34;pythonでtupleをつくる:e15518e858ee2d087c419c703a031e94&#34;&gt;pythonでtupleをつくる&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;tuple = (1, 2)&lt;/code&gt;&lt;/p&gt;
 
@@ -537,7 +537,7 @@ t.start()
 
 &lt;p&gt;では、今回のように長さ1のtupleはどうやってつくるか&lt;/p&gt;
 
-&lt;h2 id=&#34;長さ1のtuple&#34;&gt;長さ1のtuple&lt;/h2&gt;
+&lt;h2 id=&#34;長さ1のtuple:e15518e858ee2d087c419c703a031e94&#34;&gt;長さ1のtuple&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;tuple = (1)&lt;/code&gt;&lt;/p&gt;
 
@@ -550,7 +550,7 @@ print type(tuple) # &amp;lt;type &#39;int&#39;&amp;gt;
 
 &lt;p&gt;なんですよね。&lt;/p&gt;
 
-&lt;h3 id=&#34;どうするのか&#34;&gt;どうするのか&lt;/h3&gt;
+&lt;h3 id=&#34;どうするのか:e15518e858ee2d087c419c703a031e94&#34;&gt;どうするのか&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;tuple = (1,)&lt;/code&gt;&lt;/p&gt;
 
@@ -561,7 +561,7 @@ print type(tuple) # &amp;lt;type &#39;tuple&#39;&amp;gt;
 
 &lt;p&gt;こうでした。&lt;/p&gt;
 
-&lt;h1 id=&#34;けっか&#34;&gt;けっか&lt;/h1&gt;
+&lt;h1 id=&#34;けっか:e15518e858ee2d087c419c703a031e94&#34;&gt;けっか&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt;def command_execute(cmd):
     print cmd # sleep 10;echo aaa
