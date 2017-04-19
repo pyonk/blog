@@ -18,17 +18,17 @@
       <guid>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</guid>
       <description>
 
-&lt;h1 id=&#34;経緯&#34;&gt;経緯&lt;/h1&gt;
+&lt;h1 id=&#34;経緯:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;経緯&lt;/h1&gt;
 
 &lt;p&gt;あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。&lt;/p&gt;
 
 &lt;p&gt;コマンドの設計見直せっていうのは今回は置いといてください・・・。&lt;/p&gt;
 
-&lt;h1 id=&#34;どうしたのか&#34;&gt;どうしたのか&lt;/h1&gt;
+&lt;h1 id=&#34;どうしたのか:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;どうしたのか&lt;/h1&gt;
 
 &lt;p&gt;いくつかの方法を試しました。&lt;/p&gt;
 
-&lt;h2 id=&#34;pythonからコマンドを叩く&#34;&gt;pythonからコマンドを叩く&lt;/h2&gt;
+&lt;h2 id=&#34;pythonからコマンドを叩く:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;pythonからコマンドを叩く&lt;/h2&gt;
 
 &lt;p&gt;まず思い浮かんだのがコマンドを&lt;code&gt;nohup &amp;amp;&lt;/code&gt;でpythonから叩く。&lt;/p&gt;
 
@@ -44,7 +44,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;つぎ！&lt;/p&gt;
 
-&lt;h2 id=&#34;thread化して逃げる&#34;&gt;thread化して逃げる&lt;/h2&gt;
+&lt;h2 id=&#34;thread化して逃げる:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;thread化して逃げる&lt;/h2&gt;
 
 &lt;p&gt;この前書いたような感じです。&lt;/p&gt;
 
@@ -55,7 +55,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;つぎ！！&lt;/p&gt;
 
-&lt;h2 id=&#34;celeryを使う&#34;&gt;celeryを使う&lt;/h2&gt;
+&lt;h2 id=&#34;celeryを使う:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;celeryを使う&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://docs.celeryproject.org/en/latest/index.html&#34;&gt;Celery - Distributed Task Queue — Celery 4.0.2 documentation&lt;/a&gt;&lt;/p&gt;
 
@@ -67,7 +67,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;結構面倒くさかったので備忘録代わりに。&lt;/p&gt;
 
-&lt;h3 id=&#34;install&#34;&gt;install&lt;/h3&gt;
+&lt;h3 id=&#34;install:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;install&lt;/h3&gt;
 
 &lt;p&gt;まずは本体をインストールしていきます。&lt;/p&gt;
 
@@ -87,7 +87,7 @@ subprocess.Popen(cmd)
 
 &lt;p&gt;&lt;code&gt;pip install -U &amp;quot;celery[redis]&amp;quot;&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;how-to&#34;&gt;how to&lt;/h3&gt;
+&lt;h3 id=&#34;how-to:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;how to&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/celery/celery/tree/master/examples/django/&#34;&gt;ここ&lt;/a&gt;を参考にモリモリかいていきます。&lt;/p&gt;
 
@@ -166,7 +166,7 @@ def add_some_number(request):
     })
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;うごかしていきます&#34;&gt;うごかしていきます&lt;/h4&gt;
+&lt;h4 id=&#34;うごかしていきます:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;うごかしていきます&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;redisの起動&lt;/li&gt;

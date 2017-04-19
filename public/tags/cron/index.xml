@@ -27,13 +27,21 @@
 Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;おかしいな-おかしいな&#34;&gt;おかしいな〜おかしいな〜〜〜〜〜&lt;/h1&gt;
+&lt;h5 id=&#34;追記:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;追記&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;上記のコマンドの&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;&lt;code&gt;user python /home/user/app/manage.py hogehoge&lt;/code&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;この部分、おかしいですね〜〜&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;&lt;code&gt;/etc/crontab&lt;/code&gt;の内容を何も考えずにコピーしちゃいました。&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;&lt;code&gt;/etc/crontab&lt;/code&gt;はユーザーを指定して記述するのに対して、&lt;code&gt;crontab -e&lt;/code&gt;の場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;おかしいな-おかしいな:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;おかしいな〜おかしいな〜〜〜〜〜&lt;/h1&gt;
 
 &lt;p&gt;こわいな〜こわいな〜〜〜〜。&lt;/p&gt;
 
 &lt;p&gt;何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。&lt;/p&gt;
 
-&lt;h2 id=&#34;etc-crontab&#34;&gt;/etc/crontab&lt;/h2&gt;
+&lt;h2 id=&#34;etc-crontab:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;/etc/crontab&lt;/h2&gt;
 
 &lt;p&gt;まず初めにcronを設定したときはこのこをいじっていました。&lt;/p&gt;
 
@@ -42,7 +50,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 &lt;p&gt;ですね。&lt;/p&gt;
 
-&lt;h2 id=&#34;crontab-e&#34;&gt;crontab -e&lt;/h2&gt;
+&lt;h2 id=&#34;crontab-e:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;crontab -e&lt;/h2&gt;
 
 &lt;p&gt;何を思ったのかこっちでも設定していたような気がしました。&lt;/p&gt;
 
@@ -53,7 +61,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 &lt;p&gt;案の定同じコマンドが同じ時間で実行されるように設定されておりました。&lt;/p&gt;
 
-&lt;h2 id=&#34;この二つの違いはなんなんでしょうか&#34;&gt;この二つの違いはなんなんでしょうか&lt;/h2&gt;
+&lt;h2 id=&#34;この二つの違いはなんなんでしょうか:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;この二つの違いはなんなんでしょうか&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://superuser.com/questions/290093/difference-between-etc-crontab-and-crontab-e&#34;&gt;こちら&lt;/a&gt;がわかりやすいかと思います。&lt;/p&gt;
 
@@ -94,7 +102,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 &lt;p&gt;ややこしいですね〜〜。&lt;/p&gt;
 
-&lt;h1 id=&#34;最後に&#34;&gt;最後に&lt;/h1&gt;
+&lt;h1 id=&#34;最後に:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;最後に&lt;/h1&gt;
 
 &lt;p&gt;&lt;code&gt;-e&lt;/code&gt;と&lt;code&gt;-r&lt;/code&gt;を間違えないようにしたいですね。&lt;/p&gt;
 
