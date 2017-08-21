@@ -2,6 +2,7 @@ try: "してみた"
 frontend: "フロントエンド"
 backend: "バックエンド"
 journal: "日記"
+reading: "読書"
 # {{ with .Params.categories }}
 # <dl class="entry-categories">
 #     {{ range . }}
