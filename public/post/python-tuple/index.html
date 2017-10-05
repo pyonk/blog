@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
@@ -39,7 +39,7 @@
             <section itemprop="entry-text">
                 
 
-<h1 id="pythonのthreadで引数を渡したい:e15518e858ee2d087c419c703a031e94">pythonのthreadで引数を渡したい</h1>
+<h1 id="pythonのthreadで引数を渡したい">pythonのthreadで引数を渡したい</h1>
 
 <p><a href="http://d.hatena.ne.jp/salexkidd/20090918">Djangoで時間のかかる処理をスレッド化して逃げ</a>ようとしたのですがうまくいかなかったのでメモ。</p>
 
@@ -75,7 +75,7 @@ t.start()
 
 <p>調べてみると原因は「<code>args</code>にtupleを渡してあげる」というところにありました。</p>
 
-<h2 id="pythonでtupleをつくる:e15518e858ee2d087c419c703a031e94">pythonでtupleをつくる</h2>
+<h2 id="pythonでtupleをつくる">pythonでtupleをつくる</h2>
 
 <p><code>tuple = (1, 2)</code></p>
 
@@ -83,7 +83,7 @@ t.start()
 
 <p>では、今回のように長さ1のtupleはどうやってつくるか</p>
 
-<h2 id="長さ1のtuple:e15518e858ee2d087c419c703a031e94">長さ1のtuple</h2>
+<h2 id="長さ1のtuple">長さ1のtuple</h2>
 
 <p><code>tuple = (1)</code></p>
 
@@ -96,7 +96,7 @@ print type(tuple) # &lt;type 'int'&gt;
 
 <p>なんですよね。</p>
 
-<h3 id="どうするのか:e15518e858ee2d087c419c703a031e94">どうするのか</h3>
+<h3 id="どうするのか">どうするのか</h3>
 
 <p><code>tuple = (1,)</code></p>
 
@@ -107,7 +107,7 @@ print type(tuple) # &lt;type 'tuple'&gt;
 
 <p>こうでした。</p>
 
-<h1 id="けっか:e15518e858ee2d087c419c703a031e94">けっか</h1>
+<h1 id="けっか">けっか</h1>
 
 <pre><code>def command_execute(cmd):
     print cmd # sleep 10;echo aaa
@@ -137,7 +137,7 @@ t.start()
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
+        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
     </footer>
 
 </div>

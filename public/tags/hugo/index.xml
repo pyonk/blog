@@ -6,9 +6,11 @@
     <description>Recent content in Hugo on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk</copyright>
+    <copyright>pyonk All rights reserved.</copyright>
     <lastBuildDate>Tue, 03 Jan 2017 10:34:47 +0900</lastBuildDate>
-    <atom:link href="https://pyonk.github.io/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://pyonk.github.io/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hugofyにプルリクおくってみた</title>
@@ -16,49 +18,16 @@
       <pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</guid>
-      <description>
-
-&lt;p&gt;2017年明けましておめでとうございます。&lt;/p&gt;
-
-&lt;h1 id=&#34;初プルリク:494476fff840ceb69cce24d98a4d229c&#34;&gt;初プルリク&lt;/h1&gt;
-
-&lt;p&gt;昨年末になんとなく&lt;a href=&#34;https://github.com/akmittal/Hugofy&#34;&gt;Hugofy&lt;/a&gt;にプルリクを送ってみました。&lt;/p&gt;
-
-&lt;p&gt;ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。&lt;/p&gt;
-
-&lt;h2 id=&#34;どうすればよかったのか:494476fff840ceb69cce24d98a4d229c&#34;&gt;どうすればよかったのか&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Windows環境でのテスト&lt;/li&gt;
-&lt;li&gt;typo確認&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;軽い気持ちでプルリク送るもんではないですね〜〜〜。&lt;/p&gt;
-
-&lt;p&gt;いい経験になりました。
-Thank you &lt;a href=&#34;https://github.com/akmittal&#34;&gt;@akmittal&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;ちなみに:494476fff840ceb69cce24d98a4d229c&#34;&gt;ちなみに&lt;/h1&gt;
-
-&lt;p&gt;macで動くやつはこちらにあるのでよければどうぞ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/pyonk/Hugofy&#34;&gt;pyonk/Hugofy&lt;/a&gt;
-少しだけ機能追加してます。&lt;/p&gt;
-
-&lt;h2 id=&#34;追加した機能:494476fff840ceb69cce24d98a4d229c&#34;&gt;追加した機能&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;hugo serve&lt;/code&gt;で立ち上げたサーバをkillする機能&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;github pagesへのdeploy機能&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;settingに&lt;code&gt;Repository&lt;/code&gt;を追加してからどうぞ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;もうすこしちゃんと作りこんでから出直します。反省。&lt;/p&gt;
-</description>
+      <description>2017年明けましておめでとうございます。
+初プルリク 昨年末になんとなくHugofyにプルリクを送ってみました。
+ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。
+どうすればよかったのか  Windows環境でのテスト typo確認  軽い気持ちでプルリク送るもんではないですね〜〜〜。
+いい経験になりました。 Thank you @akmittal
+ちなみに macで動くやつはこちらにあるのでよければどうぞ。
+pyonk/Hugofy 少しだけ機能追加してます。
+追加した機能  hugo serveで立ち上げたサーバをkillする機能
+ github pagesへのdeploy機能
+ settingにRepositoryを追加してからどうぞ   もうすこしちゃんと作りこんでから出直します。反省。</description>
     </item>
     
   </channel>

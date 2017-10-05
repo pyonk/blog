@@ -64,6 +64,6 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
 さて、褒めちぎりすぎたのでここらへんで。
 
 
-* timetree
+* TimeTree
     * [android](https://play.google.com/store/apps/details?id=works.jubilee.timetree)
     * [ios](https://itunes.apple.com/jp/app/timetree-タイムツリー-家族やカップルのためのスケジュール共有カレンダー/id952578473)

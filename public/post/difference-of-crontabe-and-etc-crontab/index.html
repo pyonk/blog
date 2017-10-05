@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
@@ -48,7 +48,7 @@
 Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)
 </code></pre>
 
-<h5 id="追記:c14fd8e1bbd89455d87342ddc3c59e03">追記</h5>
+<h5 id="追記">追記</h5>
 
 <p><em>上記のコマンドの</em><br />
 <em><code>user python /home/user/app/manage.py hogehoge</code></em><br />
@@ -56,13 +56,13 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 <em><code>/etc/crontab</code>の内容を何も考えずにコピーしちゃいました。</em><br />
 <em><code>/etc/crontab</code>はユーザーを指定して記述するのに対して、<code>crontab -e</code>の場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。</em></p>
 
-<h1 id="おかしいな-おかしいな:c14fd8e1bbd89455d87342ddc3c59e03">おかしいな〜おかしいな〜〜〜〜〜</h1>
+<h1 id="おかしいな-おかしいな">おかしいな〜おかしいな〜〜〜〜〜</h1>
 
 <p>こわいな〜こわいな〜〜〜〜。</p>
 
 <p>何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。</p>
 
-<h2 id="etc-crontab:c14fd8e1bbd89455d87342ddc3c59e03">/etc/crontab</h2>
+<h2 id="etc-crontab">/etc/crontab</h2>
 
 <p>まず初めにcronを設定したときはこのこをいじっていました。</p>
 
@@ -71,7 +71,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 <p>ですね。</p>
 
-<h2 id="crontab-e:c14fd8e1bbd89455d87342ddc3c59e03">crontab -e</h2>
+<h2 id="crontab-e">crontab -e</h2>
 
 <p>何を思ったのかこっちでも設定していたような気がしました。</p>
 
@@ -82,7 +82,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 <p>案の定同じコマンドが同じ時間で実行されるように設定されておりました。</p>
 
-<h2 id="この二つの違いはなんなんでしょうか:c14fd8e1bbd89455d87342ddc3c59e03">この二つの違いはなんなんでしょうか</h2>
+<h2 id="この二つの違いはなんなんでしょうか">この二つの違いはなんなんでしょうか</h2>
 
 <p><a href="http://superuser.com/questions/290093/difference-between-etc-crontab-and-crontab-e">こちら</a>がわかりやすいかと思います。</p>
 
@@ -123,7 +123,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 <p>ややこしいですね〜〜。</p>
 
-<h1 id="最後に:c14fd8e1bbd89455d87342ddc3c59e03">最後に</h1>
+<h1 id="最後に">最後に</h1>
 
 <p><code>-e</code>と<code>-r</code>を間違えないようにしたいですね。</p>
 
@@ -145,7 +145,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
+        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
     </footer>
 
 </div>

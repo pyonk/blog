@@ -6,9 +6,27 @@
     <description>Recent content in バックエンド on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk</copyright>
-    <lastBuildDate>Mon, 06 Feb 2017 12:28:58 +0900</lastBuildDate>
-    <atom:link href="https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>pyonk All rights reserved.</copyright>
+    <lastBuildDate>Thu, 05 Oct 2017 15:46:45 +0900</lastBuildDate>
+    
+	<atom:link href="https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pythonからpdfのフォームに入力する</title>
+      <link>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</link>
+      <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</guid>
+      <description>pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+そもそもpdfにフォームなんて埋められるんだって知らなかったです。
+どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
+書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
+なのでどちらにも対応できるような感じになってます。
+事前準備  reportlab
+$ pip install reportlab  PyPDF2
+$ pip install pypdf2   コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &#39;title&#39; # fontを変更 pdfmetrics.registerFont(TTFont(&#39;Mplus1p-Light&#39;, &#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;)) template_path = &#39;template.pdf&#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description>
+    </item>
     
     <item>
       <title>crontab -e と /etc/crontab の違い</title>
@@ -16,101 +34,23 @@
       <pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/difference-of-crontabe-and-etc-crontab/</guid>
-      <description>
-
-&lt;p&gt;ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ less /var/log/cron
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;Feb  6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge)
-Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;追記:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;追記&lt;/h5&gt;
-
-&lt;p&gt;&lt;em&gt;上記のコマンドの&lt;/em&gt;&lt;br /&gt;
-&lt;em&gt;&lt;code&gt;user python /home/user/app/manage.py hogehoge&lt;/code&gt;&lt;/em&gt;&lt;br /&gt;
-&lt;em&gt;この部分、おかしいですね〜〜&lt;/em&gt;&lt;br /&gt;
-&lt;em&gt;&lt;code&gt;/etc/crontab&lt;/code&gt;の内容を何も考えずにコピーしちゃいました。&lt;/em&gt;&lt;br /&gt;
-&lt;em&gt;&lt;code&gt;/etc/crontab&lt;/code&gt;はユーザーを指定して記述するのに対して、&lt;code&gt;crontab -e&lt;/code&gt;の場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。&lt;/em&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;おかしいな-おかしいな:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;おかしいな〜おかしいな〜〜〜〜〜&lt;/h1&gt;
-
-&lt;p&gt;こわいな〜こわいな〜〜〜〜。&lt;/p&gt;
-
-&lt;p&gt;何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。&lt;/p&gt;
-
-&lt;h2 id=&#34;etc-crontab:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;/etc/crontab&lt;/h2&gt;
-
-&lt;p&gt;まず初めにcronを設定したときはこのこをいじっていました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/crontab
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ですね。&lt;/p&gt;
-
-&lt;h2 id=&#34;crontab-e:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;crontab -e&lt;/h2&gt;
-
-&lt;p&gt;何を思ったのかこっちでも設定していたような気がしました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ crontab -l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で確認することができます。&lt;/p&gt;
-
-&lt;p&gt;案の定同じコマンドが同じ時間で実行されるように設定されておりました。&lt;/p&gt;
-
-&lt;h2 id=&#34;この二つの違いはなんなんでしょうか:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;この二つの違いはなんなんでしょうか&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://superuser.com/questions/290093/difference-between-etc-crontab-and-crontab-e&#34;&gt;こちら&lt;/a&gt;がわかりやすいかと思います。&lt;/p&gt;
-
-&lt;p&gt;要するに、
-&lt;code&gt;/etc/crontab&lt;/code&gt;は他のユーザーのcronもまとめて設定できるようなのですね。&lt;/p&gt;
-
-&lt;p&gt;たとえば&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* * * * * user echo &#39;fugafuga&#39;
-* * * * * user2 echo &#39;hogehoge&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;のような感じです。&lt;/p&gt;
-
-&lt;p&gt;対して、&lt;code&gt;crontab -e&lt;/code&gt;だと、今現在のユーザーのcronが設定できます。
-オプションとして&lt;code&gt;-u&lt;/code&gt;を指定すると指定されたユーザーのcronが設定できるようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;/etc/crontab&lt;/code&gt;と&lt;code&gt;crontab -e&lt;/code&gt;は別物なんですね。&lt;/p&gt;
-
-&lt;p&gt;さっきの例だと&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/crontab
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;* * * * * user echo &#39;fugafuga&#39;
-* * * * * user2 echo &#39;hogehoge&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とするのと&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ crontab -e -u user
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;* * * * * echo &#39;fugafuga&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とするのと別のコマンドとして実行されるということです。&lt;/p&gt;
-
-&lt;p&gt;ややこしいですね〜〜。&lt;/p&gt;
-
-&lt;h1 id=&#34;最後に:c14fd8e1bbd89455d87342ddc3c59e03&#34;&gt;最後に&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;-e&lt;/code&gt;と&lt;code&gt;-r&lt;/code&gt;を間違えないようにしたいですね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ crontab -r
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;crontabの設定全部消えちゃいます。&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <description>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
+$ less /var/log/cron  Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)  追記 上記のコマンドの
+user python /home/user/app/manage.py hogehoge
+この部分、おかしいですね〜〜
+/etc/crontabの内容を何も考えずにコピーしちゃいました。
+/etc/crontabはユーザーを指定して記述するのに対して、crontab -eの場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。
+おかしいな〜おかしいな〜〜〜〜〜 こわいな〜こわいな〜〜〜〜。
+何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
+/etc/crontab まず初めにcronを設定したときはこのこをいじっていました。
+$ sudo vim /etc/crontab  ですね。
+crontab -e 何を思ったのかこっちでも設定していたような気がしました。
+$ crontab -l  で確認することができます。
+案の定同じコマンドが同じ時間で実行されるように設定されておりました。
+この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
+要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
+たとえば
+* * * * * user echo &#39;fugafuga&#39; * * * * * user2 echo &#39;hogehoge&#39;  のような感じです。</description>
     </item>
     
     <item>
@@ -119,171 +59,19 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
       <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/yasei-no-sslerror/</guid>
-      <description>
-
-&lt;p&gt;あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。&lt;/p&gt;
-
-&lt;h1 id=&#34;ナゾのrequests-exceptions-sslerror:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;ナゾのrequests.exceptions.SSLError&lt;/h1&gt;
-
-&lt;p&gt;それなりにpythonの&lt;a href=&#34;http://docs.python-requests.org/en/master/&#34;&gt;requests&lt;/a&gt;をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの&lt;code&gt;requests.exceptions.SSLError&lt;/code&gt;が発生しました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
-さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。&lt;/p&gt;
-
-&lt;p&gt;とりあえず&lt;code&gt;verify=False&lt;/code&gt;を指定しても一度チャレンジです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import requests
- 
-req = requests.get(&#39;https://damedayo.com/&#39;, verify=False)
-print req.text
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;するとresponseが帰ってきました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;はーーーーんんんんんんん&lt;/p&gt;
-
-&lt;p&gt;何はともあれ、ググります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors&#34;&gt;みっけた&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;ん〜〜〜やはりバーチャルホスト周りっぽい。
-というか&lt;strong&gt;pythonのバージョンが&lt;code&gt;2.7.9&lt;/code&gt;以上であれば問題ないんか&lt;/strong&gt;。コレ。&lt;/p&gt;
-
-&lt;p&gt;解決策として&lt;a href=&#34;https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484&#34;&gt;Stack Overflowへのリンク&lt;/a&gt;が貼ってありますね。こういうこともあるのね。初めて見た。&lt;/p&gt;
-
-&lt;h1 id=&#34;pip-install-pyopensslで詰む:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;pip install pyOpenSSLで詰む&lt;/h1&gt;
-
-&lt;p&gt;pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。&lt;/p&gt;
-
-&lt;p&gt;idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pip install pyOpenSSL --upgrade
-.....前略.....
-1 warning and 20 errors generated.
-error: command &#39;cc&#39; failed with exit status 1
-
-----------------------------------------
-Failed building wheel for cryptography
-.....中略.....
-----------------------------------------
-Command &amp;quot;/usr/bin/python -c &amp;quot;import setuptools, tokenize;__file__=&#39;/private/tmp/pip-build-OtiuE0/cryptography/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read().replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&amp;quot; failed with error code 1 in /private/tmp/pip-build-OtiuE0/cryptography
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。&lt;/p&gt;
-
-&lt;p&gt;ともあれcryptographyのインストールに失敗しているみたいです。&lt;/p&gt;
-
-&lt;p&gt;ぐぐります。&lt;/p&gt;
-
-&lt;p&gt;例によって&lt;a href=&#34;http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py&#34;&gt;Stack Overflow&lt;/a&gt;です。&lt;/p&gt;
-
-&lt;h2 id=&#34;opensslのアップデートで詰まる:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;openSSLのアップデートで詰まる&lt;/h2&gt;
-
-&lt;p&gt;openSSLのバージョンが古いのかもと思ってアップデートしました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ brew upgrade openssl
-$ brew link openssl --force
-Warning: Refusing to link: openssl
-Linking keg-only openssl means you may end up linking against the insecure,
-deprecated system OpenSSL while using the headers from Homebrew&#39;s openssl.
-Instead, pass the full include/library paths to your compiler e.g.:
-  -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
-$ which openssl
-/usr/bin/openssl
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ウーーン詰まる詰まる。&lt;/p&gt;
-
-&lt;p&gt;いまはこの方法で&lt;a href=&#34;http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4&#34;&gt;opensslへのリンクがはれない&lt;/a&gt;ようです。。&lt;/p&gt;
-
-&lt;p&gt;PATHを通してあげます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;export PATH=&amp;quot;/usr/local/opt/openssl/bin:$HOME/.pyenv/bin:$PATH&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;確認します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ which openssl
-/usr/local/opt/openssl/bin/openssl
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;つぎ！&lt;/p&gt;
-
-&lt;h2 id=&#34;pipのアップデート:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;pipのアップデート&lt;/h2&gt;
-
-&lt;p&gt;さきほどのStack Overflowでは、pipのバージョンあげなよとあったのでアップデートです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pip install --upgrade pip
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;さっくり詰まることなくクリアしました。&lt;/p&gt;
-
-&lt;h2 id=&#34;そして大本営に突撃:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;そして大本営に突撃&lt;/h2&gt;
-
-&lt;p&gt;ようやくcryptograph(おぼえた)をインストールする手はずが整いました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pip install pyOpenSSL --upgrade
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ばっちり！！アップデートできたっぽい！！！！&lt;/p&gt;
-
-&lt;p&gt;いざ！！&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import requests
- 
-req = requests.get(&#39;https://damedayo.com/&#39;, verify=False)
-print req.text
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;Traceback (most recent call last):
-  File &amp;quot;eroge_translation_helpman.py&amp;quot;, line 3, in &amp;lt;module&amp;gt;
-    import requests
-  File &amp;quot;/Library/Python/2.7/site-packages/requests/__init__.py&amp;quot;, line 52, in &amp;lt;module&amp;gt;
-    from .packages.urllib3.contrib import pyopenssl
-  File &amp;quot;/Library/Python/2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py&amp;quot;, line 48, in &amp;lt;module&amp;gt;
-    from cryptography import x509
-  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/x509/__init__.py&amp;quot;, line 7, in &amp;lt;module&amp;gt;
-    from cryptography.x509.base import (
-  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/x509/base.py&amp;quot;, line 15, in &amp;lt;module&amp;gt;
-    from cryptography.hazmat.primitives.asymmetric import dsa, ec, rsa
-  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py&amp;quot;, line 14, in &amp;lt;module&amp;gt;
-    from cryptography.hazmat.backends.interfaces import RSABackend
-  File &amp;quot;/Library/Python/2.7/site-packages/cryptography/hazmat/backends/__init__.py&amp;quot;, line 7, in &amp;lt;module&amp;gt;
-    import pkg_resources
-  File &amp;quot;/Library/Python/2.7/site-packages/pkg_resources/__init__.py&amp;quot;, line 72, in &amp;lt;module&amp;gt;
-    import packaging.requirements
-  File &amp;quot;/Library/Python/2.7/site-packages/packaging/requirements.py&amp;quot;, line 59, in &amp;lt;module&amp;gt;
-    MARKER_EXPR = originalTextFor(MARKER_EXPR())(&amp;quot;marker&amp;quot;)
-TypeError: __call__() takes exactly 2 arguments (1 given)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;・・・・・・・・・・・。&lt;/p&gt;
-
-&lt;p&gt;もう。&lt;/p&gt;
-
-&lt;p&gt;ぐぐります・・・・・。&lt;/p&gt;
-
-&lt;p&gt;見つけました。&lt;a href=&#34;http://stackoverflow.com/a/41841210&#34;&gt;Stack Overflow&lt;/a&gt;本当にありがとう。&lt;/p&gt;
-
-&lt;p&gt;setuptoolsが原因だったみたいですね。バージョンによってはエラーが出るようです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pip install setuptools == 33.1.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ということでこれでようやくプログラムを書き進められそうです。&lt;/p&gt;
-
-&lt;h1 id=&#34;さいごに:8116fcdfbeccd66ae1913492b73e8bb5&#34;&gt;さいごに&lt;/h1&gt;
-
-&lt;p&gt;というか&lt;code&gt;/etc/hosts&lt;/code&gt;をかえたらできたのではないか疑惑が・・・。&lt;/p&gt;
-
-&lt;p&gt;さすがにないかしら。今度時間があったら試してみるでござる。&lt;/p&gt;
-</description>
+      <description>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。
+ナゾのrequests.exceptions.SSLError それなりにpythonのrequestsをつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾのrequests.exceptions.SSLErrorが発生しました。
+requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;  おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
+とりあえずverify=Falseを指定しても一度チャレンジです。
+import requests req = requests.get(&#39;https://damedayo.com/&#39;, verify=False) print req.text  するとresponseが帰ってきました。
+The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.  はーーーーんんんんんんん
+何はともあれ、ググります。
+みっけた。
+ん〜〜〜やはりバーチャルホスト周りっぽい。 というかpythonのバージョンが2.7.9以上であれば問題ないんか。コレ。
+解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
+pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
+idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
+$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated.</description>
     </item>
     
     <item>
@@ -292,115 +80,10 @@ TypeError: __call__() takes exactly 2 arguments (1 given)
       <pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/python-copy/</guid>
-      <description>
-
-&lt;p&gt;ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
-たとえば&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;hoge = {1:1, 2:2, 3:3}
-print id(hoge) # 140418104920496
-
-fuga = hoge
-print id(fuga) # 140418104920496
-
-fuga.update({
-    4:4
-})
-
-print hoge == fuga # True
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://note.crohaco.net/2014/python-argument-intro/&#34;&gt;Pythonistなら常識&lt;/a&gt;ですよね。&lt;/p&gt;
-
-&lt;h1 id=&#34;どうすれば回避できるのか:f6ff338df65264cf8f022b3fd5652e11&#34;&gt;どうすれば回避できるのか&lt;/h1&gt;
-
-&lt;p&gt;割と単純です。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;hoge = {1:1, 2:2, 3:3}
-print id(hoge) # 140418104920496
-
-fuga = hoge.copy()
-print id(fuga) # 140418107009728
-
-fuga.update({
-    4:4
-})
-
-print hoge == fuga # False
-
-print hoge # {1:1, 2:2, 3:3}
-
-print fuga # {1:1, 2:2, 3:3, 4:4}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;辞書の浅いコピーを取るには&lt;code&gt;copy_dict = dict.copy()&lt;/code&gt;が簡単ですね。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;ちなみに、リストの場合は&lt;code&gt;copy_list = original_list[:]&lt;/code&gt;でコピーが取れます。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;ただこれだと浅いコピーになります。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;hoge = {1:{2:2, 3:3}}
-print id(hoge) # 140418104920496
-
-fuga = hoge.copy()
-print id(fuga) # 140418107009728
-
-fuga[1].update({
-    4:4
-})
-
-print hoge == fuga # True
-
-print hoge # {1: {2: 2, 3: 3, 4: 4}}
-
-print fuga # {1: {2: 2, 3: 3, 4: 4}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;となってしまいます。&lt;/p&gt;
-
-&lt;p&gt;浅いコピーの場合は&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;元のオブジェクト中に見つかったオブジェクトに対する 参照 を挿入&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;するようです。&lt;/p&gt;
-
-&lt;h1 id=&#34;深いコピー:f6ff338df65264cf8f022b3fd5652e11&#34;&gt;深いコピー&lt;/h1&gt;
-
-&lt;p&gt;上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。&lt;/p&gt;
-
-&lt;p&gt;それを回避するために、copyモジュールをimportして、深いコピーを利用します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import copy
-
-hoge = {1:{2:2, 3:3}}
-print id(hoge) # 140418104920496
-
-fuga = copy.deepcopy(hoge)
-print id(fuga) # 140418107009728
-
-fuga[1].update({
-    4:4
-})
-
-print hoge == fuga # False
-
-print hoge # {1: {2: 2, 3: 3}}
-
-print fuga # {1: {2: 2, 3: 3, 4: 4}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;あら素敵。&lt;/p&gt;
-
-&lt;p&gt;結構厄介な場面も多いのできちんと覚えたいものです。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考:f6ff338df65264cf8f022b3fd5652e11&#34;&gt;参考&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://docs.python.jp/2.6/library/copy.html&#34;&gt;8.17. copy — 浅いコピーおよび深いコピー操作 — Python 2.6ja2 documentation&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+どうすれば回避できるのか 割と単純です。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.</description>
     </item>
     
     <item>
@@ -409,183 +92,28 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
       <pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</guid>
-      <description>
-
-&lt;h1 id=&#34;経緯:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;経緯&lt;/h1&gt;
-
-&lt;p&gt;あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。&lt;/p&gt;
-
-&lt;p&gt;コマンドの設計見直せっていうのは今回は置いといてください・・・。&lt;/p&gt;
-
-&lt;h1 id=&#34;どうしたのか:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;どうしたのか&lt;/h1&gt;
-
-&lt;p&gt;いくつかの方法を試しました。&lt;/p&gt;
-
-&lt;h2 id=&#34;pythonからコマンドを叩く:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;pythonからコマンドを叩く&lt;/h2&gt;
-
-&lt;p&gt;まず思い浮かんだのがコマンドを&lt;code&gt;nohup &amp;amp;&lt;/code&gt;でpythonから叩く。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import subprocess
-import shlex
-
-cmd = &#39;nohup sleep 10 &amp;amp;&#39;
-subprocess.Popen(cmd)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;が！！！
-レスポンスが帰ってくるのは10秒後・・・。&lt;/p&gt;
-
-&lt;p&gt;つぎ！&lt;/p&gt;
-
-&lt;h2 id=&#34;thread化して逃げる:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;thread化して逃げる&lt;/h2&gt;
-
-&lt;p&gt;この前書いたような感じです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://pyonk.github.io/blog/post/python-tuple/&#34;&gt;pythonでtupleをつくる - わいがかいた&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;結局、レスポンスが帰ってくるのは10秒後・・・。
-ここ工夫するとどうにかなるような気もする。&lt;/p&gt;
-
-&lt;p&gt;つぎ！！&lt;/p&gt;
-
-&lt;h2 id=&#34;celeryを使う:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;celeryを使う&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://docs.celeryproject.org/en/latest/index.html&#34;&gt;Celery - Distributed Task Queue — Celery 4.0.2 documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ようやく本題。&lt;/p&gt;
-
-&lt;p&gt;ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;実際やりはじめて少し後悔しましたし。&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;結構面倒くさかったので備忘録代わりに。&lt;/p&gt;
-
-&lt;h3 id=&#34;install:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;install&lt;/h3&gt;
-
-&lt;p&gt;まずは本体をインストールしていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;pip install -U Celery&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;celeryはbrokerとして
-* Redis
-* RabbitMQ
-* Amazon SQS&lt;/p&gt;
-
-&lt;p&gt;などを使うことができます。
-今回はRedisを選択しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;yum install redis&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;bundleも用意されているのでそれも。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;pip install -U &amp;quot;celery[redis]&amp;quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;how-to:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;how to&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/celery/celery/tree/master/examples/django/&#34;&gt;ここ&lt;/a&gt;を参考にモリモリかいていきます。&lt;/p&gt;
-
-&lt;p&gt;proj/__init__.py&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from __future__ import absolute_import, unicode_literals
-
-# This will make sure the app is always imported when
-# Django starts so that shared_task will use this app.
-from .celery import app as celery_app
-
-__all__ = [&#39;celery_app&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;proj/settings.py&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Celery settings
-
-CELERY_RESULT_BACKEND = &#39;redis&#39; # redisを指定
-CELERY_BROKER_URL = &#39;redis://localhost:6379/0&#39;
-CELERY_TASK_SERIALIZER = &#39;json&#39;
-CELERY_RESULT_SERIALIZER = &#39;json&#39;
-CELERY_ACCEPT_CONTENT = [&#39;json&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;proj/celery.py&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from __future__ import absolute_import, unicode_literals
-import os
-from celery import Celery
-
-# set the default Django settings module for the &#39;celery&#39; program.
-os.environ.setdefault(&#39;DJANGO_SETTINGS_MODULE&#39;, &#39;proj.settings&#39;)
-
-app = Celery(&#39;proj&#39;)
-
-# Using a string here means the worker don&#39;t have to serialize
-# the configuration object to child processes.
-# - namespace=&#39;CELERY&#39; means all celery-related configuration keys
-#   should have a `CELERY_` prefix.
-app.config_from_object(&#39;django.conf:settings&#39;, namespace=&#39;CELERY&#39;)
-
-# Load task modules from all registered Django app configs.
-app.autodiscover_tasks()
-
-
-@app.task(bind=True)
-def debug_task(self):
-    print(&#39;Request: {0!r}&#39;.format(self.request))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;app/tasks.py&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#! /usr/bin/python
-# -*- coding: utf-8 -*-
-# Create your tasks here
-from __future__ import absolute_import, unicode_literals
-# from celery import shared_task
-from celery.decorators import task
-import time
-
-
-@task()
-def add_wait(x, y):
-    time.sleep(10)
-    return x + y
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;app/views.py&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from tasks import add_wait
-def add_some_number(request):
-    result = add_wait.delay(2,3)
-    return render(rerquest, &#39;result.html&#39;, {
-        &#39;result&#39;: result,
-    })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;うごかしていきます:81268cef1074ec1bc9bb582032f9eceb&#34;&gt;うごかしていきます&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;redisの起動&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;sudo /etc/init.d/redis start&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;celeryの起動&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;celery -A proj worker&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;僕の環境はpythonのバージョンが&lt;code&gt;2.7.6&lt;/code&gt;なのですが、それだとエラーがおきます。&lt;/p&gt;
-
-&lt;p&gt;というのもamqpというライブラリの中で使われている&lt;code&gt;struct.pack&lt;/code&gt;が原因のようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/celery/kombu/issues/609&#34;&gt;struct Type Error when consume internal log message. · Issue #609 · celery/kombu&lt;/a&gt;をみるとスッキリします。&lt;/p&gt;
-
-&lt;p&gt;どうやらpythonのバグのようですね。&lt;br /&gt;
-&lt;a href=&#34;https://bugs.python.org/issue19099&#34;&gt;Issue 19099: struct.pack fails first time with unicode fmt - Python tracker&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;該当箇所を&lt;code&gt;str&lt;/code&gt;に変えてしまうと無事起動しました。&lt;/p&gt;
-
-&lt;p&gt;疲れました。&lt;/p&gt;
-</description>
+      <description>経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+コマンドの設計見直せっていうのは今回は置いといてください・・・。
+どうしたのか いくつかの方法を試しました。
+pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
+import subprocess import shlex cmd = &#39;nohup sleep 10 &amp;amp;&#39; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+つぎ！
+thread化して逃げる この前書いたような感じです。
+pythonでtupleをつくる - わいがかいた
+結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
+つぎ！！
+celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
+ようやく本題。
+ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
+実際やりはじめて少し後悔しましたし。
+結構面倒くさかったので備忘録代わりに。
+install まずは本体をインストールしていきます。
+pip install -U Celery
+celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
+などを使うことができます。 今回はRedisを選択しました。
+yum install redis
+bundleも用意されているのでそれも。
+pip install -U &amp;quot;celery[redis]&amp;quot;</description>
     </item>
     
     <item>
@@ -594,93 +122,11 @@ def add_some_number(request):
       <pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/python-tuple/</guid>
-      <description>
-
-&lt;h1 id=&#34;pythonのthreadで引数を渡したい:e15518e858ee2d087c419c703a031e94&#34;&gt;pythonのthreadで引数を渡したい&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/salexkidd/20090918&#34;&gt;Djangoで時間のかかる処理をスレッド化して逃げ&lt;/a&gt;ようとしたのですがうまくいかなかったのでメモ。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;threading.Thread&lt;/code&gt;にはいくつか引数が渡せます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;group&lt;/li&gt;
-&lt;li&gt;target&lt;/li&gt;
-&lt;li&gt;name&lt;/li&gt;
-&lt;li&gt;args&lt;/li&gt;
-&lt;li&gt;kwargs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;詳しくは&lt;a href=&#34;http://docs.python.jp/2/library/threading.html&#34;&gt;ここ&lt;/a&gt;で。&lt;/p&gt;
-
-&lt;p&gt;で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def command_execute(cmd):
-    print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)
-    subprocess.Popen(cmd, shell=True)
-    return
-
-cmd = &#39;sleep 10;echo aaa&#39;
-t = threading.Thread(target=command_execute, args=(cmd))
-t.daemon = True
-t.start()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;すると、printされた文字列が
-&lt;code&gt;(&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)&lt;/code&gt;
-となるわけです。
-何が起きてるんだ状態です。&lt;/p&gt;
-
-&lt;p&gt;調べてみると原因は「&lt;code&gt;args&lt;/code&gt;にtupleを渡してあげる」というところにありました。&lt;/p&gt;
-
-&lt;h2 id=&#34;pythonでtupleをつくる:e15518e858ee2d087c419c703a031e94&#34;&gt;pythonでtupleをつくる&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;tuple = (1, 2)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;基本はこれ。&lt;/p&gt;
-
-&lt;p&gt;では、今回のように長さ1のtupleはどうやってつくるか&lt;/p&gt;
-
-&lt;h2 id=&#34;長さ1のtuple:e15518e858ee2d087c419c703a031e94&#34;&gt;長さ1のtuple&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;tuple = (1)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;普通のpythonist&lt;/strong&gt;であればこれは違うとわかるでしょうが、これだと思うでしょう？&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tuple = (1)
-print tuple # 1
-print type(tuple) # &amp;lt;type &#39;int&#39;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なんですよね。&lt;/p&gt;
-
-&lt;h3 id=&#34;どうするのか:e15518e858ee2d087c419c703a031e94&#34;&gt;どうするのか&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;tuple = (1,)&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tuple = (1,)
-print tuple # (1,)
-print type(tuple) # &amp;lt;type &#39;tuple&#39;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうでした。&lt;/p&gt;
-
-&lt;h1 id=&#34;けっか:e15518e858ee2d087c419c703a031e94&#34;&gt;けっか&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;def command_execute(cmd):
-    print cmd # sleep 10;echo aaa
-    subprocess.Popen(cmd, shell=True)
-    return
-
-cmd = &#39;sleep 10;echo aaa&#39;
-t = threading.Thread(target=command_execute, args=(cmd,))
-t.daemon = True
-t.start()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうしてあげることによって期待通りの動きをしてくれました。&lt;/p&gt;
-
-&lt;p&gt;tupleの作り方に注意しなさい的な記述をどこかで見たような気がしたのですが、すっかり失念しておりました。猛省。&lt;/p&gt;
-</description>
+      <description>pythonのthreadで引数を渡したい Djangoで時間のかかる処理をスレッド化して逃げようとしたのですがうまくいかなかったのでメモ。
+threading.Threadにはいくつか引数が渡せます。
+ group target name args kwargs  詳しくはここで。
+で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
+def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。</description>
     </item>
     
     <item>
@@ -689,47 +135,12 @@ t.start()
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/nginx-image-filter/</guid>
-      <description>
-
-&lt;h1 id=&#34;image-filterを使えるようにモジュールを指定する:a60d664650339cdda3703b53d8a6160d&#34;&gt;image_filterを使えるようにモジュールを指定する&lt;/h1&gt;
-
-&lt;p&gt;nginxをソースからインストールする際に&lt;code&gt;--with-http_image_filter_module&lt;/code&gt;をつけてインストールします。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
-$ tar -xvzf nginx-1.10.1.tar.gz
-$ cd nginx-1.10.1
-$ ./configure --with-http_image_filter_module
-$ make
-$ sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ほかのオプションモジュールをつける場合は随時つけてください。&lt;/p&gt;
-
-&lt;p&gt;すでにnginxがインストールされている場合は、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo cp objs/nginx /usr/sbin/nginx
-$ cat /var/run/nginx.pid
-10576
-$ sudo kill -USR2 10576
-$ sudo kill -WINCH 10576
-$ sudo kill -QUIT 10576
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。&lt;/p&gt;
-
-&lt;h1 id=&#34;confを変更:a60d664650339cdda3703b53d8a6160d&#34;&gt;confを変更&lt;/h1&gt;
-
-&lt;p&gt;image_filterを加えます。
-くわしいことは&lt;a href=&#34;http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter&#34;&gt;ここ&lt;/a&gt;をみてください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-nginx:hoge.conf&#34;&gt;location ~ /image/(.*\.png)$ {
-        alias /path/to/image/$1;
-            image_filter resize 100 -; # 横幅100pxでリサイズする
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。&lt;/p&gt;
-</description>
+      <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
+$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
+すでにnginxがインストールされている場合は、
+$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
+confを変更 image_filterを加えます。 くわしいことはここをみてください。
+location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</description>
     </item>
     
   </channel>
