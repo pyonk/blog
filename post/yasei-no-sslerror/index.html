@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
@@ -41,7 +41,7 @@
 
 <p>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。</p>
 
-<h1 id="ナゾのrequests-exceptions-sslerror:8116fcdfbeccd66ae1913492b73e8bb5">ナゾのrequests.exceptions.SSLError</h1>
+<h1 id="ナゾのrequests-exceptions-sslerror">ナゾのrequests.exceptions.SSLError</h1>
 
 <p>それなりにpythonの<a href="http://docs.python-requests.org/en/master/">requests</a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの<code>requests.exceptions.SSLError</code>が発生しました。</p>
 
@@ -75,7 +75,7 @@ print req.text
 
 <p>解決策として<a href="https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484">Stack Overflowへのリンク</a>が貼ってありますね。こういうこともあるのね。初めて見た。</p>
 
-<h1 id="pip-install-pyopensslで詰む:8116fcdfbeccd66ae1913492b73e8bb5">pip install pyOpenSSLで詰む</h1>
+<h1 id="pip-install-pyopensslで詰む">pip install pyOpenSSLで詰む</h1>
 
 <p>pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。</p>
 
@@ -101,7 +101,7 @@ Command &quot;/usr/bin/python -c &quot;import setuptools, tokenize;__file__='/pr
 
 <p>例によって<a href="http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py">Stack Overflow</a>です。</p>
 
-<h2 id="opensslのアップデートで詰まる:8116fcdfbeccd66ae1913492b73e8bb5">openSSLのアップデートで詰まる</h2>
+<h2 id="opensslのアップデートで詰まる">openSSLのアップデートで詰まる</h2>
 
 <p>openSSLのバージョンが古いのかもと思ってアップデートしました。</p>
 
@@ -133,7 +133,7 @@ $ which openssl
 
 <p>つぎ！</p>
 
-<h2 id="pipのアップデート:8116fcdfbeccd66ae1913492b73e8bb5">pipのアップデート</h2>
+<h2 id="pipのアップデート">pipのアップデート</h2>
 
 <p>さきほどのStack Overflowでは、pipのバージョンあげなよとあったのでアップデートです。</p>
 
@@ -142,7 +142,7 @@ $ which openssl
 
 <p>さっくり詰まることなくクリアしました。</p>
 
-<h2 id="そして大本営に突撃:8116fcdfbeccd66ae1913492b73e8bb5">そして大本営に突撃</h2>
+<h2 id="そして大本営に突撃">そして大本営に突撃</h2>
 
 <p>ようやくcryptograph(おぼえた)をインストールする手はずが整いました。</p>
 
@@ -196,7 +196,7 @@ TypeError: __call__() takes exactly 2 arguments (1 given)
 
 <p>ということでこれでようやくプログラムを書き進められそうです。</p>
 
-<h1 id="さいごに:8116fcdfbeccd66ae1913492b73e8bb5">さいごに</h1>
+<h1 id="さいごに">さいごに</h1>
 
 <p>というか<code>/etc/hosts</code>をかえたらできたのではないか疑惑が・・・。</p>
 
@@ -215,7 +215,7 @@ TypeError: __call__() takes exactly 2 arguments (1 given)
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
+        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
     </footer>
 
 </div>

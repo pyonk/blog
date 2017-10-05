@@ -6,9 +6,11 @@
     <description>Recent content in フロントエンド on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk</copyright>
+    <copyright>pyonk All rights reserved.</copyright>
     <lastBuildDate>Tue, 30 Aug 2016 10:48:43 +0900</lastBuildDate>
-    <atom:link href="https://pyonk.github.io/blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://pyonk.github.io/blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>javascriptのよくわからない書き方【連想配列編】</title>
@@ -16,111 +18,9 @@
       <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</guid>
-      <description>
-
-&lt;p&gt;react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。&lt;/p&gt;
-
-&lt;h1 id=&#34;連想配列のなにかっぽい:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;連想配列のなにかっぽい&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function myfunc(hoge, fuga) {
-    var {hogehoge} = hoge;
-    var {
-        hogeKey: hogeValue,
-    } = hogehoge || {
-        hogeKey: &#39;&#39;,
-    }
-    return {
-        hogeKey,
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上記が件のコード。&lt;/p&gt;
-
-&lt;h1 id=&#34;けっか:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;けっか&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict1 = {keyA: {key1: 1}};
-var dict2 = {keyB: {key1: 2}};
-var dict3 = {keyA: {key2: 3}};
-var dict4 = {keyC: {key2: 4}};
-function myfunc(hoge) {
-    var {keyA} = hoge;
-    console.log(keyA); //hoge.keyAの値
-    console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列
-    var {
-        key1: key1,
-    } = keyA || {
-        key1: &#39;&#39;,
-    }
-    console.log(key1); //keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
-    return {
-        key1, //key1をキーに、key1に代入されている値をバリューにした連想配列
-    }
-}
-myfunc(dict1);
-// {key1: 1}
-// {keyA: {key1: 1}}
-// 1
-myfunc(dict2);
-// undefined
-// {keyA: undefined}
-// &#39;&#39;
-myfunc(dict3);
-// {key2: 3}
-// {keyA: {key2: 3}}
-// undefined
-myfunc(dict4);
-// undefined
-// {keyA: undefined}
-// &#39;&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;書いててよくわからなくなってきた。&lt;/p&gt;
-
-&lt;h1 id=&#34;つまり:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;つまり&lt;/h1&gt;
-
-&lt;h2 id=&#34;keya-dict:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;{keyA}=dict&lt;/h2&gt;
-
-&lt;p&gt;連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。&lt;/p&gt;
-
-&lt;h3 id=&#34;これって:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict = {keyA: &#39;keyAだよ&#39;};
-var keyA = dict.keyA;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;と一緒ですね。&lt;/p&gt;
-
-&lt;h2 id=&#34;key1-key1-dict-key1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;{key1: key1} = dict || {key1: &amp;ldquo;}&lt;/h2&gt;
-
-&lt;p&gt;連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。&lt;/p&gt;
-
-&lt;h3 id=&#34;これって-1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var dict = {key1: &#39;key1だよ&#39;};
-var key1 = dict.key1 ? key1: &#39;&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;と一緒ですね。&lt;/p&gt;
-
-&lt;h2 id=&#34;return-key1:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;return {key1}&lt;/h2&gt;
-
-&lt;p&gt;変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var key1 = &#39;hogehoge&#39;;
-return {key1}; // {key1: &#39;hogehoge&#39;}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;これって-2:ecd5a95b3c1540aeab8bc6e072998431&#34;&gt;これって&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var key1 = &#39;key1だよ&#39;;
-return {key1: key1};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;と一緒ですね。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;という見解であってるんでしょうか・・・。&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
+連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &#39;&#39;, } return { hogeKey, } }  上記が件のコード。
+けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値 console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列 var { key1: key1, } = keyA || { key1: &#39;&#39;, } console.</description>
     </item>
     
   </channel>

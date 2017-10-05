@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.29" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/blog/css/normalize.css">
+<link rel="stylesheet" href="/blog/css/skeleton.css">
+<link rel="stylesheet" href="/blog/css/custom.css">
+<link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
+<title>pythonからpdfのフォームに入力する - わいがかいた</title>
+</head>
+<body>
+
+<div class="container">
+
+    <header role="banner">
+        <div class="header-logo">
+            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
+        </div>
+        
+    </header>
+
+
+    <main role="main">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">pythonからpdfのフォームに入力する</h1>
+            <span class="entry-meta"><time itemprop="datePublished" datetime="2017-10-05">October 05, 2017</time><dl class="entry-categories"><dt class="category"><a href="/blog/categories/%e3%83%90%e3%83%83%e3%82%af%e3%82%a8%e3%83%b3%e3%83%89">バックエンド</a></dt></dl></span>
+            
+            <dl class="entry-tags">
+                
+                <dt class="tag"><a href="/blog/tags/python">#python</a></dt>
+                
+            </dl>
+            
+            <section itemprop="entry-text">
+                
+
+<h1 id="pythonからpdfのフォームに入力する-厳密には違う">pythonからpdfのフォームに入力する（厳密には違う）</h1>
+
+<p>pythonでpdfのフォームに値を入力していく機能をつくりました。<br />
+そもそもpdfにフォームなんて埋められるんだって知らなかったです。<br />
+どうやら読み込み専用フォームとそうでないフォームがあるみたいです。<br />
+書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。<br />
+なのでどちらにも対応できるような感じになってます。</p>
+
+<h2 id="事前準備">事前準備</h2>
+
+<ul>
+<li><p>reportlab</p>
+
+<pre><code>$ pip install reportlab
+</code></pre></li>
+
+<li><p>PyPDF2</p>
+
+<pre><code>$ pip install pypdf2
+</code></pre></li>
+</ul>
+
+<h2 id="コード">コード</h2>
+
+<pre><code class="language-python">#! /usr/bin/python
+# -*- coding: utf-8 -*-
+
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from PyPDF2.pdf import PdfFileReader, PdfFileWriter
+from io import BytesIO
+
+title = 'title'
+# fontを変更
+pdfmetrics.registerFont(TTFont('Mplus1p-Light', 'static/font/Mplus1p/Mplus1p-Light.ttf'))
+template_path = 'template.pdf'
+# 読み込み
+reader = PdfFileReader(template_path)
+existing_page = reader.getPage(0)
+page_width = existing_page.mediaBox.getWidth()
+page_height = existing_page.mediaBox.getHeight()
+# 直接フォームに入力するのではないのでstreamとしてもっておく
+packet = BytesIO()
+c = canvas.Canvas(packet, pagesize=A4)
+c.setFont('Mplus1p-Light', 17)
+# titleはセンタリング
+c.drawCentredString(page_width / 2, page_height - 20, title)
+# formfieldsを取得
+fields = reader.trailer['/Root']['/AcroForm']['/Fields']
+for f in fields:
+    field = f.getObject()
+    # formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]
+    rect = field.get('/Rect', [0.0, 0.0])
+    key = field.get('/T', '')
+    c.setFont('Mplus1p-Light', 9)
+    # 微調整
+    c.drawString(float(rect[0]) + 3, float(rect[1]) + 3, key)
+c.save()
+# パケットの読み込みを先頭に戻す
+packet.seek(0)
+new_pdf = PdfFileReader(packet)
+# テンプレートと書き込んだ内容をマージ
+existing_page.mergePage(new_pdf.getPage(0))
+# writerを用意
+writer = PdfFileWriter()
+writer.addPage(existing_page)
+# 書き込み
+with open('output.pdf', 'wb') as output_file:
+    writer.write(output_file)
+</code></pre>
+
+<p>見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。</p>
+
+<h3 id="おまけ">おまけ</h3>
+
+<p>ただフォームを埋めたいだけの場合</p>
+
+<pre><code class="language-python">#! /usr/bin/python
+# -*- coding: utf-8 -*-
+
+from PyPDF2.pdf import PdfFileReader, PdfFileWriter
+
+template_path = 'template.pdf'
+# 読み込み
+reader = PdfFileReader(template_path)
+existing_page = reader.getPage(0)
+page_width = existing_page.mediaBox.getWidth()
+page_height = existing_page.mediaBox.getHeight()
+# formfieldsを取得
+fields = reader.getFormTextFields()
+# formの値を更新
+for key in fields:
+    fields[key] = key
+# writerを用意
+writer = PdfFileWriter()
+# 上書き
+writer.updatePageFormFieldValues(existing_page, fields)
+writer.addPage(existing_page)
+# 書き込み
+with open('output.pdf', 'wb') as output_file:
+    writer.write(output_file)
+</code></pre>
+
+            </section>
+        </article>
+    </main>
+
+
+    <footer role="contentinfo">
+        <div class="hr"></div>
+        <div class="footer-link">
+            
+            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
+            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
+            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+        </div>
+        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
+    </footer>
+
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85825684-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
+
