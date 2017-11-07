@@ -7,6 +7,7 @@ categories:
 tags:
     - python
     - sublimetext
+    - vim
 ---
 
 ぼくは普段からsublimetextを使っているのだけど  
