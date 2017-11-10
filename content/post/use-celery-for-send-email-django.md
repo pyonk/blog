@@ -20,7 +20,7 @@ tags:
 ## pythonからコマンドを叩く
 まず思い浮かんだのがコマンドを`nohup &`でpythonから叩く。
 
-```
+```python
 import subprocess
 import shlex
 
@@ -78,8 +78,9 @@ bundleも用意されているのでそれも。
 
 [ここ](https://github.com/celery/celery/tree/master/examples/django/)を参考にモリモリかいていきます。
 
-proj/\_\_init\_\_.py
-```
+* proj/\_\_init\_\_.py
+
+```python
 from __future__ import absolute_import, unicode_literals
 
 # This will make sure the app is always imported when
@@ -89,8 +90,9 @@ from .celery import app as celery_app
 __all__ = ['celery_app']
 ```
 
-proj/settings.py
-```
+* proj/settings.py
+
+```python
 # Celery settings
 
 CELERY_RESULT_BACKEND = 'redis' # redisを指定
@@ -100,8 +102,9 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
 ```
 
-proj/celery.py
-```
+* proj/celery.py
+
+```python
 from __future__ import absolute_import, unicode_literals
 import os
 from celery import Celery
@@ -126,8 +129,9 @@ def debug_task(self):
     print('Request: {0!r}'.format(self.request))
 ```
 
-app/tasks.py
-```
+* app/tasks.py
+
+```python
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 # Create your tasks here
@@ -143,8 +147,9 @@ def add_wait(x, y):
     return x + y
 ```
 
-app/views.py
-```
+* app/views.py
+
+```python
 from tasks import add_wait
 def add_some_number(request):
     result = add_wait.delay(2,3)

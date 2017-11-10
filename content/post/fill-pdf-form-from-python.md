@@ -17,12 +17,12 @@ pythonでpdfのフォームに値を入力していく機能をつくりまし�
 
 ## 事前準備
 * reportlab
-```
+```bash
 $ pip install reportlab
 ```
 
 * PyPDF2
-```
+```bash
 $ pip install pypdf2
 ```
 

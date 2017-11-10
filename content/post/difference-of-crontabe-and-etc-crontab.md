@@ -11,11 +11,11 @@ tags:
 
 ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
 
-```
+```bash
 $ less /var/log/cron
 ```
 
-```
+```bash
 Feb  6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge)
 Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)
 ```
@@ -23,7 +23,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 ##### 追記
 *上記のコマンドの*  
-*```user python /home/user/app/manage.py hogehoge```*  
+*`user python /home/user/app/manage.py hogehoge`*  
 *この部分、おかしいですね〜〜*  
 *`/etc/crontab`の内容を何も考えずにコピーしちゃいました。*  
 *`/etc/crontab`はユーザーを指定して記述するのに対して、`crontab -e`の場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。*
@@ -39,7 +39,7 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 
 まず初めにcronを設定したときはこのこをいじっていました。
 
-```
+```bash
 $ sudo vim /etc/crontab
 ```
 ですね。
@@ -48,7 +48,7 @@ $ sudo vim /etc/crontab
 
 何を思ったのかこっちでも設定していたような気がしました。
 
-```
+```bash
 $ crontab -l
 ```
 
@@ -65,7 +65,7 @@ $ crontab -l
 
 たとえば
 
-```
+```bash
 * * * * * user echo 'fugafuga'
 * * * * * user2 echo 'hogehoge'
 ```
@@ -78,21 +78,21 @@ $ crontab -l
 
 さっきの例だと
 
-```
+```bash
 $ sudo vim /etc/crontab
 ```
 
-```
+```bash
 * * * * * user echo 'fugafuga'
 * * * * * user2 echo 'hogehoge'
 ```
 とするのと
 
-```
+```bash
 $ crontab -e -u user
 ```
 
-```
+```bash
 * * * * * echo 'fugafuga'
 ```
 とするのと別のコマンドとして実行されるということです。
@@ -103,7 +103,7 @@ $ crontab -e -u user
 
 `-e`と`-r`を間違えないようにしたいですね。
 
-```
+```bash
 $ crontab -r
 ```
 

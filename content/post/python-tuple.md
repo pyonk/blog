@@ -24,7 +24,7 @@ tags:
 
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
 
-```
+```python
 def command_execute(cmd):
     print cmd # ('s', 'l', 'e', 'e', 'p', ' ', '1', '0', ';', 'e', 'c', 'h', 'o', ' ', 'a', 'a', 'a')
     subprocess.Popen(cmd, shell=True)
@@ -56,7 +56,7 @@ t.start()
 
 **普通のpythonist**であればこれは違うとわかるでしょうが、これだと思うでしょう？
 
-```
+```python
 tuple = (1)
 print tuple # 1
 print type(tuple) # <type 'int'>
@@ -67,7 +67,7 @@ print type(tuple) # <type 'int'>
 ### どうするのか
 `tuple = (1,)`
 
-```
+```python
 tuple = (1,)
 print tuple # (1,)
 print type(tuple) # <type 'tuple'>
@@ -76,7 +76,7 @@ print type(tuple) # <type 'tuple'>
 こうでした。
 
 # けっか
-```
+```python
 def command_execute(cmd):
     print cmd # sleep 10;echo aaa
     subprocess.Popen(cmd, shell=True)

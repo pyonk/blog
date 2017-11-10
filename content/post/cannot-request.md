@@ -15,16 +15,14 @@ slug: yasei-no-sslerror
 # ナゾのrequests.exceptions.SSLError
 それなりにpythonの[requests](http://docs.python-requests.org/en/master/)をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの`requests.exceptions.SSLError`が発生しました。
 
-```
-requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'
-```
+`requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'`
 
 おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
 
 とりあえず`verify=False`を指定しても一度チャレンジです。
 
-```
+```python
 import requests
  
 req = requests.get('https://damedayo.com/', verify=False)
@@ -32,9 +30,8 @@ print req.text
 ```
 
 するとresponseが帰ってきました。
-```
-The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
-```
+
+`The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. `
 
 はーーーーんんんんんんん
 
@@ -51,7 +48,7 @@ The client software did not provide a hostname using Server Name Indication (SNI
 pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
 
 idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-```
+```bash
 $ pip install pyOpenSSL --upgrade
 .....前略.....
 1 warning and 20 errors generated.
@@ -75,7 +72,7 @@ gccがないよっていうのは見たことありましたが、ccがないよ
 ## openSSLのアップデートで詰まる
 openSSLのバージョンが古いのかもと思ってアップデートしました。
 
-```
+```bash
 $ brew upgrade openssl
 $ brew link openssl --force
 Warning: Refusing to link: openssl
@@ -122,14 +119,15 @@ $ pip install pyOpenSSL --upgrade
 ばっちり！！アップデートできたっぽい！！！！
 
 いざ！！
-```
+
+```python
 import requests
  
 req = requests.get('https://damedayo.com/', verify=False)
 print req.text
 ```
 
-```
+```python
 Traceback (most recent call last):
   File "eroge_translation_helpman.py", line 3, in <module>
     import requests
