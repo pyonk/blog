@@ -5,11 +5,12 @@
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
 <link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="stylesheet" href="/blog/css/syntax.css">
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
 <title>nginxのimage_filterを使って画像を動的に縮小するには - わいがかいた</title>
 </head>
@@ -42,40 +43,34 @@
 <h1 id="image-filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する</h1>
 
 <p>nginxをソースからインストールする際に<code>--with-http_image_filter_module</code>をつけてインストールします。</p>
-
-<pre><code class="language-bash">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
-$ tar -xvzf nginx-1.10.1.tar.gz
-$ cd nginx-1.10.1
-$ ./configure --with-http_image_filter_module
-$ make
-$ sudo make install
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+</span><span class="s1f40">$ tar -xvzf nginx-1.10.1.tar.gz
+</span><span class="s1f40">$ </span><span class="s7d0">cd</span><span class="s1f40"> nginx-1.10.1
+</span><span class="s1f40">$ ./configure --with-http_image_filter_module
+</span><span class="s1f40">$ make
+</span><span class="s1f40">$ sudo make install</span></code></pre>
+</div>
 <p>ほかのオプションモジュールをつける場合は随時つけてください。</p>
 
 <p>すでにnginxがインストールされている場合は、</p>
-
-<pre><code class="language-bash">$ sudo cp objs/nginx /usr/sbin/nginx
-$ cat /var/run/nginx.pid
-10576
-$ sudo kill -USR2 10576
-$ sudo kill -WINCH 10576
-$ sudo kill -QUIT 10576
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ sudo cp objs/nginx /usr/sbin/nginx
+</span><span class="s1f40">$ cat /var/run/nginx.pid
+</span><span class="s1f40"></span><span class="sc80">10576</span><span class="s1f40">
+</span><span class="s1f40">$ sudo </span><span class="s7d0">kill</span><span class="s1f40"> -USR2 </span><span class="sc80">10576</span><span class="s1f40">
+</span><span class="s1f40">$ sudo </span><span class="s7d0">kill</span><span class="s1f40"> -WINCH </span><span class="sc80">10576</span><span class="s1f40">
+</span><span class="s1f40">$ sudo </span><span class="s7d0">kill</span><span class="s1f40"> -QUIT </span><span class="sc80">10576</span></code></pre>
+</div>
 <p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。</p>
 
 <h1 id="confを変更">confを変更</h1>
 
 <p>image_filterを加えます。
 くわしいことは<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ</a>をみてください。</p>
-
-<pre><code class="language-nginx:hoge.conf">location ~ /image/(.*\.png)$ {
-        alias /path/to/image/$1;
-            image_filter resize 100 -; # 横幅100pxでリサイズする
-}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf"><span class="s1f40">location ~ /image/(.*\.png)$ {
+</span><span class="s1f40">        alias /path/to/image/$1;
+</span><span class="s1f40">            image_filter resize 100 -; # 横幅100pxでリサイズする
+</span><span class="s1f40">}</span></code></pre>
+</div>
 <p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</p>
 
             </section>
@@ -105,8 +100,7 @@ $ sudo kill -QUIT 10576
     ga('send', 'pageview');
 </script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 </html>

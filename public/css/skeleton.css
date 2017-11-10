@@ -312,10 +312,15 @@ code {
   margin: 0 .2rem;
   font-size: 90%;
   white-space: nowrap;
+  color: #EA4C89;
   background: #F1F1F1;
   border: 1px solid #E1E1E1;
   border-radius: 4px; }
-pre > code {
+pre.chroma > code {
+  color: inherit;
+  border-radius: 0;
+  border: none;
+  background: initial;
   display: block;
   padding: 1rem 1.5rem;
   white-space: pre; }

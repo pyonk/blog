@@ -5,11 +5,12 @@
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
 <link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="stylesheet" href="/blog/css/syntax.css">
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
 <title>javascriptのよくわからない書き方【連想配列編】 - わいがかいた</title>
 </head>
@@ -42,60 +43,56 @@
 <p>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。</p>
 
 <h1 id="連想配列のなにかっぽい">連想配列のなにかっぽい</h1>
-
-<pre><code class="language-js">function myfunc(hoge, fuga) {
-    var {hogehoge} = hoge;
-    var {
-        hogeKey: hogeValue,
-    } = hogehoge || {
-        hogeKey: '',
-    }
-    return {
-        hogeKey,
-    }
-}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s3e8">function</span><span class="s1f40"> </span><span class="s7df">myfunc</span><span class="s1388">(</span><span class="s7df">hoge</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7df">fuga</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">hogehoge</span><span class="s1388">}</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7df">hoge</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7df">hogeKey</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s7df">hogeValue</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7df">hogehoge</span><span class="s1f40"> </span><span class="sfa0">||</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7df">hogeKey</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc1c">&#39;&#39;</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7df">hogeKey</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">}</span></code></pre>
+</div>
 <p>上記が件のコード。</p>
 
 <h1 id="けっか">けっか</h1>
-
-<pre><code class="language-js">var dict1 = {keyA: {key1: 1}};
-var dict2 = {keyB: {key1: 2}};
-var dict3 = {keyA: {key2: 3}};
-var dict4 = {keyC: {key2: 4}};
-function myfunc(hoge) {
-    var {keyA} = hoge;
-    console.log(keyA); //hoge.keyAの値
-    console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列
-    var {
-        key1: key1,
-    } = keyA || {
-        key1: '',
-    }
-    console.log(key1); //keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
-    return {
-        key1, //key1をキーに、key1に代入されている値をバリューにした連想配列
-    }
-}
-myfunc(dict1);
-// {key1: 1}
-// {keyA: {key1: 1}}
-// 1
-myfunc(dict2);
-// undefined
-// {keyA: undefined}
-// ''
-myfunc(dict3);
-// {key2: 3}
-// {keyA: {key2: 3}}
-// undefined
-myfunc(dict4);
-// undefined
-// {keyA: undefined}
-// ''
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">dict1</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">keyA</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc80">1</span><span class="s1388">}};</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">dict2</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">keyB</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc80">2</span><span class="s1388">}};</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">dict3</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">keyA</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key2</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">}};</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">dict4</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">keyC</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key2</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc80">4</span><span class="s1388">}};</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">function</span><span class="s1f40"> </span><span class="s7df">myfunc</span><span class="s1388">(</span><span class="s7df">hoge</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">keyA</span><span class="s1388">}</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7df">hoge</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s7df">console</span><span class="s1388">.</span><span class="s7df">log</span><span class="s1388">(</span><span class="s7df">keyA</span><span class="s1388">);</span><span class="s1f40"> </span><span class="s1770">//hoge.keyAの値
+</span><span class="s1770"></span><span class="s1f40">    </span><span class="s7df">console</span><span class="s1388">.</span><span class="s7df">log</span><span class="s1388">({</span><span class="s7df">keyA</span><span class="s1388">});</span><span class="s1f40"> </span><span class="s1770">//keyAをキーに、keyAに代入されている値をバリューにした連想配列
+</span><span class="s1770"></span><span class="s1f40">    </span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s7df">key1</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7df">keyA</span><span class="s1f40"> </span><span class="sfa0">||</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc1c">&#39;&#39;</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s7df">console</span><span class="s1388">.</span><span class="s7df">log</span><span class="s1388">(</span><span class="s7df">key1</span><span class="s1388">);</span><span class="s1f40"> </span><span class="s1770">//keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
+</span><span class="s1770"></span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">        </span><span class="s7df">key1</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s1770">//key1をキーに、key1に代入されている値をバリューにした連想配列
+</span><span class="s1770"></span><span class="s1f40">    </span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7df">myfunc</span><span class="s1388">(</span><span class="s7df">dict1</span><span class="s1388">);</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770">// {key1: 1}
+</span><span class="s1770">// {keyA: {key1: 1}}
+</span><span class="s1770">// 1
+</span><span class="s1770"></span><span class="s7df">myfunc</span><span class="s1388">(</span><span class="s7df">dict2</span><span class="s1388">);</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770">// undefined
+</span><span class="s1770">// {keyA: undefined}
+</span><span class="s1770">// &#39;&#39;
+</span><span class="s1770"></span><span class="s7df">myfunc</span><span class="s1388">(</span><span class="s7df">dict3</span><span class="s1388">);</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770">// {key2: 3}
+</span><span class="s1770">// {keyA: {key2: 3}}
+</span><span class="s1770">// undefined
+</span><span class="s1770"></span><span class="s7df">myfunc</span><span class="s1388">(</span><span class="s7df">dict4</span><span class="s1388">);</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770">// undefined
+</span><span class="s1770">// {keyA: undefined}
+</span><span class="s1770"></span><span class="s1f40"></span><span class="ss4">// &#39;&#39;</span></code></pre>
+</div>
 <p>書いててよくわからなくなってきた。</p>
 
 <h1 id="つまり">つまり</h1>
@@ -105,11 +102,9 @@ myfunc(dict4);
 <p>連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。</p>
 
 <h3 id="これって">これって</h3>
-
-<pre><code class="language-js">var dict = {keyA: 'keyAだよ'};
-var keyA = dict.keyA;
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">dict</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">keyA</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc1c">&#39;keyAだよ&#39;</span><span class="s1388">};</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">keyA</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7df">dict</span><span class="s1388">.</span><span class="s7df">keyA</span><span class="s1388">;</span></code></pre>
+</div>
 <p>と一緒ですね。</p>
 
 <h2 id="key1-key1-dict-key1">{key1: key1} = dict || {key1: &ldquo;}</h2>
@@ -117,27 +112,21 @@ var keyA = dict.keyA;
 <p>連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。</p>
 
 <h3 id="これって-1">これって</h3>
-
-<pre><code class="language-js">var dict = {key1: 'key1だよ'};
-var key1 = dict.key1 ? key1: '';
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">dict</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc1c">&#39;key1だよ&#39;</span><span class="s1388">};</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">key1</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7df">dict</span><span class="s1388">.</span><span class="s7df">key1</span><span class="s1f40"> </span><span class="sfa0">?</span><span class="s1f40"> </span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="sc1c">&#39;&#39;</span><span class="s1388">;</span></code></pre>
+</div>
 <p>と一緒ですね。</p>
 
 <h2 id="return-key1">return {key1}</h2>
 
 <p>変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。</p>
-
-<pre><code class="language-js">var key1 = 'hogehoge';
-return {key1}; // {key1: 'hogehoge'}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">key1</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c">&#39;hogehoge&#39;</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key1</span><span class="s1388">};</span><span class="s1f40"> </span><span class="ss4">// {key1: &#39;hogehoge&#39;}</span></code></pre>
+</div>
 <h3 id="これって-2">これって</h3>
-
-<pre><code class="language-js">var key1 = 'key1だよ';
-return {key1: key1};
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="s3e8">var</span><span class="s1f40"> </span><span class="s7df">key1</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c">&#39;key1だよ&#39;</span><span class="s1388">;</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s7df">key1</span><span class="sfa0">:</span><span class="s1f40"> </span><span class="s7df">key1</span><span class="s1388">};</span></code></pre>
+</div>
 <p>と一緒ですね。</p>
 
 <p><strong>という見解であってるんでしょうか・・・。</strong></p>
@@ -169,8 +158,7 @@ return {key1: key1};
     ga('send', 'pageview');
 </script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 </html>

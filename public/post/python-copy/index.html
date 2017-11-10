@@ -5,11 +5,12 @@
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
 <link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="stylesheet" href="/blog/css/syntax.css">
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
 <title>pythonの参照渡しをどうすれば回避できるのか - わいがかいた</title>
 </head>
@@ -41,43 +42,39 @@
 
 <p>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
 たとえば</p>
-
-<pre><code class="language-python">hoge = {1:1, 2:2, 3:3}
-print id(hoge) # 140418104920496
-
-fuga = hoge
-print id(fuga) # 140418104920496
-
-fuga.update({
-    4:4
-})
-
-print hoge == fuga # True
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc80">1</span><span class="s1388">:</span><span class="sc80">1</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">2</span><span class="s1388">:</span><span class="sc80">2</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">:</span><span class="sc80">3</span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">hoge</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418104920496</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">fuga</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418104920496</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="sfa0">.</span><span class="s7d0">update</span><span class="s1388">({</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="sc80">4</span><span class="s1388">:</span><span class="sc80">4</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">})</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">==</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># True</span></code></pre>
+</div>
 <p><a href="http://note.crohaco.net/2014/python-argument-intro/">Pythonistなら常識</a>ですよね。</p>
 
 <h1 id="どうすれば回避できるのか">どうすれば回避できるのか</h1>
 
 <p>割と単純です。</p>
-
-<pre><code class="language-python">hoge = {1:1, 2:2, 3:3}
-print id(hoge) # 140418104920496
-
-fuga = hoge.copy()
-print id(fuga) # 140418107009728
-
-fuga.update({
-    4:4
-})
-
-print hoge == fuga # False
-
-print hoge # {1:1, 2:2, 3:3}
-
-print fuga # {1:1, 2:2, 3:3, 4:4}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc80">1</span><span class="s1388">:</span><span class="sc80">1</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">2</span><span class="s1388">:</span><span class="sc80">2</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">:</span><span class="sc80">3</span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">hoge</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418104920496</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="sfa0">.</span><span class="s7d0">copy</span><span class="s1388">()</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">fuga</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418107009728</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="sfa0">.</span><span class="s7d0">update</span><span class="s1388">({</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="sc80">4</span><span class="s1388">:</span><span class="sc80">4</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">})</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">==</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># False</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="s1770"># {1:1, 2:2, 3:3}</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># {1:1, 2:2, 3:3, 4:4}</span></code></pre>
+</div>
 <p>辞書の浅いコピーを取るには<code>copy_dict = dict.copy()</code>が簡単ですね。</p>
 
 <p><em>ちなみに、リストの場合は<code>copy_list = original_list[:]</code>でコピーが取れます。</em></p>
@@ -85,24 +82,22 @@ print fuga # {1:1, 2:2, 3:3, 4:4}
 <p>ただこれだと浅いコピーになります。</p>
 
 <p>なので</p>
-
-<pre><code class="language-python">hoge = {1:{2:2, 3:3}}
-print id(hoge) # 140418104920496
-
-fuga = hoge.copy()
-print id(fuga) # 140418107009728
-
-fuga[1].update({
-    4:4
-})
-
-print hoge == fuga # True
-
-print hoge # {1: {2: 2, 3: 3, 4: 4}}
-
-print fuga # {1: {2: 2, 3: 3, 4: 4}}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc80">1</span><span class="s1388">:{</span><span class="sc80">2</span><span class="s1388">:</span><span class="sc80">2</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">:</span><span class="sc80">3</span><span class="s1388">}}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">hoge</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418104920496</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="sfa0">.</span><span class="s7d0">copy</span><span class="s1388">()</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">fuga</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418107009728</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="s1388">[</span><span class="sc80">1</span><span class="s1388">]</span><span class="sfa0">.</span><span class="s7d0">update</span><span class="s1388">({</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="sc80">4</span><span class="s1388">:</span><span class="sc80">4</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">})</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">==</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># True</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="s1770"># {1: {2: 2, 3: 3, 4: 4}}</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># {1: {2: 2, 3: 3, 4: 4}}</span></code></pre>
+</div>
 <p>となってしまいます。</p>
 
 <p>浅いコピーの場合は</p>
@@ -118,26 +113,24 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
 <p>上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。</p>
 
 <p>それを回避するために、copyモジュールをimportして、深いコピーを利用します。</p>
-
-<pre><code class="language-python">import copy
-
-hoge = {1:{2:2, 3:3}}
-print id(hoge) # 140418104920496
-
-fuga = copy.deepcopy(hoge)
-print id(fuga) # 140418107009728
-
-fuga[1].update({
-    4:4
-})
-
-print hoge == fuga # False
-
-print hoge # {1: {2: 2, 3: 3}}
-
-print fuga # {1: {2: 2, 3: 3, 4: 4}}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">copy</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc80">1</span><span class="s1388">:{</span><span class="sc80">2</span><span class="s1388">:</span><span class="sc80">2</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">:</span><span class="sc80">3</span><span class="s1388">}}</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">hoge</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418104920496</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">copy</span><span class="sfa0">.</span><span class="s7d0">deepcopy</span><span class="s1388">(</span><span class="s7d0">hoge</span><span class="s1388">)</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">id</span><span class="s1388">(</span><span class="s7d0">fuga</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># 140418107009728</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">fuga</span><span class="s1388">[</span><span class="sc80">1</span><span class="s1388">]</span><span class="sfa0">.</span><span class="s7d0">update</span><span class="s1388">({</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="sc80">4</span><span class="s1388">:</span><span class="sc80">4</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">})</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="sfa0">==</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># False</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">hoge</span><span class="s1f40"> </span><span class="s1770"># {1: {2: 2, 3: 3}}</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">fuga</span><span class="s1f40"> </span><span class="s1770"># {1: {2: 2, 3: 3, 4: 4}}</span></code></pre>
+</div>
 <p>あら素敵。</p>
 
 <p>結構厄介な場面も多いのできちんと覚えたいものです。</p>
@@ -173,8 +166,7 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
     ga('send', 'pageview');
 </script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 </html>

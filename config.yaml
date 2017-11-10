@@ -7,6 +7,10 @@ enableEmoji: true
 metaDataFormat: "yaml"
 noTimes: true
 GoogleAnalytics: "UA-85825684-1"
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+pygmentsOptions:
+  linenos: "table"
 
 Params:
   subtitle: "いろいろ"

@@ -5,11 +5,12 @@
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
 <link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="stylesheet" href="/blog/css/syntax.css">
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
 <title>djangoのquerysetを任意の順番でsortする - わいがかいた</title>
 </head>
@@ -56,32 +57,30 @@ databaseに定義されてない値でソートしたかったのです。</p>
 </blockquote>
 
 <h2 id="tl-dr">TL;DR</h2>
-
-<pre><code class="language-python">from djnago.db.models import Case, When, Value, FloatField
-
-# { pid: specific_value, }
-specific_values = {
-  '1': 100.0,
-  '2': 50.0,
-  '3': 25.0,
-  '4': 123.4,
-  '5': 599.33,
-}
-
-# sqlのCASE式にしたい条件のリスト
-cases = []
-
-# casesにCASE式にしたい条件をつめていく
-for pid, specific_value in specific_values.items():
-    cases.append(When(id=pid, then=Value(specific_value)))
-
-# Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする
-Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(
-    *cases,
-    output_field=FloatField()
-)).order_by(specific_value)
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">djnago.db.models</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">Case</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">When</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">Value</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">FloatField</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770"># { pid: specific_value, }</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">specific_values</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;1&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">100.0</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;2&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">50.0</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;3&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">25.0</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;4&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">123.4</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;5&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">599.33</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">}</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770"># sqlのCASE式にしたい条件のリスト</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">cases</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">[]</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770"># casesにCASE式にしたい条件をつめていく</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">pid</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">specific_value</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">specific_values</span><span class="sfa0">.</span><span class="s7d0">items</span><span class="s1388">():</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s7d0">cases</span><span class="sfa0">.</span><span class="s7d0">append</span><span class="s1388">(</span><span class="s7d0">When</span><span class="s1388">(</span><span class="s7d0">id</span><span class="sfa0">=</span><span class="s7d0">pid</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">then</span><span class="sfa0">=</span><span class="s7d0">Value</span><span class="s1388">(</span><span class="s7d0">specific_value</span><span class="s1388">)))</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1770"># Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d0">Hoge</span><span class="sfa0">.</span><span class="s7d0">objects</span><span class="sfa0">.</span><span class="s7d0">filter</span><span class="s1388">(</span><span class="s7d0">id__in</span><span class="sfa0">=</span><span class="s7d0">specific_values</span><span class="sfa0">.</span><span class="s7d0">keys</span><span class="s1388">())</span><span class="sfa0">.</span><span class="s7d0">annotate</span><span class="s1388">(</span><span class="s7d0">specific_value</span><span class="sfa0">=</span><span class="s7d0">Case</span><span class="s1388">(</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="sfa0">*</span><span class="s7d0">cases</span><span class="s1388">,</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s7d0">output_field</span><span class="sfa0">=</span><span class="s7d0">FloatField</span><span class="s1388">()</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s1388">))</span><span class="sfa0">.</span><span class="s7d0">order_by</span><span class="s1388">(</span><span class="s7d0">specific_value</span><span class="s1388">)</span></code></pre>
+</div>
 <h2 id="詳しい説明">詳しい説明</h2>
 
 <p><a href="https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/">Conditional Expressions | Django documentation | Django</a></p>
@@ -121,8 +120,7 @@ Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(
     ga('send', 'pageview');
 </script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 </html>
