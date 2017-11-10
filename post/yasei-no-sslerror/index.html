@@ -46,24 +46,20 @@
 
 <p>それなりにpythonの<a href="http://docs.python-requests.org/en/master/">requests</a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの<code>requests.exceptions.SSLError</code>が発生しました。</p>
 
-<pre><code>requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'
-</code></pre>
+<p><code>requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'</code></p>
 
 <p>おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。</p>
 
 <p>とりあえず<code>verify=False</code>を指定しても一度チャレンジです。</p>
-
-<pre><code>import requests
- 
-req = requests.get('https://damedayo.com/', verify=False)
-print req.text
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">requests</span><span class="s1f40">
+</span><span class="s1f40"> 
+</span><span class="s1f40"></span><span class="s7d0">req</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">requests</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;https://damedayo.com/&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">verify</span><span class="sfa0">=</span><span class="s7d0">False</span><span class="s1388">)</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">req</span><span class="sfa0">.</span><span class="s7d0">text</span></code></pre>
+</div>
 <p>するとresponseが帰ってきました。</p>
 
-<pre><code>The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
-</code></pre>
+<p><code>The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.</code></p>
 
 <p>はーーーーんんんんんんん</p>
 
@@ -81,19 +77,17 @@ print req.text
 <p>pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。</p>
 
 <p>idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)</p>
-
-<pre><code>$ pip install pyOpenSSL --upgrade
-.....前略.....
-1 warning and 20 errors generated.
-error: command 'cc' failed with exit status 1
-
-----------------------------------------
-Failed building wheel for cryptography
-.....中略.....
-----------------------------------------
-Command &quot;/usr/bin/python -c &quot;import setuptools, tokenize;__file__='/private/tmp/pip-build-OtiuE0/cryptography/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))&quot; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&quot; failed with error code 1 in /private/tmp/pip-build-OtiuE0/cryptography
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ pip install pyOpenSSL --upgrade
+</span><span class="s1f40">.....前略.....
+</span><span class="s1f40"></span><span class="sc80">1</span><span class="s1f40"> warning and </span><span class="sc80">20</span><span class="s1f40"> errors generated.
+</span><span class="s1f40">error: </span><span class="s7d0">command</span><span class="s1f40"> </span><span class="sc1c">&#39;cc&#39;</span><span class="s1f40"> failed with </span><span class="s7d0">exit</span><span class="s1f40"> status </span><span class="sc80">1</span><span class="s1f40">
+</span><span class="s1f40">
+</span><span class="s1f40">----------------------------------------
+</span><span class="s1f40">Failed building wheel </span><span class="s3e8">for</span><span class="s1f40"> cryptography
+</span><span class="s1f40">.....中略.....
+</span><span class="s1f40">----------------------------------------
+</span><span class="s1f40">Command </span><span class="sc1c">&#34;/usr/bin/python -c &#34;</span><span class="s1f40">import setuptools, tokenize</span><span class="s1388">;</span><span class="s7d0">__file__</span><span class="s1f40"></span><span class="sfa0">=</span><span class="sc1c">&#39;/private/tmp/pip-build-OtiuE0/cryptography/setup.py&#39;</span><span class="s1388">;</span><span class="s1f40">exec</span><span class="sfa0">(</span><span class="s1f40">compile</span><span class="sfa0">(</span><span class="s1f40">getattr</span><span class="sfa0">(</span><span class="s1f40">tokenize, </span><span class="sc1c">&#39;open&#39;</span><span class="s1f40">, open</span><span class="sfa0">)(</span><span class="s1f40">__file__</span><span class="sfa0">)</span><span class="s1f40">.read</span><span class="sfa0">()</span><span class="s1f40">.replace</span><span class="sfa0">(</span><span class="sc1c">&#39;\r\n&#39;</span><span class="s1f40">, </span><span class="sc1c">&#39;\n&#39;</span><span class="sfa0">)</span><span class="s1f40">, __file__, </span><span class="sc1c">&#39;exec&#39;</span><span class="sfa0">))</span><span class="sc1c">&#34; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&#34;</span><span class="s1f40"> failed with error code </span><span class="sc80">1</span><span class="s1f40"> in /private/tmp/pip-build-OtiuE0/cryptography</span></code></pre>
+</div>
 <p>gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。</p>
 
 <p>ともあれcryptographyのインストールに失敗しているみたいです。</p>
@@ -105,18 +99,16 @@ Command &quot;/usr/bin/python -c &quot;import setuptools, tokenize;__file__='/pr
 <h2 id="opensslのアップデートで詰まる">openSSLのアップデートで詰まる</h2>
 
 <p>openSSLのバージョンが古いのかもと思ってアップデートしました。</p>
-
-<pre><code>$ brew upgrade openssl
-$ brew link openssl --force
-Warning: Refusing to link: openssl
-Linking keg-only openssl means you may end up linking against the insecure,
-deprecated system OpenSSL while using the headers from Homebrew's openssl.
-Instead, pass the full include/library paths to your compiler e.g.:
-  -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
-$ which openssl
-/usr/bin/openssl
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ brew upgrade openssl
+</span><span class="s1f40">$ brew link openssl --force
+</span><span class="s1f40">Warning: Refusing to link: openssl
+</span><span class="s1f40">Linking keg-only openssl means you may end up linking against the insecure,
+</span><span class="s1f40">deprecated system OpenSSL </span><span class="s3e8">while</span><span class="s1f40"> using the headers from Homebrew</span><span class="ss4">&#39;</span><span class="s1f40">s openssl.
+</span><span class="s1f40">Instead, pass the full include/library paths to your compiler e.g.:
+</span><span class="s1f40">  -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
+</span><span class="s1f40">$ which openssl
+</span><span class="s1f40">/usr/bin/openssl</span></code></pre>
+</div>
 <p>ウーーン詰まる詰まる。</p>
 
 <p>いまはこの方法で<a href="http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4">opensslへのリンクがはれない</a>ようです。。</p>
@@ -153,35 +145,31 @@ $ which openssl
 <p>ばっちり！！アップデートできたっぽい！！！！</p>
 
 <p>いざ！！</p>
-
-<pre><code>import requests
- 
-req = requests.get('https://damedayo.com/', verify=False)
-print req.text
-</code></pre>
-
-<pre><code>Traceback (most recent call last):
-  File &quot;eroge_translation_helpman.py&quot;, line 3, in &lt;module&gt;
-    import requests
-  File &quot;/Library/Python/2.7/site-packages/requests/__init__.py&quot;, line 52, in &lt;module&gt;
-    from .packages.urllib3.contrib import pyopenssl
-  File &quot;/Library/Python/2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py&quot;, line 48, in &lt;module&gt;
-    from cryptography import x509
-  File &quot;/Library/Python/2.7/site-packages/cryptography/x509/__init__.py&quot;, line 7, in &lt;module&gt;
-    from cryptography.x509.base import (
-  File &quot;/Library/Python/2.7/site-packages/cryptography/x509/base.py&quot;, line 15, in &lt;module&gt;
-    from cryptography.hazmat.primitives.asymmetric import dsa, ec, rsa
-  File &quot;/Library/Python/2.7/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py&quot;, line 14, in &lt;module&gt;
-    from cryptography.hazmat.backends.interfaces import RSABackend
-  File &quot;/Library/Python/2.7/site-packages/cryptography/hazmat/backends/__init__.py&quot;, line 7, in &lt;module&gt;
-    import pkg_resources
-  File &quot;/Library/Python/2.7/site-packages/pkg_resources/__init__.py&quot;, line 72, in &lt;module&gt;
-    import packaging.requirements
-  File &quot;/Library/Python/2.7/site-packages/packaging/requirements.py&quot;, line 59, in &lt;module&gt;
-    MARKER_EXPR = originalTextFor(MARKER_EXPR())(&quot;marker&quot;)
-TypeError: __call__() takes exactly 2 arguments (1 given)
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">requests</span><span class="s1f40">
+</span><span class="s1f40"> 
+</span><span class="s1f40"></span><span class="s7d0">req</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">requests</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;https://damedayo.com/&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">verify</span><span class="sfa0">=</span><span class="s7d0">False</span><span class="s1388">)</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">req</span><span class="sfa0">.</span><span class="s7d0">text</span></code></pre>
+</div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s7d0">Traceback</span><span class="s1f40"> </span><span class="s1388">(</span><span class="s7d0">most</span><span class="s1f40"> </span><span class="s7d0">recent</span><span class="s1f40"> </span><span class="s7d0">call</span><span class="s1f40"> </span><span class="s7d0">last</span><span class="s1388">):</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;eroge_translation_helpman.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">requests</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/requests/__init__.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">52</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">.packages.urllib3.contrib</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">pyopenssl</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">48</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">cryptography</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">x509</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/cryptography/x509/__init__.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">7</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">cryptography.x509.base</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s1388">(</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/cryptography/x509/base.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">15</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">cryptography.hazmat.primitives.asymmetric</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">dsa</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">ec</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">rsa</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">14</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">cryptography.hazmat.backends.interfaces</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">RSABackend</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/cryptography/hazmat/backends/__init__.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">7</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">pkg_resources</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/pkg_resources/__init__.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">72</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">packaging.requirements</span><span class="s1f40">
+</span><span class="s1f40">  </span><span class="s7d0">File</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;/Library/Python/2.7/site-packages/packaging/requirements.py&#34;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">line</span><span class="s1f40"> </span><span class="sc80">59</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="sfa0">&lt;</span><span class="s7d0">module</span><span class="sfa0">&gt;</span><span class="s1f40">
+</span><span class="s1f40">    </span><span class="s7d0">MARKER_EXPR</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">originalTextFor</span><span class="s1388">(</span><span class="s7d0">MARKER_EXPR</span><span class="s1388">())(</span><span class="sc1c"></span><span class="sc1c">&#34;marker&#34;</span><span class="s1388">)</span><span class="s1f40">
+</span><span class="s1f40"></span><span class="s7d8">TypeError</span><span class="s1388">:</span><span class="s1f40"> </span><span class="s7d0">__call__</span><span class="s1388">()</span><span class="s1f40"> </span><span class="s7d0">takes</span><span class="s1f40"> </span><span class="s7d0">exactly</span><span class="s1f40"> </span><span class="sc80">2</span><span class="s1f40"> </span><span class="s7d0">arguments</span><span class="s1f40"> </span><span class="s1388">(</span><span class="sc80">1</span><span class="s1f40"> </span><span class="s7d0">given</span><span class="s1388">)</span></code></pre>
+</div>
 <p>・・・・・・・・・・・。</p>
 
 <p>もう。</p>

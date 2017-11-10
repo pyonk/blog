@@ -41,14 +41,10 @@
                 
 
 <p>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。</p>
-
-<pre><code>$ less /var/log/cron
-</code></pre>
-
-<pre><code>Feb  6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge)
-Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ less /var/log/cron</span></code></pre>
+</div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">Feb  </span><span class="sc80">6</span><span class="s1f40"> </span><span class="sc80">00</span><span class="s1f40">:15:01 ip-000-00-00-000 CROND</span><span class="sfa0">[</span><span class="sc80">16356</span><span class="sfa0">]</span><span class="s1f40">: </span><span class="sfa0">(</span><span class="s1f40">user</span><span class="sfa0">)</span><span class="s1f40"> CMD </span><span class="sfa0">(</span><span class="s1f40">python /home/user/app/manage.py hogehoge</span><span class="sfa0">)</span><span class="s1f40">
+</span><span class="s1f40">Feb  </span><span class="sc80">6</span><span class="s1f40"> </span><span class="sc80">00</span><span class="s1f40">:15:01 ip-000-00-00-000 CROND</span><span class="sfa0">[</span><span class="sc80">16357</span><span class="sfa0">]</span><span class="s1f40">: </span><span class="sfa0">(</span><span class="s1f40">user</span><span class="sfa0">)</span><span class="s1f40"> CMD </span><span class="sfa0">(</span><span class="s1f40">user python /home/user/app/manage.py hogehoge</span><span class="sfa0">)</span></code></pre>
+</div>
 <h5 id="追記">追記</h5>
 
 <p><em>上記のコマンドの</em><br />
@@ -66,19 +62,15 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 <h2 id="etc-crontab">/etc/crontab</h2>
 
 <p>まず初めにcronを設定したときはこのこをいじっていました。</p>
-
-<pre><code>$ sudo vim /etc/crontab
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ sudo vim /etc/crontab</span></code></pre>
+</div>
 <p>ですね。</p>
 
 <h2 id="crontab-e">crontab -e</h2>
 
 <p>何を思ったのかこっちでも設定していたような気がしました。</p>
-
-<pre><code>$ crontab -l
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ crontab -l</span></code></pre>
+</div>
 <p>で確認することができます。</p>
 
 <p>案の定同じコマンドが同じ時間で実行されるように設定されておりました。</p>
@@ -91,11 +83,9 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 <code>/etc/crontab</code>は他のユーザーのcronもまとめて設定できるようなのですね。</p>
 
 <p>たとえば</p>
-
-<pre><code>* * * * * user echo 'fugafuga'
-* * * * * user2 echo 'hogehoge'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">* * * * * user </span><span class="s7d0">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;fugafuga&#39;</span><span class="s1f40">
+</span><span class="s1f40">* * * * * user2 </span><span class="s7d0">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;hogehoge&#39;</span></code></pre>
+</div>
 <p>のような感じです。</p>
 
 <p>対して、<code>crontab -e</code>だと、今現在のユーザーのcronが設定できます。
@@ -104,22 +94,14 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 <p><code>/etc/crontab</code>と<code>crontab -e</code>は別物なんですね。</p>
 
 <p>さっきの例だと</p>
-
-<pre><code>$ sudo vim /etc/crontab
-</code></pre>
-
-<pre><code>* * * * * user echo 'fugafuga'
-* * * * * user2 echo 'hogehoge'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ sudo vim /etc/crontab</span></code></pre>
+</div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">* * * * * user </span><span class="s7d0">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;fugafuga&#39;</span><span class="s1f40">
+</span><span class="s1f40">* * * * * user2 </span><span class="s7d0">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;hogehoge&#39;</span></code></pre>
+</div>
 <p>とするのと</p>
-
-<pre><code>$ crontab -e -u user
-</code></pre>
-
-<pre><code>* * * * * echo 'fugafuga'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ crontab -e -u user</span></code></pre>
+</div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">* * * * * </span><span class="s7d0">echo</span><span class="s1f40"> </span><span class="sc1c">&#39;fugafuga&#39;</span></code></pre>
+</div>
 <p>とするのと別のコマンドとして実行されるということです。</p>
 
 <p>ややこしいですね〜〜。</p>
@@ -127,10 +109,8 @@ Feb  6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/use
 <h1 id="最後に">最後に</h1>
 
 <p><code>-e</code>と<code>-r</code>を間違えないようにしたいですね。</p>
-
-<pre><code>$ crontab -r
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ crontab -r</span></code></pre>
+</div>
 <p><strong>crontabの設定全部消えちゃいます。</strong></p>
 
             </section>
