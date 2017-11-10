@@ -24,7 +24,8 @@ databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
- TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &#39;1&#39;: 100.0, &#39;2&#39;: 50.0, &#39;3&#39;: 25.0, &#39;4&#39;: 123.4, &#39;5&#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django</description>
+ TL;DR fromdjnago.db.modelsimportCase,When,Value,FloatField# { pid: specific_value, }specific_values={&amp;#39;1&amp;#39;:100.0,&amp;#39;2&amp;#39;:50.0,&amp;#39;3&amp;#39;:25.0,&amp;#39;4&amp;#39;:123.4,&amp;#39;5&amp;#39;:599.33,}# sqlのCASE式にしたい条件のリストcases=[]# casesにCASE式にしたい条件をつめていくforpid,specific_valueinspecific_values.items():cases.append(When(id=pid,then=Value(specific_value)))# Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byするHoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(*cases,output_field=FloatField())).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django
+TIPS  casesに条件をつめこむため、Caseインスタンスを作成する際に、*で展開してあげないといけない。  ここだけ気をつければ非常に便利（使い所があまりないのが玉に瑕）。</description>
     </item>
     
     <item>
@@ -58,14 +59,16 @@ macではAppleScriptを使うみたいですね。
       <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</guid>
-      <description>pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+      <description> pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
 事前準備  reportlab
 $ pip install reportlab  PyPDF2
-$ pip install pypdf2   コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &#39;title&#39; # fontを変更 pdfmetrics.registerFont(TTFont(&#39;Mplus1p-Light&#39;, &#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;)) template_path = &#39;template.pdf&#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description>
+$ pip install pypdf2   コード #! /usr/bin/python# -*- coding: utf-8 -*-fromreportlab.pdfgenimportcanvasfromreportlab.lib.pagesizesimportA4fromreportlab.pdfbaseimportpdfmetricsfromreportlab.pdfbase.ttfontsimportTTFontfromPyPDF2.pdfimportPdfFileReader,PdfFileWriterfromioimportBytesIOtitle=&amp;#39;title&amp;#39;# fontを変更pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;,&amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;))template_path=&amp;#39;template.pdf&amp;#39;# 読み込みreader=PdfFileReader(template_path)existing_page=reader.getPage(0)page_width=existing_page.mediaBox.getWidth()page_height=existing_page.mediaBox.getHeight()# 直接フォームに入力するのではないのでstreamとしてもっておくpacket=BytesIO()c=canvas.Canvas(packet,pagesize=A4)c.setFont(&amp;#39;Mplus1p-Light&amp;#39;,17)# titleはセンタリングc.drawCentredString(page_width/2,page_height-20,title)# formfieldsを取得fields=reader.trailer[&amp;#39;/Root&amp;#39;][&amp;#39;/AcroForm&amp;#39;][&amp;#39;/Fields&amp;#39;]forfinfields:field=f.getObject()# formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]rect=field.get(&amp;#39;/Rect&amp;#39;,[0.0,0.0])key=field.get(&amp;#39;/T&amp;#39;,&amp;#39;&amp;#39;)c.setFont(&amp;#39;Mplus1p-Light&amp;#39;,9)# 微調整c.drawString(float(rect[0])+3,float(rect[1])+3,key)c.save()# パケットの読み込みを先頭に戻すpacket.seek(0)new_pdf=PdfFileReader(packet)# テンプレートと書き込んだ内容をマージexisting_page.mergePage(new_pdf.getPage(0))# writerを用意writer=PdfFileWriter()writer.addPage(existing_page)# 書き込みwithopen(&amp;#39;output.pdf&amp;#39;,&amp;#39;wb&amp;#39;)asoutput_file:writer.write(output_file)  見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。
+おまけ ただフォームを埋めたいだけの場合
+#! /usr/bin/python# -*- coding: utf-8 -*-fromPyPDF2.pdfimportPdfFileReader,PdfFileWritertemplate_path=&amp;#39;template.pdf&amp;#39;# 読み込みreader=PdfFileReader(template_path)existing_page=reader.getPage(0)page_width=existing_page.mediaBox.getWidth()page_height=existing_page.mediaBox.getHeight()# formfieldsを取得fields=reader.getFormTextFields()# formの値を更新forkeyinfields:fields[key]=key# writerを用意writer=PdfFileWriter()# 上書きwriter.updatePageFormFieldValues(existing_page,fields)writer.addPage(existing_page)# 書き込みwithopen(&amp;#39;output.pdf&amp;#39;,&amp;#39;wb&amp;#39;)asoutput_file:writer.write(output_file) </description>
     </item>
     
     <item>
@@ -96,9 +99,18 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
       
       <guid>https://pyonk.github.io/blog/post/python-copy/</guid>
       <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+hoge={1:1,2:2,3:3}printid(hoge)# 140418104920496fuga=hogeprintid(fuga)# 140418104920496fuga.update({4:4})printhoge==fuga# True  Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.</description>
+hoge={1:1,2:2,3:3}printid(hoge)# 140418104920496fuga=hoge.copy()printid(fuga)# 140418107009728fuga.update({4:4})printhoge==fuga# Falseprinthoge# {1:1, 2:2, 3:3}printfuga# {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.copy()が簡単ですね。
+ちなみに、リストの場合はcopy_list = original_list[:]でコピーが取れます。
+ただこれだと浅いコピーになります。
+なので
+hoge={1:{2:2,3:3}}printid(hoge)# 140418104920496fuga=hoge.copy()printid(fuga)# 140418107009728fuga[1].update({4:4})printhoge==fuga# Trueprinthoge# {1: {2: 2, 3: 3, 4: 4}}printfuga# {1: {2: 2, 3: 3, 4: 4}}  となってしまいます。
+浅いコピーの場合は
+ 元のオブジェクト中に見つかったオブジェクトに対する 参照 を挿入  するようです。
+深いコピー 上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。
+それを回避するために、copyモジュールをimportして、深いコピーを利用します。
+importcopyhoge={1:{2:2,3:3}}printid(hoge)# 140418104920496fuga=copy.deepcopy(hoge)printid(fuga)# 140418107009728fuga[1].update({4:4})printhoge==fuga# Falseprinthoge# {1: {2: 2, 3: 3}}printfuga# {1: {2: 2, 3: 3, 4: 4}}  あら素敵。</description>
     </item>
     
     <item>

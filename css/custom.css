@@ -81,6 +81,8 @@ main {
 
 .entry-title a, .tag a, .category a {
     text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: thin;
 }
 .entry-title a::before {
     transition: border-color 0.1s linear;
@@ -94,7 +96,7 @@ main {
     border-left: none;
     border-bottom: none;
     transform: rotateZ(45deg);
-    margin-right: 8px;
+    margin-right: 10px;
 }
 .entry-title a:hover::before {
     transition: border-color 0.1s linear;
