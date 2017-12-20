@@ -42,9 +42,18 @@
     <item>
       <title>Django</title>
       <link>https://pyonk.github.io/blog/tags/django/</link>
-      <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
+      <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Facebook</title>
+      <link>https://pyonk.github.io/blog/tags/facebook/</link>
+      <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/facebook/</guid>
       <description></description>
     </item>
     
@@ -114,7 +123,7 @@
     <item>
       <title>Python</title>
       <link>https://pyonk.github.io/blog/tags/python/</link>
-      <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
+      <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/tags/python/</guid>
       <description></description>
