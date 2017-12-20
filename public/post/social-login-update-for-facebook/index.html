@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/blog/css/icomoon.css">
 <link rel="stylesheet" href="/blog/css/syntax.css">
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
-<title>Facebookのためにsocial loginをごにょごにょした話 - わいがかいた</title>
+<title>facebookのためにsocial loginをごにょごにょした話 - わいがかいた</title>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 
     <main role="main">
         <article itemscope itemtype="http://schema.org/BlogPosting">
-            <h1 class="entry-title" itemprop="headline">Facebookのためにsocial loginをごにょごにょした話</h1>
+            <h1 class="entry-title" itemprop="headline">facebookのためにsocial loginをごにょごにょした話</h1>
             <span class="entry-meta"><time itemprop="datePublished" datetime="2017-12-20">December 20, 2017</time><dl class="entry-categories"><dt class="category"><a href="/blog/categories/%e3%83%90%e3%83%83%e3%82%af%e3%82%a8%e3%83%b3%e3%83%89">バックエンド</a></dt></dl></span>
             
             <dl class="entry-tags">
@@ -60,10 +60,7 @@
 
 </p>
 
-<blockquote>
-<p>In 90 days, we&rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.<br />
-This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More
-
+<p>
 <figure style="text-align: center">
     
         <img src="/blog/images/social-login-update-for-facebook/message.png"   width="550"/>
@@ -76,11 +73,12 @@ This update comes in response to malicious activity we saw on our platform, and 
     
 </figure>
 
-</p>
-</blockquote>
+<br />
+&gt; In 90 days, we&rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.<br />
+This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More</p>
 
 <p>モニョモニョ言ってた。
-要するに90日以内にstatic modeにしないとだめだよってことかな</p>
+要するに90日以内にstrict modeにしないとだめだよってことかな</p>
 
 <p>いい機会なので見直すことにした。</p>
 
@@ -95,7 +93,7 @@ This update comes in response to malicious activity we saw on our platform, and 
 </ul></li>
 </ul>
 
-<h2 id="ソース読んで見た">ソース読んで見た</h2>
+<h2 id="実装方法を決めた">実装方法を決めた</h2>
 
 <ul>
 <li>ソースを読んでみたけど、facebookに対して何か特別なoptionがあるわけではなく、現状対応できてないっぽい。
@@ -106,7 +104,7 @@ This update comes in response to malicious activity we saw on our platform, and 
 <ul>
 <li><a href="https://github.com/python-social-auth/social-core/issues/141">social_core.backends.facebook.FacebookOAuth2 should have REDIRECT_STATE set to False · Issue #141 · python-social-auth/social-core</a></li>
 </ul></li>
-<li><code>redirect_state</code>を固定にするか、なくすかのどちらかなのだけど、<code>redirect_state</code>を固定にする方向で実装していく</li>
+<li><code>redirect_state</code>を固定にするか、なくすかのどちらかなのだけど、<code>redirect_state</code>を固定にする方向で実装していくことにした</li>
 </ul></li>
 </ul>
 
@@ -156,6 +154,8 @@ This update comes in response to malicious activity we saw on our platform, and 
 </span><span class="s1f40"></span><span class="s7d0">SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;{{static_state}}&#39;</span></code></pre>
 </div>
 <p>今の所こんな感じで問題なさそう。</p>
+
+<p>facebook側の設定も忘れずに:(</p>
 
             </section>
         </article>

@@ -1,6 +1,6 @@
 ---
-title: "Facebookのためにsocial loginをごにょごにょした話"
-description: "Facebookのためにsocial loginをごにょごにょした話"
+title: "facebookのためにsocial loginをごにょごにょした話"
+description: "facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている"
 date: 2017-12-20T13:54:50+09:00
 draft: false
 categories:
@@ -15,13 +15,12 @@ slug: "social-login-update-for-facebook"
 facebookに見慣れぬアラートが。
 {{< img src="/blog/images/social-login-update-for-facebook/alert.png" title="突然のアラート" width="550">}}  
 
+{{< img src="/blog/images/social-login-update-for-facebook/message.png" title="難しい英文" width="550">}}  
 > In 90 days, we're making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.  
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More
-{{< img src="/blog/images/social-login-update-for-facebook/message.png" title="難しい英文" width="550">}}  
-
 
 モニョモニョ言ってた。
-要するに90日以内にstatic modeにしないとだめだよってことかな
+要するに90日以内にstrict modeにしないとだめだよってことかな
 
 いい機会なので見直すことにした。
 
@@ -30,11 +29,11 @@ This update comes in response to malicious activity we saw on our platform, and 
 に乗り換えた。
     * [ドキュメント](http://python-social-auth.readthedocs.io/en/latest/index.html)よんで、もろもろの`settings.py`の設定変更
 
-## ソース読んで見た
+## 実装方法を決めた
 * ソースを読んでみたけど、facebookに対して何か特別なoptionがあるわけではなく、現状対応できてないっぽい。
     * issueにあがってた
         * [social_core.backends.facebook.FacebookOAuth2 should have REDIRECT_STATE set to False · Issue #141 · python-social-auth/social-core](https://github.com/python-social-auth/social-core/issues/141)
-    * `redirect_state`を固定にするか、なくすかのどちらかなのだけど、`redirect_state`を固定にする方向で実装していく
+    * `redirect_state`を固定にするか、なくすかのどちらかなのだけど、`redirect_state`を固定にする方向で実装していくことにした
 
 ## backendを自作した
 といってもまったく難しいことはしてなくて、クラスを継承して、対象メソッドを上書きしただけ。
@@ -86,3 +85,5 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE = '{{static_state}}'
 ```
 今の所こんな感じで問題なさそう。
+
+facebook側の設定も忘れずに:(
