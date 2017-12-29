@@ -16,6 +16,7 @@ facebookに見慣れぬアラートが。
 {{< img src="/blog/images/social-login-update-for-facebook/alert.png" title="突然のアラート" width="550">}}  
 
 {{< img src="/blog/images/social-login-update-for-facebook/message.png" title="難しい英文" width="550">}}  
+
 > In 90 days, we're making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.  
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More
 
