@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
@@ -65,7 +63,7 @@
 <h1 id="confを変更">confを変更</h1>
 
 <p>image_filterを加えます。
-くわしいことは<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ</a>をみてください。</p>
+くわしいことは<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter" target="_blank">ここ</a>をみてください。</p>
 <div class="highlight"><pre class="chroma"><code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf"><span class="s1f40">location ~ /image/(.*\.png)$ {
 </span><span class="s1f40">        alias /path/to/image/$1;
 </span><span class="s1f40">            image_filter resize 100 -; # 横幅100pxでリサイズする

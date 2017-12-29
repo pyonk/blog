@@ -5,6 +5,7 @@ title: "わいがかいた"
 disqusShortname: "pyonk"
 enableEmoji: true
 metaDataFormat: "yaml"
+theme: "hugo-zen"
 noTimes: true
 GoogleAnalytics: "UA-85825684-1"
 pygmentsUseClasses: true
@@ -23,7 +24,8 @@ Params:
   copyright: "pyonk All rights reserved."
   # analytics: "UA-85825684-1"
   #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-  blackfriday:
-   hrefTargetBlank: true
+
+blackfriday:
+  hrefTargetBlank: true
 
 Copyright: "pyonk"

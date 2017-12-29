@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
@@ -70,7 +68,7 @@
 
 <p>この前書いたような感じです。</p>
 
-<p><a href="https://pyonk.github.io/blog/post/python-tuple/">pythonでtupleをつくる - わいがかいた</a></p>
+<p><a href="https://pyonk.github.io/blog/post/python-tuple/" target="_blank">pythonでtupleをつくる - わいがかいた</a></p>
 
 <p>結局、レスポンスが帰ってくるのは10秒後・・・。
 ここ工夫するとどうにかなるような気もする。</p>
@@ -79,7 +77,7 @@
 
 <h2 id="celeryを使う">celeryを使う</h2>
 
-<p><a href="http://docs.celeryproject.org/en/latest/index.html">Celery - Distributed Task Queue — Celery 4.0.2 documentation</a></p>
+<p><a href="http://docs.celeryproject.org/en/latest/index.html" target="_blank">Celery - Distributed Task Queue — Celery 4.0.2 documentation</a></p>
 
 <p>ようやく本題。</p>
 
@@ -111,7 +109,7 @@
 
 <h3 id="how-to">how to</h3>
 
-<p><a href="https://github.com/celery/celery/tree/master/examples/django/">ここ</a>を参考にモリモリかいていきます。</p>
+<p><a href="https://github.com/celery/celery/tree/master/examples/django/" target="_blank">ここ</a>を参考にモリモリかいていきます。</p>
 
 <ul>
 <li>proj/__init__.py</li>
@@ -206,10 +204,10 @@
 
 <p>というのもamqpというライブラリの中で使われている<code>struct.pack</code>が原因のようです。</p>
 
-<p><a href="https://github.com/celery/kombu/issues/609">struct Type Error when consume internal log message. · Issue #609 · celery/kombu</a>をみるとスッキリします。</p>
+<p><a href="https://github.com/celery/kombu/issues/609" target="_blank">struct Type Error when consume internal log message. · Issue #609 · celery/kombu</a>をみるとスッキリします。</p>
 
 <p>どうやらpythonのバグのようですね。<br />
-<a href="https://bugs.python.org/issue19099">Issue 19099: struct.pack fails first time with unicode fmt - Python tracker</a></p>
+<a href="https://bugs.python.org/issue19099" target="_blank">Issue 19099: struct.pack fails first time with unicode fmt - Python tracker</a></p>
 
 <p>該当箇所を<code>str</code>に変えてしまうと無事起動しました。</p>
 

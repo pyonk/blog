@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
@@ -42,7 +40,7 @@
 
 <h1 id="pythonのthreadで引数を渡したい">pythonのthreadで引数を渡したい</h1>
 
-<p><a href="http://d.hatena.ne.jp/salexkidd/20090918">Djangoで時間のかかる処理をスレッド化して逃げ</a>ようとしたのですがうまくいかなかったのでメモ。</p>
+<p><a href="http://d.hatena.ne.jp/salexkidd/20090918" target="_blank">Djangoで時間のかかる処理をスレッド化して逃げ</a>ようとしたのですがうまくいかなかったのでメモ。</p>
 
 <p><code>threading.Thread</code>にはいくつか引数が渡せます。</p>
 
@@ -54,7 +52,7 @@
 <li>kwargs</li>
 </ul>
 
-<p>詳しくは<a href="http://docs.python.jp/2/library/threading.html">ここ</a>で。</p>
+<p>詳しくは<a href="http://docs.python.jp/2/library/threading.html" target="_blank">ここ</a>で。</p>
 
 <p>で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3e8">def</span><span class="s1f40"> </span><span class="s7d9">command_execute</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">):</span><span class="s1f40">

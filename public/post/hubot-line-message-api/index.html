@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
@@ -46,7 +44,7 @@
             <section itemprop="entry-text">
                 
 
-<p>ソースは<a href="https://github.com/pyonk/hubot-line-message-api">ここです。</a></p>
+<p>ソースは<a href="https://github.com/pyonk/hubot-line-message-api" target="_blank">ここです。</a></p>
 
 <h1 id="使い方">使い方</h1>
 
@@ -65,7 +63,7 @@
 
 <h1 id="hubot-line-message-api">hubot-line-message-api</h1>
 
-<p>結構ガバガバ実装なので<a href="https://devdocs.line.me/ja/">API Reference</a>をしっかり読んでからやるのをオススメします。</p>
+<p>結構ガバガバ実装なので<a href="https://devdocs.line.me/ja/" target="_blank">API Reference</a>をしっかり読んでからやるのをオススメします。</p>
 
 <h2 id="設定">設定</h2>
 
@@ -92,7 +90,7 @@
 
 <ul>
 <li>herokuで走らす場合は必須かなと思います。</li>
-<li><a href="https://elements.heroku.com/addons/fixie">Fixie</a>というアドオンを使います。</li>
+<li><a href="https://elements.heroku.com/addons/fixie" target="_blank">Fixie</a>というアドオンを使います。</li>
 <li><code>$ heroku addons:create fixie:tricycle</code>を叩くと自動で設定されています。</li>
 <li>出力されるIPアドレスを<code>Server IP Whitelist</code>に設定してあげてください。</li>
 </ul></li>
@@ -109,7 +107,7 @@
 <li>テキスト</li>
 </ul>
 
-<p><a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></p>
+<p><a href="https://devdocs.line.me/ja/#text" target="_blank">https://devdocs.line.me/ja/#text</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^テキスト$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
@@ -120,8 +118,8 @@
 <li>画像と動画</li>
 </ul>
 
-<p><a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a>
-<a href="https://devdocs.line.me/ja/#video">https://devdocs.line.me/ja/#video</a></p>
+<p><a href="https://devdocs.line.me/ja/#image" target="_blank">https://devdocs.line.me/ja/#image</a>
+<a href="https://devdocs.line.me/ja/#video" target="_blank">https://devdocs.line.me/ja/#video</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^画像$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
@@ -135,7 +133,7 @@
 <li>ボタン</li>
 </ul>
 
-<p><a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></p>
+<p><a href="https://devdocs.line.me/ja/#buttons" target="_blank">https://devdocs.line.me/ja/#buttons</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^テキスト$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
@@ -156,7 +154,7 @@
 <li>カルーセル</li>
 </ul>
 
-<p><a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></p>
+<p><a href="https://devdocs.line.me/ja/#carousel" target="_blank">https://devdocs.line.me/ja/#carousel</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^カルーセル$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
 </span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
