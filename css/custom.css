@@ -1,24 +1,24 @@
 body {
-    font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #FCFCFC;
+    font-family: sans-serif;
 }
 
 h1 {
-    font-size: 2.1rem;
+    /* font-size: 2.1rem; */
 }
 
 h2 {
-    font-size: 1.9rem;
+    font-size: 2.5rem;
 }
 
 h3 {
-    font-size: 1.7rem;
+    font-size: 2.3rem;
     color: #EA4C89;
 }
 
 h4 {
     color: #44C0FF;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h5 {
@@ -32,7 +32,7 @@ h6 {
 }
 
 em{
-    font-size: 0.6rem;
+    /* font-size: 0.6rem; */
 }
 
 img {
@@ -95,7 +95,8 @@ main {
     border-left: none;
     border-bottom: none;
     transform: rotateZ(45deg);
-    margin-right: 10px;
+    margin-right: 15px;
+    margin-bottom: 3px;
 }
 .entry-title a:hover::before {
     transition: border-color 0.1s linear;
@@ -133,7 +134,7 @@ main {
 
 
 [itemprop=entry-text] h1 {
-    font-size: 2.1rem;
+    font-size: 3rem;
     border-left: 3px solid #44C0FF;
     padding: 5px 0px 5px 15px;
     color: #777;
@@ -157,7 +158,7 @@ blockquote p {
     font-weight: 300;
     font-size: 1.7rem;
     border-left: solid 0.4rem #F0F0F0;
-    padding: 0.7rem;
+    padding: 0.7rem 0.7rem 0.7rem 1.5rem;
     quotes: none;
     color: #777;
 }
@@ -184,4 +185,20 @@ dt.tag {
 /* list */
 .list-title i{
     margin-right: 10px;
+}
+
+/* image */
+figure {
+    position: relative;
+}
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    width: calc(100% - 2rem);
+    color: white;
+    padding: 1rem;
+}
+figcaption span {
+    font-size: 1.2rem;
 }

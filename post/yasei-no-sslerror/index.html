@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
@@ -44,7 +42,7 @@
 
 <h1 id="ナゾのrequests-exceptions-sslerror">ナゾのrequests.exceptions.SSLError</h1>
 
-<p>それなりにpythonの<a href="http://docs.python-requests.org/en/master/">requests</a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの<code>requests.exceptions.SSLError</code>が発生しました。</p>
+<p>それなりにpythonの<a href="http://docs.python-requests.org/en/master/" target="_blank">requests</a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの<code>requests.exceptions.SSLError</code>が発生しました。</p>
 
 <p><code>requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'</code></p>
 
@@ -65,12 +63,12 @@
 
 <p>何はともあれ、ググります。</p>
 
-<p><a href="http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors">みっけた</a>。</p>
+<p><a href="http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors" target="_blank">みっけた</a>。</p>
 
 <p>ん〜〜〜やはりバーチャルホスト周りっぽい。
 というか<strong>pythonのバージョンが<code>2.7.9</code>以上であれば問題ないんか</strong>。コレ。</p>
 
-<p>解決策として<a href="https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484">Stack Overflowへのリンク</a>が貼ってありますね。こういうこともあるのね。初めて見た。</p>
+<p>解決策として<a href="https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484" target="_blank">Stack Overflowへのリンク</a>が貼ってありますね。こういうこともあるのね。初めて見た。</p>
 
 <h1 id="pip-install-pyopensslで詰む">pip install pyOpenSSLで詰む</h1>
 
@@ -94,7 +92,7 @@
 
 <p>ぐぐります。</p>
 
-<p>例によって<a href="http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py">Stack Overflow</a>です。</p>
+<p>例によって<a href="http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py" target="_blank">Stack Overflow</a>です。</p>
 
 <h2 id="opensslのアップデートで詰まる">openSSLのアップデートで詰まる</h2>
 
@@ -111,7 +109,7 @@
 </div>
 <p>ウーーン詰まる詰まる。</p>
 
-<p>いまはこの方法で<a href="http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4">opensslへのリンクがはれない</a>ようです。。</p>
+<p>いまはこの方法で<a href="http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4" target="_blank">opensslへのリンクがはれない</a>ようです。。</p>
 
 <p>PATHを通してあげます。</p>
 
@@ -176,7 +174,7 @@
 
 <p>ぐぐります・・・・・。</p>
 
-<p>見つけました。<a href="http://stackoverflow.com/a/41841210">Stack Overflow</a>本当にありがとう。</p>
+<p>見つけました。<a href="http://stackoverflow.com/a/41841210" target="_blank">Stack Overflow</a>本当にありがとう。</p>
 
 <p>setuptoolsが原因だったみたいですね。バージョンによってはエラーが出るようです。</p>
 

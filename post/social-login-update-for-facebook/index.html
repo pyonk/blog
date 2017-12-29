@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.29" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
 <link rel="stylesheet" href="/blog/css/custom.css">
@@ -52,7 +50,7 @@
     
     
     <figcaption>
-        <h5>突然のアラート</h5>
+        <span>突然のアラート</span>
         
     </figcaption>
     
@@ -67,7 +65,7 @@
     
     
     <figcaption>
-        <h5>難しい英文</h5>
+        <span>難しい英文</span>
         
     </figcaption>
     
@@ -88,11 +86,11 @@ This update comes in response to malicious activity we saw on our platform, and 
 <h2 id="python-social-authに乗り換えた">python-social-authに乗り換えた</h2>
 
 <ul>
-<li>まず、メンテされていなかった<a href="https://github.com/omab/django-social-auth">omab/django-social-auth: Django social authentication made simple</a>から<a href="https://github.com/python-social-auth/social-app-django">python-social-auth/social-app-django: Python Social Auth - Application - Django</a>
+<li>まず、メンテされていなかった<a href="https://github.com/omab/django-social-auth" target="_blank">omab/django-social-auth: Django social authentication made simple</a>から<a href="https://github.com/python-social-auth/social-app-django" target="_blank">python-social-auth/social-app-django: Python Social Auth - Application - Django</a>
 に乗り換えた。
 
 <ul>
-<li><a href="http://python-social-auth.readthedocs.io/en/latest/index.html">ドキュメント</a>よんで、もろもろの<code>settings.py</code>の設定変更</li>
+<li><a href="http://python-social-auth.readthedocs.io/en/latest/index.html" target="_blank">ドキュメント</a>よんで、もろもろの<code>settings.py</code>の設定変更</li>
 </ul></li>
 </ul>
 
@@ -105,7 +103,7 @@ This update comes in response to malicious activity we saw on our platform, and 
 <li>issueにあがってた
 
 <ul>
-<li><a href="https://github.com/python-social-auth/social-core/issues/141">social_core.backends.facebook.FacebookOAuth2 should have REDIRECT_STATE set to False · Issue #141 · python-social-auth/social-core</a></li>
+<li><a href="https://github.com/python-social-auth/social-core/issues/141" target="_blank">social_core.backends.facebook.FacebookOAuth2 should have REDIRECT_STATE set to False · Issue #141 · python-social-auth/social-core</a></li>
 </ul></li>
 <li><code>redirect_state</code>を固定にするか、なくすかのどちらかなのだけど、<code>redirect_state</code>を固定にする方向で実装していくことにした</li>
 </ul></li>
