@@ -81,8 +81,7 @@ main {
 
 .entry-title a, .tag a, .category a {
     text-decoration: none;
-    letter-spacing: 1px;
-    font-weight: thin;
+    letter-spacing: 0.1px;
 }
 .entry-title a::before {
     transition: border-color 0.1s linear;
