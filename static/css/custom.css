@@ -4,21 +4,21 @@ body {
 }
 
 h1 {
-    /* font-size: 2.1rem; */
+    font-size: 2.3rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
 }
 
 h3 {
-    font-size: 2.3rem;
+    font-size: 2.0rem;
     color: #EA4C89;
 }
 
 h4 {
     color: #44C0FF;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 h5 {
@@ -96,7 +96,6 @@ main {
     border-bottom: none;
     transform: rotateZ(45deg);
     margin-right: 15px;
-    margin-bottom: 3px;
 }
 .entry-title a:hover::before {
     transition: border-color 0.1s linear;
@@ -134,7 +133,6 @@ main {
 
 
 [itemprop=entry-text] h1 {
-    font-size: 3rem;
     border-left: 3px solid #44C0FF;
     padding: 5px 0px 5px 15px;
     color: #777;
