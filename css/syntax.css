@@ -1,4 +1,4 @@
-/* Background */ .chroma { background-color: #f0f3f3 }
+/* Background */ .chroma { background-color: #f0f3f3; border: 1px solid #E1E1E1; border-radius:4px }
 /* Error */ .chroma .ss4 { color: #aa0000; background-color: #ffaaaa }
 /* LineHighlight */ .chroma .hl { background-color: #ffffcc; display: block; width: 100% }
 /* LineNumbers */ .chroma .ln { ; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
