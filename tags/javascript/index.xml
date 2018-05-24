@@ -6,7 +6,7 @@
     <description>Recent content in Javascript on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk All rights reserved.</copyright>
+    <copyright>pyonk</copyright>
     <lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
@@ -21,14 +21,14 @@
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
-&amp;#34;dependencies&amp;#34;: { &amp;#34;bar&amp;#34;: &amp;#34;file:./hubot-line-message-api&amp;#34; }  からの
+&amp;#34;dependencies&amp;#34;: { &amp;#34;bar&amp;#34;: &amp;#34;file:./hubot-line-message-api&amp;#34; } からの
 $ hubot -a line-message-api
 でいけると思います。
 hubot-line-message-api 結構ガバガバ実装なのでAPI Referenceをしっかり読んでからやるのをオススメします。
 設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。   任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。  FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。   できること 今のところpushで送信は対応できておらず、返信しかできません。
  返信
  テキスト  https://devdocs.line.me/ja/#text
-module.exports = (robot) -&amp;gt;robot.hear/^テキスト$/,(res) -&amp;gt;res.replytype: &amp;#39;text&amp;#39;contents: [&amp;#39;nyaa&amp;#39;]   画像と動画  https://devdocs.</description>
+module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; res.reply type: &amp;#39;text&amp;#39; contents: [&amp;#39;nyaa&amp;#39;]  画像と動画  https://devdocs.</description>
     </item>
     
     <item>
@@ -38,14 +38,8 @@ module.exports = (robot) -&amp;gt;robot.hear/^テキスト$/,(res) -&amp;gt;res.
       
       <guid>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</guid>
       <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
-連想配列のなにかっぽい functionmyfunc(hoge,fuga){var{hogehoge}=hoge;var{hogeKey:hogeValue,}=hogehoge||{hogeKey:&amp;#39;&amp;#39;,}return{hogeKey,}}  上記が件のコード。
-けっか vardict1={keyA:{key1:1}};vardict2={keyB:{key1:2}};vardict3={keyA:{key2:3}};vardict4={keyC:{key2:4}};functionmyfunc(hoge){var{keyA}=hoge;console.log(keyA);//hoge.keyAの値 console.log({keyA});//keyAをキーに、keyAに代入されている値をバリューにした連想配列 var{key1:key1,}=keyA||{key1:&amp;#39;&amp;#39;,}console.log(key1);//keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。 return{key1,//key1をキーに、key1に代入されている値をバリューにした連想配列 }}myfunc(dict1);// {key1: 1} // {keyA: {key1: 1}} // 1 myfunc(dict2);// undefined // {keyA: undefined} // &amp;#39;&amp;#39; myfunc(dict3);// {key2: 3} // {keyA: {key2: 3}} // undefined myfunc(dict4);// undefined // {keyA: undefined} // &amp;#39;&amp;#39;  書いててよくわからなくなってきた。
-つまり {keyA}=dict 連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。
-これって vardict={keyA:&amp;#39;keyAだよ&amp;#39;};varkeyA=dict.keyA;  と一緒ですね。
-{key1: key1} = dict || {key1: &amp;ldquo;} 連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。
-これって vardict={key1:&amp;#39;key1だよ&amp;#39;};varkey1=dict.key1?key1:&amp;#39;&amp;#39;;  と一緒ですね。
-return {key1} 変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。
-varkey1=&amp;#39;hogehoge&amp;#39;;return{key1};// {key1: &amp;#39;hogehoge&amp;#39;}  これって varkey1=&amp;#39;key1だよ&amp;#39;;return{key1:key1};  と一緒ですね。</description>
+連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &amp;#39;&amp;#39;, } return { hogeKey, } }  上記が件のコード。
+けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値  console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列  var { key1: key1, } = keyA || { key1: &amp;#39;&amp;#39;, } console.</description>
     </item>
     
   </channel>

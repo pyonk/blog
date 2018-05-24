@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.40.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/blog/css/normalize.css">
+<link rel="stylesheet" href="/blog/css/skeleton.css">
+<link rel="stylesheet" href="/blog/css/custom.css">
+<link rel="stylesheet" href="/blog/css/icomoon.css">
+<link rel="stylesheet" href="/blog/css/syntax.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
+<title>vimで手軽にscpが利用できるfunctionを作ってみた - わいがかいた</title>
+</head>
+<body>
+
+<div class="container">
+
+    <header role="banner">
+        <div class="header-logo">
+            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
+        </div>
+        
+    </header>
+
+
+    <main role="main">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">vimで手軽にscpが利用できるfunctionを作ってみた</h1>
+            <span class="entry-meta"><time itemprop="datePublished" datetime="2018-01-21">January 21, 2018</time><dl class="entry-categories"><dt class="category"><a href="/blog/categories/%e3%81%a4%e3%81%8f%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f">つくってみた</a></dt></dl></span>
+            
+            <dl class="entry-tags">
+                
+                <dt class="tag"><a href="/blog/tags/vim">#vim</a></dt>
+                
+                <dt class="tag"><a href="/blog/tags/vimscript">#vimscript</a></dt>
+                
+            </dl>
+            
+            <section itemprop="entry-text">
+                
+
+<p>ようやくvimのキーバインドが手に馴染んできたなと思い始めてきた今日この頃です。
+開発にあたって、VM上のファイルを編集したいのですが、毎回scpしてとか、netrwを使ってリモートをブラウジングしてとかが煩わしくて、vimのコマンドとしてscpできたらなあと思って色々調べました。
+ローカルで編集したファイルをリモートに送るためのpluginは見つかりました。</p>
+
+<ul>
+<li><a href="https://github.com/zenbro/mirror.vim" target="_blank">zenbro/mirror.vim: Efficient way to edit remote files on multiple environments with Vim.</a>
+使い方は上記を参考にどうぞ。
+主に<code>:MirrorPush</code>を使ってます。
+ただ、リモートの特定のファイルのみをローカルにもってきたかったのですが、そのような機能は見当たらなかったため、作ってしまえとなりました。</li>
+</ul>
+
+<h1 id="how-to-use">how to use</h1>
+<div class="highlight"><pre class="chroma"><code class="language-vimscript" data-lang="vimscript">let s:remote_settings = {
+\    &#34;sitea&#34;: {
+\       &#34;protocol&#34;: &#34;sftp&#34;,
+\       &#34;addr&#34;: &#34;remote_ip&#34;,
+\       &#34;identity_file&#34;: &#34;&#34;,
+\       &#34;user&#34;: &#34;remote_user&#34;,
+\       &#34;remote_path&#34;: &#34;remote_path&#34;,
+\       &#34;local_path&#34;: &#34;local_path&#34;,
+\       &#34;list_hide&#34;: [&#34;\.pyc$&#34;],
+\   }
+\}
+
+function! s:RemoteScp(path, key)
+    if has_key(s:remote_settings, a:key)
+        let setting = s:remote_settings[a:key]
+        let tmp = tempname()
+        &#34; pathが絶対パスでくるので必要ない部分を削除
+        let path = substitute(a:path, setting.remote_path, &#34;&#34;, &#34;&#34;)
+        let local_path = setting.local_path . path
+        &#34; tmpに対象を保存
+        let scp_cmd = printf(&#34;:silent !scp %s@%s:%s%s %s&#34;, setting.user, setting.addr, setting.remote_path, path, tmp)
+        &#34; TODO yes no
+        execute scp_cmd
+        &#34; tmpのファイルがアクセスできるようならば、local_pathに移動させる
+        if filereadable(tmp)
+            let mkdir_cmd = &#34;:silent !mkdir -p &#34; . fnamemodify(local_path, &#34;:h&#34;)
+            execute mkdir_cmd
+            let mv_cmd = &#34;:silent !mv &#34; . join([tmp, local_path], &#34; &#34;)
+            execute mv_cmd
+            execute &#34;:tabe &#34; . local_path
+            &#34; NERDTreeを更新
+            &#34; execute &#34;:NERDTreeTabs &#34; . fnamemodify(local_path, &#34;:h&#34;) . &#34;/&#34;
+            execute &#34;:redraw!&#34;
+        else
+            execute &#34;:redraw!&#34;
+            echo local_path . &#34;: No such file or directory (remote scp)&#34;
+        endif
+    endif
+endfunction
+
+&#34; pathの補完機能
+function! s:CompletionRemote(setting, lead)
+    let setting = a:setting
+    &#34; ssh user@ipaddress ls -Adp
+    let base_cmd = &#34;ssh &#34; . setting.user . &#34;@&#34; . setting.addr . &#34; ls -Adp &#34;
+    &#34; leadがremote_pathで始まっていないときは修正
+    let lead = a:lead =~ &#34;^&#34; . setting.remote_path ? a:lead : setting.remote_path . a:lead
+    let ls_cmd = base_cmd . lead . &#34;*&#34;
+    let filter_cmd = printf(&#39;v:val =~ &#34;^%s&#34;&#39;, lead)
+    &#34; 表示させたくないものを弾く
+    let grep_base_cmd = len(setting.list_hide) &gt; 1 ? &#34; | grep -v --regexp={%s}&#34; : &#34; | grep -v --regexp=%s&#34;
+    let grep_cmd = printf(grep_base_cmd, join(setting.list_hide, &#34;,&#34;))
+    &#34; 候補の取得, list_hideがないならgrep_cmdは無視する
+    let result = len(setting.list_hide) &gt; 0 ? systemlist(ls_cmd . grep_cmd) : systemlist(ls_cmd)
+    return filter(result, filter_cmd)
+endfunction
+
+&#34; CompletionRemoteにどの設定を渡すかを決める, この例ではSiteAを渡す
+function! s:CompletionRemoteSiteA(ArgLead, CmdLine, CursorPos)
+    let ls_result = s:CompletionRemote(s:remote_settings[&#39;sitea&#39;], a:ArgLead)
+    return ls_result
+endfunction
+
+&#34; SiteAscp
+command! -nargs=? -complete=customlist,s:CompletionRemoteSiteA SiteAscp call s:RemoteScp(&lt;q-args&gt;, &#34;sitea&#34;)</code></pre></div>
+            </section>
+        </article>
+    </main>
+
+
+    <footer role="contentinfo">
+        <div class="hr"></div>
+        <div class="footer-link">
+            
+            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
+            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
+            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+        </div>
+        <div class="copyright">Copyright &copy; pyonk</div>
+    </footer>
+
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85825684-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
+

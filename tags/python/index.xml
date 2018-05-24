@@ -6,7 +6,7 @@
     <description>Recent content in Python on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk All rights reserved.</copyright>
+    <copyright>pyonk</copyright>
     <lastBuildDate>Wed, 20 Dec 2017 13:54:50 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
@@ -34,8 +34,7 @@ databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
- TL;DR fromdjnago.db.modelsimportCase,When,Value,FloatField# { pid: specific_value, }specific_values={&amp;#39;1&amp;#39;:100.0,&amp;#39;2&amp;#39;:50.0,&amp;#39;3&amp;#39;:25.0,&amp;#39;4&amp;#39;:123.4,&amp;#39;5&amp;#39;:599.33,}# sqlのCASE式にしたい条件のリストcases=[]# casesにCASE式にしたい条件をつめていくforpid,specific_valueinspecific_values.items():cases.append(When(id=pid,then=Value(specific_value)))# Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byするHoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(*cases,output_field=FloatField())).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django
-TIPS  casesに条件をつめこむため、Caseインスタンスを作成する際に、*で展開してあげないといけない。  ここだけ気をつければ非常に便利（使い所があまりないのが玉に瑕）。</description>
+ TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django</description>
     </item>
     
     <item>
@@ -69,16 +68,14 @@ macではAppleScriptを使うみたいですね。
       <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</guid>
-      <description> pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+      <description>pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
 事前準備  reportlab
-$ pip install reportlab  PyPDF2
-$ pip install pypdf2   コード #! /usr/bin/python# -*- coding: utf-8 -*-fromreportlab.pdfgenimportcanvasfromreportlab.lib.pagesizesimportA4fromreportlab.pdfbaseimportpdfmetricsfromreportlab.pdfbase.ttfontsimportTTFontfromPyPDF2.pdfimportPdfFileReader,PdfFileWriterfromioimportBytesIOtitle=&amp;#39;title&amp;#39;# fontを変更pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;,&amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;))template_path=&amp;#39;template.pdf&amp;#39;# 読み込みreader=PdfFileReader(template_path)existing_page=reader.getPage(0)page_width=existing_page.mediaBox.getWidth()page_height=existing_page.mediaBox.getHeight()# 直接フォームに入力するのではないのでstreamとしてもっておくpacket=BytesIO()c=canvas.Canvas(packet,pagesize=A4)c.setFont(&amp;#39;Mplus1p-Light&amp;#39;,17)# titleはセンタリングc.drawCentredString(page_width/2,page_height-20,title)# formfieldsを取得fields=reader.trailer[&amp;#39;/Root&amp;#39;][&amp;#39;/AcroForm&amp;#39;][&amp;#39;/Fields&amp;#39;]forfinfields:field=f.getObject()# formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]rect=field.get(&amp;#39;/Rect&amp;#39;,[0.0,0.0])key=field.get(&amp;#39;/T&amp;#39;,&amp;#39;&amp;#39;)c.setFont(&amp;#39;Mplus1p-Light&amp;#39;,9)# 微調整c.drawString(float(rect[0])+3,float(rect[1])+3,key)c.save()# パケットの読み込みを先頭に戻すpacket.seek(0)new_pdf=PdfFileReader(packet)# テンプレートと書き込んだ内容をマージexisting_page.mergePage(new_pdf.getPage(0))# writerを用意writer=PdfFileWriter()writer.addPage(existing_page)# 書き込みwithopen(&amp;#39;output.pdf&amp;#39;,&amp;#39;wb&amp;#39;)asoutput_file:writer.write(output_file)  見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。
-おまけ ただフォームを埋めたいだけの場合
-#! /usr/bin/python# -*- coding: utf-8 -*-fromPyPDF2.pdfimportPdfFileReader,PdfFileWritertemplate_path=&amp;#39;template.pdf&amp;#39;# 読み込みreader=PdfFileReader(template_path)existing_page=reader.getPage(0)page_width=existing_page.mediaBox.getWidth()page_height=existing_page.mediaBox.getHeight()# formfieldsを取得fields=reader.getFormTextFields()# formの値を更新forkeyinfields:fields[key]=key# writerを用意writer=PdfFileWriter()# 上書きwriter.updatePageFormFieldValues(existing_page,fields)writer.addPage(existing_page)# 書き込みwithopen(&amp;#39;output.pdf&amp;#39;,&amp;#39;wb&amp;#39;)asoutput_file:writer.write(output_file) </description>
+$ pip install reportlab PyPDF2
+$ pip install pypdf2  コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description>
     </item>
     
     <item>
@@ -92,7 +89,7 @@ $ pip install pypdf2   コード #! /usr/bin/python# -*- coding: utf-8 -*-fromre
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
 おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
 とりあえずverify=Falseを指定しても一度チャレンジです。
-importrequestsreq=requests.get(&amp;#39;https://damedayo.com/&amp;#39;,verify=False)printreq.text  するとresponseが帰ってきました。
+import requests req = requests.get(&amp;#39;https://damedayo.com/&amp;#39;, verify=False) print req.text するとresponseが帰ってきました。
 The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.
 はーーーーんんんんんんん
 何はともあれ、ググります。
@@ -101,7 +98,7 @@ The client software did not provide a hostname using Server Name Indication (SNI
 解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
 pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
 idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-$ pip install pyOpenSSL --upgrade .....前略..... 1warning and 20errors generated. error: command&amp;#39;cc&amp;#39;failed with exitstatus 1---------------------------------------- Failed building wheel forcryptography .</description>
+$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &amp;#39;cc&amp;#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography .</description>
     </item>
     
     <item>
@@ -111,18 +108,9 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1warning and 20errors generat
       
       <guid>https://pyonk.github.io/blog/post/python-copy/</guid>
       <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge={1:1,2:2,3:3}printid(hoge)# 140418104920496fuga=hogeprintid(fuga)# 140418104920496fuga.update({4:4})printhoge==fuga# True  Pythonistなら常識ですよね。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge={1:1,2:2,3:3}printid(hoge)# 140418104920496fuga=hoge.copy()printid(fuga)# 140418107009728fuga.update({4:4})printhoge==fuga# Falseprinthoge# {1:1, 2:2, 3:3}printfuga# {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.copy()が簡単ですね。
-ちなみに、リストの場合はcopy_list = original_list[:]でコピーが取れます。
-ただこれだと浅いコピーになります。
-なので
-hoge={1:{2:2,3:3}}printid(hoge)# 140418104920496fuga=hoge.copy()printid(fuga)# 140418107009728fuga[1].update({4:4})printhoge==fuga# Trueprinthoge# {1: {2: 2, 3: 3, 4: 4}}printfuga# {1: {2: 2, 3: 3, 4: 4}}  となってしまいます。
-浅いコピーの場合は
- 元のオブジェクト中に見つかったオブジェクトに対する 参照 を挿入  するようです。
-深いコピー 上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。
-それを回避するために、copyモジュールをimportして、深いコピーを利用します。
-importcopyhoge={1:{2:2,3:3}}printid(hoge)# 140418104920496fuga=copy.deepcopy(hoge)printid(fuga)# 140418107009728fuga[1].update({4:4})printhoge==fuga# Falseprinthoge# {1: {2: 2, 3: 3}}printfuga# {1: {2: 2, 3: 3, 4: 4}}  あら素敵。</description>
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.</description>
     </item>
     
     <item>
@@ -135,7 +123,7 @@ importcopyhoge={1:{2:2,3:3}}printid(hoge)# 140418104920496fuga=copy.deepcopy(hog
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
 pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
-importsubprocessimportshlexcmd=&amp;#39;nohup sleep 10 &amp;amp;&amp;#39;subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+import subprocess import shlex cmd = &amp;#39;nohup sleep 10 &amp;amp;&amp;#39; subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
 つぎ！
 thread化して逃げる この前書いたような感じです。
 pythonでtupleをつくる - わいがかいた
@@ -153,8 +141,7 @@ celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
 yum install redis
 bundleも用意されているのでそれも。
 pip install -U &amp;quot;celery[redis]&amp;quot;
-how to ここを参考にモリモリかいていきます。
- proj/__init__.py  from__future__importabsolute_import,unicode_literals# This will make sure the app is always imported when# Django starts so that shared_task will use this app.</description>
+how to ここを参考にモリモリかいていきます。</description>
     </item>
     
     <item>
@@ -167,12 +154,7 @@ how to ここを参考にモリモリかいていきます。
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
-defcommand_execute(cmd):printcmd# (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;)subprocess.Popen(cmd,shell=True)returncmd=&amp;#39;sleep 10;echo aaa&amp;#39;t=threading.Thread(target=command_execute,args=(cmd))t.daemon=Truet.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。
-調べてみると原因は「argsにtupleを渡してあげる」というところにありました。
-pythonでtupleをつくる tuple = (1, 2)
-基本はこれ。
-では、今回のように長さ1のtupleはどうやってつくるか
-長さ1のtuple tuple = (1)</description>
+def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;) subprocess.Popen(cmd, shell=True) return cmd = &amp;#39;sleep 10;echo aaa&amp;#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start() すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。</description>
     </item>
     
   </channel>

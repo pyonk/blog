@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -51,10 +51,9 @@
 <p><code>$ git clone https://github.com/pyonk/hubot-line-message-api.git</code></p>
 
 <p>からの</p>
-<div class="highlight"><pre class="chroma"><code class="language-json:package.json" data-lang="json:package.json"><span class="s1f40">&#34;dependencies&#34;: {
-</span><span class="s1f40">    &#34;bar&#34;: &#34;file:./hubot-line-message-api&#34;
-</span><span class="s1f40">}</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-json:package.json" data-lang="json:package.json"><span class="s2">&#34;dependencies&#34;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&#34;bar&#34;</span><span class="p">:</span> <span class="s2">&#34;file:./hubot-line-message-api&#34;</span>
+<span class="p">}</span></code></pre></div>
 <p>からの</p>
 
 <p><code>$ hubot -a line-message-api</code></p>
@@ -108,100 +107,95 @@
 </ul>
 
 <p><a href="https://devdocs.line.me/ja/#text" target="_blank">https://devdocs.line.me/ja/#text</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^テキスト$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">type: </span><span class="sc1c">&#39;text&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">contents: </span><span class="s1388">[</span><span class="sc1c">&#39;nyaa&#39;</span><span class="s1388">]</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
+    <span class="nx">robot</span><span class="p">.</span><span class="nx">hear</span> <span class="sr">/^テキスト$/</span><span class="p">,</span> <span class="nf">(res) -&gt;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">reply</span>
+            <span class="nv">type: </span><span class="s">&#39;text&#39;</span>
+            <span class="nv">contents: </span><span class="p">[</span><span class="s">&#39;nyaa&#39;</span><span class="p">]</span></code></pre></div>
 <ul>
 <li>画像と動画</li>
 </ul>
 
 <p><a href="https://devdocs.line.me/ja/#image" target="_blank">https://devdocs.line.me/ja/#image</a>
 <a href="https://devdocs.line.me/ja/#video" target="_blank">https://devdocs.line.me/ja/#video</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^画像$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7df">type</span><span class="sfa0">:</span><span class="sc1c">&#39;image&#39;</span><span class="s1770"># &#39;video&#39;
-</span><span class="s1770"></span><span class="s1f40">            </span><span class="s7d0">content: </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">original: </span><span class="sc1c">&#39;https://example.com/images/image.jpg&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">preview: </span><span class="sc1c">&#39;https://example.com/images/image.jpg&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s1388">]</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
+    <span class="nx">robot</span><span class="p">.</span><span class="nx">hear</span> <span class="sr">/^画像$/</span><span class="p">,</span> <span class="nf">(res) -&gt;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">reply</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s">&#39;image&#39;</span><span class="c1"># &#39;video&#39;
+</span><span class="c1"></span>            <span class="nv">content: </span><span class="p">[</span>
+                <span class="nv">original: </span><span class="s">&#39;https://example.com/images/image.jpg&#39;</span>
+                <span class="nv">preview: </span><span class="s">&#39;https://example.com/images/image.jpg&#39;</span>
+            <span class="p">]</span></code></pre></div>
 <ul>
 <li>ボタン</li>
 </ul>
 
 <p><a href="https://devdocs.line.me/ja/#buttons" target="_blank">https://devdocs.line.me/ja/#buttons</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^テキスト$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">type: </span><span class="sc1c">&#39;buttons&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">altText: </span><span class="sc1c">&#39;hogehoge&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">contents: </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">image: </span><span class="sc1c">&#39;https://example.com/images/image.jpg&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">title: </span><span class="sc1c">&#39;this is Buttons&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">text: </span><span class="sc1c">&#39;buttons description&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7df">actions</span><span class="sfa0">:</span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">type: </span><span class="sc1c">&#39;uri&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">label: </span><span class="sc1c">&#39;Open in Browser&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">uri: </span><span class="sc1c">&#39;http://example.com/&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s1388">]</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s1388">]</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
+    <span class="nx">robot</span><span class="p">.</span><span class="nx">hear</span> <span class="sr">/^テキスト$/</span><span class="p">,</span> <span class="nf">(res) -&gt;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">reply</span>
+            <span class="nv">type: </span><span class="s">&#39;buttons&#39;</span>
+            <span class="nv">altText: </span><span class="s">&#39;hogehoge&#39;</span>
+            <span class="nv">contents: </span><span class="p">[</span>
+                <span class="nv">image: </span><span class="s">&#39;https://example.com/images/image.jpg&#39;</span>
+                <span class="nv">title: </span><span class="s">&#39;this is Buttons&#39;</span>
+                <span class="nv">text: </span><span class="s">&#39;buttons description&#39;</span>
+                <span class="nx">actions</span><span class="o">:</span><span class="p">[</span>
+                    <span class="nv">type: </span><span class="s">&#39;uri&#39;</span>
+                    <span class="nv">label: </span><span class="s">&#39;Open in Browser&#39;</span>
+                    <span class="nv">uri: </span><span class="s">&#39;http://example.com/&#39;</span>
+                <span class="p">]</span>
+            <span class="p">]</span></code></pre></div>
 <ul>
 <li>カルーセル</li>
 </ul>
 
 <p><a href="https://devdocs.line.me/ja/#carousel" target="_blank">https://devdocs.line.me/ja/#carousel</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^カルーセル$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">type: </span><span class="sc1c">&#39;carousel&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">altText: </span><span class="sc1c">&#39;hogehoge&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">contents: </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">image: </span><span class="sc1c">&#39;https://example.com/images/image.jpg&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">title: </span><span class="sc1c">&#39;this is Buttons&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">text: </span><span class="sc1c">&#39;buttons description&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7df">actions</span><span class="sfa0">:</span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">type: </span><span class="sc1c">&#39;uri&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">label: </span><span class="sc1c">&#39;Open in Browser&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">uri: </span><span class="sc1c">&#39;http://example.com/&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s1388">],</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">image: </span><span class="sc1c">&#39;https://example.com/images/image.jpg&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">title: </span><span class="sc1c">&#39;this is Buttons&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">text: </span><span class="sc1c">&#39;buttons description&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7df">actions</span><span class="sfa0">:</span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">type: </span><span class="sc1c">&#39;uri&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">label: </span><span class="sc1c">&#39;Open in Browser&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">uri: </span><span class="sc1c">&#39;http://example.com/&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s1388">]...</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s1388">]</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
+    <span class="nx">robot</span><span class="p">.</span><span class="nx">hear</span> <span class="sr">/^カルーセル$/</span><span class="p">,</span> <span class="nf">(res) -&gt;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">reply</span>
+            <span class="nv">type: </span><span class="s">&#39;carousel&#39;</span>
+            <span class="nv">altText: </span><span class="s">&#39;hogehoge&#39;</span>
+            <span class="nv">contents: </span><span class="p">[</span>
+                <span class="nv">image: </span><span class="s">&#39;https://example.com/images/image.jpg&#39;</span>
+                <span class="nv">title: </span><span class="s">&#39;this is Buttons&#39;</span>
+                <span class="nv">text: </span><span class="s">&#39;buttons description&#39;</span>
+                <span class="nx">actions</span><span class="o">:</span><span class="p">[</span>
+                    <span class="nv">type: </span><span class="s">&#39;uri&#39;</span>
+                    <span class="nv">label: </span><span class="s">&#39;Open in Browser&#39;</span>
+                    <span class="nv">uri: </span><span class="s">&#39;http://example.com/&#39;</span>
+                <span class="p">],</span>
+                <span class="nv">image: </span><span class="s">&#39;https://example.com/images/image.jpg&#39;</span>
+                <span class="nv">title: </span><span class="s">&#39;this is Buttons&#39;</span>
+                <span class="nv">text: </span><span class="s">&#39;buttons description&#39;</span>
+                <span class="nx">actions</span><span class="o">:</span><span class="p">[</span>
+                    <span class="nv">type: </span><span class="s">&#39;uri&#39;</span>
+                    <span class="nv">label: </span><span class="s">&#39;Open in Browser&#39;</span>
+                    <span class="nv">uri: </span><span class="s">&#39;http://example.com/&#39;</span>
+                <span class="p">]...</span>
+            <span class="p">]</span></code></pre></div>
 <ul>
 <li>くみあわせ</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="s7d0">module.exports = </span><span class="s7d9">(robot) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7df">robot</span><span class="s1388">.</span><span class="s7df">hear</span><span class="s1f40"> </span><span class="sc1c">/^くみあわせ$/</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d9">(res) -&gt;</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s7df">res</span><span class="s1388">.</span><span class="s7df">reply</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">type: </span><span class="sc1c">&#39;text&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">contents: </span><span class="s1388">[</span><span class="sc1c">&#39;nyaa&#39;</span><span class="s1388">]</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s1388">},</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">type: </span><span class="sc1c">&#39;buttons&#39;</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s7d0">contents: </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">image: </span><span class="sc1c">&#39;https://example.com/images/image.jpg&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">title: </span><span class="sc1c">&#39;this is Buttons&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">text: </span><span class="sc1c">&#39;buttons description&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s7d0">actions: </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">type: </span><span class="sc1c">&#39;uri&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">label: </span><span class="sc1c">&#39;Open in Browser&#39;</span><span class="s1f40">
-</span><span class="s1f40">                    </span><span class="s7d0">uri: </span><span class="sc1c">&#39;http://example.com/&#39;</span><span class="s1f40">
-</span><span class="s1f40">                </span><span class="s1388">]</span><span class="s1f40">
-</span><span class="s1f40">            </span><span class="s1388">]</span><span class="s1f40">
-</span><span class="s1f40">        </span><span class="s1388">}</span></code></pre>
-</div></li>
+<div class="highlight"><pre class="chroma"><code class="language-coffee" data-lang="coffee"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
+    <span class="nx">robot</span><span class="p">.</span><span class="nx">hear</span> <span class="sr">/^くみあわせ$/</span><span class="p">,</span> <span class="nf">(res) -&gt;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">reply</span> <span class="p">{</span>
+            <span class="nv">type: </span><span class="s">&#39;text&#39;</span>
+            <span class="nv">contents: </span><span class="p">[</span><span class="s">&#39;nyaa&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nv">type: </span><span class="s">&#39;buttons&#39;</span>
+            <span class="nv">contents: </span><span class="p">[</span>
+                <span class="nv">image: </span><span class="s">&#39;https://example.com/images/image.jpg&#39;</span>
+                <span class="nv">title: </span><span class="s">&#39;this is Buttons&#39;</span>
+                <span class="nv">text: </span><span class="s">&#39;buttons description&#39;</span>
+                <span class="nv">actions: </span><span class="p">[</span>
+                    <span class="nv">type: </span><span class="s">&#39;uri&#39;</span>
+                    <span class="nv">label: </span><span class="s">&#39;Open in Browser&#39;</span>
+                    <span class="nv">uri: </span><span class="s">&#39;http://example.com/&#39;</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+        <span class="p">}</span></code></pre></div></li>
 </ul>
 
 <h1 id="注意点">注意点</h1>
@@ -237,7 +231,7 @@
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
+        <div class="copyright">Copyright &copy; pyonk</div>
     </footer>
 
 </div>

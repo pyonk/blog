@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -50,93 +50,89 @@
 
 <ul>
 <li><p>reportlab</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ pip install reportlab</span></code></pre>
-</div></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install reportlab</code></pre></div></li>
 
 <li><p>PyPDF2</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ pip install pypdf2</span></code></pre>
-</div></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install pypdf2</code></pre></div></li>
 </ul>
 
 <h2 id="コード">コード</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1770">#! /usr/bin/python</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># -*- coding: utf-8 -*-</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">reportlab.pdfgen</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">canvas</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">reportlab.lib.pagesizes</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">A4</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">reportlab.pdfbase</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">pdfmetrics</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">reportlab.pdfbase.ttfonts</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">TTFont</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">PyPDF2.pdf</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">PdfFileReader</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">PdfFileWriter</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">io</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">BytesIO</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">title</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;title&#39;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># fontを変更</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">pdfmetrics</span><span class="sfa0">.</span><span class="s7d0">registerFont</span><span class="s1388">(</span><span class="s7d0">TTFont</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;Mplus1p-Light&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">template_path</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;template.pdf&#39;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># 読み込み</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">reader</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">PdfFileReader</span><span class="s1388">(</span><span class="s7d0">template_path</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">existing_page</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">reader</span><span class="sfa0">.</span><span class="s7d0">getPage</span><span class="s1388">(</span><span class="sc80">0</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">page_width</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">existing_page</span><span class="sfa0">.</span><span class="s7d0">mediaBox</span><span class="sfa0">.</span><span class="s7d0">getWidth</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">page_height</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">existing_page</span><span class="sfa0">.</span><span class="s7d0">mediaBox</span><span class="sfa0">.</span><span class="s7d0">getHeight</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># 直接フォームに入力するのではないのでstreamとしてもっておく</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">packet</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">BytesIO</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">c</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">canvas</span><span class="sfa0">.</span><span class="s7d0">Canvas</span><span class="s1388">(</span><span class="s7d0">packet</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">pagesize</span><span class="sfa0">=</span><span class="s7d0">A4</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">c</span><span class="sfa0">.</span><span class="s7d0">setFont</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;Mplus1p-Light&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">17</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># titleはセンタリング</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">c</span><span class="sfa0">.</span><span class="s7d0">drawCentredString</span><span class="s1388">(</span><span class="s7d0">page_width</span><span class="s1f40"> </span><span class="sfa0">/</span><span class="s1f40"> </span><span class="sc80">2</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">page_height</span><span class="s1f40"> </span><span class="sfa0">-</span><span class="s1f40"> </span><span class="sc80">20</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">title</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># formfieldsを取得</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">fields</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">reader</span><span class="sfa0">.</span><span class="s7d0">trailer</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;/Root&#39;</span><span class="s1388">][</span><span class="sc1c"></span><span class="sc1c">&#39;/AcroForm&#39;</span><span class="s1388">][</span><span class="sc1c"></span><span class="sc1c">&#39;/Fields&#39;</span><span class="s1388">]</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">f</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">fields</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">field</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">f</span><span class="sfa0">.</span><span class="s7d0">getObject</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s1770"># formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">rect</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">field</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;/Rect&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s1388">[</span><span class="sc80">0.0</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">0.0</span><span class="s1388">])</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">key</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">field</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;/T&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;&#39;</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">c</span><span class="sfa0">.</span><span class="s7d0">setFont</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;Mplus1p-Light&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc80">9</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s1770"># 微調整</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">c</span><span class="sfa0">.</span><span class="s7d0">drawString</span><span class="s1388">(</span><span class="s7d0">float</span><span class="s1388">(</span><span class="s7d0">rect</span><span class="s1388">[</span><span class="sc80">0</span><span class="s1388">])</span><span class="s1f40"> </span><span class="sfa0">+</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">float</span><span class="s1388">(</span><span class="s7d0">rect</span><span class="s1388">[</span><span class="sc80">1</span><span class="s1388">])</span><span class="s1f40"> </span><span class="sfa0">+</span><span class="s1f40"> </span><span class="sc80">3</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">key</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">c</span><span class="sfa0">.</span><span class="s7d0">save</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># パケットの読み込みを先頭に戻す</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">packet</span><span class="sfa0">.</span><span class="s7d0">seek</span><span class="s1388">(</span><span class="sc80">0</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">new_pdf</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">PdfFileReader</span><span class="s1388">(</span><span class="s7d0">packet</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># テンプレートと書き込んだ内容をマージ</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">existing_page</span><span class="sfa0">.</span><span class="s7d0">mergePage</span><span class="s1388">(</span><span class="s7d0">new_pdf</span><span class="sfa0">.</span><span class="s7d0">getPage</span><span class="s1388">(</span><span class="sc80">0</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># writerを用意</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">writer</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">PdfFileWriter</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">writer</span><span class="sfa0">.</span><span class="s7d0">addPage</span><span class="s1388">(</span><span class="s7d0">existing_page</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># 書き込み</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">with</span><span class="s1f40"> </span><span class="s7d0">open</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;output.pdf&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;wb&#39;</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s3e8">as</span><span class="s1f40"> </span><span class="s7d0">output_file</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">writer</span><span class="sfa0">.</span><span class="s7d0">write</span><span class="s1388">(</span><span class="s7d0">output_file</span><span class="s1388">)</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#! /usr/bin/python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">reportlab.pdfgen</span> <span class="kn">import</span> <span class="n">canvas</span>
+<span class="kn">from</span> <span class="nn">reportlab.lib.pagesizes</span> <span class="kn">import</span> <span class="n">A4</span>
+<span class="kn">from</span> <span class="nn">reportlab.pdfbase</span> <span class="kn">import</span> <span class="n">pdfmetrics</span>
+<span class="kn">from</span> <span class="nn">reportlab.pdfbase.ttfonts</span> <span class="kn">import</span> <span class="n">TTFont</span>
+<span class="kn">from</span> <span class="nn">PyPDF2.pdf</span> <span class="kn">import</span> <span class="n">PdfFileReader</span><span class="p">,</span> <span class="n">PdfFileWriter</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;title&#39;</span>
+<span class="c1"># fontを変更</span>
+<span class="n">pdfmetrics</span><span class="o">.</span><span class="n">registerFont</span><span class="p">(</span><span class="n">TTFont</span><span class="p">(</span><span class="s1">&#39;Mplus1p-Light&#39;</span><span class="p">,</span> <span class="s1">&#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;</span><span class="p">))</span>
+<span class="n">template_path</span> <span class="o">=</span> <span class="s1">&#39;template.pdf&#39;</span>
+<span class="c1"># 読み込み</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">PdfFileReader</span><span class="p">(</span><span class="n">template_path</span><span class="p">)</span>
+<span class="n">existing_page</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">getPage</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">page_width</span> <span class="o">=</span> <span class="n">existing_page</span><span class="o">.</span><span class="n">mediaBox</span><span class="o">.</span><span class="n">getWidth</span><span class="p">()</span>
+<span class="n">page_height</span> <span class="o">=</span> <span class="n">existing_page</span><span class="o">.</span><span class="n">mediaBox</span><span class="o">.</span><span class="n">getHeight</span><span class="p">()</span>
+<span class="c1"># 直接フォームに入力するのではないのでstreamとしてもっておく</span>
+<span class="n">packet</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="n">A4</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="s1">&#39;Mplus1p-Light&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="c1"># titleはセンタリング</span>
+<span class="n">c</span><span class="o">.</span><span class="n">drawCentredString</span><span class="p">(</span><span class="n">page_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">page_height</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+<span class="c1"># formfieldsを取得</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">trailer</span><span class="p">[</span><span class="s1">&#39;/Root&#39;</span><span class="p">][</span><span class="s1">&#39;/AcroForm&#39;</span><span class="p">][</span><span class="s1">&#39;/Fields&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+    <span class="n">field</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getObject</span><span class="p">()</span>
+    <span class="c1"># formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]</span>
+    <span class="n">rect</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/Rect&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/T&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="s1">&#39;Mplus1p-Light&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="c1"># 微調整</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="c1"># パケットの読み込みを先頭に戻す</span>
+<span class="n">packet</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">new_pdf</span> <span class="o">=</span> <span class="n">PdfFileReader</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
+<span class="c1"># テンプレートと書き込んだ内容をマージ</span>
+<span class="n">existing_page</span><span class="o">.</span><span class="n">mergePage</span><span class="p">(</span><span class="n">new_pdf</span><span class="o">.</span><span class="n">getPage</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1"># writerを用意</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">PdfFileWriter</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">addPage</span><span class="p">(</span><span class="n">existing_page</span><span class="p">)</span>
+<span class="c1"># 書き込み</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span></code></pre></div>
 <p>見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。</p>
 
 <h3 id="おまけ">おまけ</h3>
 
 <p>ただフォームを埋めたいだけの場合</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1770">#! /usr/bin/python</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># -*- coding: utf-8 -*-</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">PyPDF2.pdf</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">PdfFileReader</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">PdfFileWriter</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">template_path</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;template.pdf&#39;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># 読み込み</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">reader</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">PdfFileReader</span><span class="s1388">(</span><span class="s7d0">template_path</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">existing_page</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">reader</span><span class="sfa0">.</span><span class="s7d0">getPage</span><span class="s1388">(</span><span class="sc80">0</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">page_width</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">existing_page</span><span class="sfa0">.</span><span class="s7d0">mediaBox</span><span class="sfa0">.</span><span class="s7d0">getWidth</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">page_height</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">existing_page</span><span class="sfa0">.</span><span class="s7d0">mediaBox</span><span class="sfa0">.</span><span class="s7d0">getHeight</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># formfieldsを取得</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">fields</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">reader</span><span class="sfa0">.</span><span class="s7d0">getFormTextFields</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># formの値を更新</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">key</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">fields</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">fields</span><span class="s1388">[</span><span class="s7d0">key</span><span class="s1388">]</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">key</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># writerを用意</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">writer</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">PdfFileWriter</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># 上書き</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">writer</span><span class="sfa0">.</span><span class="s7d0">updatePageFormFieldValues</span><span class="s1388">(</span><span class="s7d0">existing_page</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">fields</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">writer</span><span class="sfa0">.</span><span class="s7d0">addPage</span><span class="s1388">(</span><span class="s7d0">existing_page</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># 書き込み</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">with</span><span class="s1f40"> </span><span class="s7d0">open</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;output.pdf&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;wb&#39;</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s3e8">as</span><span class="s1f40"> </span><span class="s7d0">output_file</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">writer</span><span class="sfa0">.</span><span class="s7d0">write</span><span class="s1388">(</span><span class="s7d0">output_file</span><span class="s1388">)</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#! /usr/bin/python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">PyPDF2.pdf</span> <span class="kn">import</span> <span class="n">PdfFileReader</span><span class="p">,</span> <span class="n">PdfFileWriter</span>
+
+<span class="n">template_path</span> <span class="o">=</span> <span class="s1">&#39;template.pdf&#39;</span>
+<span class="c1"># 読み込み</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">PdfFileReader</span><span class="p">(</span><span class="n">template_path</span><span class="p">)</span>
+<span class="n">existing_page</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">getPage</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">page_width</span> <span class="o">=</span> <span class="n">existing_page</span><span class="o">.</span><span class="n">mediaBox</span><span class="o">.</span><span class="n">getWidth</span><span class="p">()</span>
+<span class="n">page_height</span> <span class="o">=</span> <span class="n">existing_page</span><span class="o">.</span><span class="n">mediaBox</span><span class="o">.</span><span class="n">getHeight</span><span class="p">()</span>
+<span class="c1"># formfieldsを取得</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">getFormTextFields</span><span class="p">()</span>
+<span class="c1"># formの値を更新</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+    <span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+<span class="c1"># writerを用意</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">PdfFileWriter</span><span class="p">()</span>
+<span class="c1"># 上書き</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">updatePageFormFieldValues</span><span class="p">(</span><span class="n">existing_page</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">addPage</span><span class="p">(</span><span class="n">existing_page</span><span class="p">)</span>
+<span class="c1"># 書き込み</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span></code></pre></div>
             </section>
         </article>
     </main>
@@ -150,7 +146,7 @@
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
+        <div class="copyright">Copyright &copy; pyonk</div>
     </footer>
 
 </div>

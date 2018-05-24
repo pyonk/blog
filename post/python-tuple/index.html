@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -55,16 +55,15 @@
 <p>詳しくは<a href="http://docs.python.jp/2/library/threading.html" target="_blank">ここ</a>で。</p>
 
 <p>で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3e8">def</span><span class="s1f40"> </span><span class="s7d9">command_execute</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">):</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">cmd</span><span class="s1f40"> </span><span class="s1770"># (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">subprocess</span><span class="sfa0">.</span><span class="s7d0">Popen</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">shell</span><span class="sfa0">=</span><span class="s7d0">True</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">cmd</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;sleep 10;echo aaa&#39;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">t</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">threading</span><span class="sfa0">.</span><span class="s7d0">Thread</span><span class="s1388">(</span><span class="s7d0">target</span><span class="sfa0">=</span><span class="s7d0">command_execute</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">args</span><span class="sfa0">=</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">t</span><span class="sfa0">.</span><span class="s7d0">daemon</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">True</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">t</span><span class="sfa0">.</span><span class="s7d0">start</span><span class="s1388">()</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">command_execute</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">cmd</span> <span class="c1"># (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;sleep 10;echo aaa&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">command_execute</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+<span class="n">t</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre></div>
 <p>すると、printされた文字列が
 <code>('s', 'l', 'e', 'e', 'p', ' ', '1', '0', ';', 'e', 'c', 'h', 'o', ' ', 'a', 'a', 'a')</code>
 となるわけです。
@@ -85,32 +84,29 @@
 <p><code>tuple = (1)</code></p>
 
 <p><strong>普通のpythonist</strong>であればこれは違うとわかるでしょうが、これだと思うでしょう？</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s7d0">tuple</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">(</span><span class="sc80">1</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">tuple</span><span class="s1f40"> </span><span class="s1770"># 1</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">type</span><span class="s1388">(</span><span class="s7d0">tuple</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># &lt;type &#39;int&#39;&gt;</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">tuple</span> <span class="c1"># 1</span>
+<span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span> <span class="c1"># &lt;type &#39;int&#39;&gt;</span></code></pre></div>
 <p>なんですよね。</p>
 
 <h3 id="どうするのか">どうするのか</h3>
 
 <p><code>tuple = (1,)</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s7d0">tuple</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">(</span><span class="sc80">1</span><span class="s1388">,)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">tuple</span><span class="s1f40"> </span><span class="s1770"># (1,)</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">type</span><span class="s1388">(</span><span class="s7d0">tuple</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s1770"># &lt;type &#39;tuple&#39;&gt;</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="k">print</span> <span class="nb">tuple</span> <span class="c1"># (1,)</span>
+<span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span> <span class="c1"># &lt;type &#39;tuple&#39;&gt;</span></code></pre></div>
 <p>こうでした。</p>
 
 <h1 id="けっか">けっか</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3e8">def</span><span class="s1f40"> </span><span class="s7d9">command_execute</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">):</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s3e8">print</span><span class="s1f40"> </span><span class="s7d0">cmd</span><span class="s1f40"> </span><span class="s1770"># sleep 10;echo aaa</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">subprocess</span><span class="sfa0">.</span><span class="s7d0">Popen</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">shell</span><span class="sfa0">=</span><span class="s7d0">True</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">cmd</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;sleep 10;echo aaa&#39;</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">t</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">threading</span><span class="sfa0">.</span><span class="s7d0">Thread</span><span class="s1388">(</span><span class="s7d0">target</span><span class="sfa0">=</span><span class="s7d0">command_execute</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">args</span><span class="sfa0">=</span><span class="s1388">(</span><span class="s7d0">cmd</span><span class="s1388">,))</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">t</span><span class="sfa0">.</span><span class="s7d0">daemon</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">True</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">t</span><span class="sfa0">.</span><span class="s7d0">start</span><span class="s1388">()</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">command_execute</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">cmd</span> <span class="c1"># sleep 10;echo aaa</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;sleep 10;echo aaa&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">command_execute</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">cmd</span><span class="p">,))</span>
+<span class="n">t</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre></div>
 <p>こうしてあげることによって期待通りの動きをしてくれました。</p>
 
 <p>tupleの作り方に注意しなさい的な記述をどこかで見たような気がしたのですが、すっかり失念しておりました。猛省。</p>
@@ -128,7 +124,7 @@
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
+        <div class="copyright">Copyright &copy; pyonk</div>
     </footer>
 
 </div>

@@ -6,7 +6,7 @@
     <description>Recent content in Tags on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk All rights reserved.</copyright>
+    <copyright>pyonk</copyright>
     <lastBuildDate>Thu, 31 Aug 2017 17:42:30 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -94,6 +94,15 @@
     </item>
     
     <item>
+      <title>Lets Split</title>
+      <link>https://pyonk.github.io/blog/tags/lets-split/</link>
+      <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/lets-split/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Line</title>
       <link>https://pyonk.github.io/blog/tags/line/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
@@ -153,6 +162,15 @@
       <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>キーボード</title>
+      <link>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
+      <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</guid>
       <description></description>
     </item>
     
