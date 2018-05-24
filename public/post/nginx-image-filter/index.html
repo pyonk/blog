@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -41,34 +41,31 @@
 <h1 id="image-filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する</h1>
 
 <p>nginxをソースからインストールする際に<code>--with-http_image_filter_module</code>をつけてインストールします。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
-</span><span class="s1f40">$ tar -xvzf nginx-1.10.1.tar.gz
-</span><span class="s1f40">$ </span><span class="s7d0">cd</span><span class="s1f40"> nginx-1.10.1
-</span><span class="s1f40">$ ./configure --with-http_image_filter_module
-</span><span class="s1f40">$ make
-</span><span class="s1f40">$ sudo make install</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+$ tar -xvzf nginx-1.10.1.tar.gz
+$ <span class="nb">cd</span> nginx-1.10.1
+$ ./configure --with-http_image_filter_module
+$ make
+$ sudo make install</code></pre></div>
 <p>ほかのオプションモジュールをつける場合は随時つけてください。</p>
 
 <p>すでにnginxがインストールされている場合は、</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1f40">$ sudo cp objs/nginx /usr/sbin/nginx
-</span><span class="s1f40">$ cat /var/run/nginx.pid
-</span><span class="s1f40"></span><span class="sc80">10576</span><span class="s1f40">
-</span><span class="s1f40">$ sudo </span><span class="s7d0">kill</span><span class="s1f40"> -USR2 </span><span class="sc80">10576</span><span class="s1f40">
-</span><span class="s1f40">$ sudo </span><span class="s7d0">kill</span><span class="s1f40"> -WINCH </span><span class="sc80">10576</span><span class="s1f40">
-</span><span class="s1f40">$ sudo </span><span class="s7d0">kill</span><span class="s1f40"> -QUIT </span><span class="sc80">10576</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cp objs/nginx /usr/sbin/nginx
+$ cat /var/run/nginx.pid
+<span class="m">10576</span>
+$ sudo <span class="nb">kill</span> -USR2 <span class="m">10576</span>
+$ sudo <span class="nb">kill</span> -WINCH <span class="m">10576</span>
+$ sudo <span class="nb">kill</span> -QUIT <span class="m">10576</span></code></pre></div>
 <p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。</p>
 
 <h1 id="confを変更">confを変更</h1>
 
 <p>image_filterを加えます。
 くわしいことは<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter" target="_blank">ここ</a>をみてください。</p>
-<div class="highlight"><pre class="chroma"><code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf"><span class="s1f40">location ~ /image/(.*\.png)$ {
-</span><span class="s1f40">        alias /path/to/image/$1;
-</span><span class="s1f40">            image_filter resize 100 -; # 横幅100pxでリサイズする
-</span><span class="s1f40">}</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf">location ~ /image/(.*\.png)$ {
+        alias /path/to/image/$1;
+            image_filter resize 100 -; # 横幅100pxでリサイズする
+}</code></pre></div>
 <p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</p>
 
             </section>
@@ -84,7 +81,7 @@
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
+        <div class="copyright">Copyright &copy; pyonk</div>
     </footer>
 
 </div>

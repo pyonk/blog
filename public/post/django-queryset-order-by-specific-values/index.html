@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -55,30 +55,29 @@ databaseに定義されてない値でソートしたかったのです。</p>
 </blockquote>
 
 <h2 id="tl-dr">TL;DR</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s3eb">from</span><span class="s1f40"> </span><span class="s7d0">djnago.db.models</span><span class="s1f40"> </span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">Case</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">When</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">Value</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">FloatField</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># { pid: specific_value, }</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">specific_values</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;1&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">100.0</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;2&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">50.0</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;3&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">25.0</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;4&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">123.4</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="s1f40">  </span><span class="sc1c"></span><span class="sc1c">&#39;5&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">599.33</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1388">}</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># sqlのCASE式にしたい条件のリスト</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">cases</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">[]</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># casesにCASE式にしたい条件をつめていく</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">pid</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">specific_value</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">specific_values</span><span class="sfa0">.</span><span class="s7d0">items</span><span class="s1388">():</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">cases</span><span class="sfa0">.</span><span class="s7d0">append</span><span class="s1388">(</span><span class="s7d0">When</span><span class="s1388">(</span><span class="s7d0">id</span><span class="sfa0">=</span><span class="s7d0">pid</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">then</span><span class="sfa0">=</span><span class="s7d0">Value</span><span class="s1388">(</span><span class="s7d0">specific_value</span><span class="s1388">)))</span><span class="s1f40">
-</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1770"># Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s7d0">Hoge</span><span class="sfa0">.</span><span class="s7d0">objects</span><span class="sfa0">.</span><span class="s7d0">filter</span><span class="s1388">(</span><span class="s7d0">id__in</span><span class="sfa0">=</span><span class="s7d0">specific_values</span><span class="sfa0">.</span><span class="s7d0">keys</span><span class="s1388">())</span><span class="sfa0">.</span><span class="s7d0">annotate</span><span class="s1388">(</span><span class="s7d0">specific_value</span><span class="sfa0">=</span><span class="s7d0">Case</span><span class="s1388">(</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="sfa0">*</span><span class="s7d0">cases</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="s1f40">    </span><span class="s7d0">output_field</span><span class="sfa0">=</span><span class="s7d0">FloatField</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="s1f40"></span><span class="s1388">))</span><span class="sfa0">.</span><span class="s7d0">order_by</span><span class="s1388">(</span><span class="s7d0">specific_value</span><span class="s1388">)</span></code></pre>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">djnago.db.models</span> <span class="kn">import</span> <span class="n">Case</span><span class="p">,</span> <span class="n">When</span><span class="p">,</span> <span class="n">Value</span><span class="p">,</span> <span class="n">FloatField</span>
+
+<span class="c1"># { pid: specific_value, }</span>
+<span class="n">specific_values</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+  <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>
+  <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
+  <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="mf">123.4</span><span class="p">,</span>
+  <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="mf">599.33</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># sqlのCASE式にしたい条件のリスト</span>
+<span class="n">cases</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># casesにCASE式にしたい条件をつめていく</span>
+<span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">specific_value</span> <span class="ow">in</span> <span class="n">specific_values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">cases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">When</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">pid</span><span class="p">,</span> <span class="n">then</span><span class="o">=</span><span class="n">Value</span><span class="p">(</span><span class="n">specific_value</span><span class="p">)))</span>
+
+<span class="c1"># Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする</span>
+<span class="n">Hoge</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">specific_values</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">specific_value</span><span class="o">=</span><span class="n">Case</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">cases</span><span class="p">,</span>
+    <span class="n">output_field</span><span class="o">=</span><span class="n">FloatField</span><span class="p">()</span>
+<span class="p">))</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">specific_value</span><span class="p">)</span></code></pre></div>
 <h2 id="詳しい説明">詳しい説明</h2>
 
 <p><a href="https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/" target="_blank">Conditional Expressions | Django documentation | Django</a></p>
@@ -104,7 +103,7 @@ databaseに定義されてない値でソートしたかったのです。</p>
             <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
             <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
         </div>
-        <div class="copyright">Copyright &copy; pyonk All rights reserved.</div>
+        <div class="copyright">Copyright &copy; pyonk</div>
     </footer>
 
 </div>

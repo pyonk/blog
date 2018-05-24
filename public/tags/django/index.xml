@@ -6,7 +6,7 @@
     <description>Recent content in Django on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>pyonk All rights reserved.</copyright>
+    <copyright>pyonk</copyright>
     <lastBuildDate>Wed, 20 Dec 2017 13:54:50 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/django/index.xml" rel="self" type="application/rss+xml" />
@@ -34,8 +34,7 @@ databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
- TL;DR fromdjnago.db.modelsimportCase,When,Value,FloatField# { pid: specific_value, }specific_values={&amp;#39;1&amp;#39;:100.0,&amp;#39;2&amp;#39;:50.0,&amp;#39;3&amp;#39;:25.0,&amp;#39;4&amp;#39;:123.4,&amp;#39;5&amp;#39;:599.33,}# sqlのCASE式にしたい条件のリストcases=[]# casesにCASE式にしたい条件をつめていくforpid,specific_valueinspecific_values.items():cases.append(When(id=pid,then=Value(specific_value)))# Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byするHoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(*cases,output_field=FloatField())).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django
-TIPS  casesに条件をつめこむため、Caseインスタンスを作成する際に、*で展開してあげないといけない。  ここだけ気をつければ非常に便利（使い所があまりないのが玉に瑕）。</description>
+ TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django</description>
     </item>
     
     <item>
@@ -48,7 +47,7 @@ TIPS  casesに条件をつめこむため、Caseインスタンスを作成す�
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
 pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
-importsubprocessimportshlexcmd=&amp;#39;nohup sleep 10 &amp;amp;&amp;#39;subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+import subprocess import shlex cmd = &amp;#39;nohup sleep 10 &amp;amp;&amp;#39; subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
 つぎ！
 thread化して逃げる この前書いたような感じです。
 pythonでtupleをつくる - わいがかいた
@@ -66,8 +65,7 @@ celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
 yum install redis
 bundleも用意されているのでそれも。
 pip install -U &amp;quot;celery[redis]&amp;quot;
-how to ここを参考にモリモリかいていきます。
- proj/__init__.py  from__future__importabsolute_import,unicode_literals# This will make sure the app is always imported when# Django starts so that shared_task will use this app.</description>
+how to ここを参考にモリモリかいていきます。</description>
     </item>
     
   </channel>
