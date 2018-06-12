@@ -14,20 +14,20 @@
     
     <item>
       <title>facebookのためにsocial loginをごにょごにょした話</title>
-      <link>https://pyonk.github.io/blog/post/social-login-update-for-facebook/</link>
+      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/social-login-update-for-facebook/</guid>
+      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
       <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>
     
     <item>
       <title>djangoのquerysetを任意の順番でsortする</title>
-      <link>https://pyonk.github.io/blog/post/django-queryset-order-by-specific-values/</link>
+      <link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link>
       <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/django-queryset-order-by-specific-values/</guid>
+      <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid>
       <description>djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
 が、ぼくがやりたかったのは、任意の値でのソート。
 databaseに定義されてない値でソートしたかったのです。
@@ -39,10 +39,10 @@ Django order_by specific order - Stack Overflow
     
     <item>
       <title>Djangoでどうしても非同期でコマンドを実行したくなった</title>
-      <link>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</link>
+      <link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link>
       <pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</guid>
+      <guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid>
       <description>経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。

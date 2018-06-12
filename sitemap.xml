@@ -3,87 +3,87 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/buy-lets-split/</loc>
+    <loc>https://pyonk.github.io/blog/posts/buy-lets-split/</loc>
     <lastmod>2018-05-24T23:11:16+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/social-login-update-for-facebook/</loc>
+    <loc>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</loc>
     <lastmod>2017-12-20T13:54:50+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/django-queryset-order-by-specific-values/</loc>
+    <loc>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</loc>
     <lastmod>2017-11-10T18:33:41+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/create-disabled-ime-command-for-subl-with-vintage/</loc>
+    <loc>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</loc>
     <lastmod>2017-10-18T10:23:34+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</loc>
+    <loc>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</loc>
     <lastmod>2017-10-05T15:46:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/timetree-over-5m-users-party/</loc>
+    <loc>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</loc>
     <lastmod>2017-08-31T17:42:30+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/read-tadouryoku/</loc>
+    <loc>https://pyonk.github.io/blog/posts/read-tadouryoku/</loc>
     <lastmod>2017-08-21T21:23:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/difference-of-crontabe-and-etc-crontab/</loc>
+    <loc>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</loc>
     <lastmod>2017-02-06T12:28:58+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/yasei-no-sslerror/</loc>
+    <loc>https://pyonk.github.io/blog/posts/yasei-no-sslerror/</loc>
     <lastmod>2017-02-02T18:40:16+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/python-copy/</loc>
+    <loc>https://pyonk.github.io/blog/posts/python-copy/</loc>
     <lastmod>2017-01-12T18:21:36+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</loc>
+    <loc>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</loc>
     <lastmod>2017-01-06T12:05:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/python-tuple/</loc>
+    <loc>https://pyonk.github.io/blog/posts/python-tuple/</loc>
     <lastmod>2017-01-05T15:05:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/retirement-poem-to-you/</loc>
+    <loc>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</loc>
     <lastmod>2017-01-03T16:02:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</loc>
+    <loc>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</loc>
     <lastmod>2017-01-03T10:34:47+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/hubot-line-message-api/</loc>
+    <loc>https://pyonk.github.io/blog/posts/hubot-line-message-api/</loc>
     <lastmod>2016-10-17T10:38:19+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</loc>
+    <loc>https://pyonk.github.io/blog/posts/javascript-unknonwn-writing/</loc>
     <lastmod>2016-08-30T10:48:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/nginx-image-filter/</loc>
+    <loc>https://pyonk.github.io/blog/posts/nginx-image-filter/</loc>
     <lastmod>2016-07-15T15:28:45+09:00</lastmod>
   </url>
   
@@ -171,7 +171,7 @@
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/post/</loc>
+    <loc>https://pyonk.github.io/blog/posts/</loc>
     <lastmod>2018-05-24T23:11:16+09:00</lastmod>
     <priority>0</priority>
   </url>

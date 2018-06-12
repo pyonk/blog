@@ -14,10 +14,10 @@
     
     <item>
       <title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title>
-      <link>https://pyonk.github.io/blog/post/create-disabled-ime-command-for-subl-with-vintage/</link>
+      <link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link>
       <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/create-disabled-ime-command-for-subl-with-vintage/</guid>
+      <guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
       <description>ぼくは普段からsublimetextを使っているのだけど
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
