@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>pyonk</copyright>
-    <lastBuildDate>Thu, 24 May 2018 23:11:16 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jun 2018 21:35:46 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/lets-split/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>let&#39;s splitがとどいた！</title>
+      <link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link>
+      <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
+      <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
+@foostan さんにはマジ感謝マジ卍。
+完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
+いやこう言うと語弊がありますね。
+もちろん(lets splitの)デフォルトで及第点くらいだったのですが、自分でキーマッピングを変えるのが醍醐味ということで試しにいくつか変えて見たところこれがまた素晴らしい。
+default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう見返すとほっとんどかわってない笑 なんならRaiseとLowerまんま一緒か！
+けどescの位置はかなりお気に入り。当初は左上にしたんだけど、tabをおいておきたくて。
+だいぶタイピングも慣れてきて、-とか~もノールックで行けるようになった。
+目下課題に感じているのは左下の矢印キーたち。普段はctrl+hjklを矢印キーとしてつかっているから左下のは使わないのよなー。もったいない。
+もちろんこの記事はlet&amp;rsquo;s splitで書かれました！！
+新しい相棒でバリバリコード書くぞ〜〜</description>
+    </item>
     
     <item>
       <title>let&#39;s splitを買った</title>
