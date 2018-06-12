@@ -14,10 +14,10 @@
     
     <item>
       <title>let&#39;s splitを買った</title>
-      <link>https://pyonk.github.io/blog/post/buy-lets-split/</link>
+      <link>https://pyonk.github.io/blog/posts/buy-lets-split/</link>
       <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/buy-lets-split/</guid>
+      <guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid>
       <description>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
 アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
 で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
@@ -37,20 +37,20 @@
     
     <item>
       <title>facebookのためにsocial loginをごにょごにょした話</title>
-      <link>https://pyonk.github.io/blog/post/social-login-update-for-facebook/</link>
+      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/social-login-update-for-facebook/</guid>
+      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
       <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>
     
     <item>
       <title>djangoのquerysetを任意の順番でsortする</title>
-      <link>https://pyonk.github.io/blog/post/django-queryset-order-by-specific-values/</link>
+      <link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link>
       <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/django-queryset-order-by-specific-values/</guid>
+      <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid>
       <description>djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
 が、ぼくがやりたかったのは、任意の値でのソート。
 databaseに定義されてない値でソートしたかったのです。
@@ -62,10 +62,10 @@ Django order_by specific order - Stack Overflow
     
     <item>
       <title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title>
-      <link>https://pyonk.github.io/blog/post/create-disabled-ime-command-for-subl-with-vintage/</link>
+      <link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link>
       <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/create-disabled-ime-command-for-subl-with-vintage/</guid>
+      <guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
       <description>ぼくは普段からsublimetextを使っているのだけど
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
@@ -87,10 +87,10 @@ macではAppleScriptを使うみたいですね。
     
     <item>
       <title>pythonからpdfのフォームに入力する</title>
-      <link>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</link>
+      <link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link>
       <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/fill-pdf-form-from-python/</guid>
+      <guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid>
       <description>pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
@@ -103,10 +103,10 @@ $ pip install pypdf2  コード #! /usr/bin/python # -*- coding: utf-8 -*- from 
     
     <item>
       <title>timetreeの500万ユーザー記念パーティに参加してきた</title>
-      <link>https://pyonk.github.io/blog/post/timetree-over-5m-users-party/</link>
+      <link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/timetree-over-5m-users-party/</guid>
+      <guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid>
       <description>いつも使っているアプリの一つにtimetreeというカレンダーアプリがあるのだけど、ある日ふとお知らせをみたら、オフィスパーティ招待の募集が。 平日だし、どうしようか悩んだけど、とりあえず応募したら見事にご招待された。ありがとうございます。 ということで、昨日行って来ました。
 TimeTree — 〜＊祝500万ユーザー突破！オフィス・パーティーへのご招待＊〜
 まず、ものすごく可愛いオフィスで、良い空間であったということを伝えたい。
@@ -134,10 +134,10 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
     
     <item>
       <title>多動力を読んだ</title>
-      <link>https://pyonk.github.io/blog/post/read-tadouryoku/</link>
+      <link>https://pyonk.github.io/blog/posts/read-tadouryoku/</link>
       <pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/read-tadouryoku/</guid>
+      <guid>https://pyonk.github.io/blog/posts/read-tadouryoku/</guid>
       <description>久しぶりに読書がしたくなった。数ヶ月前も1度あったのだけど、そのときは日和って買わなかった。
 今日は買うという強い意志を持っていた。
 そして目に付いた「多動力」
@@ -163,10 +163,10 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
     
     <item>
       <title>crontab -e と /etc/crontab の違い</title>
-      <link>https://pyonk.github.io/blog/post/difference-of-crontabe-and-etc-crontab/</link>
+      <link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link>
       <pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/difference-of-crontabe-and-etc-crontab/</guid>
+      <guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid>
       <description>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
 $ less /var/log/cronFeb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
@@ -188,10 +188,10 @@ $ crontab -l で確認することができます。
     
     <item>
       <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title>
-      <link>https://pyonk.github.io/blog/post/yasei-no-sslerror/</link>
+      <link>https://pyonk.github.io/blog/posts/yasei-no-sslerror/</link>
       <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/yasei-no-sslerror/</guid>
+      <guid>https://pyonk.github.io/blog/posts/yasei-no-sslerror/</guid>
       <description>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。
 ナゾのrequests.exceptions.SSLError それなりにpythonのrequestsをつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾのrequests.exceptions.SSLErrorが発生しました。
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
@@ -211,10 +211,10 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
     
     <item>
       <title>pythonの参照渡しをどうすれば回避できるのか</title>
-      <link>https://pyonk.github.io/blog/post/python-copy/</link>
+      <link>https://pyonk.github.io/blog/posts/python-copy/</link>
       <pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/python-copy/</guid>
+      <guid>https://pyonk.github.io/blog/posts/python-copy/</guid>
       <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
 hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
@@ -223,10 +223,10 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
     
     <item>
       <title>Djangoでどうしても非同期でコマンドを実行したくなった</title>
-      <link>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</link>
+      <link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link>
       <pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/use-celery-for-send-email-django/</guid>
+      <guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid>
       <description>経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
@@ -254,10 +254,10 @@ how to ここを参考にモリモリかいていきます。</description>
     
     <item>
       <title>pythonでtupleをつくる</title>
-      <link>https://pyonk.github.io/blog/post/python-tuple/</link>
+      <link>https://pyonk.github.io/blog/posts/python-tuple/</link>
       <pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/python-tuple/</guid>
+      <guid>https://pyonk.github.io/blog/posts/python-tuple/</guid>
       <description>pythonのthreadで引数を渡したい Djangoで時間のかかる処理をスレッド化して逃げようとしたのですがうまくいかなかったのでメモ。
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
@@ -267,10 +267,10 @@ def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;,
     
     <item>
       <title>○○さんに送る退職ポエム</title>
-      <link>https://pyonk.github.io/blog/post/retirement-poem-to-you/</link>
+      <link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link>
       <pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/retirement-poem-to-you/</guid>
+      <guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid>
       <description>これはなに 弊社では昨年末にパートの方ですが、初めての退職者がでました。 といっても3年ほど前から一緒に働いていた方です。
 ちいさな場所で仕事をしていたときから一緒なので非常に古参の人らは寂しい思いです。 ちなみに僕が経営者、みたいな口調で始まってますがただの一平社員です。
 本題ですが、その方が退職するということで色紙に寄せ書きをしようということになりました。 そこで僕がポエムを書くことになったので、ぼかしますが、ここに書き殴りたいと思います。
@@ -302,10 +302,10 @@ P.S.
     
     <item>
       <title>Hugofyにプルリクおくってみた</title>
-      <link>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</link>
+      <link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link>
       <pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/send-pullrequest-to-hugofy/</guid>
+      <guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid>
       <description>2017年明けましておめでとうございます。
 初プルリク 昨年末になんとなくHugofyにプルリクを送ってみました。
 ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。
@@ -320,10 +320,10 @@ pyonk/Hugofy 少しだけ機能追加してます。
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
-      <link>https://pyonk.github.io/blog/post/hubot-line-message-api/</link>
+      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/hubot-line-message-api/</guid>
+      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
@@ -339,10 +339,10 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
     
     <item>
       <title>javascriptのよくわからない書き方【連想配列編】</title>
-      <link>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</link>
+      <link>https://pyonk.github.io/blog/posts/javascript-unknonwn-writing/</link>
       <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/javascript-unknonwn-writing/</guid>
+      <guid>https://pyonk.github.io/blog/posts/javascript-unknonwn-writing/</guid>
       <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
 連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &amp;#39;&amp;#39;, } return { hogeKey, } }  上記が件のコード。
 けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値  console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列  var { key1: key1, } = keyA || { key1: &amp;#39;&amp;#39;, } console.</description>
@@ -350,10 +350,10 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
     
     <item>
       <title>nginxのimage_filterを使って画像を動的に縮小するには</title>
-      <link>https://pyonk.github.io/blog/post/nginx-image-filter/</link>
+      <link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link>
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/nginx-image-filter/</guid>
+      <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
       <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
 $ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、

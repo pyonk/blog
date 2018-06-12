@@ -14,10 +14,10 @@
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
-      <link>https://pyonk.github.io/blog/post/hubot-line-message-api/</link>
+      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/post/hubot-line-message-api/</guid>
+      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
