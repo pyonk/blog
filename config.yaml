@@ -13,6 +13,10 @@ pygmentsCodeFences: true
 pygmentsOptions:
   linenos: "table"
 
+taxonomies:
+  tag: tags
+  category: categories
+
 Params:
   subtitle: "いろいろ"
   facebook: "https://facebook.com/yukiyoshiokap"
