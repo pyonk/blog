@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Language Server on わいがかいた</title>
-    <link>/tags/language-server/</link>
+    <link>blog/tags/language-server/</link>
     <description>Recent content in Language Server on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 21 Mar 2019 09:33:38 +0900</lastBuildDate>
     
-	<atom:link href="/tags/language-server/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="blog/tags/language-server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>coc.vim is awesome</title>
-      <link>/posts/how-to-use-coc-vim/</link>
+      <link>blog/posts/how-to-use-coc-vim/</link>
       <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
       
-      <guid>/posts/how-to-use-coc-vim/</guid>
+      <guid>blog/posts/how-to-use-coc-vim/</guid>
       <description>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。
 この間redditみてたら
  python completion in coc.nvim + pyls : vim  こんなスレッドがあって
