@@ -22,17 +22,17 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/" />
+<link rel="canonical" href="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/" />
 
 
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://pyonk.github.io/blog/assets/style.css">
 
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://pyonk.github.io/blog/style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://pyonk.github.io/blog/img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -51,7 +51,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 結論、書いてるコードに問題があった。
  実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {" />
-<meta name="twitter:site" content="" />
+<meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -73,7 +73,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 結論、書いてるコードに問題があった。
  実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {" />
-<meta property="og:url" content="/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/" />
+<meta property="og:url" content="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/" />
 <meta property="og:site_name" content="Unityのscrollrectでスクロールができない件" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
@@ -125,11 +125,11 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="/about">About</a></li>
+                <li><a href="/blog/about">About</a></li>
               
             
               
-                <li><a href="/showcase">Showcase</a></li>
+                <li><a href="/blog/showcase">Showcase</a></li>
               
             
           </ul>
@@ -141,11 +141,11 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/blog/about">About</a></li>
       
     
       
-        <li><a href="/showcase">Showcase</a></li>
+        <li><a href="/blog/showcase">Showcase</a></li>
       
     
   </ul>
@@ -174,7 +174,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
   <div class="content">
     
   <div class="post">
-    <h2 class="post-title"><a href="/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/">Unityのscrollrectでスクロールができない件</a></h2>
+    <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/">Unityのscrollrectでスクロールができない件</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -188,9 +188,9 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
     
       <span class="post-tags">
         
-          #<a href="tags/unity">unity</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/unity">unity</a>&nbsp;
         
-          #<a href="tags/c">c#</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/c">c#</a>&nbsp;
         
       </span>
     
@@ -278,7 +278,7 @@ public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEv
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="/posts/django-test-client-url-capture-not-working/">
+              <a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">
                 <span class="button__icon">←</span>
                 <span class="button__text">Django Test Client Url Capture Not Working</span>
               </a>
@@ -286,7 +286,7 @@ public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEv
           
           
             <span class="button next">
-              <a href="/posts/lets-split-arrive/lets-split-arrive/">
+              <a href="https://pyonk.github.io/blog/posts/lets-split-arrive/lets-split-arrive/">
                 <span class="button__text">let&#39;s splitがとどいた！</span>
                 <span class="button__icon">→</span>
               </a>
@@ -325,8 +325,8 @@ public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEv
   </div>
 </footer>
 
-<script src="assets/main.js"></script>
-<script src="assets/prism.js"></script>
+<script src="https://pyonk.github.io/blog/assets/main.js"></script>
+<script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
   
 </div>
