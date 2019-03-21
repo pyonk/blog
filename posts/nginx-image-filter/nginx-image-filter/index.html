@@ -14,17 +14,17 @@ confを変更 image_filterを加えます。 くわしいことはここをみ�
 location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="blog/posts/nginx-image-filter/nginx-image-filter/" />
+<link rel="canonical" href="/posts/nginx-image-filter/nginx-image-filter/" />
 
 
-<link rel="stylesheet" href="blog/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css">
 
 
-<link rel="stylesheet" href="blog/style.css">
+<link rel="stylesheet" href="/style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="blog/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="blog/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -35,7 +35,7 @@ $ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.ta
 $ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
 location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
-<meta name="twitter:site" content="blog/" />
+<meta name="twitter:site" content="/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -49,7 +49,7 @@ $ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.ta
 $ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
 location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
-<meta property="og:url" content="blog/posts/nginx-image-filter/nginx-image-filter/" />
+<meta property="og:url" content="/posts/nginx-image-filter/nginx-image-filter/" />
 <meta property="og:site_name" content="nginxのimage_filterを使って画像を動的に縮小するには" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
@@ -101,11 +101,11 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="blog/about">About</a></li>
+                <li><a href="/about">About</a></li>
               
             
               
-                <li><a href="blog/showcase">Showcase</a></li>
+                <li><a href="/showcase">Showcase</a></li>
               
             
           </ul>
@@ -117,11 +117,11 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="blog/about">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="blog/showcase">Showcase</a></li>
+        <li><a href="/showcase">Showcase</a></li>
       
     
   </ul>
@@ -150,7 +150,7 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
   <div class="content">
     
   <div class="post">
-    <h2 class="post-title"><a href="blog/posts/nginx-image-filter/nginx-image-filter/">nginxのimage_filterを使って画像を動的に縮小するには</a></h2>
+    <h2 class="post-title"><a href="/posts/nginx-image-filter/nginx-image-filter/">nginxのimage_filterを使って画像を動的に縮小するには</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -164,7 +164,7 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
     
       <span class="post-tags">
         
-          #<a href="blog/tags/nginx">nginx</a>&nbsp;
+          #<a href="/tags/nginx">nginx</a>&nbsp;
         
       </span>
     
@@ -223,7 +223,7 @@ $ sudo kill -QUIT 10576
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="blog/posts/javascript-unknown-writing/javascript-unknonwn-writing/">
+              <a href="/posts/javascript-unknown-writing/javascript-unknonwn-writing/">
                 <span class="button__icon">←</span>
                 <span class="button__text">javascriptのよくわからない書き方【連想配列編】</span>
               </a>
@@ -263,8 +263,8 @@ $ sudo kill -QUIT 10576
   </div>
 </footer>
 
-<script src="blog/assets/main.js"></script>
-<script src="blog/assets/prism.js"></script>
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
   
 </div>

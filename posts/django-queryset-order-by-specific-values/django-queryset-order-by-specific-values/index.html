@@ -15,17 +15,17 @@ Django order_by specific order - Stack Overflow
  TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &#39;1&#39;: 100.0, &#39;2&#39;: 50.0, &#39;3&#39;: 25.0, &#39;4&#39;: 123.4, &#39;5&#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/" />
+<link rel="canonical" href="/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/" />
 
 
-<link rel="stylesheet" href="blog/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css">
 
 
-<link rel="stylesheet" href="blog/style.css">
+<link rel="stylesheet" href="/style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="blog/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="blog/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -37,7 +37,7 @@ databaseに定義されてない値でソートしたかったのです。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
  TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &#39;1&#39;: 100.0, &#39;2&#39;: 50.0, &#39;3&#39;: 25.0, &#39;4&#39;: 123.4, &#39;5&#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django" />
-<meta name="twitter:site" content="blog/" />
+<meta name="twitter:site" content="/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -52,7 +52,7 @@ databaseに定義されてない値でソートしたかったのです。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
  TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &#39;1&#39;: 100.0, &#39;2&#39;: 50.0, &#39;3&#39;: 25.0, &#39;4&#39;: 123.4, &#39;5&#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django" />
-<meta property="og:url" content="blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/" />
+<meta property="og:url" content="/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/" />
 <meta property="og:site_name" content="djangoのquerysetを任意の順番でsortする" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
@@ -104,11 +104,11 @@ Django order_by specific order - Stack Overflow
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="blog/about">About</a></li>
+                <li><a href="/about">About</a></li>
               
             
               
-                <li><a href="blog/showcase">Showcase</a></li>
+                <li><a href="/showcase">Showcase</a></li>
               
             
           </ul>
@@ -120,11 +120,11 @@ Django order_by specific order - Stack Overflow
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="blog/about">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="blog/showcase">Showcase</a></li>
+        <li><a href="/showcase">Showcase</a></li>
       
     
   </ul>
@@ -153,7 +153,7 @@ Django order_by specific order - Stack Overflow
   <div class="content">
     
   <div class="post">
-    <h2 class="post-title"><a href="blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/">djangoのquerysetを任意の順番でsortする</a></h2>
+    <h2 class="post-title"><a href="/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/">djangoのquerysetを任意の順番でsortする</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -167,9 +167,9 @@ Django order_by specific order - Stack Overflow
     
       <span class="post-tags">
         
-          #<a href="blog/tags/django">django</a>&nbsp;
+          #<a href="/tags/django">django</a>&nbsp;
         
-          #<a href="blog/tags/python">python</a>&nbsp;
+          #<a href="/tags/python">python</a>&nbsp;
         
       </span>
     
@@ -242,7 +242,7 @@ Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/">
+              <a href="/posts/social-login-update-for-facebook/social-login-update-for-facebook/">
                 <span class="button__icon">←</span>
                 <span class="button__text">facebookのためにsocial loginをごにょごにょした話</span>
               </a>
@@ -250,7 +250,7 @@ Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(
           
           
             <span class="button next">
-              <a href="blog/posts/create-disabled-ime-command-for-subl-with-vintage/">
+              <a href="/posts/create-disabled-ime-command-for-subl-with-vintage/">
                 <span class="button__text">sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</span>
                 <span class="button__icon">→</span>
               </a>
@@ -289,8 +289,8 @@ Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case(
   </div>
 </footer>
 
-<script src="blog/assets/main.js"></script>
-<script src="blog/assets/prism.js"></script>
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
   
 </div>
