@@ -2,237 +2,237 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 31 Aug 2017 17:42:30 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>App</title>
-      <link>https://pyonk.github.io/blog/tags/app/</link>
+      <link>/tags/app/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/app/</guid>
+      <guid>/tags/app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C#</title>
-      <link>https://pyonk.github.io/blog/tags/c#/</link>
+      <link>/tags/c#/</link>
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/c#/</guid>
+      <guid>/tags/c#/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coffeescript</title>
-      <link>https://pyonk.github.io/blog/tags/coffeescript/</link>
+      <link>/tags/coffeescript/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/coffeescript/</guid>
+      <guid>/tags/coffeescript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cron</title>
-      <link>https://pyonk.github.io/blog/tags/cron/</link>
+      <link>/tags/cron/</link>
       <pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/cron/</guid>
+      <guid>/tags/cron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Django</title>
-      <link>https://pyonk.github.io/blog/tags/django/</link>
+      <link>/tags/django/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/django/</guid>
+      <guid>/tags/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Djnago</title>
-      <link>https://pyonk.github.io/blog/tags/djnago/</link>
+      <link>/tags/djnago/</link>
       <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/djnago/</guid>
+      <guid>/tags/djnago/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Facebook</title>
-      <link>https://pyonk.github.io/blog/tags/facebook/</link>
+      <link>/tags/facebook/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/facebook/</guid>
+      <guid>/tags/facebook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hubot</title>
-      <link>https://pyonk.github.io/blog/tags/hubot/</link>
+      <link>/tags/hubot/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/hubot/</guid>
+      <guid>/tags/hubot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://pyonk.github.io/blog/tags/hugo/</link>
+      <link>/tags/hugo/</link>
       <pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/hugo/</guid>
+      <guid>/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://pyonk.github.io/blog/tags/javascript/</link>
+      <link>/tags/javascript/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/javascript/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jubilee Works</title>
-      <link>https://pyonk.github.io/blog/tags/jubilee-works/</link>
+      <link>/tags/jubilee-works/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/jubilee-works/</guid>
+      <guid>/tags/jubilee-works/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Language Server</title>
-      <link>https://pyonk.github.io/blog/tags/language-server/</link>
+      <link>/tags/language-server/</link>
       <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/language-server/</guid>
+      <guid>/tags/language-server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lets Split</title>
-      <link>https://pyonk.github.io/blog/tags/lets-split/</link>
+      <link>/tags/lets-split/</link>
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/lets-split/</guid>
+      <guid>/tags/lets-split/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Line</title>
-      <link>https://pyonk.github.io/blog/tags/line/</link>
+      <link>/tags/line/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/line/</guid>
+      <guid>/tags/line/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>https://pyonk.github.io/blog/tags/nginx/</link>
+      <link>/tags/nginx/</link>
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/nginx/</guid>
+      <guid>/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poem</title>
-      <link>https://pyonk.github.io/blog/tags/poem/</link>
+      <link>/tags/poem/</link>
       <pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/poem/</guid>
+      <guid>/tags/poem/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://pyonk.github.io/blog/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sublimetext</title>
-      <link>https://pyonk.github.io/blog/tags/sublimetext/</link>
+      <link>/tags/sublimetext/</link>
       <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/sublimetext/</guid>
+      <guid>/tags/sublimetext/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Test</title>
-      <link>https://pyonk.github.io/blog/tags/test/</link>
+      <link>/tags/test/</link>
       <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/test/</guid>
+      <guid>/tags/test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Timetree</title>
-      <link>https://pyonk.github.io/blog/tags/timetree/</link>
+      <link>/tags/timetree/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/timetree/</guid>
+      <guid>/tags/timetree/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unity</title>
-      <link>https://pyonk.github.io/blog/tags/unity/</link>
+      <link>/tags/unity/</link>
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/unity/</guid>
+      <guid>/tags/unity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>https://pyonk.github.io/blog/tags/vim/</link>
+      <link>/tags/vim/</link>
       <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/vim/</guid>
+      <guid>/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>キーボード</title>
-      <link>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
+      <link>/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</guid>
+      <guid>/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</guid>
       <description></description>
     </item>
     
     <item>
       <title>堀江貴文</title>
-      <link>https://pyonk.github.io/blog/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/</link>
+      <link>/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/</link>
       <pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/</guid>
+      <guid>/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/</guid>
       <description></description>
     </item>
     
     <item>
       <title>多動力</title>
-      <link>https://pyonk.github.io/blog/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/</link>
+      <link>/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/</link>
       <pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/</guid>
+      <guid>/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/</guid>
       <description></description>
     </item>
     

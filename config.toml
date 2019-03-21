@@ -1,4 +1,4 @@
-baseurl = "https://pyonk.github.io/blog/"
+baseurl = ""
 languageCode = "ja-jp"
 theme = "hello-friend"
 paginate = 5

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>フロントエンド on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/</link>
+    <link>/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/</link>
     <description>Recent content in フロントエンド on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 30 Aug 2016 10:48:43 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>javascriptのよくわからない書き方【連想配列編】</title>
-      <link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/javascript-unknonwn-writing/</link>
+      <link>/posts/javascript-unknown-writing/javascript-unknonwn-writing/</link>
       <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/javascript-unknonwn-writing/</guid>
+      <guid>/posts/javascript-unknown-writing/javascript-unknonwn-writing/</guid>
       <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
 連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &#39;&#39;, } return { hogeKey, } }  上記が件のコード。
 けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値 console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列 var { key1: key1, } = keyA || { key1: &#39;&#39;, } console.</description>

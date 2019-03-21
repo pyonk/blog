@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/tags/unity/</link>
+    <link>/tags/unity/</link>
     <description>Recent content in Unity on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 05 Nov 2018 15:37:45 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Unityのscrollrectでスクロールができない件</title>
-      <link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</link>
+      <link>/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</link>
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</guid>
+      <guid>/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</guid>
       <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
 タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
