@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-jp">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.54.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -18,7 +18,7 @@
 
     <header role="banner">
         <div class="header-logo">
-            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
+            <a href="/blog"><img src="#ZgotmplZ" width="60" height="60" alt="わいがかいた"></a>
         </div>
         
     </header>
@@ -86,11 +86,11 @@ This update comes in response to malicious activity we saw on our platform, and 
 <h2 id="python-social-authに乗り換えた">python-social-authに乗り換えた</h2>
 
 <ul>
-<li>まず、メンテされていなかった<a href="https://github.com/omab/django-social-auth" target="_blank">omab/django-social-auth: Django social authentication made simple</a>から<a href="https://github.com/python-social-auth/social-app-django" target="_blank">python-social-auth/social-app-django: Python Social Auth - Application - Django</a>
+<li>まず、メンテされていなかった<a href="https://github.com/omab/django-social-auth">omab/django-social-auth: Django social authentication made simple</a>から<a href="https://github.com/python-social-auth/social-app-django">python-social-auth/social-app-django: Python Social Auth - Application - Django</a>
 に乗り換えた。
 
 <ul>
-<li><a href="http://python-social-auth.readthedocs.io/en/latest/index.html" target="_blank">ドキュメント</a>よんで、もろもろの<code>settings.py</code>の設定変更</li>
+<li><a href="http://python-social-auth.readthedocs.io/en/latest/index.html">ドキュメント</a>よんで、もろもろの<code>settings.py</code>の設定変更</li>
 </ul></li>
 </ul>
 
@@ -103,7 +103,7 @@ This update comes in response to malicious activity we saw on our platform, and 
 <li>issueにあがってた
 
 <ul>
-<li><a href="https://github.com/python-social-auth/social-core/issues/141" target="_blank">social_core.backends.facebook.FacebookOAuth2 should have REDIRECT_STATE set to False · Issue #141 · python-social-auth/social-core</a></li>
+<li><a href="https://github.com/python-social-auth/social-core/issues/141">social_core.backends.facebook.FacebookOAuth2 should have REDIRECT_STATE set to False · Issue #141 · python-social-auth/social-core</a></li>
 </ul></li>
 <li><code>redirect_state</code>を固定にするか、なくすかのどちらかなのだけど、<code>redirect_state</code>を固定にする方向で実装していくことにした</li>
 </ul></li>
@@ -112,46 +112,52 @@ This update comes in response to malicious activity we saw on our platform, and 
 <h2 id="backendを自作した">backendを自作した</h2>
 
 <p>といってもまったく難しいことはしてなくて、クラスを継承して、対象メソッドを上書きしただけ。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">social_core.backends.facebook</span> <span class="kn">import</span> <span class="n">FacebookOAuth2</span>
 
-<span class="k">class</span> <span class="nc">FacebookOAuth2Override</span><span class="p">(</span><span class="n">FacebookOAuth2</span><span class="p">):</span>
-    <span class="c1"># 現在はデフォルトでTrueなので、これはなくても良い</span>
-    <span class="n">REDIRECT_STATE</span> <span class="o">=</span> <span class="bp">True</span>
+<pre><code class="language-python">from social_core.backends.facebook import FacebookOAuth2
 
-    <span class="c1"># get_or_create_stateを上書く</span>
-    <span class="k">def</span> <span class="nf">get_or_create_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">STATE_PARAMETER</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">REDIRECT_STATE</span><span class="p">:</span>
-            <span class="c1"># Store state in session for further request validation. The state</span>
-            <span class="c1"># value is passed as state parameter (as specified in OAuth2 spec),</span>
-            <span class="c1"># but also added to redirect, that way we can still verify the</span>
-            <span class="c1"># request if the provider doesn&#39;t implement the state parameter.</span>
-            <span class="c1"># Reuse token if any.</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;_state&#39;</span>
-            <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="o">.</span><span class="n">session_get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="c1"># settings.pyのSOCIAL_AUTH_FACEBOOK_REDIRECT_STATEを見に行く</span>
-                <span class="n">static_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="o">.</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE&#39;</span><span class="p">)</span>
-                <span class="c1"># sessionに保存する必要があるかどうか</span>
-                <span class="k">if</span> <span class="n">state</span> <span class="o">!=</span> <span class="n">static_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="o">.</span><span class="n">session_set</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">static_state</span><span class="p">)</span>
-                <span class="n">state</span> <span class="o">=</span> <span class="n">static_state</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="c1"># SOCIAL_AUTH_FACEBOOK_REDIRECT_STATEがない場合</span>
-                <span class="c1"># sessionにも何も保管されていなかったら新たに取得する</span>
-                <span class="k">if</span> <span class="n">state</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_token</span><span class="p">()</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="o">.</span><span class="n">session_set</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">state</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="k">return</span> <span class="n">state</span></code></pre></div>
+class FacebookOAuth2Override(FacebookOAuth2):
+    # 現在はデフォルトでTrueなので、これはなくても良い
+    REDIRECT_STATE = True
+
+    # get_or_create_stateを上書く
+    def get_or_create_state(self):
+        if self.STATE_PARAMETER or self.REDIRECT_STATE:
+            # Store state in session for further request validation. The state
+            # value is passed as state parameter (as specified in OAuth2 spec),
+            # but also added to redirect, that way we can still verify the
+            # request if the provider doesn't implement the state parameter.
+            # Reuse token if any.
+            name = self.name + '_state'
+            state = self.strategy.session_get(name)
+            try:
+                # settings.pyのSOCIAL_AUTH_FACEBOOK_REDIRECT_STATEを見に行く
+                static_state = self.strategy.get_setting('SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE')
+                # sessionに保存する必要があるかどうか
+                if state != static_state:
+                    self.strategy.session_set(name, static_state)
+                state = static_state
+            except:
+                # SOCIAL_AUTH_FACEBOOK_REDIRECT_STATEがない場合
+                # sessionにも何も保管されていなかったら新たに取得する
+                if state is None:
+                    state = self.state_token()
+                    self.strategy.session_set(name, state)
+        else:
+            state = None
+        return state
+</code></pre>
+
 <p>上記を適当なところにおいて(たとえば<code>myapp/custom_backends.py</code>としたら)</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s1">&#39;social_core.backends.twitter.TwitterOAuth&#39;</span><span class="p">,</span>
-    <span class="c1"># &#39;social_core.backends.facebook.FacebookOAuth2&#39;,</span>
-    <span class="s1">&#39;myapp.custom_backends.FacebookOAuth2Override&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.auth.backends.ModelBackend&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE</span> <span class="o">=</span> <span class="s1">&#39;{{static_state}}&#39;</span></code></pre></div>
+
+<pre><code class="language-python">AUTHENTICATION_BACKENDS = (
+    'social_core.backends.twitter.TwitterOAuth',
+    # 'social_core.backends.facebook.FacebookOAuth2',
+    'myapp.custom_backends.FacebookOAuth2Override',
+    'django.contrib.auth.backends.ModelBackend',
+)
+SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE = '{{static_state}}'
+</code></pre>
+
 <p>今の所こんな感じで問題なさそう。</p>
 
 <p>facebook側の設定も忘れずに:(</p>
@@ -165,23 +171,16 @@ This update comes in response to malicious activity we saw on our platform, and 
         <div class="hr"></div>
         <div class="footer-link">
             
-            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
-            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
-            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+            
+            
+            
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
+        <div class="copyright">Copyright &copy; </div>
     </footer>
 
 </div>
 
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-85825684-1', 'auto');
-    ga('send', 'pageview');
-</script>
+
 
 
 

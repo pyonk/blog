@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>日記 on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/categories/%E6%97%A5%E8%A8%98/</link>
+    <link>blog/categories/%E6%97%A5%E8%A8%98/</link>
     <description>Recent content in 日記 on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <copyright>pyonk</copyright>
+    <language>ja-jp</language>
     <lastBuildDate>Mon, 05 Nov 2018 15:37:45 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="blog/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Unityのscrollrectでスクロールができない件</title>
-      <link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link>
+      <link>blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</link>
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid>
+      <guid>blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</guid>
       <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
 タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
@@ -30,16 +29,16 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 参考になったのはこちら
 [Solved] Scroll not working when elements inside have click events - Unity Answers
 結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
+ 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {</description>
     </item>
     
     <item>
       <title>let&#39;s splitがとどいた！</title>
-      <link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link>
+      <link>blog/posts/lets-split-arrive/lets-split-arrive/</link>
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
+      <guid>blog/posts/lets-split-arrive/lets-split-arrive/</guid>
       <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
 @foostan さんにはマジ感謝マジ卍。
 完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
@@ -55,10 +54,10 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
     
     <item>
       <title>let&#39;s splitを買った</title>
-      <link>https://pyonk.github.io/blog/posts/buy-lets-split/</link>
+      <link>blog/posts/buy-lets-split/buy-lets-split/</link>
       <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid>
+      <guid>blog/posts/buy-lets-split/buy-lets-split/</guid>
       <description>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
 アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
 で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
@@ -72,16 +71,16 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
 完成品版let&amp;#39;s split注文した。
 手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
 届くのが楽しみだな〜〜〜！！
-&amp;mdash; pyonknoyp (@pyonknoyp) May 24, 2018  とにかく届くのが楽しみでごわす。
+&amp;mdash; ヨシオカユウキ (@pyonknoyp) May 24, 2018  とにかく届くのが楽しみでごわす。
 発送予定日が5/27なので週明けには手元に届いてるかしら。</description>
     </item>
     
     <item>
       <title>timetreeの500万ユーザー記念パーティに参加してきた</title>
-      <link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link>
+      <link>blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid>
+      <guid>blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</guid>
       <description>いつも使っているアプリの一つにtimetreeというカレンダーアプリがあるのだけど、ある日ふとお知らせをみたら、オフィスパーティ招待の募集が。 平日だし、どうしようか悩んだけど、とりあえず応募したら見事にご招待された。ありがとうございます。 ということで、昨日行って来ました。
 TimeTree — 〜＊祝500万ユーザー突破！オフィス・パーティーへのご招待＊〜
 まず、ものすごく可愛いオフィスで、良い空間であったということを伝えたい。
@@ -109,10 +108,10 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
     
     <item>
       <title>○○さんに送る退職ポエム</title>
-      <link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link>
+      <link>blog/posts/retirement-poem-to-you/</link>
       <pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid>
+      <guid>blog/posts/retirement-poem-to-you/</guid>
       <description>これはなに 弊社では昨年末にパートの方ですが、初めての退職者がでました。 といっても3年ほど前から一緒に働いていた方です。
 ちいさな場所で仕事をしていたときから一緒なので非常に古参の人らは寂しい思いです。 ちなみに僕が経営者、みたいな口調で始まってますがただの一平社員です。
 本題ですが、その方が退職するということで色紙に寄せ書きをしようということになりました。 そこで僕がポエムを書くことになったので、ぼかしますが、ここに書き殴りたいと思います。

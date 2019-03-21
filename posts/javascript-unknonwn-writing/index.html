@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-jp">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.54.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/blog/css/normalize.css">
 <link rel="stylesheet" href="/blog/css/skeleton.css">
@@ -18,7 +18,7 @@
 
     <header role="banner">
         <div class="header-logo">
-            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
+            <a href="/blog"><img src="#ZgotmplZ" width="60" height="60" alt="わいがかいた"></a>
         </div>
         
     </header>
@@ -41,56 +41,60 @@
 <p>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。</p>
 
 <h1 id="連想配列のなにかっぽい">連想配列のなにかっぽい</h1>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">myfunc</span><span class="p">(</span><span class="nx">hoge</span><span class="p">,</span> <span class="nx">fuga</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="p">{</span><span class="nx">hogehoge</span><span class="p">}</span> <span class="o">=</span> <span class="nx">hoge</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="p">{</span>
-        <span class="nx">hogeKey</span><span class="o">:</span> <span class="nx">hogeValue</span><span class="p">,</span>
-    <span class="p">}</span> <span class="o">=</span> <span class="nx">hogehoge</span> <span class="o">||</span> <span class="p">{</span>
-        <span class="nx">hogeKey</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">hogeKey</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+
+<pre><code class="language-js">function myfunc(hoge, fuga) {
+    var {hogehoge} = hoge;
+    var {
+        hogeKey: hogeValue,
+    } = hogehoge || {
+        hogeKey: '',
+    }
+    return {
+        hogeKey,
+    }
+}
+</code></pre>
+
 <p>上記が件のコード。</p>
 
 <h1 id="けっか">けっか</h1>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="nx">keyA</span><span class="o">:</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span> <span class="mi">1</span><span class="p">}};</span>
-<span class="kd">var</span> <span class="nx">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="nx">keyB</span><span class="o">:</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span> <span class="mi">2</span><span class="p">}};</span>
-<span class="kd">var</span> <span class="nx">dict3</span> <span class="o">=</span> <span class="p">{</span><span class="nx">keyA</span><span class="o">:</span> <span class="p">{</span><span class="nx">key2</span><span class="o">:</span> <span class="mi">3</span><span class="p">}};</span>
-<span class="kd">var</span> <span class="nx">dict4</span> <span class="o">=</span> <span class="p">{</span><span class="nx">keyC</span><span class="o">:</span> <span class="p">{</span><span class="nx">key2</span><span class="o">:</span> <span class="mi">4</span><span class="p">}};</span>
-<span class="kd">function</span> <span class="nx">myfunc</span><span class="p">(</span><span class="nx">hoge</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="p">{</span><span class="nx">keyA</span><span class="p">}</span> <span class="o">=</span> <span class="nx">hoge</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keyA</span><span class="p">);</span> <span class="c1">//hoge.keyAの値
-</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span><span class="nx">keyA</span><span class="p">});</span> <span class="c1">//keyAをキーに、keyAに代入されている値をバリューにした連想配列
-</span><span class="c1"></span>    <span class="kd">var</span> <span class="p">{</span>
-        <span class="nx">key1</span><span class="o">:</span> <span class="nx">key1</span><span class="p">,</span>
-    <span class="p">}</span> <span class="o">=</span> <span class="nx">keyA</span> <span class="o">||</span> <span class="p">{</span>
-        <span class="nx">key1</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key1</span><span class="p">);</span> <span class="c1">//keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
-</span><span class="c1"></span>    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">key1</span><span class="p">,</span> <span class="c1">//key1をキーに、key1に代入されている値をバリューにした連想配列
-</span><span class="c1"></span>    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">myfunc</span><span class="p">(</span><span class="nx">dict1</span><span class="p">);</span>
-<span class="c1">// {key1: 1}
-</span><span class="c1">// {keyA: {key1: 1}}
-</span><span class="c1">// 1
-</span><span class="c1"></span><span class="nx">myfunc</span><span class="p">(</span><span class="nx">dict2</span><span class="p">);</span>
-<span class="c1">// undefined
-</span><span class="c1">// {keyA: undefined}
-</span><span class="c1">// &#39;&#39;
-</span><span class="c1"></span><span class="nx">myfunc</span><span class="p">(</span><span class="nx">dict3</span><span class="p">);</span>
-<span class="c1">// {key2: 3}
-</span><span class="c1">// {keyA: {key2: 3}}
-</span><span class="c1">// undefined
-</span><span class="c1"></span><span class="nx">myfunc</span><span class="p">(</span><span class="nx">dict4</span><span class="p">);</span>
-<span class="c1">// undefined
-</span><span class="c1">// {keyA: undefined}
-</span><span class="c1">// &#39;&#39;
-</span><span class="c1"></span></code></pre></div>
+
+<pre><code class="language-js">var dict1 = {keyA: {key1: 1}};
+var dict2 = {keyB: {key1: 2}};
+var dict3 = {keyA: {key2: 3}};
+var dict4 = {keyC: {key2: 4}};
+function myfunc(hoge) {
+    var {keyA} = hoge;
+    console.log(keyA); //hoge.keyAの値
+    console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列
+    var {
+        key1: key1,
+    } = keyA || {
+        key1: '',
+    }
+    console.log(key1); //keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
+    return {
+        key1, //key1をキーに、key1に代入されている値をバリューにした連想配列
+    }
+}
+myfunc(dict1);
+// {key1: 1}
+// {keyA: {key1: 1}}
+// 1
+myfunc(dict2);
+// undefined
+// {keyA: undefined}
+// ''
+myfunc(dict3);
+// {key2: 3}
+// {keyA: {key2: 3}}
+// undefined
+myfunc(dict4);
+// undefined
+// {keyA: undefined}
+// ''
+</code></pre>
+
 <p>書いててよくわからなくなってきた。</p>
 
 <h1 id="つまり">つまり</h1>
@@ -100,9 +104,11 @@
 <p>連想配列(dict)のキー(keyA)を変数名にして、そのキーに対応する値(dict.keyA)を代入している。</p>
 
 <h3 id="これって">これって</h3>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">dict</span> <span class="o">=</span> <span class="p">{</span><span class="nx">keyA</span><span class="o">:</span> <span class="s1">&#39;keyAだよ&#39;</span><span class="p">};</span>
-<span class="kd">var</span> <span class="nx">keyA</span> <span class="o">=</span> <span class="nx">dict</span><span class="p">.</span><span class="nx">keyA</span><span class="p">;</span>
-</code></pre></div>
+
+<pre><code class="language-js">var dict = {keyA: 'keyAだよ'};
+var keyA = dict.keyA;
+</code></pre>
+
 <p>と一緒ですね。</p>
 
 <h2 id="key1-key1-dict-key1">{key1: key1} = dict || {key1: &ldquo;}</h2>
@@ -110,21 +116,27 @@
 <p>連想配列(dict)のキー(key1)を変数名にしてそのキーに対応する値(dict.key1)を代入する。ない場合はkey1に初期値(空文字)をしている。</p>
 
 <h3 id="これって-1">これって</h3>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">dict</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span> <span class="s1">&#39;key1だよ&#39;</span><span class="p">};</span>
-<span class="kd">var</span> <span class="nx">key1</span> <span class="o">=</span> <span class="nx">dict</span><span class="p">.</span><span class="nx">key1</span> <span class="o">?</span> <span class="nx">key1</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-</code></pre></div>
+
+<pre><code class="language-js">var dict = {key1: 'key1だよ'};
+var key1 = dict.key1 ? key1: '';
+</code></pre>
+
 <p>と一緒ですね。</p>
 
 <h2 id="return-key1">return {key1}</h2>
 
 <p>変数(key1)をキーにして、変数(key1)に代入された値をバリューにした連想配列をリターンしている。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">key1</span> <span class="o">=</span> <span class="s1">&#39;hogehoge&#39;</span><span class="p">;</span>
-<span class="k">return</span> <span class="p">{</span><span class="nx">key1</span><span class="p">};</span> <span class="c1">// {key1: &#39;hogehoge&#39;}
-</span><span class="c1"></span></code></pre></div>
+
+<pre><code class="language-js">var key1 = 'hogehoge';
+return {key1}; // {key1: 'hogehoge'}
+</code></pre>
+
 <h3 id="これって-2">これって</h3>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">key1</span> <span class="o">=</span> <span class="s1">&#39;key1だよ&#39;</span><span class="p">;</span>
-<span class="k">return</span> <span class="p">{</span><span class="nx">key1</span><span class="o">:</span> <span class="nx">key1</span><span class="p">};</span>
-</code></pre></div>
+
+<pre><code class="language-js">var key1 = 'key1だよ';
+return {key1: key1};
+</code></pre>
+
 <p>と一緒ですね。</p>
 
 <p><strong>という見解であってるんでしょうか・・・。</strong></p>
@@ -138,23 +150,16 @@
         <div class="hr"></div>
         <div class="footer-link">
             
-            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
-            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
-            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+            
+            
+            
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
+        <div class="copyright">Copyright &copy; </div>
     </footer>
 
 </div>
 
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-85825684-1', 'auto');
-    ga('send', 'pageview');
-</script>
+
 
 
 

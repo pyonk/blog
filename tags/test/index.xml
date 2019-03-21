@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on わいがかいた</title>
+    <link>blog/tags/test/</link>
+    <description>Recent content in Test on わいがかいた</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 20 Feb 2019 15:12:08 +0900</lastBuildDate>
+    
+	<atom:link href="blog/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django Test Client Url Capture Not Working</title>
+      <link>blog/posts/django-test-client-url-capture-not-working/</link>
+      <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
+      
+      <guid>blog/posts/django-test-client-url-capture-not-working/</guid>
+      <description>from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
+結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ</description>
+    </item>
+    
+  </channel>
+</rss>

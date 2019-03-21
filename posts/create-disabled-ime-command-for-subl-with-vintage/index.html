@@ -1,46 +1,215 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="generator" content="Hugo 0.49" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/blog/css/normalize.css">
-<link rel="stylesheet" href="/blog/css/skeleton.css">
-<link rel="stylesheet" href="/blog/css/custom.css">
-<link rel="stylesheet" href="/blog/css/icomoon.css">
-<link rel="stylesheet" href="/blog/css/syntax.css">
-<link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
-<title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった - わいがかいた</title>
+  
+    <title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった :: わいがかいた</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="ぼくは普段からsublimetextを使っているのだけど
+（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
+vim使ってる人のプロフェッショナル感がすごい。
+sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
+Vintageの有効化 Cmd &#43; ,でsublimetextの設定を開く。
+ここのVintageを消す。
+ vintage消す   有効化done
+つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
+ こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
+ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
+ VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけど
+できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+macではAppleScriptを使うみたいですね。
+ SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
+タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
+で結果はこうなります。
+ こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="blog/posts/create-disabled-ime-command-for-subl-with-vintage/" />
+
+
+<link rel="stylesheet" href="blog/assets/style.css">
+
+
+<link rel="stylesheet" href="blog/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="blog/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった :: わいがかいた — " />
+<meta name="twitter:description" content="ぼくは普段からsublimetextを使っているのだけど
+（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
+vim使ってる人のプロフェッショナル感がすごい。
+sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
+Vintageの有効化 Cmd &#43; ,でsublimetextの設定を開く。
+ここのVintageを消す。
+ vintage消す   有効化done
+つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
+ こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
+ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
+ VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけど
+できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+macではAppleScriptを使うみたいですね。
+ SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
+タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
+で結果はこうなります。
+ こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。" />
+<meta name="twitter:site" content="blog/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった :: わいがかいた — ">
+<meta property="og:description" content="ぼくは普段からsublimetextを使っているのだけど
+（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
+vim使ってる人のプロフェッショナル感がすごい。
+sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
+Vintageの有効化 Cmd &#43; ,でsublimetextの設定を開く。
+ここのVintageを消す。
+ vintage消す   有効化done
+つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
+ こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
+ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
+ VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけど
+できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+macではAppleScriptを使うみたいですね。
+ SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
+タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
+で結果はこうなります。
+ こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。" />
+<meta property="og:url" content="blog/posts/create-disabled-ime-command-for-subl-with-vintage/" />
+<meta property="og:site_name" content="sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="つくってみた" />
+<meta property="article:published_time" content="2017-10-18 10:23:34 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
 </head>
-<body>
-
+<body class="">
 <div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
 
-    <header role="banner">
-        <div class="header-logo">
-            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
-        </div>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="blog/about">About</a></li>
+              
+            
+              
+                <li><a href="blog/showcase">Showcase</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="blog/about">About</a></li>
+      
+    
+      
+        <li><a href="blog/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h2 class="post-title"><a href="blog/posts/create-disabled-ime-command-for-subl-with-vintage/">sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2017-10-18
+        </span>
+      
+      
+      
+    </div>
+
+    
+      <span class="post-tags">
         
-    </header>
+          #<a href="blog/tags/python">python</a>&nbsp;
+        
+          #<a href="blog/tags/sublimetext">sublimetext</a>&nbsp;
+        
+          #<a href="blog/tags/vim">vim</a>&nbsp;
+        
+      </span>
+    
 
+    
 
-    <main role="main">
-        <article itemscope itemtype="http://schema.org/BlogPosting">
-            <h1 class="entry-title" itemprop="headline">sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</h1>
-            <span class="entry-meta"><time itemprop="datePublished" datetime="2017-10-18">October 18, 2017</time><dl class="entry-categories"><dt class="category"><a href="/blog/categories/%e3%81%a4%e3%81%8f%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f">つくってみた</a></dt></dl></span>
-            
-            <dl class="entry-tags">
-                
-                <dt class="tag"><a href="/blog/tags/python">#python</a></dt>
-                
-                <dt class="tag"><a href="/blog/tags/sublimetext">#sublimetext</a></dt>
-                
-                <dt class="tag"><a href="/blog/tags/vim">#vim</a></dt>
-                
-            </dl>
-            
-            <section itemprop="entry-text">
-                
+    <div class="post-content">
+      
 
 <p>ぼくは普段からsublimetextを使っているのだけど<br />
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。<br />
@@ -54,7 +223,7 @@ sublでもとりあえずキーバインドはvimにして、触ってみよっ�
 
 <figure style="text-align: center">
     
-        <img src="/blog/images/disabled-ime-command/Preferences-ignore-packages.png"   width="550"/>
+        <img src="images/Preferences-ignore-packages.png"   width="550"/>
     
     
     <figcaption>
@@ -73,7 +242,7 @@ sublでもとりあえずキーバインドはvimにして、触ってみよっ�
 
 <figure style="text-align: center">
     
-        <img src="/blog/images/disabled-ime-command/not-enabled-disabled-ime.gif"   width="550"/>
+        <img src="images/not-enabled-disabled-ime.gif"   width="550"/>
     
     
     <figcaption>
@@ -89,7 +258,7 @@ sublでもとりあえずキーバインドはvimにして、触ってみよっ�
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。</p>
 
 <ul>
-<li><a href="https://rcmdnk.com/blog/2017/03/12/computer-vim/" target="_blank">VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3</a></li>
+<li><a href="https://rcmdnk.com/blog/2017/03/12/computer-vim/">VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3</a></li>
 </ul>
 
 <p><small>カラビナ使うっていう手もあるけど</small></p>
@@ -98,7 +267,7 @@ sublでもとりあえずキーバインドはvimにして、触ってみよっ�
 macではAppleScriptを使うみたいですね。</p>
 
 <ul>
-<li><a href="https://qiita.com/takao-s/items/aecb4076fe21b2803da3" target="_blank">SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;Mac - Qiita</a></li>
+<li><a href="https://qiita.com/takao-s/items/aecb4076fe21b2803da3">SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;Mac - Qiita</a></li>
 </ul>
 
 <p>僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。<br />
@@ -107,7 +276,7 @@ macではAppleScriptを使うみたいですね。</p>
 
 <figure style="text-align: center">
     
-        <img src="/blog/images/disabled-ime-command/enabled-disabled-ime.gif"   width="550"/>
+        <img src="images/enabled-disabled-ime.gif"   width="550"/>
     
     
     <figcaption>
@@ -122,40 +291,73 @@ macではAppleScriptを使うみたいですね。</p>
 <h1 id="おソース">おソース</h1>
 
 <ul>
-<li><a href="https://github.com/pyonk/DisabledIme" target="_blank">pyonk/DisabledIme</a></li>
+<li><a href="https://github.com/pyonk/DisabledIme">pyonk/DisabledIme</a></li>
 </ul>
 
 <p>こちらにおいてありますので、<code>git clone</code>してお使いくださいませ。</p>
 
-            </section>
-        </article>
-    </main>
-
-
-    <footer role="contentinfo">
-        <div class="hr"></div>
-        <div class="footer-link">
-            
-            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
-            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
-            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
-    </footer>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/">
+                <span class="button__icon">←</span>
+                <span class="button__text">djangoのquerysetを任意の順番でsortする</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="blog/posts/fill-pdf-form-from-python/">
+                <span class="button__text">pythonからpdfのフォームに入力する</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
 
+    
+
+    </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="blog/assets/main.js"></script>
+<script src="blog/assets/prism.js"></script>
+
+  
 </div>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-85825684-1', 'auto');
-    ga('send', 'pageview');
-</script>
-
-
 
 </body>
 </html>
-

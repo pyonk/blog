@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>読書 on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/categories/%E8%AA%AD%E6%9B%B8/</link>
+    <link>blog/categories/%E8%AA%AD%E6%9B%B8/</link>
     <description>Recent content in 読書 on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <copyright>pyonk</copyright>
+    <language>ja-jp</language>
     <lastBuildDate>Mon, 21 Aug 2017 21:23:11 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/categories/%E8%AA%AD%E6%9B%B8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="blog/categories/%E8%AA%AD%E6%9B%B8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>多動力を読んだ</title>
-      <link>https://pyonk.github.io/blog/posts/read-tadouryoku/</link>
+      <link>blog/posts/read-tadouryoku/</link>
       <pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/read-tadouryoku/</guid>
+      <guid>blog/posts/read-tadouryoku/</guid>
       <description>久しぶりに読書がしたくなった。数ヶ月前も1度あったのだけど、そのときは日和って買わなかった。
 今日は買うという強い意志を持っていた。
 そして目に付いた「多動力」
