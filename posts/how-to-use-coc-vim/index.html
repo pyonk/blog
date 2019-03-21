@@ -14,17 +14,17 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
 [[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/" />
+<link rel="canonical" href="/posts/how-to-use-coc-vim/" />
 
 
-<link rel="stylesheet" href="https://pyonk.github.io/blog/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 
 
-<link rel="stylesheet" href="https://pyonk.github.io/blog/style.css">
+<link rel="stylesheet" href="style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://pyonk.github.io/blog/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -35,9 +35,9 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
 coc.vimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
 インストール方法 僕はプラグインマネジャーにdeinを使ってるので
 [[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!" />
-<meta name="twitter:site" content="https://pyonk.github.io/blog/" />
+<meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="pyonk" />
-<meta name="twitter:image" content="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/images/completion.png">
+<meta name="twitter:image" content="posts/how-to-use-coc-vim/images/completion.png">
 
 
 <meta property="og:locale" content="en" />
@@ -49,9 +49,9 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
 coc.vimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
 インストール方法 僕はプラグインマネジャーにdeinを使ってるので
 [[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!" />
-<meta property="og:url" content="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/" />
+<meta property="og:url" content="/posts/how-to-use-coc-vim/" />
 <meta property="og:site_name" content="coc.vim is awesome" />
-<meta property="og:image" content="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/images/completion.png">
+<meta property="og:image" content="posts/how-to-use-coc-vim/images/completion.png">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
@@ -101,11 +101,11 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="/blog/about">About</a></li>
+                <li><a href="/about">About</a></li>
               
             
               
-                <li><a href="/blog/showcase">Showcase</a></li>
+                <li><a href="/showcase">Showcase</a></li>
               
             
           </ul>
@@ -117,11 +117,11 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/blog/about">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/blog/showcase">Showcase</a></li>
+        <li><a href="/showcase">Showcase</a></li>
       
     
   </ul>
@@ -150,7 +150,7 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
   <div class="content">
     
   <div class="post">
-    <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/">coc.vim is awesome</a></h2>
+    <h2 class="post-title"><a href="/posts/how-to-use-coc-vim/">coc.vim is awesome</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -164,15 +164,15 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/vim">vim</a>&nbsp;
+          #<a href="tags/vim">vim</a>&nbsp;
         
-          #<a href="https://pyonk.github.io/blog/tags/language-server">language server</a>&nbsp;
+          #<a href="tags/language-server">language server</a>&nbsp;
         
       </span>
     
 
     
-      <img src="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/images/completion.png" class="post-cover" />
+      <img src="posts/how-to-use-coc-vim/images/completion.png" class="post-cover" />
     
 
     <div class="post-content">
@@ -308,7 +308,7 @@ MPLSとは&rdquo;M&rdquo;icrosoftが作っている&rdquo;P&rdquo;ythonの&rdquo
           
           
             <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">
+              <a href="/posts/django-test-client-url-capture-not-working/">
                 <span class="button__text">Django Test Client Url Capture Not Working</span>
                 <span class="button__icon">→</span>
               </a>
@@ -347,8 +347,8 @@ MPLSとは&rdquo;M&rdquo;icrosoftが作っている&rdquo;P&rdquo;ythonの&rdquo
   </div>
 </footer>
 
-<script src="https://pyonk.github.io/blog/assets/main.js"></script>
-<script src="https://pyonk.github.io/blog/assets/prism.js"></script>
+<script src="assets/main.js"></script>
+<script src="assets/prism.js"></script>
 
   
 </div>
