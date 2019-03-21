@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>日記 on わいがかいた</title>
-    <link>blog/categories/%E6%97%A5%E8%A8%98/</link>
+    <link>/categories/%E6%97%A5%E8%A8%98/</link>
     <description>Recent content in 日記 on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 05 Nov 2018 15:37:45 +0900</lastBuildDate>
     
-	<atom:link href="blog/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Unityのscrollrectでスクロールができない件</title>
-      <link>blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</link>
+      <link>/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</link>
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
-      <guid>blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</guid>
+      <guid>/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</guid>
       <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
 タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
@@ -35,10 +35,10 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
     
     <item>
       <title>let&#39;s splitがとどいた！</title>
-      <link>blog/posts/lets-split-arrive/lets-split-arrive/</link>
+      <link>/posts/lets-split-arrive/lets-split-arrive/</link>
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
-      <guid>blog/posts/lets-split-arrive/lets-split-arrive/</guid>
+      <guid>/posts/lets-split-arrive/lets-split-arrive/</guid>
       <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
 @foostan さんにはマジ感謝マジ卍。
 完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
@@ -54,10 +54,10 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
     
     <item>
       <title>let&#39;s splitを買った</title>
-      <link>blog/posts/buy-lets-split/buy-lets-split/</link>
+      <link>/posts/buy-lets-split/buy-lets-split/</link>
       <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
       
-      <guid>blog/posts/buy-lets-split/buy-lets-split/</guid>
+      <guid>/posts/buy-lets-split/buy-lets-split/</guid>
       <description>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
 アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
 で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
@@ -77,10 +77,10 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
     
     <item>
       <title>timetreeの500万ユーザー記念パーティに参加してきた</title>
-      <link>blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</link>
+      <link>/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</guid>
+      <guid>/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</guid>
       <description>いつも使っているアプリの一つにtimetreeというカレンダーアプリがあるのだけど、ある日ふとお知らせをみたら、オフィスパーティ招待の募集が。 平日だし、どうしようか悩んだけど、とりあえず応募したら見事にご招待された。ありがとうございます。 ということで、昨日行って来ました。
 TimeTree — 〜＊祝500万ユーザー突破！オフィス・パーティーへのご招待＊〜
 まず、ものすごく可愛いオフィスで、良い空間であったということを伝えたい。
@@ -108,10 +108,10 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
     
     <item>
       <title>○○さんに送る退職ポエム</title>
-      <link>blog/posts/retirement-poem-to-you/</link>
+      <link>/posts/retirement-poem-to-you/</link>
       <pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate>
       
-      <guid>blog/posts/retirement-poem-to-you/</guid>
+      <guid>/posts/retirement-poem-to-you/</guid>
       <description>これはなに 弊社では昨年末にパートの方ですが、初めての退職者がでました。 といっても3年ほど前から一緒に働いていた方です。
 ちいさな場所で仕事をしていたときから一緒なので非常に古参の人らは寂しい思いです。 ちなみに僕が経営者、みたいな口調で始まってますがただの一平社員です。
 本題ですが、その方が退職するということで色紙に寄せ書きをしようということになりました。 そこで僕がポエムを書くことになったので、ぼかしますが、ここに書き殴りたいと思います。

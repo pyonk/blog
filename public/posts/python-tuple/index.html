@@ -13,17 +13,17 @@ threading.Threadにはいくつか引数が渡せます。
 def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="blog/posts/python-tuple/" />
+<link rel="canonical" href="/posts/python-tuple/" />
 
 
-<link rel="stylesheet" href="blog/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css">
 
 
-<link rel="stylesheet" href="blog/style.css">
+<link rel="stylesheet" href="/style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="blog/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="blog/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -33,7 +33,7 @@ threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
 def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
-<meta name="twitter:site" content="blog/" />
+<meta name="twitter:site" content="/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -46,7 +46,7 @@ threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
 def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
-<meta property="og:url" content="blog/posts/python-tuple/" />
+<meta property="og:url" content="/posts/python-tuple/" />
 <meta property="og:site_name" content="pythonでtupleをつくる" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
@@ -98,11 +98,11 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="blog/about">About</a></li>
+                <li><a href="/about">About</a></li>
               
             
               
-                <li><a href="blog/showcase">Showcase</a></li>
+                <li><a href="/showcase">Showcase</a></li>
               
             
           </ul>
@@ -114,11 +114,11 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="blog/about">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="blog/showcase">Showcase</a></li>
+        <li><a href="/showcase">Showcase</a></li>
       
     
   </ul>
@@ -147,7 +147,7 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
   <div class="content">
     
   <div class="post">
-    <h2 class="post-title"><a href="blog/posts/python-tuple/">pythonでtupleをつくる</a></h2>
+    <h2 class="post-title"><a href="/posts/python-tuple/">pythonでtupleをつくる</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
@@ -161,7 +161,7 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
     
       <span class="post-tags">
         
-          #<a href="blog/tags/python">python</a>&nbsp;
+          #<a href="/tags/python">python</a>&nbsp;
         
       </span>
     
@@ -266,7 +266,7 @@ t.start()
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="blog/posts/use-celery-for-send-email-django/">
+              <a href="/posts/use-celery-for-send-email-django/">
                 <span class="button__icon">←</span>
                 <span class="button__text">Djangoでどうしても非同期でコマンドを実行したくなった</span>
               </a>
@@ -274,7 +274,7 @@ t.start()
           
           
             <span class="button next">
-              <a href="blog/posts/retirement-poem-to-you/">
+              <a href="/posts/retirement-poem-to-you/">
                 <span class="button__text">○○さんに送る退職ポエム</span>
                 <span class="button__icon">→</span>
               </a>
@@ -313,8 +313,8 @@ t.start()
   </div>
 </footer>
 
-<script src="blog/assets/main.js"></script>
-<script src="blog/assets/prism.js"></script>
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
   
 </div>

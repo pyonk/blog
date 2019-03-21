@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cron on わいがかいた</title>
-    <link>blog/tags/cron/</link>
+    <link>/tags/cron/</link>
     <description>Recent content in Cron on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 06 Feb 2017 12:28:58 +0900</lastBuildDate>
     
-	<atom:link href="blog/tags/cron/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/cron/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>crontab -e と /etc/crontab の違い</title>
-      <link>blog/posts/difference-of-crontabe-and-etc-crontab/</link>
+      <link>/posts/difference-of-crontabe-and-etc-crontab/</link>
       <pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate>
       
-      <guid>blog/posts/difference-of-crontabe-and-etc-crontab/</guid>
+      <guid>/posts/difference-of-crontabe-and-etc-crontab/</guid>
       <description>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
 $ less /var/log/cron  Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)  追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
