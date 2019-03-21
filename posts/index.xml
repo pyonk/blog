@@ -5,7 +5,6 @@
     <link>https://pyonk.github.io/blog/posts/</link>
     <description>Recent content in Posts on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
     <lastBuildDate>Thu, 21 Mar 2019 09:33:38 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -37,10 +36,10 @@ coc.vimて見慣れないプラグインがあるなあと思ってみてみた�
     
     <item>
       <title>Unityのscrollrectでスクロールができない件</title>
-      <link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</link>
+      <link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link>
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</guid>
+      <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid>
       <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
 タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
@@ -59,10 +58,10 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
     
     <item>
       <title>let&#39;s splitがとどいた！</title>
-      <link>https://pyonk.github.io/blog/posts/lets-split-arrive/lets-split-arrive/</link>
+      <link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link>
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/lets-split-arrive/</guid>
+      <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
       <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
 @foostan さんにはマジ感謝マジ卍。
 完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
@@ -78,10 +77,10 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
     
     <item>
       <title>let&#39;s splitを買った</title>
-      <link>https://pyonk.github.io/blog/posts/buy-lets-split/buy-lets-split/</link>
+      <link>https://pyonk.github.io/blog/posts/buy-lets-split/</link>
       <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/buy-lets-split/buy-lets-split/</guid>
+      <guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid>
       <description>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
 アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
 で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
@@ -101,20 +100,20 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
     
     <item>
       <title>facebookのためにsocial loginをごにょごにょした話</title>
-      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</link>
+      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</guid>
+      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
       <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>
     
     <item>
       <title>djangoのquerysetを任意の順番でsortする</title>
-      <link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</link>
+      <link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link>
       <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</guid>
+      <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid>
       <description>djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
 が、ぼくがやりたかったのは、任意の値でのソート。
 databaseに定義されてない値でソートしたかったのです。
@@ -167,10 +166,10 @@ $ pip install pypdf2   コード #! /usr/bin/python # -*- coding: utf-8 -*- from
     
     <item>
       <title>timetreeの500万ユーザー記念パーティに参加してきた</title>
-      <link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</link>
+      <link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link>
       <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</guid>
+      <guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid>
       <description>いつも使っているアプリの一つにtimetreeというカレンダーアプリがあるのだけど、ある日ふとお知らせをみたら、オフィスパーティ招待の募集が。 平日だし、どうしようか悩んだけど、とりあえず応募したら見事にご招待された。ありがとうございます。 ということで、昨日行って来ました。
 TimeTree — 〜＊祝500万ユーザー突破！オフィス・パーティーへのご招待＊〜
 まず、ものすごく可愛いオフィスで、良い空間であったということを伝えたい。
@@ -252,10 +251,10 @@ $ crontab -l  で確認することができます。
     
     <item>
       <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title>
-      <link>https://pyonk.github.io/blog/posts/cannot-request/yasei-no-sslerror/</link>
+      <link>https://pyonk.github.io/blog/posts/cannot-request/</link>
       <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/cannot-request/yasei-no-sslerror/</guid>
+      <guid>https://pyonk.github.io/blog/posts/cannot-request/</guid>
       <description>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。
 ナゾのrequests.exceptions.SSLError それなりにpythonのrequestsをつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾのrequests.exceptions.SSLErrorが発生しました。
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
@@ -365,10 +364,10 @@ P.S.
     
     <item>
       <title>Hugofyにプルリクおくってみた</title>
-      <link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</link>
+      <link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link>
       <pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</guid>
+      <guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid>
       <description>2017年明けましておめでとうございます。
 初プルリク 昨年末になんとなくHugofyにプルリクを送ってみました。
 ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。
@@ -383,10 +382,10 @@ pyonk/Hugofy 少しだけ機能追加してます。
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
-      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/hubot-line-message-api/</link>
+      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/hubot-line-message-api/</guid>
+      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
@@ -402,10 +401,10 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
     
     <item>
       <title>javascriptのよくわからない書き方【連想配列編】</title>
-      <link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/javascript-unknonwn-writing/</link>
+      <link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</link>
       <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/javascript-unknonwn-writing/</guid>
+      <guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid>
       <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
 連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &#39;&#39;, } return { hogeKey, } }  上記が件のコード。
 けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値 console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列 var { key1: key1, } = keyA || { key1: &#39;&#39;, } console.</description>
@@ -413,10 +412,10 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
     
     <item>
       <title>nginxのimage_filterを使って画像を動的に縮小するには</title>
-      <link>https://pyonk.github.io/blog/posts/nginx-image-filter/nginx-image-filter/</link>
+      <link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link>
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/nginx-image-filter/</guid>
+      <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
       <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
 $ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、

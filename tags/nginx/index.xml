@@ -5,7 +5,6 @@
     <link>https://pyonk.github.io/blog/tags/nginx/</link>
     <description>Recent content in Nginx on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
     <lastBuildDate>Fri, 15 Jul 2016 15:28:45 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +12,10 @@
     
     <item>
       <title>nginxのimage_filterを使って画像を動的に縮小するには</title>
-      <link>https://pyonk.github.io/blog/posts/nginx-image-filter/nginx-image-filter/</link>
+      <link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link>
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/nginx-image-filter/</guid>
+      <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
       <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
 $ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、
