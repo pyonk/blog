@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>してみた on わいがかいた</title>
-    <link>blog/categories/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+    <link>https://pyonk.github.io/blog/categories/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</link>
     <description>Recent content in してみた on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 03 Jan 2017 10:34:47 +0900</lastBuildDate>
     
-	<atom:link href="blog/categories/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pyonk.github.io/blog/categories/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugofyにプルリクおくってみた</title>
-      <link>blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</link>
+      <link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</link>
       <pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate>
       
-      <guid>blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</guid>
+      <guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</guid>
       <description>2017年明けましておめでとうございます。
 初プルリク 昨年末になんとなくHugofyにプルリクを送ってみました。
 ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。
@@ -31,10 +31,10 @@ pyonk/Hugofy 少しだけ機能追加してます。
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
-      <link>blog/posts/hubot-line-message-api/hubot-line-message-api/</link>
+      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/hubot-line-message-api/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>blog/posts/hubot-line-message-api/hubot-line-message-api/</guid>
+      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/hubot-line-message-api/</guid>
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの

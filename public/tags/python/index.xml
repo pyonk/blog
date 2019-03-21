@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on わいがかいた</title>
-    <link>blog/tags/python/</link>
+    <link>https://pyonk.github.io/blog/tags/python/</link>
     <description>Recent content in Python on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 20 Feb 2019 15:12:08 +0900</lastBuildDate>
     
-	<atom:link href="blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pyonk.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Django Test Client Url Capture Not Working</title>
-      <link>blog/posts/django-test-client-url-capture-not-working/</link>
+      <link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link>
       <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
       
-      <guid>blog/posts/django-test-client-url-capture-not-working/</guid>
+      <guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid>
       <description>from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
 結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ</description>
     </item>
     
     <item>
       <title>facebookのためにsocial loginをごにょごにょした話</title>
-      <link>blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</link>
+      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</guid>
+      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</guid>
       <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>
     
     <item>
       <title>djangoのquerysetを任意の順番でsortする</title>
-      <link>blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</link>
+      <link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</link>
       <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
       
-      <guid>blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</guid>
+      <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</guid>
       <description>djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
 が、ぼくがやりたかったのは、任意の値でのソート。
 databaseに定義されてない値でソートしたかったのです。
@@ -48,10 +48,10 @@ Django order_by specific order - Stack Overflow
     
     <item>
       <title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title>
-      <link>blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link>
+      <link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link>
       <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
       
-      <guid>blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
+      <guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
       <description>ぼくは普段からsublimetextを使っているのだけど
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
@@ -73,10 +73,10 @@ macではAppleScriptを使うみたいですね。
     
     <item>
       <title>pythonからpdfのフォームに入力する</title>
-      <link>blog/posts/fill-pdf-form-from-python/</link>
+      <link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link>
       <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
       
-      <guid>blog/posts/fill-pdf-form-from-python/</guid>
+      <guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid>
       <description>pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
@@ -89,10 +89,10 @@ $ pip install pypdf2   コード #! /usr/bin/python # -*- coding: utf-8 -*- from
     
     <item>
       <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title>
-      <link>blog/posts/cannot-request/yasei-no-sslerror/</link>
+      <link>https://pyonk.github.io/blog/posts/cannot-request/yasei-no-sslerror/</link>
       <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
       
-      <guid>blog/posts/cannot-request/yasei-no-sslerror/</guid>
+      <guid>https://pyonk.github.io/blog/posts/cannot-request/yasei-no-sslerror/</guid>
       <description>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。
 ナゾのrequests.exceptions.SSLError それなりにpythonのrequestsをつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾのrequests.exceptions.SSLErrorが発生しました。
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
@@ -112,10 +112,10 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
     
     <item>
       <title>pythonの参照渡しをどうすれば回避できるのか</title>
-      <link>blog/posts/python-copy/</link>
+      <link>https://pyonk.github.io/blog/posts/python-copy/</link>
       <pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate>
       
-      <guid>blog/posts/python-copy/</guid>
+      <guid>https://pyonk.github.io/blog/posts/python-copy/</guid>
       <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
 hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
@@ -124,10 +124,10 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
     
     <item>
       <title>Djangoでどうしても非同期でコマンドを実行したくなった</title>
-      <link>blog/posts/use-celery-for-send-email-django/</link>
+      <link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link>
       <pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate>
       
-      <guid>blog/posts/use-celery-for-send-email-django/</guid>
+      <guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid>
       <description>経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
@@ -154,10 +154,10 @@ pip install -U &amp;quot;celery[redis]&amp;quot;</description>
     
     <item>
       <title>pythonでtupleをつくる</title>
-      <link>blog/posts/python-tuple/</link>
+      <link>https://pyonk.github.io/blog/posts/python-tuple/</link>
       <pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate>
       
-      <guid>blog/posts/python-tuple/</guid>
+      <guid>https://pyonk.github.io/blog/posts/python-tuple/</guid>
       <description>pythonのthreadで引数を渡したい Djangoで時間のかかる処理をスレッド化して逃げようとしたのですがうまくいかなかったのでメモ。
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
