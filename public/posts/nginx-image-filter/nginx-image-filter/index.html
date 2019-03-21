@@ -17,14 +17,14 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
 <link rel="canonical" href="/posts/nginx-image-filter/nginx-image-filter/" />
 
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 
 
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -35,7 +35,7 @@ $ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.ta
 $ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
 location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
-<meta name="twitter:site" content="/" />
+<meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -164,7 +164,7 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
     
       <span class="post-tags">
         
-          #<a href="/tags/nginx">nginx</a>&nbsp;
+          #<a href="tags/nginx">nginx</a>&nbsp;
         
       </span>
     
@@ -263,8 +263,8 @@ $ sudo kill -QUIT 10576
   </div>
 </footer>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+<script src="assets/main.js"></script>
+<script src="assets/prism.js"></script>
 
   
 </div>

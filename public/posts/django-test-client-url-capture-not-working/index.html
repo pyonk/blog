@@ -13,21 +13,21 @@
 <link rel="canonical" href="/posts/django-test-client-url-capture-not-working/" />
 
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 
 
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Django Test Client Url Capture Not Working :: わいがかいた — " />
 <meta name="twitter:description" content="from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
 結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ" />
-<meta name="twitter:site" content="/" />
+<meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="pyonk" />
 <meta name="twitter:image" content="">
 
@@ -152,11 +152,11 @@
     
       <span class="post-tags">
         
-          #<a href="/tags/python">python</a>&nbsp;
+          #<a href="tags/python">python</a>&nbsp;
         
-          #<a href="/tags/djnago">djnago</a>&nbsp;
+          #<a href="tags/djnago">djnago</a>&nbsp;
         
-          #<a href="/tags/test">test</a>&nbsp;
+          #<a href="tags/test">test</a>&nbsp;
         
       </span>
     
@@ -279,8 +279,8 @@ class UserViewTestCase(TestCase):
   </div>
 </footer>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+<script src="assets/main.js"></script>
+<script src="assets/prism.js"></script>
 
   
 </div>
