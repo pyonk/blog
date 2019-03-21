@@ -25,14 +25,14 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 <link rel="canonical" href="/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/" />
 
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 
 
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -51,7 +51,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 結論、書いてるコードに問題があった。
  実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {" />
-<meta name="twitter:site" content="/" />
+<meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -188,9 +188,9 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
     
       <span class="post-tags">
         
-          #<a href="/tags/unity">unity</a>&nbsp;
+          #<a href="tags/unity">unity</a>&nbsp;
         
-          #<a href="/tags/c">c#</a>&nbsp;
+          #<a href="tags/c">c#</a>&nbsp;
         
       </span>
     
@@ -325,8 +325,8 @@ public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEv
   </div>
 </footer>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+<script src="assets/main.js"></script>
+<script src="assets/prism.js"></script>
 
   
 </div>

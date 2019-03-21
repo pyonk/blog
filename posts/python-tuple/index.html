@@ -16,14 +16,14 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
 <link rel="canonical" href="/posts/python-tuple/" />
 
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 
 
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -33,7 +33,7 @@ threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
 def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
-<meta name="twitter:site" content="/" />
+<meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
 
@@ -161,7 +161,7 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
     
       <span class="post-tags">
         
-          #<a href="/tags/python">python</a>&nbsp;
+          #<a href="tags/python">python</a>&nbsp;
         
       </span>
     
@@ -313,8 +313,8 @@ t.start()
   </div>
 </footer>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+<script src="assets/main.js"></script>
+<script src="assets/prism.js"></script>
 
   
 </div>
