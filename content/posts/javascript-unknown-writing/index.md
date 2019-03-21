@@ -7,7 +7,6 @@ categories:
   - フロントエンド
 tags:
   - javascript
-slug: javascript-unknonwn-writing
 ---
 
 

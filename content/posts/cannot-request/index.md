@@ -7,7 +7,6 @@ categories:
     - バックエンド
 tags:
     - python
-slug: yasei-no-sslerror
 ---
 
 あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。

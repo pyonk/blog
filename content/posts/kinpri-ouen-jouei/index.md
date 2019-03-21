@@ -8,7 +8,6 @@ categories:
 tags:
   - キンプリ
   - 映画
-slug: kinpri-ouen-jouen
 ---
 
 来る2016年七夕の日。  

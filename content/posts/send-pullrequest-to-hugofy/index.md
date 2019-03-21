@@ -8,7 +8,6 @@ categories:
 tags:
   - sublimetext
   - hugo
-slug: send-pullrequest-to-hugofy
 ---
 2017年明けましておめでとうございます。
 

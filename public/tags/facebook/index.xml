@@ -5,7 +5,6 @@
     <link>https://pyonk.github.io/blog/tags/facebook/</link>
     <description>Recent content in Facebook on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
     <lastBuildDate>Wed, 20 Dec 2017 13:54:50 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +12,10 @@
     
     <item>
       <title>facebookのためにsocial loginをごにょごにょした話</title>
-      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</link>
+      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</guid>
+      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
       <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>

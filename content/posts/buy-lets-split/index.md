@@ -8,7 +8,6 @@ categories:
 tags:
     - キーボード
     - let's split
-slug: "buy-lets-split"
 ---
 
 1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。  

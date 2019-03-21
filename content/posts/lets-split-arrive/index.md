@@ -8,7 +8,7 @@ categories:
 tags:
     - キーボード
     - let's split
-slug: "lets-split-arrive"
+cover: "posts/lets-split-arrive/images/letsplit.jpg"
 ---
 
 この間boothで[購入した](/blog/posts/buy-lets-split/)let's splitがあの後無事届きました。

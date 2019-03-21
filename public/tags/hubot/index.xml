@@ -5,7 +5,6 @@
     <link>https://pyonk.github.io/blog/tags/hubot/</link>
     <description>Recent content in Hubot on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
     <lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/hubot/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +12,10 @@
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
-      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/hubot-line-message-api/</link>
+      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/hubot-line-message-api/</guid>
+      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの

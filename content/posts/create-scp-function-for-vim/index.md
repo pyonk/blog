@@ -8,7 +8,6 @@ categories:
 tags:
     - vim
     - vimscript
-slug: "create-scp-function-for-vim"
 ---
 
 ようやくvimのキーバインドが手に馴染んできたなと思い始めてきた今日この頃です。

@@ -8,7 +8,6 @@ categories:
 tags:
     - django
     - python
-slug: "django-queryset-order-by-specific-values"
 ---
 # djangoのquerysetを任意の順番でsortする
 

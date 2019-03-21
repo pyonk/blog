@@ -8,7 +8,6 @@ categories:
 tags:
     - unity
     - c#
-slug: "unity-scrollrect-not-working"
 ---
 
 最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。

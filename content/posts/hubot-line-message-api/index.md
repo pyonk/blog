@@ -10,7 +10,6 @@ tags:
   - javascript
   - hubot
   - line
-slug: hubot-line-message-api
 ---
 ソースは[ここです。](https://github.com/pyonk/hubot-line-message-api)
 

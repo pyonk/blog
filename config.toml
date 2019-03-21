@@ -1,7 +1,7 @@
 baseUrl = "https://pyonk.github.io/blog/"
-languageCode = "ja-jp"
 theme = "hello-friend"
 paginate = 5
+defaultContentLanguage = "ja"
 
 [params]
   # dir name of your blog content (default is `content/posts`)
@@ -10,9 +10,10 @@ paginate = 5
   defaultTheme = "light"
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 0
+  googleAnalytics = "UA-85825684-1"
 
 [languages]
-  [languages.en]
+  [languages.ja]
     title = "わいがかいた"
     subtitle = ""
     keywords = ""
@@ -24,16 +25,16 @@ paginate = 5
     newerPosts = "Newer posts"
     olderPosts = "Older posts"
 
-    [languages.en.params.logo]
+    [languages.ja.params.logo]
       logoText = "わいがかいた"
-      logoHomeLink = "blog/"
+      logoHomeLink = "/blog/"
 
-    [languages.en.menu]
-      [[languages.en.menu.main]]
+    [languages.ja.menu]
+      [[languages.ja.menu.main]]
         identifier = "about"
         name = "About"
         url = "/about"
-      [[languages.en.menu.main]]
+      [[languages.ja.menu.main]]
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"

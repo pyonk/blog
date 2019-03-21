@@ -7,7 +7,6 @@ categories:
     - 
 tags:
     - 
-slug: "test_design"
 ---
 # Block Elements
 

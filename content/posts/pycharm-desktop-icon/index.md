@@ -8,7 +8,6 @@ categories:
 tags:
     - pycharm
     - editor
-slug: "pycharm-desktop-icon"
 ---
 
 会社の先輩にオススメされてVM上の開発環境にPycharmをいれてみました。

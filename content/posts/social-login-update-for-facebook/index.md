@@ -9,7 +9,6 @@ tags:
     - facebook
     - django
     - python
-slug: "social-login-update-for-facebook"
 ---
 
 facebookに見慣れぬアラートが。

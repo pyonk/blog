@@ -9,7 +9,6 @@ tags:
   - jubilee works
   - timetree
   - app
-slug: timetree-over-5m-users-party
 ---
 
 いつも使っているアプリの一つにtimetreeというカレンダーアプリがあるのだけど、ある日ふとお知らせをみたら、オフィスパーティ招待の募集が。

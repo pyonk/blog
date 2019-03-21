@@ -7,7 +7,6 @@ categories:
   - バックエンド
 tags:
   - nginx
-slug: nginx-image-filter
 ---
 
 # image_filterを使えるようにモジュールを指定する
