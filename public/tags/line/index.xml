@@ -2,33 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Line on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/tags/line/</link>
+    <link>blog/tags/line/</link>
     <description>Recent content in Line on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <copyright>pyonk</copyright>
+    <language>ja-jp</language>
     <lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/tags/line/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="blog/tags/line/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hubot-line-message-apiをつくってみてます</title>
-      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link>
+      <link>blog/posts/hubot-line-message-api/hubot-line-message-api/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
+      <guid>blog/posts/hubot-line-message-api/hubot-line-message-api/</guid>
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
-&amp;#34;dependencies&amp;#34;: { &amp;#34;bar&amp;#34;: &amp;#34;file:./hubot-line-message-api&amp;#34; } からの
+&amp;quot;dependencies&amp;quot;: { &amp;quot;bar&amp;quot;: &amp;quot;file:./hubot-line-message-api&amp;quot; }  からの
 $ hubot -a line-message-api
 でいけると思います。
 hubot-line-message-api 結構ガバガバ実装なのでAPI Referenceをしっかり読んでからやるのをオススメします。
 設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。   任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。  FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。   できること 今のところpushで送信は対応できておらず、返信しかできません。
  返信
  テキスト  https://devdocs.line.me/ja/#text
-module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; res.reply type: &amp;#39;text&amp;#39; contents: [&amp;#39;nyaa&amp;#39;]  画像と動画  https://devdocs.</description>
+module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; res.</description>
     </item>
     
   </channel>

@@ -1,44 +1,228 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="generator" content="Hugo 0.49" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/blog/css/normalize.css">
-<link rel="stylesheet" href="/blog/css/skeleton.css">
-<link rel="stylesheet" href="/blog/css/custom.css">
-<link rel="stylesheet" href="/blog/css/icomoon.css">
-<link rel="stylesheet" href="/blog/css/syntax.css">
-<link rel="alternate" href="/index.xml" type="application/rss+xml" title="わいがかいた">
-<title>Djangoでどうしても非同期でコマンドを実行したくなった - わいがかいた</title>
+  
+    <title>Djangoでどうしても非同期でコマンドを実行したくなった :: わいがかいた</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+コマンドの設計見直せっていうのは今回は置いといてください・・・。
+どうしたのか いくつかの方法を試しました。
+pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
+import subprocess import shlex cmd = &#39;nohup sleep 10 &amp;amp;&#39; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+つぎ！
+thread化して逃げる この前書いたような感じです。
+pythonでtupleをつくる - わいがかいた
+結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
+つぎ！！
+celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
+ようやく本題。
+ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
+実際やりはじめて少し後悔しましたし。
+結構面倒くさかったので備忘録代わりに。
+install まずは本体をインストールしていきます。
+pip install -U Celery
+celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
+などを使うことができます。 今回はRedisを選択しました。
+yum install redis
+bundleも用意されているのでそれも。
+pip install -U &amp;quot;celery[redis]&amp;quot;"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="blog/posts/use-celery-for-send-email-django/" />
+
+
+<link rel="stylesheet" href="blog/assets/style.css">
+
+
+<link rel="stylesheet" href="blog/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="blog/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Djangoでどうしても非同期でコマンドを実行したくなった :: わいがかいた — " />
+<meta name="twitter:description" content="経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+コマンドの設計見直せっていうのは今回は置いといてください・・・。
+どうしたのか いくつかの方法を試しました。
+pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
+import subprocess import shlex cmd = &#39;nohup sleep 10 &amp;amp;&#39; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+つぎ！
+thread化して逃げる この前書いたような感じです。
+pythonでtupleをつくる - わいがかいた
+結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
+つぎ！！
+celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
+ようやく本題。
+ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
+実際やりはじめて少し後悔しましたし。
+結構面倒くさかったので備忘録代わりに。
+install まずは本体をインストールしていきます。
+pip install -U Celery
+celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
+などを使うことができます。 今回はRedisを選択しました。
+yum install redis
+bundleも用意されているのでそれも。
+pip install -U &amp;quot;celery[redis]&amp;quot;" />
+<meta name="twitter:site" content="blog/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Djangoでどうしても非同期でコマンドを実行したくなった :: わいがかいた — ">
+<meta property="og:description" content="経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+コマンドの設計見直せっていうのは今回は置いといてください・・・。
+どうしたのか いくつかの方法を試しました。
+pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
+import subprocess import shlex cmd = &#39;nohup sleep 10 &amp;amp;&#39; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+つぎ！
+thread化して逃げる この前書いたような感じです。
+pythonでtupleをつくる - わいがかいた
+結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
+つぎ！！
+celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
+ようやく本題。
+ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
+実際やりはじめて少し後悔しましたし。
+結構面倒くさかったので備忘録代わりに。
+install まずは本体をインストールしていきます。
+pip install -U Celery
+celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
+などを使うことができます。 今回はRedisを選択しました。
+yum install redis
+bundleも用意されているのでそれも。
+pip install -U &amp;quot;celery[redis]&amp;quot;" />
+<meta property="og:url" content="blog/posts/use-celery-for-send-email-django/" />
+<meta property="og:site_name" content="Djangoでどうしても非同期でコマンドを実行したくなった" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="バックエンド" />
+<meta property="article:published_time" content="2017-01-06 12:05:29 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
 </head>
-<body>
-
+<body class="">
 <div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
 
-    <header role="banner">
-        <div class="header-logo">
-            <a href="/blog"><img src="/blog/images/prof.jpg" width="60" height="60" alt="わいがかいた"></a>
-        </div>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="blog/about">About</a></li>
+              
+            
+              
+                <li><a href="blog/showcase">Showcase</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="blog/about">About</a></li>
+      
+    
+      
+        <li><a href="blog/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h2 class="post-title"><a href="blog/posts/use-celery-for-send-email-django/">Djangoでどうしても非同期でコマンドを実行したくなった</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2017-01-06
+        </span>
+      
+      
+      
+    </div>
+
+    
+      <span class="post-tags">
         
-    </header>
+          #<a href="blog/tags/python">python</a>&nbsp;
+        
+          #<a href="blog/tags/django">django</a>&nbsp;
+        
+      </span>
+    
 
+    
 
-    <main role="main">
-        <article itemscope itemtype="http://schema.org/BlogPosting">
-            <h1 class="entry-title" itemprop="headline">Djangoでどうしても非同期でコマンドを実行したくなった</h1>
-            <span class="entry-meta"><time itemprop="datePublished" datetime="2017-01-06">January 06, 2017</time><dl class="entry-categories"><dt class="category"><a href="/blog/categories/%e3%83%90%e3%83%83%e3%82%af%e3%82%a8%e3%83%b3%e3%83%89">バックエンド</a></dt></dl></span>
-            
-            <dl class="entry-tags">
-                
-                <dt class="tag"><a href="/blog/tags/python">#python</a></dt>
-                
-                <dt class="tag"><a href="/blog/tags/django">#django</a></dt>
-                
-            </dl>
-            
-            <section itemprop="entry-text">
-                
+    <div class="post-content">
+      
 
 <h1 id="経緯">経緯</h1>
 
@@ -53,11 +237,14 @@
 <h2 id="pythonからコマンドを叩く">pythonからコマンドを叩く</h2>
 
 <p>まず思い浮かんだのがコマンドを<code>nohup &amp;</code>でpythonから叩く。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">shlex</span>
 
-<span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;nohup sleep 10 &amp;&#39;</span>
-<span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span></code></pre></div>
+<pre><code class="language-python">import subprocess
+import shlex
+
+cmd = 'nohup sleep 10 &amp;'
+subprocess.Popen(cmd)
+</code></pre>
+
 <p>が！！！
 レスポンスが帰ってくるのは10秒後・・・。</p>
 
@@ -67,7 +254,7 @@
 
 <p>この前書いたような感じです。</p>
 
-<p><a href="https://pyonk.github.io/blog/post/python-tuple/" target="_blank">pythonでtupleをつくる - わいがかいた</a></p>
+<p><a href="https://pyonk.github.io/blog/post/python-tuple/">pythonでtupleをつくる - わいがかいた</a></p>
 
 <p>結局、レスポンスが帰ってくるのは10秒後・・・。
 ここ工夫するとどうにかなるような気もする。</p>
@@ -76,7 +263,7 @@
 
 <h2 id="celeryを使う">celeryを使う</h2>
 
-<p><a href="http://docs.celeryproject.org/en/latest/index.html" target="_blank">Celery - Distributed Task Queue — Celery 4.0.2 documentation</a></p>
+<p><a href="http://docs.celeryproject.org/en/latest/index.html">Celery - Distributed Task Queue — Celery 4.0.2 documentation</a></p>
 
 <p>ようやく本題。</p>
 
@@ -108,78 +295,93 @@
 
 <h3 id="how-to">how to</h3>
 
-<p><a href="https://github.com/celery/celery/tree/master/examples/django/" target="_blank">ここ</a>を参考にモリモリかいていきます。</p>
+<p><a href="https://github.com/celery/celery/tree/master/examples/django/">ここ</a>を参考にモリモリかいていきます。</p>
 
 <ul>
 <li>proj/__init__.py</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
 
-<span class="c1"># This will make sure the app is always imported when</span>
-<span class="c1"># Django starts so that shared_task will use this app.</span>
-<span class="kn">from</span> <span class="nn">.celery</span> <span class="kn">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">celery_app</span>
+<pre><code class="language-python">from __future__ import absolute_import, unicode_literals
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;celery_app&#39;</span><span class="p">]</span></code></pre></div>
+# This will make sure the app is always imported when
+# Django starts so that shared_task will use this app.
+from .celery import app as celery_app
+
+__all__ = ['celery_app']
+</code></pre>
+
 <ul>
 <li>proj/settings.py</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Celery settings</span>
 
-<span class="n">CELERY_RESULT_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;redis&#39;</span> <span class="c1"># redisを指定</span>
-<span class="n">CELERY_BROKER_URL</span> <span class="o">=</span> <span class="s1">&#39;redis://localhost:6379/0&#39;</span>
-<span class="n">CELERY_TASK_SERIALIZER</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
-<span class="n">CELERY_RESULT_SERIALIZER</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
-<span class="n">CELERY_ACCEPT_CONTENT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span></code></pre></div>
+<pre><code class="language-python"># Celery settings
+
+CELERY_RESULT_BACKEND = 'redis' # redisを指定
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
+</code></pre>
+
 <ul>
 <li>proj/celery.py</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
 
-<span class="c1"># set the default Django settings module for the &#39;celery&#39; program.</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">,</span> <span class="s1">&#39;proj.settings&#39;</span><span class="p">)</span>
+<pre><code class="language-python">from __future__ import absolute_import, unicode_literals
+import os
+from celery import Celery
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s1">&#39;proj&#39;</span><span class="p">)</span>
+# set the default Django settings module for the 'celery' program.
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proj.settings')
 
-<span class="c1"># Using a string here means the worker don&#39;t have to serialize</span>
-<span class="c1"># the configuration object to child processes.</span>
-<span class="c1"># - namespace=&#39;CELERY&#39; means all celery-related configuration keys</span>
-<span class="c1">#   should have a `CELERY_` prefix.</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config_from_object</span><span class="p">(</span><span class="s1">&#39;django.conf:settings&#39;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;CELERY&#39;</span><span class="p">)</span>
+app = Celery('proj')
 
-<span class="c1"># Load task modules from all registered Django app configs.</span>
-<span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">()</span>
+# Using a string here means the worker don't have to serialize
+# the configuration object to child processes.
+# - namespace='CELERY' means all celery-related configuration keys
+#   should have a `CELERY_` prefix.
+app.config_from_object('django.conf:settings', namespace='CELERY')
+
+# Load task modules from all registered Django app configs.
+app.autodiscover_tasks()
 
 
-<span class="nd">@app.task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">debug_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Request: {0!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">))</span></code></pre></div>
+@app.task(bind=True)
+def debug_task(self):
+    print('Request: {0!r}'.format(self.request))
+</code></pre>
+
 <ul>
 <li>app/tasks.py</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#! /usr/bin/python</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="c1"># Create your tasks here</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
-<span class="c1"># from celery import shared_task</span>
-<span class="kn">from</span> <span class="nn">celery.decorators</span> <span class="kn">import</span> <span class="n">task</span>
-<span class="kn">import</span> <span class="nn">time</span>
+
+<pre><code class="language-python">#! /usr/bin/python
+# -*- coding: utf-8 -*-
+# Create your tasks here
+from __future__ import absolute_import, unicode_literals
+# from celery import shared_task
+from celery.decorators import task
+import time
 
 
-<span class="nd">@task</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">add_wait</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span></code></pre></div>
+@task()
+def add_wait(x, y):
+    time.sleep(10)
+    return x + y
+</code></pre>
+
 <ul>
 <li>app/views.py</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">tasks</span> <span class="kn">import</span> <span class="n">add_wait</span>
-<span class="k">def</span> <span class="nf">add_some_number</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">add_wait</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">rerquest</span><span class="p">,</span> <span class="s1">&#39;result.html&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span>
-    <span class="p">})</span></code></pre></div>
+
+<pre><code class="language-python">from tasks import add_wait
+def add_some_number(request):
+    result = add_wait.delay(2,3)
+    return render(rerquest, 'result.html', {
+        'result': result,
+    })
+</code></pre>
+
 <h4 id="うごかしていきます">うごかしていきます</h4>
 
 <ul>
@@ -198,44 +400,77 @@
 
 <p>というのもamqpというライブラリの中で使われている<code>struct.pack</code>が原因のようです。</p>
 
-<p><a href="https://github.com/celery/kombu/issues/609" target="_blank">struct Type Error when consume internal log message. · Issue #609 · celery/kombu</a>をみるとスッキリします。</p>
+<p><a href="https://github.com/celery/kombu/issues/609">struct Type Error when consume internal log message. · Issue #609 · celery/kombu</a>をみるとスッキリします。</p>
 
 <p>どうやらpythonのバグのようですね。<br />
-<a href="https://bugs.python.org/issue19099" target="_blank">Issue 19099: struct.pack fails first time with unicode fmt - Python tracker</a></p>
+<a href="https://bugs.python.org/issue19099">Issue 19099: struct.pack fails first time with unicode fmt - Python tracker</a></p>
 
 <p>該当箇所を<code>str</code>に変えてしまうと無事起動しました。</p>
 
 <p>疲れました。</p>
 
-            </section>
-        </article>
-    </main>
-
-
-    <footer role="contentinfo">
-        <div class="hr"></div>
-        <div class="footer-link">
-            
-            <a href="https://twitter.com/yukieroero" target="_blank"><i class="icon-twitter"></i></a>
-            <a href="https://facebook.com/yukiyoshiokap" target="_blank"><i class="icon-facebook2"></i></a>
-            <a href="https://github.com/pyonk" target="_blank"><i class="icon-github"></i></a>
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
         </div>
-        <div class="copyright">Copyright &copy; pyonk</div>
-    </footer>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="blog/posts/python-copy/">
+                <span class="button__icon">←</span>
+                <span class="button__text">pythonの参照渡しをどうすれば回避できるのか</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="blog/posts/python-tuple/">
+                <span class="button__text">pythonでtupleをつくる</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
 
+    
+
+    </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="blog/assets/main.js"></script>
+<script src="blog/assets/prism.js"></script>
+
+  
 </div>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-85825684-1', 'auto');
-    ga('send', 'pageview');
-</script>
-
-
 
 </body>
 </html>
-

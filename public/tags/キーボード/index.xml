@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>キーボード on わいがかいた</title>
-    <link>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
+    <link>blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
     <description>Recent content in キーボード on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <copyright>pyonk</copyright>
+    <language>ja-jp</language>
     <lastBuildDate>Tue, 12 Jun 2018 21:35:46 +0900</lastBuildDate>
     
-	<atom:link href="https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>let&#39;s splitがとどいた！</title>
-      <link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link>
+      <link>blog/posts/lets-split-arrive/lets-split-arrive/</link>
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
+      <guid>blog/posts/lets-split-arrive/lets-split-arrive/</guid>
       <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
 @foostan さんにはマジ感謝マジ卍。
 完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
@@ -33,10 +32,10 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
     
     <item>
       <title>let&#39;s splitを買った</title>
-      <link>https://pyonk.github.io/blog/posts/buy-lets-split/</link>
+      <link>blog/posts/buy-lets-split/buy-lets-split/</link>
       <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
       
-      <guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid>
+      <guid>blog/posts/buy-lets-split/buy-lets-split/</guid>
       <description>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
 アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
 で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
@@ -50,7 +49,7 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
 完成品版let&amp;#39;s split注文した。
 手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
 届くのが楽しみだな〜〜〜！！
-&amp;mdash; pyonknoyp (@pyonknoyp) May 24, 2018  とにかく届くのが楽しみでごわす。
+&amp;mdash; ヨシオカユウキ (@pyonknoyp) May 24, 2018  とにかく届くのが楽しみでごわす。
 発送予定日が5/27なので週明けには手元に届いてるかしら。</description>
     </item>
     

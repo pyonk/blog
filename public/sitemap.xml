@@ -3,287 +3,315 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</loc>
+    <loc>blog/posts/how-to-use-coc-vim/</loc>
+    <lastmod>2019-03-21T09:33:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>blog/posts/django-test-client-url-capture-not-working/</loc>
+    <lastmod>2019-02-20T15:12:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>blog/posts/unity-scrollrect-not-working/unity-scrollrect-not-working/</loc>
     <lastmod>2018-11-05T15:37:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/lets-split-arrive/</loc>
+    <loc>blog/posts/lets-split-arrive/lets-split-arrive/</loc>
     <lastmod>2018-06-12T21:35:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/buy-lets-split/</loc>
+    <loc>blog/posts/buy-lets-split/buy-lets-split/</loc>
     <lastmod>2018-05-24T23:11:16+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</loc>
+    <loc>blog/posts/social-login-update-for-facebook/social-login-update-for-facebook/</loc>
     <lastmod>2017-12-20T13:54:50+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</loc>
+    <loc>blog/posts/django-queryset-order-by-specific-values/django-queryset-order-by-specific-values/</loc>
     <lastmod>2017-11-10T18:33:41+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</loc>
+    <loc>blog/posts/create-disabled-ime-command-for-subl-with-vintage/</loc>
     <lastmod>2017-10-18T10:23:34+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</loc>
+    <loc>blog/posts/fill-pdf-form-from-python/</loc>
     <lastmod>2017-10-05T15:46:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</loc>
+    <loc>blog/posts/timetree-over-5m-users-party/timetree-over-5m-users-party/</loc>
     <lastmod>2017-08-31T17:42:30+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/read-tadouryoku/</loc>
+    <loc>blog/posts/read-tadouryoku/</loc>
     <lastmod>2017-08-21T21:23:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</loc>
+    <loc>blog/posts/difference-of-crontabe-and-etc-crontab/</loc>
     <lastmod>2017-02-06T12:28:58+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/yasei-no-sslerror/</loc>
+    <loc>blog/posts/cannot-request/yasei-no-sslerror/</loc>
     <lastmod>2017-02-02T18:40:16+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/python-copy/</loc>
+    <loc>blog/posts/python-copy/</loc>
     <lastmod>2017-01-12T18:21:36+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</loc>
+    <loc>blog/posts/use-celery-for-send-email-django/</loc>
     <lastmod>2017-01-06T12:05:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/python-tuple/</loc>
+    <loc>blog/posts/python-tuple/</loc>
     <lastmod>2017-01-05T15:05:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</loc>
+    <loc>blog/posts/retirement-poem-to-you/</loc>
     <lastmod>2017-01-03T16:02:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</loc>
+    <loc>blog/posts/send-pullrequest-to-hugofy/send-pullrequest-to-hugofy/</loc>
     <lastmod>2017-01-03T10:34:47+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/hubot-line-message-api/</loc>
+    <loc>blog/posts/hubot-line-message-api/hubot-line-message-api/</loc>
     <lastmod>2016-10-17T10:38:19+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/javascript-unknonwn-writing/</loc>
+    <loc>blog/posts/javascript-unknown-writing/javascript-unknonwn-writing/</loc>
     <lastmod>2016-08-30T10:48:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/nginx-image-filter/</loc>
+    <loc>blog/posts/nginx-image-filter/nginx-image-filter/</loc>
     <lastmod>2016-07-15T15:28:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/app/</loc>
+    <loc>blog/tags/app/</loc>
     <lastmod>2017-08-31T17:42:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/c/</loc>
+    <loc>blog/tags/c#/</loc>
     <lastmod>2018-11-05T15:37:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/</loc>
+    <loc>blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/coffeescript/</loc>
+    <loc>blog/tags/coffeescript/</loc>
     <lastmod>2016-10-17T10:38:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/cron/</loc>
+    <loc>blog/tags/cron/</loc>
     <lastmod>2017-02-06T12:28:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/django/</loc>
+    <loc>blog/tags/django/</loc>
     <lastmod>2017-12-20T13:54:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/facebook/</loc>
+    <loc>blog/tags/djnago/</loc>
+    <lastmod>2019-02-20T15:12:08+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>blog/tags/facebook/</loc>
     <lastmod>2017-12-20T13:54:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/hubot/</loc>
+    <loc>blog/tags/hubot/</loc>
     <lastmod>2016-10-17T10:38:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/hugo/</loc>
+    <loc>blog/tags/hugo/</loc>
     <lastmod>2017-01-03T10:34:47+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/javascript/</loc>
+    <loc>blog/tags/javascript/</loc>
     <lastmod>2016-10-17T10:38:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/jubilee-works/</loc>
+    <loc>blog/tags/jubilee-works/</loc>
     <lastmod>2017-08-31T17:42:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/lets-split/</loc>
+    <loc>blog/tags/language-server/</loc>
+    <lastmod>2019-03-21T09:33:38+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>blog/tags/lets-split/</loc>
     <lastmod>2018-06-12T21:35:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/line/</loc>
+    <loc>blog/tags/line/</loc>
     <lastmod>2016-10-17T10:38:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/nginx/</loc>
+    <loc>blog/tags/nginx/</loc>
     <lastmod>2016-07-15T15:28:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/poem/</loc>
+    <loc>blog/tags/poem/</loc>
     <lastmod>2017-01-03T16:02:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/</loc>
-    <lastmod>2018-11-05T15:37:45+09:00</lastmod>
+    <loc>blog/posts/</loc>
+    <lastmod>2019-03-21T09:33:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/python/</loc>
-    <lastmod>2017-12-20T13:54:50+09:00</lastmod>
+    <loc>blog/tags/python/</loc>
+    <lastmod>2019-02-20T15:12:08+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/sublimetext/</loc>
+    <loc>blog/tags/sublimetext/</loc>
     <lastmod>2017-10-18T10:23:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/</loc>
+    <loc>blog/tags/</loc>
     <lastmod>2017-08-31T17:42:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/timetree/</loc>
+    <loc>blog/tags/test/</loc>
+    <lastmod>2019-02-20T15:12:08+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>blog/tags/timetree/</loc>
     <lastmod>2017-08-31T17:42:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/unity/</loc>
+    <loc>blog/tags/unity/</loc>
     <lastmod>2018-11-05T15:37:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/vim/</loc>
-    <lastmod>2017-10-18T10:23:34+09:00</lastmod>
+    <loc>blog/tags/vim/</loc>
+    <lastmod>2019-03-21T09:33:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
+    <loc>blog/categories/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
     <lastmod>2017-01-03T10:34:47+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
+    <loc>blog/categories/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
     <lastmod>2017-10-18T10:23:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/</loc>
-    <lastmod>2018-11-05T15:37:45+09:00</lastmod>
+    <loc>blog/</loc>
+    <lastmod>2019-03-21T09:33:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</loc>
+    <loc>blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</loc>
     <lastmod>2018-06-12T21:35:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/</loc>
+    <loc>blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/</loc>
     <lastmod>2017-12-20T13:54:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/</loc>
+    <loc>blog/categories/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/</loc>
     <lastmod>2016-08-30T10:48:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/</loc>
+    <loc>blog/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/</loc>
     <lastmod>2017-08-21T21:23:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/</loc>
+    <loc>blog/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/</loc>
     <lastmod>2017-08-21T21:23:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/%E6%97%A5%E8%A8%98/</loc>
+    <loc>blog/categories/%E6%97%A5%E8%A8%98/</loc>
     <lastmod>2018-11-05T15:37:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/categories/%E8%AA%AD%E6%9B%B8/</loc>
+    <loc>blog/categories/%E8%AA%AD%E6%9B%B8/</loc>
     <lastmod>2017-08-21T21:23:11+09:00</lastmod>
     <priority>0</priority>
   </url>
