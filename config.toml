@@ -26,7 +26,7 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "わいがかいた"
-      logoHomeLink = "/"
+      logoHomeLink = "blog/"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
