@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Poem on わいがかいた</title>
-    <link>blog/tags/poem/</link>
+    <link>https://pyonk.github.io/blog/tags/poem/</link>
     <description>Recent content in Poem on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 03 Jan 2017 16:02:48 +0900</lastBuildDate>
     
-	<atom:link href="blog/tags/poem/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pyonk.github.io/blog/tags/poem/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>○○さんに送る退職ポエム</title>
-      <link>blog/posts/retirement-poem-to-you/</link>
+      <link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link>
       <pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate>
       
-      <guid>blog/posts/retirement-poem-to-you/</guid>
+      <guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid>
       <description>これはなに 弊社では昨年末にパートの方ですが、初めての退職者がでました。 といっても3年ほど前から一緒に働いていた方です。
 ちいさな場所で仕事をしていたときから一緒なので非常に古参の人らは寂しい思いです。 ちなみに僕が経営者、みたいな口調で始まってますがただの一平社員です。
 本題ですが、その方が退職するということで色紙に寄せ書きをしようということになりました。 そこで僕がポエムを書くことになったので、ぼかしますが、ここに書き殴りたいと思います。
