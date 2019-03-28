@@ -5,10 +5,27 @@
     <link>https://pyonk.github.io/blog/tags/vim/</link>
     <description>Recent content in Vim on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 21 Mar 2019 09:33:38 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 08:48:12 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vista.vim is awesome</title>
+      <link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link>
+      <pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid>
+      <description>この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
+ vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim  /r/vimのRSS登録しとってよかった。
+vista.vim vimをIDEのようにしてくれる夢のようなツール。
+cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。 fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。
+あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。
+ ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
+― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
+ とりあえずインストール 例のごとく僕はdeinを使っているので
+[[plugins]] repo = &#39;liuchengxu/vista.vim&#39; depends = [&#39;coc.</description>
+    </item>
     
     <item>
       <title>coc.nvim is awesome</title>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  
+    <title>vista.vim is awesome :: わいがかいた</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
+ vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim  /r/vimのRSS登録しとってよかった。
+vista.vim vimをIDEのようにしてくれる夢のようなツール。
+cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。 fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。
+あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。
+ ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
+― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
+ とりあえずインストール 例のごとく僕はdeinを使っているので
+[[plugins]] repo = &#39;liuchengxu/vista.vim&#39; depends = [&#39;coc."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/" />
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/assets/style.css">
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://pyonk.github.io/blog/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="vista.vim is awesome :: わいがかいた — " />
+<meta name="twitter:description" content="この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
+ vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim  /r/vimのRSS登録しとってよかった。
+vista.vim vimをIDEのようにしてくれる夢のようなツール。
+cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。 fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。
+あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。
+ ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
+― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
+ とりあえずインストール 例のごとく僕はdeinを使っているので
+[[plugins]] repo = &#39;liuchengxu/vista.vim&#39; depends = [&#39;coc." />
+<meta name="twitter:site" content="https://pyonk.github.io/blog/" />
+<meta name="twitter:creator" content="pyonk" />
+<meta name="twitter:image" content="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png">
+
+
+<meta property="og:locale" content="ja" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="vista.vim is awesome :: わいがかいた — ">
+<meta property="og:description" content="この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
+ vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim  /r/vimのRSS登録しとってよかった。
+vista.vim vimをIDEのようにしてくれる夢のようなツール。
+cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。 fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。
+あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。
+ ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
+― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
+ とりあえずインストール 例のごとく僕はdeinを使っているので
+[[plugins]] repo = &#39;liuchengxu/vista.vim&#39; depends = [&#39;coc." />
+<meta property="og:url" content="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/" />
+<meta property="og:site_name" content="vista.vim is awesome" />
+<meta property="og:image" content="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-03-27 08:48:12 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85825684-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body class="">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/">vista.vim is awesome</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-03-27
+        </span>
+      
+      <span class="post-author">— Written by pyonk</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://pyonk.github.io/blog/tags/vim">vim</a>&nbsp;
+        
+          #<a href="https://pyonk.github.io/blog/tags/plugin">plugin</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <img src="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png" class="post-cover" />
+    
+
+    <div class="post-content">
+      
+
+<p>この前<a href="/blog/posts/how-to-use-coc-vim/">coc.nvim</a>を見つけたけど
+またredditにて<a href="https://github.com/liuchengxu/vista.vim">vista.vim</a>というのを見つけた。</p>
+
+<ul>
+<li><a href="https://www.reddit.com/r/vim/comments/b5pd86/vistavim_a_tagbar_alternative_that_supports_lsp/">vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim</a></li>
+</ul>
+
+<p>/r/vimのRSS登録しとってよかった。</p>
+
+<h1 id="vista-vim">vista.vim</h1>
+
+<p>vimをIDEのようにしてくれる夢のようなツール。</p>
+
+<p>cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。
+fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。</p>
+
+<p>あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。</p>
+
+<blockquote>
+<p>⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.<br />
+― <a href="https://github.com/liuchengxu/vista.vim">liuchengxu/vista.vim: View and search LSP symbols, tags in Vim</a></p>
+</blockquote>
+
+<h1 id="とりあえずインストール">とりあえずインストール</h1>
+
+<p>例のごとく僕はdeinを使っているので</p>
+
+<pre><code class="language-toml">[[plugins]]
+repo = 'liuchengxu/vista.vim'
+depends = ['coc.nvim', 'lightline.vim']
+hook_add = '''
+  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-v&gt; :&lt;C-u&gt;Vista coc&lt;CR&gt;
+  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-s&gt; :&lt;C-u&gt;Vista finder coc&lt;CR&gt;
+'''
+</code></pre>
+
+<p>こんな感じで。
+使いやすいようにショートカットも登録しておく。</p>
+
+<p><code>:Vista finder coc</code>でcoc.nvimからのシンボルデータをfzfで絞り込みができる。</p>
+
+<h1 id="ステータスバーにうにゃうにゃ">ステータスバーにうにゃうにゃ</h1>
+
+<p>lightlineのようなしゃれおつステータスバーのための関数も用意されていて、</p>
+
+<pre><code class="language-toml">[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \ 'colorscheme': 'landscape',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+      \             [ 'vista' ],
+      \           ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'vista': 'NearestMethodOrFunction',
+      \ },
+      \ }
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+'''
+</code></pre>
+
+<p>こんな感じにしておくとステータスバーにうにゃうにゃ出てくる。</p>
+
+
+<figure style="text-align: center">
+    
+        <img src="images/nearestmethodorfunction.png"  />
+    
+    
+    <figcaption>
+        <span>こんなかんじ</span>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+<p>cocと連携することでhtml, css, javascriptとかも一気にいい感じにできてとても楽しい。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/">
+                <span class="button__text">coc.nvim is awesome</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://pyonk.github.io/blog/assets/main.js"></script>
+<script src="https://pyonk.github.io/blog/assets/prism.js"></script>
+
+  
+</div>
+
+</body>
+</html>
