@@ -2,7 +2,7 @@
 title: "coc.nvim is awesome"
 date: 2019-03-21T09:33:38+09:00
 cover: "posts/how-to-use-coc-vim/images/completion.png"
-description: "coc.vimがlanguage server clientとしてくっそ優秀だった件"
+description: "coc.nvimがlanguage server clientとしてくっそ優秀だった件"
 draft: false
 author: pyonk
 tags:
@@ -87,7 +87,7 @@ VSCodeとかで使われているみたい。
 できあがったものは
 `python-language-server/output/bin/Debug/`とかにあるかな。
 
-coc.vimで便利なのがjson形式で独自のlanguage serverのサポートができることだ。
+coc.nvimで便利なのがjson形式で独自のlanguage serverのサポートができることだ。
 設定ファイルとしてデフォルトでは`$HOME/.config/nvim`（nvimではなくvimの場合は`$HOME/.vim`）以下の`coc-settings.json`を読み込んでくれる。
 もちろんプロジェクト単位での設定も可能で、その場合はルートディレクトリに`.vim/coc-settings.json`を用意しておくと優先的に読み込んでくれる。
 

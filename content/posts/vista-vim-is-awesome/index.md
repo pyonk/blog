@@ -1,6 +1,6 @@
 ---
 title: "vista.vim is awesome"
-description: ""
+description: "vista.vimというのがvimをIDEのようにしてくれた件"
 cover: "posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png"
 date: 2019-03-27T08:48:12+09:00
 draft: false
