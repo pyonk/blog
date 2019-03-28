@@ -1,11 +1,10 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 description: ""
+cover: ""
 date: {{ .Date }}
 draft: true
-categories:
-    - 
+author: pyonk
 tags:
     - 
-slug: "{{ .TranslationBaseName }}"
 ---

@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>coc.vim is awesome</title>
+      <title>coc.nvim is awesome</title>
       <link>https://pyonk.github.io/blog/posts/how-to-use-coc-vim/</link>
       <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
       
@@ -19,7 +19,7 @@
       <description>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。
 この間redditみてたら
  python completion in coc.nvim + pyls : vim  こんなスレッドがあって
-coc.vimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
+coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
 インストール方法 僕はプラグインマネジャーにdeinを使ってるので
 [[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!</description>
     </item>

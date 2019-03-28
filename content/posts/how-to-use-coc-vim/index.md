@@ -1,5 +1,5 @@
 ---
-title: "coc.vim is awesome"
+title: "coc.nvim is awesome"
 date: 2019-03-21T09:33:38+09:00
 cover: "posts/how-to-use-coc-vim/images/completion.png"
 description: "coc.vimがlanguage server clientとしてくっそ優秀だった件"
@@ -7,6 +7,7 @@ draft: false
 author: pyonk
 tags:
   - vim
+  - plugin
   - language server
 ---
 
@@ -19,7 +20,7 @@ tags:
 
 こんなスレッドがあって
 
-[coc.vim](https://github.com/neoclide/coc.nvim)て見慣れないプラグインがあるなあと思ってみてみたら
+[coc.nvim](https://github.com/neoclide/coc.nvim)て見慣れないプラグインがあるなあと思ってみてみたら
 わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
 
 
