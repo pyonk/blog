@@ -29,15 +29,15 @@ defaultContentLanguage = "ja"
       logoText = "わいがかいた"
       logoHomeLink = "/blog/"
 
-    [languages.ja.menu]
-      [[languages.ja.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.ja.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
+    # [languages.ja.menu]
+    #   [[languages.ja.menu.main]]
+    #     identifier = "about"
+    #     name = "About"
+    #     url = "/about"
+    #   [[languages.ja.menu.main]]
+    #     identifier = "showcase"
+    #     name = "Showcase"
+    #     url = "/showcase"
 
 #baseurl: "https://pyonk.github.io/blog/"
 #config: "config.yaml"

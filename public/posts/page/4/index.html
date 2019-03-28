@@ -81,56 +81,6 @@ ga('send', 'pageview');
 
     <span class="header__right">
       
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-      
-        <ul class="menu__sub-inner">
-          <li class="menu__sub-inner-more-trigger">
-            Show more
-            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-          </li>
-
-          <ul class="menu__sub-inner-more hidden">
-            
-              
-                <li><a href="/blog/about">About</a></li>
-              
-            
-              
-                <li><a href="/blog/showcase">Showcase</a></li>
-              
-            
-          </ul>
-        </ul>
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/blog/about">About</a></li>
-      
-    
-      
-        <li><a href="/blog/showcase">Showcase</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
       <span class="theme-toggle">
         <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
@@ -151,6 +101,60 @@ ga('send', 'pageview');
     
     
 
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">Djangoでどうしても非同期でコマンドを実行したくなった</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2017-01-06
+        </span>
+        
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/django">django</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+コマンドの設計見直せっていうのは今回は置いといてください・・・。
+どうしたのか いくつかの方法を試しました。
+pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;でpythonから叩く。
+import subprocess import shlex cmd = &lsquo;nohup sleep 10 &amp;&rsquo; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+つぎ！
+thread化して逃げる この前書いたような感じです。
+pythonでtupleをつくる - わいがかいた
+結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
+つぎ！！
+celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
+ようやく本題。
+ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
+実際やりはじめて少し後悔しましたし。
+結構面倒くさかったので備忘録代わりに。
+install まずは本体をインストールしていきます。
+pip install -U Celery
+celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
+などを使うことができます。 今回はRedisを選択しました。
+yum install redis
+bundleも用意されているのでそれも。
+pip install -U &quot;celery[redis]&quot;
+          
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/use-celery-for-send-email-django/">Read more →</a></div>
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-tuple/">pythonでtupleをつくる</a></h1>
@@ -274,35 +278,6 @@ ga('send', 'pageview');
         
       </div>
       <div><a class="read-more button" href="/blog/posts/hubot-line-message-api/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/javascript-unknown-writing/">javascriptのよくわからない書き方【連想配列編】</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2016-08-30
-        </span>
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/javascript">javascript</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/javascript-unknown-writing/">Read more →</a></div>
     </div>
     
     <div class="pagination">
