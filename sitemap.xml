@@ -203,6 +203,12 @@
   </url>
   
   <url>
+    <loc>https://pyonk.github.io/blog/tags/plugin/</loc>
+    <lastmod>2019-03-21T09:33:38+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pyonk.github.io/blog/tags/poem/</loc>
     <lastmod>2017-01-03T16:02:48+09:00</lastmod>
     <priority>0</priority>
