@@ -1,7 +1,8 @@
 ---
 title: "coc.nvim is awesome"
+aliases: /posts/how-to-use-coc-vim/
 date: 2019-03-21T09:33:38+09:00
-cover: "posts/how-to-use-coc-vim/images/completion.png"
+cover: "posts/how-to-use-coc-nvim/images/completion.png"
 description: "coc.nvimがlanguage server clientとしてくっそ優秀だった件"
 draft: false
 author: pyonk
