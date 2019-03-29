@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  
+    <title>coc.nvim is awesome :: わいがかいた</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。
+この間redditみてたら
+ python completion in coc.nvim &#43; pyls : vim  こんなスレッドがあって
+coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
+インストール方法 僕はプラグインマネジャーにdeinを使ってるので
+[[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/" />
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/assets/style.css">
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://pyonk.github.io/blog/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="coc.nvim is awesome :: わいがかいた — " />
+<meta name="twitter:description" content="相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。
+この間redditみてたら
+ python completion in coc.nvim &#43; pyls : vim  こんなスレッドがあって
+coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
+インストール方法 僕はプラグインマネジャーにdeinを使ってるので
+[[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!" />
+<meta name="twitter:site" content="https://pyonk.github.io/blog/" />
+<meta name="twitter:creator" content="pyonk" />
+<meta name="twitter:image" content="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png">
+
+
+<meta property="og:locale" content="ja" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="coc.nvim is awesome :: わいがかいた — ">
+<meta property="og:description" content="相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。
+この間redditみてたら
+ python completion in coc.nvim &#43; pyls : vim  こんなスレッドがあって
+coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
+インストール方法 僕はプラグインマネジャーにdeinを使ってるので
+[[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!" />
+<meta property="og:url" content="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/" />
+<meta property="og:site_name" content="coc.nvim is awesome" />
+<meta property="og:image" content="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-03-21 09:33:38 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85825684-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body class="">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/">coc.nvim is awesome</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-03-21
+        </span>
+      
+      <span class="post-author">— Written by pyonk</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://pyonk.github.io/blog/tags/vim">vim</a>&nbsp;
+        
+          #<a href="https://pyonk.github.io/blog/tags/plugin">plugin</a>&nbsp;
+        
+          #<a href="https://pyonk.github.io/blog/tags/language-server">language server</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <img src="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png" class="post-cover" />
+    
+
+    <div class="post-content">
+      
+
+<p>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。</p>
+
+<p>この間redditみてたら</p>
+
+<ul>
+<li><a href="https://www.reddit.com/r/vim/comments/b1yfsg/python_completion_in_cocnvim_pyls/">python completion in coc.nvim + pyls : vim</a></li>
+</ul>
+
+<p>こんなスレッドがあって</p>
+
+<p><a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>て見慣れないプラグインがあるなあと思ってみてみたら
+わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。</p>
+
+<h1 id="インストール方法">インストール方法</h1>
+
+<p>僕はプラグインマネジャーにdeinを使ってるので</p>
+
+<pre><code class="language-toml:dein/plugins.toml">[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = 'coc#util#install()'
+hook_add = '''
+  nmap &lt;silent&gt; gd &lt;Plug&gt;(coc-definition)
+  nmap &lt;silent&gt; gy &lt;Plug&gt;(coc-type-definition)
+  nmap &lt;silent&gt; gi &lt;Plug&gt;(coc-implementation)
+  nmap &lt;silent&gt; gr &lt;Plug&gt;(coc-references)
+  &quot; Remap for rename current word
+  nmap &lt;leader&gt;rn &lt;Plug&gt;(coc-rename)
+  &quot; Highlight symbol under cursor on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+  &quot; Use K for show documentation in preview window
+  nnoremap &lt;silent&gt; K :call &lt;SID&gt;show_documentation()&lt;CR&gt;
+  function! s:show_documentation()
+    if &amp;filetype == 'vim'
+      execute 'h '.expand('&lt;cword&gt;')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+'''
+</code></pre>
+
+<p>これを記述する。</p>
+
+<h1 id="extensionのインストール">extensionのインストール</h1>
+
+<p>わかりやすいなぁ〜って感じたのがextensionの存在。</p>
+
+<ul>
+<li><a href="https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions">Using coc extensions · neoclide/coc.nvim Wiki</a></li>
+</ul>
+
+<p>ここにだいたい書いてあるけど
+<code>:CocInstall</code>コマンドを使っていろんなlanguage serverに対応できるよということらしい。</p>
+
+<p>たとえば僕はpythonが好きなので</p>
+
+<pre><code>:CocInstall coc-pyls
+</code></pre>
+
+<p>とすればpylsに対応できるという優れもの（もちろん別途pylsのインストールは必要ではあるが）。</p>
+
+<p>インストールできるextensionの一覧は
+<code>:CocList extensions</code>で確認できる。</p>
+
+<h1 id="mplsと使用する">MPLSと使用する</h1>
+
+<p>個人的にはpylsよりMPLSが使ってみたかった。
+MPLSとは&rdquo;M&rdquo;icrosoftが作っている&rdquo;P&rdquo;ythonの&rdquo;L&rdquo;anguage &ldquo;S&rdquo;erverである。</p>
+
+<ul>
+<li><a href="https://github.com/Microsoft/python-language-server">Microsoft/python-language-server: Microsoft Language Server for Python</a></li>
+</ul>
+
+<p>VSCodeとかで使われているみたい。
+以前VSCodeに浮気した時は、こんなにちゃんと(なにもしてないのに)補完できてしまうのか。。とびっくりした覚えがある。
+上記ページにビルド方法が書いてあるのでやっておく。
+そんなに時間はかからなかった。
+できあがったものは
+<code>python-language-server/output/bin/Debug/</code>とかにあるかな。</p>
+
+<p>coc.nvimで便利なのがjson形式で独自のlanguage serverのサポートができることだ。
+設定ファイルとしてデフォルトでは<code>$HOME/.config/nvim</code>（nvimではなくvimの場合は<code>$HOME/.vim</code>）以下の<code>coc-settings.json</code>を読み込んでくれる。
+もちろんプロジェクト単位での設定も可能で、その場合はルートディレクトリに<code>.vim/coc-settings.json</code>を用意しておくと優先的に読み込んでくれる。</p>
+
+<pre><code class="language-json:coc-settings.json">{
+  &quot;suggest.timeout&quot;: 5000,
+  &quot;languageserver&quot;: {
+    &quot;MPLS&quot;: {
+      &quot;command&quot;: &quot;dotnet&quot;,
+      &quot;args&quot;: [
+        &quot;exec&quot;,
+        &quot;path/to/Microsoft.Python.LanguageServer.dll&quot;
+      ],
+      &quot;filetypes&quot;: [&quot;python&quot;],
+      &quot;initializationOptions&quot;: {
+        &quot;interpreter&quot;: {
+          &quot;properties&quot;: {
+            &quot;InterpreterPath&quot;: &quot;path/to/python&quot;,
+            &quot;DatabasePath&quot;: &quot;path/to/MPLS/output/dir&quot;,
+            &quot;Version&quot;: &quot;{python version}&quot;
+          }
+        },
+        &quot;searchPaths&quot;: [
+          &quot;path/to/site-packages&quot;,
+          &quot;path/to/app_root&quot;
+        ],
+        &quot;testEnvironment&quot;: false,
+        &quot;analysisUpdates&quot;: true,
+        &quot;traceLogging&quot;: true,
+        &quot;asyncStartup&quot;: true,
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>こんな感じにしとくとpythonファイルを読み込んだ時に自動でMPLSが立ち上がる。
+ちなみにここら辺の設定のキーは<code>coc-json</code>をインストールしておくと補完可能である。便利。</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/">
+                <span class="button__icon">←</span>
+                <span class="button__text">vista.vim is awesome</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">
+                <span class="button__text">Django Test Client Url Capture Not Working</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+    </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://pyonk.github.io/blog/assets/main.js"></script>
+<script src="https://pyonk.github.io/blog/assets/prism.js"></script>
+
+  
+</div>
+
+</body>
+</html>
