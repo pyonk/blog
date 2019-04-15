@@ -104,6 +104,44 @@ ga('send', 'pageview');
 
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/">pythonからpdfのフォームに入力する</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2017-10-05
+        </span>
+        
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+そもそもpdfにフォームなんて埋められるんだって知らなかったです。
+どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
+書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
+なのでどちらにも対応できるような感じになってます。
+事前準備  reportlab
+$ pip install reportlab  PyPDF2
+$ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em>- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &lsquo;title&rsquo; # fontを変更 pdfmetrics.registerFont(TTFont(&lsquo;Mplus1p-Light&rsquo;, &lsquo;static/font/Mplus1p/Mplus1p-Light.ttf&rsquo;)) template_path = &lsquo;template.pdf&rsquo; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/fill-pdf-form-from-python/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/">timetreeの500万ユーザー記念パーティに参加してきた</a></h1>
       <div class="post-meta">
         <span class="post-date">
@@ -241,40 +279,6 @@ $ crontab -l  で確認することができます。
         
       </div>
       <div><a class="read-more button" href="/blog/posts/cannot-request/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-copy/">pythonの参照渡しをどうすれば回避できるのか</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2017-01-12
-        </span>
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
-どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.
-          
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/python-copy/">Read more →</a></div>
     </div>
     
     <div class="pagination">

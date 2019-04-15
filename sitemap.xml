@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pyonk.github.io/blog/posts/minio-is-awesome/</loc>
+    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</loc>
     <lastmod>2019-03-27T08:48:12+09:00</lastmod>
   </url>
@@ -142,6 +147,12 @@
   </url>
   
   <url>
+    <loc>https://pyonk.github.io/blog/tags/development/</loc>
+    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pyonk.github.io/blog/tags/django/</loc>
     <lastmod>2017-12-20T13:54:50+09:00</lastmod>
     <priority>0</priority>
@@ -168,6 +179,12 @@
   <url>
     <loc>https://pyonk.github.io/blog/tags/hugo/</loc>
     <lastmod>2017-01-03T10:34:47+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/infra/</loc>
+    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -202,6 +219,12 @@
   </url>
   
   <url>
+    <loc>https://pyonk.github.io/blog/tags/minio/</loc>
+    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pyonk.github.io/blog/tags/nginx/</loc>
     <lastmod>2016-07-15T15:28:45+09:00</lastmod>
     <priority>0</priority>
@@ -221,7 +244,7 @@
   
   <url>
     <loc>https://pyonk.github.io/blog/posts/</loc>
-    <lastmod>2019-03-27T08:48:12+09:00</lastmod>
+    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -281,7 +304,7 @@
   
   <url>
     <loc>https://pyonk.github.io/blog/</loc>
-    <lastmod>2019-03-27T08:48:12+09:00</lastmod>
+    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
     <priority>0</priority>
   </url>
   
