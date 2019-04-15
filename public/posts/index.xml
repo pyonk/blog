@@ -5,10 +5,26 @@
     <link>https://pyonk.github.io/blog/posts/</link>
     <description>Recent content in Posts on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Mar 2019 08:48:12 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>minio is awesome</title>
+      <link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link>
+      <pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid>
+      <description>S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあったhttps://t.co/YLKdJrsasg
+&amp;mdash; ヨシオカユウキ (@pyonknoyp) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
+S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。 docker-composeと相性も良さそうなので使ってみることにした。
+ちなみにDjangoでウェブサイトを構築している。
+下準備 $ pip install django-storages boto3  python側で追加インストール必要なのはこれだけで あとはsettings.py
+# S3にアップロード DEFAULT_FILE_STORAGE = &#39;storages.backends.s3boto3.S3Boto3Storage&#39; AWS_ACCESS_KEY_ID = &#39;minio&#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &#39;minio123&#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &#39;static&#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &#39;http://minio:9000/&#39;  minio本体はdocker imageを利用するのが便利。
+docker-compose.ymlに以下の記述を追加する。
+version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;9000:9000&amp;quot; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio:  これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。</description>
+    </item>
     
     <item>
       <title>vista.vim is awesome</title>

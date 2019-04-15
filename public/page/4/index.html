@@ -104,6 +104,40 @@ ga('send', 'pageview');
 
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-copy/">pythonの参照渡しをどうすれば回避できるのか</a></h1>
+      <div class="post-meta">
+        <span class="post-date">
+          2017-01-12
+        </span>
+        
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+どうすれば回避できるのか 割と単純です。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.
+          
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/python-copy/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">Djangoでどうしても非同期でコマンドを実行したくなった</a></h1>
       <div class="post-meta">
         <span class="post-date">
@@ -244,41 +278,6 @@ pip install -U &quot;celery[redis]&quot;
         
       </div>
       <div><a class="read-more button" href="/blog/posts/send-pullrequest-to-hugofy/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/hubot-line-message-api/">hubot-line-message-apiをつくってみてます</a></h1>
-      <div class="post-meta">
-        <span class="post-date">
-          2016-10-17
-        </span>
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/coffeescript">coffeescript</a>&nbsp;
-          
-            #<a href="https://pyonk.github.io/blog/tags/javascript">javascript</a>&nbsp;
-          
-            #<a href="https://pyonk.github.io/blog/tags/hubot">hubot</a>&nbsp;
-          
-            #<a href="https://pyonk.github.io/blog/tags/line">line</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/hubot-line-message-api/">Read more →</a></div>
     </div>
     
     <div class="pagination">

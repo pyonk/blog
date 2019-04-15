@@ -47,6 +47,15 @@
     </item>
     
     <item>
+      <title>Development</title>
+      <link>https://pyonk.github.io/blog/tags/development/</link>
+      <pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Django</title>
       <link>https://pyonk.github.io/blog/tags/django/</link>
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
@@ -92,6 +101,15 @@
     </item>
     
     <item>
+      <title>Infra</title>
+      <link>https://pyonk.github.io/blog/tags/infra/</link>
+      <pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/infra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Javascript</title>
       <link>https://pyonk.github.io/blog/tags/javascript/</link>
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
@@ -133,6 +151,15 @@
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/tags/line/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minio</title>
+      <link>https://pyonk.github.io/blog/tags/minio/</link>
+      <pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/minio/</guid>
       <description></description>
     </item>
     
