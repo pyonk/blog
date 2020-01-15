@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>バックエンド :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>バックエンド :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -63,15 +63,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -94,9 +94,12 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="posts">
+    
+    
+
     
     
     
@@ -105,9 +108,11 @@ ga('send', 'pageview');
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-copy/">pythonの参照渡しをどうすれば回避できるのか</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-01-12
-        </span>
+        
+          <span class="post-date">
+            2017-01-12
+          </span>
+        
         
         
       </div>
@@ -116,7 +121,7 @@ ga('send', 'pageview');
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
           
         </span>
       
@@ -127,9 +132,9 @@ ga('send', 'pageview');
         
           
             ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.
           
         
       </div>
@@ -139,9 +144,11 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">Djangoでどうしても非同期でコマンドを実行したくなった</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-01-06
-        </span>
+        
+          <span class="post-date">
+            2017-01-06
+          </span>
+        
         
         
       </div>
@@ -150,9 +157,9 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
           
-            #<a href="https://pyonk.github.io/blog/tags/django">django</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/django/">django</a>&nbsp;
           
         </span>
       
@@ -166,7 +173,7 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
 pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;でpythonから叩く。
-import subprocess import shlex cmd = &lsquo;nohup sleep 10 &amp;&rsquo; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+import subprocess import shlex cmd = 'nohup sleep 10 &amp;' subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
 つぎ！
 thread化して逃げる この前書いたような感じです。
 pythonでtupleをつくる - わいがかいた
@@ -179,11 +186,12 @@ celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
 結構面倒くさかったので備忘録代わりに。
 install まずは本体をインストールしていきます。
 pip install -U Celery
-celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
-などを使うことができます。 今回はRedisを選択しました。
+celeryはbrokerとして
+Redis RabbitMQ Amazon SQS  などを使うことができます。 今回はRedisを選択しました。
 yum install redis
 bundleも用意されているのでそれも。
 pip install -U &quot;celery[redis]&quot;
+how to ここを参考にモリモリかいていきます。
           
         
       </div>
@@ -193,9 +201,11 @@ pip install -U &quot;celery[redis]&quot;
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-tuple/">pythonでtupleをつくる</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-01-05
-        </span>
+        
+          <span class="post-date">
+            2017-01-05
+          </span>
+        
         
         
       </div>
@@ -204,7 +214,7 @@ pip install -U &quot;celery[redis]&quot;
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
           
         </span>
       
@@ -222,9 +232,11 @@ pip install -U &quot;celery[redis]&quot;
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/nginx-image-filter/">nginxのimage_filterを使って画像を動的に縮小するには</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2016-07-15
-        </span>
+        
+          <span class="post-date">
+            2016-07-15
+          </span>
+        
         
         
       </div>
@@ -233,7 +245,7 @@ pip install -U &quot;celery[redis]&quot;
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/nginx">nginx</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/nginx/">nginx</a>&nbsp;
           
         </span>
       
@@ -264,16 +276,16 @@ pip install -U &quot;celery[redis]&quot;
 
   </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -282,8 +294,8 @@ pip install -U &quot;celery[redis]&quot;
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -292,8 +304,10 @@ pip install -U &quot;celery[redis]&quot;
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

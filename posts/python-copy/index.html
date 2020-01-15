@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>pythonの参照渡しをどうすれば回避できるのか :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>pythonの参照渡しをどうすれば回避できるのか :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict."/>
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://pyonk.github.io/blog/posts/python-copy/" />
@@ -28,9 +28,9 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="pythonの参照渡しをどうすれば回避できるのか :: わいがかいた — " />
 <meta name="twitter:description" content="ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict." />
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict." />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -40,9 +40,9 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
 <meta property="og:type" content="article" />
 <meta property="og:title" content="pythonの参照渡しをどうすれば回避できるのか :: わいがかいた — ">
 <meta property="og:description" content="ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict." />
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict." />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/python-copy/" />
 <meta property="og:site_name" content="pythonの参照渡しをどうすれば回避できるのか" />
 <meta property="og:image" content="">
@@ -70,15 +70,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -101,8 +101,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-copy/">pythonの参照渡しをどうすれば回避できるのか</a></h2>
     <div class="post-meta">
@@ -118,7 +118,7 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
         
       </span>
     
@@ -126,157 +126,137 @@ ga('send', 'pageview');
     
 
     <div class="post-content">
-      
-
-<p>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
+      <p>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
 たとえば</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hoge <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">3</span>}
+<span style="color:#66d9ef">print</span> id(hoge) <span style="color:#75715e"># 140418104920496</span>
 
-<pre><code class="language-python">hoge = {1:1, 2:2, 3:3}
-print id(hoge) # 140418104920496
+fuga <span style="color:#f92672">=</span> hoge
+<span style="color:#66d9ef">print</span> id(fuga) <span style="color:#75715e"># 140418104920496</span>
 
-fuga = hoge
-print id(fuga) # 140418104920496
-
-fuga.update({
-    4:4
+fuga<span style="color:#f92672">.</span>update({
+    <span style="color:#ae81ff">4</span>:<span style="color:#ae81ff">4</span>
 })
 
-print hoge == fuga # True
-</code></pre>
-
-<p><a href="http://note.crohaco.net/2014/python-argument-intro/">Pythonistなら常識</a>ですよね。</p>
-
+<span style="color:#66d9ef">print</span> hoge <span style="color:#f92672">==</span> fuga <span style="color:#75715e"># True</span>
+</code></pre></div><p><a href="http://note.crohaco.net/2014/python-argument-intro/">Pythonistなら常識</a>ですよね。</p>
 <h1 id="どうすれば回避できるのか">どうすれば回避できるのか</h1>
-
 <p>割と単純です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hoge <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">3</span>}
+<span style="color:#66d9ef">print</span> id(hoge) <span style="color:#75715e"># 140418104920496</span>
 
-<pre><code class="language-python">hoge = {1:1, 2:2, 3:3}
-print id(hoge) # 140418104920496
+fuga <span style="color:#f92672">=</span> hoge<span style="color:#f92672">.</span>copy()
+<span style="color:#66d9ef">print</span> id(fuga) <span style="color:#75715e"># 140418107009728</span>
 
-fuga = hoge.copy()
-print id(fuga) # 140418107009728
-
-fuga.update({
-    4:4
+fuga<span style="color:#f92672">.</span>update({
+    <span style="color:#ae81ff">4</span>:<span style="color:#ae81ff">4</span>
 })
 
-print hoge == fuga # False
+<span style="color:#66d9ef">print</span> hoge <span style="color:#f92672">==</span> fuga <span style="color:#75715e"># False</span>
 
-print hoge # {1:1, 2:2, 3:3}
+<span style="color:#66d9ef">print</span> hoge <span style="color:#75715e"># {1:1, 2:2, 3:3}</span>
 
-print fuga # {1:1, 2:2, 3:3, 4:4}
-</code></pre>
-
-<p>辞書の浅いコピーを取るには<code>copy_dict = dict.copy()</code>が簡単ですね。</p>
-
+<span style="color:#66d9ef">print</span> fuga <span style="color:#75715e"># {1:1, 2:2, 3:3, 4:4}</span>
+</code></pre></div><p>辞書の浅いコピーを取るには<code>copy_dict = dict.copy()</code>が簡単ですね。</p>
 <p><em>ちなみに、リストの場合は<code>copy_list = original_list[:]</code>でコピーが取れます。</em></p>
-
 <p>ただこれだと浅いコピーになります。</p>
-
 <p>なので</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hoge <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>:{<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">3</span>}}
+<span style="color:#66d9ef">print</span> id(hoge) <span style="color:#75715e"># 140418104920496</span>
 
-<pre><code class="language-python">hoge = {1:{2:2, 3:3}}
-print id(hoge) # 140418104920496
+fuga <span style="color:#f92672">=</span> hoge<span style="color:#f92672">.</span>copy()
+<span style="color:#66d9ef">print</span> id(fuga) <span style="color:#75715e"># 140418107009728</span>
 
-fuga = hoge.copy()
-print id(fuga) # 140418107009728
-
-fuga[1].update({
-    4:4
+fuga[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>update({
+    <span style="color:#ae81ff">4</span>:<span style="color:#ae81ff">4</span>
 })
 
-print hoge == fuga # True
+<span style="color:#66d9ef">print</span> hoge <span style="color:#f92672">==</span> fuga <span style="color:#75715e"># True</span>
 
-print hoge # {1: {2: 2, 3: 3, 4: 4}}
+<span style="color:#66d9ef">print</span> hoge <span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}</span>
 
-print fuga # {1: {2: 2, 3: 3, 4: 4}}
-</code></pre>
-
-<p>となってしまいます。</p>
-
+<span style="color:#66d9ef">print</span> fuga <span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}</span>
+</code></pre></div><p>となってしまいます。</p>
 <p>浅いコピーの場合は</p>
-
 <ul>
 <li>元のオブジェクト中に見つかったオブジェクトに対する 参照 を挿入</li>
 </ul>
-
 <p>するようです。</p>
-
 <h1 id="深いコピー">深いコピー</h1>
-
 <p>上記の通り、オブジェクトの中のオブジェクトは参照渡しになります。</p>
-
 <p>それを回避するために、copyモジュールをimportして、深いコピーを利用します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> copy
 
-<pre><code class="language-python">import copy
+hoge <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>:{<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">3</span>}}
+<span style="color:#66d9ef">print</span> id(hoge) <span style="color:#75715e"># 140418104920496</span>
 
-hoge = {1:{2:2, 3:3}}
-print id(hoge) # 140418104920496
+fuga <span style="color:#f92672">=</span> copy<span style="color:#f92672">.</span>deepcopy(hoge)
+<span style="color:#66d9ef">print</span> id(fuga) <span style="color:#75715e"># 140418107009728</span>
 
-fuga = copy.deepcopy(hoge)
-print id(fuga) # 140418107009728
-
-fuga[1].update({
-    4:4
+fuga[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>update({
+    <span style="color:#ae81ff">4</span>:<span style="color:#ae81ff">4</span>
 })
 
-print hoge == fuga # False
+<span style="color:#66d9ef">print</span> hoge <span style="color:#f92672">==</span> fuga <span style="color:#75715e"># False</span>
 
-print hoge # {1: {2: 2, 3: 3}}
+<span style="color:#66d9ef">print</span> hoge <span style="color:#75715e"># {1: {2: 2, 3: 3}}</span>
 
-print fuga # {1: {2: 2, 3: 3, 4: 4}}
-</code></pre>
-
-<p>あら素敵。</p>
-
+<span style="color:#66d9ef">print</span> fuga <span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}</span>
+</code></pre></div><p>あら素敵。</p>
 <p>結構厄介な場面も多いのできちんと覚えたいものです。</p>
-
 <h2 id="参考">参考</h2>
-
 <p><a href="http://docs.python.jp/2.6/library/copy.html">8.17. copy — 浅いコピーおよび深いコピー操作 — Python 2.6ja2 documentation</a></p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/cannot-request/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">
+                  <span class="button__text">Djangoでどうしても非同期でコマンドを実行したくなった</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://pyonk.github.io/blog/posts/cannot-request/">
-                <span class="button__icon">←</span>
-                <span class="button__text">あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">
-                <span class="button__text">Djangoでどうしても非同期でコマンドを実行したくなった</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
+      
+    
     
 
     
+      
+        
 
+      
+    
+    
     </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -285,8 +265,8 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -295,8 +275,10 @@ print fuga # {1: {2: 2, 3: 3, 4: 4}}
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

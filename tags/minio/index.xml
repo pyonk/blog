@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Minio on わいがかいた</title>
+    <title>minio on わいがかいた</title>
     <link>https://pyonk.github.io/blog/tags/minio/</link>
-    <description>Recent content in Minio on わいがかいた</description>
+    <description>Recent content in minio on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate>
     
@@ -17,13 +17,13 @@
       
       <guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid>
       <description>S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあったhttps://t.co/YLKdJrsasg
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
 S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。 docker-composeと相性も良さそうなので使ってみることにした。
 ちなみにDjangoでウェブサイトを構築している。
-下準備 $ pip install django-storages boto3  python側で追加インストール必要なのはこれだけで あとはsettings.py
-# S3にアップロード DEFAULT_FILE_STORAGE = &#39;storages.backends.s3boto3.S3Boto3Storage&#39; AWS_ACCESS_KEY_ID = &#39;minio&#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &#39;minio123&#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &#39;static&#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &#39;http://minio:9000/&#39;  minio本体はdocker imageを利用するのが便利。
+下準備 $ pip install django-storages boto3 python側で追加インストール必要なのはこれだけで あとはsettings.py
+# S3にアップロード DEFAULT_FILE_STORAGE = &amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39; AWS_ACCESS_KEY_ID = &amp;#39;minio&amp;#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &amp;#39;minio123&amp;#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &amp;#39;static&amp;#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &amp;#39;http://minio:9000/&amp;#39; minio本体はdocker imageを利用するのが便利。
 docker-compose.ymlに以下の記述を追加する。
-version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;9000:9000&amp;quot; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio:  これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。</description>
+version: &amp;#39;3.2&amp;#39; services: minio: image: minio/minio ports: - &amp;#34;9000:9000&amp;#34; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio: これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。</description>
     </item>
     
   </channel>

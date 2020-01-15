@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Language Server on わいがかいた</title>
+    <title>language server on わいがかいた</title>
     <link>https://pyonk.github.io/blog/tags/language-server/</link>
-    <description>Recent content in Language Server on わいがかいた</description>
+    <description>Recent content in language server on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 21 Mar 2019 09:33:38 +0900</lastBuildDate>
     
@@ -21,7 +21,7 @@
  python completion in coc.nvim + pyls : vim  こんなスレッドがあって
 coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
 インストール方法 僕はプラグインマネジャーにdeinを使ってるので
-[[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!</description>
+[[plugins]] repo = &amp;#39;neoclide/coc.nvim&amp;#39; build = &amp;#39;coc#util#install()&amp;#39; hook_add = &amp;#39;&amp;#39;&amp;#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;#34; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;#34; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&amp;#39;highlight&amp;#39;) &amp;#34; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!</description>
     </item>
     
   </channel>

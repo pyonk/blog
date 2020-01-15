@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>日記 on わいがかいた</title>
@@ -17,7 +17,7 @@
       
       <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid>
       <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
-タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
+ タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
 とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。
 いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。
@@ -28,7 +28,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 参考になったのはこちら
 [Solved] Scroll not working when elements inside have click events - Unity Answers
 結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
+ 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {</description>
     </item>
     
@@ -38,7 +38,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
-      <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
+      <description>この間boothで購入したlet&#39;s splitがあの後無事届きました。
 @foostan さんにはマジ感謝マジ卍。
 完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
 いやこう言うと語弊がありますね。
@@ -47,7 +47,7 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
 けどescの位置はかなりお気に入り。当初は左上にしたんだけど、tabをおいておきたくて。
 だいぶタイピングも慣れてきて、-とか~もノールックで行けるようになった。
 目下課題に感じているのは左下の矢印キーたち。普段はctrl+hjklを矢印キーとしてつかっているから左下のは使わないのよなー。もったいない。
-もちろんこの記事はlet&amp;rsquo;s splitで書かれました！！
+もちろんこの記事はlet&#39;s splitで書かれました！！
 新しい相棒でバリバリコード書くぞ〜〜</description>
     </item>
     
@@ -64,13 +64,13 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
 自作キーボード界隈をみてみるとすごーーーくかっこいい。
 とくにHelixとかErgo42とかたまらない。
 ただ、半田ごてとか握ったことないので不安だしなかなか手を出しづらい。（そもそも人気すぎて買えへん）
-そんな感じでかっこいいキーボードをTLでながめていたわけど、@foostanさんがboothでlet&amp;rsquo;s splitを販売するらしいとの情報をキャッチ。
+そんな感じでかっこいいキーボードをTLでながめていたわけど、@foostanさんがboothでlet&#39;s splitを販売するらしいとの情報をキャッチ。
 このままくすぶってても何にもならないので、エイやで購入を決意。
 完成版か自分で組み立てるか結構悩んだけど、自作選んで半田ごてかうと完成版買えそうだったから完成版を買った。
 完成品版let&amp;#39;s split注文した。
 手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
 届くのが楽しみだな〜〜〜！！
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) May 24, 2018  とにかく届くのが楽しみでごわす。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) May 24, 2018  とにかく届くのが楽しみでごわす。
 発送予定日が5/27なので週明けには手元に届いてるかしら。</description>
     </item>
     
@@ -102,7 +102,7 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
 次のパーティでも招待されると良いな〜。またお話を伺いに行きたい。
 強いてなにか意見があるとすると、せっかく壁にプロジェクターでうつしていたのだから、なにかしらのLTとか発表があるとうれしかったかな。
 さて、褒めちぎりすぎたのでここらへんで。
- TimeTree  android ios   </description>
+ TimeTree  android ios    </description>
     </item>
     
     <item>

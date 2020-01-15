@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>してみた on わいがかいた</title>
@@ -23,9 +23,9 @@
 いい経験になりました。 Thank you @akmittal
 ちなみに macで動くやつはこちらにあるのでよければどうぞ。
 pyonk/Hugofy 少しだけ機能追加してます。
-追加した機能  hugo serveで立ち上げたサーバをkillする機能
- github pagesへのdeploy機能
- settingにRepositoryを追加してからどうぞ   もうすこしちゃんと作りこんでから出直します。反省。</description>
+追加した機能   hugo serveで立ち上げたサーバをkillする機能
+  github pagesへのdeploy機能
+ settingにRepositoryを追加してからどうぞ    もうすこしちゃんと作りこんでから出直します。反省。</description>
     </item>
     
     <item>
@@ -37,12 +37,12 @@ pyonk/Hugofy 少しだけ機能追加してます。
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
-&amp;quot;dependencies&amp;quot;: { &amp;quot;bar&amp;quot;: &amp;quot;file:./hubot-line-message-api&amp;quot; }  からの
+&amp;#34;dependencies&amp;#34;: { &amp;#34;bar&amp;#34;: &amp;#34;file:./hubot-line-message-api&amp;#34; } からの
 $ hubot -a line-message-api
 でいけると思います。
 hubot-line-message-api 結構ガバガバ実装なのでAPI Referenceをしっかり読んでからやるのをオススメします。
-設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。   任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。  FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。   できること 今のところpushで送信は対応できておらず、返信しかできません。
- 返信
+設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。    任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。   FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。    できること 今のところpushで送信は対応できておらず、返信しかできません。
+  返信
  テキスト  https://devdocs.line.me/ja/#text
 module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; res.</description>
     </item>

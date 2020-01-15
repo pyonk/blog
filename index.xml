@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>わいがかいた</title>
@@ -17,13 +17,13 @@
       
       <guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid>
       <description>S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあったhttps://t.co/YLKdJrsasg
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
 S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。 docker-composeと相性も良さそうなので使ってみることにした。
 ちなみにDjangoでウェブサイトを構築している。
-下準備 $ pip install django-storages boto3  python側で追加インストール必要なのはこれだけで あとはsettings.py
-# S3にアップロード DEFAULT_FILE_STORAGE = &#39;storages.backends.s3boto3.S3Boto3Storage&#39; AWS_ACCESS_KEY_ID = &#39;minio&#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &#39;minio123&#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &#39;static&#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &#39;http://minio:9000/&#39;  minio本体はdocker imageを利用するのが便利。
+下準備 $ pip install django-storages boto3 python側で追加インストール必要なのはこれだけで あとはsettings.py
+# S3にアップロード DEFAULT_FILE_STORAGE = &amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39; AWS_ACCESS_KEY_ID = &amp;#39;minio&amp;#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &amp;#39;minio123&amp;#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &amp;#39;static&amp;#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &amp;#39;http://minio:9000/&amp;#39; minio本体はdocker imageを利用するのが便利。
 docker-compose.ymlに以下の記述を追加する。
-version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;9000:9000&amp;quot; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio:  これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。</description>
+version: &amp;#39;3.2&amp;#39; services: minio: image: minio/minio ports: - &amp;#34;9000:9000&amp;#34; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio: これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ cocと連携してLSPのシンボルから出してくれるから、別途ctags
  ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
 ― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
  とりあえずインストール 例のごとく僕はdeinを使っているので
-[[plugins]] repo = &#39;liuchengxu/vista.vim&#39; depends = [&#39;coc.</description>
+[[plugins]] repo = &amp;#39;liuchengxu/vista.vim&amp;#39; depends = [&amp;#39;coc.nvim&amp;#39;, &amp;#39;lightline.</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ cocと連携してLSPのシンボルから出してくれるから、別途ctags
  python completion in coc.nvim + pyls : vim  こんなスレッドがあって
 coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
 インストール方法 僕はプラグインマネジャーにdeinを使ってるので
-[[plugins]] repo = &#39;neoclide/coc.nvim&#39; build = &#39;coc#util#install()&#39; hook_add = &#39;&#39;&#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;quot; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;quot; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;) &amp;quot; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!</description>
+[[plugins]] repo = &amp;#39;neoclide/coc.nvim&amp;#39; build = &amp;#39;coc#util#install()&amp;#39; hook_add = &amp;#39;&amp;#39;&amp;#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;#34; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;#34; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&amp;#39;highlight&amp;#39;) &amp;#34; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!</description>
     </item>
     
     <item>
@@ -63,8 +63,9 @@ coc.nvimて見慣れないプラグインがあるなあと思ってみてみた
       <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid>
-      <description>from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
-結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ</description>
+      <description>from django.urls import path url_patterns = [ path(&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;, views.show, name=&amp;#39;user_show&amp;#39;), ] from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&amp;#39;user_show&amp;#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302) 上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
+結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ
+というかそもそも論だがurlsでルーティングしているのであれば これだけで良かった</description>
     </item>
     
     <item>
@@ -74,7 +75,7 @@ coc.nvimて見慣れないプラグインがあるなあと思ってみてみた
       
       <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid>
       <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
-タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
+ タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
 とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。
 いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。
@@ -85,7 +86,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 参考になったのはこちら
 [Solved] Scroll not working when elements inside have click events - Unity Answers
 結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
+ 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {</description>
     </item>
     
@@ -95,7 +96,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
-      <description>この間boothで購入したlet&amp;rsquo;s splitがあの後無事届きました。
+      <description>この間boothで購入したlet&#39;s splitがあの後無事届きました。
 @foostan さんにはマジ感謝マジ卍。
 完動、感動でした。  マジかっこいい・・・   現在のキーマッピング 正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろなんてことを思っていましたが、とんでもない。
 いやこう言うと語弊がありますね。
@@ -104,7 +105,7 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
 けどescの位置はかなりお気に入り。当初は左上にしたんだけど、tabをおいておきたくて。
 だいぶタイピングも慣れてきて、-とか~もノールックで行けるようになった。
 目下課題に感じているのは左下の矢印キーたち。普段はctrl+hjklを矢印キーとしてつかっているから左下のは使わないのよなー。もったいない。
-もちろんこの記事はlet&amp;rsquo;s splitで書かれました！！
+もちろんこの記事はlet&#39;s splitで書かれました！！
 新しい相棒でバリバリコード書くぞ〜〜</description>
     </item>
     
@@ -121,13 +122,13 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
 自作キーボード界隈をみてみるとすごーーーくかっこいい。
 とくにHelixとかErgo42とかたまらない。
 ただ、半田ごてとか握ったことないので不安だしなかなか手を出しづらい。（そもそも人気すぎて買えへん）
-そんな感じでかっこいいキーボードをTLでながめていたわけど、@foostanさんがboothでlet&amp;rsquo;s splitを販売するらしいとの情報をキャッチ。
+そんな感じでかっこいいキーボードをTLでながめていたわけど、@foostanさんがboothでlet&#39;s splitを販売するらしいとの情報をキャッチ。
 このままくすぶってても何にもならないので、エイやで購入を決意。
 完成版か自分で組み立てるか結構悩んだけど、自作選んで半田ごてかうと完成版買えそうだったから完成版を買った。
 完成品版let&amp;#39;s split注文した。
 手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
 届くのが楽しみだな〜〜〜！！
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) May 24, 2018  とにかく届くのが楽しみでごわす。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) May 24, 2018  とにかく届くのが楽しみでごわす。
 発送予定日が5/27なので週明けには手元に届いてるかしら。</description>
     </item>
     
@@ -137,7 +138,7 @@ default  Qwerty    Raise    Lower   自分の  Qwerty    Raise    Lower   こう
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
-      <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
+      <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&#39;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>
     
@@ -153,7 +154,7 @@ databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
- TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &#39;1&#39;: 100.0, &#39;2&#39;: 50.0, &#39;3&#39;: 25.0, &#39;4&#39;: 123.4, &#39;5&#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value)  詳しい説明 Conditional Expressions | Django documentation | Django</description>
+ TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django</description>
     </item>
     
     <item>
@@ -172,8 +173,7 @@ Vintageの有効化 Cmd + ,でsublimetextの設定を開く。
 つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
  こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
- VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけど
-できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+ VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
 macではAppleScriptを使うみたいですね。
  SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
@@ -192,9 +192,7 @@ macではAppleScriptを使うみたいですね。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab
-$ pip install reportlab  PyPDF2
-$ pip install pypdf2   コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &#39;title&#39; # fontを変更 pdfmetrics.registerFont(TTFont(&#39;Mplus1p-Light&#39;, &#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;)) template_path = &#39;template.pdf&#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description>
+事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description>
     </item>
     
     <item>
@@ -225,7 +223,7 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
 次のパーティでも招待されると良いな〜。またお話を伺いに行きたい。
 強いてなにか意見があるとすると、せっかく壁にプロジェクターでうつしていたのだから、なにかしらのLTとか発表があるとうれしかったかな。
 さて、褒めちぎりすぎたのでここらへんで。
- TimeTree  android ios   </description>
+ TimeTree  android ios    </description>
     </item>
     
     <item>
@@ -264,7 +262,7 @@ CEOのお話のもあったけど、そもそもユーザーを招待してパ�
       
       <guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid>
       <description>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
-$ less /var/log/cron  Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)  追記 上記のコマンドの
+$ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
 この部分、おかしいですね〜〜
 /etc/crontabの内容を何も考えずにコピーしちゃいました。
@@ -272,14 +270,14 @@ user python /home/user/app/manage.py hogehoge
 おかしいな〜おかしいな〜〜〜〜〜 こわいな〜こわいな〜〜〜〜。
 何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
 /etc/crontab まず初めにcronを設定したときはこのこをいじっていました。
-$ sudo vim /etc/crontab  ですね。
+$ sudo vim /etc/crontab ですね。
 crontab -e 何を思ったのかこっちでも設定していたような気がしました。
-$ crontab -l  で確認することができます。
+$ crontab -l で確認することができます。
 案の定同じコマンドが同じ時間で実行されるように設定されておりました。
 この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
 要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
 たとえば
-* * * * * user echo &#39;fugafuga&#39; * * * * * user2 echo &#39;hogehoge&#39;  のような感じです。</description>
+* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。</description>
     </item>
     
     <item>
@@ -293,8 +291,8 @@ $ crontab -l  で確認することができます。
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
 おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
 とりあえずverify=Falseを指定しても一度チャレンジです。
-import requests req = requests.get(&#39;https://damedayo.com/&#39;, verify=False) print req.text  するとresponseが帰ってきました。
-The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.
+import requests req = requests.get(&amp;#39;https://damedayo.com/&amp;#39;, verify=False) print req.text するとresponseが帰ってきました。
+The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
 はーーーーんんんんんんん
 何はともあれ、ググります。
 みっけた。
@@ -302,7 +300,7 @@ The client software did not provide a hostname using Server Name Indication (SNI
 解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
 pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
 idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &#39;cc&#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography .</description>
+$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &amp;#39;cc&amp;#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography .</description>
     </item>
     
     <item>
@@ -312,9 +310,9 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
       
       <guid>https://pyonk.github.io/blog/posts/python-copy/</guid>
       <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True  Pythonistなら常識ですよね。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4}  辞書の浅いコピーを取るにはcopy_dict = dict.</description>
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.</description>
     </item>
     
     <item>
@@ -327,7 +325,7 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
 pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
-import subprocess import shlex cmd = &#39;nohup sleep 10 &amp;amp;&#39; subprocess.Popen(cmd)  が！！！ レスポンスが帰ってくるのは10秒後・・・。
+import subprocess import shlex cmd = &amp;#39;nohup sleep 10 &amp;amp;&amp;#39; subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
 つぎ！
 thread化して逃げる この前書いたような感じです。
 pythonでtupleをつくる - わいがかいた
@@ -340,11 +338,12 @@ celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
 結構面倒くさかったので備忘録代わりに。
 install まずは本体をインストールしていきます。
 pip install -U Celery
-celeryはbrokerとして * Redis * RabbitMQ * Amazon SQS
-などを使うことができます。 今回はRedisを選択しました。
+celeryはbrokerとして
+ Redis RabbitMQ Amazon SQS  などを使うことができます。 今回はRedisを選択しました。
 yum install redis
 bundleも用意されているのでそれも。
-pip install -U &amp;quot;celery[redis]&amp;quot;</description>
+pip install -U &amp;quot;celery[redis]&amp;quot;
+how to ここを参考にモリモリかいていきます。</description>
     </item>
     
     <item>
@@ -357,7 +356,7 @@ pip install -U &amp;quot;celery[redis]&amp;quot;</description>
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
-def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。</description>
+def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;) subprocess.Popen(cmd, shell=True) return cmd = &amp;#39;sleep 10;echo aaa&amp;#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start() すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。</description>
     </item>
     
     <item>
@@ -408,9 +407,9 @@ P.S.
 いい経験になりました。 Thank you @akmittal
 ちなみに macで動くやつはこちらにあるのでよければどうぞ。
 pyonk/Hugofy 少しだけ機能追加してます。
-追加した機能  hugo serveで立ち上げたサーバをkillする機能
- github pagesへのdeploy機能
- settingにRepositoryを追加してからどうぞ   もうすこしちゃんと作りこんでから出直します。反省。</description>
+追加した機能   hugo serveで立ち上げたサーバをkillする機能
+  github pagesへのdeploy機能
+ settingにRepositoryを追加してからどうぞ    もうすこしちゃんと作りこんでから出直します。反省。</description>
     </item>
     
     <item>
@@ -422,12 +421,12 @@ pyonk/Hugofy 少しだけ機能追加してます。
       <description>ソースはここです。
 使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
 からの
-&amp;quot;dependencies&amp;quot;: { &amp;quot;bar&amp;quot;: &amp;quot;file:./hubot-line-message-api&amp;quot; }  からの
+&amp;#34;dependencies&amp;#34;: { &amp;#34;bar&amp;#34;: &amp;#34;file:./hubot-line-message-api&amp;#34; } からの
 $ hubot -a line-message-api
 でいけると思います。
 hubot-line-message-api 結構ガバガバ実装なのでAPI Referenceをしっかり読んでからやるのをオススメします。
-設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。   任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。  FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。   できること 今のところpushで送信は対応できておらず、返信しかできません。
- 返信
+設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。    任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。   FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。    できること 今のところpushで送信は対応できておらず、返信しかできません。
+  返信
  テキスト  https://devdocs.line.me/ja/#text
 module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; res.</description>
     </item>
@@ -439,8 +438,8 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
       
       <guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid>
       <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
-連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &#39;&#39;, } return { hogeKey, } }  上記が件のコード。
-けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値 console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列 var { key1: key1, } = keyA || { key1: &#39;&#39;, } console.</description>
+連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &amp;#39;&amp;#39;, } return { hogeKey, } } 上記が件のコード。
+けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値  console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列  var { key1: key1, } = keyA || { key1: &amp;#39;&amp;#39;, } console.</description>
     </item>
     
     <item>
@@ -450,11 +449,11 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
       
       <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
       <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
-$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
+$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、
-$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
+$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576 とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
-location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</description>
+location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする } とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</description>
     </item>
     
   </channel>

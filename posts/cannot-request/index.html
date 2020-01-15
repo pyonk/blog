@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。
 ナゾのrequests.exceptions.SSLError それなりにpythonのrequestsをつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾのrequests.exceptions.SSLErrorが発生しました。
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
 おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
 とりあえずverify=Falseを指定しても一度チャレンジです。
-import requests req = requests.get(&#39;https://damedayo.com/&#39;, verify=False) print req.text  するとresponseが帰ってきました。
-The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.
+import requests req = requests.get(&amp;#39;https://damedayo.com/&amp;#39;, verify=False) print req.text するとresponseが帰ってきました。
+The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
 はーーーーんんんんんんん
 何はともあれ、ググります。
 みっけた。
@@ -20,7 +20,7 @@ The client software did not provide a hostname using Server Name Indication (SNI
 解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
 pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
 idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &#39;cc&#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography ."/>
+$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &amp;#39;cc&amp;#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography ."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://pyonk.github.io/blog/posts/cannot-request/" />
@@ -43,8 +43,8 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
 おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
 とりあえずverify=Falseを指定しても一度チャレンジです。
-import requests req = requests.get(&#39;https://damedayo.com/&#39;, verify=False) print req.text  するとresponseが帰ってきました。
-The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.
+import requests req = requests.get(&amp;#39;https://damedayo.com/&amp;#39;, verify=False) print req.text するとresponseが帰ってきました。
+The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
 はーーーーんんんんんんん
 何はともあれ、ググります。
 みっけた。
@@ -52,7 +52,7 @@ The client software did not provide a hostname using Server Name Indication (SNI
 解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
 pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
 idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &#39;cc&#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography ." />
+$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &amp;#39;cc&amp;#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography ." />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -66,8 +66,8 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
 requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
 おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
 とりあえずverify=Falseを指定しても一度チャレンジです。
-import requests req = requests.get(&#39;https://damedayo.com/&#39;, verify=False) print req.text  するとresponseが帰ってきました。
-The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.
+import requests req = requests.get(&amp;#39;https://damedayo.com/&amp;#39;, verify=False) print req.text するとresponseが帰ってきました。
+The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
 はーーーーんんんんんんん
 何はともあれ、ググります。
 みっけた。
@@ -75,7 +75,7 @@ The client software did not provide a hostname using Server Name Indication (SNI
 解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
 pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
 idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &#39;cc&#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography ." />
+$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &amp;#39;cc&amp;#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography ." />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/cannot-request/" />
 <meta property="og:site_name" content="あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！" />
 <meta property="og:image" content="">
@@ -103,15 +103,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -134,8 +134,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/cannot-request/">あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</a></h2>
     <div class="post-meta">
@@ -151,7 +151,7 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
         
       </span>
     
@@ -159,211 +159,155 @@ ga('send', 'pageview');
     
 
     <div class="post-content">
-      
-
-<p>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。</p>
-
-<h1 id="ナゾのrequests-exceptions-sslerror">ナゾのrequests.exceptions.SSLError</h1>
-
+      <p>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。</p>
+<h1 id="ナゾのrequestsexceptionssslerror">ナゾのrequests.exceptions.SSLError</h1>
 <p>それなりにpythonの<a href="http://docs.python-requests.org/en/master/">requests</a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの<code>requests.exceptions.SSLError</code>が発生しました。</p>
-
 <p><code>requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'</code></p>
-
 <p>おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。</p>
-
 <p>とりあえず<code>verify=False</code>を指定しても一度チャレンジです。</p>
-
-<pre><code class="language-python">import requests
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
  
-req = requests.get('https://damedayo.com/', verify=False)
-print req.text
-</code></pre>
-
-<p>するとresponseが帰ってきました。</p>
-
-<p><code>The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server.</code></p>
-
+req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://damedayo.com/</span><span style="color:#e6db74">&#39;</span>, verify<span style="color:#f92672">=</span>False)
+<span style="color:#66d9ef">print</span> req<span style="color:#f92672">.</span>text
+</code></pre></div><p>するとresponseが帰ってきました。</p>
+<p><code>The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. </code></p>
 <p>はーーーーんんんんんんん</p>
-
 <p>何はともあれ、ググります。</p>
-
 <p><a href="http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors">みっけた</a>。</p>
-
 <p>ん〜〜〜やはりバーチャルホスト周りっぽい。
 というか<strong>pythonのバージョンが<code>2.7.9</code>以上であれば問題ないんか</strong>。コレ。</p>
-
 <p>解決策として<a href="https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484">Stack Overflowへのリンク</a>が貼ってありますね。こういうこともあるのね。初めて見た。</p>
-
 <h1 id="pip-install-pyopensslで詰む">pip install pyOpenSSLで詰む</h1>
-
 <p>pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。</p>
-
 <p>idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)</p>
-
-<pre><code class="language-bash">$ pip install pyOpenSSL --upgrade
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install pyOpenSSL --upgrade
 .....前略.....
-1 warning and 20 errors generated.
-error: command 'cc' failed with exit status 1
+<span style="color:#ae81ff">1</span> warning and <span style="color:#ae81ff">20</span> errors generated.
+error: command <span style="color:#e6db74">&#39;cc&#39;</span> failed with exit status <span style="color:#ae81ff">1</span>
 
 ----------------------------------------
-Failed building wheel for cryptography
+Failed building wheel <span style="color:#66d9ef">for</span> cryptography
 .....中略.....
 ----------------------------------------
-Command &quot;/usr/bin/python -c &quot;import setuptools, tokenize;__file__='/private/tmp/pip-build-OtiuE0/cryptography/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))&quot; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&quot; failed with error code 1 in /private/tmp/pip-build-OtiuE0/cryptography
-</code></pre>
-
-<p>gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。</p>
-
+Command <span style="color:#e6db74">&#34;/usr/bin/python -c &#34;</span>import setuptools, tokenize;__file__<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/private/tmp/pip-build-OtiuE0/cryptography/setup.py&#39;</span>;exec<span style="color:#f92672">(</span>compile<span style="color:#f92672">(</span>getattr<span style="color:#f92672">(</span>tokenize, <span style="color:#e6db74">&#39;open&#39;</span>, open<span style="color:#f92672">)</span><span style="color:#f92672">(</span>__file__<span style="color:#f92672">)</span>.read<span style="color:#f92672">(</span><span style="color:#f92672">)</span>.replace<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;\r\n&#39;</span>, <span style="color:#e6db74">&#39;\n&#39;</span><span style="color:#f92672">)</span>, __file__, <span style="color:#e6db74">&#39;exec&#39;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#e6db74">&#34; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&#34;</span> failed with error code <span style="color:#ae81ff">1</span> in /private/tmp/pip-build-OtiuE0/cryptography
+</code></pre></div><p>gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。</p>
 <p>ともあれcryptographyのインストールに失敗しているみたいです。</p>
-
 <p>ぐぐります。</p>
-
 <p>例によって<a href="http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py">Stack Overflow</a>です。</p>
-
 <h2 id="opensslのアップデートで詰まる">openSSLのアップデートで詰まる</h2>
-
 <p>openSSLのバージョンが古いのかもと思ってアップデートしました。</p>
-
-<pre><code class="language-bash">$ brew upgrade openssl
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew upgrade openssl
 $ brew link openssl --force
 Warning: Refusing to link: openssl
 Linking keg-only openssl means you may end up linking against the insecure,
-deprecated system OpenSSL while using the headers from Homebrew's openssl.
+deprecated system OpenSSL <span style="color:#66d9ef">while</span> using the headers from Homebrew<span style="color:#960050;background-color:#1e0010">&#39;</span>s openssl.
 Instead, pass the full include/library paths to your compiler e.g.:
   -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
 $ which openssl
 /usr/bin/openssl
-</code></pre>
-
-<p>ウーーン詰まる詰まる。</p>
-
+</code></pre></div><p>ウーーン詰まる詰まる。</p>
 <p>いまはこの方法で<a href="http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4">opensslへのリンクがはれない</a>ようです。。</p>
-
 <p>PATHを通してあげます。</p>
-
 <pre><code>export PATH=&quot;/usr/local/opt/openssl/bin:$HOME/.pyenv/bin:$PATH&quot;
-</code></pre>
-
-<p>確認します。</p>
-
+</code></pre><p>確認します。</p>
 <pre><code>$ which openssl
 /usr/local/opt/openssl/bin/openssl
-</code></pre>
-
-<p>つぎ！</p>
-
+</code></pre><p>つぎ！</p>
 <h2 id="pipのアップデート">pipのアップデート</h2>
-
 <p>さきほどのStack Overflowでは、pipのバージョンあげなよとあったのでアップデートです。</p>
-
 <pre><code>$ pip install --upgrade pip
-</code></pre>
-
-<p>さっくり詰まることなくクリアしました。</p>
-
+</code></pre><p>さっくり詰まることなくクリアしました。</p>
 <h2 id="そして大本営に突撃">そして大本営に突撃</h2>
-
 <p>ようやくcryptograph(おぼえた)をインストールする手はずが整いました。</p>
-
 <pre><code>$ pip install pyOpenSSL --upgrade
-</code></pre>
-
-<p>ばっちり！！アップデートできたっぽい！！！！</p>
-
+</code></pre><p>ばっちり！！アップデートできたっぽい！！！！</p>
 <p>いざ！！</p>
-
-<pre><code class="language-python">import requests
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
  
-req = requests.get('https://damedayo.com/', verify=False)
-print req.text
-</code></pre>
-
-<pre><code class="language-python">Traceback (most recent call last):
-  File &quot;eroge_translation_helpman.py&quot;, line 3, in &lt;module&gt;
-    import requests
-  File &quot;/Library/Python/2.7/site-packages/requests/__init__.py&quot;, line 52, in &lt;module&gt;
-    from .packages.urllib3.contrib import pyopenssl
-  File &quot;/Library/Python/2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py&quot;, line 48, in &lt;module&gt;
-    from cryptography import x509
-  File &quot;/Library/Python/2.7/site-packages/cryptography/x509/__init__.py&quot;, line 7, in &lt;module&gt;
-    from cryptography.x509.base import (
-  File &quot;/Library/Python/2.7/site-packages/cryptography/x509/base.py&quot;, line 15, in &lt;module&gt;
-    from cryptography.hazmat.primitives.asymmetric import dsa, ec, rsa
-  File &quot;/Library/Python/2.7/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py&quot;, line 14, in &lt;module&gt;
-    from cryptography.hazmat.backends.interfaces import RSABackend
-  File &quot;/Library/Python/2.7/site-packages/cryptography/hazmat/backends/__init__.py&quot;, line 7, in &lt;module&gt;
-    import pkg_resources
-  File &quot;/Library/Python/2.7/site-packages/pkg_resources/__init__.py&quot;, line 72, in &lt;module&gt;
-    import packaging.requirements
-  File &quot;/Library/Python/2.7/site-packages/packaging/requirements.py&quot;, line 59, in &lt;module&gt;
-    MARKER_EXPR = originalTextFor(MARKER_EXPR())(&quot;marker&quot;)
-TypeError: __call__() takes exactly 2 arguments (1 given)
-</code></pre>
-
-<p>・・・・・・・・・・・。</p>
-
+req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://damedayo.com/</span><span style="color:#e6db74">&#39;</span>, verify<span style="color:#f92672">=</span>False)
+<span style="color:#66d9ef">print</span> req<span style="color:#f92672">.</span>text
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Traceback (most recent call last):
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">eroge_translation_helpman.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">3</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">import</span> requests
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/requests/__init__.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">52</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">from</span> .packages.urllib3.contrib <span style="color:#f92672">import</span> pyopenssl
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">48</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">from</span> cryptography <span style="color:#f92672">import</span> x509
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/cryptography/x509/__init__.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">7</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">from</span> cryptography.x509.base <span style="color:#f92672">import</span> (
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/cryptography/x509/base.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">15</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">from</span> cryptography.hazmat.primitives.asymmetric <span style="color:#f92672">import</span> dsa, ec, rsa
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">14</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">from</span> cryptography.hazmat.backends.interfaces <span style="color:#f92672">import</span> RSABackend
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/cryptography/hazmat/backends/__init__.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">7</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">import</span> pkg_resources
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/pkg_resources/__init__.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">72</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">import</span> packaging.requirements
+  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/Library/Python/2.7/site-packages/packaging/requirements.py</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">59</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+    MARKER_EXPR <span style="color:#f92672">=</span> originalTextFor(MARKER_EXPR())(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">marker</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#a6e22e">TypeError</span>: __call__() takes exactly <span style="color:#ae81ff">2</span> arguments (<span style="color:#ae81ff">1</span> given)
+</code></pre></div><p>・・・・・・・・・・・。</p>
 <p>もう。</p>
-
 <p>ぐぐります・・・・・。</p>
-
 <p>見つけました。<a href="http://stackoverflow.com/a/41841210">Stack Overflow</a>本当にありがとう。</p>
-
 <p>setuptoolsが原因だったみたいですね。バージョンによってはエラーが出るようです。</p>
-
 <pre><code>$ pip install setuptools == 33.1.1
-</code></pre>
-
-<p>ということでこれでようやくプログラムを書き進められそうです。</p>
-
+</code></pre><p>ということでこれでようやくプログラムを書き進められそうです。</p>
 <h1 id="さいごに">さいごに</h1>
-
 <p>というか<code>/etc/hosts</code>をかえたらできたのではないか疑惑が・・・。</p>
-
 <p>さすがにないかしら。今度時間があったら試してみるでござる。</p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">crontab -e と /etc/crontab の違い</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/python-copy/">
+                  <span class="button__text">pythonの参照渡しをどうすれば回避できるのか</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/">
-                <span class="button__icon">←</span>
-                <span class="button__text">crontab -e と /etc/crontab の違い</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/python-copy/">
-                <span class="button__text">pythonの参照渡しをどうすれば回避できるのか</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
+      
+    
     
 
     
+      
+        
 
+      
+    
+    
     </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -372,8 +316,8 @@ TypeError: __call__() takes exactly 2 arguments (1 given)
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -382,8 +326,10 @@ TypeError: __call__() takes exactly 2 arguments (1 given)
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

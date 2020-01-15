@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>Unityのscrollrectでスクロールができない件 :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>Unityのscrollrectでスクロールができない件 :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
-タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
+ タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
 とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。
 いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。
@@ -18,7 +18,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 参考になったのはこちら
 [Solved] Scroll not working when elements inside have click events - Unity Answers
 結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
+ 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
@@ -38,7 +38,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Unityのscrollrectでスクロールができない件 :: わいがかいた — " />
 <meta name="twitter:description" content="最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
-タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
+ タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
 とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。
 いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。
@@ -49,7 +49,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 参考になったのはこちら
 [Solved] Scroll not working when elements inside have click events - Unity Answers
 結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
+ 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {" />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
@@ -60,7 +60,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Unityのscrollrectでスクロールができない件 :: わいがかいた — ">
 <meta property="og:description" content="最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
-タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
+ タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
 スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
 とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。
 いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。
@@ -71,7 +71,7 @@ UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXAD
 参考になったのはこちら
 [Solved] Scroll not working when elements inside have click events - Unity Answers
 結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry);  一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
+ 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
  public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {" />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/" />
 <meta property="og:site_name" content="Unityのscrollrectでスクロールができない件" />
@@ -100,15 +100,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -131,8 +131,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/">Unityのscrollrectでスクロールができない件</a></h2>
     <div class="post-meta">
@@ -148,9 +148,9 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/unity">unity</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/unity/">unity</a>&nbsp;
         
-          #<a href="https://pyonk.github.io/blog/tags/c">c#</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/c/">c#</a>&nbsp;
         
       </span>
     
@@ -158,118 +158,102 @@ ga('send', 'pageview');
     
 
     <div class="post-content">
-      
-
-<p>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。
+      <p>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。
 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。</p>
-
-<hr />
-
+<hr>
 <p>タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。</p>
-
 <h2 id="スクロールができないゾ">スクロールができないゾ</h2>
-
-<p>ボタンを内包するスクロールビューが必要になった。<br />
-とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。<br />
-いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。<br />
-これは困った<br />
+<p>ボタンを内包するスクロールビューが必要になった。<br>
+とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。<br>
+いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。<br>
+これは困った<br>
 すこし調べてみると世界中の人が困ってる風だ。</p>
-
 <p><a href="https://hexadrive.jp/hexablog/program/15948/" title="UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社">UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社</a></p>
-
 <h2 id="違う違うそうじゃない">違う違うそうじゃない</h2>
-
 <p>似てる問題っぽいけど違う（なんならこの見出しが書きたかっただけ）。
 僕の症状はボタンは押せるけどスクロールができない、だ。</p>
-
 <p>参考になったのはこちら</p>
-
 <p><a href="http://answers.unity.com/questions/902929/scroll-not-working-when-elements-inside-have-click.html" title="[Solved] Scroll not working when elements inside have click events - Unity Answers">[Solved] Scroll not working when elements inside have click events - Unity Answers</a></p>
-
 <p>結論、書いてるコードに問題があった。</p>
-
 <ul>
 <li>実際のコード</li>
 </ul>
-
-<pre><code class="language-cs">EventTrigger tapEvent = TitleTextObject.AddComponent&lt;EventTrigger&gt;();
-EventTrigger.Entry entry = new EventTrigger.Entry();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">EventTrigger tapEvent = TitleTextObject.AddComponent&lt;EventTrigger&gt;();
+EventTrigger.Entry entry = <span style="color:#66d9ef">new</span> EventTrigger.Entry();
 entry.eventID = EventTriggerType.PointerClick;
 entry.callback.AddListener((data) =&gt; { tapHandler((PointerEventData)data); });
 tapEvent.triggers.Add(entry);
-</code></pre>
-
-<p>一見正しいけど、この<code>EventTrigger</code>っていうのが曲者でいろんな継承が行われてるみたい</p>
-
+</code></pre></div><p>一見正しいけど、この<code>EventTrigger</code>っていうのが曲者でいろんな継承が行われてるみたい</p>
 <blockquote>
 <p>public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {</p>
 </blockquote>
-
 <p>ひょえ〜、でもってこれの<code>IDropHandler</code>, <code>IScrollHandler</code>がスクロールビューに影響を与えていたっぽい。</p>
-
 <p>ということで、いい感じにしたのがこちら</p>
-
-<pre><code class="language-cs">public class ClickTrigger : MonoBehaviour, IPointerClickHandler {
-    public System.Action&lt;PointerEventData&gt; pointerClickAction;
-    public void OnPointerClick(PointerEventData eventData){
-        if (this.pointerClickAction != null) this.pointerClickAction(eventData);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClickTrigger</span> : MonoBehaviour, IPointerClickHandler {
+    <span style="color:#66d9ef">public</span> System.Action&lt;PointerEventData&gt; pointerClickAction;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> OnPointerClick(PointerEventData eventData){
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.pointerClickAction != <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">this</span>.pointerClickAction(eventData);
     }
 }
-public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEventData&gt; callback) {
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> AddOnclickEvent(GameObject target, System.Action&lt;PointerEventData&gt; callback) {
     target.AddComponent&lt;TimelineHelper.ClickTrigger&gt;().pointerClickAction = callback;
 }
-</code></pre>
-
-<p><code>AddOnClickEvent</code>したときに、<code>ClickTrigger</code>をアタッチしておくような実装。
+</code></pre></div><p><code>AddOnClickEvent</code>したときに、<code>ClickTrigger</code>をアタッチしておくような実装。
 ちなみに、すでに<code>ClickTrigger</code>がアタッチしてる場合のことは考えられてないけど一旦目を瞑ろう。</p>
-
 <p>無事にこれで思った通りの動きをしてくれるようになった。
 今後、他の処理が必要になったらこんな感じで必要なもののみを継承していく感じでやっていけばいいのかしら。</p>
-
 <p>なれないけどがんばるぞ〜〜。</p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Django Test Client Url Capture Not Working</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/lets-split-arrive/">
+                  <span class="button__text">let&#39;s splitがとどいた！</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Django Test Client Url Capture Not Working</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/lets-split-arrive/">
-                <span class="button__text">let&#39;s splitがとどいた！</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
+      
+    
     
 
     
+      
+        
 
+      
+    
+    
     </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -278,8 +262,8 @@ public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEv
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -288,8 +272,10 @@ public static void AddOnclickEvent(GameObject target, System.Action&lt;PointerEv
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>
