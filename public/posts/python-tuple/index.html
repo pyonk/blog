@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>pythonでtupleをつくる :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>pythonでtupleをつくる :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="pythonのthreadで引数を渡したい Djangoで時間のかかる処理をスレッド化して逃げようとしたのですがうまくいかなかったのでメモ。
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
-def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。"/>
+def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;) subprocess.Popen(cmd, shell=True) return cmd = &amp;#39;sleep 10;echo aaa&amp;#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start() すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://pyonk.github.io/blog/posts/python-tuple/" />
@@ -32,7 +32,7 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
-def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
+def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;) subprocess.Popen(cmd, shell=True) return cmd = &amp;#39;sleep 10;echo aaa&amp;#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start() すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -45,7 +45,7 @@ def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#
 threading.Threadにはいくつか引数が渡せます。
  group target name args kwargs  詳しくはここで。
 で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
-def command_execute(cmd): print cmd # (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) subprocess.Popen(cmd, shell=True) return cmd = &#39;sleep 10;echo aaa&#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start()  すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
+def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;) subprocess.Popen(cmd, shell=True) return cmd = &amp;#39;sleep 10;echo aaa&amp;#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start() すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。" />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/python-tuple/" />
 <meta property="og:site_name" content="pythonでtupleをつくる" />
 <meta property="og:image" content="">
@@ -73,15 +73,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -104,8 +104,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/python-tuple/">pythonでtupleをつくる</a></h2>
     <div class="post-meta">
@@ -121,7 +121,7 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
         
       </span>
     
@@ -129,14 +129,9 @@ ga('send', 'pageview');
     
 
     <div class="post-content">
-      
-
-<h1 id="pythonのthreadで引数を渡したい">pythonのthreadで引数を渡したい</h1>
-
+      <h1 id="pythonのthreadで引数を渡したい">pythonのthreadで引数を渡したい</h1>
 <p><a href="http://d.hatena.ne.jp/salexkidd/20090918">Djangoで時間のかかる処理をスレッド化して逃げ</a>ようとしたのですがうまくいかなかったのでメモ。</p>
-
 <p><code>threading.Thread</code>にはいくつか引数が渡せます。</p>
-
 <ul>
 <li>group</li>
 <li>target</li>
@@ -144,120 +139,102 @@ ga('send', 'pageview');
 <li>args</li>
 <li>kwargs</li>
 </ul>
-
 <p>詳しくは<a href="http://docs.python.jp/2/library/threading.html">ここ</a>で。</p>
-
 <p>で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">command_execute</span>(cmd):
+    <span style="color:#66d9ef">print</span> cmd <span style="color:#75715e"># (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;)</span>
+    subprocess<span style="color:#f92672">.</span>Popen(cmd, shell<span style="color:#f92672">=</span>True)
+    <span style="color:#66d9ef">return</span>
 
-<pre><code class="language-python">def command_execute(cmd):
-    print cmd # ('s', 'l', 'e', 'e', 'p', ' ', '1', '0', ';', 'e', 'c', 'h', 'o', ' ', 'a', 'a', 'a')
-    subprocess.Popen(cmd, shell=True)
-    return
-
-cmd = 'sleep 10;echo aaa'
-t = threading.Thread(target=command_execute, args=(cmd))
-t.daemon = True
-t.start()
-</code></pre>
-
-<p>すると、printされた文字列が
+cmd <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sleep 10;echo aaa</span><span style="color:#e6db74">&#39;</span>
+t <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>command_execute, args<span style="color:#f92672">=</span>(cmd))
+t<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> True
+t<span style="color:#f92672">.</span>start()
+</code></pre></div><p>すると、printされた文字列が
 <code>('s', 'l', 'e', 'e', 'p', ' ', '1', '0', ';', 'e', 'c', 'h', 'o', ' ', 'a', 'a', 'a')</code>
 となるわけです。
 何が起きてるんだ状態です。</p>
-
 <p>調べてみると原因は「<code>args</code>にtupleを渡してあげる」というところにありました。</p>
-
 <h2 id="pythonでtupleをつくる">pythonでtupleをつくる</h2>
-
 <p><code>tuple = (1, 2)</code></p>
-
 <p>基本はこれ。</p>
-
 <p>では、今回のように長さ1のtupleはどうやってつくるか</p>
-
 <h2 id="長さ1のtuple">長さ1のtuple</h2>
-
 <p><code>tuple = (1)</code></p>
-
 <p><strong>普通のpythonist</strong>であればこれは違うとわかるでしょうが、これだと思うでしょう？</p>
-
-<pre><code class="language-python">tuple = (1)
-print tuple # 1
-print type(tuple) # &lt;type 'int'&gt;
-</code></pre>
-
-<p>なんですよね。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tuple <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span> tuple <span style="color:#75715e"># 1</span>
+<span style="color:#66d9ef">print</span> type(tuple) <span style="color:#75715e"># &lt;type &#39;int&#39;&gt;</span>
+</code></pre></div><p>なんですよね。</p>
 <h3 id="どうするのか">どうするのか</h3>
-
 <p><code>tuple = (1,)</code></p>
-
-<pre><code class="language-python">tuple = (1,)
-print tuple # (1,)
-print type(tuple) # &lt;type 'tuple'&gt;
-</code></pre>
-
-<p>こうでした。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tuple <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>,)
+<span style="color:#66d9ef">print</span> tuple <span style="color:#75715e"># (1,)</span>
+<span style="color:#66d9ef">print</span> type(tuple) <span style="color:#75715e"># &lt;type &#39;tuple&#39;&gt;</span>
+</code></pre></div><p>こうでした。</p>
 <h1 id="けっか">けっか</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">command_execute</span>(cmd):
+    <span style="color:#66d9ef">print</span> cmd <span style="color:#75715e"># sleep 10;echo aaa</span>
+    subprocess<span style="color:#f92672">.</span>Popen(cmd, shell<span style="color:#f92672">=</span>True)
+    <span style="color:#66d9ef">return</span>
 
-<pre><code class="language-python">def command_execute(cmd):
-    print cmd # sleep 10;echo aaa
-    subprocess.Popen(cmd, shell=True)
-    return
-
-cmd = 'sleep 10;echo aaa'
-t = threading.Thread(target=command_execute, args=(cmd,))
-t.daemon = True
-t.start()
-</code></pre>
-
-<p>こうしてあげることによって期待通りの動きをしてくれました。</p>
-
+cmd <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sleep 10;echo aaa</span><span style="color:#e6db74">&#39;</span>
+t <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>command_execute, args<span style="color:#f92672">=</span>(cmd,))
+t<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> True
+t<span style="color:#f92672">.</span>start()
+</code></pre></div><p>こうしてあげることによって期待通りの動きをしてくれました。</p>
 <p>tupleの作り方に注意しなさい的な記述をどこかで見たような気がしたのですが、すっかり失念しておりました。猛省。</p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Djangoでどうしても非同期でコマンドを実行したくなった</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/retirement-poem-to-you/">
+                  <span class="button__text">○○さんに送る退職ポエム</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Djangoでどうしても非同期でコマンドを実行したくなった</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/retirement-poem-to-you/">
-                <span class="button__text">○○さんに送る退職ポエム</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
+      
+    
     
 
     
+      
+        
 
+      
+    
+    
     </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -266,8 +243,8 @@ t.start()
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -276,8 +253,10 @@ t.start()
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

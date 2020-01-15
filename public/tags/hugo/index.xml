@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on わいがかいた</title>
+    <title>hugo on わいがかいた</title>
     <link>https://pyonk.github.io/blog/tags/hugo/</link>
-    <description>Recent content in Hugo on わいがかいた</description>
+    <description>Recent content in hugo on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 03 Jan 2017 10:34:47 +0900</lastBuildDate>
     
@@ -23,9 +23,9 @@
 いい経験になりました。 Thank you @akmittal
 ちなみに macで動くやつはこちらにあるのでよければどうぞ。
 pyonk/Hugofy 少しだけ機能追加してます。
-追加した機能  hugo serveで立ち上げたサーバをkillする機能
- github pagesへのdeploy機能
- settingにRepositoryを追加してからどうぞ   もうすこしちゃんと作りこんでから出直します。反省。</description>
+追加した機能   hugo serveで立ち上げたサーバをkillする機能
+  github pagesへのdeploy機能
+ settingにRepositoryを追加してからどうぞ    もうすこしちゃんと作りこんでから出直します。反省。</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sublimetext on わいがかいた</title>
+    <title>sublimetext on わいがかいた</title>
     <link>https://pyonk.github.io/blog/tags/sublimetext/</link>
-    <description>Recent content in Sublimetext on わいがかいた</description>
+    <description>Recent content in sublimetext on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 18 Oct 2017 10:23:34 +0900</lastBuildDate>
     
@@ -26,8 +26,7 @@ Vintageの有効化 Cmd + ,でsublimetextの設定を開く。
 つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
  こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
- VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけど
-できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+ VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
 macではAppleScriptを使うみたいですね。
  SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
@@ -48,9 +47,9 @@ macではAppleScriptを使うみたいですね。
 いい経験になりました。 Thank you @akmittal
 ちなみに macで動くやつはこちらにあるのでよければどうぞ。
 pyonk/Hugofy 少しだけ機能追加してます。
-追加した機能  hugo serveで立ち上げたサーバをkillする機能
- github pagesへのdeploy機能
- settingにRepositoryを追加してからどうぞ   もうすこしちゃんと作りこんでから出直します。反省。</description>
+追加した機能   hugo serveで立ち上げたサーバをkillする機能
+  github pagesへのdeploy機能
+ settingにRepositoryを追加してからどうぞ    もうすこしちゃんと作りこんでから出直します。反省。</description>
     </item>
     
   </channel>

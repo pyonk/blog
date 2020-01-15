@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>minio is awesome :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>minio is awesome :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあったhttps://t.co/YLKdJrsasg
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
 S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。 docker-composeと相性も良さそうなので使ってみることにした。
 ちなみにDjangoでウェブサイトを構築している。
-下準備 $ pip install django-storages boto3  python側で追加インストール必要なのはこれだけで あとはsettings.py
-# S3にアップロード DEFAULT_FILE_STORAGE = &#39;storages.backends.s3boto3.S3Boto3Storage&#39; AWS_ACCESS_KEY_ID = &#39;minio&#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &#39;minio123&#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &#39;static&#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &#39;http://minio:9000/&#39;  minio本体はdocker imageを利用するのが便利。
+下準備 $ pip install django-storages boto3 python側で追加インストール必要なのはこれだけで あとはsettings.py
+# S3にアップロード DEFAULT_FILE_STORAGE = &amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39; AWS_ACCESS_KEY_ID = &amp;#39;minio&amp;#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &amp;#39;minio123&amp;#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &amp;#39;static&amp;#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &amp;#39;http://minio:9000/&amp;#39; minio本体はdocker imageを利用するのが便利。
 docker-compose.ymlに以下の記述を追加する。
-version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;9000:9000&amp;quot; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio:  これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。"/>
+version: &amp;#39;3.2&amp;#39; services: minio: image: minio/minio ports: - &amp;#34;9000:9000&amp;#34; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio: これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://pyonk.github.io/blog/posts/minio-is-awesome/" />
@@ -32,13 +32,13 @@ version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;90
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="minio is awesome :: わいがかいた — " />
 <meta name="twitter:description" content="S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあったhttps://t.co/YLKdJrsasg
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
 S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。 docker-composeと相性も良さそうなので使ってみることにした。
 ちなみにDjangoでウェブサイトを構築している。
-下準備 $ pip install django-storages boto3  python側で追加インストール必要なのはこれだけで あとはsettings.py
-# S3にアップロード DEFAULT_FILE_STORAGE = &#39;storages.backends.s3boto3.S3Boto3Storage&#39; AWS_ACCESS_KEY_ID = &#39;minio&#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &#39;minio123&#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &#39;static&#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &#39;http://minio:9000/&#39;  minio本体はdocker imageを利用するのが便利。
+下準備 $ pip install django-storages boto3 python側で追加インストール必要なのはこれだけで あとはsettings.py
+# S3にアップロード DEFAULT_FILE_STORAGE = &amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39; AWS_ACCESS_KEY_ID = &amp;#39;minio&amp;#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &amp;#39;minio123&amp;#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &amp;#39;static&amp;#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &amp;#39;http://minio:9000/&amp;#39; minio本体はdocker imageを利用するのが便利。
 docker-compose.ymlに以下の記述を追加する。
-version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;9000:9000&amp;quot; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio:  これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。" />
+version: &amp;#39;3.2&amp;#39; services: minio: image: minio/minio ports: - &amp;#34;9000:9000&amp;#34; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio: これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。" />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="pyonk" />
 <meta name="twitter:image" content="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png">
@@ -48,13 +48,13 @@ version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;90
 <meta property="og:type" content="article" />
 <meta property="og:title" content="minio is awesome :: わいがかいた — ">
 <meta property="og:description" content="S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあったhttps://t.co/YLKdJrsasg
-&amp;mdash; ヨシオカユウキ (@pyonknoyp) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
+&amp;mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) April 14, 2019  以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。
 S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。 docker-composeと相性も良さそうなので使ってみることにした。
 ちなみにDjangoでウェブサイトを構築している。
-下準備 $ pip install django-storages boto3  python側で追加インストール必要なのはこれだけで あとはsettings.py
-# S3にアップロード DEFAULT_FILE_STORAGE = &#39;storages.backends.s3boto3.S3Boto3Storage&#39; AWS_ACCESS_KEY_ID = &#39;minio&#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &#39;minio123&#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &#39;static&#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &#39;http://minio:9000/&#39;  minio本体はdocker imageを利用するのが便利。
+下準備 $ pip install django-storages boto3 python側で追加インストール必要なのはこれだけで あとはsettings.py
+# S3にアップロード DEFAULT_FILE_STORAGE = &amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39; AWS_ACCESS_KEY_ID = &amp;#39;minio&amp;#39; # 自由に決めちゃっておk AWS_SECRET_ACCESS_KEY = &amp;#39;minio123&amp;#39; # 自由に決めちゃっておk AWS_STORAGE_BUCKET_NAME = &amp;#39;static&amp;#39; # 自由に決めちゃっておk AWS_S3_ENDPOINT_URL = &amp;#39;http://minio:9000/&amp;#39; minio本体はdocker imageを利用するのが便利。
 docker-compose.ymlに以下の記述を追加する。
-version: &#39;3.2&#39; services: minio: image: minio/minio ports: - &amp;quot;9000:9000&amp;quot; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio:  これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。" />
+version: &amp;#39;3.2&amp;#39; services: minio: image: minio/minio ports: - &amp;#34;9000:9000&amp;#34; volumes: - type: volume source: minio target: /export environment: MINIO_ACCESS_KEY: minio MINIO_SECRET_KEY: minio123 command: server /export volumes: minio: これでdocker-compose upするとminioが立ち上がるので localhost:9000にアクセスしてstaticバケットを作っておく。" />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/minio-is-awesome/" />
 <meta property="og:site_name" content="minio is awesome" />
 <meta property="og:image" content="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png">
@@ -82,15 +82,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -113,8 +113,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/minio-is-awesome/">minio is awesome</a></h2>
     <div class="post-meta">
@@ -130,59 +130,47 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/minio">minio</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/minio/">minio</a>&nbsp;
         
-          #<a href="https://pyonk.github.io/blog/tags/infra">infra</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/infra/">infra</a>&nbsp;
         
-          #<a href="https://pyonk.github.io/blog/tags/development">development</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/development/">development</a>&nbsp;
         
       </span>
     
 
     
-      <img src="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png" class="post-cover" />
+      
+        <img src="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png" class="post-cover" />
+      
     
 
     <div class="post-content">
-      
-
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった<a href="https://t.co/YLKdJrsasg">https://t.co/YLKdJrsasg</a></p>&mdash; ヨシオカユウキ (@pyonknoyp) <a href="https://twitter.com/pyonknoyp/status/1117441566258282496?ref_src=twsrc%5Etfw">April 14, 2019</a></blockquote>
+      <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった<a href="https://t.co/YLKdJrsasg">https://t.co/YLKdJrsasg</a></p>&mdash; オイヌマユウキ / TOMOSHIBI (@__pyonk__) <a href="https://twitter.com/__pyonk__/status/1117441566258282496?ref_src=twsrc%5Etfw">April 14, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 <p>以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。</p>
-
 <p>S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。
 docker-composeと相性も良さそうなので使ってみることにした。</p>
-
 <p>ちなみにDjangoでウェブサイトを構築している。</p>
-
 <h2 id="下準備">下準備</h2>
-
-<pre><code class="language-shell">$ pip install django-storages boto3
-</code></pre>
-
-<p>python側で追加インストール必要なのはこれだけで
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ pip install django-storages boto3
+</code></pre></div><p>python側で追加インストール必要なのはこれだけで
 あとはsettings.py</p>
-
-<pre><code class="language-python"># S3にアップロード
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = 'minio' # 自由に決めちゃっておk
-AWS_SECRET_ACCESS_KEY = 'minio123' # 自由に決めちゃっておk
-AWS_STORAGE_BUCKET_NAME = 'static' # 自由に決めちゃっておk
-AWS_S3_ENDPOINT_URL = 'http://minio:9000/'
-</code></pre>
-
-<p>minio本体はdocker imageを利用するのが便利。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># S3にアップロード</span>
+DEFAULT_FILE_STORAGE <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">storages.backends.s3boto3.S3Boto3Storage</span><span style="color:#e6db74">&#39;</span>
+AWS_ACCESS_KEY_ID <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">minio</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
+AWS_SECRET_ACCESS_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">minio123</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
+AWS_STORAGE_BUCKET_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">static</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
+AWS_S3_ENDPOINT_URL <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://minio:9000/</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p>minio本体はdocker imageを利用するのが便利。</p>
 <p>docker-compose.ymlに以下の記述を追加する。</p>
-
-<pre><code class="language-yaml">version: '3.2'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#e6db74">&#39;3.2&#39;</span>
 services:
   minio:
     image: minio/minio
     ports:
-      - &quot;9000:9000&quot;
+      - <span style="color:#e6db74">&#34;9000:9000&#34;</span>
     volumes:
       - type: volume
         source: minio
@@ -194,93 +182,88 @@ services:
 
 volumes:
   minio:
-</code></pre>
-
-<p>これで<code>docker-compose up</code>するとminioが立ち上がるので
+</code></pre></div><p>これで<code>docker-compose up</code>するとminioが立ち上がるので
 localhost:9000にアクセスして<code>static</code>バケットを作っておく。</p>
-
 <p>準備は以上。簡単！！</p>
-
 <h2 id="uploader">Uploader</h2>
-
 <p>以下のようなUploaderを用意しておけば</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> django.core.files.storage <span style="color:#f92672">import</span> default_storage
 
-<pre><code class="language-python">from django.core.files.storage import default_storage
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Uploader</span>:
 
-class Uploader:
+    storage <span style="color:#f92672">=</span> default_storage
+    filename <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    url <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
 
-    storage = default_storage
-    filename = ''
-    url = ''
+    <span style="color:#66d9ef">def</span> __init__(self):
+        <span style="color:#66d9ef">pass</span>
 
-    def __init__(self):
-        pass
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_unique_filename</span>(self, filename):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>storage<span style="color:#f92672">.</span>get_available_name(filename)
 
-    def get_unique_filename(self, filename):
-        return self.storage.get_available_name(filename)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload</span>(self, uploaded_file):
+        self<span style="color:#f92672">.</span>filename <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_unique_filename(uploaded_file<span style="color:#f92672">.</span>name)
+        <span style="color:#66d9ef">with</span> self<span style="color:#f92672">.</span>storage<span style="color:#f92672">.</span>open(self<span style="color:#f92672">.</span>filename, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+            <span style="color:#66d9ef">for</span> chunk <span style="color:#f92672">in</span> uploaded_file<span style="color:#f92672">.</span>chunks():
+                f<span style="color:#f92672">.</span>write(chunk)
+        self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>storage<span style="color:#f92672">.</span>url(self<span style="color:#f92672">.</span>filename)
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>url
+</code></pre></div><p>こんな感じで使うといい感じ。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> django.core.files.uploadedfile <span style="color:#f92672">import</span> UploadedFile
+<span style="color:#f92672">from</span> uploader <span style="color:#f92672">import</span> Uploader
 
-    def upload(self, uploaded_file):
-        self.filename = self.get_unique_filename(uploaded_file.name)
-        with self.storage.open(self.filename, 'w') as f:
-            for chunk in uploaded_file.chunks():
-                f.write(chunk)
-        self.url = self.storage.url(self.filename)
-        return self.url
-</code></pre>
-
-<p>こんな感じで使うといい感じ。</p>
-
-<pre><code class="language-python">from django.core.files.uploadedfile import UploadedFile
-from uploader import Uploader
-
-test_file = open('./hoge.txt', 'r')
-uploaded_file = UploadedFile(test_file)
-uploader = Uploader()
-uploader.upload(uploaded_file)
-</code></pre>
-
-<p>とっても便利なminioでした。</p>
-
+test_file <span style="color:#f92672">=</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./hoge.txt</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>)
+uploaded_file <span style="color:#f92672">=</span> UploadedFile(test_file)
+uploader <span style="color:#f92672">=</span> Uploader()
+uploader<span style="color:#f92672">.</span>upload(uploaded_file)
+</code></pre></div><p>とっても便利なminioでした。</p>
 <p>もちろん本番でS3使う場合は色々設定いじる必要があるけど
 環境に応じて設定ファイルを使い分ければそんなに手間ではないかな。</p>
-
 <p><a href="https://stackoverflow.com/questions/4909958/django-local-settings/4909964#4909964">https://stackoverflow.com/questions/4909958/django-local-settings/4909964#4909964</a></p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/">
+                  <span class="button__text">vista.vim is awesome</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-          
-            <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/">
-                <span class="button__text">vista.vim is awesome</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
+      
+    
     
 
     
+      
+        
 
+      
+    
+    
     </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -289,8 +272,8 @@ uploader.upload(uploaded_file)
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -299,8 +282,10 @@ uploader.upload(uploaded_file)
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

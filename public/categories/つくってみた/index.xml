@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>つくってみた on わいがかいた</title>
@@ -26,8 +26,7 @@ Vintageの有効化 Cmd + ,でsublimetextの設定を開く。
 つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
  こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
- VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけど
-できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+ VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
 macではAppleScriptを使うみたいですね。
  SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。

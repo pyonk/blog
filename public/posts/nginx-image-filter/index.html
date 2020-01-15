@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>nginxのimage_filterを使って画像を動的に縮小するには :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>nginxのimage_filterを使って画像を動的に縮小するには :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
-$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
+$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、
-$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
+$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576 とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
-location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。"/>
+location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする } とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://pyonk.github.io/blog/posts/nginx-image-filter/" />
@@ -30,11 +30,11 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="nginxのimage_filterを使って画像を動的に縮小するには :: わいがかいた — " />
 <meta name="twitter:description" content="image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
-$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
+$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、
-$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
+$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576 とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
-location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
+location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする } とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -44,11 +44,11 @@ location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="nginxのimage_filterを使って画像を動的に縮小するには :: わいがかいた — ">
 <meta property="og:description" content="image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
-$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install  ほかのオプションモジュールをつける場合は随時つけてください。
+$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
 すでにnginxがインストールされている場合は、
-$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576  とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
+$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576 とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
 confを変更 image_filterを加えます。 くわしいことはここをみてください。
-location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする }  とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
+location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする } とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。" />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/nginx-image-filter/" />
 <meta property="og:site_name" content="nginxのimage_filterを使って画像を動的に縮小するには" />
 <meta property="og:image" content="">
@@ -76,15 +76,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -107,8 +107,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/nginx-image-filter/">nginxのimage_filterを使って画像を動的に縮小するには</a></h2>
     <div class="post-meta">
@@ -124,7 +124,7 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/nginx">nginx</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/nginx/">nginx</a>&nbsp;
         
       </span>
     
@@ -132,82 +132,75 @@ ga('send', 'pageview');
     
 
     <div class="post-content">
-      
-
-<h1 id="image-filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する</h1>
-
+      <h1 id="image_filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する</h1>
 <p>nginxをソースからインストールする際に<code>--with-http_image_filter_module</code>をつけてインストールします。</p>
-
-<pre><code class="language-bash">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
 $ tar -xvzf nginx-1.10.1.tar.gz
 $ cd nginx-1.10.1
 $ ./configure --with-http_image_filter_module
 $ make
 $ sudo make install
-</code></pre>
-
-<p>ほかのオプションモジュールをつける場合は随時つけてください。</p>
-
+</code></pre></div><p>ほかのオプションモジュールをつける場合は随時つけてください。</p>
 <p>すでにnginxがインストールされている場合は、</p>
-
-<pre><code class="language-bash">$ sudo cp objs/nginx /usr/sbin/nginx
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp objs/nginx /usr/sbin/nginx
 $ cat /var/run/nginx.pid
-10576
-$ sudo kill -USR2 10576
-$ sudo kill -WINCH 10576
-$ sudo kill -QUIT 10576
-</code></pre>
-
-<p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。</p>
-
+<span style="color:#ae81ff">10576</span>
+$ sudo kill -USR2 <span style="color:#ae81ff">10576</span>
+$ sudo kill -WINCH <span style="color:#ae81ff">10576</span>
+$ sudo kill -QUIT <span style="color:#ae81ff">10576</span>
+</code></pre></div><p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。</p>
 <h1 id="confを変更">confを変更</h1>
-
 <p>image_filterを加えます。
 くわしいことは<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ</a>をみてください。</p>
-
-<pre><code class="language-nginx:hoge.conf">location ~ /image/(.*\.png)$ {
+<pre><code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf">location ~ /image/(.*\.png)$ {
         alias /path/to/image/$1;
             image_filter resize 100 -; # 横幅100pxでリサイズする
 }
-</code></pre>
-
-<p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</p>
+</code></pre><p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/javascript-unknown-writing/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">javascriptのよくわからない書き方【連想配列編】</span>
+                </a>
+              </span>
+            
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://pyonk.github.io/blog/posts/javascript-unknown-writing/">
-                <span class="button__icon">←</span>
-                <span class="button__text">javascriptのよくわからない書き方【連想配列編】</span>
-              </a>
-            </span>
-          
-          
-        </div>
+      
+    
+    
+
+    
+      
+        
+
+      
+    
+    
+    </div>
+
       </div>
-    
 
-    
-
-    </div>
-
-  </div>
-
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -216,8 +209,8 @@ $ sudo kill -QUIT 10576
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -226,8 +219,10 @@ $ sudo kill -QUIT 10576
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

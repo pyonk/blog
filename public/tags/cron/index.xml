@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cron on わいがかいた</title>
+    <title>cron on わいがかいた</title>
     <link>https://pyonk.github.io/blog/tags/cron/</link>
-    <description>Recent content in Cron on わいがかいた</description>
+    <description>Recent content in cron on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 06 Feb 2017 12:28:58 +0900</lastBuildDate>
     
@@ -17,7 +17,7 @@
       
       <guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid>
       <description>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
-$ less /var/log/cron  Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)  追記 上記のコマンドの
+$ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
 この部分、おかしいですね〜〜
 /etc/crontabの内容を何も考えずにコピーしちゃいました。
@@ -25,14 +25,14 @@ user python /home/user/app/manage.py hogehoge
 おかしいな〜おかしいな〜〜〜〜〜 こわいな〜こわいな〜〜〜〜。
 何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
 /etc/crontab まず初めにcronを設定したときはこのこをいじっていました。
-$ sudo vim /etc/crontab  ですね。
+$ sudo vim /etc/crontab ですね。
 crontab -e 何を思ったのかこっちでも設定していたような気がしました。
-$ crontab -l  で確認することができます。
+$ crontab -l で確認することができます。
 案の定同じコマンドが同じ時間で実行されるように設定されておりました。
 この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
 要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
 たとえば
-* * * * * user echo &#39;fugafuga&#39; * * * * * user2 echo &#39;hogehoge&#39;  のような感じです。</description>
+* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。</description>
     </item>
     
   </channel>

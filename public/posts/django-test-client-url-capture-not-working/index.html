@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>Django Test Client Url Capture Not Working :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>Django Test Client Url Capture Not Working :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
-結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ"/>
+<meta name="description" content="from django.urls import path url_patterns = [ path(&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;, views.show, name=&amp;#39;user_show&amp;#39;), ] from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&amp;#39;user_show&amp;#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302) 上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
+結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ
+というかそもそも論だがurlsでルーティングしているのであれば これだけで良かった"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/" />
@@ -25,8 +26,9 @@
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Django Test Client Url Capture Not Working :: わいがかいた — " />
-<meta name="twitter:description" content="from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
-結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ" />
+<meta name="twitter:description" content="from django.urls import path url_patterns = [ path(&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;, views.show, name=&amp;#39;user_show&amp;#39;), ] from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&amp;#39;user_show&amp;#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302) 上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
+結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ
+というかそもそも論だがurlsでルーティングしているのであれば これだけで良かった" />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="pyonk" />
 <meta name="twitter:image" content="">
@@ -35,8 +37,9 @@
 <meta property="og:locale" content="ja" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Django Test Client Url Capture Not Working :: わいがかいた — ">
-<meta property="og:description" content="from django.urls import path url_patterns = [ path(&#39;users/&amp;lt;int:user_id&amp;gt;/&#39;, views.show, name=&#39;user_show&#39;), ]  from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&#39;user_show&#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302)  上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
-結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ" />
+<meta property="og:description" content="from django.urls import path url_patterns = [ path(&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;, views.show, name=&amp;#39;user_show&amp;#39;), ] from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&amp;#39;user_show&amp;#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302) 上記のようなテストコードがあったとすると views.showでself.kwargs[&#39;user_id&#39;]が参照できないっていう状況に1時間くらいハマった
+結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ
+というかそもそも論だがurlsでルーティングしているのであれば これだけで良かった" />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/" />
 <meta property="og:site_name" content="Django Test Client Url Capture Not Working" />
 <meta property="og:image" content="">
@@ -64,15 +67,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -95,8 +98,8 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="post">
     <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">Django Test Client Url Capture Not Working</a></h2>
     <div class="post-meta">
@@ -112,11 +115,11 @@ ga('send', 'pageview');
     
       <span class="post-tags">
         
-          #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
         
-          #<a href="https://pyonk.github.io/blog/tags/djnago">djnago</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/djnago/">djnago</a>&nbsp;
         
-          #<a href="https://pyonk.github.io/blog/tags/test">test</a>&nbsp;
+          #<a href="https://pyonk.github.io/blog/tags/test/">test</a>&nbsp;
         
       </span>
     
@@ -124,106 +127,105 @@ ga('send', 'pageview');
     
 
     <div class="post-content">
-      <pre><code class="language-python:urls.py">from django.urls import path
-url_patterns = [
-    path('users/&lt;int:user_id&gt;/', views.show, name='user_show'),
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python:urls.py" data-lang="python:urls.py"><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+url_patterns <span style="color:#f92672">=</span> [
+    path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">users/&lt;int:user_id&gt;/</span><span style="color:#e6db74">&#39;</span>, views<span style="color:#f92672">.</span>show, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_show</span><span style="color:#e6db74">&#39;</span>),
 ]
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python:tests.py" data-lang="python:tests.py"><span style="color:#f92672">from</span> django.test <span style="color:#f92672">import</span> TestCase, RequestFactory
+<span style="color:#f92672">from</span> users <span style="color:#f92672">import</span> views
+<span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> AnonymousUser
+<span style="color:#f92672">from</span> django.contrib.sessions.middleware <span style="color:#f92672">import</span> SessionMiddleware
+<span style="color:#f92672">from</span> django.contrib.messages.middleware <span style="color:#f92672">import</span> MessageMiddleware
 
-<pre><code class="language-python:tests.py">from django.test import TestCase, RequestFactory
-from users import views
-from django.contrib.auth.models import AnonymousUser
-from django.contrib.sessions.middleware import SessionMiddleware
-from django.contrib.messages.middleware import MessageMiddleware
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserViewTestCase</span>(TestCase):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self):
+        self<span style="color:#f92672">.</span>request <span style="color:#f92672">=</span> RequestFactory()
 
-class UserViewTestCase(TestCase):
-    def setUp(self):
-        self.request = RequestFactory()
-
-    def test_access_user_page(self):
-        user_id = 1
-        req = self.request.get(
-            reverse('user_show', args=(user_id,))
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_access_user_page</span>(self):
+        user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        req <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>get(
+            reverse(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_show</span><span style="color:#e6db74">&#39;</span>, args<span style="color:#f92672">=</span>(user_id,))
         )
-        req.user = AnonymousUser()
-        SessionMiddleware().process_request(req)
-        MessageMiddleware().process_request(req)
+        req<span style="color:#f92672">.</span>user <span style="color:#f92672">=</span> AnonymousUser()
+        SessionMiddleware()<span style="color:#f92672">.</span>process_request(req)
+        MessageMiddleware()<span style="color:#f92672">.</span>process_request(req)
 
-        res = views.show(req)
-        self.assertTrue(res.status_code, 302)
-</code></pre>
-
-<p>上記のようなテストコードがあったとすると
+        res <span style="color:#f92672">=</span> views<span style="color:#f92672">.</span>show(req)
+        self<span style="color:#f92672">.</span>assertTrue(res<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">302</span>)
+</code></pre></div><p>上記のようなテストコードがあったとすると
 <code>views.show</code>で<code>self.kwargs['user_id']</code>が参照できないっていう状況に1時間くらいハマった</p>
-
 <p>結論から言うと
 <code>RequestFactory</code>は単純にrequestオブジェクトを作るだけなので、urlsとか関係なく
 <code>views.show(req)</code>をテストしてるに過ぎないと言うことだった
 なので
 <code>views.show(req, user_id=user_id)</code>としてあげると良かったようだ</p>
-
 <p>というかそもそも論だがurlsでルーティングしているのであれば
 これだけで良かった</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python:test.py" data-lang="python:test.py"><span style="color:#f92672">from</span> django.test <span style="color:#f92672">import</span> TestCase, Client
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserViewTestCase</span>(TestCase):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self):
+        self<span style="color:#f92672">.</span>client <span style="color:#f92672">=</span> Client()
 
-<pre><code class="language-python:test.py">from django.test import TestCase, Client
-class UserViewTestCase(TestCase):
-    def setUp(self):
-        self.client = Client()
-
-    def test_access_user_page(self):
-        user_id = 1
-        res = self.client.get(
-            reverse('user_show', args=(user_id,))
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_access_user_page</span>(self):
+        user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        res <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>get(
+            reverse(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_show</span><span style="color:#e6db74">&#39;</span>, args<span style="color:#f92672">=</span>(user_id,))
         )
-        self.assertTrue(res.status_code, 302)
-</code></pre>
-
-<p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
+        self<span style="color:#f92672">.</span>assertTrue(res<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">302</span>)
+</code></pre></div><p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
 ぼくつかれっちゃった
 だれだよRequestFactoryとか教えたの</p>
 
     </div>
     
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">coc.nvim is awesome</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/">
+                  <span class="button__text">Unityのscrollrectでスクロールができない件</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
         </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/">
-                <span class="button__icon">←</span>
-                <span class="button__text">coc.nvim is awesome</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/">
-                <span class="button__text">Unityのscrollrectでスクロールができない件</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
+      
+    
     
 
     
+      
+        
 
+      
+    
+    
     </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -232,8 +234,8 @@ class UserViewTestCase(TestCase):
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -242,8 +244,10 @@ class UserViewTestCase(TestCase):
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>

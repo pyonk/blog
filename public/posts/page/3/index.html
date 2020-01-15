@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  
-    <title>Posts :: わいがかいた</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>Posts :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -63,15 +63,15 @@ ga('send', 'pageview');
 </script>
 
 
-</head>
-<body class="">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -94,9 +94,12 @@ ga('send', 'pageview');
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
   <div class="posts">
+    
+    
+
     
     
     
@@ -105,9 +108,11 @@ ga('send', 'pageview');
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/">pythonからpdfのフォームに入力する</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-10-05
-        </span>
+        
+          <span class="post-date">
+            2017-10-05
+          </span>
+        
         
         
       </div>
@@ -116,7 +121,7 @@ ga('send', 'pageview');
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
           
         </span>
       
@@ -131,9 +136,7 @@ ga('send', 'pageview');
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab
-$ pip install reportlab  PyPDF2
-$ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em>- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &lsquo;title&rsquo; # fontを変更 pdfmetrics.registerFont(TTFont(&lsquo;Mplus1p-Light&rsquo;, &lsquo;static/font/Mplus1p/Mplus1p-Light.ttf&rsquo;)) template_path = &lsquo;template.pdf&rsquo; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.
+事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -<em>- coding: utf-8 -</em>- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = 'title' # fontを変更 pdfmetrics.registerFont(TTFont('Mplus1p-Light', 'static/font/Mplus1p/Mplus1p-Light.ttf')) template_path = 'template.pdf' # 読み込み reader = PdfFileReader(template_path) existing_page = reader.
           
         
       </div>
@@ -143,9 +146,11 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/">timetreeの500万ユーザー記念パーティに参加してきた</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-08-31
-        </span>
+        
+          <span class="post-date">
+            2017-08-31
+          </span>
+        
         
         
       </div>
@@ -154,11 +159,11 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/jubilee-works">jubilee works</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/jubilee-works/">jubilee works</a>&nbsp;
           
-            #<a href="https://pyonk.github.io/blog/tags/timetree">timetree</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/timetree/">timetree</a>&nbsp;
           
-            #<a href="https://pyonk.github.io/blog/tags/app">app</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/app/">app</a>&nbsp;
           
         </span>
       
@@ -176,9 +181,11 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/read-tadouryoku/">多動力を読んだ</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-08-21
-        </span>
+        
+          <span class="post-date">
+            2017-08-21
+          </span>
+        
         
         
       </div>
@@ -187,9 +194,9 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87">堀江貴文</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/%E5%A0%80%E6%B1%9F%E8%B2%B4%E6%96%87/">堀江貴文</a>&nbsp;
           
-            #<a href="https://pyonk.github.io/blog/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B">多動力</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/%E5%A4%9A%E5%8B%95%E5%8A%9B/">多動力</a>&nbsp;
           
         </span>
       
@@ -207,9 +214,11 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/">crontab -e と /etc/crontab の違い</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-02-06
-        </span>
+        
+          <span class="post-date">
+            2017-02-06
+          </span>
+        
         
         
       </div>
@@ -218,7 +227,7 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/cron">cron</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/cron/">cron</a>&nbsp;
           
         </span>
       
@@ -229,7 +238,7 @@ $ pip install pypdf2   コード #! /usr/bin/python # -<em>- coding: utf-8 -</em
         
           
             ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
-$ less /var/log/cron  Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge)  追記 上記のコマンドの
+$ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
 この部分、おかしいですね〜〜
 /etc/crontabの内容を何も考えずにコピーしちゃいました。
@@ -237,14 +246,32 @@ user python /home/user/app/manage.py hogehoge
 おかしいな〜おかしいな〜〜〜〜〜 こわいな〜こわいな〜〜〜〜。
 何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
 /etc/crontab まず初めにcronを設定したときはこのこをいじっていました。
-$ sudo vim /etc/crontab  ですね。
+$ sudo vim /etc/crontab ですね。
 crontab -e 何を思ったのかこっちでも設定していたような気がしました。
-$ crontab -l  で確認することができます。
+$ crontab -l で確認することができます。
 案の定同じコマンドが同じ時間で実行されるように設定されておりました。
 この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
 要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
-たとえば
-* * * * * user echo &lsquo;fugafuga&rsquo; * * * * * user2 echo &lsquo;hogehoge&rsquo;  のような感じです。
+たとえば</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>user echo 'fugafuga' * * * * * user2 echo 'hogehoge' のような感じです。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
           
         
       </div>
@@ -254,9 +281,11 @@ $ crontab -l  で確認することができます。
     <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/cannot-request/">あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</a></h1>
       <div class="post-meta">
-        <span class="post-date">
-          2017-02-02
-        </span>
+        
+          <span class="post-date">
+            2017-02-02
+          </span>
+        
         
         
       </div>
@@ -265,7 +294,7 @@ $ crontab -l  で確認することができます。
       
         <span class="post-tags">
           
-            #<a href="https://pyonk.github.io/blog/tags/python">python</a>&nbsp;
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
           
         </span>
       
@@ -303,16 +332,16 @@ $ crontab -l  で確認することができます。
 
   </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <a href="/blog/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">わいがかいた</span>
@@ -321,8 +350,8 @@ $ crontab -l  で確認することができます。
 </a>
 
       <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr">panr</a></span>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
       </div>
     
   </div>
@@ -331,8 +360,10 @@ $ crontab -l  で確認することができます。
 <script src="https://pyonk.github.io/blog/assets/main.js"></script>
 <script src="https://pyonk.github.io/blog/assets/prism.js"></script>
 
-  
-</div>
 
-</body>
+      
+    </div>
+
+    
+  </body>
 </html>
