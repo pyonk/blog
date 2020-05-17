@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pyonk.github.io/blog/tags/django/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/postgresql/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/posts/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/python/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/</loc>
+    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/emacs-lisp/</loc>
+    <lastmod>2020-01-15T11:38:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</loc>
+    <lastmod>2020-01-15T11:38:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/spacemacs/</loc>
+    <lastmod>2020-01-15T11:38:02+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pyonk.github.io/blog/tags/development/</loc>
     <lastmod>2019-04-15T15:42:13+09:00</lastmod>
   </url>
@@ -19,21 +69,6 @@
   
   <url>
     <loc>https://pyonk.github.io/blog/posts/minio-is-awesome/</loc>
-    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/posts/</loc>
-    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/tags/</loc>
-    <lastmod>2019-04-15T15:42:13+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/</loc>
     <lastmod>2019-04-15T15:42:13+09:00</lastmod>
   </url>
   
@@ -69,11 +104,6 @@
   
   <url>
     <loc>https://pyonk.github.io/blog/tags/djnago/</loc>
-    <lastmod>2019-02-20T15:12:08+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/tags/python/</loc>
     <lastmod>2019-02-20T15:12:08+09:00</lastmod>
   </url>
   
@@ -125,11 +155,6 @@
   <url>
     <loc>https://pyonk.github.io/blog/posts/buy-lets-split/</loc>
     <lastmod>2018-05-24T23:11:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/tags/django/</loc>
-    <lastmod>2017-12-20T13:54:50+09:00</lastmod>
   </url>
   
   <url>

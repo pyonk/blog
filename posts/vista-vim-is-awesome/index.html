@@ -167,10 +167,10 @@ fzfを使ってシンボルの絞り込み検索もできるので、楽しい�
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[[<span style="color:#a6e22e">plugins</span>]]
 <span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#39;liuchengxu/vista.vim&#39;</span>
 <span style="color:#a6e22e">depends</span> = [<span style="color:#e6db74">&#39;coc.nvim&#39;</span>, <span style="color:#e6db74">&#39;lightline.vim&#39;</span>]
-<span style="color:#a6e22e">hook_add</span> = <span style="color:#e6db74">&#39;&#39;</span><span style="color:#e6db74">&#39;
+<span style="color:#a6e22e">hook_add</span> = <span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-v&gt; :&lt;C-u&gt;Vista coc&lt;CR&gt;
 </span><span style="color:#e6db74">  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-s&gt; :&lt;C-u&gt;Vista finder coc&lt;CR&gt;
-</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;&#39;</span>
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
 </code></pre></div><p>こんな感じで。
 使いやすいようにショートカットも登録しておく。</p>
 <p><code>:Vista finder coc</code>でcoc.nvimからのシンボルデータをfzfで絞り込みができる。</p>
@@ -178,7 +178,7 @@ fzfを使ってシンボルの絞り込み検索もできるので、楽しい�
 <p>lightlineのようなしゃれおつステータスバーのための関数も用意されていて、</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[[<span style="color:#a6e22e">plugins</span>]]
 <span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#39;itchyny/lightline.vim&#39;</span>
-<span style="color:#a6e22e">hook_add</span> = <span style="color:#e6db74">&#39;&#39;</span><span style="color:#e6db74">&#39;
+<span style="color:#a6e22e">hook_add</span> = <span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">let g:lightline = {
 </span><span style="color:#e6db74">      \ &#39;</span><span style="color:#a6e22e">colorscheme</span><span style="color:#e6db74">&#39;: &#39;</span><span style="color:#a6e22e">landscape</span><span style="color:#e6db74">&#39;,
 </span><span style="color:#e6db74">      \ &#39;</span><span style="color:#a6e22e">active</span><span style="color:#e6db74">&#39;: {
@@ -192,7 +192,7 @@ fzfを使ってシンボルの絞り込み検索もできるので、楽しい�
       <span style="color:#960050;background-color:#1e0010">\</span>   <span style="color:#e6db74">&#39;vista&#39;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#39;NearestMethodOrFunction&#39;</span>,
       <span style="color:#960050;background-color:#1e0010">\</span> <span style="color:#960050;background-color:#1e0010">}</span>,
       <span style="color:#960050;background-color:#1e0010">\</span> <span style="color:#960050;background-color:#1e0010">}</span>
-<span style="color:#a6e22e">function</span><span style="color:#960050;background-color:#1e0010">!</span> <span style="color:#a6e22e">NearestMethodOrFunction</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#a6e22e">abort</span>
+<span style="color:#a6e22e">function</span><span style="color:#960050;background-color:#1e0010">!</span> <span style="color:#a6e22e">NearestMethodOrFunction</span><span style="color:#960050;background-color:#1e0010">()</span> <span style="color:#a6e22e">abort</span>
   <span style="color:#a6e22e">return</span> <span style="color:#a6e22e">get</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">b</span><span style="color:#960050;background-color:#1e0010">:</span>, <span style="color:#e6db74">&#39;vista_nearest_method_or_function&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span><span style="color:#960050;background-color:#1e0010">)</span>
 <span style="color:#a6e22e">endfunction</span>
 <span style="color:#e6db74">&#39;&#39;</span><span style="color:#960050;background-color:#1e0010">&#39;</span>

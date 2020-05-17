@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.70.0" />
     
       <title>わいがかいた</title>
     
@@ -109,7 +109,75 @@ ga('send', 'pageview');
 
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/lets-split-arrive/">let's splitがとどいた！</a></h1>
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/">Django Test Client Url Capture Not Working</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-02-20
+          </span>
+        
+        <span class="post-author">— Written by pyonk</span>
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/djnago/">djnago</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/test/">test</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          DjangoのテストクライアントがURLの名前付きパラメータを取得できない件
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/django-test-client-url-capture-not-working/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/">Unityのscrollrectでスクロールができない件</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2018-11-05
+          </span>
+        
+        
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/unity/">unity</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/c/">c#</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          Unityのscrollrectでスクロールができなかったがなんとかなった話。内包していたEventTriggerが悪さをしてました。
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/unity-scrollrect-not-working/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/lets-split-arrive/">let&rsquo;s splitがとどいた！</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -139,14 +207,14 @@ ga('send', 'pageview');
 
       <div class="post-content">
         
-          let's splitがとどいた！
+          let&rsquo;s splitがとどいた！
         
       </div>
       <div><a class="read-more button" href="/blog/posts/lets-split-arrive/">Read more →</a></div>
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/buy-lets-split/">let's splitを買った</a></h1>
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/buy-lets-split/">let&rsquo;s splitを買った</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -211,82 +279,6 @@ ga('send', 'pageview');
         
       </div>
       <div><a class="read-more button" href="/blog/posts/social-login-update-for-facebook/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/">djangoのquerysetを任意の順番でsortする</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-11-10
-          </span>
-        
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/django/">django</a>&nbsp;
-          
-            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            djangoのquerysetを任意の順番でsortする djnagoではorder_by(&lsquo;hoge&rsquo;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
-が、ぼくがやりたかったのは、任意の値でのソート。
-databaseに定義されてない値でソートしたかったのです。
-とても参考になったstack overflowはこちら。
-Django order_by specific order - Stack Overflow
-ただしdjango &gt;= 1.8です
-TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { '1': 100.0, '2': 50.0, '3': 25.0, '4': 123.4, '5': 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django
-          
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/django-queryset-order-by-specific-values/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/">sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-10-18
-          </span>
-        
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
-          
-            #<a href="https://pyonk.github.io/blog/tags/sublimetext/">sublimetext</a>&nbsp;
-          
-            #<a href="https://pyonk.github.io/blog/tags/vim/">vim</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/create-disabled-ime-command-for-subl-with-vintage/">Read more →</a></div>
     </div>
     
     <div class="pagination">

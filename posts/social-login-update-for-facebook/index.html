@@ -6,7 +6,7 @@
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&#39;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
+<meta name="description" content="facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
@@ -25,7 +25,7 @@ This update comes in response to malicious activity we saw on our platform, and 
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="facebookのためにsocial loginをごにょごにょした話 :: わいがかいた — " />
-<meta name="twitter:description" content="facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&#39;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
+<meta name="twitter:description" content="facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs." />
 <meta name="twitter:site" content="https://pyonk.github.io/blog/" />
 <meta name="twitter:creator" content="" />
@@ -35,7 +35,7 @@ This update comes in response to malicious activity we saw on our platform, and 
 <meta property="og:locale" content="ja" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="facebookのためにsocial loginをごにょごにょした話 :: わいがかいた — ">
-<meta property="og:description" content="facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&#39;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
+<meta property="og:description" content="facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs." />
 <meta property="og:url" content="https://pyonk.github.io/blog/posts/social-login-update-for-facebook/" />
 <meta property="og:site_name" content="facebookのためにsocial loginをごにょごにょした話" />
@@ -154,7 +154,7 @@ ga('send', 'pageview');
 
 
 <blockquote>
-<p>In 90 days, we're making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.<br>
+<p>In 90 days, we&rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.<br>
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More</p>
 </blockquote>
 <p>モニョモニョ言ってた。
@@ -198,11 +198,11 @@ This update comes in response to malicious activity we saw on our platform, and 
             <span style="color:#75715e"># but also added to redirect, that way we can still verify the</span>
             <span style="color:#75715e"># request if the provider doesn&#39;t implement the state parameter.</span>
             <span style="color:#75715e"># Reuse token if any.</span>
-            name <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>name <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">_state</span><span style="color:#e6db74">&#39;</span>
+            name <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_state&#39;</span>
             state <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>session_get(name)
             <span style="color:#66d9ef">try</span>:
                 <span style="color:#75715e"># settings.pyのSOCIAL_AUTH_FACEBOOK_REDIRECT_STATEを見に行く</span>
-                static_state <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>get_setting(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE</span><span style="color:#e6db74">&#39;</span>)
+                static_state <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>get_setting(<span style="color:#e6db74">&#39;SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE&#39;</span>)
                 <span style="color:#75715e"># sessionに保存する必要があるかどうか</span>
                 <span style="color:#66d9ef">if</span> state <span style="color:#f92672">!=</span> static_state:
                     self<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>session_set(name, static_state)
@@ -218,12 +218,12 @@ This update comes in response to malicious activity we saw on our platform, and 
         <span style="color:#66d9ef">return</span> state
 </code></pre></div><p>上記を適当なところにおいて(たとえば<code>myapp/custom_backends.py</code>としたら)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">AUTHENTICATION_BACKENDS <span style="color:#f92672">=</span> (
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">social_core.backends.twitter.TwitterOAuth</span><span style="color:#e6db74">&#39;</span>,
+    <span style="color:#e6db74">&#39;social_core.backends.twitter.TwitterOAuth&#39;</span>,
     <span style="color:#75715e"># &#39;social_core.backends.facebook.FacebookOAuth2&#39;,</span>
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">myapp.custom_backends.FacebookOAuth2Override</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">django.contrib.auth.backends.ModelBackend</span><span style="color:#e6db74">&#39;</span>,
+    <span style="color:#e6db74">&#39;myapp.custom_backends.FacebookOAuth2Override&#39;</span>,
+    <span style="color:#e6db74">&#39;django.contrib.auth.backends.ModelBackend&#39;</span>,
 )
-SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{{static_state}}</span><span style="color:#e6db74">&#39;</span>
+SOCIAL_AUTH_FACEBOOK_REDIRECT_STATE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{{static_state}}&#39;</span>
 </code></pre></div><p>今の所こんな感じで問題なさそう。</p>
 <p>facebook側の設定も忘れずに:(</p>
 

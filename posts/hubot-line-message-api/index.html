@@ -201,40 +201,40 @@ ga('send', 'pageview');
 </ul>
 <p><a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">module.exports = <span style="color:#a6e22e">(robot) -&gt;</span>
-    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/</span><span style="color:#f92672">^</span><span style="color:#960050;background-color:#1e0010">テ</span><span style="color:#960050;background-color:#1e0010">キ</span><span style="color:#960050;background-color:#1e0010">ス</span><span style="color:#960050;background-color:#1e0010">ト</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
+    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/^</span><span style="color:#960050;background-color:#1e0010">テキスト</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
         <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">reply</span>
-            type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text</span><span style="color:#e6db74">&#39;</span>
-            contents: [<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">nyaa</span><span style="color:#e6db74">&#39;</span>]
+            type: <span style="color:#e6db74">&#39;text&#39;</span>
+            contents: [<span style="color:#e6db74">&#39;nyaa&#39;</span>]
 </code></pre></div><ul>
 <li>画像と動画</li>
 </ul>
 <p><a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image</a>
 <a href="https://devdocs.line.me/ja/#video">https://devdocs.line.me/ja/#video</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">module.exports = <span style="color:#a6e22e">(robot) -&gt;</span>
-    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/</span><span style="color:#f92672">^</span><span style="color:#960050;background-color:#1e0010">画</span><span style="color:#960050;background-color:#1e0010">像</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
+    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/^</span><span style="color:#960050;background-color:#1e0010">画像</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
         <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">reply</span>
-            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">image</span><span style="color:#e6db74">&#39;</span><span style="color:#75715e"># &#39;video&#39;
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;image&#39;</span><span style="color:#75715e"># &#39;video&#39;
 </span><span style="color:#75715e"></span>            content: [
-                original: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://example.com/images/image.jpg</span><span style="color:#e6db74">&#39;</span>
-                preview: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://example.com/images/image.jpg</span><span style="color:#e6db74">&#39;</span>
+                original: <span style="color:#e6db74">&#39;https://example.com/images/image.jpg&#39;</span>
+                preview: <span style="color:#e6db74">&#39;https://example.com/images/image.jpg&#39;</span>
             ]
 </code></pre></div><ul>
 <li>ボタン</li>
 </ul>
 <p><a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">module.exports = <span style="color:#a6e22e">(robot) -&gt;</span>
-    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/</span><span style="color:#f92672">^</span><span style="color:#960050;background-color:#1e0010">テ</span><span style="color:#960050;background-color:#1e0010">キ</span><span style="color:#960050;background-color:#1e0010">ス</span><span style="color:#960050;background-color:#1e0010">ト</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
+    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/^</span><span style="color:#960050;background-color:#1e0010">テキスト</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
         <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">reply</span>
-            type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">buttons</span><span style="color:#e6db74">&#39;</span>
-            altText: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hogehoge</span><span style="color:#e6db74">&#39;</span>
+            type: <span style="color:#e6db74">&#39;buttons&#39;</span>
+            altText: <span style="color:#e6db74">&#39;hogehoge&#39;</span>
             contents: [
-                image: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://example.com/images/image.jpg</span><span style="color:#e6db74">&#39;</span>
-                title: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">this is Buttons</span><span style="color:#e6db74">&#39;</span>
-                text: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">buttons description</span><span style="color:#e6db74">&#39;</span>
+                image: <span style="color:#e6db74">&#39;https://example.com/images/image.jpg&#39;</span>
+                title: <span style="color:#e6db74">&#39;this is Buttons&#39;</span>
+                text: <span style="color:#e6db74">&#39;buttons description&#39;</span>
                 <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span>[
-                    type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">uri</span><span style="color:#e6db74">&#39;</span>
-                    label: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Open in Browser</span><span style="color:#e6db74">&#39;</span>
-                    uri: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://example.com/</span><span style="color:#e6db74">&#39;</span>
+                    type: <span style="color:#e6db74">&#39;uri&#39;</span>
+                    label: <span style="color:#e6db74">&#39;Open in Browser&#39;</span>
+                    uri: <span style="color:#e6db74">&#39;http://example.com/&#39;</span>
                 ]
             ]
 </code></pre></div><ul>
@@ -242,47 +242,47 @@ ga('send', 'pageview');
 </ul>
 <p><a href="https://devdocs.line.me/ja/#carousel">https://devdocs.line.me/ja/#carousel</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">module.exports = <span style="color:#a6e22e">(robot) -&gt;</span>
-    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/</span><span style="color:#f92672">^</span><span style="color:#960050;background-color:#1e0010">カ</span><span style="color:#960050;background-color:#1e0010">ル</span><span style="color:#960050;background-color:#1e0010">ー</span><span style="color:#960050;background-color:#1e0010">セ</span><span style="color:#960050;background-color:#1e0010">ル</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
+    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/^</span><span style="color:#960050;background-color:#1e0010">カルーセル</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
         <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">reply</span>
-            type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">carousel</span><span style="color:#e6db74">&#39;</span>
-            altText: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hogehoge</span><span style="color:#e6db74">&#39;</span>
+            type: <span style="color:#e6db74">&#39;carousel&#39;</span>
+            altText: <span style="color:#e6db74">&#39;hogehoge&#39;</span>
             contents: [
-                image: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://example.com/images/image.jpg</span><span style="color:#e6db74">&#39;</span>
-                title: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">this is Buttons</span><span style="color:#e6db74">&#39;</span>
-                text: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">buttons description</span><span style="color:#e6db74">&#39;</span>
+                image: <span style="color:#e6db74">&#39;https://example.com/images/image.jpg&#39;</span>
+                title: <span style="color:#e6db74">&#39;this is Buttons&#39;</span>
+                text: <span style="color:#e6db74">&#39;buttons description&#39;</span>
                 <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span>[
-                    type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">uri</span><span style="color:#e6db74">&#39;</span>
-                    label: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Open in Browser</span><span style="color:#e6db74">&#39;</span>
-                    uri: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://example.com/</span><span style="color:#e6db74">&#39;</span>
+                    type: <span style="color:#e6db74">&#39;uri&#39;</span>
+                    label: <span style="color:#e6db74">&#39;Open in Browser&#39;</span>
+                    uri: <span style="color:#e6db74">&#39;http://example.com/&#39;</span>
                 ],
-                image: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://example.com/images/image.jpg</span><span style="color:#e6db74">&#39;</span>
-                title: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">this is Buttons</span><span style="color:#e6db74">&#39;</span>
-                text: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">buttons description</span><span style="color:#e6db74">&#39;</span>
+                image: <span style="color:#e6db74">&#39;https://example.com/images/image.jpg&#39;</span>
+                title: <span style="color:#e6db74">&#39;this is Buttons&#39;</span>
+                text: <span style="color:#e6db74">&#39;buttons description&#39;</span>
                 <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span>[
-                    type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">uri</span><span style="color:#e6db74">&#39;</span>
-                    label: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Open in Browser</span><span style="color:#e6db74">&#39;</span>
-                    uri: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://example.com/</span><span style="color:#e6db74">&#39;</span>
+                    type: <span style="color:#e6db74">&#39;uri&#39;</span>
+                    label: <span style="color:#e6db74">&#39;Open in Browser&#39;</span>
+                    uri: <span style="color:#e6db74">&#39;http://example.com/&#39;</span>
                 ]...
             ]
 </code></pre></div><ul>
 <li>くみあわせ</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">module.exports = <span style="color:#a6e22e">(robot) -&gt;</span>
-    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/</span><span style="color:#f92672">^</span><span style="color:#960050;background-color:#1e0010">く</span><span style="color:#960050;background-color:#1e0010">み</span><span style="color:#960050;background-color:#1e0010">あ</span><span style="color:#960050;background-color:#1e0010">わ</span><span style="color:#960050;background-color:#1e0010">せ</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
+    <span style="color:#a6e22e">robot</span>.<span style="color:#a6e22e">hear</span> <span style="color:#f92672">/^</span><span style="color:#960050;background-color:#1e0010">くみあわせ</span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span>, <span style="color:#a6e22e">(res) -&gt;</span>
         <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">reply</span> {
-            type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text</span><span style="color:#e6db74">&#39;</span>
-            contents: [<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">nyaa</span><span style="color:#e6db74">&#39;</span>]
+            type: <span style="color:#e6db74">&#39;text&#39;</span>
+            contents: [<span style="color:#e6db74">&#39;nyaa&#39;</span>]
         },
         {
-            type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">buttons</span><span style="color:#e6db74">&#39;</span>
+            type: <span style="color:#e6db74">&#39;buttons&#39;</span>
             contents: [
-                image: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://example.com/images/image.jpg</span><span style="color:#e6db74">&#39;</span>
-                title: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">this is Buttons</span><span style="color:#e6db74">&#39;</span>
-                text: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">buttons description</span><span style="color:#e6db74">&#39;</span>
+                image: <span style="color:#e6db74">&#39;https://example.com/images/image.jpg&#39;</span>
+                title: <span style="color:#e6db74">&#39;this is Buttons&#39;</span>
+                text: <span style="color:#e6db74">&#39;buttons description&#39;</span>
                 actions: [
-                    type: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">uri</span><span style="color:#e6db74">&#39;</span>
-                    label: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Open in Browser</span><span style="color:#e6db74">&#39;</span>
-                    uri: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://example.com/</span><span style="color:#e6db74">&#39;</span>
+                    type: <span style="color:#e6db74">&#39;uri&#39;</span>
+                    label: <span style="color:#e6db74">&#39;Open in Browser&#39;</span>
+                    uri: <span style="color:#e6db74">&#39;http://example.com/&#39;</span>
                 ]
             ]
         }

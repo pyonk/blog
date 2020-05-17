@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+      <title>emacs lispを紐解く :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="結構前に書いてたやつがメモ帳に埋まってたので供養します 今はspacemacsじゃなくてneovimつかってる 普段spacemacsというエディタを使ってコードを書いているんだけど
+pipenvを$PIPENV_VENV_IN_PROJECT=1で使ってるとうまく補完されないので悩んでた
+少し調べると
+ pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs  がヒットした
+提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ
+きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた
+ .venvがディレクトリか、ファイルかによって処理を変えてるだけ コードリーディング超大事  &amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義 (defun spacemacs//pyvenv-mode-set-local-virtualenv () &amp;#34;Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle directory or fil\ &amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる &amp;#34; http://yhash.hatenablog.com/entry/2012/07/14/134732 (interactive) &amp;#34; 変数root-pathに&amp;#34;.venv&amp;#34;があるディレクトリを代入する &amp;#34; default-directoryから親方向に&amp;#34;.venv&amp;#34;を探す なければnil (let ((root-path (locate-dominating-file default-directory &amp;#34;.venv&amp;#34;))) &amp;#34; root-pathがnilではない時のみ実行 (when root-path &amp;#34; file-pathに{root-path}/.venvの形で代入する (let* ((file-path (expand-file-name &amp;#34;."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/" />
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/assets/style.css">
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://pyonk.github.io/blog/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="emacs lispを紐解く :: わいがかいた — " />
+<meta name="twitter:description" content="結構前に書いてたやつがメモ帳に埋まってたので供養します 今はspacemacsじゃなくてneovimつかってる 普段spacemacsというエディタを使ってコードを書いているんだけど
+pipenvを$PIPENV_VENV_IN_PROJECT=1で使ってるとうまく補完されないので悩んでた
+少し調べると
+ pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs  がヒットした
+提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ
+きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた
+ .venvがディレクトリか、ファイルかによって処理を変えてるだけ コードリーディング超大事  &amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義 (defun spacemacs//pyvenv-mode-set-local-virtualenv () &amp;#34;Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle directory or fil\ &amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる &amp;#34; http://yhash.hatenablog.com/entry/2012/07/14/134732 (interactive) &amp;#34; 変数root-pathに&amp;#34;.venv&amp;#34;があるディレクトリを代入する &amp;#34; default-directoryから親方向に&amp;#34;.venv&amp;#34;を探す なければnil (let ((root-path (locate-dominating-file default-directory &amp;#34;.venv&amp;#34;))) &amp;#34; root-pathがnilではない時のみ実行 (when root-path &amp;#34; file-pathに{root-path}/.venvの形で代入する (let* ((file-path (expand-file-name &amp;#34;." />
+<meta name="twitter:site" content="https://pyonk.github.io/blog/" />
+<meta name="twitter:creator" content="pyonk" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="ja" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="emacs lispを紐解く :: わいがかいた — ">
+<meta property="og:description" content="結構前に書いてたやつがメモ帳に埋まってたので供養します 今はspacemacsじゃなくてneovimつかってる 普段spacemacsというエディタを使ってコードを書いているんだけど
+pipenvを$PIPENV_VENV_IN_PROJECT=1で使ってるとうまく補完されないので悩んでた
+少し調べると
+ pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs  がヒットした
+提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ
+きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた
+ .venvがディレクトリか、ファイルかによって処理を変えてるだけ コードリーディング超大事  &amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義 (defun spacemacs//pyvenv-mode-set-local-virtualenv () &amp;#34;Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle directory or fil\ &amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる &amp;#34; http://yhash.hatenablog.com/entry/2012/07/14/134732 (interactive) &amp;#34; 変数root-pathに&amp;#34;.venv&amp;#34;があるディレクトリを代入する &amp;#34; default-directoryから親方向に&amp;#34;.venv&amp;#34;を探す なければnil (let ((root-path (locate-dominating-file default-directory &amp;#34;.venv&amp;#34;))) &amp;#34; root-pathがnilではない時のみ実行 (when root-path &amp;#34; file-pathに{root-path}/.venvの形で代入する (let* ((file-path (expand-file-name &amp;#34;." />
+<meta property="og:url" content="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/" />
+<meta property="og:site_name" content="emacs lispを紐解く" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-01-15 11:38:02 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85825684-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/">emacs lispを紐解く</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2020-01-15
+        </span>
+      
+      <span class="post-author">— Written by pyonk</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://pyonk.github.io/blog/tags/spacemacs/">spacemacs</a>&nbsp;
+        
+          #<a href="https://pyonk.github.io/blog/tags/emacs-lisp/">emacs lisp</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <pre><code>結構前に書いてたやつがメモ帳に埋まってたので供養します
+今はspacemacsじゃなくてneovimつかってる
+</code></pre><p>普段spacemacsというエディタを使ってコードを書いているんだけど</p>
+<p>pipenvを<code>$PIPENV_VENV_IN_PROJECT=1</code>で使ってるとうまく補完されないので悩んでた</p>
+<p>少し調べると</p>
+<ul>
+<li><a href="https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054">pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs</a></li>
+</ul>
+<p>がヒットした</p>
+<p>提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ</p>
+<p>きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた</p>
+<ul>
+<li>.venvがディレクトリか、ファイルかによって処理を変えてるだけ</li>
+<li>コードリーディング超大事</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">    <span style="color:#e6db74">&#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義
+</span><span style="color:#e6db74">    (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
+</span><span style="color:#e6db74">      &#34;</span>Set pyvenv virtualenv from \&#34;.venv\&#34; by looking in parent directories. handle <span style="color:#a6e22e">directory</span> or fil<span style="color:#960050;background-color:#1e0010">\</span>
+      <span style="color:#e6db74">&#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる
+</span><span style="color:#e6db74">      &#34;</span> http://yhash.hatenablog.com/entry/2012/07/14/134732
+      (interactive)
+      <span style="color:#e6db74">&#34; 変数root-pathに&#34;</span><span style="color:#f92672">.</span>venv<span style="color:#e6db74">&#34;があるディレクトリを代入する
+</span><span style="color:#e6db74">      &#34;</span> default-directoryから親方向に<span style="color:#e6db74">&#34;.venv&#34;</span>を探す なければnil
+      (<span style="color:#66d9ef">let</span> ((root-path (locate-dominating-file default-directory
+                                               <span style="color:#e6db74">&#34;.venv&#34;</span>)))
+        <span style="color:#e6db74">&#34; root-pathがnilではない時のみ実行
+</span><span style="color:#e6db74">        (when root-path
+</span><span style="color:#e6db74">          &#34;</span> file-pathに{root-path}/.venvの形で代入する
+          (<span style="color:#66d9ef">let*</span> ((file-path (expand-file-name <span style="color:#e6db74">&#34;.venv&#34;</span> root-path))
+                 <span style="color:#e6db74">&#34; 変数virtualenvに何を代入するか
+</span><span style="color:#e6db74">                 (virtualenv
+</span><span style="color:#e6db74">                  &#34;</span> <span style="color:#f92672">.</span>venvがdirectoryである場合はそのままfile-pathを代入
+                  (<span style="color:#66d9ef">if</span> (file-directory-p file-path)
+                      file-path
+                    <span style="color:#e6db74">&#34; directoryではない場合、file-pathの内容を読み取ってそれを代入
+</span><span style="color:#e6db74">                    (with-temp-buffer
+</span><span style="color:#e6db74">                      (insert-file-contents-literally file-path)
+</span><span style="color:#e6db74">                      (buffer-substring-no-properties (line-beginning-position)
+</span><span style="color:#e6db74">                                                      (line-end-position))))))
+</span><span style="color:#e6db74">            &#34;</span> virtualenvがdirectoryなら
+            (<span style="color:#66d9ef">if</span> (file-directory-p virtualenv)
+                <span style="color:#e6db74">&#34; pyvenv-activate を実行
+</span><span style="color:#e6db74">                (pyvenv-activate virtualenv)
+</span><span style="color:#e6db74">              &#34;</span> そうではないならpyvenv-workon を実行
+              (pyvenv-workon virtualenv))))))
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/pgcrypto-for-django/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">pgcrypto for Django</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/minio-is-awesome/">
+                  <span class="button__text">minio is awesome</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+    
+
+    
+      
+        
+
+      
+    
+    
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://pyonk.github.io/blog/assets/main.js"></script>
+<script src="https://pyonk.github.io/blog/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
