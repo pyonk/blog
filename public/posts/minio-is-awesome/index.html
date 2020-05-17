@@ -158,30 +158,30 @@ docker-composeと相性も良さそうなので使ってみることにした。
 </code></pre></div><p>python側で追加インストール必要なのはこれだけで
 あとはsettings.py</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># S3にアップロード</span>
-DEFAULT_FILE_STORAGE <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">storages.backends.s3boto3.S3Boto3Storage</span><span style="color:#e6db74">&#39;</span>
-AWS_ACCESS_KEY_ID <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">minio</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
-AWS_SECRET_ACCESS_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">minio123</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
-AWS_STORAGE_BUCKET_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">static</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
-AWS_S3_ENDPOINT_URL <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://minio:9000/</span><span style="color:#e6db74">&#39;</span>
+DEFAULT_FILE_STORAGE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;storages.backends.s3boto3.S3Boto3Storage&#39;</span>
+AWS_ACCESS_KEY_ID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;minio&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
+AWS_SECRET_ACCESS_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;minio123&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
+AWS_STORAGE_BUCKET_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;static&#39;</span> <span style="color:#75715e"># 自由に決めちゃっておk</span>
+AWS_S3_ENDPOINT_URL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://minio:9000/&#39;</span>
 </code></pre></div><p>minio本体はdocker imageを利用するのが便利。</p>
 <p>docker-compose.ymlに以下の記述を追加する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#e6db74">&#39;3.2&#39;</span>
-services:
-  minio:
-    image: minio/minio
-    ports:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#39;3.2&#39;</span>
+<span style="color:#66d9ef">services</span>:
+  <span style="color:#66d9ef">minio</span>:
+    <span style="color:#66d9ef">image</span>: minio/minio
+    <span style="color:#66d9ef">ports</span>:
       - <span style="color:#e6db74">&#34;9000:9000&#34;</span>
-    volumes:
-      - type: volume
-        source: minio
-        target: /export
-    environment:
-      MINIO_ACCESS_KEY: minio
-      MINIO_SECRET_KEY: minio123
-    command: server /export
+    <span style="color:#66d9ef">volumes</span>:
+      - <span style="color:#66d9ef">type</span>: volume
+        <span style="color:#66d9ef">source</span>: minio
+        <span style="color:#66d9ef">target</span>: /export
+    <span style="color:#66d9ef">environment</span>:
+      <span style="color:#66d9ef">MINIO_ACCESS_KEY</span>: minio
+      <span style="color:#66d9ef">MINIO_SECRET_KEY</span>: minio123
+    <span style="color:#66d9ef">command</span>: server /export
 
-volumes:
-  minio:
+<span style="color:#66d9ef">volumes</span>:
+  <span style="color:#66d9ef">minio</span>:
 </code></pre></div><p>これで<code>docker-compose up</code>するとminioが立ち上がるので
 localhost:9000にアクセスして<code>static</code>バケットを作っておく。</p>
 <p>準備は以上。簡単！！</p>
@@ -192,8 +192,8 @@ localhost:9000にアクセスして<code>static</code>バケットを作って�
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Uploader</span>:
 
     storage <span style="color:#f92672">=</span> default_storage
-    filename <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
-    url <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
 
     <span style="color:#66d9ef">def</span> __init__(self):
         <span style="color:#66d9ef">pass</span>
@@ -203,7 +203,7 @@ localhost:9000にアクセスして<code>static</code>バケットを作って�
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload</span>(self, uploaded_file):
         self<span style="color:#f92672">.</span>filename <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_unique_filename(uploaded_file<span style="color:#f92672">.</span>name)
-        <span style="color:#66d9ef">with</span> self<span style="color:#f92672">.</span>storage<span style="color:#f92672">.</span>open(self<span style="color:#f92672">.</span>filename, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+        <span style="color:#66d9ef">with</span> self<span style="color:#f92672">.</span>storage<span style="color:#f92672">.</span>open(self<span style="color:#f92672">.</span>filename, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
             <span style="color:#66d9ef">for</span> chunk <span style="color:#f92672">in</span> uploaded_file<span style="color:#f92672">.</span>chunks():
                 f<span style="color:#f92672">.</span>write(chunk)
         self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>storage<span style="color:#f92672">.</span>url(self<span style="color:#f92672">.</span>filename)
@@ -212,7 +212,7 @@ localhost:9000にアクセスして<code>static</code>バケットを作って�
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> django.core.files.uploadedfile <span style="color:#f92672">import</span> UploadedFile
 <span style="color:#f92672">from</span> uploader <span style="color:#f92672">import</span> Uploader
 
-test_file <span style="color:#f92672">=</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./hoge.txt</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>)
+test_file <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;./hoge.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>)
 uploaded_file <span style="color:#f92672">=</span> UploadedFile(test_file)
 uploader <span style="color:#f92672">=</span> Uploader()
 uploader<span style="color:#f92672">.</span>upload(uploaded_file)
@@ -230,6 +230,13 @@ uploader<span style="color:#f92672">.</span>upload(uploaded_file)
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">emacs lispを紐解く</span>
+                </a>
+              </span>
             
             
               <span class="button next">

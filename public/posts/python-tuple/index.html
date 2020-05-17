@@ -146,7 +146,7 @@ ga('send', 'pageview');
     subprocess<span style="color:#f92672">.</span>Popen(cmd, shell<span style="color:#f92672">=</span>True)
     <span style="color:#66d9ef">return</span>
 
-cmd <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sleep 10;echo aaa</span><span style="color:#e6db74">&#39;</span>
+cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sleep 10;echo aaa&#39;</span>
 t <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>command_execute, args<span style="color:#f92672">=</span>(cmd))
 t<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> True
 t<span style="color:#f92672">.</span>start()
@@ -178,7 +178,7 @@ t<span style="color:#f92672">.</span>start()
     subprocess<span style="color:#f92672">.</span>Popen(cmd, shell<span style="color:#f92672">=</span>True)
     <span style="color:#66d9ef">return</span>
 
-cmd <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sleep 10;echo aaa</span><span style="color:#e6db74">&#39;</span>
+cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sleep 10;echo aaa&#39;</span>
 t <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>command_execute, args<span style="color:#f92672">=</span>(cmd,))
 t<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> True
 t<span style="color:#f92672">.</span>start()

@@ -106,6 +106,82 @@ ga('send', 'pageview');
 
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/">djangoのquerysetを任意の順番でsortする</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2017-11-10
+          </span>
+        
+        
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/django/">django</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            djangoのquerysetを任意の順番でsortする djnagoではorder_by(&lsquo;hoge&rsquo;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
+が、ぼくがやりたかったのは、任意の値でのソート。
+databaseに定義されてない値でソートしたかったのです。
+とても参考になったstack overflowはこちら。
+Django order_by specific order - Stack Overflow
+ただしdjango &gt;= 1.8です
+TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { '1': 100.0, '2': 50.0, '3': 25.0, '4': 123.4, '5': 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django
+          
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/django-queryset-order-by-specific-values/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/">sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2017-10-18
+          </span>
+        
+        
+        
+      </div>
+
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/sublimetext/">sublimetext</a>&nbsp;
+          
+            #<a href="https://pyonk.github.io/blog/tags/vim/">vim</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      <div><a class="read-more button" href="/blog/posts/create-disabled-ime-command-for-subl-with-vintage/">Read more →</a></div>
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/">pythonからpdfのフォームに入力する</a></h1>
       <div class="post-meta">
         
@@ -209,104 +285,6 @@ ga('send', 'pageview');
         
       </div>
       <div><a class="read-more button" href="/blog/posts/read-tadouryoku/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/">crontab -e と /etc/crontab の違い</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-02-06
-          </span>
-        
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/cron/">cron</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
-$ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
-user python /home/user/app/manage.py hogehoge
-この部分、おかしいですね〜〜
-/etc/crontabの内容を何も考えずにコピーしちゃいました。
-/etc/crontabはユーザーを指定して記述するのに対して、crontab -eの場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。
-おかしいな〜おかしいな〜〜〜〜〜 こわいな〜こわいな〜〜〜〜。
-何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
-/etc/crontab まず初めにcronを設定したときはこのこをいじっていました。
-$ sudo vim /etc/crontab ですね。
-crontab -e 何を思ったのかこっちでも設定していたような気がしました。
-$ crontab -l で確認することができます。
-案の定同じコマンドが同じ時間で実行されるように設定されておりました。
-この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
-要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
-たとえば</p>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>user echo 'fugafuga' * * * * * user2 echo 'hogehoge' のような感じです。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-          
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/difference-of-crontabe-and-etc-crontab/">Read more →</a></div>
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://pyonk.github.io/blog/posts/cannot-request/">あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-02-02
-          </span>
-        
-        
-        
-      </div>
-
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？
-        
-      </div>
-      <div><a class="read-more button" href="/blog/posts/cannot-request/">Read more →</a></div>
     </div>
     
     <div class="pagination">

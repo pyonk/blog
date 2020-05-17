@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+      <title>pgcrypto for Django :: わいがかいた</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。
+postgresの拡張機能であるpgcryptoで暗号化します。 https://www.postgresql.jp/document/10/html/pgcrypto.html
+pgcryptoの有効化 後述の通りdjango-pgcrypto-fieldsを使う場合はmigrationファイルがよしなにやってくれるので必要ないけど
+CREATE EXTENSION pgcrypto; /* 確認 */ SELECT * FROM pg_extentions; もしlib/pgcrypto.soがない場合は yum install postgresql-contribとかで用意しておく。
+django-pgcrypto-fieldsのインストール Djangoとのやりとりはdjango-pgcrypto-fieldsを介して行うので インストールする。
+pip install django-pgcrypto-fields 鍵の作成 pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって
+今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。
+鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。
+以下のコマンドでインタラクティブに鍵が作成できる。
+gpg --gen-key  推奨するキー種類は「DSAとElgamal」です。
+― https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19
+ らしい。
+* ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合はこれで解決した
+作成できたら確認しよう。
+gpg --list-secret-keys 確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。
+gpg -a --export KEYID &amp;gt; public.key gpg -a --export-secret-keys KEYID &amp;gt; private.key settingsに記述 ここまでで下準備が完了！
+次はsettigns.pyに必要な記述をしていく。
+PUBLIC_PGP_KEY_PATH, PRIVATE_PGP_KEY_PATH はさっき作成した鍵を指定する。
+django-pgcrypto-fieldsの説明のまんまだけど
+PUBLIC_PGP_KEY_PATH = os.path.abspath(os.path.join(BASEDIR, &amp;#39;public.key&amp;#39;)) PRIVATE_PGP_KEY_PATH = os."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://pyonk.github.io/blog/posts/pgcrypto-for-django/" />
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/assets/style.css">
+
+
+<link rel="stylesheet" href="https://pyonk.github.io/blog/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://pyonk.github.io/blog/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="pgcrypto for Django :: わいがかいた — " />
+<meta name="twitter:description" content="Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。
+postgresの拡張機能であるpgcryptoで暗号化します。 https://www.postgresql.jp/document/10/html/pgcrypto.html
+pgcryptoの有効化 後述の通りdjango-pgcrypto-fieldsを使う場合はmigrationファイルがよしなにやってくれるので必要ないけど
+CREATE EXTENSION pgcrypto; /* 確認 */ SELECT * FROM pg_extentions; もしlib/pgcrypto.soがない場合は yum install postgresql-contribとかで用意しておく。
+django-pgcrypto-fieldsのインストール Djangoとのやりとりはdjango-pgcrypto-fieldsを介して行うので インストールする。
+pip install django-pgcrypto-fields 鍵の作成 pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって
+今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。
+鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。
+以下のコマンドでインタラクティブに鍵が作成できる。
+gpg --gen-key  推奨するキー種類は「DSAとElgamal」です。
+― https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19
+ らしい。
+* ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合はこれで解決した
+作成できたら確認しよう。
+gpg --list-secret-keys 確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。
+gpg -a --export KEYID &amp;gt; public.key gpg -a --export-secret-keys KEYID &amp;gt; private.key settingsに記述 ここまでで下準備が完了！
+次はsettigns.pyに必要な記述をしていく。
+PUBLIC_PGP_KEY_PATH, PRIVATE_PGP_KEY_PATH はさっき作成した鍵を指定する。
+django-pgcrypto-fieldsの説明のまんまだけど
+PUBLIC_PGP_KEY_PATH = os.path.abspath(os.path.join(BASEDIR, &amp;#39;public.key&amp;#39;)) PRIVATE_PGP_KEY_PATH = os." />
+<meta name="twitter:site" content="https://pyonk.github.io/blog/" />
+<meta name="twitter:creator" content="pyonk" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="ja" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="pgcrypto for Django :: わいがかいた — ">
+<meta property="og:description" content="Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。
+postgresの拡張機能であるpgcryptoで暗号化します。 https://www.postgresql.jp/document/10/html/pgcrypto.html
+pgcryptoの有効化 後述の通りdjango-pgcrypto-fieldsを使う場合はmigrationファイルがよしなにやってくれるので必要ないけど
+CREATE EXTENSION pgcrypto; /* 確認 */ SELECT * FROM pg_extentions; もしlib/pgcrypto.soがない場合は yum install postgresql-contribとかで用意しておく。
+django-pgcrypto-fieldsのインストール Djangoとのやりとりはdjango-pgcrypto-fieldsを介して行うので インストールする。
+pip install django-pgcrypto-fields 鍵の作成 pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって
+今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。
+鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。
+以下のコマンドでインタラクティブに鍵が作成できる。
+gpg --gen-key  推奨するキー種類は「DSAとElgamal」です。
+― https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19
+ らしい。
+* ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合はこれで解決した
+作成できたら確認しよう。
+gpg --list-secret-keys 確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。
+gpg -a --export KEYID &amp;gt; public.key gpg -a --export-secret-keys KEYID &amp;gt; private.key settingsに記述 ここまでで下準備が完了！
+次はsettigns.pyに必要な記述をしていく。
+PUBLIC_PGP_KEY_PATH, PRIVATE_PGP_KEY_PATH はさっき作成した鍵を指定する。
+django-pgcrypto-fieldsの説明のまんまだけど
+PUBLIC_PGP_KEY_PATH = os.path.abspath(os.path.join(BASEDIR, &amp;#39;public.key&amp;#39;)) PRIVATE_PGP_KEY_PATH = os." />
+<meta property="og:url" content="https://pyonk.github.io/blog/posts/pgcrypto-for-django/" />
+<meta property="og:site_name" content="pgcrypto for Django" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-05-17 11:28:16 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85825684-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://pyonk.github.io/blog/posts/pgcrypto-for-django/">pgcrypto for Django</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2020-05-17
+        </span>
+      
+      <span class="post-author">— Written by pyonk</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://pyonk.github.io/blog/tags/django/">django</a>&nbsp;
+        
+          #<a href="https://pyonk.github.io/blog/tags/python/">python</a>&nbsp;
+        
+          #<a href="https://pyonk.github.io/blog/tags/postgresql/">postgresql</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。</p>
+<p>postgresの拡張機能である<code>pgcrypto</code>で暗号化します。
+<a href="https://www.postgresql.jp/document/10/html/pgcrypto.html">https://www.postgresql.jp/document/10/html/pgcrypto.html</a></p>
+<h2 id="pgcryptoの有効化">pgcryptoの有効化</h2>
+<p><em>後述の通り<code>django-pgcrypto-fields</code>を使う場合はmigrationファイルがよしなにやってくれるので必要ないけど</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> EXTENSION pgcrypto;
+<span style="color:#75715e">/* 確認 */</span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> pg_extentions;
+</code></pre></div><p>もし<code>lib/pgcrypto.so</code>がない場合は
+<code>yum install postgresql-contrib</code>とかで用意しておく。</p>
+<h2 id="django-pgcrypto-fieldsのインストール">django-pgcrypto-fieldsのインストール</h2>
+<p>Djangoとのやりとりは<a href="https://github.com/incuna/django-pgcrypto-fields">django-pgcrypto-fields</a>を介して行うので
+インストールする。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install django-pgcrypto-fields
+</code></pre></div><h2 id="鍵の作成">鍵の作成</h2>
+<p>pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって</p>
+<p>今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。</p>
+<p>鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。</p>
+<p>以下のコマンドでインタラクティブに鍵が作成できる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --gen-key
+</code></pre></div><blockquote>
+<p>推奨するキー種類は「DSAとElgamal」です。<br>
+― <a href="https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19">https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19</a></p>
+</blockquote>
+<p>らしい。</p>
+<p>* <em>ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合は<a href="https://serverfault.com/questions/214605/gpg-does-not-have-enough-entropy">これ</a>で解決した</em></p>
+<p>作成できたら確認しよう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --list-secret-keys
+</code></pre></div><p>確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg -a --export KEYID &gt; public.key
+gpg -a --export-secret-keys KEYID &gt; private.key
+</code></pre></div><h2 id="settingsに記述">settingsに記述</h2>
+<p>ここまでで下準備が完了！</p>
+<p>次は<code>settigns.py</code>に必要な記述をしていく。</p>
+<p><code>PUBLIC_PGP_KEY_PATH</code>, <code>PRIVATE_PGP_KEY_PATH</code> はさっき作成した鍵を指定する。</p>
+<p><code>django-pgcrypto-fields</code>の説明のまんまだけど</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">PUBLIC_PGP_KEY_PATH <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(BASEDIR, <span style="color:#e6db74">&#39;public.key&#39;</span>))
+PRIVATE_PGP_KEY_PATH <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(BASEDIR, <span style="color:#e6db74">&#39;private.key&#39;</span>))
+
+PUBLIC_PGP_KEY <span style="color:#f92672">=</span> open(PUBLIC_PGP_KEY_PATH)<span style="color:#f92672">.</span>read()
+PRIVATE_PGP_KEY <span style="color:#f92672">=</span> open(PRIVATE_PGP_KEY_PATH)<span style="color:#f92672">.</span>read()
+
+INSTALLED_APPS <span style="color:#f92672">+=</span> [<span style="color:#e6db74">&#34;pgcrypto&#34;</span>]
+</code></pre></div><h2 id="実際にコードに組み込む">実際にコードに組み込む</h2>
+<p>こんな感じのコードがあったとして</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>(models<span style="color:#f92672">.</span>Model):
+    username <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>)
+    first_name <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>)
+    last_name <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>)
+    email <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>EmailField()
+</code></pre></div><p>以下のように書き換える。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>(models<span style="color:#f92672">.</span>Model):
+    username <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>)
+    first_name <span style="color:#f92672">=</span> CharPGPPublicKeyField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>)
+    last_name <span style="color:#f92672">=</span> CharPGPPublicKeyField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>)
+    email <span style="color:#f92672">=</span> EmailPGPPublicKeyField()
+</code></pre></div><p>それぞれのfieldに対応するfieldはこちら的なチャートがあるのでそこを参考にする。</p>
+<p><a href="https://github.com/incuna/django-pgcrypto-fields#django-model-field-equivalents">https://github.com/incuna/django-pgcrypto-fields#django-model-field-equivalents</a></p>
+<p>であとはmigrationファイルを作ってmigrateするだけなんだけど</p>
+<p><strong>特にデータが入ってないなら問題ない！</strong></p>
+<p>が！すでにデータが入っているとmigrationの過程で</p>
+<p>カラムの型が<code>Charater</code>から<code>bytea</code>に変換されてしまい、取り返しのつかないことになってしまう。</p>
+<p>ので作成されたmigrationファイルを編集していく。</p>
+<h2 id="migrationの編集">migrationの編集</h2>
+<p><code>migration.RunPython</code>で変換していくと思うけど、(上の例みたいに)まとめて3つのカラムの型変換と値のUPDATEとかやってると<code>OperationalError: cannot ALTER TABLE &quot;mytable&quot; because it has pending trigger events.</code>で怒られるのでそれぞれ別のmigrationファイルに分けるとか、<code>atomic=False</code>とかする必要がある。（結構ハマった）</p>
+<blockquote>
+<p>トランザクション中の DDL 使用をサポートしているデータベース(SQLite や PostgreSQL)においては、RunPython は各マイグレーションに対して作成されたトランザクション以外に自動的にトランザクションを保持しません。そのため、例えば PostgreSQL では、スキーマ変更と RunPython を同一のマイグレーション内で結合させて用いるのは避けるべきであり、そうしなければ OperationalError: cannot ALTER TABLE &ldquo;mytable&rdquo; because it has pending trigger events のようなエラーに遭遇する可能性が有ります。<br>
+― <a href="https://docs.djangoproject.com/ja/3.0/ref/migration-operations/#django.db.migrations.operations.RunPython">https://docs.djangoproject.com/ja/3.0/ref/migration-operations/#django.db.migrations.operations.RunPython</a></p>
+</blockquote>
+<p>あとスキーマ変更で気をつける点としては対象カラム内のデータに<code>\</code>が含まれてると<code>Error: invalid input syntax for type bytea</code>がでるので
+エスケープ処理<code>s/\/\\/</code> しておく。</p>
+<p>流れ的には</p>
+<ol>
+<li>エスケープ</li>
+<li>変換対象のキャッシュ</li>
+<li>スキーマ変更</li>
+<li>2のキャッシュから更新</li>
+</ol>
+<p>っていう感じで結構な力技になってしまった。</p>
+<hr>
+<p>以上です。</p>
+<p>あとはあんまり暗号化とか意識しなくて普通に使用するだけでよいので楽ちんでした。</p>
+<p>ありがたい。</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/">
+                  <span class="button__text">emacs lispを紐解く</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+    
+
+    
+      
+        
+
+      
+    
+    
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/blog/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">わいがかいた</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://pyonk.github.io/blog/assets/main.js"></script>
+<script src="https://pyonk.github.io/blog/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

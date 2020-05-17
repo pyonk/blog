@@ -5,10 +5,38 @@
     <link>https://pyonk.github.io/blog/tags/django/</link>
     <description>Recent content in django on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Dec 2017 13:54:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 11:28:16 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pgcrypto for Django</title>
+      <link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link>
+      <pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid>
+      <description>Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。
+postgresの拡張機能であるpgcryptoで暗号化します。 https://www.postgresql.jp/document/10/html/pgcrypto.html
+pgcryptoの有効化 後述の通りdjango-pgcrypto-fieldsを使う場合はmigrationファイルがよしなにやってくれるので必要ないけど
+CREATE EXTENSION pgcrypto; /* 確認 */ SELECT * FROM pg_extentions; もしlib/pgcrypto.soがない場合は yum install postgresql-contribとかで用意しておく。
+django-pgcrypto-fieldsのインストール Djangoとのやりとりはdjango-pgcrypto-fieldsを介して行うので インストールする。
+pip install django-pgcrypto-fields 鍵の作成 pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって
+今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。
+鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。
+以下のコマンドでインタラクティブに鍵が作成できる。
+gpg --gen-key  推奨するキー種類は「DSAとElgamal」です。
+― https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19
+ らしい。
+* ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合はこれで解決した
+作成できたら確認しよう。
+gpg --list-secret-keys 確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。
+gpg -a --export KEYID &amp;gt; public.key gpg -a --export-secret-keys KEYID &amp;gt; private.key settingsに記述 ここまでで下準備が完了！
+次はsettigns.pyに必要な記述をしていく。
+PUBLIC_PGP_KEY_PATH, PRIVATE_PGP_KEY_PATH はさっき作成した鍵を指定する。
+django-pgcrypto-fieldsの説明のまんまだけど
+PUBLIC_PGP_KEY_PATH = os.path.abspath(os.path.join(BASEDIR, &amp;#39;public.key&amp;#39;)) PRIVATE_PGP_KEY_PATH = os.</description>
+    </item>
     
     <item>
       <title>facebookのためにsocial loginをごにょごにょした話</title>
@@ -16,7 +44,7 @@
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
-      <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&#39;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
+      <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
 This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
     </item>
     

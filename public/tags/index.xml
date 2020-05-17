@@ -5,10 +5,55 @@
     <link>https://pyonk.github.io/blog/tags/</link>
     <description>Recent content in Tags on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 11:28:16 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>django</title>
+      <link>https://pyonk.github.io/blog/tags/django/</link>
+      <pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://pyonk.github.io/blog/tags/postgresql/</link>
+      <pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://pyonk.github.io/blog/tags/python/</link>
+      <pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs lisp</title>
+      <link>https://pyonk.github.io/blog/tags/emacs-lisp/</link>
+      <pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/emacs-lisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spacemacs</title>
+      <link>https://pyonk.github.io/blog/tags/spacemacs/</link>
+      <pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/tags/spacemacs/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>development</title>
@@ -74,15 +119,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://pyonk.github.io/blog/tags/python/</link>
-      <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>test</title>
       <link>https://pyonk.github.io/blog/tags/test/</link>
       <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
@@ -124,15 +160,6 @@
       <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>django</title>
-      <link>https://pyonk.github.io/blog/tags/django/</link>
-      <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/tags/django/</guid>
       <description></description>
     </item>
     

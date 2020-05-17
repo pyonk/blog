@@ -131,7 +131,7 @@ ga('send', 'pageview');
       <div class="post-content">
         
           
-            ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
+            <p>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
 $ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
 この部分、おかしいですね〜〜
@@ -166,6 +166,7 @@ $ crontab -l で確認することができます。
 </ul>
 </li>
 </ul>
+
           
         
       </div>

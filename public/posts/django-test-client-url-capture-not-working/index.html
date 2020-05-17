@@ -129,7 +129,7 @@ ga('send', 'pageview');
     <div class="post-content">
       <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python:urls.py" data-lang="python:urls.py"><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
 url_patterns <span style="color:#f92672">=</span> [
-    path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">users/&lt;int:user_id&gt;/</span><span style="color:#e6db74">&#39;</span>, views<span style="color:#f92672">.</span>show, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_show</span><span style="color:#e6db74">&#39;</span>),
+    path(<span style="color:#e6db74">&#39;users/&lt;int:user_id&gt;/&#39;</span>, views<span style="color:#f92672">.</span>show, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;user_show&#39;</span>),
 ]
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python:tests.py" data-lang="python:tests.py"><span style="color:#f92672">from</span> django.test <span style="color:#f92672">import</span> TestCase, RequestFactory
 <span style="color:#f92672">from</span> users <span style="color:#f92672">import</span> views
@@ -144,7 +144,7 @@ url_patterns <span style="color:#f92672">=</span> [
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_access_user_page</span>(self):
         user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
         req <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>get(
-            reverse(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_show</span><span style="color:#e6db74">&#39;</span>, args<span style="color:#f92672">=</span>(user_id,))
+            reverse(<span style="color:#e6db74">&#39;user_show&#39;</span>, args<span style="color:#f92672">=</span>(user_id,))
         )
         req<span style="color:#f92672">.</span>user <span style="color:#f92672">=</span> AnonymousUser()
         SessionMiddleware()<span style="color:#f92672">.</span>process_request(req)
@@ -169,7 +169,7 @@ url_patterns <span style="color:#f92672">=</span> [
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_access_user_page</span>(self):
         user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
         res <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>get(
-            reverse(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_show</span><span style="color:#e6db74">&#39;</span>, args<span style="color:#f92672">=</span>(user_id,))
+            reverse(<span style="color:#e6db74">&#39;user_show&#39;</span>, args<span style="color:#f92672">=</span>(user_id,))
         )
         self<span style="color:#f92672">.</span>assertTrue(res<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">302</span>)
 </code></pre></div><p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
