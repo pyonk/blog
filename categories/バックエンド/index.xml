@@ -2,6 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>バックエンド on わいがかいた</title>
+    
+    
+    
     <link>https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/</link>
     <description>Recent content in バックエンド on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -16,8 +19,18 @@
       <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
-      <description>facebookに見慣れぬアラートが。  突然のアラート    難しい英文    In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.
-This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs.</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている
+          
+        
+        </description>
     </item>
     
     <item>
@@ -26,13 +39,24 @@ This update comes in response to malicious activity we saw on our platform, and 
       <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid>
-      <description>djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
 が、ぼくがやりたかったのは、任意の値でのソート。
 databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
  ただしdjango &amp;gt;= 1.8です
- TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django</description>
+ TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django
+          
+        
+        </description>
     </item>
     
     <item>
@@ -41,12 +65,23 @@ Django order_by specific order - Stack Overflow
       <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid>
-      <description>pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description>
+事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.
+          
+        
+        </description>
     </item>
     
     <item>
@@ -55,7 +90,15 @@ Django order_by specific order - Stack Overflow
       <pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid>
-      <description>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
 $ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
 この部分、おかしいですね〜〜
@@ -71,7 +114,10 @@ $ crontab -l で確認することができます。
 この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
 要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
 たとえば
-* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。</description>
+* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。
+          
+        
+        </description>
     </item>
     
     <item>
@@ -80,21 +126,18 @@ $ crontab -l で確認することができます。
       <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/cannot-request/</guid>
-      <description>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。
-ナゾのrequests.exceptions.SSLError それなりにpythonのrequestsをつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾのrequests.exceptions.SSLErrorが発生しました。
-requests.exceptions.SSLError: hostname &#39;damedayo.com&#39; doesn&#39;t match either of &#39;www.kore.com&#39;, &#39;kore.com&#39;
-おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。 さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。
-とりあえずverify=Falseを指定しても一度チャレンジです。
-import requests req = requests.get(&amp;#39;https://damedayo.com/&amp;#39;, verify=False) print req.text するとresponseが帰ってきました。
-The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. 
-はーーーーんんんんんんん
-何はともあれ、ググります。
-みっけた。
-ん〜〜〜やはりバーチャルホスト周りっぽい。 というかpythonのバージョンが2.7.9以上であれば問題ないんか。コレ。
-解決策としてStack Overflowへのリンクが貼ってありますね。こういうこともあるのね。初めて見た。
-pip install pyOpenSSLで詰む pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。
-idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)
-$ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors generated. error: command &amp;#39;cc&amp;#39; failed with exit status 1 ---------------------------------------- Failed building wheel for cryptography .</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？
+          
+        
+        </description>
     </item>
     
     <item>
@@ -103,10 +146,21 @@ $ pip install pyOpenSSL --upgrade .....前略..... 1 warning and 20 errors gener
       <pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/python-copy/</guid>
-      <description>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
 hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.</description>
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.
+          
+        
+        </description>
     </item>
     
     <item>
@@ -115,7 +169,15 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print
       <pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid>
-      <description>経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
 pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
@@ -137,7 +199,10 @@ celeryはbrokerとして
 yum install redis
 bundleも用意されているのでそれも。
 pip install -U &amp;quot;celery[redis]&amp;quot;
-how to ここを参考にモリモリかいていきます。</description>
+how to ここを参考にモリモリかいていきます。
+          
+        
+        </description>
     </item>
     
     <item>
@@ -146,11 +211,18 @@ how to ここを参考にモリモリかいていきます。</description>
       <pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/python-tuple/</guid>
-      <description>pythonのthreadで引数を渡したい Djangoで時間のかかる処理をスレッド化して逃げようとしたのですがうまくいかなかったのでメモ。
-threading.Threadにはいくつか引数が渡せます。
- group target name args kwargs  詳しくはここで。
-で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。
-def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;) subprocess.Popen(cmd, shell=True) return cmd = &amp;#39;sleep 10;echo aaa&amp;#39; t = threading.Thread(target=command_execute, args=(cmd)) t.daemon = True t.start() すると、printされた文字列が (&#39;s&#39;, &#39;l&#39;, &#39;e&#39;, &#39;e&#39;, &#39;p&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;;&#39;, &#39;e&#39;, &#39;c&#39;, &#39;h&#39;, &#39;o&#39;, &#39; &#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;) となるわけです。 何が起きてるんだ状態です。</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          pythonでtupleを作るときにはまったこと
+          
+        
+        </description>
     </item>
     
     <item>
@@ -159,12 +231,18 @@ def command_execute(cmd): print cmd # (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;,
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
-      <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
-$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
-すでにnginxがインストールされている場合は、
-$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576 とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
-confを変更 image_filterを加えます。 くわしいことはここをみてください。
-location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする } とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pyonk.github.io/blog/posts/</loc>
+    <lastmod>2020-12-04T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/</loc>
+    <lastmod>2020-12-04T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/vim/</loc>
+    <lastmod>2020-12-04T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
+    <lastmod>2020-12-04T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</loc>
+    <lastmod>2020-12-04T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pyonk.github.io/blog/</loc>
+    <lastmod>2020-12-04T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pyonk.github.io/blog/tags/django/</loc>
     <lastmod>2020-05-17T11:28:16+09:00</lastmod>
   </url>
@@ -18,22 +48,7 @@
   </url>
   
   <url>
-    <loc>https://pyonk.github.io/blog/posts/</loc>
-    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pyonk.github.io/blog/tags/python/</loc>
-    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/tags/</loc>
-    <lastmod>2020-05-17T11:28:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/</loc>
     <lastmod>2020-05-17T11:28:16+09:00</lastmod>
   </url>
   
@@ -74,11 +89,6 @@
   
   <url>
     <loc>https://pyonk.github.io/blog/tags/plugin/</loc>
-    <lastmod>2019-03-27T08:48:12+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pyonk.github.io/blog/tags/vim/</loc>
     <lastmod>2019-03-27T08:48:12+09:00</lastmod>
   </url>
   

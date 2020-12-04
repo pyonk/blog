@@ -2,6 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nginx on わいがかいた</title>
+    
+    
+    
     <link>https://pyonk.github.io/blog/tags/nginx/</link>
     <description>Recent content in nginx on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -16,12 +19,18 @@
       <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
-      <description>image_filterを使えるようにモジュールを指定する nginxをソースからインストールする際に--with-http_image_filter_moduleをつけてインストールします。
-$ wget http://nginx.org/download/nginx-1.10.1.tar.gz $ tar -xvzf nginx-1.10.1.tar.gz $ cd nginx-1.10.1 $ ./configure --with-http_image_filter_module $ make $ sudo make install ほかのオプションモジュールをつける場合は随時つけてください。
-すでにnginxがインストールされている場合は、
-$ sudo cp objs/nginx /usr/sbin/nginx $ cat /var/run/nginx.pid 10576 $ sudo kill -USR2 10576 $ sudo kill -WINCH 10576 $ sudo kill -QUIT 10576 とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。
-confを変更 image_filterを加えます。 くわしいことはここをみてください。
-location ~ /image/(.*\.png)$ { alias /path/to/image/$1; image_filter resize 100 -; # 横幅100pxでリサイズする } とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。
+          
+        
+        </description>
     </item>
     
   </channel>

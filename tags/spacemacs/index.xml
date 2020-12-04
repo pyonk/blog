@@ -2,6 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>spacemacs on わいがかいた</title>
+    
+    
+    
     <link>https://pyonk.github.io/blog/tags/spacemacs/</link>
     <description>Recent content in spacemacs on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -16,13 +19,18 @@
       <pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid>
-      <description>結構前に書いてたやつがメモ帳に埋まってたので供養します 今はspacemacsじゃなくてneovimつかってる 普段spacemacsというエディタを使ってコードを書いているんだけど
-pipenvを$PIPENV_VENV_IN_PROJECT=1で使ってるとうまく補完されないので悩んでた
-少し調べると
- pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs  がヒットした
-提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ
-きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた
- .venvがディレクトリか、ファイルかによって処理を変えてるだけ コードリーディング超大事  &amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義 (defun spacemacs//pyvenv-mode-set-local-virtualenv () &amp;#34;Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle directory or fil\ &amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる &amp;#34; http://yhash.hatenablog.com/entry/2012/07/14/134732 (interactive) &amp;#34; 変数root-pathに&amp;#34;.venv&amp;#34;があるディレクトリを代入する &amp;#34; default-directoryから親方向に&amp;#34;.venv&amp;#34;を探す なければnil (let ((root-path (locate-dominating-file default-directory &amp;#34;.venv&amp;#34;))) &amp;#34; root-pathがnilではない時のみ実行 (when root-path &amp;#34; file-pathに{root-path}/.venvの形で代入する (let* ((file-path (expand-file-name &amp;#34;.</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件
+          
+        
+        </description>
     </item>
     
   </channel>
