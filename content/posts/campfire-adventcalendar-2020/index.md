@@ -13,7 +13,7 @@ tags:
 これは[CAMPFIRE Advent Calendar 2020](https://qiita.com/advent-calendar/2020/campfire)の5日目の記事です。  
 
 こんにちは🌞  
-CAMPFIREでエンジニアをしている{{<twitter-user pyonk>}}です。  
+CAMPFIREでエンジニアをしている{{<twitter-user __pyonk__>}}です。  
 ちょっと前までは[TOMOSHIBI](https://tomo-shibi.jp)というサービスをつくってました。  
 最近はCAMPFIRE本体の方を開発しています。  
 アドベントカレンダーを書くのは初めてだったと思います。
