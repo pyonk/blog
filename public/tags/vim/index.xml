@@ -2,13 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on わいがかいた</title>
+    
+    
+    
     <link>https://pyonk.github.io/blog/tags/vim/</link>
     <description>Recent content in vim on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Mar 2019 08:48:12 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://pyonk.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title>
+      <link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png&#34;/&gt;
+          
+        
+        
+        
+          どんなときもvimでCAMPFIREのプロジェクトがみたい件
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>vista.vim is awesome</title>
@@ -16,15 +38,17 @@
       <pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid>
-      <description>この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
- vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim  /r/vimのRSS登録しとってよかった。
-vista.vim vimをIDEのようにしてくれる夢のようなツール。
-cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。 fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。
-あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。
- ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
-― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
- とりあえずインストール 例のごとく僕はdeinを使っているので
-[[plugins]] repo = &amp;#39;liuchengxu/vista.vim&amp;#39; depends = [&amp;#39;coc.nvim&amp;#39;, &amp;#39;lightline.</description>
+      <description>
+        
+          &lt;img src=&#34;https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png&#34;/&gt;
+          
+        
+        
+        
+          vista.vimというのがvimをIDEのようにしてくれた件
+          
+        
+        </description>
     </item>
     
     <item>
@@ -33,12 +57,17 @@ cocと連携してLSPのシンボルから出してくれるから、別途ctags
       <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid>
-      <description>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。
-この間redditみてたら
- python completion in coc.nvim + pyls : vim  こんなスレッドがあって
-coc.nvimて見慣れないプラグインがあるなあと思ってみてみたら わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。
-インストール方法 僕はプラグインマネジャーにdeinを使ってるので
-[[plugins]] repo = &amp;#39;neoclide/coc.nvim&amp;#39; build = &amp;#39;coc#util#install()&amp;#39; hook_add = &amp;#39;&amp;#39;&amp;#39; nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition) nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition) nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation) nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references) &amp;#34; Remap for rename current word nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename) &amp;#34; Highlight symbol under cursor on CursorHold autocmd CursorHold * silent call CocActionAsync(&amp;#39;highlight&amp;#39;) &amp;#34; Use K for show documentation in preview window nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt; function!</description>
+      <description>
+        
+          &lt;img src=&#34;https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png&#34;/&gt;
+          
+        
+        
+        
+          coc.nvimがlanguage server clientとしてくっそ優秀だった件
+          
+        
+        </description>
     </item>
     
     <item>
@@ -47,7 +76,15 @@ coc.nvimて見慣れないプラグインがあるなあと思ってみてみた
       <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
-      <description>ぼくは普段からsublimetextを使っているのだけど
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ぼくは普段からsublimetextを使っているのだけど
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
 sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
@@ -62,7 +99,10 @@ macではAppleScriptを使うみたいですね。
  SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
 で結果はこうなります。
- こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。</description>
+ こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。
+          
+        
+        </description>
     </item>
     
   </channel>

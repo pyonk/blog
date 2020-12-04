@@ -2,6 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unity on わいがかいた</title>
+    
+    
+    
     <link>https://pyonk.github.io/blog/tags/unity/</link>
     <description>Recent content in unity on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -16,20 +19,18 @@
       <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid>
-      <description>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。 普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。
- タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。
-スクロールができないゾ ボタンを内包するスクロールビューが必要になった。
-とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。
-いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。
-これは困った
-すこし調べてみると世界中の人が困ってる風だ。
-UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社
-違う違うそうじゃない 似てる問題っぽいけど違う（なんならこの見出しが書きたかっただけ）。 僕の症状はボタンは押せるけどスクロールができない、だ。
-参考になったのはこちら
-[Solved] Scroll not working when elements inside have click events - Unity Answers
-結論、書いてるコードに問題があった。
- 実際のコード  EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;(); EventTrigger.Entry entry = new EventTrigger.Entry(); entry.eventID = EventTriggerType.PointerClick; entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); }); tapEvent.triggers.Add(entry); 一見正しいけど、このEventTriggerっていうのが曲者でいろんな継承が行われてるみたい
- public class EventTrigger : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IDropHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler {</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Unityのscrollrectでスクロールができなかったがなんとかなった話。内包していたEventTriggerが悪さをしてました。
+          
+        
+        </description>
     </item>
     
   </channel>

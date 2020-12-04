@@ -2,6 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on わいがかいた</title>
+    
+    
+    
     <link>https://pyonk.github.io/blog/tags/javascript/</link>
     <description>Recent content in javascript on わいがかいた</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -16,17 +19,18 @@
       <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
-      <description>ソースはここです。
-使い方 $ git clone https://github.com/pyonk/hubot-line-message-api.git
-からの
-&amp;#34;dependencies&amp;#34;: { &amp;#34;bar&amp;#34;: &amp;#34;file:./hubot-line-message-api&amp;#34; } からの
-$ hubot -a line-message-api
-でいけると思います。
-hubot-line-message-api 結構ガバガバ実装なのでAPI Referenceをしっかり読んでからやるのをオススメします。
-設定 必須  LINE_CHANNEL_ACCESS_TOKEN  lineアカウントのBasic InfomationにあるChannel Access Tokenの値を設定してください。    任意  HUBOT_ENDPOINT  defaultで/hubot/incomingになってます。 自由に設定していただいて大丈夫です。   FIXIE_URL  herokuで走らす場合は必須かなと思います。 Fixieというアドオンを使います。 $ heroku addons:create fixie:tricycleを叩くと自動で設定されています。 出力されるIPアドレスをServer IP Whitelistに設定してあげてください。    できること 今のところpushで送信は対応できておらず、返信しかできません。
-  返信
- テキスト  https://devdocs.line.me/ja/#text
-module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; res.</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。
+          
+        
+        </description>
     </item>
     
     <item>
@@ -35,9 +39,18 @@ module.exports = (robot) -&amp;gt; robot.hear /^テキスト$/, (res) -&amp;gt; 
       <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
       
       <guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid>
-      <description>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。
-連想配列のなにかっぽい function myfunc(hoge, fuga) { var {hogehoge} = hoge; var { hogeKey: hogeValue, } = hogehoge || { hogeKey: &amp;#39;&amp;#39;, } return { hogeKey, } } 上記が件のコード。
-けっか var dict1 = {keyA: {key1: 1}}; var dict2 = {keyB: {key1: 2}}; var dict3 = {keyA: {key2: 3}}; var dict4 = {keyC: {key2: 4}}; function myfunc(hoge) { var {keyA} = hoge; console.log(keyA); //hoge.keyAの値  console.log({keyA}); //keyAをキーに、keyAに代入されている値をバリューにした連想配列  var { key1: key1, } = keyA || { key1: &amp;#39;&amp;#39;, } console.</description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。
+          
+        
+        </description>
     </item>
     
   </channel>
