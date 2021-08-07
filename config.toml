@@ -5,12 +5,17 @@ defaultContentLanguage = "ja"
 
 [params]
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
+  # contentTypeName = "content/posts"
   # "light" or "dark"
   defaultTheme = "light"
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 0
   googleAnalytics = "UA-85825684-1"
+  showReadingTime = true
+
+[markup]
+  [markup.blackFriday]
+    hrefTargetBlank = true
 
 [languages]
   [languages.ja]
@@ -29,48 +34,3 @@ defaultContentLanguage = "ja"
       logoText = "わいがかいた"
       logoHomeLink = "/blog/"
 
-    # [languages.ja.menu]
-    #   [[languages.ja.menu.main]]
-    #     identifier = "about"
-    #     name = "About"
-    #     url = "/about"
-    #   [[languages.ja.menu.main]]
-    #     identifier = "showcase"
-    #     name = "Showcase"
-    #     url = "/showcase"
-
-#baseurl: "https://pyonk.github.io/blog/"
-#config: "config.yaml"
-#languageCode: "ja"
-#title: "わいがかいた"
-#disqusShortname: "pyonk"
-#enableEmoji: true
-#metaDataFormat: "yaml"
-#theme: "hugo-zen"
-#noTimes: true
-#GoogleAnalytics: "UA-85825684-1"
-#pygmentsUseClasses: true
-#pygmentsCodeFences: true
-#pygmentsOptions:
-#  linenos: "table"
-
-#taxonomies:
-#  tag: tags
-#  category: categories
-
-#Params:
-#  subtitle: "いろいろ"
-#  facebook: "https://facebook.com/yukiyoshiokap"
-#  twitter: "https://twitter.com/yukieroero"
-#  github: "https://github.com/pyonk"
-#  showsRSS: false
-#  profile: "/blog/images/prof.jpg"
-#  logo: "/blog/images/prof.jpg"
-#  copyright: "pyonk All rights reserved."
-#  # analytics: "UA-85825684-1"
-#  #shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-
-#blackfriday:
-#  hrefTargetBlank: true
-
-#Copyright: "pyonk"
