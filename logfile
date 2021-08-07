@@ -1,3 +1,0 @@
-LOG:  00000: redirecting log output to logging collector process
-HINT:  Future log output will appear in directory "/Users/Yuki/workspace/wsdecks/logs".
-LOCATION:  SysLogger_Start, syslogger.c:645
