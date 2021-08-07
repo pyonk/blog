@@ -1,109 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>vim on わいがかいた</title>
-    
-    
-    
-    <link>https://pyonk.github.io/blog/tags/vim/</link>
-    <description>Recent content in vim on わいがかいた</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://pyonk.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title>
-      <link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png&#34;/&gt;
-          
-        
-        
-        
-          どんなときもvimでCAMPFIREのプロジェクトがみたい件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>vista.vim is awesome</title>
-      <link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link>
-      <pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png&#34;/&gt;
-          
-        
-        
-        
-          vista.vimというのがvimをIDEのようにしてくれた件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>coc.nvim is awesome</title>
-      <link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link>
-      <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png&#34;/&gt;
-          
-        
-        
-        
-          coc.nvimがlanguage server clientとしてくっそ優秀だった件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title>
-      <link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link>
-      <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          ぼくは普段からsublimetextを使っているのだけど
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vim on わいがかいた</title><link>https://pyonk.github.io/blog/tags/vim/</link><description>Recent content in vim on わいがかいた</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png"/>
+どんなときもvimでCAMPFIREのプロジェクトがみたい件</description></item><item><title>vista.vim is awesome</title><link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link><pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png"/>
+vista.vimというのがvimをIDEのようにしてくれた件</description></item><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png"/>
+coc.nvimがlanguage server clientとしてくっそ優秀だった件</description></item><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>
+ぼくは普段からsublimetextを使っているのだけど
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
 sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
 Vintageの有効化 Cmd + ,でsublimetextの設定を開く。
 ここのVintageを消す。
- vintage消す   有効化done
+vintage消す 有効化done
 つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
- こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
+こんな具合ですね INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
- VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3 カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
 macではAppleScriptを使うみたいですね。
- SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
+SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita 僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
 で結果はこうなります。
- こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。
-          
-        
-        </description>
-    </item>
-    
-  </channel>
-</rss>
+こんな具合ですね おソース pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item></channel></rss>

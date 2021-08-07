@@ -1,208 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on わいがかいた</title>
-    
-    
-    
-    <link>https://pyonk.github.io/blog/posts/</link>
-    <description>Recent content in Posts on わいがかいた</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://pyonk.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title>
-      <link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png&#34;/&gt;
-          
-        
-        
-        
-          どんなときもvimでCAMPFIREのプロジェクトがみたい件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>pgcrypto for Django</title>
-      <link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link>
-      <pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          pgcryptoで暗号化した件 in Django
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>emacs lispを紐解く</title>
-      <link>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</link>
-      <pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>minio is awesome</title>
-      <link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link>
-      <pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png&#34;/&gt;
-          
-        
-        
-        
-          S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>vista.vim is awesome</title>
-      <link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link>
-      <pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png&#34;/&gt;
-          
-        
-        
-        
-          vista.vimというのがvimをIDEのようにしてくれた件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>coc.nvim is awesome</title>
-      <link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link>
-      <pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png&#34;/&gt;
-          
-        
-        
-        
-          coc.nvimがlanguage server clientとしてくっそ優秀だった件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Django Test Client Url Capture Not Working</title>
-      <link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link>
-      <pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          DjangoのテストクライアントがURLの名前付きパラメータを取得できない件
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Unityのscrollrectでスクロールができない件</title>
-      <link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link>
-      <pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Unityのscrollrectでスクロールができなかったがなんとかなった話。内包していたEventTriggerが悪さをしてました。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>let&#39;s splitがとどいた！</title>
-      <link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link>
-      <pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/lets-split-arrive/images/letsplit.jpg&#34;/&gt;
-          
-        
-        
-        
-          let&#39;s splitがとどいた！
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>let&#39;s splitを買った</title>
-      <link>https://pyonk.github.io/blog/posts/buy-lets-split/</link>
-      <pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on わいがかいた</title><link>https://pyonk.github.io/blog/posts/</link><description>Recent content in Posts on わいがかいた</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png"/>
+どんなときもvimでCAMPFIREのプロジェクトがみたい件</description></item><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>
+pgcryptoで暗号化した件 in Django</description></item><item><title>emacs lispを紐解く</title><link>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</link><pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid><description>
+pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件</description></item><item><title>minio is awesome</title><link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link><pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png"/>
+S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった件</description></item><item><title>vista.vim is awesome</title><link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link><pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png"/>
+vista.vimというのがvimをIDEのようにしてくれた件</description></item><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png"/>
+coc.nvimがlanguage server clientとしてくっそ優秀だった件</description></item><item><title>Django Test Client Url Capture Not Working</title><link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link><pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid><description>
+DjangoのテストクライアントがURLの名前付きパラメータを取得できない件</description></item><item><title>Unityのscrollrectでスクロールができない件</title><link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link><pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid><description>
+Unityのscrollrectでスクロールができなかったがなんとかなった話。内包していたEventTriggerが悪さをしてました。</description></item><item><title>let's splitがとどいた！</title><link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link><pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/lets-split-arrive/images/letsplit.jpg"/>
+let's splitがとどいた！</description></item><item><title>let's splitを買った</title><link>https://pyonk.github.io/blog/posts/buy-lets-split/</link><pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid><description>
+1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
 アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
 で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
 無事にキーボード沼にハマりかけている。
@@ -215,174 +26,41 @@
 完成品版let&amp;#39;s split注文した。
 手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
 届くのが楽しみだな〜〜〜！！
-&amp;mdash; オイヌマユウキ (@__pyonk__) May 24, 2018  とにかく届くのが楽しみでごわす。
-発送予定日が5/27なので週明けには手元に届いてるかしら。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>facebookのためにsocial loginをごにょごにょした話</title>
-      <link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link>
-      <pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>djangoのquerysetを任意の順番でsortする</title>
-      <link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link>
-      <pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          djangoのquerysetを任意の順番でsortする djnagoではorder_by(&#39;hoge&#39;)とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
+&amp;mdash; オイヌマユウキ (@__pyonk__) May 24, 2018 とにかく届くのが楽しみでごわす。
+発送予定日が5/27なので週明けには手元に届いてるかしら。</description></item><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>
+facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている</description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>
+djangoのquerysetを任意の順番でsortする djnagoではorder_by('hoge')とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
 が、ぼくがやりたかったのは、任意の値でのソート。
 databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
- ただしdjango &amp;gt;= 1.8です
- TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title>
-      <link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link>
-      <pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          ぼくは普段からsublimetextを使っているのだけど
+ただしdjango &amp;gt;= 1.8です
+TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django</description></item><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>
+ぼくは普段からsublimetextを使っているのだけど
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
 sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
 Vintageの有効化 Cmd + ,でsublimetextの設定を開く。
 ここのVintageを消す。
- vintage消す   有効化done
+vintage消す 有効化done
 つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
- こんな具合ですね   INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
+こんな具合ですね INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
- VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3  カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
+VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3 カラビナ使うっていう手もあるけどできればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
 macではAppleScriptを使うみたいですね。
- SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita  僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
+SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita 僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
 で結果はこうなります。
- こんな具合ですね   おソース  pyonk/DisabledIme  こちらにおいてありますので、git cloneしてお使いくださいませ。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>pythonからpdfのフォームに入力する</title>
-      <link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link>
-      <pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+こんな具合ですね おソース pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item><item><title>pythonからpdfのフォームに入力する</title><link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link><pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid><description>
+pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>timetreeの500万ユーザー記念パーティに参加してきた</title>
-      <link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link>
-      <pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          timetreeの500万ユーザー記念パーティに参加してきた
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>多動力を読んだ</title>
-      <link>https://pyonk.github.io/blog/posts/read-tadouryoku/</link>
-      <pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/read-tadouryoku/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          多動力を読んだ
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>crontab -e と /etc/crontab の違い</title>
-      <link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link>
-      <pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
+事前準備 reportlab $ pip install reportlab PyPDF2 $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description></item><item><title>timetreeの500万ユーザー記念パーティに参加してきた</title><link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link><pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid><description>
+timetreeの500万ユーザー記念パーティに参加してきた</description></item><item><title>多動力を読んだ</title><link>https://pyonk.github.io/blog/posts/read-tadouryoku/</link><pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/read-tadouryoku/</guid><description>
+多動力を読んだ</description></item><item><title>crontab -e と /etc/crontab の違い</title><link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link><pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid><description>
+ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
 $ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 上記のコマンドの
 user python /home/user/app/manage.py hogehoge
 この部分、おかしいですね〜〜
@@ -398,70 +76,13 @@ $ crontab -l で確認することができます。
 この二つの違いはなんなんでしょうか こちらがわかりやすいかと思います。
 要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
 たとえば
-* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title>
-      <link>https://pyonk.github.io/blog/posts/cannot-request/</link>
-      <pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/cannot-request/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>pythonの参照渡しをどうすれば回避できるのか</title>
-      <link>https://pyonk.github.io/blog/posts/python-copy/</link>
-      <pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/python-copy/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
+* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。</description></item><item><title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title><link>https://pyonk.github.io/blog/posts/cannot-request/</link><pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cannot-request/</guid><description>
+あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？</description></item><item><title>pythonの参照渡しをどうすれば回避できるのか</title><link>https://pyonk.github.io/blog/posts/python-copy/</link><pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-copy/</guid><description>
+ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
 hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
 どうすれば回避できるのか 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Djangoでどうしても非同期でコマンドを実行したくなった</title>
-      <link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link>
-      <pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
+hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.</description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>
+経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
 どうしたのか いくつかの方法を試しました。
 pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
@@ -479,135 +100,14 @@ celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
 install まずは本体をインストールしていきます。
 pip install -U Celery
 celeryはbrokerとして
- Redis RabbitMQ Amazon SQS  などを使うことができます。 今回はRedisを選択しました。
+Redis RabbitMQ Amazon SQS などを使うことができます。 今回はRedisを選択しました。
 yum install redis
 bundleも用意されているのでそれも。
 pip install -U &amp;quot;celery[redis]&amp;quot;
-how to ここを参考にモリモリかいていきます。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>pythonでtupleをつくる</title>
-      <link>https://pyonk.github.io/blog/posts/python-tuple/</link>
-      <pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/python-tuple/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          pythonでtupleを作るときにはまったこと
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>○○さんに送る退職ポエム</title>
-      <link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link>
-      <pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          昨年末パートの方が退職されました。その方に向けたポエムです。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Hugofyにプルリクおくってみた</title>
-      <link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link>
-      <pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>hubot-line-message-apiをつくってみてます</title>
-      <link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link>
-      <pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>javascriptのよくわからない書き方【連想配列編】</title>
-      <link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</link>
-      <pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>nginxのimage_filterを使って画像を動的に縮小するには</title>
-      <link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link>
-      <pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。
-          
-        
-        </description>
-    </item>
-    
-  </channel>
-</rss>
+how to ここを参考にモリモリかいていきます。</description></item><item><title>pythonでtupleをつくる</title><link>https://pyonk.github.io/blog/posts/python-tuple/</link><pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-tuple/</guid><description>
+pythonでtupleを作るときにはまったこと</description></item><item><title>○○さんに送る退職ポエム</title><link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link><pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid><description>
+昨年末パートの方が退職されました。その方に向けたポエムです。</description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>
+Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。</description></item><item><title>hubot-line-message-apiをつくってみてます</title><link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link><pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid><description>
+Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。</description></item><item><title>javascriptのよくわからない書き方【連想配列編】</title><link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</link><pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid><description>
+javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。</description></item><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>
+nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。</description></item></channel></rss>

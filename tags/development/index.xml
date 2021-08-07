@@ -1,36 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>development on わいがかいた</title>
-    
-    
-    
-    <link>https://pyonk.github.io/blog/tags/development/</link>
-    <description>Recent content in development on わいがかいた</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate>
-    
-	<atom:link href="https://pyonk.github.io/blog/tags/development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>minio is awesome</title>
-      <link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link>
-      <pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate>
-      
-      <guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid>
-      <description>
-        
-          &lt;img src=&#34;https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png&#34;/&gt;
-          
-        
-        
-        
-          S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった件
-          
-        
-        </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>development on わいがかいた</title><link>https://pyonk.github.io/blog/tags/development/</link><description>Recent content in development on わいがかいた</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/development/index.xml" rel="self" type="application/rss+xml"/><item><title>minio is awesome</title><link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link><pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid><description>
+&lt;img src="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png"/>
+S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった件</description></item></channel></rss>
