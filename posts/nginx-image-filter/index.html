@@ -84,7 +84,7 @@ $ sudo kill -QUIT <span style=color:#ae81ff>10576</span>
 <h1 id=confを変更>confを変更</h1>
 <p>image_filterを加えます。
 くわしいことは<a href=http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter>ここ</a>をみてください。</p>
-<pre><code class=language-nginx:hoge.conf data-lang=nginx:hoge.conf>location ~ /image/(.*\.png)$ {
+<pre tabindex=0><code class=language-nginx:hoge.conf data-lang=nginx:hoge.conf>location ~ /image/(.*\.png)$ {
         alias /path/to/image/$1;
             image_filter resize 100 -; # 横幅100pxでリサイズする
 }

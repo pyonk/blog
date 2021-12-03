@@ -123,18 +123,18 @@ $ which openssl
 </code></pre></div><p>ウーーン詰まる詰まる。</p>
 <p>いまはこの方法で<a href=http://qiita.com/dasisyouyu/items/c9621c29b0fe79d2b7c4>opensslへのリンクがはれない</a>ようです。。</p>
 <p>PATHを通してあげます。</p>
-<pre><code>export PATH=&quot;/usr/local/opt/openssl/bin:$HOME/.pyenv/bin:$PATH&quot;
+<pre tabindex=0><code>export PATH=&quot;/usr/local/opt/openssl/bin:$HOME/.pyenv/bin:$PATH&quot;
 </code></pre><p>確認します。</p>
-<pre><code>$ which openssl
+<pre tabindex=0><code>$ which openssl
 /usr/local/opt/openssl/bin/openssl
 </code></pre><p>つぎ！</p>
 <h2 id=pipのアップデート>pipのアップデート</h2>
 <p>さきほどのStack Overflowでは、pipのバージョンあげなよとあったのでアップデートです。</p>
-<pre><code>$ pip install --upgrade pip
+<pre tabindex=0><code>$ pip install --upgrade pip
 </code></pre><p>さっくり詰まることなくクリアしました。</p>
 <h2 id=そして大本営に突撃>そして大本営に突撃</h2>
 <p>ようやくcryptograph(おぼえた)をインストールする手はずが整いました。</p>
-<pre><code>$ pip install pyOpenSSL --upgrade
+<pre tabindex=0><code>$ pip install pyOpenSSL --upgrade
 </code></pre><p>ばっちり！！アップデートできたっぽい！！！！</p>
 <p>いざ！！</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> requests
@@ -166,7 +166,7 @@ print req<span style=color:#f92672>.</span>text
 <p>ぐぐります・・・・・。</p>
 <p>見つけました。<a href=http://stackoverflow.com/a/41841210>Stack Overflow</a>本当にありがとう。</p>
 <p>setuptoolsが原因だったみたいですね。バージョンによってはエラーが出るようです。</p>
-<pre><code>$ pip install setuptools == 33.1.1
+<pre tabindex=0><code>$ pip install setuptools == 33.1.1
 </code></pre><p>ということでこれでようやくプログラムを書き進められそうです。</p>
 <h1 id=さいごに>さいごに</h1>
 <p>というか<code>/etc/hosts</code>をかえたらできたのではないか疑惑が・・・。</p>
