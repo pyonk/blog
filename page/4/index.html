@@ -48,6 +48,24 @@
 <div class=content>
 <div class=posts>
 <div class="post on-list">
+<h1 class=post-title><a href=https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/>timetreeの500万ユーザー記念パーティに参加してきた</a></h1>
+<div class=post-meta>
+<span class=post-date>
+2017-08-31
+</span>
+<span class=post-read-time>— 1 min read</span>
+</div>
+<span class=post-tags>
+<a href=https://pyonk.github.io/blog/tags/jubilee-works/>#jubilee works</a>&nbsp;
+<a href=https://pyonk.github.io/blog/tags/timetree/>#timetree</a>&nbsp;
+<a href=https://pyonk.github.io/blog/tags/app/>#app</a>&nbsp;
+</span>
+<div class=post-content>
+timetreeの500万ユーザー記念パーティに参加してきた
+</div>
+<div><a class="read-more button" href=/blog/posts/timetree-over-5m-users-party/>Read more →</a></div>
+</div>
+<div class="post on-list">
 <h1 class=post-title><a href=https://pyonk.github.io/blog/posts/read-tadouryoku/>多動力を読んだ</a></h1>
 <div class=post-meta>
 <span class=post-date>
@@ -130,45 +148,6 @@ hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fug
 hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.
 </div>
 <div><a class="read-more button" href=/blog/posts/python-copy/>Read more →</a></div>
-</div>
-<div class="post on-list">
-<h1 class=post-title><a href=https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/>Djangoでどうしても非同期でコマンドを実行したくなった</a></h1>
-<div class=post-meta>
-<span class=post-date>
-2017-01-06
-</span>
-<span class=post-read-time>— 2 min read</span>
-</div>
-<span class=post-tags>
-<a href=https://pyonk.github.io/blog/tags/python/>#python</a>&nbsp;
-<a href=https://pyonk.github.io/blog/tags/django/>#django</a>&nbsp;
-</span>
-<div class=post-content>
-経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
-コマンドの設計見直せっていうのは今回は置いといてください・・・。
-どうしたのか いくつかの方法を試しました。
-pythonからコマンドを叩く まず思い浮かんだのがコマンドをnohup &でpythonから叩く。
-import subprocess import shlex cmd = 'nohup sleep 10 &' subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
-つぎ！
-thread化して逃げる この前書いたような感じです。
-pythonでtupleをつくる - わいがかいた
-結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
-つぎ！！
-celeryを使う Celery - Distributed Task Queue — Celery 4.0.2 documentation
-ようやく本題。
-ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
-実際やりはじめて少し後悔しましたし。
-結構面倒くさかったので備忘録代わりに。
-install まずは本体をインストールしていきます。
-pip install -U Celery
-celeryはbrokerとして
-Redis RabbitMQ Amazon SQS などを使うことができます。 今回はRedisを選択しました。
-yum install redis
-bundleも用意されているのでそれも。
-pip install -U "celery[redis]"
-how to ここを参考にモリモリかいていきます。
-</div>
-<div><a class="read-more button" href=/blog/posts/use-celery-for-send-email-django/>Read more →</a></div>
 </div>
 <div class=pagination>
 <div class=pagination__buttons>
