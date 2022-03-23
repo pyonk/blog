@@ -1,12 +1,5 @@
-<!doctype html><html lang=ja>
-<head>
-<title>
-vista.vim is awesome ::
-わいがかいた
-</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
+<!doctype html><html lang=ja><head><title>vista.vim is awesome ::
+わいがかいた</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="この前coc.nvimを見つけたけど またredditにてvista.vimというのを見つけた。
  vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim  /r/vimのRSS登録しとってよかった。
 vista.vim vimをIDEのようにしてくれる夢のようなツール。
 cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。 fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。
@@ -14,142 +7,45 @@ cocと連携してLSPのシンボルから出してくれるから、別途ctags
  ⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.
 ― liuchengxu/vista.vim: View and search LSP symbols, tags in Vim
  とりあえずインストール 例のごとく僕はdeinを使っているので
-[[plugins]] repo = &amp;#39;liuchengxu/vista.vim&amp;#39; depends = [&amp;#39;coc.nvim&amp;#39;, &amp;#39;lightline.">
-<meta name=keywords content>
-<meta name=robots content="noodp">
-<link rel=canonical href=https://pyonk.github.io/blog/posts/vista-vim-is-awesome/>
-<link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css>
-<link rel=stylesheet href=https://pyonk.github.io/blog/style.css>
-<link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png>
-<link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="vista.vim is awesome">
-<meta name=twitter:description content="vista.vimというのがvimをIDEのようにしてくれた件">
-<meta property="og:title" content="vista.vim is awesome">
-<meta property="og:description" content="vista.vimというのがvimをIDEのようにしてくれた件">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2019-03-27T08:48:12+09:00">
-<meta property="article:modified_time" content="2019-03-27T08:48:12+09:00"><meta property="og:site_name" content="わいがかいた">
-</head>
-<body>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<span class=header__right>
-<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
-</span>
-</span>
-</span>
-</header>
-<div class=content>
-<div class=post>
-<h1 class=post-title>vista.vim is awesome</h1>
-<div class=post-meta>
-<span class=post-date>
-2019-03-27
-</span>
+[[plugins]] repo = &amp;#39;liuchengxu/vista.vim&amp;#39; depends = [&amp;#39;coc.nvim&amp;#39;, &amp;#39;lightline."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://pyonk.github.io/blog/posts/vista-vim-is-awesome/><link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css><link rel=stylesheet href=https://pyonk.github.io/blog/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="vista.vim is awesome"><meta name=twitter:description content="vista.vimというのがvimをIDEのようにしてくれた件"><meta property="og:title" content="vista.vim is awesome"><meta property="og:description" content="vista.vimというのがvimをIDEのようにしてくれた件"><meta property="og:type" content="article"><meta property="og:url" content="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-03-27T08:48:12+09:00"><meta property="article:modified_time" content="2019-03-27T08:48:12+09:00"><meta property="og:site_name" content="わいがかいた"></head><body><div class=container><header class=header><span class=header__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>vista.vim is awesome</h1><div class=post-meta><span class=post-date>2019-03-27</span>
 <span class=post-author>— Written by pyonk</span>
-<span class=post-read-time>— 1 min read</span>
-</div>
-<span class=post-tags>
-<a href=https://pyonk.github.io/blog/tags/vim/>#vim</a>&nbsp;
-<a href=https://pyonk.github.io/blog/tags/plugin/>#plugin</a>&nbsp;
-</span>
-<figure class=post-cover>
-<img src=https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png alt="vista.vim is awesome">
-</figure>
-<div class=post-content>
-<p>この前<a href=/blog/posts/how-to-use-coc-vim/>coc.nvim</a>を見つけたけど
-またredditにて<a href=https://github.com/liuchengxu/vista.vim>vista.vim</a>というのを見つけた。</p>
-<ul>
-<li><a href=https://www.reddit.com/r/vim/comments/b5pd86/vistavim_a_tagbar_alternative_that_supports_lsp/>vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim</a></li>
-</ul>
-<p>/r/vimのRSS登録しとってよかった。</p>
-<h1 id=vistavim>vista.vim</h1>
-<p>vimをIDEのようにしてくれる夢のようなツール。</p>
-<p>cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。
-fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。</p>
-<p>あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。</p>
-<blockquote>
-<p>⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.<br>
-― <a href=https://github.com/liuchengxu/vista.vim>liuchengxu/vista.vim: View and search LSP symbols, tags in Vim</a></p>
-</blockquote>
-<h1 id=とりあえずインストール>とりあえずインストール</h1>
-<p>例のごとく僕はdeinを使っているので</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[[<span style=color:#a6e22e>plugins</span>]]
-<span style=color:#a6e22e>repo</span> = <span style=color:#e6db74>&#39;liuchengxu/vista.vim&#39;</span>
-<span style=color:#a6e22e>depends</span> = [<span style=color:#e6db74>&#39;coc.nvim&#39;</span>, <span style=color:#e6db74>&#39;lightline.vim&#39;</span>]
-<span style=color:#a6e22e>hook_add</span> = <span style=color:#e6db74>&#39;&#39;&#39;
-</span><span style=color:#e6db74>  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-v&gt; :&lt;C-u&gt;Vista coc&lt;CR&gt;
-</span><span style=color:#e6db74>  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-s&gt; :&lt;C-u&gt;Vista finder coc&lt;CR&gt;
-</span><span style=color:#e6db74>&#39;&#39;&#39;</span>
-</code></pre></div><p>こんな感じで。
-使いやすいようにショートカットも登録しておく。</p>
-<p><code>:Vista finder coc</code>でcoc.nvimからのシンボルデータをfzfで絞り込みができる。</p>
-<h1 id=ステータスバーにうにゃうにゃ>ステータスバーにうにゃうにゃ</h1>
-<p>lightlineのようなしゃれおつステータスバーのための関数も用意されていて、</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[[<span style=color:#a6e22e>plugins</span>]]
-<span style=color:#a6e22e>repo</span> = <span style=color:#e6db74>&#39;itchyny/lightline.vim&#39;</span>
-<span style=color:#a6e22e>hook_add</span> = <span style=color:#e6db74>&#39;&#39;&#39;
-</span><span style=color:#e6db74>let g:lightline = {
-</span><span style=color:#e6db74>      \ &#39;</span><span style=color:#a6e22e>colorscheme</span><span style=color:#e6db74>&#39;: &#39;</span><span style=color:#a6e22e>landscape</span><span style=color:#e6db74>&#39;,
-</span><span style=color:#e6db74>      \ &#39;</span><span style=color:#a6e22e>active</span><span style=color:#e6db74>&#39;: {
-</span><span style=color:#e6db74>      \   &#39;</span><span style=color:#a6e22e>left</span><span style=color:#e6db74>&#39;: [ [ &#39;</span><span style=color:#a6e22e>mode</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>paste</span><span style=color:#e6db74>&#39; ],
-</span><span style=color:#e6db74>      \             [ &#39;</span><span style=color:#a6e22e>gitbranch</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>readonly</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>filename</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>modified</span><span style=color:#e6db74>&#39; ],
-</span><span style=color:#e6db74>      \             [ &#39;</span><span style=color:#a6e22e>vista</span><span style=color:#e6db74>&#39; ],
-</span><span style=color:#e6db74>      \           ]
-</span><span style=color:#e6db74>      \ },
-</span><span style=color:#e6db74>      \ &#39;</span><span style=color:#a6e22e>component_function</span><span style=color:#e6db74>&#39;: {
-</span><span style=color:#e6db74>      \   &#39;</span><span style=color:#a6e22e>gitbranch</span><span style=color:#e6db74>&#39;: &#39;</span><span style=color:#a6e22e>fugitive</span><span style=color:#75715e>#head&#39;,</span>
-      <span style=color:#960050;background-color:#1e0010>\</span>   <span style=color:#e6db74>&#39;vista&#39;</span><span style=color:#960050;background-color:#1e0010>:</span> <span style=color:#e6db74>&#39;NearestMethodOrFunction&#39;</span>,
-      <span style=color:#960050;background-color:#1e0010>\</span> },
-      <span style=color:#960050;background-color:#1e0010>\</span> }
-<span style=color:#a6e22e>function</span><span style=color:#960050;background-color:#1e0010>!</span> <span style=color:#a6e22e>NearestMethodOrFunction</span><span style=color:#960050;background-color:#1e0010>()</span> <span style=color:#a6e22e>abort</span>
-  <span style=color:#a6e22e>return</span> <span style=color:#a6e22e>get</span><span style=color:#960050;background-color:#1e0010>(</span><span style=color:#a6e22e>b</span><span style=color:#960050;background-color:#1e0010>:</span>, <span style=color:#e6db74>&#39;vista_nearest_method_or_function&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span><span style=color:#960050;background-color:#1e0010>)</span>
-<span style=color:#a6e22e>endfunction</span>
-<span style=color:#e6db74>&#39;&#39;</span><span style=color:#960050;background-color:#1e0010>&#39;</span>
-</code></pre></div><p>こんな感じにしておくとステータスバーにうにゃうにゃ出てくる。</p>
-<figure style=text-align:center>
-<img src=images/nearestmethodorfunction.png>
-<figcaption>
-<span>こんなかんじ</span>
-</figcaption>
-</figure>
-<p>cocと連携することでhtml, css, javascriptとかも一気にいい感じにできてとても楽しい。</p>
-</div>
-</div>
-</div>
-<footer class=footer>
-<div class=footer__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<div class=copyright>
-<span>© 2021 Powered by
+<span class=post-read-time>— 1 min read</span></div><span class=post-tags><a href=https://pyonk.github.io/blog/tags/vim/>#vim</a>&nbsp;
+<a href=https://pyonk.github.io/blog/tags/plugin/>#plugin</a>&nbsp;</span><figure class=post-cover><img src=https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png alt="vista.vim is awesome"></figure><div class=post-content><p>この前<a href=/blog/posts/how-to-use-coc-vim/>coc.nvim</a>を見つけたけど
+またredditにて<a href=https://github.com/liuchengxu/vista.vim>vista.vim</a>というのを見つけた。</p><ul><li><a href=https://www.reddit.com/r/vim/comments/b5pd86/vistavim_a_tagbar_alternative_that_supports_lsp/>vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim</a></li></ul><p>/r/vimのRSS登録しとってよかった。</p><h1 id=vistavim>vista.vim</h1><p>vimをIDEのようにしてくれる夢のようなツール。</p><p>cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。
+fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。</p><p>あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。</p><blockquote><p>⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.<br>― <a href=https://github.com/liuchengxu/vista.vim>liuchengxu/vista.vim: View and search LSP symbols, tags in Vim</a></p></blockquote><h1 id=とりあえずインストール>とりあえずインストール</h1><p>例のごとく僕はdeinを使っているので</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=display:flex><span>[[<span style=color:#a6e22e>plugins</span>]]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>repo</span> = <span style=color:#e6db74>&#39;liuchengxu/vista.vim&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>depends</span> = [<span style=color:#e6db74>&#39;coc.nvim&#39;</span>, <span style=color:#e6db74>&#39;lightline.vim&#39;</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>hook_add</span> = <span style=color:#e6db74>&#39;&#39;&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-v&gt; :&lt;C-u&gt;Vista coc&lt;CR&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  nmap &lt;silent&gt; &lt;C-f&gt;&lt;C-s&gt; :&lt;C-u&gt;Vista finder coc&lt;CR&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>こんな感じで。
+使いやすいようにショートカットも登録しておく。</p><p><code>:Vista finder coc</code>でcoc.nvimからのシンボルデータをfzfで絞り込みができる。</p><h1 id=ステータスバーにうにゃうにゃ>ステータスバーにうにゃうにゃ</h1><p>lightlineのようなしゃれおつステータスバーのための関数も用意されていて、</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=display:flex><span>[[<span style=color:#a6e22e>plugins</span>]]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>repo</span> = <span style=color:#e6db74>&#39;itchyny/lightline.vim&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>hook_add</span> = <span style=color:#e6db74>&#39;&#39;&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>let g:lightline = {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \ &#39;</span><span style=color:#a6e22e>colorscheme</span><span style=color:#e6db74>&#39;: &#39;</span><span style=color:#a6e22e>landscape</span><span style=color:#e6db74>&#39;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \ &#39;</span><span style=color:#a6e22e>active</span><span style=color:#e6db74>&#39;: {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \   &#39;</span><span style=color:#a6e22e>left</span><span style=color:#e6db74>&#39;: [ [ &#39;</span><span style=color:#a6e22e>mode</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>paste</span><span style=color:#e6db74>&#39; ],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \             [ &#39;</span><span style=color:#a6e22e>gitbranch</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>readonly</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>filename</span><span style=color:#e6db74>&#39;, &#39;</span><span style=color:#a6e22e>modified</span><span style=color:#e6db74>&#39; ],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \             [ &#39;</span><span style=color:#a6e22e>vista</span><span style=color:#e6db74>&#39; ],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \           ]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \ },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \ &#39;</span><span style=color:#a6e22e>component_function</span><span style=color:#e6db74>&#39;: {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      \   &#39;</span><span style=color:#a6e22e>gitbranch</span><span style=color:#e6db74>&#39;: &#39;</span><span style=color:#a6e22e>fugitive</span><span style=color:#75715e>#head&#39;,</span>
+</span></span><span style=display:flex><span>      <span style=color:#960050;background-color:#1e0010>\</span>   <span style=color:#e6db74>&#39;vista&#39;</span><span style=color:#960050;background-color:#1e0010>:</span> <span style=color:#e6db74>&#39;NearestMethodOrFunction&#39;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#960050;background-color:#1e0010>\</span> },
+</span></span><span style=display:flex><span>      <span style=color:#960050;background-color:#1e0010>\</span> }
+</span></span><span style=display:flex><span><span style=color:#a6e22e>function</span><span style=color:#960050;background-color:#1e0010>!</span> <span style=color:#a6e22e>NearestMethodOrFunction</span><span style=color:#960050;background-color:#1e0010>()</span> <span style=color:#a6e22e>abort</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>return</span> <span style=color:#a6e22e>get</span><span style=color:#960050;background-color:#1e0010>(</span><span style=color:#a6e22e>b</span><span style=color:#960050;background-color:#1e0010>:</span>, <span style=color:#e6db74>&#39;vista_nearest_method_or_function&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span><span style=color:#960050;background-color:#1e0010>)</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>endfunction</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;</span><span style=color:#960050;background-color:#1e0010>&#39;</span>
+</span></span></code></pre></div><p>こんな感じにしておくとステータスバーにうにゃうにゃ出てくる。</p><figure style=text-align:center><img src=images/nearestmethodorfunction.png><figcaption><span>こんなかんじ</span></figcaption></figure><p>cocと連携することでhtml, css, javascriptとかも一気にいい感じにできてとても楽しい。</p></div></div></div><footer class=footer><div class=footer__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
 <span>Theme created by
-<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span>
-</div>
-</div>
-</footer>
-<script src=https://pyonk.github.io/blog/assets/main.js></script>
-<script src=https://pyonk.github.io/blog/assets/prism.js></script>
-</div>
-</body>
-</html>
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://pyonk.github.io/blog/assets/main.js></script>
+<script src=https://pyonk.github.io/blog/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-51GX3P4YPL"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-51GX3P4YPL",{anonymize_ip:!1})}</script></body></html>

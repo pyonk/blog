@@ -1,138 +1,58 @@
-<!doctype html><html lang=ja>
-<head>
-<title>
-Django Test Client Url Capture Not Working ::
-わいがかいた
-</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="from django.urls import path url_patterns = [ path(&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;, views.show, name=&amp;#39;user_show&amp;#39;), ] from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware class UserViewTestCase(TestCase): def setUp(self): self.request = RequestFactory() def test_access_user_page(self): user_id = 1 req = self.request.get( reverse(&amp;#39;user_show&amp;#39;, args=(user_id,)) ) req.user = AnonymousUser() SessionMiddleware().process_request(req) MessageMiddleware().process_request(req) res = views.show(req) self.assertTrue(res.status_code, 302) 上記のようなテストコードがあったとすると views.showでself.kwargs['user_id']が参照できないっていう状況に1時間くらいハマった
-結論から言うと RequestFactoryは単純にrequestオブジェクトを作るだけなので、urlsとか関係なく views.show(req)をテストしてるに過ぎないと言うことだった なので views.show(req, user_id=user_id)としてあげると良かったようだ
-というかそもそも論だがurlsでルーティングしているのであれば これだけで良かった">
-<meta name=keywords content>
-<meta name=robots content="noodp">
-<link rel=canonical href=https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/>
-<link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css>
-<link rel=stylesheet href=https://pyonk.github.io/blog/style.css>
-<link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png>
-<link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Django Test Client Url Capture Not Working">
-<meta name=twitter:description content="DjangoのテストクライアントがURLの名前付きパラメータを取得できない件">
-<meta property="og:title" content="Django Test Client Url Capture Not Working">
-<meta property="og:description" content="DjangoのテストクライアントがURLの名前付きパラメータを取得できない件">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2019-02-20T15:12:08+09:00">
-<meta property="article:modified_time" content="2019-02-20T15:12:08+09:00"><meta property="og:site_name" content="わいがかいた">
-</head>
-<body>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<span class=header__right>
-<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
-</span>
-</span>
-</span>
-</header>
-<div class=content>
-<div class=post>
-<h1 class=post-title>Django Test Client Url Capture Not Working</h1>
-<div class=post-meta>
-<span class=post-date>
-2019-02-20
-</span>
+<!doctype html><html lang=ja><head><title>Django Test Client Url Capture Not Working ::
+わいがかいた</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="from django.urls import path url_patterns = [  path(&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;, views.show, name=&amp;#39;user_show&amp;#39;), ] from django.test import TestCase, RequestFactory from users import views from django.contrib.auth.models import AnonymousUser from django.contrib.sessions.middleware import SessionMiddleware from django.contrib.messages.middleware import MessageMiddleware  class UserViewTestCase(TestCase):  def setUp(self):  self.request = RequestFactory()   def test_access_user_page(self):  user_id = 1  req = self.request.get(  reverse(&amp;#39;user_show&amp;#39;, args=(user_id,))  )  req.user = AnonymousUser()  SessionMiddleware().process_request(req)  MessageMiddleware().process_request(req)   res = views."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/><link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css><link rel=stylesheet href=https://pyonk.github.io/blog/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="Django Test Client Url Capture Not Working"><meta name=twitter:description content="DjangoのテストクライアントがURLの名前付きパラメータを取得できない件"><meta property="og:title" content="Django Test Client Url Capture Not Working"><meta property="og:description" content="DjangoのテストクライアントがURLの名前付きパラメータを取得できない件"><meta property="og:type" content="article"><meta property="og:url" content="https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-02-20T15:12:08+09:00"><meta property="article:modified_time" content="2019-02-20T15:12:08+09:00"><meta property="og:site_name" content="わいがかいた"></head><body><div class=container><header class=header><span class=header__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Django Test Client Url Capture Not Working</h1><div class=post-meta><span class=post-date>2019-02-20</span>
 <span class=post-author>— Written by pyonk</span>
-<span class=post-read-time>— 1 min read</span>
-</div>
-<span class=post-tags>
-<a href=https://pyonk.github.io/blog/tags/python/>#python</a>&nbsp;
+<span class=post-read-time>— 1 min read</span></div><span class=post-tags><a href=https://pyonk.github.io/blog/tags/python/>#python</a>&nbsp;
 <a href=https://pyonk.github.io/blog/tags/djnago/>#djnago</a>&nbsp;
-<a href=https://pyonk.github.io/blog/tags/test/>#test</a>&nbsp;
-</span>
-<div class=post-content>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python:urls.py data-lang=python:urls.py><span style=color:#f92672>from</span> django.urls <span style=color:#f92672>import</span> path
-url_patterns <span style=color:#f92672>=</span> [
-    path(<span style=color:#e6db74>&#39;users/&lt;int:user_id&gt;/&#39;</span>, views<span style=color:#f92672>.</span>show, name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;user_show&#39;</span>),
-]
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python:tests.py data-lang=python:tests.py><span style=color:#f92672>from</span> django.test <span style=color:#f92672>import</span> TestCase, RequestFactory
-<span style=color:#f92672>from</span> users <span style=color:#f92672>import</span> views
-<span style=color:#f92672>from</span> django.contrib.auth.models <span style=color:#f92672>import</span> AnonymousUser
-<span style=color:#f92672>from</span> django.contrib.sessions.middleware <span style=color:#f92672>import</span> SessionMiddleware
-<span style=color:#f92672>from</span> django.contrib.messages.middleware <span style=color:#f92672>import</span> MessageMiddleware
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UserViewTestCase</span>(TestCase):
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>setUp</span>(self):
-        self<span style=color:#f92672>.</span>request <span style=color:#f92672>=</span> RequestFactory()
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_access_user_page</span>(self):
-        user_id <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
-        req <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>get(
-            reverse(<span style=color:#e6db74>&#39;user_show&#39;</span>, args<span style=color:#f92672>=</span>(user_id,))
-        )
-        req<span style=color:#f92672>.</span>user <span style=color:#f92672>=</span> AnonymousUser()
-        SessionMiddleware()<span style=color:#f92672>.</span>process_request(req)
-        MessageMiddleware()<span style=color:#f92672>.</span>process_request(req)
-
-        res <span style=color:#f92672>=</span> views<span style=color:#f92672>.</span>show(req)
-        self<span style=color:#f92672>.</span>assertTrue(res<span style=color:#f92672>.</span>status_code, <span style=color:#ae81ff>302</span>)
-</code></pre></div><p>上記のようなテストコードがあったとすると
-<code>views.show</code>で<code>self.kwargs['user_id']</code>が参照できないっていう状況に1時間くらいハマった</p>
-<p>結論から言うと
+<a href=https://pyonk.github.io/blog/tags/test/>#test</a>&nbsp;</span><div class=post-content><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python:urls.py data-lang=python:urls.py><span style=display:flex><span><span style=color:#f92672>from</span> django.urls <span style=color:#f92672>import</span> path
+</span></span><span style=display:flex><span>url_patterns <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    path(<span style=color:#e6db74>&#39;users/&lt;int:user_id&gt;/&#39;</span>, views<span style=color:#f92672>.</span>show, name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;user_show&#39;</span>),
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python:tests.py data-lang=python:tests.py><span style=display:flex><span><span style=color:#f92672>from</span> django.test <span style=color:#f92672>import</span> TestCase, RequestFactory
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> users <span style=color:#f92672>import</span> views
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> django.contrib.auth.models <span style=color:#f92672>import</span> AnonymousUser
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> django.contrib.sessions.middleware <span style=color:#f92672>import</span> SessionMiddleware
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> django.contrib.messages.middleware <span style=color:#f92672>import</span> MessageMiddleware
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UserViewTestCase</span>(TestCase):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>setUp</span>(self):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>request <span style=color:#f92672>=</span> RequestFactory()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_access_user_page</span>(self):
+</span></span><span style=display:flex><span>        user_id <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        req <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>get(
+</span></span><span style=display:flex><span>            reverse(<span style=color:#e6db74>&#39;user_show&#39;</span>, args<span style=color:#f92672>=</span>(user_id,))
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>        req<span style=color:#f92672>.</span>user <span style=color:#f92672>=</span> AnonymousUser()
+</span></span><span style=display:flex><span>        SessionMiddleware()<span style=color:#f92672>.</span>process_request(req)
+</span></span><span style=display:flex><span>        MessageMiddleware()<span style=color:#f92672>.</span>process_request(req)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        res <span style=color:#f92672>=</span> views<span style=color:#f92672>.</span>show(req)
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>assertTrue(res<span style=color:#f92672>.</span>status_code, <span style=color:#ae81ff>302</span>)
+</span></span></code></pre></div><p>上記のようなテストコードがあったとすると
+<code>views.show</code>で<code>self.kwargs['user_id']</code>が参照できないっていう状況に1時間くらいハマった</p><p>結論から言うと
 <code>RequestFactory</code>は単純にrequestオブジェクトを作るだけなので、urlsとか関係なく
 <code>views.show(req)</code>をテストしてるに過ぎないと言うことだった
 なので
-<code>views.show(req, user_id=user_id)</code>としてあげると良かったようだ</p>
-<p>というかそもそも論だがurlsでルーティングしているのであれば
-これだけで良かった</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python:test.py data-lang=python:test.py><span style=color:#f92672>from</span> django.test <span style=color:#f92672>import</span> TestCase, Client
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UserViewTestCase</span>(TestCase):
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>setUp</span>(self):
-        self<span style=color:#f92672>.</span>client <span style=color:#f92672>=</span> Client()
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_access_user_page</span>(self):
-        user_id <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
-        res <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>client<span style=color:#f92672>.</span>get(
-            reverse(<span style=color:#e6db74>&#39;user_show&#39;</span>, args<span style=color:#f92672>=</span>(user_id,))
-        )
-        self<span style=color:#f92672>.</span>assertTrue(res<span style=color:#f92672>.</span>status_code, <span style=color:#ae81ff>302</span>)
-</code></pre></div><p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
+<code>views.show(req, user_id=user_id)</code>としてあげると良かったようだ</p><p>というかそもそも論だがurlsでルーティングしているのであれば
+これだけで良かった</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python:test.py data-lang=python:test.py><span style=display:flex><span><span style=color:#f92672>from</span> django.test <span style=color:#f92672>import</span> TestCase, Client
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UserViewTestCase</span>(TestCase):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>setUp</span>(self):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>client <span style=color:#f92672>=</span> Client()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_access_user_page</span>(self):
+</span></span><span style=display:flex><span>        user_id <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        res <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>client<span style=color:#f92672>.</span>get(
+</span></span><span style=display:flex><span>            reverse(<span style=color:#e6db74>&#39;user_show&#39;</span>, args<span style=color:#f92672>=</span>(user_id,))
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>assertTrue(res<span style=color:#f92672>.</span>status_code, <span style=color:#ae81ff>302</span>)
+</span></span></code></pre></div><p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
 ぼくつかれっちゃった
-だれだよRequestFactoryとか教えたの</p>
-</div>
-</div>
-</div>
-<footer class=footer>
-<div class=footer__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<div class=copyright>
-<span>© 2021 Powered by
+だれだよRequestFactoryとか教えたの</p></div></div></div><footer class=footer><div class=footer__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
 <span>Theme created by
-<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span>
-</div>
-</div>
-</footer>
-<script src=https://pyonk.github.io/blog/assets/main.js></script>
-<script src=https://pyonk.github.io/blog/assets/prism.js></script>
-</div>
-</body>
-</html>
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://pyonk.github.io/blog/assets/main.js></script>
+<script src=https://pyonk.github.io/blog/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-51GX3P4YPL"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-51GX3P4YPL",{anonymize_ip:!1})}</script></body></html>

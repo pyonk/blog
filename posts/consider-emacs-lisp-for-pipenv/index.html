@@ -1,139 +1,51 @@
-<!doctype html><html lang=ja>
-<head>
-<title>
-emacs lispを紐解く ::
-わいがかいた
-</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="結構前に書いてたやつがメモ帳に埋まってたので供養します 今はspacemacsじゃなくてneovimつかってる 普段spacemacsというエディタを使ってコードを書いているんだけど
+<!doctype html><html lang=ja><head><title>emacs lispを紐解く ::
+わいがかいた</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="結構前に書いてたやつがメモ帳に埋まってたので供養します 今はspacemacsじゃなくてneovimつかってる 普段spacemacsというエディタを使ってコードを書いているんだけど
 pipenvを$PIPENV_VENV_IN_PROJECT=1で使ってるとうまく補完されないので悩んでた
 少し調べると
  pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs  がヒットした
 提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ
 きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた
- .venvがディレクトリか、ファイルかによって処理を変えてるだけ コードリーディング超大事  &amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義 (defun spacemacs//pyvenv-mode-set-local-virtualenv () &amp;#34;Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle directory or fil\ &amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる &amp;#34; http://yhash.hatenablog.com/entry/2012/07/14/134732 (interactive) &amp;#34; 変数root-pathに&amp;#34;.venv&amp;#34;があるディレクトリを代入する &amp;#34; default-directoryから親方向に&amp;#34;.venv&amp;#34;を探す なければnil (let ((root-path (locate-dominating-file default-directory &amp;#34;.venv&amp;#34;))) &amp;#34; root-pathがnilではない時のみ実行 (when root-path &amp;#34; file-pathに{root-path}/.venvの形で代入する (let* ((file-path (expand-file-name &amp;#34;.">
-<meta name=keywords content>
-<meta name=robots content="noodp">
-<link rel=canonical href=https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/>
-<link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css>
-<link rel=stylesheet href=https://pyonk.github.io/blog/style.css>
-<link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png>
-<link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="emacs lispを紐解く">
-<meta name=twitter:description content="pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件">
-<meta property="og:title" content="emacs lispを紐解く">
-<meta property="og:description" content="pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-01-15T11:38:02+09:00">
-<meta property="article:modified_time" content="2020-01-15T11:38:02+09:00"><meta property="og:site_name" content="わいがかいた">
-</head>
-<body>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<span class=header__right>
-<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
-</span>
-</span>
-</span>
-</header>
-<div class=content>
-<div class=post>
-<h1 class=post-title>emacs lispを紐解く</h1>
-<div class=post-meta>
-<span class=post-date>
-2020-01-15
-</span>
+ .venvがディレクトリか、ファイルかによって処理を変えてるだけ コードリーディング超大事   &amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義 (defun spacemacs//pyvenv-mode-set-local-virtualenv () &amp;#34;Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle directory or fil\  &amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる &amp;#34; http://yhash.hatenablog.com/entry/2012/07/14/134732  (interactive)  &amp;#34; 変数root-pathに&amp;#34;.venv&amp;#34;があるディレクトリを代入する &amp;#34; default-directoryから親方向に&amp;#34;.venv&amp;#34;を探す なければnil  (let ((root-path (locate-dominating-file default-directory  &amp;#34;.venv&amp;#34;)))  &amp;#34; root-pathがnilではない時のみ実行 (when root-path &amp;#34; file-pathに{root-path}/."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/><link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css><link rel=stylesheet href=https://pyonk.github.io/blog/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="emacs lispを紐解く"><meta name=twitter:description content="pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件"><meta property="og:title" content="emacs lispを紐解く"><meta property="og:description" content="pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件"><meta property="og:type" content="article"><meta property="og:url" content="https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-01-15T11:38:02+09:00"><meta property="article:modified_time" content="2020-01-15T11:38:02+09:00"><meta property="og:site_name" content="わいがかいた"></head><body><div class=container><header class=header><span class=header__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>emacs lispを紐解く</h1><div class=post-meta><span class=post-date>2020-01-15</span>
 <span class=post-author>— Written by pyonk</span>
-<span class=post-read-time>— 1 min read</span>
-</div>
-<span class=post-tags>
-<a href=https://pyonk.github.io/blog/tags/spacemacs/>#spacemacs</a>&nbsp;
-<a href=https://pyonk.github.io/blog/tags/emacs-lisp/>#emacs lisp</a>&nbsp;
-</span>
-<div class=post-content>
-<pre tabindex=0><code>結構前に書いてたやつがメモ帳に埋まってたので供養します
+<span class=post-read-time>— 1 min read</span></div><span class=post-tags><a href=https://pyonk.github.io/blog/tags/spacemacs/>#spacemacs</a>&nbsp;
+<a href=https://pyonk.github.io/blog/tags/emacs-lisp/>#emacs lisp</a>&nbsp;</span><div class=post-content><pre tabindex=0><code>結構前に書いてたやつがメモ帳に埋まってたので供養します
 今はspacemacsじゃなくてneovimつかってる
-</code></pre><p>普段spacemacsというエディタを使ってコードを書いているんだけど</p>
-<p>pipenvを<code>$PIPENV_VENV_IN_PROJECT=1</code>で使ってるとうまく補完されないので悩んでた</p>
-<p>少し調べると</p>
-<ul>
-<li><a href=https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054>pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs</a></li>
-</ul>
-<p>がヒットした</p>
-<p>提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ</p>
-<p>きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた</p>
-<ul>
-<li>.venvがディレクトリか、ファイルかによって処理を変えてるだけ</li>
-<li>コードリーディング超大事</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lisp data-lang=lisp>    <span style=color:#e6db74>&#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義
-</span><span style=color:#e6db74>    (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
-</span><span style=color:#e6db74>      &#34;</span>Set pyvenv virtualenv from \&#34;.venv\&#34; by looking in parent directories. handle <span style=color:#a6e22e>directory</span> or fil<span style=color:#960050;background-color:#1e0010>\</span>
-      <span style=color:#e6db74>&#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる
-</span><span style=color:#e6db74>      &#34;</span> http://yhash.hatenablog.com/entry/2012/07/14/134732
-      (interactive)
-      <span style=color:#e6db74>&#34; 変数root-pathに&#34;</span><span style=color:#f92672>.</span>venv<span style=color:#e6db74>&#34;があるディレクトリを代入する
-</span><span style=color:#e6db74>      &#34;</span> default-directoryから親方向に<span style=color:#e6db74>&#34;.venv&#34;</span>を探す なければnil
-      (<span style=color:#66d9ef>let</span> ((root-path (locate-dominating-file default-directory
-                                               <span style=color:#e6db74>&#34;.venv&#34;</span>)))
-        <span style=color:#e6db74>&#34; root-pathがnilではない時のみ実行
-</span><span style=color:#e6db74>        (when root-path
-</span><span style=color:#e6db74>          &#34;</span> file-pathに{root-path}/.venvの形で代入する
-          (<span style=color:#66d9ef>let*</span> ((file-path (expand-file-name <span style=color:#e6db74>&#34;.venv&#34;</span> root-path))
-                 <span style=color:#e6db74>&#34; 変数virtualenvに何を代入するか
-</span><span style=color:#e6db74>                 (virtualenv
-</span><span style=color:#e6db74>                  &#34;</span> <span style=color:#f92672>.</span>venvがdirectoryである場合はそのままfile-pathを代入
-                  (<span style=color:#66d9ef>if</span> (file-directory-p file-path)
-                      file-path
-                    <span style=color:#e6db74>&#34; directoryではない場合、file-pathの内容を読み取ってそれを代入
-</span><span style=color:#e6db74>                    (with-temp-buffer
-</span><span style=color:#e6db74>                      (insert-file-contents-literally file-path)
-</span><span style=color:#e6db74>                      (buffer-substring-no-properties (line-beginning-position)
-</span><span style=color:#e6db74>                                                      (line-end-position))))))
-</span><span style=color:#e6db74>            &#34;</span> virtualenvがdirectoryなら
-            (<span style=color:#66d9ef>if</span> (file-directory-p virtualenv)
-                <span style=color:#e6db74>&#34; pyvenv-activate を実行
-</span><span style=color:#e6db74>                (pyvenv-activate virtualenv)
-</span><span style=color:#e6db74>              &#34;</span> そうではないならpyvenv-workon を実行
-              (pyvenv-workon virtualenv))))))
-</code></pre></div>
-</div>
-</div>
-</div>
-<footer class=footer>
-<div class=footer__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<div class=copyright>
-<span>© 2021 Powered by
+</code></pre><p>普段spacemacsというエディタを使ってコードを書いているんだけど</p><p>pipenvを<code>$PIPENV_VENV_IN_PROJECT=1</code>で使ってるとうまく補完されないので悩んでた</p><p>少し調べると</p><ul><li><a href=https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054>pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs</a></li></ul><p>がヒットした</p><p>提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ</p><p>きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた</p><ul><li>.venvがディレクトリか、ファイルかによって処理を変えてるだけ</li><li>コードリーディング超大事</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lisp data-lang=lisp><span style=display:flex><span>    <span style=color:#e6db74>&#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      &#34;</span>Set pyvenv virtualenv from \&#34;.venv\&#34; by looking in parent directories. handle <span style=color:#a6e22e>directory</span> or fil<span style=color:#960050;background-color:#1e0010>\</span>
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      &#34;</span> http://yhash.hatenablog.com/entry/2012/07/14/134732
+</span></span><span style=display:flex><span>      (interactive)
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34; 変数root-pathに&#34;</span><span style=color:#f92672>.</span>venv<span style=color:#e6db74>&#34;があるディレクトリを代入する
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      &#34;</span> default-directoryから親方向に<span style=color:#e6db74>&#34;.venv&#34;</span>を探す なければnil
+</span></span><span style=display:flex><span>      (<span style=color:#66d9ef>let</span> ((root-path (locate-dominating-file default-directory
+</span></span><span style=display:flex><span>                                               <span style=color:#e6db74>&#34;.venv&#34;</span>)))
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34; root-pathがnilではない時のみ実行
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        (when root-path
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          &#34;</span> file-pathに{root-path}/.venvの形で代入する
+</span></span><span style=display:flex><span>          (<span style=color:#66d9ef>let*</span> ((file-path (expand-file-name <span style=color:#e6db74>&#34;.venv&#34;</span> root-path))
+</span></span><span style=display:flex><span>                 <span style=color:#e6db74>&#34; 変数virtualenvに何を代入するか
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                 (virtualenv
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                  &#34;</span> <span style=color:#f92672>.</span>venvがdirectoryである場合はそのままfile-pathを代入
+</span></span><span style=display:flex><span>                  (<span style=color:#66d9ef>if</span> (file-directory-p file-path)
+</span></span><span style=display:flex><span>                      file-path
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34; directoryではない場合、file-pathの内容を読み取ってそれを代入
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    (with-temp-buffer
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                      (insert-file-contents-literally file-path)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                      (buffer-substring-no-properties (line-beginning-position)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                                                      (line-end-position))))))
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;</span> virtualenvがdirectoryなら
+</span></span><span style=display:flex><span>            (<span style=color:#66d9ef>if</span> (file-directory-p virtualenv)
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34; pyvenv-activate を実行
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                (pyvenv-activate virtualenv)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              &#34;</span> そうではないならpyvenv-workon を実行
+</span></span><span style=display:flex><span>              (pyvenv-workon virtualenv))))))
+</span></span></code></pre></div></div></div></div><footer class=footer><div class=footer__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
 <span>Theme created by
-<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span>
-</div>
-</div>
-</footer>
-<script src=https://pyonk.github.io/blog/assets/main.js></script>
-<script src=https://pyonk.github.io/blog/assets/prism.js></script>
-</div>
-</body>
-</html>
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://pyonk.github.io/blog/assets/main.js></script>
+<script src=https://pyonk.github.io/blog/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-51GX3P4YPL"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-51GX3P4YPL",{anonymize_ip:!1})}</script></body></html>

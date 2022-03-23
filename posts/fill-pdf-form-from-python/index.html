@@ -1,191 +1,99 @@
-<!doctype html><html lang=ja>
-<head>
-<title>
-pythonからpdfのフォームに入力する ::
-わいがかいた
-</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+<!doctype html><html lang=ja><head><title>pythonからpdfのフォームに入力する ::
+わいがかいた</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.">
-<meta name=keywords content>
-<meta name=robots content="noodp">
-<link rel=canonical href=https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/>
-<link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css>
-<link rel=stylesheet href=https://pyonk.github.io/blog/style.css>
-<link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png>
-<link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="pythonからpdfのフォームに入力する">
-<meta name=twitter:description content="pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*-  from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO  title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/><link rel=stylesheet href=https://pyonk.github.io/blog/assets/style.css><link rel=stylesheet href=https://pyonk.github.io/blog/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://pyonk.github.io/blog/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://pyonk.github.io/blog/img/favicon.png><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://pyonk.github.io/blog/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="pythonからpdfのフォームに入力する"><meta name=twitter:description content="pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = 'title' # fontを変更 pdfmetrics.registerFont(TTFont('Mplus1p-Light', 'static/font/Mplus1p/Mplus1p-Light.ttf')) template_path = 'template.pdf' # 読み込み reader = PdfFileReader(template_path) existing_page = reader.">
-<meta property="og:title" content="pythonからpdfのフォームに入力する">
-<meta property="og:description" content="pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
+事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*-  from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO  title = 'title' # fontを変更 pdfmetrics.registerFont(TTFont('Mplus1p-Light', 'static/font/Mplus1p/Mplus1p-Light.ttf')) template_path = 'template.pdf' # 読み込み reader = PdfFileReader(template_path) existing_page = reader."><meta property="og:title" content="pythonからpdfのフォームに入力する"><meta property="og:description" content="pythonからpdfのフォームに入力する（厳密には違う） pythonでpdfのフォームに値を入力していく機能をつくりました。
 そもそもpdfにフォームなんて埋められるんだって知らなかったです。
 どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
 書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
 なのでどちらにも対応できるような感じになってます。
-事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = 'title' # fontを変更 pdfmetrics.registerFont(TTFont('Mplus1p-Light', 'static/font/Mplus1p/Mplus1p-Light.ttf')) template_path = 'template.pdf' # 読み込み reader = PdfFileReader(template_path) existing_page = reader.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2017-10-05T15:46:45+09:00">
-<meta property="article:modified_time" content="2017-10-05T15:46:45+09:00"><meta property="og:site_name" content="わいがかいた">
-</head>
-<body>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<span class=header__right>
-<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
-</span>
-</span>
-</span>
-</header>
-<div class=content>
-<div class=post>
-<h1 class=post-title>pythonからpdfのフォームに入力する</h1>
-<div class=post-meta>
-<span class=post-date>
-2017-10-05
-</span>
-<span class=post-read-time>— 2 min read</span>
-</div>
-<span class=post-tags>
-<a href=https://pyonk.github.io/blog/tags/python/>#python</a>&nbsp;
-</span>
-<div class=post-content>
-<h1 id=pythonからpdfのフォームに入力する厳密には違う>pythonからpdfのフォームに入力する（厳密には違う）</h1>
-<p>pythonでpdfのフォームに値を入力していく機能をつくりました。<br>
-そもそもpdfにフォームなんて埋められるんだって知らなかったです。<br>
-どうやら読み込み専用フォームとそうでないフォームがあるみたいです。<br>
-書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。<br>
-なのでどちらにも対応できるような感じになってます。</p>
-<h2 id=事前準備>事前準備</h2>
-<ul>
-<li>reportlab</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ pip install reportlab
-</code></pre></div><ul>
-<li>PyPDF2</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ pip install pypdf2
-</code></pre></div><h2 id=コード>コード</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e>#! /usr/bin/python</span>
-<span style=color:#75715e># -*- coding: utf-8 -*-</span>
-
-<span style=color:#f92672>from</span> reportlab.pdfgen <span style=color:#f92672>import</span> canvas
-<span style=color:#f92672>from</span> reportlab.lib.pagesizes <span style=color:#f92672>import</span> A4
-<span style=color:#f92672>from</span> reportlab.pdfbase <span style=color:#f92672>import</span> pdfmetrics
-<span style=color:#f92672>from</span> reportlab.pdfbase.ttfonts <span style=color:#f92672>import</span> TTFont
-<span style=color:#f92672>from</span> PyPDF2.pdf <span style=color:#f92672>import</span> PdfFileReader, PdfFileWriter
-<span style=color:#f92672>from</span> io <span style=color:#f92672>import</span> BytesIO
-
-title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;title&#39;</span>
-<span style=color:#75715e># fontを変更</span>
-pdfmetrics<span style=color:#f92672>.</span>registerFont(TTFont(<span style=color:#e6db74>&#39;Mplus1p-Light&#39;</span>, <span style=color:#e6db74>&#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;</span>))
-template_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;template.pdf&#39;</span>
-<span style=color:#75715e># 読み込み</span>
-reader <span style=color:#f92672>=</span> PdfFileReader(template_path)
-existing_page <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>getPage(<span style=color:#ae81ff>0</span>)
-page_width <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getWidth()
-page_height <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getHeight()
-<span style=color:#75715e># 直接フォームに入力するのではないのでstreamとしてもっておく</span>
-packet <span style=color:#f92672>=</span> BytesIO()
-c <span style=color:#f92672>=</span> canvas<span style=color:#f92672>.</span>Canvas(packet, pagesize<span style=color:#f92672>=</span>A4)
-c<span style=color:#f92672>.</span>setFont(<span style=color:#e6db74>&#39;Mplus1p-Light&#39;</span>, <span style=color:#ae81ff>17</span>)
-<span style=color:#75715e># titleはセンタリング</span>
-c<span style=color:#f92672>.</span>drawCentredString(page_width <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, page_height <span style=color:#f92672>-</span> <span style=color:#ae81ff>20</span>, title)
-<span style=color:#75715e># formfieldsを取得</span>
-fields <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>trailer[<span style=color:#e6db74>&#39;/Root&#39;</span>][<span style=color:#e6db74>&#39;/AcroForm&#39;</span>][<span style=color:#e6db74>&#39;/Fields&#39;</span>]
-<span style=color:#66d9ef>for</span> f <span style=color:#f92672>in</span> fields:
-    field <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>getObject()
-    <span style=color:#75715e># formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]</span>
-    rect <span style=color:#f92672>=</span> field<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;/Rect&#39;</span>, [<span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>0.0</span>])
-    key <span style=color:#f92672>=</span> field<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;/T&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>)
-    c<span style=color:#f92672>.</span>setFont(<span style=color:#e6db74>&#39;Mplus1p-Light&#39;</span>, <span style=color:#ae81ff>9</span>)
-    <span style=color:#75715e># 微調整</span>
-    c<span style=color:#f92672>.</span>drawString(float(rect[<span style=color:#ae81ff>0</span>]) <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span>, float(rect[<span style=color:#ae81ff>1</span>]) <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span>, key)
-c<span style=color:#f92672>.</span>save()
-<span style=color:#75715e># パケットの読み込みを先頭に戻す</span>
-packet<span style=color:#f92672>.</span>seek(<span style=color:#ae81ff>0</span>)
-new_pdf <span style=color:#f92672>=</span> PdfFileReader(packet)
-<span style=color:#75715e># テンプレートと書き込んだ内容をマージ</span>
-existing_page<span style=color:#f92672>.</span>mergePage(new_pdf<span style=color:#f92672>.</span>getPage(<span style=color:#ae81ff>0</span>))
-<span style=color:#75715e># writerを用意</span>
-writer <span style=color:#f92672>=</span> PdfFileWriter()
-writer<span style=color:#f92672>.</span>addPage(existing_page)
-<span style=color:#75715e># 書き込み</span>
-<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;output.pdf&#39;</span>, <span style=color:#e6db74>&#39;wb&#39;</span>) <span style=color:#66d9ef>as</span> output_file:
-    writer<span style=color:#f92672>.</span>write(output_file)
-</code></pre></div><p>見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。</p>
-<h3 id=おまけ>おまけ</h3>
-<p>ただフォームを埋めたいだけの場合</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e>#! /usr/bin/python</span>
-<span style=color:#75715e># -*- coding: utf-8 -*-</span>
-
-<span style=color:#f92672>from</span> PyPDF2.pdf <span style=color:#f92672>import</span> PdfFileReader, PdfFileWriter
-
-template_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;template.pdf&#39;</span>
-<span style=color:#75715e># 読み込み</span>
-reader <span style=color:#f92672>=</span> PdfFileReader(template_path)
-existing_page <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>getPage(<span style=color:#ae81ff>0</span>)
-page_width <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getWidth()
-page_height <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getHeight()
-<span style=color:#75715e># formfieldsを取得</span>
-fields <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>getFormTextFields()
-<span style=color:#75715e># formの値を更新</span>
-<span style=color:#66d9ef>for</span> key <span style=color:#f92672>in</span> fields:
-    fields[key] <span style=color:#f92672>=</span> key
-<span style=color:#75715e># writerを用意</span>
-writer <span style=color:#f92672>=</span> PdfFileWriter()
-<span style=color:#75715e># 上書き</span>
-writer<span style=color:#f92672>.</span>updatePageFormFieldValues(existing_page, fields)
-writer<span style=color:#f92672>.</span>addPage(existing_page)
-<span style=color:#75715e># 書き込み</span>
-<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;output.pdf&#39;</span>, <span style=color:#e6db74>&#39;wb&#39;</span>) <span style=color:#66d9ef>as</span> output_file:
-    writer<span style=color:#f92672>.</span>write(output_file)
-</code></pre></div>
-</div>
-</div>
-</div>
-<footer class=footer>
-<div class=footer__inner>
-<a href=/blog/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>わいがかいた</span>
-<span class=logo__cursor></span>
-</a>
-<div class=copyright>
-<span>© 2021 Powered by
+事前準備  reportlab  $ pip install reportlab  PyPDF2  $ pip install pypdf2 コード #! /usr/bin/python # -*- coding: utf-8 -*-  from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO  title = 'title' # fontを変更 pdfmetrics.registerFont(TTFont('Mplus1p-Light', 'static/font/Mplus1p/Mplus1p-Light.ttf')) template_path = 'template.pdf' # 読み込み reader = PdfFileReader(template_path) existing_page = reader."><meta property="og:type" content="article"><meta property="og:url" content="https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2017-10-05T15:46:45+09:00"><meta property="article:modified_time" content="2017-10-05T15:46:45+09:00"><meta property="og:site_name" content="わいがかいた"></head><body><div class=container><header class=header><span class=header__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>pythonからpdfのフォームに入力する</h1><div class=post-meta><span class=post-date>2017-10-05</span>
+<span class=post-read-time>— 2 min read</span></div><span class=post-tags><a href=https://pyonk.github.io/blog/tags/python/>#python</a>&nbsp;</span><div class=post-content><h1 id=pythonからpdfのフォームに入力する厳密には違う>pythonからpdfのフォームに入力する（厳密には違う）</h1><p>pythonでpdfのフォームに値を入力していく機能をつくりました。<br>そもそもpdfにフォームなんて埋められるんだって知らなかったです。<br>どうやら読み込み専用フォームとそうでないフォームがあるみたいです。<br>書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。<br>なのでどちらにも対応できるような感じになってます。</p><h2 id=事前準備>事前準備</h2><ul><li>reportlab</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pip install reportlab
+</span></span></code></pre></div><ul><li>PyPDF2</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pip install pypdf2
+</span></span></code></pre></div><h2 id=コード>コード</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#! /usr/bin/python</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># -*- coding: utf-8 -*-</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> reportlab.pdfgen <span style=color:#f92672>import</span> canvas
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> reportlab.lib.pagesizes <span style=color:#f92672>import</span> A4
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> reportlab.pdfbase <span style=color:#f92672>import</span> pdfmetrics
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> reportlab.pdfbase.ttfonts <span style=color:#f92672>import</span> TTFont
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> PyPDF2.pdf <span style=color:#f92672>import</span> PdfFileReader, PdfFileWriter
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> io <span style=color:#f92672>import</span> BytesIO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;title&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># fontを変更</span>
+</span></span><span style=display:flex><span>pdfmetrics<span style=color:#f92672>.</span>registerFont(TTFont(<span style=color:#e6db74>&#39;Mplus1p-Light&#39;</span>, <span style=color:#e6db74>&#39;static/font/Mplus1p/Mplus1p-Light.ttf&#39;</span>))
+</span></span><span style=display:flex><span>template_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;template.pdf&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 読み込み</span>
+</span></span><span style=display:flex><span>reader <span style=color:#f92672>=</span> PdfFileReader(template_path)
+</span></span><span style=display:flex><span>existing_page <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>getPage(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>page_width <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getWidth()
+</span></span><span style=display:flex><span>page_height <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getHeight()
+</span></span><span style=display:flex><span><span style=color:#75715e># 直接フォームに入力するのではないのでstreamとしてもっておく</span>
+</span></span><span style=display:flex><span>packet <span style=color:#f92672>=</span> BytesIO()
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> canvas<span style=color:#f92672>.</span>Canvas(packet, pagesize<span style=color:#f92672>=</span>A4)
+</span></span><span style=display:flex><span>c<span style=color:#f92672>.</span>setFont(<span style=color:#e6db74>&#39;Mplus1p-Light&#39;</span>, <span style=color:#ae81ff>17</span>)
+</span></span><span style=display:flex><span><span style=color:#75715e># titleはセンタリング</span>
+</span></span><span style=display:flex><span>c<span style=color:#f92672>.</span>drawCentredString(page_width <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, page_height <span style=color:#f92672>-</span> <span style=color:#ae81ff>20</span>, title)
+</span></span><span style=display:flex><span><span style=color:#75715e># formfieldsを取得</span>
+</span></span><span style=display:flex><span>fields <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>trailer[<span style=color:#e6db74>&#39;/Root&#39;</span>][<span style=color:#e6db74>&#39;/AcroForm&#39;</span>][<span style=color:#e6db74>&#39;/Fields&#39;</span>]
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> f <span style=color:#f92672>in</span> fields:
+</span></span><span style=display:flex><span>    field <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>getObject()
+</span></span><span style=display:flex><span>    <span style=color:#75715e># formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]</span>
+</span></span><span style=display:flex><span>    rect <span style=color:#f92672>=</span> field<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;/Rect&#39;</span>, [<span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>0.0</span>])
+</span></span><span style=display:flex><span>    key <span style=color:#f92672>=</span> field<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;/T&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>    c<span style=color:#f92672>.</span>setFont(<span style=color:#e6db74>&#39;Mplus1p-Light&#39;</span>, <span style=color:#ae81ff>9</span>)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 微調整</span>
+</span></span><span style=display:flex><span>    c<span style=color:#f92672>.</span>drawString(float(rect[<span style=color:#ae81ff>0</span>]) <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span>, float(rect[<span style=color:#ae81ff>1</span>]) <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span>, key)
+</span></span><span style=display:flex><span>c<span style=color:#f92672>.</span>save()
+</span></span><span style=display:flex><span><span style=color:#75715e># パケットの読み込みを先頭に戻す</span>
+</span></span><span style=display:flex><span>packet<span style=color:#f92672>.</span>seek(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>new_pdf <span style=color:#f92672>=</span> PdfFileReader(packet)
+</span></span><span style=display:flex><span><span style=color:#75715e># テンプレートと書き込んだ内容をマージ</span>
+</span></span><span style=display:flex><span>existing_page<span style=color:#f92672>.</span>mergePage(new_pdf<span style=color:#f92672>.</span>getPage(<span style=color:#ae81ff>0</span>))
+</span></span><span style=display:flex><span><span style=color:#75715e># writerを用意</span>
+</span></span><span style=display:flex><span>writer <span style=color:#f92672>=</span> PdfFileWriter()
+</span></span><span style=display:flex><span>writer<span style=color:#f92672>.</span>addPage(existing_page)
+</span></span><span style=display:flex><span><span style=color:#75715e># 書き込み</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;output.pdf&#39;</span>, <span style=color:#e6db74>&#39;wb&#39;</span>) <span style=color:#66d9ef>as</span> output_file:
+</span></span><span style=display:flex><span>    writer<span style=color:#f92672>.</span>write(output_file)
+</span></span></code></pre></div><p>見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。</p><h3 id=おまけ>おまけ</h3><p>ただフォームを埋めたいだけの場合</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#! /usr/bin/python</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># -*- coding: utf-8 -*-</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> PyPDF2.pdf <span style=color:#f92672>import</span> PdfFileReader, PdfFileWriter
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>template_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;template.pdf&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 読み込み</span>
+</span></span><span style=display:flex><span>reader <span style=color:#f92672>=</span> PdfFileReader(template_path)
+</span></span><span style=display:flex><span>existing_page <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>getPage(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>page_width <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getWidth()
+</span></span><span style=display:flex><span>page_height <span style=color:#f92672>=</span> existing_page<span style=color:#f92672>.</span>mediaBox<span style=color:#f92672>.</span>getHeight()
+</span></span><span style=display:flex><span><span style=color:#75715e># formfieldsを取得</span>
+</span></span><span style=display:flex><span>fields <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span>getFormTextFields()
+</span></span><span style=display:flex><span><span style=color:#75715e># formの値を更新</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> key <span style=color:#f92672>in</span> fields:
+</span></span><span style=display:flex><span>    fields[key] <span style=color:#f92672>=</span> key
+</span></span><span style=display:flex><span><span style=color:#75715e># writerを用意</span>
+</span></span><span style=display:flex><span>writer <span style=color:#f92672>=</span> PdfFileWriter()
+</span></span><span style=display:flex><span><span style=color:#75715e># 上書き</span>
+</span></span><span style=display:flex><span>writer<span style=color:#f92672>.</span>updatePageFormFieldValues(existing_page, fields)
+</span></span><span style=display:flex><span>writer<span style=color:#f92672>.</span>addPage(existing_page)
+</span></span><span style=display:flex><span><span style=color:#75715e># 書き込み</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;output.pdf&#39;</span>, <span style=color:#e6db74>&#39;wb&#39;</span>) <span style=color:#66d9ef>as</span> output_file:
+</span></span><span style=display:flex><span>    writer<span style=color:#f92672>.</span>write(output_file)
+</span></span></code></pre></div></div></div></div><footer class=footer><div class=footer__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
 <span>Theme created by
-<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span>
-</div>
-</div>
-</footer>
-<script src=https://pyonk.github.io/blog/assets/main.js></script>
-<script src=https://pyonk.github.io/blog/assets/prism.js></script>
-</div>
-</body>
-</html>
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://pyonk.github.io/blog/assets/main.js></script>
+<script src=https://pyonk.github.io/blog/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-51GX3P4YPL"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-51GX3P4YPL",{anonymize_ip:!1})}</script></body></html>
