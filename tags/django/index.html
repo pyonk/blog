@@ -16,7 +16,7 @@ databaseに定義されてない値でソートしたかったのです。
 とても参考になったstack overflowはこちら。
 Django order_by specific order - Stack Overflow
 ただしdjango >= 1.8です
-TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { '1': 100.0, '2': 50.0, '3': 25.0, '4': 123.4, '5': 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.</div><div><a class="read-more button" href=/blog/posts/django-queryset-order-by-specific-values/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/>Djangoでどうしても非同期でコマンドを実行したくなった</a></h1><div class=post-meta><span class=post-date>2017-01-06</span>
+TL;DR from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { '1': 100.0, '2': 50.0, '3': 25.0, '4': 123.4, '5': 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 Conditional Expressions | Django documentation | Django</div><div><a class="read-more button" href=/blog/posts/django-queryset-order-by-specific-values/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/>Djangoでどうしても非同期でコマンドを実行したくなった</a></h1><div class=post-meta><span class=post-date>2017-01-06</span>
 <span class=post-read-time>— 2 min read</span></div><span class=post-tags><a href=https://pyonk.github.io/blog/tags/python/>#python</a>&nbsp;
 <a href=https://pyonk.github.io/blog/tags/django/>#django</a>&nbsp;</span><div class=post-content>経緯 あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
 コマンドの設計見直せっていうのは今回は置いといてください・・・。
@@ -40,7 +40,8 @@ Redis RabbitMQ Amazon SQS などを使うことができます。 今回はRedis
 yum install redis
 bundleも用意されているのでそれも。
 pip install -U "celery[redis]"
-how to ここを参考にモリモリかいていきます。</div><div><a class="read-more button" href=/blog/posts/use-celery-for-send-email-django/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
+how to ここを参考にモリモリかいていきます。
+proj/__init__.py from __future__ import absolute_import, unicode_literals # This will make sure the app is always imported when # Django starts so that shared_task will use this app.</div><div><a class="read-more button" href=/blog/posts/use-celery-for-send-email-django/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><a href=/blog/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>わいがかいた</span>
 <span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
 <span>Theme created by
