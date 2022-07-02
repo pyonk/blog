@@ -3,10 +3,10 @@
 （最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
 vim使ってる人のプロフェッショナル感がすごい。
 sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
-Vintageの有効化 Cmd + ,でsublimetextの設定を開く。
+Vintageの有効化 # Cmd + ,でsublimetextの設定を開く。
 ここのVintageを消す。
 vintage消す 有効化done
-つかってみる つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
+つかってみる # つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
 こんな具合ですね INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
 ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
 VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3 カラビナ使うっていう手もあるけど
@@ -15,5 +15,5 @@ macではAppleScriptを使うみたいですね。
 SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita 僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
 タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
 で結果はこうなります。
-こんな具合ですね おソース pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>
+こんな具合ですね おソース # pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>
 Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。</description></item></channel></rss>
