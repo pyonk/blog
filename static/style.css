@@ -1,3 +1,14 @@
-a {
+.post-content {
+    line-height: 1.7;
+}
+.post-content a {
     word-break: break-all;
+}
+.post-content figure figcaption {
+    font-size: 0.8em;
+}
+.post-content img {
+    border-radius: 3px;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
+    margin: 0 auto;
 }
