@@ -65,8 +65,8 @@ https://prtimes.jp/main/html/rd/p/000000192.000019299.html
 
 ありがたいことに火の玉ストレートで引き留められたりしましたが、結果的には快く応援するよーと言ってもらえて円満退社となりました。
 
-あ、ぼくのポジションを含めエンジニア採用中ですので、よろしければぜひ！！
-https://www.wantedly.com/companies/campfirejp/projects
+あ、ぼくのポジションを含めエンジニア採用中ですので、よろしければぜひ！！  
+👉 https://www.wantedly.com/companies/campfirejp/projects
 
 
 ## さいごに
