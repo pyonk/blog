@@ -3,6 +3,7 @@ theme = "hello-friend"
 paginate = 5
 defaultContentLanguage = "ja"
 googleAnalytics = "G-51GX3P4YPL"
+enableEmoji = true
 
 [params]
   # dir name of your blog content (default is `content/posts`)
