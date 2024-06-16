@@ -20,17 +20,18 @@ googleAnalytics = "G-51GX3P4YPL"
 [languages]
   [languages.ja]
     title = "わいがかいた"
-    subtitle = ""
-    keywords = ""
     copyright = ""
-    menuMore = "Show more"
-    writtenBy = "Written by"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
 
-    [languages.ja.params.logo]
-      logoText = "わいがかいた"
-      logoHomeLink = "/blog/"
+    [languages.ja.params]
+      subtitle = ""
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      menuMore = "Show more"
+      readOtherPosts = "Read other posts"
+      writtenBy = "Written by"
+      readMore = "Read more"
+      keywords = "わいがかいた"
+      [logo]
+        logoText = "わいがかいた"
+        logoHomeLink = "/blog/"
 
