@@ -6,7 +6,7 @@ date: 2024-06-16T12:35:03+09:00
 draft: false
 author: pyonk
 tags:
-    - cosmosDB
+    - CosmosDB
     - colima
     - troubleshooting
 ---
