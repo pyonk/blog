@@ -32,7 +32,7 @@ enableEmoji = true
       writtenBy = "Written by"
       readMore = "Read more"
       keywords = "わいがかいた"
-      [logo]
+      [languages.ja.params.logo]
         logoText = "わいがかいた"
         logoHomeLink = "/blog/"
 
