@@ -1,5 +1,5 @@
 baseUrl = "https://pyonk.github.io/blog/"
-theme = "hello-friend"
+theme = "hugo-theme-console"
 paginate = 5
 defaultContentLanguage = "ja"
 googleAnalytics = "G-51GX3P4YPL"
@@ -9,10 +9,21 @@ enableEmoji = true
   # dir name of your blog content (default is `content/posts`)
   # contentTypeName = "content/posts"
   # "light" or "dark"
-  defaultTheme = "light"
+  defaultTheme = "dark"
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 0
   showReadingTime = true
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
+
+  [[params.navlinks]]
+  name = "photos/"
+  url = "photos/"
 
 [markup]
   [markup.blackFriday]

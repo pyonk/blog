@@ -1,7 +1,7 @@
 ---
 title: "Run the CosmosDB Emulator on Apple Silicon machines"
 description: "We could run the CosmosDB Emulator with Colima on Apple Silicon machines"
-cover: "posts/cosmos-db-emulator-on-apple-silicon/images/cover.jpg"
+cover: "images/cover.jpg"
 date: 2024-06-16T12:35:03+09:00
 draft: false
 author: pyonk
