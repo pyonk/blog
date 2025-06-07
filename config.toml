@@ -1,6 +1,5 @@
 baseUrl = "https://pyonk.github.io/blog/"
 theme = "hello-friend"
-paginate = 5
 defaultContentLanguage = "ja"
 googleAnalytics = "G-51GX3P4YPL"
 enableEmoji = true
@@ -17,6 +16,9 @@ enableEmoji = true
 [markup]
   [markup.blackFriday]
     hrefTargetBlank = true
+
+[pagination]
+    pagerSize = 5
 
 [languages]
   [languages.ja]
