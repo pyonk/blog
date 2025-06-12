@@ -948,8 +948,8 @@ blockquote p:last-child {
   color: #ffffff !important;
 }
 
-.gallery-location,
-.gallery-date {
+.gallery-overlay .gallery-location,
+.gallery-overlay .gallery-date {
   font-size: 0.875rem;
   opacity: 0.9;
   margin: 0;
@@ -1216,34 +1216,30 @@ blockquote p:last-child {
   }
 
   .menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--header);
-    border-bottom: 1px solid var(--border-color-light);
-    backdrop-filter: blur(10px);
-    padding: var(--space-lg);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-normal);
+    position: static;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    padding: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
   }
 
   .menu--active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+    /* Not needed - menu always visible */
   }
 
   .menu__inner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: var(--space-md);
+    justify-content: center;
   }
 
   .menu-trigger {
-    display: flex;
+    display: none;
   }
 
   .post-entry {

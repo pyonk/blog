@@ -15,7 +15,8 @@
         {{ if .Params.image }}
           <figure class="gallery-figure">
             <a href="{{ .RelPermalink }}" class="gallery-link">
-              <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy" />
+              {{ $image := resources.Get .Params.image }}
+              <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" loading="lazy" />
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>{{ .Title }}</h3>

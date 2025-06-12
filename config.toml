@@ -46,7 +46,7 @@ enableEmoji = true
         logoHomeLink = "/blog/"
 
     [[languages.ja.menu.main]]
-      name = "わいがとった"
+      name = "📷"
       url = "/gallery/"
       weight = 10
 
@@ -60,7 +60,7 @@ enableEmoji = true
         logoHomeLink = "/blog/"
 
     [[languages.en.menu.main]]
-      name = "waigatotta"
+      name = "📷"
       url = "/gallery/"
       weight = 10
 
