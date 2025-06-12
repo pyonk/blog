@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="header__inner">
+    {{ partial "logo.html" . }}
+    <div class="header__right">
+      {{ if len $.Site.Menus }}
+        {{ partial "menu.html" . }}
+        <div class="menu-toggle-container"></div>
+      {{ end }}
+      <div class="theme-toggle-container"></div>
+    </div>
+  </div>
+</header>

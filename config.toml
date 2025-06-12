@@ -1,12 +1,18 @@
 baseUrl = "https://pyonk.github.io/blog/"
-theme = "hello-friend"
+theme = "pyonk"
 defaultContentLanguage = "ja"
-googleAnalytics = "G-51GX3P4YPL"
 enableEmoji = true
+
+[main]
+  content = "./content/"
+
+[services]
+  [services.googleAnalytics]
+    ID = "G-51GX3P4YPL"
 
 [params]
   # dir name of your blog content (default is `content/posts`)
-  # contentTypeName = "content/posts"
+  contentTypeName = "posts"
   # "light" or "dark"
   defaultTheme = "light"
   # if you set this to 0, only submenu trigger will be visible
