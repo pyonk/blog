@@ -1,32 +1,230 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on わいがかいた</title><link>https://pyonk.github.io/blog/tags/django/</link><description>Recent content in Django on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 17 May 2020 11:28:16 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>
-pgcryptoで暗号化した件 in Django</description></item><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>
-facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている</description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>
-djangoのquerysetを任意の順番でsortする # djnagoではorder_by('hoge')とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
-が、ぼくがやりたかったのは、任意の値でのソート。
-databaseに定義されてない値でソートしたかったのです。
-とても参考になったstack overflowはこちら。
-Django order_by specific order - Stack Overflow
-ただしdjango &amp;gt;= 1.8です
-TL;DR # from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 # Conditional Expressions | Django documentation | Django</description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>
-経緯 # あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
-コマンドの設計見直せっていうのは今回は置いといてください・・・。
-どうしたのか # いくつかの方法を試しました。
-pythonからコマンドを叩く # まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
-import subprocess import shlex cmd = &amp;#39;nohup sleep 10 &amp;amp;&amp;#39; subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
-つぎ！
-thread化して逃げる # この前書いたような感じです。
-pythonでtupleをつくる - わいがかいた
-結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
-つぎ！！
-celeryを使う # Celery - Distributed Task Queue — Celery 4.0.2 documentation
-ようやく本題。
-ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
-実際やりはじめて少し後悔しましたし。
-結構面倒くさかったので備忘録代わりに。
-install # まずは本体をインストールしていきます。
-pip install -U Celery
-celeryはbrokerとして
-Redis RabbitMQ Amazon SQS などを使うことができます。 今回はRedisを選択しました。
-yum install redis
-bundleも用意されているのでそれも。
-pip install -U &amp;quot;celery[redis]&amp;quot;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on わいがかいた</title><link>https://pyonk.github.io/blog/tags/django/</link><description>Recent content in Django on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 17 May 2020 11:28:16 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>&lt;p>Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。&lt;/p>
+&lt;p>postgresの拡張機能である&lt;code>pgcrypto&lt;/code>で暗号化します。
+&lt;a href="https://www.postgresql.jp/document/10/html/pgcrypto.html">https://www.postgresql.jp/document/10/html/pgcrypto.html&lt;/a>&lt;/p>
+&lt;h2 id="pgcryptoの有効化">pgcryptoの有効化&lt;/h2>
+&lt;p>&lt;em>後述の通り&lt;code>django-pgcrypto-fields&lt;/code>を使う場合はmigrationファイルがよしなにやってくれるので必要ないけど&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> EXTENSION pgcrypto;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/* 確認 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">FROM&lt;/span> pg_extentions;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>もし&lt;code>lib/pgcrypto.so&lt;/code>がない場合は
+&lt;code>yum install postgresql-contrib&lt;/code>とかで用意しておく。&lt;/p>
+&lt;h2 id="django-pgcrypto-fieldsのインストール">django-pgcrypto-fieldsのインストール&lt;/h2>
+&lt;p>Djangoとのやりとりは&lt;a href="https://github.com/incuna/django-pgcrypto-fields">django-pgcrypto-fields&lt;/a>を介して行うので
+インストールする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install django-pgcrypto-fields
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="鍵の作成">鍵の作成&lt;/h2>
+&lt;p>pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって&lt;/p>
+&lt;p>今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。&lt;/p>
+&lt;p>鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。&lt;/p>
+&lt;p>以下のコマンドでインタラクティブに鍵が作成できる。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg --gen-key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>推奨するキー種類は「DSAとElgamal」です。&lt;br>
+― &lt;a href="https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19">https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>らしい。&lt;/p>
+&lt;p>* &lt;em>ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合は&lt;a href="https://serverfault.com/questions/214605/gpg-does-not-have-enough-entropy">これ&lt;/a>で解決した&lt;/em>&lt;/p>
+&lt;p>作成できたら確認しよう。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg --list-secret-keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg -a --export KEYID &amp;gt; public.key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg -a --export-secret-keys KEYID &amp;gt; private.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="settingsに記述">settingsに記述&lt;/h2>
+&lt;p>ここまでで下準備が完了！&lt;/p>
+&lt;p>次は&lt;code>settigns.py&lt;/code>に必要な記述をしていく。&lt;/p>
+&lt;p>&lt;code>PUBLIC_PGP_KEY_PATH&lt;/code>, &lt;code>PRIVATE_PGP_KEY_PATH&lt;/code> はさっき作成した鍵を指定する。&lt;/p>
+&lt;p>&lt;code>django-pgcrypto-fields&lt;/code>の説明のまんまだけど&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>PUBLIC_PGP_KEY_PATH &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>abspath(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(BASEDIR, &lt;span style="color:#e6db74">&amp;#39;public.key&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRIVATE_PGP_KEY_PATH &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>abspath(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(BASEDIR, &lt;span style="color:#e6db74">&amp;#39;private.key&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PUBLIC_PGP_KEY &lt;span style="color:#f92672">=&lt;/span> open(PUBLIC_PGP_KEY_PATH)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRIVATE_PGP_KEY &lt;span style="color:#f92672">=&lt;/span> open(PRIVATE_PGP_KEY_PATH)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INSTALLED_APPS &lt;span style="color:#f92672">+=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;pgcrypto&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="実際にコードに組み込む">実際にコードに組み込む&lt;/h2>
+&lt;p>こんな感じのコードがあったとして&lt;/p></description></item><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>&lt;p>facebookに見慣れぬアラートが。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/alert.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>突然のアラート&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/message.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>難しい英文&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;blockquote>
+&lt;p>In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.&lt;br>
+This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More&lt;/p></description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>&lt;h1 id="djangoのquerysetを任意の順番でsortする">djangoのquerysetを任意の順番でsortする&lt;/h1>
+&lt;p>djnagoでは&lt;code>order_by('hoge')&lt;/code>とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。&lt;/p>
+&lt;p>が、ぼくがやりたかったのは、任意の値でのソート。&lt;br>
+databaseに定義されてない値でソートしたかったのです。&lt;/p>
+&lt;p>とても参考になったstack overflowはこちら。&lt;br>
+&lt;a href="https://stackoverflow.com/questions/10329849/django-order-by-specific-order">Django order_by specific order - Stack Overflow&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>ただし&lt;code>django &amp;gt;= 1.8&lt;/code>です&lt;/p>&lt;/blockquote>
+&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> djnago.db.models &lt;span style="color:#f92672">import&lt;/span> Case, When, Value, FloatField
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># { pid: specific_value, }&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>specific_values &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;1&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">100.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">50.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">25.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;4&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">123.4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;5&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">599.33&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sqlのCASE式にしたい条件のリスト&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cases &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># casesにCASE式にしたい条件をつめていく&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> pid, specific_value &lt;span style="color:#f92672">in&lt;/span> specific_values&lt;span style="color:#f92672">.&lt;/span>items():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cases&lt;span style="color:#f92672">.&lt;/span>append(When(id&lt;span style="color:#f92672">=&lt;/span>pid, then&lt;span style="color:#f92672">=&lt;/span>Value(specific_value)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Hoge&lt;span style="color:#f92672">.&lt;/span>objects&lt;span style="color:#f92672">.&lt;/span>filter(id__in&lt;span style="color:#f92672">=&lt;/span>specific_values&lt;span style="color:#f92672">.&lt;/span>keys())&lt;span style="color:#f92672">.&lt;/span>annotate(specific_value&lt;span style="color:#f92672">=&lt;/span>Case(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>cases,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output_field&lt;span style="color:#f92672">=&lt;/span>FloatField()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>))&lt;span style="color:#f92672">.&lt;/span>order_by(specific_value)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="詳しい説明">詳しい説明&lt;/h2>
+&lt;p>&lt;a href="https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/">Conditional Expressions | Django documentation | Django&lt;/a>&lt;/p>
+&lt;h2 id="tips">TIPS&lt;/h2>
+&lt;ul>
+&lt;li>casesに条件をつめこむため、&lt;code>Case&lt;/code>インスタンスを作成する際に、&lt;code>*&lt;/code>で展開してあげないといけない。&lt;/li>
+&lt;/ul>
+&lt;p>ここだけ気をつければ非常に便利（使い所があまりないのが玉に瑕）。&lt;/p></description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>&lt;h1 id="経緯">経緯&lt;/h1>
+&lt;p>あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。&lt;/p>
+&lt;p>コマンドの設計見直せっていうのは今回は置いといてください・・・。&lt;/p>
+&lt;h1 id="どうしたのか">どうしたのか&lt;/h1>
+&lt;p>いくつかの方法を試しました。&lt;/p>
+&lt;h2 id="pythonからコマンドを叩く">pythonからコマンドを叩く&lt;/h2>
+&lt;p>まず思い浮かんだのがコマンドを&lt;code>nohup &amp;amp;&lt;/code>でpythonから叩く。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> subprocess
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> shlex
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;nohup sleep 10 &amp;amp;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess&lt;span style="color:#f92672">.&lt;/span>Popen(cmd)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>が！！！
+レスポンスが帰ってくるのは10秒後・・・。&lt;/p>
+&lt;p>つぎ！&lt;/p>
+&lt;h2 id="thread化して逃げる">thread化して逃げる&lt;/h2>
+&lt;p>この前書いたような感じです。&lt;/p>
+&lt;p>&lt;a href="https://pyonk.github.io/blog/post/python-tuple/">pythonでtupleをつくる - わいがかいた&lt;/a>&lt;/p>
+&lt;p>結局、レスポンスが帰ってくるのは10秒後・・・。
+ここ工夫するとどうにかなるような気もする。&lt;/p>
+&lt;p>つぎ！！&lt;/p>
+&lt;h2 id="celeryを使う">celeryを使う&lt;/h2>
+&lt;p>&lt;a href="http://docs.celeryproject.org/en/latest/index.html">Celery - Distributed Task Queue — Celery 4.0.2 documentation&lt;/a>&lt;/p>
+&lt;p>ようやく本題。&lt;/p>
+&lt;p>ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。&lt;/p>
+&lt;p>&lt;del>実際やりはじめて少し後悔しましたし。&lt;/del>&lt;/p>
+&lt;p>結構面倒くさかったので備忘録代わりに。&lt;/p>
+&lt;h3 id="install">install&lt;/h3>
+&lt;p>まずは本体をインストールしていきます。&lt;/p>
+&lt;p>&lt;code>pip install -U Celery&lt;/code>&lt;/p>
+&lt;p>celeryはbrokerとして&lt;/p>
+&lt;ul>
+&lt;li>Redis&lt;/li>
+&lt;li>RabbitMQ&lt;/li>
+&lt;li>Amazon SQS&lt;/li>
+&lt;/ul>
+&lt;p>などを使うことができます。
+今回はRedisを選択しました。&lt;/p>
+&lt;p>&lt;code>yum install redis&lt;/code>&lt;/p>
+&lt;p>bundleも用意されているのでそれも。&lt;/p>
+&lt;p>&lt;code>pip install -U &amp;quot;celery[redis]&amp;quot;&lt;/code>&lt;/p>
+&lt;h3 id="how-to">how to&lt;/h3>
+&lt;p>&lt;a href="https://github.com/celery/celery/tree/master/examples/django/">ここ&lt;/a>を参考にモリモリかいていきます。&lt;/p>
+&lt;ul>
+&lt;li>proj/__init__.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># This will make sure the app is always imported when&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Django starts so that shared_task will use this app.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> .celery &lt;span style="color:#f92672">import&lt;/span> app &lt;span style="color:#66d9ef">as&lt;/span> celery_app
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__all__ &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;celery_app&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>proj/settings.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Celery settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_RESULT_BACKEND &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;redis&amp;#39;&lt;/span> &lt;span style="color:#75715e"># redisを指定&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_BROKER_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;redis://localhost:6379/0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_TASK_SERIALIZER &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_RESULT_SERIALIZER &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_ACCEPT_CONTENT &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>proj/celery.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> celery &lt;span style="color:#f92672">import&lt;/span> Celery
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># set the default Django settings module for the &amp;#39;celery&amp;#39; program.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#f92672">.&lt;/span>environ&lt;span style="color:#f92672">.&lt;/span>setdefault(&lt;span style="color:#e6db74">&amp;#39;DJANGO_SETTINGS_MODULE&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;proj.settings&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Celery(&lt;span style="color:#e6db74">&amp;#39;proj&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Using a string here means the worker don&amp;#39;t have to serialize&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># the configuration object to child processes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># - namespace=&amp;#39;CELERY&amp;#39; means all celery-related configuration keys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># should have a `CELERY_` prefix.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#f92672">.&lt;/span>config_from_object(&lt;span style="color:#e6db74">&amp;#39;django.conf:settings&amp;#39;&lt;/span>, namespace&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;CELERY&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Load task modules from all registered Django app configs.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#f92672">.&lt;/span>autodiscover_tasks()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.task&lt;/span>(bind&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">debug_task&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;Request: &lt;/span>&lt;span style="color:#e6db74">{0!r}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(self&lt;span style="color:#f92672">.&lt;/span>request))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>app/tasks.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /usr/bin/python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create your tasks here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># from celery import shared_task&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> celery.decorators &lt;span style="color:#f92672">import&lt;/span> task
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> time
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@task&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">add_wait&lt;/span>(x, y):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> time&lt;span style="color:#f92672">.&lt;/span>sleep(&lt;span style="color:#ae81ff">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>app/views.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> tasks &lt;span style="color:#f92672">import&lt;/span> add_wait
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">add_some_number&lt;/span>(request):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> add_wait&lt;span style="color:#f92672">.&lt;/span>delay(&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> render(rerquest, &lt;span style="color:#e6db74">&amp;#39;result.html&amp;#39;&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;result&amp;#39;&lt;/span>: result,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="うごかしていきます">うごかしていきます&lt;/h4>
+&lt;ul>
+&lt;li>redisの起動&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>sudo /etc/init.d/redis start&lt;/code>&lt;/p></description></item></channel></rss>

@@ -1,2 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Postgresql on わいがかいた</title><link>https://pyonk.github.io/blog/tags/postgresql/</link><description>Recent content in Postgresql on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 17 May 2020 11:28:16 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>
-pgcryptoで暗号化した件 in Django</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Postgresql on わいがかいた</title><link>https://pyonk.github.io/blog/tags/postgresql/</link><description>Recent content in Postgresql on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 17 May 2020 11:28:16 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>&lt;p>Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。&lt;/p>
+&lt;p>postgresの拡張機能である&lt;code>pgcrypto&lt;/code>で暗号化します。
+&lt;a href="https://www.postgresql.jp/document/10/html/pgcrypto.html">https://www.postgresql.jp/document/10/html/pgcrypto.html&lt;/a>&lt;/p>
+&lt;h2 id="pgcryptoの有効化">pgcryptoの有効化&lt;/h2>
+&lt;p>&lt;em>後述の通り&lt;code>django-pgcrypto-fields&lt;/code>を使う場合はmigrationファイルがよしなにやってくれるので必要ないけど&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> EXTENSION pgcrypto;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/* 確認 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">FROM&lt;/span> pg_extentions;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>もし&lt;code>lib/pgcrypto.so&lt;/code>がない場合は
+&lt;code>yum install postgresql-contrib&lt;/code>とかで用意しておく。&lt;/p>
+&lt;h2 id="django-pgcrypto-fieldsのインストール">django-pgcrypto-fieldsのインストール&lt;/h2>
+&lt;p>Djangoとのやりとりは&lt;a href="https://github.com/incuna/django-pgcrypto-fields">django-pgcrypto-fields&lt;/a>を介して行うので
+インストールする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install django-pgcrypto-fields
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="鍵の作成">鍵の作成&lt;/h2>
+&lt;p>pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって&lt;/p>
+&lt;p>今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。&lt;/p>
+&lt;p>鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。&lt;/p>
+&lt;p>以下のコマンドでインタラクティブに鍵が作成できる。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg --gen-key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>推奨するキー種類は「DSAとElgamal」です。&lt;br>
+― &lt;a href="https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19">https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>らしい。&lt;/p>
+&lt;p>* &lt;em>ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合は&lt;a href="https://serverfault.com/questions/214605/gpg-does-not-have-enough-entropy">これ&lt;/a>で解決した&lt;/em>&lt;/p>
+&lt;p>作成できたら確認しよう。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg --list-secret-keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg -a --export KEYID &amp;gt; public.key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg -a --export-secret-keys KEYID &amp;gt; private.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="settingsに記述">settingsに記述&lt;/h2>
+&lt;p>ここまでで下準備が完了！&lt;/p>
+&lt;p>次は&lt;code>settigns.py&lt;/code>に必要な記述をしていく。&lt;/p>
+&lt;p>&lt;code>PUBLIC_PGP_KEY_PATH&lt;/code>, &lt;code>PRIVATE_PGP_KEY_PATH&lt;/code> はさっき作成した鍵を指定する。&lt;/p>
+&lt;p>&lt;code>django-pgcrypto-fields&lt;/code>の説明のまんまだけど&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>PUBLIC_PGP_KEY_PATH &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>abspath(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(BASEDIR, &lt;span style="color:#e6db74">&amp;#39;public.key&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRIVATE_PGP_KEY_PATH &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>abspath(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(BASEDIR, &lt;span style="color:#e6db74">&amp;#39;private.key&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PUBLIC_PGP_KEY &lt;span style="color:#f92672">=&lt;/span> open(PUBLIC_PGP_KEY_PATH)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRIVATE_PGP_KEY &lt;span style="color:#f92672">=&lt;/span> open(PRIVATE_PGP_KEY_PATH)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INSTALLED_APPS &lt;span style="color:#f92672">+=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;pgcrypto&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="実際にコードに組み込む">実際にコードに組み込む&lt;/h2>
+&lt;p>こんな感じのコードがあったとして&lt;/p></description></item></channel></rss>

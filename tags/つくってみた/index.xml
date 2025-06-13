@@ -1,3 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>つくってみた on わいがかいた</title><link>https://pyonk.github.io/blog/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link><description>Recent content in つくってみた on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png"/>
-どんなときもvimでCAMPFIREのプロジェクトがみたい件</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>つくってみた on わいがかいた</title><link>https://pyonk.github.io/blog/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link><description>Recent content in つくってみた on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>&lt;p>これは&lt;a href="https://qiita.com/advent-calendar/2020/campfire">CAMPFIRE Advent Calendar 2020&lt;/a>の5日目の記事です。&lt;/p>
+&lt;p>こんにちは🌞&lt;br>
+CAMPFIREでエンジニアをしている&lt;a href="https://twitter.com/__pyonk__" target="_blank">@__pyonk__&lt;/a>
+です。&lt;br>
+ちょっと前までは&lt;a href="https://tomo-shibi.jp">TOMOSHIBI&lt;/a>というサービスをつくってました。&lt;br>
+最近はCAMPFIRE本体の方を開発しています。&lt;br>
+アドベントカレンダーを書くのは初めてだったと思います。&lt;/p>
+&lt;p>最近息子が生まれました。&lt;br>
+最高です。&lt;/p>
+&lt;p>よろしくお願いします。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/1.jpg" />
+ 
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;hr>
+&lt;p>さて、ぼくはテキストエディタがわりかし好きで&lt;br>
+色々なエディタを触ってはやめて触ってはやめてを繰り返してきました。&lt;/p>
+&lt;p>ですがvimを触ってからは浮気一つせず使い続けています。&lt;/p>
+&lt;p>vimに関しては説明不要ではありますが、設定ファイルを書いたりプラグインを使ったりすればいくらでも自分好みの使い勝手にできるのが魅力ですね。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/2.jpg" />
+ 
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h3 id="どんなときでもcampfireのプロジェクトが気になる">どんなときでもCAMPFIREのプロジェクトが気になる&lt;/h3>
+&lt;p>そしてそんなvimを使っているときでもクラウドファンディングに挑戦しているプロジェクトをサクッとみたくなるときがありますよね。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">開発してるときでも人気のプロジェクトぐらいはサクッと見たい&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/1333786022082011137?ref_src=twsrc%5Etfw">December 1, 2020&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>たとえば&lt;/p>
+&lt;ul>
+&lt;li>vimの終了の仕方がわからなくて四苦八苦してるとき&lt;/li>
+&lt;li>&lt;a href="https://github.com/lambdalisue/gina.vim">gina.vim&lt;/a>めっちゃ便利やなあと感動してるとき&lt;/li>
+&lt;li>キーバインドをどうしようか考えているとき&lt;/li>
+&lt;li>便利そうなプラグインをみつけて入れてみるとき&lt;/li>
+&lt;li>今日は&lt;a href="https://github.com/cocopon/iceberg.vim">iceberg&lt;/a>な気分だなーー！って思うとき&lt;/li>
+&lt;/ul>
+&lt;p>どうしたって今人気のプロジェクトはなんだろうか、とふと思うだろうし、&lt;/p>
+&lt;p>どんな新しいワクワクするようなプロジェクトが生まれているのだろう、というのは気になるものです。&lt;/p>
+&lt;p>ということでそんな気持ちに応えるプラグインを作りました。&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyonk/campfire.vim">pyonk/campfire.vim&lt;/a>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/campfire.vim.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>campfire.vim&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h3 id="使い方">使い方&lt;/h3>
+&lt;p>使い方は単純です。
+今人気のプロジェクトみたいなーーーっておもったときは&lt;br>
+&lt;code>:CAMPFIRE&lt;/code>してください。&lt;/p>
+&lt;p>もし新しいプロジェクト何があんねやろっておもったときは&lt;br>
+&lt;code>:CAMPFIRE fresh&lt;/code>としてみてください。&lt;/p>
+&lt;p>詳しく見たいプロジェクトでエンターを押すとブラウザで開きます。&lt;/p>
+&lt;p>きっとあなたの気持ちを満たしてくれることと存じます。&lt;/p>
+&lt;p>よかったら使ってみてください。&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/3.jpg" />
+ 
+ 
+&lt;/figure>
+
+
+&lt;p>明日はdatadogマスターこと、&lt;a href="https://twitter.com/TAK_0401" target="_blank">@TAK_0401&lt;/a>
+です！！&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/4.jpg" />
+ 
+ 
+&lt;/figure></description></item></channel></rss>

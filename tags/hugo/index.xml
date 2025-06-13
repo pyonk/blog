@@ -1,2 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on わいがかいた</title><link>https://pyonk.github.io/blog/tags/hugo/</link><description>Recent content in Hugo on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 03 Jan 2017 10:34:47 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>
-Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on わいがかいた</title><link>https://pyonk.github.io/blog/tags/hugo/</link><description>Recent content in Hugo on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Tue, 03 Jan 2017 10:34:47 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>&lt;p>2017年明けましておめでとうございます。&lt;/p>
+&lt;h1 id="初プルリク">初プルリク&lt;/h1>
+&lt;p>昨年末になんとなく&lt;a href="https://github.com/akmittal/Hugofy">Hugofy&lt;/a>にプルリクを送ってみました。&lt;/p>
+&lt;p>ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。&lt;/p>
+&lt;h2 id="どうすればよかったのか">どうすればよかったのか&lt;/h2>
+&lt;ul>
+&lt;li>Windows環境でのテスト&lt;/li>
+&lt;li>typo確認&lt;/li>
+&lt;/ul>
+&lt;p>軽い気持ちでプルリク送るもんではないですね〜〜〜。&lt;/p>
+&lt;p>いい経験になりました。
+Thank you &lt;a href="https://github.com/akmittal">@akmittal&lt;/a>&lt;/p>
+&lt;h1 id="ちなみに">ちなみに&lt;/h1>
+&lt;p>macで動くやつはこちらにあるのでよければどうぞ。&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyonk/Hugofy">pyonk/Hugofy&lt;/a>
+少しだけ機能追加してます。&lt;/p>
+&lt;h2 id="追加した機能">追加した機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>hugo serve&lt;/code>で立ち上げたサーバをkillする機能&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>github pagesへのdeploy機能&lt;/p>
+&lt;ul>
+&lt;li>settingに&lt;code>Repository&lt;/code>を追加してからどうぞ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>もうすこしちゃんと作りこんでから出直します。反省。&lt;/p></description></item></channel></rss>

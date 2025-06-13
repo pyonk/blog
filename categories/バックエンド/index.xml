@@ -1,61 +1,414 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>バックエンド on わいがかいた</title><link>https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/</link><description>Recent content in バックエンド on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 20 Dec 2017 13:54:50 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml"/><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>
-facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている</description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>
-djangoのquerysetを任意の順番でsortする # djnagoではorder_by('hoge')とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
-が、ぼくがやりたかったのは、任意の値でのソート。
-databaseに定義されてない値でソートしたかったのです。
-とても参考になったstack overflowはこちら。
-Django order_by specific order - Stack Overflow
-ただしdjango &amp;gt;= 1.8です
-TL;DR # from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 # Conditional Expressions | Django documentation | Django</description></item><item><title>pythonからpdfのフォームに入力する</title><link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link><pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid><description>
-pythonからpdfのフォームに入力する（厳密には違う） # pythonでpdfのフォームに値を入力していく機能をつくりました。
-そもそもpdfにフォームなんて埋められるんだって知らなかったです。
-どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
-書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
-なのでどちらにも対応できるような感じになってます。
-事前準備 # reportlab $ pip install reportlab PyPDF2 $ pip install pypdf2 コード # #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description></item><item><title>crontab -e と /etc/crontab の違い</title><link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link><pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid><description>
-ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
-$ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 # 上記のコマンドの
-user python /home/user/app/manage.py hogehoge
-この部分、おかしいですね〜〜
-/etc/crontabの内容を何も考えずにコピーしちゃいました。
-/etc/crontabはユーザーを指定して記述するのに対して、crontab -eの場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。
-おかしいな〜おかしいな〜〜〜〜〜 # こわいな〜こわいな〜〜〜〜。
-何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
-/etc/crontab # まず初めにcronを設定したときはこのこをいじっていました。
-$ sudo vim /etc/crontab ですね。
-crontab -e # 何を思ったのかこっちでも設定していたような気がしました。
-$ crontab -l で確認することができます。
-案の定同じコマンドが同じ時間で実行されるように設定されておりました。
-この二つの違いはなんなんでしょうか # こちらがわかりやすいかと思います。
-要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
-たとえば
-* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。</description></item><item><title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title><link>https://pyonk.github.io/blog/posts/cannot-request/</link><pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cannot-request/</guid><description>
-あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？</description></item><item><title>pythonの参照渡しをどうすれば回避できるのか</title><link>https://pyonk.github.io/blog/posts/python-copy/</link><pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-copy/</guid><description>
-ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
-どうすれば回避できるのか # 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.</description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>
-経緯 # あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
-コマンドの設計見直せっていうのは今回は置いといてください・・・。
-どうしたのか # いくつかの方法を試しました。
-pythonからコマンドを叩く # まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
-import subprocess import shlex cmd = &amp;#39;nohup sleep 10 &amp;amp;&amp;#39; subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
-つぎ！
-thread化して逃げる # この前書いたような感じです。
-pythonでtupleをつくる - わいがかいた
-結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
-つぎ！！
-celeryを使う # Celery - Distributed Task Queue — Celery 4.0.2 documentation
-ようやく本題。
-ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
-実際やりはじめて少し後悔しましたし。
-結構面倒くさかったので備忘録代わりに。
-install # まずは本体をインストールしていきます。
-pip install -U Celery
-celeryはbrokerとして
-Redis RabbitMQ Amazon SQS などを使うことができます。 今回はRedisを選択しました。
-yum install redis
-bundleも用意されているのでそれも。
-pip install -U &amp;quot;celery[redis]&amp;quot;</description></item><item><title>pythonでtupleをつくる</title><link>https://pyonk.github.io/blog/posts/python-tuple/</link><pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-tuple/</guid><description>
-pythonでtupleを作るときにはまったこと</description></item><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>
-nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>バックエンド on わいがかいた</title><link>https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/</link><description>Recent content in バックエンド on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Wed, 20 Dec 2017 13:54:50 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/categories/%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml"/><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>&lt;p>facebookに見慣れぬアラートが。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/alert.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>突然のアラート&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/message.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>難しい英文&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;blockquote>
+&lt;p>In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.&lt;br>
+This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More&lt;/p></description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>&lt;h1 id="djangoのquerysetを任意の順番でsortする">djangoのquerysetを任意の順番でsortする&lt;/h1>
+&lt;p>djnagoでは&lt;code>order_by('hoge')&lt;/code>とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。&lt;/p>
+&lt;p>が、ぼくがやりたかったのは、任意の値でのソート。&lt;br>
+databaseに定義されてない値でソートしたかったのです。&lt;/p>
+&lt;p>とても参考になったstack overflowはこちら。&lt;br>
+&lt;a href="https://stackoverflow.com/questions/10329849/django-order-by-specific-order">Django order_by specific order - Stack Overflow&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>ただし&lt;code>django &amp;gt;= 1.8&lt;/code>です&lt;/p>&lt;/blockquote>
+&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> djnago.db.models &lt;span style="color:#f92672">import&lt;/span> Case, When, Value, FloatField
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># { pid: specific_value, }&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>specific_values &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;1&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">100.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">50.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">25.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;4&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">123.4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;5&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">599.33&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sqlのCASE式にしたい条件のリスト&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cases &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># casesにCASE式にしたい条件をつめていく&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> pid, specific_value &lt;span style="color:#f92672">in&lt;/span> specific_values&lt;span style="color:#f92672">.&lt;/span>items():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cases&lt;span style="color:#f92672">.&lt;/span>append(When(id&lt;span style="color:#f92672">=&lt;/span>pid, then&lt;span style="color:#f92672">=&lt;/span>Value(specific_value)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Hoge&lt;span style="color:#f92672">.&lt;/span>objects&lt;span style="color:#f92672">.&lt;/span>filter(id__in&lt;span style="color:#f92672">=&lt;/span>specific_values&lt;span style="color:#f92672">.&lt;/span>keys())&lt;span style="color:#f92672">.&lt;/span>annotate(specific_value&lt;span style="color:#f92672">=&lt;/span>Case(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>cases,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output_field&lt;span style="color:#f92672">=&lt;/span>FloatField()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>))&lt;span style="color:#f92672">.&lt;/span>order_by(specific_value)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="詳しい説明">詳しい説明&lt;/h2>
+&lt;p>&lt;a href="https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/">Conditional Expressions | Django documentation | Django&lt;/a>&lt;/p>
+&lt;h2 id="tips">TIPS&lt;/h2>
+&lt;ul>
+&lt;li>casesに条件をつめこむため、&lt;code>Case&lt;/code>インスタンスを作成する際に、&lt;code>*&lt;/code>で展開してあげないといけない。&lt;/li>
+&lt;/ul>
+&lt;p>ここだけ気をつければ非常に便利（使い所があまりないのが玉に瑕）。&lt;/p></description></item><item><title>pythonからpdfのフォームに入力する</title><link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link><pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid><description>&lt;h1 id="pythonからpdfのフォームに入力する厳密には違う">pythonからpdfのフォームに入力する（厳密には違う）&lt;/h1>
+&lt;p>pythonでpdfのフォームに値を入力していく機能をつくりました。&lt;br>
+そもそもpdfにフォームなんて埋められるんだって知らなかったです。&lt;br>
+どうやら読み込み専用フォームとそうでないフォームがあるみたいです。&lt;br>
+書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。&lt;br>
+なのでどちらにも対応できるような感じになってます。&lt;/p>
+&lt;h2 id="事前準備">事前準備&lt;/h2>
+&lt;ul>
+&lt;li>reportlab&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pip install reportlab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>PyPDF2&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pip install pypdf2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="コード">コード&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /usr/bin/python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.pdfgen &lt;span style="color:#f92672">import&lt;/span> canvas
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.lib.pagesizes &lt;span style="color:#f92672">import&lt;/span> A4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.pdfbase &lt;span style="color:#f92672">import&lt;/span> pdfmetrics
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.pdfbase.ttfonts &lt;span style="color:#f92672">import&lt;/span> TTFont
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> PyPDF2.pdf &lt;span style="color:#f92672">import&lt;/span> PdfFileReader, PdfFileWriter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> io &lt;span style="color:#f92672">import&lt;/span> BytesIO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>title &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;title&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fontを変更&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pdfmetrics&lt;span style="color:#f92672">.&lt;/span>registerFont(TTFont(&lt;span style="color:#e6db74">&amp;#39;Mplus1p-Light&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>template_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;template.pdf&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 読み込み&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reader &lt;span style="color:#f92672">=&lt;/span> PdfFileReader(template_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>existing_page &lt;span style="color:#f92672">=&lt;/span> reader&lt;span style="color:#f92672">.&lt;/span>getPage(&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>page_width &lt;span style="color:#f92672">=&lt;/span> existing_page&lt;span style="color:#f92672">.&lt;/span>mediaBox&lt;span style="color:#f92672">.&lt;/span>getWidth()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>page_height &lt;span style="color:#f92672">=&lt;/span> existing_page&lt;span style="color:#f92672">.&lt;/span>mediaBox&lt;span style="color:#f92672">.&lt;/span>getHeight()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 直接フォームに入力するのではないのでstreamとしてもっておく&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>packet &lt;span style="color:#f92672">=&lt;/span> BytesIO()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c &lt;span style="color:#f92672">=&lt;/span> canvas&lt;span style="color:#f92672">.&lt;/span>Canvas(packet, pagesize&lt;span style="color:#f92672">=&lt;/span>A4)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c&lt;span style="color:#f92672">.&lt;/span>setFont(&lt;span style="color:#e6db74">&amp;#39;Mplus1p-Light&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># titleはセンタリング&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c&lt;span style="color:#f92672">.&lt;/span>drawCentredString(page_width &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>, page_height &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>, title)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># formfieldsを取得&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fields &lt;span style="color:#f92672">=&lt;/span> reader&lt;span style="color:#f92672">.&lt;/span>trailer[&lt;span style="color:#e6db74">&amp;#39;/Root&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;/AcroForm&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;/Fields&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> f &lt;span style="color:#f92672">in&lt;/span> fields:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> field &lt;span style="color:#f92672">=&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>getObject()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rect &lt;span style="color:#f92672">=&lt;/span> field&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;/Rect&amp;#39;&lt;/span>, [&lt;span style="color:#ae81ff">0.0&lt;/span>, &lt;span style="color:#ae81ff">0.0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key &lt;span style="color:#f92672">=&lt;/span> field&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;/T&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">.&lt;/span>setFont(&lt;span style="color:#e6db74">&amp;#39;Mplus1p-Light&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 微調整&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">.&lt;/span>drawString(float(rect[&lt;span style="color:#ae81ff">0&lt;/span>]) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>, float(rect[&lt;span style="color:#ae81ff">1&lt;/span>]) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>, key)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c&lt;span style="color:#f92672">.&lt;/span>save()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># パケットの読み込みを先頭に戻す&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>packet&lt;span style="color:#f92672">.&lt;/span>seek(&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>new_pdf &lt;span style="color:#f92672">=&lt;/span> PdfFileReader(packet)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># テンプレートと書き込んだ内容をマージ&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>existing_page&lt;span style="color:#f92672">.&lt;/span>mergePage(new_pdf&lt;span style="color:#f92672">.&lt;/span>getPage(&lt;span style="color:#ae81ff">0&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># writerを用意&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writer &lt;span style="color:#f92672">=&lt;/span> PdfFileWriter()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writer&lt;span style="color:#f92672">.&lt;/span>addPage(existing_page)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 書き込み&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#39;output.pdf&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;wb&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> output_file:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer&lt;span style="color:#f92672">.&lt;/span>write(output_file)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。&lt;/p></description></item><item><title>crontab -e と /etc/crontab の違い</title><link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link><pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid><description>&lt;p>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ less /var/log/cron
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Feb &lt;span style="color:#ae81ff">6&lt;/span> 00:15:01 ip-000-00-00-000 CROND&lt;span style="color:#f92672">[&lt;/span>16356&lt;span style="color:#f92672">]&lt;/span>: &lt;span style="color:#f92672">(&lt;/span>user&lt;span style="color:#f92672">)&lt;/span> CMD &lt;span style="color:#f92672">(&lt;/span>python /home/user/app/manage.py hogehoge&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Feb &lt;span style="color:#ae81ff">6&lt;/span> 00:15:01 ip-000-00-00-000 CROND&lt;span style="color:#f92672">[&lt;/span>16357&lt;span style="color:#f92672">]&lt;/span>: &lt;span style="color:#f92672">(&lt;/span>user&lt;span style="color:#f92672">)&lt;/span> CMD &lt;span style="color:#f92672">(&lt;/span>user python /home/user/app/manage.py hogehoge&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="追記">追記&lt;/h5>
+&lt;p>&lt;em>上記のコマンドの&lt;/em>&lt;br>
+&lt;em>&lt;code>user python /home/user/app/manage.py hogehoge&lt;/code>&lt;/em>&lt;br>
+&lt;em>この部分、おかしいですね〜〜&lt;/em>&lt;br>
+&lt;em>&lt;code>/etc/crontab&lt;/code>の内容を何も考えずにコピーしちゃいました。&lt;/em>&lt;br>
+&lt;em>&lt;code>/etc/crontab&lt;/code>はユーザーを指定して記述するのに対して、&lt;code>crontab -e&lt;/code>の場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。&lt;/em>&lt;/p>
+&lt;h1 id="おかしいなおかしいな">おかしいな〜おかしいな〜〜〜〜〜&lt;/h1>
+&lt;p>こわいな〜こわいな〜〜〜〜。&lt;/p>
+&lt;p>何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。&lt;/p>
+&lt;h2 id="etccrontab">/etc/crontab&lt;/h2>
+&lt;p>まず初めにcronを設定したときはこのこをいじっていました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo vim /etc/crontab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ですね。&lt;/p>
+&lt;h2 id="crontab--e">crontab -e&lt;/h2>
+&lt;p>何を思ったのかこっちでも設定していたような気がしました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ crontab -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>で確認することができます。&lt;/p>
+&lt;p>案の定同じコマンドが同じ時間で実行されるように設定されておりました。&lt;/p>
+&lt;h2 id="この二つの違いはなんなんでしょうか">この二つの違いはなんなんでしょうか&lt;/h2>
+&lt;p>&lt;a href="http://superuser.com/questions/290093/difference-between-etc-crontab-and-crontab-e">こちら&lt;/a>がわかりやすいかと思います。&lt;/p>
+&lt;p>要するに、
+&lt;code>/etc/crontab&lt;/code>は他のユーザーのcronもまとめて設定できるようなのですね。&lt;/p>
+&lt;p>たとえば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>* * * * * user echo &lt;span style="color:#e6db74">&amp;#39;fugafuga&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* * * * * user2 echo &lt;span style="color:#e6db74">&amp;#39;hogehoge&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>のような感じです。&lt;/p>
+&lt;p>対して、&lt;code>crontab -e&lt;/code>だと、今現在のユーザーのcronが設定できます。
+オプションとして&lt;code>-u&lt;/code>を指定すると指定されたユーザーのcronが設定できるようです。&lt;/p></description></item><item><title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title><link>https://pyonk.github.io/blog/posts/cannot-request/</link><pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cannot-request/</guid><description>&lt;p>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。&lt;/p>
+&lt;h1 id="ナゾのrequestsexceptionssslerror">ナゾのrequests.exceptions.SSLError&lt;/h1>
+&lt;p>それなりにpythonの&lt;a href="http://docs.python-requests.org/en/master/">requests&lt;/a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの&lt;code>requests.exceptions.SSLError&lt;/code>が発生しました。&lt;/p>
+&lt;p>&lt;code>requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'&lt;/code>&lt;/p>
+&lt;p>おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
+さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。&lt;/p>
+&lt;p>とりあえず&lt;code>verify=False&lt;/code>を指定しても一度チャレンジです。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>req &lt;span style="color:#f92672">=&lt;/span> requests&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;https://damedayo.com/&amp;#39;&lt;/span>, verify&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print req&lt;span style="color:#f92672">.&lt;/span>text
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>するとresponseが帰ってきました。&lt;/p>
+&lt;p>&lt;code>The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. &lt;/code>&lt;/p>
+&lt;p>はーーーーんんんんんんん&lt;/p>
+&lt;p>何はともあれ、ググります。&lt;/p>
+&lt;p>&lt;a href="http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors">みっけた&lt;/a>。&lt;/p>
+&lt;p>ん〜〜〜やはりバーチャルホスト周りっぽい。
+というか&lt;strong>pythonのバージョンが&lt;code>2.7.9&lt;/code>以上であれば問題ないんか&lt;/strong>。コレ。&lt;/p>
+&lt;p>解決策として&lt;a href="https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484">Stack Overflowへのリンク&lt;/a>が貼ってありますね。こういうこともあるのね。初めて見た。&lt;/p>
+&lt;h1 id="pip-install-pyopensslで詰む">pip install pyOpenSSLで詰む&lt;/h1>
+&lt;p>pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。&lt;/p>
+&lt;p>idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pip install pyOpenSSL --upgrade
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.....前略.....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">1&lt;/span> warning and &lt;span style="color:#ae81ff">20&lt;/span> errors generated.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>error: command &lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span> failed with exit status &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>----------------------------------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Failed building wheel &lt;span style="color:#66d9ef">for&lt;/span> cryptography
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.....中略.....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>----------------------------------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Command &lt;span style="color:#e6db74">&amp;#34;/usr/bin/python -c &amp;#34;&lt;/span>import setuptools, tokenize;__file__&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;/private/tmp/pip-build-OtiuE0/cryptography/setup.py&amp;#39;&lt;/span>;exec&lt;span style="color:#f92672">(&lt;/span>compile&lt;span style="color:#f92672">(&lt;/span>getattr&lt;span style="color:#f92672">(&lt;/span>tokenize, &lt;span style="color:#e6db74">&amp;#39;open&amp;#39;&lt;/span>, open&lt;span style="color:#f92672">)(&lt;/span>__file__&lt;span style="color:#f92672">)&lt;/span>.read&lt;span style="color:#f92672">()&lt;/span>.replace&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\r\n&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>, __file__, &lt;span style="color:#e6db74">&amp;#39;exec&amp;#39;&lt;/span>&lt;span style="color:#f92672">))&lt;/span>&lt;span style="color:#e6db74">&amp;#34; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&amp;#34;&lt;/span> failed with error code &lt;span style="color:#ae81ff">1&lt;/span> in /private/tmp/pip-build-OtiuE0/cryptography
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。&lt;/p></description></item><item><title>pythonの参照渡しをどうすれば回避できるのか</title><link>https://pyonk.github.io/blog/posts/python-copy/</link><pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-copy/</guid><description>&lt;p>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
+たとえば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hoge &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>:&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>:&lt;span style="color:#ae81ff">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(hoge) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga &lt;span style="color:#f92672">=&lt;/span> hoge
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(fuga) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga&lt;span style="color:#f92672">.&lt;/span>update({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">4&lt;/span>:&lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#f92672">==&lt;/span> fuga &lt;span style="color:#75715e"># True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="http://note.crohaco.net/2014/python-argument-intro/">Pythonistなら常識&lt;/a>ですよね。&lt;/p>
+&lt;h1 id="どうすれば回避できるのか">どうすれば回避できるのか&lt;/h1>
+&lt;p>割と単純です。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hoge &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>:&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>:&lt;span style="color:#ae81ff">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(hoge) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga &lt;span style="color:#f92672">=&lt;/span> hoge&lt;span style="color:#f92672">.&lt;/span>copy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(fuga) &lt;span style="color:#75715e"># 140418107009728&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga&lt;span style="color:#f92672">.&lt;/span>update({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">4&lt;/span>:&lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#f92672">==&lt;/span> fuga &lt;span style="color:#75715e"># False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#75715e"># {1:1, 2:2, 3:3}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print fuga &lt;span style="color:#75715e"># {1:1, 2:2, 3:3, 4:4}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>辞書の浅いコピーを取るには&lt;code>copy_dict = dict.copy()&lt;/code>が簡単ですね。&lt;/p>
+&lt;p>&lt;em>ちなみに、リストの場合は&lt;code>copy_list = original_list[:]&lt;/code>でコピーが取れます。&lt;/em>&lt;/p>
+&lt;p>ただこれだと浅いコピーになります。&lt;/p>
+&lt;p>なので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hoge &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>:{&lt;span style="color:#ae81ff">2&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>:&lt;span style="color:#ae81ff">3&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(hoge) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga &lt;span style="color:#f92672">=&lt;/span> hoge&lt;span style="color:#f92672">.&lt;/span>copy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(fuga) &lt;span style="color:#75715e"># 140418107009728&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga[&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">.&lt;/span>update({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">4&lt;/span>:&lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#f92672">==&lt;/span> fuga &lt;span style="color:#75715e"># True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print fuga &lt;span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>となってしまいます。&lt;/p></description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>&lt;h1 id="経緯">経緯&lt;/h1>
+&lt;p>あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。&lt;/p>
+&lt;p>コマンドの設計見直せっていうのは今回は置いといてください・・・。&lt;/p>
+&lt;h1 id="どうしたのか">どうしたのか&lt;/h1>
+&lt;p>いくつかの方法を試しました。&lt;/p>
+&lt;h2 id="pythonからコマンドを叩く">pythonからコマンドを叩く&lt;/h2>
+&lt;p>まず思い浮かんだのがコマンドを&lt;code>nohup &amp;amp;&lt;/code>でpythonから叩く。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> subprocess
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> shlex
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;nohup sleep 10 &amp;amp;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess&lt;span style="color:#f92672">.&lt;/span>Popen(cmd)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>が！！！
+レスポンスが帰ってくるのは10秒後・・・。&lt;/p>
+&lt;p>つぎ！&lt;/p>
+&lt;h2 id="thread化して逃げる">thread化して逃げる&lt;/h2>
+&lt;p>この前書いたような感じです。&lt;/p>
+&lt;p>&lt;a href="https://pyonk.github.io/blog/post/python-tuple/">pythonでtupleをつくる - わいがかいた&lt;/a>&lt;/p>
+&lt;p>結局、レスポンスが帰ってくるのは10秒後・・・。
+ここ工夫するとどうにかなるような気もする。&lt;/p>
+&lt;p>つぎ！！&lt;/p>
+&lt;h2 id="celeryを使う">celeryを使う&lt;/h2>
+&lt;p>&lt;a href="http://docs.celeryproject.org/en/latest/index.html">Celery - Distributed Task Queue — Celery 4.0.2 documentation&lt;/a>&lt;/p>
+&lt;p>ようやく本題。&lt;/p>
+&lt;p>ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。&lt;/p>
+&lt;p>&lt;del>実際やりはじめて少し後悔しましたし。&lt;/del>&lt;/p>
+&lt;p>結構面倒くさかったので備忘録代わりに。&lt;/p>
+&lt;h3 id="install">install&lt;/h3>
+&lt;p>まずは本体をインストールしていきます。&lt;/p>
+&lt;p>&lt;code>pip install -U Celery&lt;/code>&lt;/p>
+&lt;p>celeryはbrokerとして&lt;/p>
+&lt;ul>
+&lt;li>Redis&lt;/li>
+&lt;li>RabbitMQ&lt;/li>
+&lt;li>Amazon SQS&lt;/li>
+&lt;/ul>
+&lt;p>などを使うことができます。
+今回はRedisを選択しました。&lt;/p>
+&lt;p>&lt;code>yum install redis&lt;/code>&lt;/p>
+&lt;p>bundleも用意されているのでそれも。&lt;/p>
+&lt;p>&lt;code>pip install -U &amp;quot;celery[redis]&amp;quot;&lt;/code>&lt;/p>
+&lt;h3 id="how-to">how to&lt;/h3>
+&lt;p>&lt;a href="https://github.com/celery/celery/tree/master/examples/django/">ここ&lt;/a>を参考にモリモリかいていきます。&lt;/p>
+&lt;ul>
+&lt;li>proj/__init__.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># This will make sure the app is always imported when&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Django starts so that shared_task will use this app.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> .celery &lt;span style="color:#f92672">import&lt;/span> app &lt;span style="color:#66d9ef">as&lt;/span> celery_app
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__all__ &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;celery_app&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>proj/settings.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Celery settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_RESULT_BACKEND &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;redis&amp;#39;&lt;/span> &lt;span style="color:#75715e"># redisを指定&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_BROKER_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;redis://localhost:6379/0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_TASK_SERIALIZER &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_RESULT_SERIALIZER &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_ACCEPT_CONTENT &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>proj/celery.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> celery &lt;span style="color:#f92672">import&lt;/span> Celery
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># set the default Django settings module for the &amp;#39;celery&amp;#39; program.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#f92672">.&lt;/span>environ&lt;span style="color:#f92672">.&lt;/span>setdefault(&lt;span style="color:#e6db74">&amp;#39;DJANGO_SETTINGS_MODULE&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;proj.settings&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Celery(&lt;span style="color:#e6db74">&amp;#39;proj&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Using a string here means the worker don&amp;#39;t have to serialize&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># the configuration object to child processes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># - namespace=&amp;#39;CELERY&amp;#39; means all celery-related configuration keys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># should have a `CELERY_` prefix.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#f92672">.&lt;/span>config_from_object(&lt;span style="color:#e6db74">&amp;#39;django.conf:settings&amp;#39;&lt;/span>, namespace&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;CELERY&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Load task modules from all registered Django app configs.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#f92672">.&lt;/span>autodiscover_tasks()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.task&lt;/span>(bind&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">debug_task&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;Request: &lt;/span>&lt;span style="color:#e6db74">{0!r}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(self&lt;span style="color:#f92672">.&lt;/span>request))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>app/tasks.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /usr/bin/python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create your tasks here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># from celery import shared_task&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> celery.decorators &lt;span style="color:#f92672">import&lt;/span> task
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> time
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@task&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">add_wait&lt;/span>(x, y):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> time&lt;span style="color:#f92672">.&lt;/span>sleep(&lt;span style="color:#ae81ff">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>app/views.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> tasks &lt;span style="color:#f92672">import&lt;/span> add_wait
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">add_some_number&lt;/span>(request):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> add_wait&lt;span style="color:#f92672">.&lt;/span>delay(&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> render(rerquest, &lt;span style="color:#e6db74">&amp;#39;result.html&amp;#39;&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;result&amp;#39;&lt;/span>: result,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="うごかしていきます">うごかしていきます&lt;/h4>
+&lt;ul>
+&lt;li>redisの起動&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>sudo /etc/init.d/redis start&lt;/code>&lt;/p></description></item><item><title>pythonでtupleをつくる</title><link>https://pyonk.github.io/blog/posts/python-tuple/</link><pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-tuple/</guid><description>&lt;h1 id="pythonのthreadで引数を渡したい">pythonのthreadで引数を渡したい&lt;/h1>
+&lt;p>&lt;a href="http://d.hatena.ne.jp/salexkidd/20090918">Djangoで時間のかかる処理をスレッド化して逃げ&lt;/a>ようとしたのですがうまくいかなかったのでメモ。&lt;/p>
+&lt;p>&lt;code>threading.Thread&lt;/code>にはいくつか引数が渡せます。&lt;/p>
+&lt;ul>
+&lt;li>group&lt;/li>
+&lt;li>target&lt;/li>
+&lt;li>name&lt;/li>
+&lt;li>args&lt;/li>
+&lt;li>kwargs&lt;/li>
+&lt;/ul>
+&lt;p>詳しくは&lt;a href="http://docs.python.jp/2/library/threading.html">ここ&lt;/a>で。&lt;/p>
+&lt;p>で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">command_execute&lt;/span>(cmd):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print cmd &lt;span style="color:#75715e"># (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> subprocess&lt;span style="color:#f92672">.&lt;/span>Popen(cmd, shell&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;sleep 10;echo aaa&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#f92672">=&lt;/span> threading&lt;span style="color:#f92672">.&lt;/span>Thread(target&lt;span style="color:#f92672">=&lt;/span>command_execute, args&lt;span style="color:#f92672">=&lt;/span>(cmd))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t&lt;span style="color:#f92672">.&lt;/span>daemon &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t&lt;span style="color:#f92672">.&lt;/span>start()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>すると、printされた文字列が
+&lt;code>('s', 'l', 'e', 'e', 'p', ' ', '1', '0', ';', 'e', 'c', 'h', 'o', ' ', 'a', 'a', 'a')&lt;/code>
+となるわけです。
+何が起きてるんだ状態です。&lt;/p>
+&lt;p>調べてみると原因は「&lt;code>args&lt;/code>にtupleを渡してあげる」というところにありました。&lt;/p>
+&lt;h2 id="pythonでtupleをつくる">pythonでtupleをつくる&lt;/h2>
+&lt;p>&lt;code>tuple = (1, 2)&lt;/code>&lt;/p></description></item><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>&lt;h1 id="image_filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する&lt;/h1>
+&lt;p>nginxをソースからインストールする際に&lt;code>--with-http_image_filter_module&lt;/code>をつけてインストールします。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ tar -xvzf nginx-1.10.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cd nginx-1.10.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ./configure --with-http_image_filter_module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ほかのオプションモジュールをつける場合は随時つけてください。&lt;/p>
+&lt;p>すでにnginxがインストールされている場合は、&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo cp objs/nginx /usr/sbin/nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat /var/run/nginx.pid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -USR2 &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -WINCH &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -QUIT &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。&lt;/p>
+&lt;h1 id="confを変更">confを変更&lt;/h1>
+&lt;p>image_filterを加えます。
+くわしいことは&lt;a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ&lt;/a>をみてください。&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf">location ~ /image/(.*\.png)$ {
+ alias /path/to/image/$1;
+ image_filter resize 100 -; # 横幅100pxでリサイズする
+}
+&lt;/code>&lt;/pre>&lt;p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。&lt;/p></description></item></channel></rss>

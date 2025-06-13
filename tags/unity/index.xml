@@ -1,2 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unity on わいがかいた</title><link>https://pyonk.github.io/blog/tags/unity/</link><description>Recent content in Unity on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 05 Nov 2018 15:37:45 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Unityのscrollrectでスクロールができない件</title><link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link><pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid><description>
-Unityのscrollrectでスクロールができなかったがなんとかなった話。内包していたEventTriggerが悪さをしてました。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unity on わいがかいた</title><link>https://pyonk.github.io/blog/tags/unity/</link><description>Recent content in Unity on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Mon, 05 Nov 2018 15:37:45 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Unityのscrollrectでスクロールができない件</title><link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link><pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid><description>&lt;p>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。
+普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。&lt;/p>
+&lt;hr>
+&lt;p>タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。&lt;/p>
+&lt;h2 id="スクロールができないゾ">スクロールができないゾ&lt;/h2>
+&lt;p>ボタンを内包するスクロールビューが必要になった。&lt;br>
+とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。&lt;br>
+いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。&lt;br>
+これは困った&lt;br>
+すこし調べてみると世界中の人が困ってる風だ。&lt;/p>
+&lt;p>&lt;a href="https://hexadrive.jp/hexablog/program/15948/" title="UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社">UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社&lt;/a>&lt;/p>
+&lt;h2 id="違う違うそうじゃない">違う違うそうじゃない&lt;/h2>
+&lt;p>似てる問題っぽいけど違う（なんならこの見出しが書きたかっただけ）。
+僕の症状はボタンは押せるけどスクロールができない、だ。&lt;/p>
+&lt;p>参考になったのはこちら&lt;/p>
+&lt;p>&lt;a href="http://answers.unity.com/questions/902929/scroll-not-working-when-elements-inside-have-click.html" title="[Solved] Scroll not working when elements inside have click events - Unity Answers">[Solved] Scroll not working when elements inside have click events - Unity Answers&lt;/a>&lt;/p>
+&lt;p>結論、書いてるコードに問題があった。&lt;/p>
+&lt;ul>
+&lt;li>実際のコード&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EventTrigger.Entry entry = &lt;span style="color:#66d9ef">new&lt;/span> EventTrigger.Entry();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>entry.eventID = EventTriggerType.PointerClick;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tapEvent.triggers.Add(entry);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一見正しいけど、この&lt;code>EventTrigger&lt;/code>っていうのが曲者でいろんな継承が行われてるみたい&lt;/p></description></item></channel></rss>

@@ -1,18 +1,130 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Let's Split on わいがかいた</title><link>https://pyonk.github.io/blog/tags/lets-split/</link><description>Recent content in Let's Split on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 12 Jun 2018 21:35:46 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/lets-split/index.xml" rel="self" type="application/rss+xml"/><item><title>let's splitがとどいた！</title><link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link><pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/lets-split-arrive/images/letsplit.jpg"/>
-let's splitがとどいた！</description></item><item><title>let's splitを買った</title><link>https://pyonk.github.io/blog/posts/buy-lets-split/</link><pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid><description>
-1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
-アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
-で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
-無事にキーボード沼にハマりかけている。
-自作キーボード界隈をみてみるとすごーーーくかっこいい。
-とくにHelixとかErgo42とかたまらない。
-ただ、半田ごてとか握ったことないので不安だしなかなか手を出しづらい。（そもそも人気すぎて買えへん）
-そんな感じでかっこいいキーボードをTLでながめていたわけど、@foostanさんがboothでlet&amp;rsquo;s splitを販売するらしいとの情報をキャッチ。
-このままくすぶってても何にもならないので、エイやで購入を決意。
-完成版か自分で組み立てるか結構悩んだけど、自作選んで半田ごてかうと完成版買えそうだったから完成版を買った。
-完成品版let&amp;#39;s split注文した。
-手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
-届くのが楽しみだな〜〜〜！！
-&amp;mdash; オイヌマユウキ (@__pyonk__) May 24, 2018 とにかく届くのが楽しみでごわす。
-発送予定日が5/27なので週明けには手元に届いてるかしら。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Let's Split on わいがかいた</title><link>https://pyonk.github.io/blog/tags/lets-split/</link><description>Recent content in Let's Split on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Tue, 12 Jun 2018 21:35:46 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/lets-split/index.xml" rel="self" type="application/rss+xml"/><item><title>let's splitがとどいた！</title><link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link><pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid><description>&lt;p>この間boothで&lt;a href="https://pyonk.github.io/blog/posts/buy-lets-split/">購入した&lt;/a>let&amp;rsquo;s splitがあの後無事届きました。&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/foostan" target="_blank">@foostan&lt;/a>
+さんにはマジ感謝マジ卍。&lt;/p>
+&lt;p>完動、感動でした。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/letsplit.jpg" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>マジかっこいい・・・&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h2 id="現在のキーマッピング">現在のキーマッピング&lt;/h2>
+&lt;p>&lt;strong>正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろ&lt;/strong>なんてことを思っていましたが、とんでもない。&lt;/p>
+&lt;p>いやこう言うと語弊がありますね。&lt;/p>
+&lt;p>もちろん(lets splitの)デフォルトで及第点くらいだったのですが、自分でキーマッピングを変えるのが醍醐味ということで試しにいくつか変えて見たところこれがまた素晴らしい。&lt;/p>
+&lt;h3 id="default">default&lt;/h3>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/default.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Qwerty&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/default-raise.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Raise&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/default-lower.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Lower&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;h3 id="自分の">自分の&lt;/h3>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pyonk.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Qwerty&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pyonk-raise.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Raise&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pyonk-lower.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Lower&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>こう見返すとほっとんどかわってない笑
+なんならRaiseとLowerまんま一緒か！&lt;/p>
+&lt;p>けど&lt;code>esc&lt;/code>の位置はかなりお気に入り。当初は左上にしたんだけど、&lt;code>tab&lt;/code>をおいておきたくて。&lt;/p>
+&lt;p>だいぶタイピングも慣れてきて、-とか~もノールックで行けるようになった。&lt;/p>
+&lt;p>目下課題に感じているのは左下の矢印キーたち。普段は&lt;code>ctrl&lt;/code>+&lt;code>hjkl&lt;/code>を矢印キーとしてつかっているから左下のは使わないのよなー。もったいない。&lt;/p>
+&lt;p>もちろんこの記事はlet&amp;rsquo;s splitで書かれました！！&lt;/p>
+&lt;p>新しい相棒でバリバリコード書くぞ〜〜&lt;/p></description></item><item><title>let's splitを買った</title><link>https://pyonk.github.io/blog/posts/buy-lets-split/</link><pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid><description>&lt;p>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。&lt;br>
+アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。&lt;/p>
+&lt;p>で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。&lt;br>
+無事にキーボード沼にハマりかけている。&lt;br>
+自作キーボード界隈をみてみるとすごーーーくかっこいい。&lt;br>
+とくに&lt;a href="https://yushakobo.jp/shop/helix-keyboard-kit/">Helix&lt;/a>とか&lt;a href="https://tanoshii-life.booth.pm/items/842147">Ergo42&lt;/a>とかたまらない。&lt;br>
+ただ、半田ごてとか握ったことないので不安だしなかなか手を出しづらい。（そもそも人気すぎて買えへん）&lt;/p>
+&lt;p>そんな感じでかっこいいキーボードをTLでながめていたわけど、&lt;a href="https://twitter.com/foostan">@foostan&lt;/a>さんがboothでlet&amp;rsquo;s splitを販売するらしいとの情報をキャッチ。&lt;br>
+このままくすぶってても何にもならないので、エイやで購入を決意。&lt;br>
+完成版か自分で組み立てるか結構悩んだけど、自作選んで半田ごてかうと完成版買えそうだったから完成版を買った。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">完成品版let&amp;#39;s split注文した。&lt;br>手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。&lt;br>&lt;br>届くのが楽しみだな〜〜〜！！&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/999547340120731650?ref_src=twsrc%5Etfw">May 24, 2018&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>とにかく届くのが楽しみでごわす。&lt;br>
+発送予定日が5/27なので週明けには手元に届いてるかしら。&lt;/p></description></item></channel></rss>

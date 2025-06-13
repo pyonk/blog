@@ -1,24 +1,218 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on わいがかいた</title><link>https://pyonk.github.io/blog/tags/vim/</link><description>Recent content in Vim on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png"/>
-どんなときもvimでCAMPFIREのプロジェクトがみたい件</description></item><item><title>vista.vim is awesome</title><link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link><pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png"/>
-vista.vimというのがvimをIDEのようにしてくれた件</description></item><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png"/>
-coc.nvimがlanguage server clientとしてくっそ優秀だった件</description></item><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>
-ぼくは普段からsublimetextを使っているのだけど
-（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
-vim使ってる人のプロフェッショナル感がすごい。
-sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
-Vintageの有効化 # Cmd + ,でsublimetextの設定を開く。
-ここのVintageを消す。
-vintage消す 有効化done
-つかってみる # つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
-こんな具合ですね INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
-ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
-VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3 カラビナ使うっていう手もあるけど
-できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
-macではAppleScriptを使うみたいですね。
-SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita 僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
-タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
-で結果はこうなります。
-こんな具合ですね おソース # pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on わいがかいた</title><link>https://pyonk.github.io/blog/tags/vim/</link><description>Recent content in Vim on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>&lt;p>これは&lt;a href="https://qiita.com/advent-calendar/2020/campfire">CAMPFIRE Advent Calendar 2020&lt;/a>の5日目の記事です。&lt;/p>
+&lt;p>こんにちは🌞&lt;br>
+CAMPFIREでエンジニアをしている&lt;a href="https://twitter.com/__pyonk__" target="_blank">@__pyonk__&lt;/a>
+です。&lt;br>
+ちょっと前までは&lt;a href="https://tomo-shibi.jp">TOMOSHIBI&lt;/a>というサービスをつくってました。&lt;br>
+最近はCAMPFIRE本体の方を開発しています。&lt;br>
+アドベントカレンダーを書くのは初めてだったと思います。&lt;/p>
+&lt;p>最近息子が生まれました。&lt;br>
+最高です。&lt;/p>
+&lt;p>よろしくお願いします。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/1.jpg" />
+ 
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;hr>
+&lt;p>さて、ぼくはテキストエディタがわりかし好きで&lt;br>
+色々なエディタを触ってはやめて触ってはやめてを繰り返してきました。&lt;/p>
+&lt;p>ですがvimを触ってからは浮気一つせず使い続けています。&lt;/p>
+&lt;p>vimに関しては説明不要ではありますが、設定ファイルを書いたりプラグインを使ったりすればいくらでも自分好みの使い勝手にできるのが魅力ですね。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/2.jpg" />
+ 
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h3 id="どんなときでもcampfireのプロジェクトが気になる">どんなときでもCAMPFIREのプロジェクトが気になる&lt;/h3>
+&lt;p>そしてそんなvimを使っているときでもクラウドファンディングに挑戦しているプロジェクトをサクッとみたくなるときがありますよね。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">開発してるときでも人気のプロジェクトぐらいはサクッと見たい&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/1333786022082011137?ref_src=twsrc%5Etfw">December 1, 2020&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>たとえば&lt;/p>
+&lt;ul>
+&lt;li>vimの終了の仕方がわからなくて四苦八苦してるとき&lt;/li>
+&lt;li>&lt;a href="https://github.com/lambdalisue/gina.vim">gina.vim&lt;/a>めっちゃ便利やなあと感動してるとき&lt;/li>
+&lt;li>キーバインドをどうしようか考えているとき&lt;/li>
+&lt;li>便利そうなプラグインをみつけて入れてみるとき&lt;/li>
+&lt;li>今日は&lt;a href="https://github.com/cocopon/iceberg.vim">iceberg&lt;/a>な気分だなーー！って思うとき&lt;/li>
+&lt;/ul>
+&lt;p>どうしたって今人気のプロジェクトはなんだろうか、とふと思うだろうし、&lt;/p>
+&lt;p>どんな新しいワクワクするようなプロジェクトが生まれているのだろう、というのは気になるものです。&lt;/p>
+&lt;p>ということでそんな気持ちに応えるプラグインを作りました。&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyonk/campfire.vim">pyonk/campfire.vim&lt;/a>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/campfire.vim.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>campfire.vim&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h3 id="使い方">使い方&lt;/h3>
+&lt;p>使い方は単純です。
+今人気のプロジェクトみたいなーーーっておもったときは&lt;br>
+&lt;code>:CAMPFIRE&lt;/code>してください。&lt;/p>
+&lt;p>もし新しいプロジェクト何があんねやろっておもったときは&lt;br>
+&lt;code>:CAMPFIRE fresh&lt;/code>としてみてください。&lt;/p>
+&lt;p>詳しく見たいプロジェクトでエンターを押すとブラウザで開きます。&lt;/p>
+&lt;p>きっとあなたの気持ちを満たしてくれることと存じます。&lt;/p>
+&lt;p>よかったら使ってみてください。&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/3.jpg" />
+ 
+ 
+&lt;/figure>
+
+
+&lt;p>明日はdatadogマスターこと、&lt;a href="https://twitter.com/TAK_0401" target="_blank">@TAK_0401&lt;/a>
+です！！&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/4.jpg" />
+ 
+ 
+&lt;/figure></description></item><item><title>vista.vim is awesome</title><link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link><pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid><description>&lt;p>この前&lt;a href="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/">coc.nvim&lt;/a>を見つけたけど
+またredditにて&lt;a href="https://github.com/liuchengxu/vista.vim">vista.vim&lt;/a>というのを見つけた。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/vim/comments/b5pd86/vistavim_a_tagbar_alternative_that_supports_lsp/">vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>/r/vimのRSS登録しとってよかった。&lt;/p>
+&lt;h1 id="vistavim">vista.vim&lt;/h1>
+&lt;p>vimをIDEのようにしてくれる夢のようなツール。&lt;/p>
+&lt;p>cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。
+fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。&lt;/p>
+&lt;p>あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。&lt;/p>
+&lt;blockquote>
+&lt;p>⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.&lt;br>
+― &lt;a href="https://github.com/liuchengxu/vista.vim">liuchengxu/vista.vim: View and search LSP symbols, tags in Vim&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="とりあえずインストール">とりあえずインストール&lt;/h1>
+&lt;p>例のごとく僕はdeinを使っているので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">plugins&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">repo&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;liuchengxu/vista.vim&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">depends&lt;/span> = [&lt;span style="color:#e6db74">&amp;#39;coc.nvim&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;lightline.vim&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">hook_add&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; &amp;lt;C-f&amp;gt;&amp;lt;C-v&amp;gt; :&amp;lt;C-u&amp;gt;Vista coc&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; &amp;lt;C-f&amp;gt;&amp;lt;C-s&amp;gt; :&amp;lt;C-u&amp;gt;Vista finder coc&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>こんな感じで。
+使いやすいようにショートカットも登録しておく。&lt;/p></description></item><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>&lt;p>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。&lt;/p>
+&lt;p>この間redditみてたら&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/vim/comments/b1yfsg/python_completion_in_cocnvim_pyls/">python completion in coc.nvim + pyls : vim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>こんなスレッドがあって&lt;/p>
+&lt;p>&lt;a href="https://github.com/neoclide/coc.nvim">coc.nvim&lt;/a>て見慣れないプラグインがあるなあと思ってみてみたら
+わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。&lt;/p>
+&lt;h1 id="インストール方法">インストール方法&lt;/h1>
+&lt;p>僕はプラグインマネジャーにdeinを使ってるので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml:dein/plugins.toml" data-lang="toml:dein/plugins.toml">&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">plugins&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">repo&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;neoclide/coc.nvim&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">build&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;coc#util#install()&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">hook_add&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Remap for rename current word
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Highlight symbol under cursor on CursorHold
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> autocmd CursorHold * silent call CocActionAsync(&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">highlight&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Use K for show documentation in preview window
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> function! s:show_documentation()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> if &amp;amp;filetype == &amp;#39;&lt;/span>&lt;span style="color:#a6e22e">vim&lt;/span>&lt;span style="color:#e6db74">&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> execute &amp;#39;&lt;/span>&lt;span style="color:#a6e22e">h&lt;/span> &lt;span style="color:#e6db74">&amp;#39;.expand(&amp;#39;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">cword&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> else
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> call CocAction(&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">doHover&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> endif
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> endfunction
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これを記述する。&lt;/p></description></item><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>&lt;p>ぼくは普段からsublimetextを使っているのだけど&lt;br>
+（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。&lt;br>
+vim使ってる人のプロフェッショナル感がすごい。&lt;br>
+sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってる&lt;code>Vintage&lt;/code>を有効化した。&lt;/p>
+&lt;h1 id="vintageの有効化">Vintageの有効化&lt;/h1>
+&lt;p>&lt;code>Cmd + ,&lt;/code>でsublimetextの設定を開く。&lt;br>
+ここのVintageを消す。&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/Preferences-ignore-packages.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>vintage消す&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;br>
+有効化done&lt;/p>
+&lt;h1 id="つかってみる">つかってみる&lt;/h1>
+&lt;p>つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/not-enabled-disabled-ime.gif" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>こんな具合ですね&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;p>INSERT MODEからCOMMAND MODEに移行するために&lt;code>escape&lt;/code>を押下するんだけど、そのときにIMEをOFFにすれば良いですね。&lt;br>
+ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://rcmdnk.com/blog/2017/03/12/computer-vim/">VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;!-- raw HTML omitted -->カラビナ使うっていう手もあるけど&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。&lt;br>
+macではAppleScriptを使うみたいですね。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qiita.com/takao-s/items/aecb4076fe21b2803da3">SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。&lt;br>
+タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。&lt;br>
+で結果はこうなります。&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/enabled-disabled-ime.gif" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>こんな具合ですね&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h1 id="おソース">おソース&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/pyonk/DisabledIme">pyonk/DisabledIme&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>こちらにおいてありますので、&lt;code>git clone&lt;/code>してお使いくださいませ。&lt;/p></description></item></channel></rss>

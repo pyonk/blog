@@ -1,2 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spacemacs on わいがかいた</title><link>https://pyonk.github.io/blog/tags/spacemacs/</link><description>Recent content in Spacemacs on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 15 Jan 2020 11:38:02 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/spacemacs/index.xml" rel="self" type="application/rss+xml"/><item><title>emacs lispを紐解く</title><link>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</link><pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid><description>
-pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spacemacs on わいがかいた</title><link>https://pyonk.github.io/blog/tags/spacemacs/</link><description>Recent content in Spacemacs on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Wed, 15 Jan 2020 11:38:02 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/spacemacs/index.xml" rel="self" type="application/rss+xml"/><item><title>emacs lispを紐解く</title><link>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</link><pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid><description>&lt;pre tabindex="0">&lt;code>結構前に書いてたやつがメモ帳に埋まってたので供養します
+今はspacemacsじゃなくてneovimつかってる
+&lt;/code>&lt;/pre>&lt;p>普段spacemacsというエディタを使ってコードを書いているんだけど&lt;/p>
+&lt;p>pipenvを&lt;code>$PIPENV_VENV_IN_PROJECT=1&lt;/code>で使ってるとうまく補完されないので悩んでた&lt;/p>
+&lt;p>少し調べると&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054">pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>がヒットした&lt;/p>
+&lt;p>提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ&lt;/p>
+&lt;p>きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた&lt;/p>
+&lt;ul>
+&lt;li>.venvがディレクトリか、ファイルかによって処理を変えてるだけ&lt;/li>
+&lt;li>コードリーディング超大事&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-lisp" data-lang="lisp">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span>Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle &lt;span style="color:#a6e22e">directory&lt;/span> or fil&lt;span style="color:#960050;background-color:#1e0010">\&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> http://yhash.hatenablog.com/entry/2012/07/14/134732
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; 変数root-pathに&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>venv&lt;span style="color:#e6db74">&amp;#34;があるディレクトリを代入する
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> default-directoryから親方向に&lt;span style="color:#e6db74">&amp;#34;.venv&amp;#34;&lt;/span>を探す なければnil
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">let&lt;/span> ((root-path (locate-dominating-file default-directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;.venv&amp;#34;&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; root-pathがnilではない時のみ実行
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (when root-path
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> file-pathに{root-path}/.venvの形で代入する
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">let*&lt;/span> ((file-path (expand-file-name &lt;span style="color:#e6db74">&amp;#34;.venv&amp;#34;&lt;/span> root-path))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; 変数virtualenvに何を代入するか
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (virtualenv
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span>venvがdirectoryである場合はそのままfile-pathを代入
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">if&lt;/span> (file-directory-p file-path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file-path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; directoryではない場合、file-pathの内容を読み取ってそれを代入
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (with-temp-buffer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (insert-file-contents-literally file-path)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (buffer-substring-no-properties (line-beginning-position)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (line-end-position))))))
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> virtualenvがdirectoryなら
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">if&lt;/span> (file-directory-p virtualenv)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; pyvenv-activate を実行
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (pyvenv-activate virtualenv)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> そうではないならpyvenv-workon を実行
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (pyvenv-workon virtualenv))))))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

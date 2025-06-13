@@ -1,2 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Line on わいがかいた</title><link>https://pyonk.github.io/blog/tags/line/</link><description>Recent content in Line on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/line/index.xml" rel="self" type="application/rss+xml"/><item><title>hubot-line-message-apiをつくってみてます</title><link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link><pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid><description>
-Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Line on わいがかいた</title><link>https://pyonk.github.io/blog/tags/line/</link><description>Recent content in Line on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Mon, 17 Oct 2016 10:38:19 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/line/index.xml" rel="self" type="application/rss+xml"/><item><title>hubot-line-message-apiをつくってみてます</title><link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link><pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid><description>&lt;p>ソースは&lt;a href="https://github.com/pyonk/hubot-line-message-api">ここです。&lt;/a>&lt;/p>
+&lt;h1 id="使い方">使い方&lt;/h1>
+&lt;p>&lt;code>$ git clone https://github.com/pyonk/hubot-line-message-api.git&lt;/code>&lt;/p>
+&lt;p>からの&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json:package.json" data-lang="json:package.json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;bar&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;file:./hubot-line-message-api&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>からの&lt;/p>
+&lt;p>&lt;code>$ hubot -a line-message-api&lt;/code>&lt;/p>
+&lt;p>でいけると思います。&lt;/p>
+&lt;h1 id="hubot-line-message-api">hubot-line-message-api&lt;/h1>
+&lt;p>結構ガバガバ実装なので&lt;a href="https://devdocs.line.me/ja/">API Reference&lt;/a>をしっかり読んでからやるのをオススメします。&lt;/p>
+&lt;h2 id="設定">設定&lt;/h2>
+&lt;h3 id="必須">必須&lt;/h3>
+&lt;ul>
+&lt;li>LINE_CHANNEL_ACCESS_TOKEN
+&lt;ul>
+&lt;li>lineアカウントのBasic Infomationにある&lt;code>Channel Access Token&lt;/code>の値を設定してください。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="任意">任意&lt;/h3>
+&lt;ul>
+&lt;li>HUBOT_ENDPOINT
+&lt;ul>
+&lt;li>defaultで/hubot/incomingになってます。&lt;/li>
+&lt;li>自由に設定していただいて大丈夫です。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>FIXIE_URL
+&lt;ul>
+&lt;li>herokuで走らす場合は必須かなと思います。&lt;/li>
+&lt;li>&lt;a href="https://elements.heroku.com/addons/fixie">Fixie&lt;/a>というアドオンを使います。&lt;/li>
+&lt;li>&lt;code>$ heroku addons:create fixie:tricycle&lt;/code>を叩くと自動で設定されています。&lt;/li>
+&lt;li>出力されるIPアドレスを&lt;code>Server IP Whitelist&lt;/code>に設定してあげてください。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="できること">できること&lt;/h2>
+&lt;p>今のところpushで送信は対応できておらず、返信しかできません。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>返信&lt;/p>
+&lt;ul>
+&lt;li>テキスト&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-coffee" data-lang="coffee">&lt;span style="display:flex;">&lt;span>module.exports = &lt;span style="color:#a6e22e">(robot) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">robot&lt;/span>.&lt;span style="color:#a6e22e">hear&lt;/span> &lt;span style="color:#f92672">/^&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">テキスト&lt;/span>&lt;span style="color:#a6e22e">$&lt;/span>&lt;span style="color:#f92672">/&lt;/span>, &lt;span style="color:#a6e22e">(res) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">res&lt;/span>.&lt;span style="color:#a6e22e">reply&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: &lt;span style="color:#e6db74">&amp;#39;text&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> contents: [&lt;span style="color:#e6db74">&amp;#39;nyaa&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>画像と動画&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image&lt;/a>
+&lt;a href="https://devdocs.line.me/ja/#video">https://devdocs.line.me/ja/#video&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-coffee" data-lang="coffee">&lt;span style="display:flex;">&lt;span>module.exports = &lt;span style="color:#a6e22e">(robot) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">robot&lt;/span>.&lt;span style="color:#a6e22e">hear&lt;/span> &lt;span style="color:#f92672">/^&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">画像&lt;/span>&lt;span style="color:#a6e22e">$&lt;/span>&lt;span style="color:#f92672">/&lt;/span>, &lt;span style="color:#a6e22e">(res) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">res&lt;/span>.&lt;span style="color:#a6e22e">reply&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#e6db74">&amp;#39;image&amp;#39;&lt;/span>&lt;span style="color:#75715e"># &amp;#39;video&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> content: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> original: &lt;span style="color:#e6db74">&amp;#39;https://example.com/images/image.jpg&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> preview: &lt;span style="color:#e6db74">&amp;#39;https://example.com/images/image.jpg&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>ボタン&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons&lt;/a>&lt;/p></description></item></channel></rss>

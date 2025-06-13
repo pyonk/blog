@@ -1,2 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on わいがかいた</title><link>https://pyonk.github.io/blog/tags/nginx/</link><description>Recent content in Nginx on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 15 Jul 2016 15:28:45 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>
-nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on わいがかいた</title><link>https://pyonk.github.io/blog/tags/nginx/</link><description>Recent content in Nginx on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 15 Jul 2016 15:28:45 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>&lt;h1 id="image_filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する&lt;/h1>
+&lt;p>nginxをソースからインストールする際に&lt;code>--with-http_image_filter_module&lt;/code>をつけてインストールします。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ tar -xvzf nginx-1.10.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cd nginx-1.10.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ./configure --with-http_image_filter_module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ほかのオプションモジュールをつける場合は随時つけてください。&lt;/p>
+&lt;p>すでにnginxがインストールされている場合は、&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo cp objs/nginx /usr/sbin/nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat /var/run/nginx.pid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -USR2 &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -WINCH &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -QUIT &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。&lt;/p>
+&lt;h1 id="confを変更">confを変更&lt;/h1>
+&lt;p>image_filterを加えます。
+くわしいことは&lt;a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ&lt;/a>をみてください。&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf">location ~ /image/(.*\.png)$ {
+ alias /path/to/image/$1;
+ image_filter resize 100 -; # 横幅100pxでリサイズする
+}
+&lt;/code>&lt;/pre>&lt;p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。&lt;/p></description></item></channel></rss>

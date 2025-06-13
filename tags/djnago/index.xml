@@ -1,2 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Djnago on わいがかいた</title><link>https://pyonk.github.io/blog/tags/djnago/</link><description>Recent content in Djnago on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 20 Feb 2019 15:12:08 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/djnago/index.xml" rel="self" type="application/rss+xml"/><item><title>Django Test Client Url Capture Not Working</title><link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link><pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid><description>
-DjangoのテストクライアントがURLの名前付きパラメータを取得できない件</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Djnago on わいがかいた</title><link>https://pyonk.github.io/blog/tags/djnago/</link><description>Recent content in Djnago on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Wed, 20 Feb 2019 15:12:08 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/djnago/index.xml" rel="self" type="application/rss+xml"/><item><title>Django Test Client Url Capture Not Working</title><link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link><pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python:urls.py" data-lang="python:urls.py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.urls &lt;span style="color:#f92672">import&lt;/span> path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>url_patterns &lt;span style="color:#f92672">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>show, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;user_show&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python:tests.py" data-lang="python:tests.py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.test &lt;span style="color:#f92672">import&lt;/span> TestCase, RequestFactory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> users &lt;span style="color:#f92672">import&lt;/span> views
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.contrib.auth.models &lt;span style="color:#f92672">import&lt;/span> AnonymousUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.contrib.sessions.middleware &lt;span style="color:#f92672">import&lt;/span> SessionMiddleware
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.contrib.messages.middleware &lt;span style="color:#f92672">import&lt;/span> MessageMiddleware
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">UserViewTestCase&lt;/span>(TestCase):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">setUp&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>request &lt;span style="color:#f92672">=&lt;/span> RequestFactory()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">test_access_user_page&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>request&lt;span style="color:#f92672">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(&lt;span style="color:#e6db74">&amp;#39;user_show&amp;#39;&lt;/span>, args&lt;span style="color:#f92672">=&lt;/span>(user_id,))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req&lt;span style="color:#f92672">.&lt;/span>user &lt;span style="color:#f92672">=&lt;/span> AnonymousUser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SessionMiddleware()&lt;span style="color:#f92672">.&lt;/span>process_request(req)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MessageMiddleware()&lt;span style="color:#f92672">.&lt;/span>process_request(req)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> views&lt;span style="color:#f92672">.&lt;/span>show(req)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>assertTrue(res&lt;span style="color:#f92672">.&lt;/span>status_code, &lt;span style="color:#ae81ff">302&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上記のようなテストコードがあったとすると
+&lt;code>views.show&lt;/code>で&lt;code>self.kwargs['user_id']&lt;/code>が参照できないっていう状況に1時間くらいハマった&lt;/p>
+&lt;p>結論から言うと
+&lt;code>RequestFactory&lt;/code>は単純にrequestオブジェクトを作るだけなので、urlsとか関係なく
+&lt;code>views.show(req)&lt;/code>をテストしてるに過ぎないと言うことだった
+なので
+&lt;code>views.show(req, user_id=user_id)&lt;/code>としてあげると良かったようだ&lt;/p>
+&lt;p>というかそもそも論だがurlsでルーティングしているのであれば
+これだけで良かった&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python:test.py" data-lang="python:test.py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.test &lt;span style="color:#f92672">import&lt;/span> TestCase, Client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">UserViewTestCase&lt;/span>(TestCase):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">setUp&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>client &lt;span style="color:#f92672">=&lt;/span> Client()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">test_access_user_page&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>client&lt;span style="color:#f92672">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(&lt;span style="color:#e6db74">&amp;#39;user_show&amp;#39;&lt;/span>, args&lt;span style="color:#f92672">=&lt;/span>(user_id,))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>assertTrue(res&lt;span style="color:#f92672">.&lt;/span>status_code, &lt;span style="color:#ae81ff">302&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
+ぼくつかれっちゃった
+だれだよRequestFactoryとか教えたの&lt;/p></description></item></channel></rss>

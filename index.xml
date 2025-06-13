@@ -1,118 +1,1350 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>わいがかいた</title><link>https://pyonk.github.io/blog/</link><description>Recent content on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 16 Jun 2024 12:35:03 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Run the CosmosDB Emulator on Apple Silicon machines</title><link>https://pyonk.github.io/blog/posts/cosmos-db-emulator-on-apple-silicon/</link><pubDate>Sun, 16 Jun 2024 12:35:03 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cosmos-db-emulator-on-apple-silicon/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/cosmos-db-emulator-on-apple-silicon/images/cover.jpg"/>
-We could run the CosmosDB Emulator with Colima on Apple Silicon machines</description></item><item><title>CAMPFIREを退職します</title><link>https://pyonk.github.io/blog/posts/thankyou-campfire/</link><pubDate>Mon, 27 Jun 2022 08:00:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/thankyou-campfire/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/thankyou-campfire/images/shibuya-higashiguchi-building.jpg"/>
-3年働いたCAMPFIREを退職します</description></item><item><title>2021年の開発を振り返る</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2021/</link><pubDate>Sat, 04 Dec 2021 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2021/</guid><description>
-この1年CAMPFIREで自分が関わった開発を振り返ります</description></item><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/images/cover.png"/>
-どんなときもvimでCAMPFIREのプロジェクトがみたい件</description></item><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>
-pgcryptoで暗号化した件 in Django</description></item><item><title>emacs lispを紐解く</title><link>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</link><pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid><description>
-pipenvを使ってコード補完したいのでemacs lispを紐解いてみた件</description></item><item><title>minio is awesome</title><link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link><pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png"/>
-S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった件</description></item><item><title>vista.vim is awesome</title><link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link><pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/vista-vim-is-awesome/images/vista-vim-is-awesome.png"/>
-vista.vimというのがvimをIDEのようにしてくれた件</description></item><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png"/>
-coc.nvimがlanguage server clientとしてくっそ優秀だった件</description></item><item><title>Django Test Client Url Capture Not Working</title><link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link><pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid><description>
-DjangoのテストクライアントがURLの名前付きパラメータを取得できない件</description></item><item><title>Unityのscrollrectでスクロールができない件</title><link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link><pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid><description>
-Unityのscrollrectでスクロールができなかったがなんとかなった話。内包していたEventTriggerが悪さをしてました。</description></item><item><title>let's splitがとどいた！</title><link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link><pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/lets-split-arrive/images/letsplit.jpg"/>
-let's splitがとどいた！</description></item><item><title>let's splitを買った</title><link>https://pyonk.github.io/blog/posts/buy-lets-split/</link><pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid><description>
-1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。
-アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。
-で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。
-無事にキーボード沼にハマりかけている。
-自作キーボード界隈をみてみるとすごーーーくかっこいい。
-とくにHelixとかErgo42とかたまらない。
-ただ、半田ごてとか握ったことないので不安だしなかなか手を出しづらい。（そもそも人気すぎて買えへん）
-そんな感じでかっこいいキーボードをTLでながめていたわけど、@foostanさんがboothでlet&amp;rsquo;s splitを販売するらしいとの情報をキャッチ。
-このままくすぶってても何にもならないので、エイやで購入を決意。
-完成版か自分で組み立てるか結構悩んだけど、自作選んで半田ごてかうと完成版買えそうだったから完成版を買った。
-完成品版let&amp;#39;s split注文した。
-手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。
-届くのが楽しみだな〜〜〜！！
-&amp;mdash; オイヌマユウキ (@__pyonk__) May 24, 2018 とにかく届くのが楽しみでごわす。
-発送予定日が5/27なので週明けには手元に届いてるかしら。</description></item><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>
-facebookがRedirect URIsのために Strict Modeを使ってほしそうにしている</description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>
-djangoのquerysetを任意の順番でsortする # djnagoではorder_by('hoge')とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。
-が、ぼくがやりたかったのは、任意の値でのソート。
-databaseに定義されてない値でソートしたかったのです。
-とても参考になったstack overflowはこちら。
-Django order_by specific order - Stack Overflow
-ただしdjango &amp;gt;= 1.8です
-TL;DR # from djnago.db.models import Case, When, Value, FloatField # { pid: specific_value, } specific_values = { &amp;#39;1&amp;#39;: 100.0, &amp;#39;2&amp;#39;: 50.0, &amp;#39;3&amp;#39;: 25.0, &amp;#39;4&amp;#39;: 123.4, &amp;#39;5&amp;#39;: 599.33, } # sqlのCASE式にしたい条件のリスト cases = [] # casesにCASE式にしたい条件をつめていく for pid, specific_value in specific_values.items(): cases.append(When(id=pid, then=Value(specific_value))) # Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする Hoge.objects.filter(id__in=specific_values.keys()).annotate(specific_value=Case( *cases, output_field=FloatField() )).order_by(specific_value) 詳しい説明 # Conditional Expressions | Django documentation | Django</description></item><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>
-ぼくは普段からsublimetextを使っているのだけど
-（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
-vim使ってる人のプロフェッショナル感がすごい。
-sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
-Vintageの有効化 # Cmd + ,でsublimetextの設定を開く。
-ここのVintageを消す。
-vintage消す 有効化done
-つかってみる # つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
-こんな具合ですね INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
-ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
-VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3 カラビナ使うっていう手もあるけど
-できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
-macではAppleScriptを使うみたいですね。
-SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita 僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
-タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
-で結果はこうなります。
-こんな具合ですね おソース # pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item><item><title>pythonからpdfのフォームに入力する</title><link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link><pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid><description>
-pythonからpdfのフォームに入力する（厳密には違う） # pythonでpdfのフォームに値を入力していく機能をつくりました。
-そもそもpdfにフォームなんて埋められるんだって知らなかったです。
-どうやら読み込み専用フォームとそうでないフォームがあるみたいです。
-書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。
-なのでどちらにも対応できるような感じになってます。
-事前準備 # reportlab $ pip install reportlab PyPDF2 $ pip install pypdf2 コード # #! /usr/bin/python # -*- coding: utf-8 -*- from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import A4 from reportlab.pdfbase import pdfmetrics from reportlab.pdfbase.ttfonts import TTFont from PyPDF2.pdf import PdfFileReader, PdfFileWriter from io import BytesIO title = &amp;#39;title&amp;#39; # fontを変更 pdfmetrics.registerFont(TTFont(&amp;#39;Mplus1p-Light&amp;#39;, &amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;)) template_path = &amp;#39;template.pdf&amp;#39; # 読み込み reader = PdfFileReader(template_path) existing_page = reader.</description></item><item><title>timetreeの500万ユーザー記念パーティに参加してきた</title><link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link><pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid><description>
-timetreeの500万ユーザー記念パーティに参加してきた</description></item><item><title>多動力を読んだ</title><link>https://pyonk.github.io/blog/posts/read-tadouryoku/</link><pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/read-tadouryoku/</guid><description>
-多動力を読んだ</description></item><item><title>crontab -e と /etc/crontab の違い</title><link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link><pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid><description>
-ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。
-$ less /var/log/cron Feb 6 00:15:01 ip-000-00-00-000 CROND[16356]: (user) CMD (python /home/user/app/manage.py hogehoge) Feb 6 00:15:01 ip-000-00-00-000 CROND[16357]: (user) CMD (user python /home/user/app/manage.py hogehoge) 追記 # 上記のコマンドの
-user python /home/user/app/manage.py hogehoge
-この部分、おかしいですね〜〜
-/etc/crontabの内容を何も考えずにコピーしちゃいました。
-/etc/crontabはユーザーを指定して記述するのに対して、crontab -eの場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。
-おかしいな〜おかしいな〜〜〜〜〜 # こわいな〜こわいな〜〜〜〜。
-何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。
-/etc/crontab # まず初めにcronを設定したときはこのこをいじっていました。
-$ sudo vim /etc/crontab ですね。
-crontab -e # 何を思ったのかこっちでも設定していたような気がしました。
-$ crontab -l で確認することができます。
-案の定同じコマンドが同じ時間で実行されるように設定されておりました。
-この二つの違いはなんなんでしょうか # こちらがわかりやすいかと思います。
-要するに、 /etc/crontabは他のユーザーのcronもまとめて設定できるようなのですね。
-たとえば
-* * * * * user echo &amp;#39;fugafuga&amp;#39; * * * * * user2 echo &amp;#39;hogehoge&amp;#39; のような感じです。</description></item><item><title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title><link>https://pyonk.github.io/blog/posts/cannot-request/</link><pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cannot-request/</guid><description>
-あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！ pyonk は どうする？</description></item><item><title>pythonの参照渡しをどうすれば回避できるのか</title><link>https://pyonk.github.io/blog/posts/python-copy/</link><pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-copy/</guid><description>
-ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。 たとえば
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge print id(fuga) # 140418104920496 fuga.update({ 4:4 }) print hoge == fuga # True Pythonistなら常識ですよね。
-どうすれば回避できるのか # 割と単純です。
-hoge = {1:1, 2:2, 3:3} print id(hoge) # 140418104920496 fuga = hoge.copy() print id(fuga) # 140418107009728 fuga.update({ 4:4 }) print hoge == fuga # False print hoge # {1:1, 2:2, 3:3} print fuga # {1:1, 2:2, 3:3, 4:4} 辞書の浅いコピーを取るにはcopy_dict = dict.</description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>
-経緯 # あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。
-コマンドの設計見直せっていうのは今回は置いといてください・・・。
-どうしたのか # いくつかの方法を試しました。
-pythonからコマンドを叩く # まず思い浮かんだのがコマンドをnohup &amp;amp;でpythonから叩く。
-import subprocess import shlex cmd = &amp;#39;nohup sleep 10 &amp;amp;&amp;#39; subprocess.Popen(cmd) が！！！ レスポンスが帰ってくるのは10秒後・・・。
-つぎ！
-thread化して逃げる # この前書いたような感じです。
-pythonでtupleをつくる - わいがかいた
-結局、レスポンスが帰ってくるのは10秒後・・・。 ここ工夫するとどうにかなるような気もする。
-つぎ！！
-celeryを使う # Celery - Distributed Task Queue — Celery 4.0.2 documentation
-ようやく本題。
-ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。
-実際やりはじめて少し後悔しましたし。
-結構面倒くさかったので備忘録代わりに。
-install # まずは本体をインストールしていきます。
-pip install -U Celery
-celeryはbrokerとして
-Redis RabbitMQ Amazon SQS などを使うことができます。 今回はRedisを選択しました。
-yum install redis
-bundleも用意されているのでそれも。
-pip install -U &amp;quot;celery[redis]&amp;quot;</description></item><item><title>pythonでtupleをつくる</title><link>https://pyonk.github.io/blog/posts/python-tuple/</link><pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-tuple/</guid><description>
-pythonでtupleを作るときにはまったこと</description></item><item><title>○○さんに送る退職ポエム</title><link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link><pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid><description>
-昨年末パートの方が退職されました。その方に向けたポエムです。</description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>
-Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。</description></item><item><title>hubot-line-message-apiをつくってみてます</title><link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link><pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid><description>
-Line BotのBOT API TrialよりリッチなMessaging APIをHubotのアダプター作りつつ、試してみました。</description></item><item><title>javascriptのよくわからない書き方【連想配列編】</title><link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</link><pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid><description>
-javascriptの連想配列に関して、よくわからない記法が出てきたので調査しました。</description></item><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>
-nginxのimage_filterを使って画像を縮小します。まず、ソースからnginxをインストールします。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>わいがかいた</title><link>https://pyonk.github.io/blog/</link><description>Recent content on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://pyonk.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Pink and White Azalea Blossoms</title><link>https://pyonk.github.io/blog/gallery/azalea-blossoms/</link><pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate><guid>https://pyonk.github.io/blog/gallery/azalea-blossoms/</guid><description>&lt;p>These beautiful azalea blossoms showcase the delicate beauty of spring flowering shrubs. The flowers display a striking combination of pure white petals delicately edged and streaked with soft pink, creating an elegant two-toned effect. Each bloom features the characteristic five petals and prominent stamens that are typical of azalea flowers.&lt;/p>
+&lt;p>The image captures multiple flowers at different stages of bloom, with water droplets visible on the glossy green leaves, suggesting recent rainfall or morning dew. The shallow depth of field creates a pleasing bokeh effect in the background, drawing attention to the intricate details of the foreground blossoms.&lt;/p></description></item><item><title>Run the CosmosDB Emulator on Apple Silicon machines</title><link>https://pyonk.github.io/blog/posts/cosmos-db-emulator-on-apple-silicon/</link><pubDate>Sun, 16 Jun 2024 12:35:03 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cosmos-db-emulator-on-apple-silicon/</guid><description>&lt;p>The cosmosdb emulator doesn&amp;rsquo;t support running in the arm64 architecutre.
+There is an issue about that, but there was no workaround of that problem.
+I found a workaround to run this emulator on my M1 MacBook Pro, so I&amp;rsquo;d like to note how to do it.&lt;/p>
+&lt;p>* I wrote this in &lt;a href="https://github.com/Azure/azure-cosmos-db-emulator-docker/issues/54#issuecomment-2171023620">the issue&lt;/a> as a comment, but I would like to copy into my blog as well.&lt;/p>
+&lt;hr>
+&lt;p>Hello, recently I found a workaround for using the CosmosDB Emulator on my M1 MacBook Pro.
+I use &lt;a href="https://github.com/abiosoft/colima">colima&lt;/a> with a VM which architecutre is &lt;code>x86_64&lt;/code>.
+There were some issues with the combination of the latest versions, so we have to use the specific versions of colima and an emulator at this time.&lt;/p></description></item><item><title>CAMPFIREを退職します</title><link>https://pyonk.github.io/blog/posts/thankyou-campfire/</link><pubDate>Mon, 27 Jun 2022 08:00:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/thankyou-campfire/</guid><description>&lt;p>今月いっぱいでCAMPFIREを退職します。
+入社は2019年5月なので丸3年在籍したことになります。&lt;/p></description></item><item><title>2021年の開発を振り返る</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2021/</link><pubDate>Sat, 04 Dec 2021 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2021/</guid><description>&lt;p>これは&lt;a href="https://qiita.com/advent-calendar/2021/campfire">CAMPFIRE Advent Calendar 2021&lt;/a>の4日目の記事です。&lt;br>
+去年も参加してて&lt;a href="https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/">CAMPFIRE.vimをつくった話&lt;/a>を書いてました。&lt;/p>
+&lt;p>息子は相変わらず可愛いです。&lt;/p>
+&lt;hr>
+&lt;p>今年もなにか作ったことを記事にしようかなーと思ってました。&lt;/p>
+&lt;p>このブログはhugoでつくってるので、普段使ってるNeovimの&lt;a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim&lt;/a>の&lt;a href="https://github.com/pyonk/telescope-hugo.nvim">hugoプラグイン&lt;/a>を作った話でも書こうかと思って書き始めてたんですが、最近m1のmacを買って昔のmacを初期化しちゃったんで、世の中に出す前に消え去りました。&lt;br>
+こういうのは早めにやっておかないとだめですね。南無🙏&lt;/p>
+&lt;p>余談はこれくらいにしておいて、せっかくCAMPFIREのアドベントカレンダーなのでなにかCAMPFIREに関係することを書いたほうがよいのでは&amp;hellip;と思い直したので
+今年はこの1年のCAMPFIREで自分が関わった開発を振り返ることにします。&lt;/p>
+&lt;h4 id="stats的なところ">stats的なところ&lt;/h4>
+&lt;p>今年は1月から12月現在で86個のPRを作成してました。&lt;br>
+ちなみに去年1年間は43個だったのでちょうど倍ですね、頑張りました。（と言ってもCAMPFIREの開発に携わったのは6月からだったので実質半年だからペースは変わらないくらいかな）&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pr-amount.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>今年は86個のPRを作った&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>この数が多いのか少ないのかわからないんですが、今年は平日が246日あったらしいので大体3日に1個くらいのペースです。&lt;/p>
+&lt;p>さて、この86個のPRの中で紹介できそうなのを書いてみようと思います。&lt;/p>
+&lt;h4 id="年末年始の大掃除系">年末年始の大掃除系&lt;/h4>
+&lt;p>利用されていないコード、テーブル、gemの削除を行いました。&lt;br>
+本来であれば使わなくなったタイミングで削除できるのが一番なんですが、やっぱり忘れちゃったりすることもあると思います。&lt;br>
+それをそのままにせずに1年の終わりに掃除することで気分良く1年を終えることができますね。&lt;/p>
+&lt;p>終わりよければすべてヨシ。&lt;/p>
+&lt;h4 id="自動テストのランダム落ち">自動テストのランダム落ち&lt;/h4>
+&lt;p>CAMPFIREではCIが導入されていて、pushするごとに走る自動テストでランダム落ちがまま発生していました。&lt;br>
+とくにE2Eテストは結構落ちてた印象で、この改修後ちょっと落ち着いたけど、結局再発しちゃいました。&lt;br>
+ただ、先月くらいにCapybaraのドライバを変えたりなど、画期的に改善されてそれ以降は落ち着いてます。&lt;br>
+日々の開発の中で頻繁に発生するランダム落ちは非常にストレスですね。&lt;br>
+なかなか普段まとまって改善の時間が取れないんですが、長期的に見れば完全にプラスなので絶対やり続けたほうがいいやつ。&lt;/p>
+&lt;h4 id="kyc関連">KYC関連&lt;/h4>
+&lt;p>今年の2月くらいからCAMPFIREでプロジェクトを申請する際にプロジェクトオーナーの方のKYCが必須になっているのですが、それ関連の実装を担当しました。&lt;br>
+着手し始めたのは2020年の10月ころだったので年を跨いでの実装になっています。&lt;br>
+プロジェクトオーナーの方々には負担がかかってしまうのですが、CAMPFIREが目指す安心安全なプラットフォームを目指すためには必要不可欠で重要な部分だと思うのでこれに携われたのはいい経験でした。&lt;/p>
+&lt;p>CAMPFIREの開発に携わり始めてから決済以外の部分でいうとかなり大きめなインパクトがある開発で、色々痺れることはありながらも実運用に乗っかってからは安定稼働してくれています。&lt;/p>
+&lt;h4 id="プロジェクトの新審査ツール開発">プロジェクトの新審査ツール開発&lt;/h4>
+&lt;p>CAMPFIREのプロジェクトは誰でも作成、申請ができるようになっていて、日々たくさんの素敵なプロジェクトが申請されています。&lt;br>
+それを1つ1つ丁寧に審査チームの方々が審査してプロジェクトの公開を目指すわけですが、この日々行われる審査に関しての機能はアプリケーション側に組み込まれていませんでした。&lt;br>
+せっかくの審査に関するデータを、より社内で活用できるようにするため新審査ツールの開発がスタートしました。&lt;br>
+審査データを蓄積するだけでなく、審査チームの方々ができるだけ日々の業務をやりやすくするために担当のデザイナーさんとはかなり密に連携をとりながら進めました。&lt;br>
+蓄積された審査データはデータチームによって素敵に処理されて、すごいダッシュボードができててテンションが上がってます。&lt;/p>
+&lt;h4 id="決済方法選択のabテスト">決済方法選択のABテスト&lt;/h4>
+&lt;p>ABテストは日々いろいろな個所で行われていて、こんな細かいところでは差がでないだろう&amp;hellip;と思いながらも実装したテストでも明確に差が出ることがあって、ABテストほんと大事&amp;hellip;!!と言う気持ちになっています。&lt;br>
+僕が担当した決済方法選択のABテストは主にUI面での変更のテストです。&lt;br>
+決済はサービスの根幹をなす部分で、そこに関する変更は非常に慎重になるべきところです。&lt;br>
+実装も不具合を起こしたら大変無影響が出てしまうため慎重にやっていく必要があります。&lt;/p>
+&lt;p>が、その中でもなるべくすっきりと、わかりやすいコードになるように工夫して、より柔軟な対応ができるように実装できたかなと満足しています。&lt;br>
+とはいえ4パターンのテストを4クラスタに分けてテストを行ったためなかなか骨太な実装になりました。&lt;/p>
+&lt;h4 id="特商法関連">特商法関連&lt;/h4>
+&lt;p>プロジェクトページで 特定商取引法に基づく表記 を表示してるのですが、それに関しての開発です。&lt;br>
+こちらもKYC同様、安心安全のプラットフォームを目指すための施策ですね。&lt;br>
+プロジェクトの申請に関わる画面ということでやはり慎重になるべきところの1つなので、複数回ABテストを分けて実施したのが印象的です。&lt;/p>
+&lt;h4 id="aupayミニアプリ関連">auPAYミニアプリ関連&lt;/h4>
+&lt;p>年内で最後の大きめの開発でした（多分）。&lt;br>
+プレスリリースもでてます🎉&lt;br>
+&lt;a href="https://prtimes.jp/main/html/rd/p/000000387.000019299.html">https://prtimes.jp/main/html/rd/p/000000387.000019299.html&lt;/a>&lt;/p>
+&lt;p>auPAY支払い自体はすでに導入されていたのでミニアプリ連携が主な開発部分でした。&lt;br>
+au ID認証部分で&lt;a href="https://id.auone.jp/id/pc/help/idlogin/2.html">OpenIDを利用している&lt;/a>こともあり、そちらに関しての調査を合わせて行ったことで少し詳しくなったかなと思います。&lt;/p>
+&lt;p>また仕様書をもとに手元で動く認証用のモックサーバーを作成したのですが、いつか業務で扱いたいなと思っていたGoで書いてみたりして個人的には挑戦しがいのある開発でした。&lt;/p>
+&lt;h4 id="実装以外">実装以外&lt;/h4>
+&lt;p>一応リードエンジニアという肩書きがあるので、チームメンバーのサポートやオンボーディングの整備、中学生以来にイニシアチブを発揮したりなど、正直自分につとまるのかなあというのもなんとかひいこらいいながらやってました。&lt;/p>
+&lt;p>ちなみに中学生の時のイニシアチブは体育祭で応援団長をしてて、それです。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/initiative.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>あるときのslack このあとイニシアチブについてはググった&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;p>そういえば春先には人生で初めての登壇を経験しました。&lt;br>
+リードエンジニアになってやってること、気をつけてることなどを発表しました。&lt;br>
+意外と反響もあって発表してよかったですね。
+&lt;script async class="speakerdeck-embed" data-id="5aae619cd9e143e59200e9caf91f793d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js">&lt;/script>
+&lt;/p></description></item><item><title>どんなときもCAMPFIREのプロジェクトがみたいあなたへ</title><link>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</link><pubDate>Fri, 04 Dec 2020 00:00:00 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/campfire-adventcalendar-2020/</guid><description>&lt;p>これは&lt;a href="https://qiita.com/advent-calendar/2020/campfire">CAMPFIRE Advent Calendar 2020&lt;/a>の5日目の記事です。&lt;/p>
+&lt;p>こんにちは🌞&lt;br>
+CAMPFIREでエンジニアをしている&lt;a href="https://twitter.com/__pyonk__" target="_blank">@__pyonk__&lt;/a>
+です。&lt;br>
+ちょっと前までは&lt;a href="https://tomo-shibi.jp">TOMOSHIBI&lt;/a>というサービスをつくってました。&lt;br>
+最近はCAMPFIRE本体の方を開発しています。&lt;br>
+アドベントカレンダーを書くのは初めてだったと思います。&lt;/p>
+&lt;p>最近息子が生まれました。&lt;br>
+最高です。&lt;/p>
+&lt;p>よろしくお願いします。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/1.jpg" />
+ 
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;hr>
+&lt;p>さて、ぼくはテキストエディタがわりかし好きで&lt;br>
+色々なエディタを触ってはやめて触ってはやめてを繰り返してきました。&lt;/p>
+&lt;p>ですがvimを触ってからは浮気一つせず使い続けています。&lt;/p>
+&lt;p>vimに関しては説明不要ではありますが、設定ファイルを書いたりプラグインを使ったりすればいくらでも自分好みの使い勝手にできるのが魅力ですね。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/2.jpg" />
+ 
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h3 id="どんなときでもcampfireのプロジェクトが気になる">どんなときでもCAMPFIREのプロジェクトが気になる&lt;/h3>
+&lt;p>そしてそんなvimを使っているときでもクラウドファンディングに挑戦しているプロジェクトをサクッとみたくなるときがありますよね。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">開発してるときでも人気のプロジェクトぐらいはサクッと見たい&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/1333786022082011137?ref_src=twsrc%5Etfw">December 1, 2020&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>たとえば&lt;/p>
+&lt;ul>
+&lt;li>vimの終了の仕方がわからなくて四苦八苦してるとき&lt;/li>
+&lt;li>&lt;a href="https://github.com/lambdalisue/gina.vim">gina.vim&lt;/a>めっちゃ便利やなあと感動してるとき&lt;/li>
+&lt;li>キーバインドをどうしようか考えているとき&lt;/li>
+&lt;li>便利そうなプラグインをみつけて入れてみるとき&lt;/li>
+&lt;li>今日は&lt;a href="https://github.com/cocopon/iceberg.vim">iceberg&lt;/a>な気分だなーー！って思うとき&lt;/li>
+&lt;/ul>
+&lt;p>どうしたって今人気のプロジェクトはなんだろうか、とふと思うだろうし、&lt;/p>
+&lt;p>どんな新しいワクワクするようなプロジェクトが生まれているのだろう、というのは気になるものです。&lt;/p>
+&lt;p>ということでそんな気持ちに応えるプラグインを作りました。&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyonk/campfire.vim">pyonk/campfire.vim&lt;/a>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/campfire.vim.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>campfire.vim&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h3 id="使い方">使い方&lt;/h3>
+&lt;p>使い方は単純です。
+今人気のプロジェクトみたいなーーーっておもったときは&lt;br>
+&lt;code>:CAMPFIRE&lt;/code>してください。&lt;/p>
+&lt;p>もし新しいプロジェクト何があんねやろっておもったときは&lt;br>
+&lt;code>:CAMPFIRE fresh&lt;/code>としてみてください。&lt;/p>
+&lt;p>詳しく見たいプロジェクトでエンターを押すとブラウザで開きます。&lt;/p>
+&lt;p>きっとあなたの気持ちを満たしてくれることと存じます。&lt;/p>
+&lt;p>よかったら使ってみてください。&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/3.jpg" />
+ 
+ 
+&lt;/figure>
+
+
+&lt;p>明日はdatadogマスターこと、&lt;a href="https://twitter.com/TAK_0401" target="_blank">@TAK_0401&lt;/a>
+です！！&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/4.jpg" />
+ 
+ 
+&lt;/figure></description></item><item><title>pgcrypto for Django</title><link>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</link><pubDate>Sun, 17 May 2020 11:28:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/pgcrypto-for-django/</guid><description>&lt;p>Django, postgresで運用しているサービスで特定のカラムについて暗号化する必要が出てきたので調べてやってみました。&lt;/p>
+&lt;p>postgresの拡張機能である&lt;code>pgcrypto&lt;/code>で暗号化します。
+&lt;a href="https://www.postgresql.jp/document/10/html/pgcrypto.html">https://www.postgresql.jp/document/10/html/pgcrypto.html&lt;/a>&lt;/p>
+&lt;h2 id="pgcryptoの有効化">pgcryptoの有効化&lt;/h2>
+&lt;p>&lt;em>後述の通り&lt;code>django-pgcrypto-fields&lt;/code>を使う場合はmigrationファイルがよしなにやってくれるので必要ないけど&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> EXTENSION pgcrypto;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/* 確認 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">FROM&lt;/span> pg_extentions;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>もし&lt;code>lib/pgcrypto.so&lt;/code>がない場合は
+&lt;code>yum install postgresql-contrib&lt;/code>とかで用意しておく。&lt;/p>
+&lt;h2 id="django-pgcrypto-fieldsのインストール">django-pgcrypto-fieldsのインストール&lt;/h2>
+&lt;p>Djangoとのやりとりは&lt;a href="https://github.com/incuna/django-pgcrypto-fields">django-pgcrypto-fields&lt;/a>を介して行うので
+インストールする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install django-pgcrypto-fields
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="鍵の作成">鍵の作成&lt;/h2>
+&lt;p>pgcryptoには共通鍵暗号方式による暗号化と公開鍵暗号方式による暗号化があって&lt;/p>
+&lt;p>今回は公開鍵暗号方式を採用したの処理を怠るとので鍵を用意する必要がある。&lt;/p>
+&lt;p>鍵の作成方法はdocumentにも書いてある通りGnuPGを使用する。&lt;/p>
+&lt;p>以下のコマンドでインタラクティブに鍵が作成できる。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg --gen-key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>推奨するキー種類は「DSAとElgamal」です。&lt;br>
+― &lt;a href="https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19">https://www.postgresql.jp/document/10/html/pgcrypto.html#id-1.11.7.35.7.19&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>らしい。&lt;/p>
+&lt;p>* &lt;em>ssh経由で鍵を作成する際、エントロピー不足で鍵の作成に時間がかかる(もしくは終わらない)場合があるけどその場合は&lt;a href="https://serverfault.com/questions/214605/gpg-does-not-have-enough-entropy">これ&lt;/a>で解決した&lt;/em>&lt;/p>
+&lt;p>作成できたら確認しよう。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg --list-secret-keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>確認時に表示される鍵IDで指定して公開鍵、秘密鍵をエクスポートする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>gpg -a --export KEYID &amp;gt; public.key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg -a --export-secret-keys KEYID &amp;gt; private.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="settingsに記述">settingsに記述&lt;/h2>
+&lt;p>ここまでで下準備が完了！&lt;/p>
+&lt;p>次は&lt;code>settigns.py&lt;/code>に必要な記述をしていく。&lt;/p>
+&lt;p>&lt;code>PUBLIC_PGP_KEY_PATH&lt;/code>, &lt;code>PRIVATE_PGP_KEY_PATH&lt;/code> はさっき作成した鍵を指定する。&lt;/p>
+&lt;p>&lt;code>django-pgcrypto-fields&lt;/code>の説明のまんまだけど&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>PUBLIC_PGP_KEY_PATH &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>abspath(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(BASEDIR, &lt;span style="color:#e6db74">&amp;#39;public.key&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRIVATE_PGP_KEY_PATH &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>abspath(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(BASEDIR, &lt;span style="color:#e6db74">&amp;#39;private.key&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PUBLIC_PGP_KEY &lt;span style="color:#f92672">=&lt;/span> open(PUBLIC_PGP_KEY_PATH)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRIVATE_PGP_KEY &lt;span style="color:#f92672">=&lt;/span> open(PRIVATE_PGP_KEY_PATH)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INSTALLED_APPS &lt;span style="color:#f92672">+=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;pgcrypto&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="実際にコードに組み込む">実際にコードに組み込む&lt;/h2>
+&lt;p>こんな感じのコードがあったとして&lt;/p></description></item><item><title>emacs lispを紐解く</title><link>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</link><pubDate>Wed, 15 Jan 2020 11:38:02 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/consider-emacs-lisp-for-pipenv/</guid><description>&lt;pre tabindex="0">&lt;code>結構前に書いてたやつがメモ帳に埋まってたので供養します
+今はspacemacsじゃなくてneovimつかってる
+&lt;/code>&lt;/pre>&lt;p>普段spacemacsというエディタを使ってコードを書いているんだけど&lt;/p>
+&lt;p>pipenvを&lt;code>$PIPENV_VENV_IN_PROJECT=1&lt;/code>で使ってるとうまく補完されないので悩んでた&lt;/p>
+&lt;p>少し調べると&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054">pipenv directory .venv and pyvenv file .venv conflict · Issue #10293 · syl20bnr/spacemacs&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>がヒットした&lt;/p>
+&lt;p>提示されてたコードを設定ファイルに追記したらまあうまく動くんだけど、呪文やん？これ&lt;/p>
+&lt;p>きちんと理解しないと〜ということでemacs lispを紐解いて簡単にまとめた&lt;/p>
+&lt;ul>
+&lt;li>.venvがディレクトリか、ファイルかによって処理を変えてるだけ&lt;/li>
+&lt;li>コードリーディング超大事&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-lisp" data-lang="lisp">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; spacemacs//pyvenv-mode-set-local-virtualenvという関数を定義
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span>Set pyvenv virtualenv from \&amp;#34;.venv\&amp;#34; by looking in parent directories. handle &lt;span style="color:#a6e22e">directory&lt;/span> or fil&lt;span style="color:#960050;background-color:#1e0010">\&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; コマンドとして実行できるようにするやつおまじない的な詳しくは以下がとても参考になる
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> http://yhash.hatenablog.com/entry/2012/07/14/134732
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (interactive)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; 変数root-pathに&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>venv&lt;span style="color:#e6db74">&amp;#34;があるディレクトリを代入する
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> default-directoryから親方向に&lt;span style="color:#e6db74">&amp;#34;.venv&amp;#34;&lt;/span>を探す なければnil
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">let&lt;/span> ((root-path (locate-dominating-file default-directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;.venv&amp;#34;&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; root-pathがnilではない時のみ実行
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (when root-path
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> file-pathに{root-path}/.venvの形で代入する
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">let*&lt;/span> ((file-path (expand-file-name &lt;span style="color:#e6db74">&amp;#34;.venv&amp;#34;&lt;/span> root-path))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; 変数virtualenvに何を代入するか
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (virtualenv
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span>venvがdirectoryである場合はそのままfile-pathを代入
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">if&lt;/span> (file-directory-p file-path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file-path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; directoryではない場合、file-pathの内容を読み取ってそれを代入
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (with-temp-buffer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (insert-file-contents-literally file-path)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (buffer-substring-no-properties (line-beginning-position)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (line-end-position))))))
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> virtualenvがdirectoryなら
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">if&lt;/span> (file-directory-p virtualenv)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34; pyvenv-activate を実行
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (pyvenv-activate virtualenv)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&lt;/span> そうではないならpyvenv-workon を実行
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (pyvenv-workon virtualenv))))))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>minio is awesome</title><link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link><pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid><description>&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった&lt;a href="https://t.co/YLKdJrsasg">https://t.co/YLKdJrsasg&lt;/a>&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/1117441566258282496?ref_src=twsrc%5Etfw">April 14, 2019&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。&lt;/p>
+&lt;p>S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。
+docker-composeと相性も良さそうなので使ってみることにした。&lt;/p>
+&lt;p>ちなみにDjangoでウェブサイトを構築している。&lt;/p>
+&lt;h2 id="下準備">下準備&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pip install django-storages boto3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>python側で追加インストール必要なのはこれだけで
+あとはsettings.py&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># S3にアップロード&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DEFAULT_FILE_STORAGE &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_ACCESS_KEY_ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;minio&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 自由に決めちゃっておk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_SECRET_ACCESS_KEY &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;minio123&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 自由に決めちゃっておk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_STORAGE_BUCKET_NAME &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;static&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 自由に決めちゃっておk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_S3_ENDPOINT_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;http://minio:9000/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>minio本体はdocker imageを利用するのが便利。&lt;/p>
+&lt;p>docker-compose.ymlに以下の記述を追加する。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;3.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">minio&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">minio/minio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;9000:9000&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">volume&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">source&lt;/span>: &lt;span style="color:#ae81ff">minio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">target&lt;/span>: &lt;span style="color:#ae81ff">/export&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">environment&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">MINIO_ACCESS_KEY&lt;/span>: &lt;span style="color:#ae81ff">minio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">MINIO_SECRET_KEY&lt;/span>: &lt;span style="color:#ae81ff">minio123&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">server /export&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">minio&lt;/span>:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これで&lt;code>docker-compose up&lt;/code>するとminioが立ち上がるので
+localhost:9000にアクセスして&lt;code>static&lt;/code>バケットを作っておく。&lt;/p>
+&lt;p>準備は以上。簡単！！&lt;/p>
+&lt;h2 id="uploader">Uploader&lt;/h2>
+&lt;p>以下のようなUploaderを用意しておけば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.core.files.storage &lt;span style="color:#f92672">import&lt;/span> default_storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Uploader&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> storage &lt;span style="color:#f92672">=&lt;/span> default_storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filename &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">get_unique_filename&lt;/span>(self, filename):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>storage&lt;span style="color:#f92672">.&lt;/span>get_available_name(filename)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">upload&lt;/span>(self, uploaded_file):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>filename &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>get_unique_filename(uploaded_file&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">with&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>storage&lt;span style="color:#f92672">.&lt;/span>open(self&lt;span style="color:#f92672">.&lt;/span>filename, &lt;span style="color:#e6db74">&amp;#39;w&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> chunk &lt;span style="color:#f92672">in&lt;/span> uploaded_file&lt;span style="color:#f92672">.&lt;/span>chunks():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f&lt;span style="color:#f92672">.&lt;/span>write(chunk)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>url &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>storage&lt;span style="color:#f92672">.&lt;/span>url(self&lt;span style="color:#f92672">.&lt;/span>filename)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>url
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>こんな感じで使うといい感じ。&lt;/p></description></item><item><title>vista.vim is awesome</title><link>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</link><pubDate>Wed, 27 Mar 2019 08:48:12 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/vista-vim-is-awesome/</guid><description>&lt;p>この前&lt;a href="https://pyonk.github.io/blog/posts/how-to-use-coc-vim/">coc.nvim&lt;/a>を見つけたけど
+またredditにて&lt;a href="https://github.com/liuchengxu/vista.vim">vista.vim&lt;/a>というのを見つけた。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/vim/comments/b5pd86/vistavim_a_tagbar_alternative_that_supports_lsp/">vista.vim: A tagbar alternative that supports LSP symbols and async processing : vim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>/r/vimのRSS登録しとってよかった。&lt;/p>
+&lt;h1 id="vistavim">vista.vim&lt;/h1>
+&lt;p>vimをIDEのようにしてくれる夢のようなツール。&lt;/p>
+&lt;p>cocと連携してLSPのシンボルから出してくれるから、別途ctagsとか使わなくていい感じ（ctagsとの連携もできるみたい）。
+fzfを使ってシンボルの絞り込み検索もできるので、楽しい感じ。&lt;/p>
+&lt;p>あたらしいプラグインのようで、まだ発展途上のようだ(2019-03)。&lt;/p>
+&lt;blockquote>
+&lt;p>⚠️ Currently vista.vim is mostly usable, yet not stable. All the public APIs and global options can be changed or even be removed in the future.&lt;br>
+― &lt;a href="https://github.com/liuchengxu/vista.vim">liuchengxu/vista.vim: View and search LSP symbols, tags in Vim&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="とりあえずインストール">とりあえずインストール&lt;/h1>
+&lt;p>例のごとく僕はdeinを使っているので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">plugins&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">repo&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;liuchengxu/vista.vim&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">depends&lt;/span> = [&lt;span style="color:#e6db74">&amp;#39;coc.nvim&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;lightline.vim&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">hook_add&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; &amp;lt;C-f&amp;gt;&amp;lt;C-v&amp;gt; :&amp;lt;C-u&amp;gt;Vista coc&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; &amp;lt;C-f&amp;gt;&amp;lt;C-s&amp;gt; :&amp;lt;C-u&amp;gt;Vista finder coc&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>こんな感じで。
+使いやすいようにショートカットも登録しておく。&lt;/p></description></item><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>&lt;p>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。&lt;/p>
+&lt;p>この間redditみてたら&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/vim/comments/b1yfsg/python_completion_in_cocnvim_pyls/">python completion in coc.nvim + pyls : vim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>こんなスレッドがあって&lt;/p>
+&lt;p>&lt;a href="https://github.com/neoclide/coc.nvim">coc.nvim&lt;/a>て見慣れないプラグインがあるなあと思ってみてみたら
+わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。&lt;/p>
+&lt;h1 id="インストール方法">インストール方法&lt;/h1>
+&lt;p>僕はプラグインマネジャーにdeinを使ってるので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml:dein/plugins.toml" data-lang="toml:dein/plugins.toml">&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">plugins&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">repo&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;neoclide/coc.nvim&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">build&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;coc#util#install()&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">hook_add&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Remap for rename current word
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Highlight symbol under cursor on CursorHold
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> autocmd CursorHold * silent call CocActionAsync(&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">highlight&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Use K for show documentation in preview window
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> function! s:show_documentation()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> if &amp;amp;filetype == &amp;#39;&lt;/span>&lt;span style="color:#a6e22e">vim&lt;/span>&lt;span style="color:#e6db74">&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> execute &amp;#39;&lt;/span>&lt;span style="color:#a6e22e">h&lt;/span> &lt;span style="color:#e6db74">&amp;#39;.expand(&amp;#39;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">cword&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> else
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> call CocAction(&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">doHover&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> endif
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> endfunction
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これを記述する。&lt;/p></description></item><item><title>Django Test Client Url Capture Not Working</title><link>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</link><pubDate>Wed, 20 Feb 2019 15:12:08 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-test-client-url-capture-not-working/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python:urls.py" data-lang="python:urls.py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.urls &lt;span style="color:#f92672">import&lt;/span> path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>url_patterns &lt;span style="color:#f92672">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;users/&amp;lt;int:user_id&amp;gt;/&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>show, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;user_show&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python:tests.py" data-lang="python:tests.py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.test &lt;span style="color:#f92672">import&lt;/span> TestCase, RequestFactory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> users &lt;span style="color:#f92672">import&lt;/span> views
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.contrib.auth.models &lt;span style="color:#f92672">import&lt;/span> AnonymousUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.contrib.sessions.middleware &lt;span style="color:#f92672">import&lt;/span> SessionMiddleware
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.contrib.messages.middleware &lt;span style="color:#f92672">import&lt;/span> MessageMiddleware
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">UserViewTestCase&lt;/span>(TestCase):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">setUp&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>request &lt;span style="color:#f92672">=&lt;/span> RequestFactory()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">test_access_user_page&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>request&lt;span style="color:#f92672">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(&lt;span style="color:#e6db74">&amp;#39;user_show&amp;#39;&lt;/span>, args&lt;span style="color:#f92672">=&lt;/span>(user_id,))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req&lt;span style="color:#f92672">.&lt;/span>user &lt;span style="color:#f92672">=&lt;/span> AnonymousUser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SessionMiddleware()&lt;span style="color:#f92672">.&lt;/span>process_request(req)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MessageMiddleware()&lt;span style="color:#f92672">.&lt;/span>process_request(req)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> views&lt;span style="color:#f92672">.&lt;/span>show(req)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>assertTrue(res&lt;span style="color:#f92672">.&lt;/span>status_code, &lt;span style="color:#ae81ff">302&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上記のようなテストコードがあったとすると
+&lt;code>views.show&lt;/code>で&lt;code>self.kwargs['user_id']&lt;/code>が参照できないっていう状況に1時間くらいハマった&lt;/p>
+&lt;p>結論から言うと
+&lt;code>RequestFactory&lt;/code>は単純にrequestオブジェクトを作るだけなので、urlsとか関係なく
+&lt;code>views.show(req)&lt;/code>をテストしてるに過ぎないと言うことだった
+なので
+&lt;code>views.show(req, user_id=user_id)&lt;/code>としてあげると良かったようだ&lt;/p>
+&lt;p>というかそもそも論だがurlsでルーティングしているのであれば
+これだけで良かった&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python:test.py" data-lang="python:test.py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.test &lt;span style="color:#f92672">import&lt;/span> TestCase, Client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">UserViewTestCase&lt;/span>(TestCase):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">setUp&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>client &lt;span style="color:#f92672">=&lt;/span> Client()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">test_access_user_page&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>client&lt;span style="color:#f92672">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(&lt;span style="color:#e6db74">&amp;#39;user_show&amp;#39;&lt;/span>, args&lt;span style="color:#f92672">=&lt;/span>(user_id,))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>assertTrue(res&lt;span style="color:#f92672">.&lt;/span>status_code, &lt;span style="color:#ae81ff">302&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>RequestFactoryはあくまでもルーティングに定義していない時に使うようにしよう〜〜〜
+ぼくつかれっちゃった
+だれだよRequestFactoryとか教えたの&lt;/p></description></item><item><title>Unityのscrollrectでスクロールができない件</title><link>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</link><pubDate>Mon, 05 Nov 2018 15:37:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/unity-scrollrect-not-working/</guid><description>&lt;p>最近仕事でUnityを触るようになってC#を書いているけど、なかなかにUnityのお作法になれない。
+普段webをやってるのでCSSみたいに簡単にレイアウトしたり、javascriptみたいにかければいいのにと何度思ったことか・・。&lt;/p>
+&lt;hr>
+&lt;p>タイトルの通りなのだけど、自分の備忘録がわりにメモしておこうと思う。&lt;/p>
+&lt;h2 id="スクロールができないゾ">スクロールができないゾ&lt;/h2>
+&lt;p>ボタンを内包するスクロールビューが必要になった。&lt;br>
+とりあえずボタンなしでスクロールビューを書いてきちんとスクロールできることを確認した。&lt;br>
+いよいよボタンを、とボタンの機能自体は問題なくできてさーてスクロールも確認しておこうと思ったところ、うんともすんとも言わない。&lt;br>
+これは困った&lt;br>
+すこし調べてみると世界中の人が困ってる風だ。&lt;/p>
+&lt;p>&lt;a href="https://hexadrive.jp/hexablog/program/15948/" title="UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社">UnityのScrollRectを拡張しよう | 株式会社ヘキサドライブ | HEXADRIVE | ゲーム制作を中心としたコンテンツクリエイト会社&lt;/a>&lt;/p>
+&lt;h2 id="違う違うそうじゃない">違う違うそうじゃない&lt;/h2>
+&lt;p>似てる問題っぽいけど違う（なんならこの見出しが書きたかっただけ）。
+僕の症状はボタンは押せるけどスクロールができない、だ。&lt;/p>
+&lt;p>参考になったのはこちら&lt;/p>
+&lt;p>&lt;a href="http://answers.unity.com/questions/902929/scroll-not-working-when-elements-inside-have-click.html" title="[Solved] Scroll not working when elements inside have click events - Unity Answers">[Solved] Scroll not working when elements inside have click events - Unity Answers&lt;/a>&lt;/p>
+&lt;p>結論、書いてるコードに問題があった。&lt;/p>
+&lt;ul>
+&lt;li>実際のコード&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>EventTrigger tapEvent = TitleTextObject.AddComponent&amp;lt;EventTrigger&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EventTrigger.Entry entry = &lt;span style="color:#66d9ef">new&lt;/span> EventTrigger.Entry();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>entry.eventID = EventTriggerType.PointerClick;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>entry.callback.AddListener((data) =&amp;gt; { tapHandler((PointerEventData)data); });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tapEvent.triggers.Add(entry);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一見正しいけど、この&lt;code>EventTrigger&lt;/code>っていうのが曲者でいろんな継承が行われてるみたい&lt;/p></description></item><item><title>let's splitがとどいた！</title><link>https://pyonk.github.io/blog/posts/lets-split-arrive/</link><pubDate>Tue, 12 Jun 2018 21:35:46 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/lets-split-arrive/</guid><description>&lt;p>この間boothで&lt;a href="https://pyonk.github.io/blog/posts/buy-lets-split/">購入した&lt;/a>let&amp;rsquo;s splitがあの後無事届きました。&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/foostan" target="_blank">@foostan&lt;/a>
+さんにはマジ感謝マジ卍。&lt;/p>
+&lt;p>完動、感動でした。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/letsplit.jpg" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>マジかっこいい・・・&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h2 id="現在のキーマッピング">現在のキーマッピング&lt;/h2>
+&lt;p>&lt;strong>正直届いて触るまで、キーマッピングとか変更せんでもなんとなく使えるやろ&lt;/strong>なんてことを思っていましたが、とんでもない。&lt;/p>
+&lt;p>いやこう言うと語弊がありますね。&lt;/p>
+&lt;p>もちろん(lets splitの)デフォルトで及第点くらいだったのですが、自分でキーマッピングを変えるのが醍醐味ということで試しにいくつか変えて見たところこれがまた素晴らしい。&lt;/p>
+&lt;h3 id="default">default&lt;/h3>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/default.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Qwerty&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/default-raise.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Raise&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/default-lower.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Lower&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;h3 id="自分の">自分の&lt;/h3>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pyonk.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Qwerty&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pyonk-raise.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Raise&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/pyonk-lower.png" />
+ 
+ 
+ &lt;figcaption>
+ &lt;span>Lower&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>こう見返すとほっとんどかわってない笑
+なんならRaiseとLowerまんま一緒か！&lt;/p>
+&lt;p>けど&lt;code>esc&lt;/code>の位置はかなりお気に入り。当初は左上にしたんだけど、&lt;code>tab&lt;/code>をおいておきたくて。&lt;/p>
+&lt;p>だいぶタイピングも慣れてきて、-とか~もノールックで行けるようになった。&lt;/p>
+&lt;p>目下課題に感じているのは左下の矢印キーたち。普段は&lt;code>ctrl&lt;/code>+&lt;code>hjkl&lt;/code>を矢印キーとしてつかっているから左下のは使わないのよなー。もったいない。&lt;/p>
+&lt;p>もちろんこの記事はlet&amp;rsquo;s splitで書かれました！！&lt;/p>
+&lt;p>新しい相棒でバリバリコード書くぞ〜〜&lt;/p></description></item><item><title>let's splitを買った</title><link>https://pyonk.github.io/blog/posts/buy-lets-split/</link><pubDate>Thu, 24 May 2018 23:11:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/buy-lets-split/</guid><description>&lt;p>1年くらい前、ergodoxの存在を知って以来、分割キーボード欲しいなーと思っていて、半年ほど前、会社の経費でmd600を買ってもらった。&lt;br>
+アキバで色々触らせてもらって悩んだ挙句茶軸にした。個人的には青軸がよかったのだけど、会社で使うとなるとやはりやかましい。赤軸は定番と聞いたけど、なんとなく押し心地がな気持ちよくない。茶軸のちょうど良い感が気に入った。&lt;/p>
+&lt;p>で、会社におきっぱだから家で仕事をするときも分割がいいなあと思い始める。思い始めてしまった。&lt;br>
+無事にキーボード沼にハマりかけている。&lt;br>
+自作キーボード界隈をみてみるとすごーーーくかっこいい。&lt;br>
+とくに&lt;a href="https://yushakobo.jp/shop/helix-keyboard-kit/">Helix&lt;/a>とか&lt;a href="https://tanoshii-life.booth.pm/items/842147">Ergo42&lt;/a>とかたまらない。&lt;br>
+ただ、半田ごてとか握ったことないので不安だしなかなか手を出しづらい。（そもそも人気すぎて買えへん）&lt;/p>
+&lt;p>そんな感じでかっこいいキーボードをTLでながめていたわけど、&lt;a href="https://twitter.com/foostan">@foostan&lt;/a>さんがboothでlet&amp;rsquo;s splitを販売するらしいとの情報をキャッチ。&lt;br>
+このままくすぶってても何にもならないので、エイやで購入を決意。&lt;br>
+完成版か自分で組み立てるか結構悩んだけど、自作選んで半田ごてかうと完成版買えそうだったから完成版を買った。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">完成品版let&amp;#39;s split注文した。&lt;br>手作りキットのが楽しいかなーーって悩んだけど、初めての電子工作で不安だったので、今回は様子見。&lt;br>&lt;br>届くのが楽しみだな〜〜〜！！&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/999547340120731650?ref_src=twsrc%5Etfw">May 24, 2018&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>とにかく届くのが楽しみでごわす。&lt;br>
+発送予定日が5/27なので週明けには手元に届いてるかしら。&lt;/p></description></item><item><title>facebookのためにsocial loginをごにょごにょした話</title><link>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</link><pubDate>Wed, 20 Dec 2017 13:54:50 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/social-login-update-for-facebook/</guid><description>&lt;p>facebookに見慣れぬアラートが。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/alert.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>突然のアラート&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/message.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>難しい英文&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;blockquote>
+&lt;p>In 90 days, we&amp;rsquo;re making a security update to Facebook Login that will invalidate calls from URIs not listed in the Valid OAuth redirect URIs field of your Facebook Login settings.&lt;br>
+This update comes in response to malicious activity we saw on our platform, and we want to protect your app or website by requiring a new strict mode for redirect URIs. Take action now to ensure your redirect traffic continues to work. Learn More&lt;/p></description></item><item><title>djangoのquerysetを任意の順番でsortする</title><link>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</link><pubDate>Fri, 10 Nov 2017 18:33:41 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/django-queryset-order-by-specific-values/</guid><description>&lt;h1 id="djangoのquerysetを任意の順番でsortする">djangoのquerysetを任意の順番でsortする&lt;/h1>
+&lt;p>djnagoでは&lt;code>order_by('hoge')&lt;/code>とするとhogeの昇順でならんでいくことは当たり前のように知っているよね。&lt;/p>
+&lt;p>が、ぼくがやりたかったのは、任意の値でのソート。&lt;br>
+databaseに定義されてない値でソートしたかったのです。&lt;/p>
+&lt;p>とても参考になったstack overflowはこちら。&lt;br>
+&lt;a href="https://stackoverflow.com/questions/10329849/django-order-by-specific-order">Django order_by specific order - Stack Overflow&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>ただし&lt;code>django &amp;gt;= 1.8&lt;/code>です&lt;/p>&lt;/blockquote>
+&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> djnago.db.models &lt;span style="color:#f92672">import&lt;/span> Case, When, Value, FloatField
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># { pid: specific_value, }&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>specific_values &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;1&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">100.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">50.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">25.0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;4&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">123.4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;5&amp;#39;&lt;/span>: &lt;span style="color:#ae81ff">599.33&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sqlのCASE式にしたい条件のリスト&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cases &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># casesにCASE式にしたい条件をつめていく&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> pid, specific_value &lt;span style="color:#f92672">in&lt;/span> specific_values&lt;span style="color:#f92672">.&lt;/span>items():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cases&lt;span style="color:#f92672">.&lt;/span>append(When(id&lt;span style="color:#f92672">=&lt;/span>pid, then&lt;span style="color:#f92672">=&lt;/span>Value(specific_value)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Hogeモデルに対して、pidで絞り込んだあとにcasesをつかってspecific_valueについて注釈づけてorder_byする&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Hoge&lt;span style="color:#f92672">.&lt;/span>objects&lt;span style="color:#f92672">.&lt;/span>filter(id__in&lt;span style="color:#f92672">=&lt;/span>specific_values&lt;span style="color:#f92672">.&lt;/span>keys())&lt;span style="color:#f92672">.&lt;/span>annotate(specific_value&lt;span style="color:#f92672">=&lt;/span>Case(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>cases,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output_field&lt;span style="color:#f92672">=&lt;/span>FloatField()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>))&lt;span style="color:#f92672">.&lt;/span>order_by(specific_value)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="詳しい説明">詳しい説明&lt;/h2>
+&lt;p>&lt;a href="https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/">Conditional Expressions | Django documentation | Django&lt;/a>&lt;/p>
+&lt;h2 id="tips">TIPS&lt;/h2>
+&lt;ul>
+&lt;li>casesに条件をつめこむため、&lt;code>Case&lt;/code>インスタンスを作成する際に、&lt;code>*&lt;/code>で展開してあげないといけない。&lt;/li>
+&lt;/ul>
+&lt;p>ここだけ気をつければ非常に便利（使い所があまりないのが玉に瑕）。&lt;/p></description></item><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>&lt;p>ぼくは普段からsublimetextを使っているのだけど&lt;br>
+（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。&lt;br>
+vim使ってる人のプロフェッショナル感がすごい。&lt;br>
+sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってる&lt;code>Vintage&lt;/code>を有効化した。&lt;/p>
+&lt;h1 id="vintageの有効化">Vintageの有効化&lt;/h1>
+&lt;p>&lt;code>Cmd + ,&lt;/code>でsublimetextの設定を開く。&lt;br>
+ここのVintageを消す。&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/Preferences-ignore-packages.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>vintage消す&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;br>
+有効化done&lt;/p>
+&lt;h1 id="つかってみる">つかってみる&lt;/h1>
+&lt;p>つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/not-enabled-disabled-ime.gif" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>こんな具合ですね&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;p>INSERT MODEからCOMMAND MODEに移行するために&lt;code>escape&lt;/code>を押下するんだけど、そのときにIMEをOFFにすれば良いですね。&lt;br>
+ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://rcmdnk.com/blog/2017/03/12/computer-vim/">VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;!-- raw HTML omitted -->カラビナ使うっていう手もあるけど&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。&lt;br>
+macではAppleScriptを使うみたいですね。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qiita.com/takao-s/items/aecb4076fe21b2803da3">SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。&lt;br>
+タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。&lt;br>
+で結果はこうなります。&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/enabled-disabled-ime.gif" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>こんな具合ですね&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h1 id="おソース">おソース&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/pyonk/DisabledIme">pyonk/DisabledIme&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>こちらにおいてありますので、&lt;code>git clone&lt;/code>してお使いくださいませ。&lt;/p></description></item><item><title>pythonからpdfのフォームに入力する</title><link>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</link><pubDate>Thu, 05 Oct 2017 15:46:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/fill-pdf-form-from-python/</guid><description>&lt;h1 id="pythonからpdfのフォームに入力する厳密には違う">pythonからpdfのフォームに入力する（厳密には違う）&lt;/h1>
+&lt;p>pythonでpdfのフォームに値を入力していく機能をつくりました。&lt;br>
+そもそもpdfにフォームなんて埋められるんだって知らなかったです。&lt;br>
+どうやら読み込み専用フォームとそうでないフォームがあるみたいです。&lt;br>
+書き込めるフォームであってもフォントの指定や色付けとかが難しそうだったので、フォームに入力しない形式で実装しました。&lt;br>
+なのでどちらにも対応できるような感じになってます。&lt;/p>
+&lt;h2 id="事前準備">事前準備&lt;/h2>
+&lt;ul>
+&lt;li>reportlab&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pip install reportlab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>PyPDF2&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pip install pypdf2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="コード">コード&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /usr/bin/python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.pdfgen &lt;span style="color:#f92672">import&lt;/span> canvas
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.lib.pagesizes &lt;span style="color:#f92672">import&lt;/span> A4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.pdfbase &lt;span style="color:#f92672">import&lt;/span> pdfmetrics
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> reportlab.pdfbase.ttfonts &lt;span style="color:#f92672">import&lt;/span> TTFont
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> PyPDF2.pdf &lt;span style="color:#f92672">import&lt;/span> PdfFileReader, PdfFileWriter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> io &lt;span style="color:#f92672">import&lt;/span> BytesIO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>title &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;title&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># fontを変更&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pdfmetrics&lt;span style="color:#f92672">.&lt;/span>registerFont(TTFont(&lt;span style="color:#e6db74">&amp;#39;Mplus1p-Light&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;static/font/Mplus1p/Mplus1p-Light.ttf&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>template_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;template.pdf&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 読み込み&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reader &lt;span style="color:#f92672">=&lt;/span> PdfFileReader(template_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>existing_page &lt;span style="color:#f92672">=&lt;/span> reader&lt;span style="color:#f92672">.&lt;/span>getPage(&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>page_width &lt;span style="color:#f92672">=&lt;/span> existing_page&lt;span style="color:#f92672">.&lt;/span>mediaBox&lt;span style="color:#f92672">.&lt;/span>getWidth()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>page_height &lt;span style="color:#f92672">=&lt;/span> existing_page&lt;span style="color:#f92672">.&lt;/span>mediaBox&lt;span style="color:#f92672">.&lt;/span>getHeight()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 直接フォームに入力するのではないのでstreamとしてもっておく&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>packet &lt;span style="color:#f92672">=&lt;/span> BytesIO()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c &lt;span style="color:#f92672">=&lt;/span> canvas&lt;span style="color:#f92672">.&lt;/span>Canvas(packet, pagesize&lt;span style="color:#f92672">=&lt;/span>A4)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c&lt;span style="color:#f92672">.&lt;/span>setFont(&lt;span style="color:#e6db74">&amp;#39;Mplus1p-Light&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># titleはセンタリング&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c&lt;span style="color:#f92672">.&lt;/span>drawCentredString(page_width &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>, page_height &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>, title)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># formfieldsを取得&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fields &lt;span style="color:#f92672">=&lt;/span> reader&lt;span style="color:#f92672">.&lt;/span>trailer[&lt;span style="color:#e6db74">&amp;#39;/Root&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;/AcroForm&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;/Fields&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> f &lt;span style="color:#f92672">in&lt;/span> fields:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> field &lt;span style="color:#f92672">=&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>getObject()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># formの位置情報。おそらく[左上x, 左上y, 右下x, 右下y]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rect &lt;span style="color:#f92672">=&lt;/span> field&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;/Rect&amp;#39;&lt;/span>, [&lt;span style="color:#ae81ff">0.0&lt;/span>, &lt;span style="color:#ae81ff">0.0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key &lt;span style="color:#f92672">=&lt;/span> field&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;/T&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">.&lt;/span>setFont(&lt;span style="color:#e6db74">&amp;#39;Mplus1p-Light&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 微調整&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">.&lt;/span>drawString(float(rect[&lt;span style="color:#ae81ff">0&lt;/span>]) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>, float(rect[&lt;span style="color:#ae81ff">1&lt;/span>]) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>, key)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c&lt;span style="color:#f92672">.&lt;/span>save()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># パケットの読み込みを先頭に戻す&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>packet&lt;span style="color:#f92672">.&lt;/span>seek(&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>new_pdf &lt;span style="color:#f92672">=&lt;/span> PdfFileReader(packet)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># テンプレートと書き込んだ内容をマージ&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>existing_page&lt;span style="color:#f92672">.&lt;/span>mergePage(new_pdf&lt;span style="color:#f92672">.&lt;/span>getPage(&lt;span style="color:#ae81ff">0&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># writerを用意&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writer &lt;span style="color:#f92672">=&lt;/span> PdfFileWriter()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writer&lt;span style="color:#f92672">.&lt;/span>addPage(existing_page)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 書き込み&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#39;output.pdf&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;wb&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> output_file:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer&lt;span style="color:#f92672">.&lt;/span>write(output_file)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>見てもらったらわかる通りフォームのある位置に文字列を描画した別のPDFと、テンプレートPDFを重ねている感じです。&lt;/p></description></item><item><title>timetreeの500万ユーザー記念パーティに参加してきた</title><link>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</link><pubDate>Thu, 31 Aug 2017 17:42:30 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/timetree-over-5m-users-party/</guid><description>&lt;p>いつも使っているアプリの一つにtimetreeというカレンダーアプリがあるのだけど、ある日ふとお知らせをみたら、オフィスパーティ招待の募集が。
+平日だし、どうしようか悩んだけど、とりあえず応募したら見事にご招待された。ありがとうございます。
+ということで、昨日行って来ました。&lt;/p>
+&lt;p>&lt;a href="http://blog.timetreeapp.com/post/163630274952/%E7%A5%9D500%E4%B8%87%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AA%81%E7%A0%B4%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC%E3%81%B8%E3%81%AE%E3%81%94%E6%8B%9B%E5%BE%85">TimeTree — 〜＊祝500万ユーザー突破！オフィス・パーティーへのご招待＊〜&lt;/a>&lt;/p>
+&lt;p>まず、ものすごく可愛いオフィスで、良い空間であったということを伝えたい。&lt;/p>
+&lt;p>着くやいなやこんな感じ。
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/jubileeworks-party.jpg" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>テーマはお祭り&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;br>
+で、撮った写真はこれ1枚だけ。
+あとはひたすらお酒飲んで社員さんとお話してきました。&lt;/p>
+&lt;p>こういったパーティを過去に何回か開催しているみたい。素晴らしい取り組み。
+テーマはお祭りだそう。
+デザイナーさんが手作りした（すごい）という屋台が真ん中に鎮座しておりました。
+タイムツリーのショップで売ってるアナログなカレンダーとかも壁に貼ってあったのだけどすごく可愛い。ほしい・・・。&lt;/p>
+&lt;p>社風も素晴らしかった。&lt;br>
+基本みなさん英語でニックネームがついてて、大抵呼び捨て。&lt;br>
+風通しがかなり良さそうな組織だ。&lt;br>
+その方の素質なのかもしれないのだけど、ひと月前に入社したという方もものすごく打ち解けてた。&lt;/p>
+&lt;p>CEOのお話のもあったけど、そもそもユーザーを招待してパーティなんてやってるところはほとんどない（あったとしたらごめんなさいm(_ _)m）。&lt;br>
+そういうのをやって、エンドユーザーからキャッチアップするというのは本当に素晴らしい。来るのはヘビーユーザーだけかもしれないけど、生のユーザーの声を聞ける貴重な機会だ。&lt;br>
+ユーザーとしてもどういうところで、誰が開発してるのかって気になるし（ぼくだけ？）。&lt;/p>
+&lt;p>どんどんこういうのやってほしいと思いました。&lt;/p>
+&lt;p>うちの会社でも海外のユーザーを呼んで、聖地巡礼しつつパーティとか楽しそう。&lt;/p>
+&lt;p>とにかく、何人かの方とお話させていただきましたが、みなさんいい人揃いでした。&lt;/p>
+&lt;p>そして、今まで使ってきたアプリで、こういうアプリを作って見たい、作っている人と働いてみたいと思ったことないもんだから、すごく期待していったのだけど、概ね期待以上でした（贔屓のアプリであるというのもあるのかもしれないが）。&lt;/p>
+&lt;p>今後のアップデート情報（ほとんど秘密で教えてもらえなかったけど笑）もちらっとお聞きすることができたし、自分の要望を作っている方々に直接伝えることができて、なんというかアプリを育てている感が感じられて、とても有意義な時間だった。
+一人ポツーンとした時間をつくらいないように、ユーザー一人一人に丁寧に接していて、いい組織なのだなあと感じた。&lt;/p>
+&lt;p>今後のアップデート、アップデートの際の文言（timetreeのアップデートの際には一言何かしらある）には期待したい。&lt;/p>
+&lt;p>同行する予定の人が急用で行けなかったのだけど、帰りにその分もおみやげをいただいたりして、本当にそういった気遣いが嬉しいところである。
+とにかくおすすめしたい、このアプリ。
+ぜひ使ってみると良いです。&lt;/p>
+&lt;p>次のパーティでも招待されると良いな〜。またお話を伺いに行きたい。&lt;/p>
+&lt;p>強いてなにか意見があるとすると、せっかく壁にプロジェクターでうつしていたのだから、なにかしらのLTとか発表があるとうれしかったかな。&lt;/p>
+&lt;p>さて、褒めちぎりすぎたのでここらへんで。&lt;/p>
+&lt;ul>
+&lt;li>TimeTree
+&lt;ul>
+&lt;li>&lt;a href="https://play.google.com/store/apps/details?id=works.jubilee.timetree">android&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://itunes.apple.com/jp/app/timetree-%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%84%E3%83%AA%E3%83%BC-%E5%AE%B6%E6%97%8F%E3%82%84%E3%82%AB%E3%83%83%E3%83%97%E3%83%AB%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%85%B1%E6%9C%89%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/id952578473">ios&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>多動力を読んだ</title><link>https://pyonk.github.io/blog/posts/read-tadouryoku/</link><pubDate>Mon, 21 Aug 2017 21:23:11 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/read-tadouryoku/</guid><description>&lt;p>久しぶりに読書がしたくなった。数ヶ月前も1度あったのだけど、そのときは日和って買わなかった。&lt;br>
+&lt;strong>今日は買う&lt;/strong>という強い意志を持っていた。&lt;br>
+そして目に付いた「多動力」&lt;/p>
+
+&lt;figure style="text-align: center">
+ &lt;a href="http://amzn.to/2x5z9s0">
+ &lt;img src="images/tadouryoku.jpg" width="150"/>
+ &lt;/a>
+ 
+ &lt;figcaption>
+ &lt;span>多動力&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>大学時代のゼミの同期がFacebookだかで読んだ感想をアップしてたのを思い出して、とりあえず買ってきた。&lt;br>
+正直何でもよかった。&lt;br>
+で、同期が書いてた感想みたいに綺麗な文章でもないけど、一応読んだっていう記録しときたくなった。&lt;/p>
+&lt;h1 id="感想">感想。&lt;/h1>
+&lt;p>100％同意すごい！神！！っていう感じではなかったけど、ホリエモンすげえ人だった。っていうのが読み終わった後すぐの感想。&lt;br>
+我ながら小学生みたいな感想だ。&lt;/p>
+&lt;p>ゼミの同期が読んでたからなんとなく買ってみた本だったけど、当たりだった。直感は大事。&lt;/p>
+&lt;p>そういえばふと思ったけど、会社の役員でアイデアマンの人の考え方に似てた。&lt;br>
+リズムの件とか、飽き性なとことか。
+できる人っていうのはそういうもんなんだろうか。&lt;/p>
+&lt;h2 id="恥ずかしいという感情">恥ずかしいという感情&lt;/h2>
+&lt;p>しっくりきたのが、恥ずかしいという感情が最大のハードルなんだよ、というところ。&lt;br>
+これまさにそうだなあって強く思う。特に日本人ってそういう感じがする。もちろん僕も例外ではなくてむしろ、&lt;/p>
+&lt;h3 id="僕は人の目を気にしすぎている">僕は人の目を気にしすぎている。&lt;/h3>
+&lt;p>例えばこれだって誰がみているわけではないのだけど、やっぱりなにか取り繕って書きたいっていう感情はあるし、この本の感想だってこういう風に書けば無難かな、みたいな感情があってうまく書けない。&lt;br>
+そもそも本を読んだ感想ってなんだ、って思ったり。よくわからないんだけど、多分何か変わるかもと思って本を読みたくなってこんなのを書いているのだと勝手に思っている。&lt;br>
+新日本の内藤も言ってたけど自分の意見なんて言わないと伝わらない。&lt;br>
+もっと恥をかかなきゃいけない。&lt;br>
+八方美人でいすぎた。&lt;/p>
+&lt;h2 id="人生に目的はいらない">人生に目的はいらない&lt;/h2>
+&lt;p>これは最近思っていたこと。
+転職だなんだって思って少し悩んだ時期もあったけど、結局自分の人生一度きりで、おもしろい、楽しいと感じることをやらんともったいないって思ってから気が楽になった(実際に転職はしなかったけど)。&lt;/p>
+&lt;p>「自分はこんなやばいサービスをつくるために生きてるんだ！」っていう目的のある人生って素晴らしいと思うし、別に否定するわけではないけど、僕は目的なんていらなくて、ふと振り返ってみたら「あ、いつの間にかこんなになった」っていう人生がいいなと思った。&lt;/p>
+&lt;p>それはそうと、最後のオチが非常に気持ち良かった。&lt;/p></description></item><item><title>crontab -e と /etc/crontab の違い</title><link>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</link><pubDate>Mon, 06 Feb 2017 12:28:58 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/difference-of-crontabe-and-etc-crontab/</guid><description>&lt;p>ふとした拍子にcronのログを見ていたら同じコマンドが実行されていたんですね。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ less /var/log/cron
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Feb &lt;span style="color:#ae81ff">6&lt;/span> 00:15:01 ip-000-00-00-000 CROND&lt;span style="color:#f92672">[&lt;/span>16356&lt;span style="color:#f92672">]&lt;/span>: &lt;span style="color:#f92672">(&lt;/span>user&lt;span style="color:#f92672">)&lt;/span> CMD &lt;span style="color:#f92672">(&lt;/span>python /home/user/app/manage.py hogehoge&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Feb &lt;span style="color:#ae81ff">6&lt;/span> 00:15:01 ip-000-00-00-000 CROND&lt;span style="color:#f92672">[&lt;/span>16357&lt;span style="color:#f92672">]&lt;/span>: &lt;span style="color:#f92672">(&lt;/span>user&lt;span style="color:#f92672">)&lt;/span> CMD &lt;span style="color:#f92672">(&lt;/span>user python /home/user/app/manage.py hogehoge&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="追記">追記&lt;/h5>
+&lt;p>&lt;em>上記のコマンドの&lt;/em>&lt;br>
+&lt;em>&lt;code>user python /home/user/app/manage.py hogehoge&lt;/code>&lt;/em>&lt;br>
+&lt;em>この部分、おかしいですね〜〜&lt;/em>&lt;br>
+&lt;em>&lt;code>/etc/crontab&lt;/code>の内容を何も考えずにコピーしちゃいました。&lt;/em>&lt;br>
+&lt;em>&lt;code>/etc/crontab&lt;/code>はユーザーを指定して記述するのに対して、&lt;code>crontab -e&lt;/code>の場合はユーザーはログインユーザーとなるのでユーザーの記述はいらんのですね。猛省。&lt;/em>&lt;/p>
+&lt;h1 id="おかしいなおかしいな">おかしいな〜おかしいな〜〜〜〜〜&lt;/h1>
+&lt;p>こわいな〜こわいな〜〜〜〜。&lt;/p>
+&lt;p>何て思っていたんですが、そういえばcronの設定を二回したような気がしてきたので確かめてみました。&lt;/p>
+&lt;h2 id="etccrontab">/etc/crontab&lt;/h2>
+&lt;p>まず初めにcronを設定したときはこのこをいじっていました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo vim /etc/crontab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ですね。&lt;/p>
+&lt;h2 id="crontab--e">crontab -e&lt;/h2>
+&lt;p>何を思ったのかこっちでも設定していたような気がしました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ crontab -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>で確認することができます。&lt;/p>
+&lt;p>案の定同じコマンドが同じ時間で実行されるように設定されておりました。&lt;/p>
+&lt;h2 id="この二つの違いはなんなんでしょうか">この二つの違いはなんなんでしょうか&lt;/h2>
+&lt;p>&lt;a href="http://superuser.com/questions/290093/difference-between-etc-crontab-and-crontab-e">こちら&lt;/a>がわかりやすいかと思います。&lt;/p>
+&lt;p>要するに、
+&lt;code>/etc/crontab&lt;/code>は他のユーザーのcronもまとめて設定できるようなのですね。&lt;/p>
+&lt;p>たとえば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>* * * * * user echo &lt;span style="color:#e6db74">&amp;#39;fugafuga&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* * * * * user2 echo &lt;span style="color:#e6db74">&amp;#39;hogehoge&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>のような感じです。&lt;/p>
+&lt;p>対して、&lt;code>crontab -e&lt;/code>だと、今現在のユーザーのcronが設定できます。
+オプションとして&lt;code>-u&lt;/code>を指定すると指定されたユーザーのcronが設定できるようです。&lt;/p></description></item><item><title>あ！ やせいの requests.exceptions.SSLErrorが とびだしてきた！</title><link>https://pyonk.github.io/blog/posts/cannot-request/</link><pubDate>Thu, 02 Feb 2017 18:40:16 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/cannot-request/</guid><description>&lt;p>あるサイトをクロールして情報を集めようと思ってpythonでプログラムを書いていたのですが、思わぬところでハマったので備忘録代わりに。&lt;/p>
+&lt;h1 id="ナゾのrequestsexceptionssslerror">ナゾのrequests.exceptions.SSLError&lt;/h1>
+&lt;p>それなりにpythonの&lt;a href="http://docs.python-requests.org/en/master/">requests&lt;/a>をつかってクローラーを書いていたのですぐできるワイヤ。と思っていたのですが、実行した途端にナゾの&lt;code>requests.exceptions.SSLError&lt;/code>が発生しました。&lt;/p>
+&lt;p>&lt;code>requests.exceptions.SSLError: hostname 'damedayo.com' doesn't match either of 'www.kore.com', 'kore.com'&lt;/code>&lt;/p>
+&lt;p>おやおや、SSLErrorですから、なにかセキュリティ周りのエラーであることが予測できます。
+さらにホスト名が違うことから、バーチャルホストを利用しているためにSSL証明書のhostが違うよっていうことなんでしょうか。&lt;/p>
+&lt;p>とりあえず&lt;code>verify=False&lt;/code>を指定しても一度チャレンジです。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>req &lt;span style="color:#f92672">=&lt;/span> requests&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;https://damedayo.com/&amp;#39;&lt;/span>, verify&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print req&lt;span style="color:#f92672">.&lt;/span>text
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>するとresponseが帰ってきました。&lt;/p>
+&lt;p>&lt;code>The client software did not provide a hostname using Server Name Indication (SNI), which is required to access this server. &lt;/code>&lt;/p>
+&lt;p>はーーーーんんんんんんん&lt;/p>
+&lt;p>何はともあれ、ググります。&lt;/p>
+&lt;p>&lt;a href="http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors">みっけた&lt;/a>。&lt;/p>
+&lt;p>ん〜〜〜やはりバーチャルホスト周りっぽい。
+というか&lt;strong>pythonのバージョンが&lt;code>2.7.9&lt;/code>以上であれば問題ないんか&lt;/strong>。コレ。&lt;/p>
+&lt;p>解決策として&lt;a href="https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484">Stack Overflowへのリンク&lt;/a>が貼ってありますね。こういうこともあるのね。初めて見た。&lt;/p>
+&lt;h1 id="pip-install-pyopensslで詰む">pip install pyOpenSSLで詰む&lt;/h1>
+&lt;p>pyOpenSSLとidnaをインストールしてあげるとよいよってあるのでやってみました。&lt;/p>
+&lt;p>idnaはすっきり入ってくれたのですがpyOpenSSLが上手くいかない。。(すでに入っていたためバージョンをあげています。)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pip install pyOpenSSL --upgrade
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.....前略.....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">1&lt;/span> warning and &lt;span style="color:#ae81ff">20&lt;/span> errors generated.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>error: command &lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span> failed with exit status &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>----------------------------------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Failed building wheel &lt;span style="color:#66d9ef">for&lt;/span> cryptography
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.....中略.....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>----------------------------------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Command &lt;span style="color:#e6db74">&amp;#34;/usr/bin/python -c &amp;#34;&lt;/span>import setuptools, tokenize;__file__&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;/private/tmp/pip-build-OtiuE0/cryptography/setup.py&amp;#39;&lt;/span>;exec&lt;span style="color:#f92672">(&lt;/span>compile&lt;span style="color:#f92672">(&lt;/span>getattr&lt;span style="color:#f92672">(&lt;/span>tokenize, &lt;span style="color:#e6db74">&amp;#39;open&amp;#39;&lt;/span>, open&lt;span style="color:#f92672">)(&lt;/span>__file__&lt;span style="color:#f92672">)&lt;/span>.read&lt;span style="color:#f92672">()&lt;/span>.replace&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\r\n&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>, __file__, &lt;span style="color:#e6db74">&amp;#39;exec&amp;#39;&lt;/span>&lt;span style="color:#f92672">))&lt;/span>&lt;span style="color:#e6db74">&amp;#34; install --record /tmp/pip-1pK2m3-record/install-record.txt --single-version-externally-managed --compile&amp;#34;&lt;/span> failed with error code &lt;span style="color:#ae81ff">1&lt;/span> in /private/tmp/pip-build-OtiuE0/cryptography
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>gccがないよっていうのは見たことありましたが、ccがないよって初めて見ました。&lt;/p></description></item><item><title>pythonの参照渡しをどうすれば回避できるのか</title><link>https://pyonk.github.io/blog/posts/python-copy/</link><pubDate>Thu, 12 Jan 2017 18:21:36 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-copy/</guid><description>&lt;p>ときたまpythonを書いているとこれって値渡しなんだっけ、参照渡しなんだっけと分からなくなります。
+たとえば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hoge &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>:&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>:&lt;span style="color:#ae81ff">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(hoge) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga &lt;span style="color:#f92672">=&lt;/span> hoge
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(fuga) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga&lt;span style="color:#f92672">.&lt;/span>update({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">4&lt;/span>:&lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#f92672">==&lt;/span> fuga &lt;span style="color:#75715e"># True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="http://note.crohaco.net/2014/python-argument-intro/">Pythonistなら常識&lt;/a>ですよね。&lt;/p>
+&lt;h1 id="どうすれば回避できるのか">どうすれば回避できるのか&lt;/h1>
+&lt;p>割と単純です。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hoge &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>:&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>:&lt;span style="color:#ae81ff">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(hoge) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga &lt;span style="color:#f92672">=&lt;/span> hoge&lt;span style="color:#f92672">.&lt;/span>copy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(fuga) &lt;span style="color:#75715e"># 140418107009728&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga&lt;span style="color:#f92672">.&lt;/span>update({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">4&lt;/span>:&lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#f92672">==&lt;/span> fuga &lt;span style="color:#75715e"># False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#75715e"># {1:1, 2:2, 3:3}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print fuga &lt;span style="color:#75715e"># {1:1, 2:2, 3:3, 4:4}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>辞書の浅いコピーを取るには&lt;code>copy_dict = dict.copy()&lt;/code>が簡単ですね。&lt;/p>
+&lt;p>&lt;em>ちなみに、リストの場合は&lt;code>copy_list = original_list[:]&lt;/code>でコピーが取れます。&lt;/em>&lt;/p>
+&lt;p>ただこれだと浅いコピーになります。&lt;/p>
+&lt;p>なので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hoge &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">1&lt;/span>:{&lt;span style="color:#ae81ff">2&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>:&lt;span style="color:#ae81ff">3&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(hoge) &lt;span style="color:#75715e"># 140418104920496&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga &lt;span style="color:#f92672">=&lt;/span> hoge&lt;span style="color:#f92672">.&lt;/span>copy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print id(fuga) &lt;span style="color:#75715e"># 140418107009728&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fuga[&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">.&lt;/span>update({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">4&lt;/span>:&lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#f92672">==&lt;/span> fuga &lt;span style="color:#75715e"># True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print hoge &lt;span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print fuga &lt;span style="color:#75715e"># {1: {2: 2, 3: 3, 4: 4}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>となってしまいます。&lt;/p></description></item><item><title>Djangoでどうしても非同期でコマンドを実行したくなった</title><link>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</link><pubDate>Fri, 06 Jan 2017 12:05:29 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/use-celery-for-send-email-django/</guid><description>&lt;h1 id="経緯">経緯&lt;/h1>
+&lt;p>あるサイトで、顧客に新情報をメールでお知らせしたいときに、今まではコマンド叩いて送信していたのですが、結構面倒なのでブラウザからできないものかと試行錯誤していたのです。&lt;/p>
+&lt;p>コマンドの設計見直せっていうのは今回は置いといてください・・・。&lt;/p>
+&lt;h1 id="どうしたのか">どうしたのか&lt;/h1>
+&lt;p>いくつかの方法を試しました。&lt;/p>
+&lt;h2 id="pythonからコマンドを叩く">pythonからコマンドを叩く&lt;/h2>
+&lt;p>まず思い浮かんだのがコマンドを&lt;code>nohup &amp;amp;&lt;/code>でpythonから叩く。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> subprocess
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> shlex
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;nohup sleep 10 &amp;amp;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess&lt;span style="color:#f92672">.&lt;/span>Popen(cmd)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>が！！！
+レスポンスが帰ってくるのは10秒後・・・。&lt;/p>
+&lt;p>つぎ！&lt;/p>
+&lt;h2 id="thread化して逃げる">thread化して逃げる&lt;/h2>
+&lt;p>この前書いたような感じです。&lt;/p>
+&lt;p>&lt;a href="https://pyonk.github.io/blog/post/python-tuple/">pythonでtupleをつくる - わいがかいた&lt;/a>&lt;/p>
+&lt;p>結局、レスポンスが帰ってくるのは10秒後・・・。
+ここ工夫するとどうにかなるような気もする。&lt;/p>
+&lt;p>つぎ！！&lt;/p>
+&lt;h2 id="celeryを使う">celeryを使う&lt;/h2>
+&lt;p>&lt;a href="http://docs.celeryproject.org/en/latest/index.html">Celery - Distributed Task Queue — Celery 4.0.2 documentation&lt;/a>&lt;/p>
+&lt;p>ようやく本題。&lt;/p>
+&lt;p>ググり始めた当初から名前を見かけてはいましたが敷居が高そうなのでスルーしてました。&lt;/p>
+&lt;p>&lt;del>実際やりはじめて少し後悔しましたし。&lt;/del>&lt;/p>
+&lt;p>結構面倒くさかったので備忘録代わりに。&lt;/p>
+&lt;h3 id="install">install&lt;/h3>
+&lt;p>まずは本体をインストールしていきます。&lt;/p>
+&lt;p>&lt;code>pip install -U Celery&lt;/code>&lt;/p>
+&lt;p>celeryはbrokerとして&lt;/p>
+&lt;ul>
+&lt;li>Redis&lt;/li>
+&lt;li>RabbitMQ&lt;/li>
+&lt;li>Amazon SQS&lt;/li>
+&lt;/ul>
+&lt;p>などを使うことができます。
+今回はRedisを選択しました。&lt;/p>
+&lt;p>&lt;code>yum install redis&lt;/code>&lt;/p>
+&lt;p>bundleも用意されているのでそれも。&lt;/p>
+&lt;p>&lt;code>pip install -U &amp;quot;celery[redis]&amp;quot;&lt;/code>&lt;/p>
+&lt;h3 id="how-to">how to&lt;/h3>
+&lt;p>&lt;a href="https://github.com/celery/celery/tree/master/examples/django/">ここ&lt;/a>を参考にモリモリかいていきます。&lt;/p>
+&lt;ul>
+&lt;li>proj/__init__.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># This will make sure the app is always imported when&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Django starts so that shared_task will use this app.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> .celery &lt;span style="color:#f92672">import&lt;/span> app &lt;span style="color:#66d9ef">as&lt;/span> celery_app
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__all__ &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;celery_app&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>proj/settings.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Celery settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_RESULT_BACKEND &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;redis&amp;#39;&lt;/span> &lt;span style="color:#75715e"># redisを指定&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_BROKER_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;redis://localhost:6379/0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_TASK_SERIALIZER &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_RESULT_SERIALIZER &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CELERY_ACCEPT_CONTENT &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;json&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>proj/celery.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> celery &lt;span style="color:#f92672">import&lt;/span> Celery
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># set the default Django settings module for the &amp;#39;celery&amp;#39; program.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#f92672">.&lt;/span>environ&lt;span style="color:#f92672">.&lt;/span>setdefault(&lt;span style="color:#e6db74">&amp;#39;DJANGO_SETTINGS_MODULE&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;proj.settings&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Celery(&lt;span style="color:#e6db74">&amp;#39;proj&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Using a string here means the worker don&amp;#39;t have to serialize&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># the configuration object to child processes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># - namespace=&amp;#39;CELERY&amp;#39; means all celery-related configuration keys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># should have a `CELERY_` prefix.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#f92672">.&lt;/span>config_from_object(&lt;span style="color:#e6db74">&amp;#39;django.conf:settings&amp;#39;&lt;/span>, namespace&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;CELERY&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Load task modules from all registered Django app configs.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#f92672">.&lt;/span>autodiscover_tasks()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.task&lt;/span>(bind&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">debug_task&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;Request: &lt;/span>&lt;span style="color:#e6db74">{0!r}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(self&lt;span style="color:#f92672">.&lt;/span>request))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>app/tasks.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /usr/bin/python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create your tasks here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> __future__ &lt;span style="color:#f92672">import&lt;/span> absolute_import, unicode_literals
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># from celery import shared_task&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> celery.decorators &lt;span style="color:#f92672">import&lt;/span> task
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> time
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@task&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">add_wait&lt;/span>(x, y):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> time&lt;span style="color:#f92672">.&lt;/span>sleep(&lt;span style="color:#ae81ff">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>app/views.py&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> tasks &lt;span style="color:#f92672">import&lt;/span> add_wait
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">add_some_number&lt;/span>(request):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> add_wait&lt;span style="color:#f92672">.&lt;/span>delay(&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> render(rerquest, &lt;span style="color:#e6db74">&amp;#39;result.html&amp;#39;&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;result&amp;#39;&lt;/span>: result,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="うごかしていきます">うごかしていきます&lt;/h4>
+&lt;ul>
+&lt;li>redisの起動&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>sudo /etc/init.d/redis start&lt;/code>&lt;/p></description></item><item><title>pythonでtupleをつくる</title><link>https://pyonk.github.io/blog/posts/python-tuple/</link><pubDate>Thu, 05 Jan 2017 15:05:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/python-tuple/</guid><description>&lt;h1 id="pythonのthreadで引数を渡したい">pythonのthreadで引数を渡したい&lt;/h1>
+&lt;p>&lt;a href="http://d.hatena.ne.jp/salexkidd/20090918">Djangoで時間のかかる処理をスレッド化して逃げ&lt;/a>ようとしたのですがうまくいかなかったのでメモ。&lt;/p>
+&lt;p>&lt;code>threading.Thread&lt;/code>にはいくつか引数が渡せます。&lt;/p>
+&lt;ul>
+&lt;li>group&lt;/li>
+&lt;li>target&lt;/li>
+&lt;li>name&lt;/li>
+&lt;li>args&lt;/li>
+&lt;li>kwargs&lt;/li>
+&lt;/ul>
+&lt;p>詳しくは&lt;a href="http://docs.python.jp/2/library/threading.html">ここ&lt;/a>で。&lt;/p>
+&lt;p>で、スレッド化したい処理に引数を渡そうと思って下記のように実装しました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">command_execute&lt;/span>(cmd):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print cmd &lt;span style="color:#75715e"># (&amp;#39;s&amp;#39;, &amp;#39;l&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;0&amp;#39;, &amp;#39;;&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;a&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> subprocess&lt;span style="color:#f92672">.&lt;/span>Popen(cmd, shell&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;sleep 10;echo aaa&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#f92672">=&lt;/span> threading&lt;span style="color:#f92672">.&lt;/span>Thread(target&lt;span style="color:#f92672">=&lt;/span>command_execute, args&lt;span style="color:#f92672">=&lt;/span>(cmd))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t&lt;span style="color:#f92672">.&lt;/span>daemon &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t&lt;span style="color:#f92672">.&lt;/span>start()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>すると、printされた文字列が
+&lt;code>('s', 'l', 'e', 'e', 'p', ' ', '1', '0', ';', 'e', 'c', 'h', 'o', ' ', 'a', 'a', 'a')&lt;/code>
+となるわけです。
+何が起きてるんだ状態です。&lt;/p>
+&lt;p>調べてみると原因は「&lt;code>args&lt;/code>にtupleを渡してあげる」というところにありました。&lt;/p>
+&lt;h2 id="pythonでtupleをつくる">pythonでtupleをつくる&lt;/h2>
+&lt;p>&lt;code>tuple = (1, 2)&lt;/code>&lt;/p></description></item><item><title>○○さんに送る退職ポエム</title><link>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</link><pubDate>Tue, 03 Jan 2017 16:02:48 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/retirement-poem-to-you/</guid><description>&lt;h1 id="これはなに">これはなに&lt;/h1>
+&lt;p>弊社では昨年末にパートの方ですが、初めての退職者がでました。
+といっても3年ほど前から一緒に働いていた方です。&lt;/p>
+&lt;p>ちいさな場所で仕事をしていたときから一緒なので非常に古参の人らは寂しい思いです。
+ちなみに僕が経営者、みたいな口調で始まってますがただの一平社員です。&lt;/p>
+&lt;p>本題ですが、その方が退職するということで色紙に寄せ書きをしようということになりました。
+そこで僕がポエムを書くことになったので、ぼかしますが、ここに書き殴りたいと思います。&lt;/p>
+&lt;h2 id="ポエム的な何か">ポエム的な何か&lt;/h2>
+&lt;p>○○さん、卒業おめでとうございます。&lt;br>
+3年間お疲れさまでした。&lt;br>
+会社がまだ小さい時を知っている数少ない第一世代の仲間です。&lt;br>
+そして、数少ない酒飲み仲間でもあります。&lt;br>
+非常に寂しいです。&lt;/p>
+&lt;p>いろいろ思い出があります。&lt;/p>
+&lt;p>仕事でのスピード、そして丁寧さ。&lt;br>
+その中で爛々と輝くチェックの目。&lt;br>
+・・・&lt;br>
+お犬様の可愛さ。&lt;br>
+無茶を言って書いてもらったミサワ仕様の絵。&lt;br>
+初めて会ったバイトくんの怖がりよう。&lt;br>
+屋根付きのバイク。&lt;br>
+飲み会での下品な話。&lt;br>
+ほかにも、通勤の曲は？と聞いたときに某イケイケのダンスグループとこたえていたこととか。&lt;br>
+列挙すればきりがないです。&lt;/p>
+&lt;p>昼間の仕事のできる○○さんと、夜のよっぱらった○○さんのあのギャップを見れないと思うと辛いですね。&lt;/p>
+&lt;p>最後に、川柳で締めたいと思います。&lt;br>
+「さよならを　言ってもまた会う　赤提灯」&lt;/p>
+&lt;p>きっとどうせ会うのでさよならはなしで。&lt;br>
+本当にお疲れさまでした。&lt;br>
+また飲みましょう。&lt;/p>
+&lt;p>P.S.&lt;br>
+いつになったら娘さんの連絡先を教えていただけるのでしょうか。いつでも大丈夫なので教えていただきたく存じます。&lt;/p></description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>&lt;p>2017年明けましておめでとうございます。&lt;/p>
+&lt;h1 id="初プルリク">初プルリク&lt;/h1>
+&lt;p>昨年末になんとなく&lt;a href="https://github.com/akmittal/Hugofy">Hugofy&lt;/a>にプルリクを送ってみました。&lt;/p>
+&lt;p>ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。&lt;/p>
+&lt;h2 id="どうすればよかったのか">どうすればよかったのか&lt;/h2>
+&lt;ul>
+&lt;li>Windows環境でのテスト&lt;/li>
+&lt;li>typo確認&lt;/li>
+&lt;/ul>
+&lt;p>軽い気持ちでプルリク送るもんではないですね〜〜〜。&lt;/p>
+&lt;p>いい経験になりました。
+Thank you &lt;a href="https://github.com/akmittal">@akmittal&lt;/a>&lt;/p>
+&lt;h1 id="ちなみに">ちなみに&lt;/h1>
+&lt;p>macで動くやつはこちらにあるのでよければどうぞ。&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyonk/Hugofy">pyonk/Hugofy&lt;/a>
+少しだけ機能追加してます。&lt;/p>
+&lt;h2 id="追加した機能">追加した機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>hugo serve&lt;/code>で立ち上げたサーバをkillする機能&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>github pagesへのdeploy機能&lt;/p>
+&lt;ul>
+&lt;li>settingに&lt;code>Repository&lt;/code>を追加してからどうぞ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>もうすこしちゃんと作りこんでから出直します。反省。&lt;/p></description></item><item><title>hubot-line-message-apiをつくってみてます</title><link>https://pyonk.github.io/blog/posts/hubot-line-message-api/</link><pubDate>Mon, 17 Oct 2016 10:38:19 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/hubot-line-message-api/</guid><description>&lt;p>ソースは&lt;a href="https://github.com/pyonk/hubot-line-message-api">ここです。&lt;/a>&lt;/p>
+&lt;h1 id="使い方">使い方&lt;/h1>
+&lt;p>&lt;code>$ git clone https://github.com/pyonk/hubot-line-message-api.git&lt;/code>&lt;/p>
+&lt;p>からの&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json:package.json" data-lang="json:package.json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;bar&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;file:./hubot-line-message-api&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>からの&lt;/p>
+&lt;p>&lt;code>$ hubot -a line-message-api&lt;/code>&lt;/p>
+&lt;p>でいけると思います。&lt;/p>
+&lt;h1 id="hubot-line-message-api">hubot-line-message-api&lt;/h1>
+&lt;p>結構ガバガバ実装なので&lt;a href="https://devdocs.line.me/ja/">API Reference&lt;/a>をしっかり読んでからやるのをオススメします。&lt;/p>
+&lt;h2 id="設定">設定&lt;/h2>
+&lt;h3 id="必須">必須&lt;/h3>
+&lt;ul>
+&lt;li>LINE_CHANNEL_ACCESS_TOKEN
+&lt;ul>
+&lt;li>lineアカウントのBasic Infomationにある&lt;code>Channel Access Token&lt;/code>の値を設定してください。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="任意">任意&lt;/h3>
+&lt;ul>
+&lt;li>HUBOT_ENDPOINT
+&lt;ul>
+&lt;li>defaultで/hubot/incomingになってます。&lt;/li>
+&lt;li>自由に設定していただいて大丈夫です。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>FIXIE_URL
+&lt;ul>
+&lt;li>herokuで走らす場合は必須かなと思います。&lt;/li>
+&lt;li>&lt;a href="https://elements.heroku.com/addons/fixie">Fixie&lt;/a>というアドオンを使います。&lt;/li>
+&lt;li>&lt;code>$ heroku addons:create fixie:tricycle&lt;/code>を叩くと自動で設定されています。&lt;/li>
+&lt;li>出力されるIPアドレスを&lt;code>Server IP Whitelist&lt;/code>に設定してあげてください。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="できること">できること&lt;/h2>
+&lt;p>今のところpushで送信は対応できておらず、返信しかできません。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>返信&lt;/p>
+&lt;ul>
+&lt;li>テキスト&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://devdocs.line.me/ja/#text">https://devdocs.line.me/ja/#text&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-coffee" data-lang="coffee">&lt;span style="display:flex;">&lt;span>module.exports = &lt;span style="color:#a6e22e">(robot) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">robot&lt;/span>.&lt;span style="color:#a6e22e">hear&lt;/span> &lt;span style="color:#f92672">/^&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">テキスト&lt;/span>&lt;span style="color:#a6e22e">$&lt;/span>&lt;span style="color:#f92672">/&lt;/span>, &lt;span style="color:#a6e22e">(res) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">res&lt;/span>.&lt;span style="color:#a6e22e">reply&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: &lt;span style="color:#e6db74">&amp;#39;text&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> contents: [&lt;span style="color:#e6db74">&amp;#39;nyaa&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>画像と動画&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://devdocs.line.me/ja/#image">https://devdocs.line.me/ja/#image&lt;/a>
+&lt;a href="https://devdocs.line.me/ja/#video">https://devdocs.line.me/ja/#video&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-coffee" data-lang="coffee">&lt;span style="display:flex;">&lt;span>module.exports = &lt;span style="color:#a6e22e">(robot) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">robot&lt;/span>.&lt;span style="color:#a6e22e">hear&lt;/span> &lt;span style="color:#f92672">/^&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">画像&lt;/span>&lt;span style="color:#a6e22e">$&lt;/span>&lt;span style="color:#f92672">/&lt;/span>, &lt;span style="color:#a6e22e">(res) -&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">res&lt;/span>.&lt;span style="color:#a6e22e">reply&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#e6db74">&amp;#39;image&amp;#39;&lt;/span>&lt;span style="color:#75715e"># &amp;#39;video&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> content: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> original: &lt;span style="color:#e6db74">&amp;#39;https://example.com/images/image.jpg&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> preview: &lt;span style="color:#e6db74">&amp;#39;https://example.com/images/image.jpg&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>ボタン&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://devdocs.line.me/ja/#buttons">https://devdocs.line.me/ja/#buttons&lt;/a>&lt;/p></description></item><item><title>javascriptのよくわからない書き方【連想配列編】</title><link>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</link><pubDate>Tue, 30 Aug 2016 10:48:43 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/javascript-unknown-writing/</guid><description>&lt;p>react + reduxでのアプリ開発に挑戦している際に、参考にしていたサイト様で、突然よくわからない記法が出てきたのでその備忘録に。&lt;/p>
+&lt;h1 id="連想配列のなにかっぽい">連想配列のなにかっぽい&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">myfunc&lt;/span>(&lt;span style="color:#a6e22e">hoge&lt;/span>, &lt;span style="color:#a6e22e">fuga&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> {&lt;span style="color:#a6e22e">hogehoge&lt;/span>} &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">hoge&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">hogeKey&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">hogeValue&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">hogehoge&lt;/span> &lt;span style="color:#f92672">||&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">hogeKey&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">hogeKey&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上記が件のコード。&lt;/p>
+&lt;h1 id="けっか">けっか&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">dict1&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#a6e22e">keyA&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {&lt;span style="color:#a6e22e">key1&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>}};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">dict2&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#a6e22e">keyB&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {&lt;span style="color:#a6e22e">key1&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>}};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">dict3&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#a6e22e">keyA&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {&lt;span style="color:#a6e22e">key2&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>}};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">dict4&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#a6e22e">keyC&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {&lt;span style="color:#a6e22e">key2&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span>}};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">myfunc&lt;/span>(&lt;span style="color:#a6e22e">hoge&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> {&lt;span style="color:#a6e22e">keyA&lt;/span>} &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">hoge&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">keyA&lt;/span>); &lt;span style="color:#75715e">//hoge.keyAの値
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>({&lt;span style="color:#a6e22e">keyA&lt;/span>}); &lt;span style="color:#75715e">//keyAをキーに、keyAに代入されている値をバリューにした連想配列
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">var&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">key1&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">key1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">keyA&lt;/span> &lt;span style="color:#f92672">||&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">key1&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">key1&lt;/span>); &lt;span style="color:#75715e">//keyAがundefinedであれば空文字、keyAがあれば、keyA.key1の値をkey1に代入する。keyA.key1がなければkey1=undefinedになる。
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">return&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">key1&lt;/span>, &lt;span style="color:#75715e">//key1をキーに、key1に代入されている値をバリューにした連想配列
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">myfunc&lt;/span>(&lt;span style="color:#a6e22e">dict1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// {key1: 1}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// {keyA: {key1: 1}}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">myfunc&lt;/span>(&lt;span style="color:#a6e22e">dict2&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// undefined
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// {keyA: undefined}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// &amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">myfunc&lt;/span>(&lt;span style="color:#a6e22e">dict3&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// {key2: 3}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// {keyA: {key2: 3}}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// undefined
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">myfunc&lt;/span>(&lt;span style="color:#a6e22e">dict4&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// undefined
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// {keyA: undefined}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// &amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>書いててよくわからなくなってきた。&lt;/p></description></item><item><title>nginxのimage_filterを使って画像を動的に縮小するには</title><link>https://pyonk.github.io/blog/posts/nginx-image-filter/</link><pubDate>Fri, 15 Jul 2016 15:28:45 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/nginx-image-filter/</guid><description>&lt;h1 id="image_filterを使えるようにモジュールを指定する">image_filterを使えるようにモジュールを指定する&lt;/h1>
+&lt;p>nginxをソースからインストールする際に&lt;code>--with-http_image_filter_module&lt;/code>をつけてインストールします。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ tar -xvzf nginx-1.10.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cd nginx-1.10.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ./configure --with-http_image_filter_module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ほかのオプションモジュールをつける場合は随時つけてください。&lt;/p>
+&lt;p>すでにnginxがインストールされている場合は、&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo cp objs/nginx /usr/sbin/nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat /var/run/nginx.pid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -USR2 &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -WINCH &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo kill -QUIT &lt;span style="color:#ae81ff">10576&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>とすると今までの古いnginxのワーカープロセス、マスタープロセスをkillして、新しいnginxのマスタープロセス、ワーカープロセスが稼働するようになります。&lt;/p>
+&lt;h1 id="confを変更">confを変更&lt;/h1>
+&lt;p>image_filterを加えます。
+くわしいことは&lt;a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html#image_filter">ここ&lt;/a>をみてください。&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nginx:hoge.conf" data-lang="nginx:hoge.conf">location ~ /image/(.*\.png)$ {
+ alias /path/to/image/$1;
+ image_filter resize 100 -; # 横幅100pxでリサイズする
+}
+&lt;/code>&lt;/pre>&lt;p>とりあえず、これで/image配下のpngファイルはリサイズされて表示されるはずです。&lt;/p></description></item></channel></rss>

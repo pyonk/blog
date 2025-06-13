@@ -1,3 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minio on わいがかいた</title><link>https://pyonk.github.io/blog/tags/minio/</link><description>Recent content in Minio on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/minio/index.xml" rel="self" type="application/rss+xml"/><item><title>minio is awesome</title><link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link><pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/minio-is-awesome/images/minio_gui.png"/>
-S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった件</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minio on わいがかいた</title><link>https://pyonk.github.io/blog/tags/minio/</link><description>Recent content in Minio on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Mon, 15 Apr 2019 15:42:13 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/minio/index.xml" rel="self" type="application/rss+xml"/><item><title>minio is awesome</title><link>https://pyonk.github.io/blog/posts/minio-is-awesome/</link><pubDate>Mon, 15 Apr 2019 15:42:13 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/minio-is-awesome/</guid><description>&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">S3使うにあたってローカル環境でもS3使わんといかんのかな〜って思って検索したらminioというS3互換のオブジェクトストレージがあった&lt;a href="https://t.co/YLKdJrsasg">https://t.co/YLKdJrsasg&lt;/a>&lt;/p>&amp;mdash; オイヌマユウキ (@__pyonk__) &lt;a href="https://twitter.com/__pyonk__/status/1117441566258282496?ref_src=twsrc%5Etfw">April 14, 2019&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>以前GCSを使っているときにローカルでテストするたびにテストデータがGCS上に溜まっていくのが嫌だなあ〜って思ってた。&lt;/p>
+&lt;p>S3に鞍替えしようと思って少し調べてみると、S3互換のオブジェクトストレージがあるらしい。
+docker-composeと相性も良さそうなので使ってみることにした。&lt;/p>
+&lt;p>ちなみにDjangoでウェブサイトを構築している。&lt;/p>
+&lt;h2 id="下準備">下準備&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pip install django-storages boto3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>python側で追加インストール必要なのはこれだけで
+あとはsettings.py&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># S3にアップロード&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DEFAULT_FILE_STORAGE &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;storages.backends.s3boto3.S3Boto3Storage&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_ACCESS_KEY_ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;minio&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 自由に決めちゃっておk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_SECRET_ACCESS_KEY &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;minio123&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 自由に決めちゃっておk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_STORAGE_BUCKET_NAME &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;static&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 自由に決めちゃっておk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AWS_S3_ENDPOINT_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;http://minio:9000/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>minio本体はdocker imageを利用するのが便利。&lt;/p>
+&lt;p>docker-compose.ymlに以下の記述を追加する。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;3.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">minio&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">minio/minio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;9000:9000&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">volume&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">source&lt;/span>: &lt;span style="color:#ae81ff">minio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">target&lt;/span>: &lt;span style="color:#ae81ff">/export&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">environment&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">MINIO_ACCESS_KEY&lt;/span>: &lt;span style="color:#ae81ff">minio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">MINIO_SECRET_KEY&lt;/span>: &lt;span style="color:#ae81ff">minio123&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">server /export&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">minio&lt;/span>:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これで&lt;code>docker-compose up&lt;/code>するとminioが立ち上がるので
+localhost:9000にアクセスして&lt;code>static&lt;/code>バケットを作っておく。&lt;/p>
+&lt;p>準備は以上。簡単！！&lt;/p>
+&lt;h2 id="uploader">Uploader&lt;/h2>
+&lt;p>以下のようなUploaderを用意しておけば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.core.files.storage &lt;span style="color:#f92672">import&lt;/span> default_storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Uploader&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> storage &lt;span style="color:#f92672">=&lt;/span> default_storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filename &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">get_unique_filename&lt;/span>(self, filename):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>storage&lt;span style="color:#f92672">.&lt;/span>get_available_name(filename)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">upload&lt;/span>(self, uploaded_file):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>filename &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>get_unique_filename(uploaded_file&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">with&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>storage&lt;span style="color:#f92672">.&lt;/span>open(self&lt;span style="color:#f92672">.&lt;/span>filename, &lt;span style="color:#e6db74">&amp;#39;w&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> chunk &lt;span style="color:#f92672">in&lt;/span> uploaded_file&lt;span style="color:#f92672">.&lt;/span>chunks():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f&lt;span style="color:#f92672">.&lt;/span>write(chunk)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>url &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>storage&lt;span style="color:#f92672">.&lt;/span>url(self&lt;span style="color:#f92672">.&lt;/span>filename)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>url
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>こんな感じで使うといい感じ。&lt;/p></description></item></channel></rss>

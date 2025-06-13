@@ -1,19 +1,99 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sublimetext on わいがかいた</title><link>https://pyonk.github.io/blog/tags/sublimetext/</link><description>Recent content in Sublimetext on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 18 Oct 2017 10:23:34 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/sublimetext/index.xml" rel="self" type="application/rss+xml"/><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>
-ぼくは普段からsublimetextを使っているのだけど
-（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。
-vim使ってる人のプロフェッショナル感がすごい。
-sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってるVintageを有効化した。
-Vintageの有効化 # Cmd + ,でsublimetextの設定を開く。
-ここのVintageを消す。
-vintage消す 有効化done
-つかってみる # つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね
-こんな具合ですね INSERT MODEからCOMMAND MODEに移行するためにescapeを押下するんだけど、そのときにIMEをOFFにすれば良いですね。
-ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。
-VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3 カラビナ使うっていう手もあるけど
-できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。
-macではAppleScriptを使うみたいですね。
-SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita 僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。
-タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。
-で結果はこうなります。
-こんな具合ですね おソース # pyonk/DisabledIme こちらにおいてありますので、git cloneしてお使いくださいませ。</description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>
-Sublime Textのhugo用パッケージをつかってみたところ、うごかないようだったのでプルリク送ってみた。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sublimetext on わいがかいた</title><link>https://pyonk.github.io/blog/tags/sublimetext/</link><description>Recent content in Sublimetext on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Wed, 18 Oct 2017 10:23:34 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/sublimetext/index.xml" rel="self" type="application/rss+xml"/><item><title>sublimetextでvimを使いたい日本人にとっておそらく便利なパッケージをつくった</title><link>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</link><pubDate>Wed, 18 Oct 2017 10:23:34 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/create-disabled-ime-command-for-subl-with-vintage/</guid><description>&lt;p>ぼくは普段からsublimetextを使っているのだけど&lt;br>
+（最近のアップデートでタイトルバーの色も変えられるようになってご機嫌）、vimに強い憧れがあって、使ってみたいなあと日頃から思っていた。&lt;br>
+vim使ってる人のプロフェッショナル感がすごい。&lt;br>
+sublでもとりあえずキーバインドはvimにして、触ってみよって思ってデフォルトでは無効になってる&lt;code>Vintage&lt;/code>を有効化した。&lt;/p>
+&lt;h1 id="vintageの有効化">Vintageの有効化&lt;/h1>
+&lt;p>&lt;code>Cmd + ,&lt;/code>でsublimetextの設定を開く。&lt;br>
+ここのVintageを消す。&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/Preferences-ignore-packages.png" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>vintage消す&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;br>
+有効化done&lt;/p>
+&lt;h1 id="つかってみる">つかってみる&lt;/h1>
+&lt;p>つかってみるとわかるんだけど、IMEがONの状態でINSERT MODEからCOMMAND MODEに移行するとIMEがONのままでコマンドを受け付けなくなるのですね&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/not-enabled-disabled-ime.gif" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>こんな具合ですね&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;p>INSERT MODEからCOMMAND MODEに移行するために&lt;code>escape&lt;/code>を押下するんだけど、そのときにIMEをOFFにすれば良いですね。&lt;br>
+ちなみにgoogle日本語入力だとescapeを押下するときにIMEを無効にする設定があります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://rcmdnk.com/blog/2017/03/12/computer-vim/">VimでNormalモード切り替え時にIMEをOFFにする、をMacでKarabiner無しで実現する 3&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;!-- raw HTML omitted -->カラビナ使うっていう手もあるけど&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>できればパッケージで完結したいなと思って色々調べたら似たようなのがありました。&lt;br>
+macではAppleScriptを使うみたいですね。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qiita.com/takao-s/items/aecb4076fe21b2803da3">SublimeText 3のVintageでコマンドモードの時にIMEをOffにするWin&amp;amp;Mac - Qiita&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>僕は拗らせているので、macのUS配列を使っているから上記のパッケージでは対応できず。&lt;br>
+タイトルでは作ってみたって書いたけど、実際は機能追加だけです。タイトル詐欺。&lt;br>
+で結果はこうなります。&lt;br>
+
+&lt;figure style="text-align: center">
+ 
+ &lt;img src="images/enabled-disabled-ime.gif" width="550"/>
+ 
+ 
+ &lt;figcaption>
+ &lt;span>こんな具合ですね&lt;/span>
+ 
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;/p>
+&lt;h1 id="おソース">おソース&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/pyonk/DisabledIme">pyonk/DisabledIme&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>こちらにおいてありますので、&lt;code>git clone&lt;/code>してお使いくださいませ。&lt;/p></description></item><item><title>Hugofyにプルリクおくってみた</title><link>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</link><pubDate>Tue, 03 Jan 2017 10:34:47 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/send-pullrequest-to-hugofy/</guid><description>&lt;p>2017年明けましておめでとうございます。&lt;/p>
+&lt;h1 id="初プルリク">初プルリク&lt;/h1>
+&lt;p>昨年末になんとなく&lt;a href="https://github.com/akmittal/Hugofy">Hugofy&lt;/a>にプルリクを送ってみました。&lt;/p>
+&lt;p>ぼくの環境(mac)ではうまくうごいたんだけど、いろいろバグがあるみたいで弾かれちゃった。残念。&lt;/p>
+&lt;h2 id="どうすればよかったのか">どうすればよかったのか&lt;/h2>
+&lt;ul>
+&lt;li>Windows環境でのテスト&lt;/li>
+&lt;li>typo確認&lt;/li>
+&lt;/ul>
+&lt;p>軽い気持ちでプルリク送るもんではないですね〜〜〜。&lt;/p>
+&lt;p>いい経験になりました。
+Thank you &lt;a href="https://github.com/akmittal">@akmittal&lt;/a>&lt;/p>
+&lt;h1 id="ちなみに">ちなみに&lt;/h1>
+&lt;p>macで動くやつはこちらにあるのでよければどうぞ。&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyonk/Hugofy">pyonk/Hugofy&lt;/a>
+少しだけ機能追加してます。&lt;/p>
+&lt;h2 id="追加した機能">追加した機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>hugo serve&lt;/code>で立ち上げたサーバをkillする機能&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>github pagesへのdeploy機能&lt;/p>
+&lt;ul>
+&lt;li>settingに&lt;code>Repository&lt;/code>を追加してからどうぞ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>もうすこしちゃんと作りこんでから出直します。反省。&lt;/p></description></item></channel></rss>

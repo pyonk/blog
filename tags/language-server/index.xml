@@ -1,3 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Language Server on わいがかいた</title><link>https://pyonk.github.io/blog/tags/language-server/</link><description>Recent content in Language Server on わいがかいた</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 21 Mar 2019 09:33:38 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/language-server/index.xml" rel="self" type="application/rss+xml"/><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>
-&lt;img src="https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/images/completion.png"/>
-coc.nvimがlanguage server clientとしてくっそ優秀だった件</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Language Server on わいがかいた</title><link>https://pyonk.github.io/blog/tags/language-server/</link><description>Recent content in Language Server on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Thu, 21 Mar 2019 09:33:38 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/language-server/index.xml" rel="self" type="application/rss+xml"/><item><title>coc.nvim is awesome</title><link>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</link><pubDate>Thu, 21 Mar 2019 09:33:38 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/how-to-use-coc-nvim/</guid><description>&lt;p>相変わらず飽きずにいろんなエディタに浮気しまくっているけど最近はvimが楽しい。&lt;/p>
+&lt;p>この間redditみてたら&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/vim/comments/b1yfsg/python_completion_in_cocnvim_pyls/">python completion in coc.nvim + pyls : vim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>こんなスレッドがあって&lt;/p>
+&lt;p>&lt;a href="https://github.com/neoclide/coc.nvim">coc.nvim&lt;/a>て見慣れないプラグインがあるなあと思ってみてみたら
+わかりやすそうだし、MPLSもバッチリつかえるっぽいから使ってみた。&lt;/p>
+&lt;h1 id="インストール方法">インストール方法&lt;/h1>
+&lt;p>僕はプラグインマネジャーにdeinを使ってるので&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml:dein/plugins.toml" data-lang="toml:dein/plugins.toml">&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">plugins&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">repo&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;neoclide/coc.nvim&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">build&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;coc#util#install()&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">hook_add&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Remap for rename current word
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nmap &amp;lt;leader&amp;gt;rn &amp;lt;Plug&amp;gt;(coc-rename)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Highlight symbol under cursor on CursorHold
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> autocmd CursorHold * silent call CocActionAsync(&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">highlight&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34; Use K for show documentation in preview window
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> function! s:show_documentation()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> if &amp;amp;filetype == &amp;#39;&lt;/span>&lt;span style="color:#a6e22e">vim&lt;/span>&lt;span style="color:#e6db74">&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> execute &amp;#39;&lt;/span>&lt;span style="color:#a6e22e">h&lt;/span> &lt;span style="color:#e6db74">&amp;#39;.expand(&amp;#39;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">cword&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> else
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> call CocAction(&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">doHover&lt;/span>&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> endif
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> endfunction
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これを記述する。&lt;/p></description></item></channel></rss>
