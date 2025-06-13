@@ -1,0 +1,53 @@
+{{ define "main" }}
+<article class="post">
+  {{ if .Params.cover }}
+    <figure class="post-cover">
+      <img src="{{ .Params.cover | relURL }}" alt="{{ .Title }}" />
+      {{ with .Params.coverCaption }}
+        <figcaption>{{ . | markdownify }}</figcaption>
+      {{ end }}
+    </figure>
+  {{ end }}
+
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      {{ if .Date }}
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format (.Site.Params.dateFormatSingle | default "2006-01-02") }}
+        </time>
+      {{ end }}
+      {{ if .Site.Params.showReadingTime }}
+        <span class="post-reading-time">
+          · {{ .ReadingTime }} {{ i18n "minuteReadingTime" }}
+        </span>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{ if or .Params.tags .Params.categories }}
+    <footer class="post-footer">
+      <div class="post-tags">
+        {{ range .Params.categories }}
+          <a href="{{ (printf "/blog/categories/%s/" (. | urlize)) }}" class="category-tag">
+            {{ . }}
+          </a>
+        {{ end }}
+        {{ range .Params.tags }}
+          <a href="{{ (printf "/blog/tags/%s/" (. | urlize)) }}">
+            <span class="tag-hash">#</span>{{ . }}
+          </a>
+        {{ end }}
+      </div>
+    </footer>
+  {{ end }}
+</article>
+
+{{ if not .Params.hideReadOtherPosts }}
+  {{ partial "pagination-single.html" . }}
+{{ end }}
+{{ end }}

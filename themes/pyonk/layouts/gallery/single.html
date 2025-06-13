@@ -1,0 +1,147 @@
+{{ define "main" }}
+<article class="gallery-single">
+  <header class="gallery-header">
+    <h1 class="gallery-title">{{ .Title }}</h1>
+    <div class="gallery-meta">
+      {{ $image := resources.Get .Params.image }}
+      {{ $exif := false }}
+      {{ if $image }}
+        {{ $exif = $image.Exif }}
+      {{ end }}
+
+      {{ if .Date }}
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
+      {{ else if and $exif $exif.Date }}
+        <time datetime="{{ $exif.Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ $exif.Date.Format "January 2, 2006" }}
+        </time>
+      {{ end }}
+
+      {{ if .Params.location }}
+        <span class="gallery-location">📍 {{ .Params.location }}</span>
+      {{ end }}
+
+      {{ if .Params.camera }}
+        <span class="gallery-camera">📷 {{ .Params.camera }}</span>
+      {{ else if and $exif $exif.Tags.Model }}
+        <span class="gallery-camera">📷 {{ $exif.Tags.Model }}</span>
+      {{ end }}
+    </div>
+  </header>
+
+  {{ if .Params.image }}
+    <figure class="gallery-main-image">
+      {{ $image := resources.Get .Params.image }}
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" />
+      {{ if .Params.caption }}
+        <figcaption>{{ .Params.caption | markdownify }}</figcaption>
+      {{ end }}
+    </figure>
+  {{ end }}
+
+  {{ if .Content }}
+    <div class="gallery-content">
+      {{ .Content }}
+    </div>
+  {{ end }}
+
+  {{ $image := resources.Get .Params.image }}
+  {{ if $image }}
+    {{ $exif := $image.Exif }}
+    {{ if or .Params.exif $exif }}
+      <div class="gallery-exif">
+        <h3>Camera Settings</h3>
+        <div class="exif-grid">
+          {{ if .Params.exif.aperture }}
+            <div class="exif-item">
+              <span class="exif-label">Aperture</span>
+              <span class="exif-value">{{ .Params.exif.aperture }}</span>
+            </div>
+          {{ else if $exif.Tags.FNumber }}
+            <div class="exif-item">
+              <span class="exif-label">Aperture</span>
+              {{ $fnumber := $exif.Tags.FNumber }}
+              {{ $aperture := "" }}
+              {{ if (strings.Contains $fnumber "/") }}
+                {{ $parts := split $fnumber "/" }}
+                {{ $numerator := index $parts 0 | float }}
+                {{ $denominator := index $parts 1 | float }}
+                {{ $result := div $numerator $denominator }}
+                {{ $aperture = printf "f/%.1f" $result }}
+              {{ else }}
+                {{ $aperture = printf "f/%s" $fnumber }}
+              {{ end }}
+              <span class="exif-value">{{ $aperture }}</span>
+            </div>
+          {{ end }}
+
+          {{ if .Params.exif.shutter }}
+            <div class="exif-item">
+              <span class="exif-label">Shutter</span>
+              <span class="exif-value">{{ .Params.exif.shutter }}</span>
+            </div>
+          {{ else if $exif.Tags.ExposureTime }}
+            <div class="exif-item">
+              <span class="exif-label">Shutter</span>
+              <span class="exif-value">{{ $exif.Tags.ExposureTime }}s</span>
+            </div>
+          {{ end }}
+
+          {{ if .Params.exif.iso }}
+            <div class="exif-item">
+              <span class="exif-label">ISO</span>
+              <span class="exif-value">{{ .Params.exif.iso }}</span>
+            </div>
+          {{ else if $exif.Tags.ISOSpeedRatings }}
+            <div class="exif-item">
+              <span class="exif-label">ISO</span>
+              <span class="exif-value">ISO {{ $exif.Tags.ISOSpeedRatings }}</span>
+            </div>
+          {{ end }}
+
+          {{ if .Params.exif.focal_length }}
+            <div class="exif-item">
+              <span class="exif-label">Focal Length</span>
+              <span class="exif-value">{{ .Params.exif.focal_length }}</span>
+            </div>
+          {{ else if $exif.Tags.FocalLength }}
+            <div class="exif-item">
+              <span class="exif-label">Focal Length</span>
+              {{ $focal := $exif.Tags.FocalLength }}
+              {{ $focalLength := "" }}
+              {{ if (strings.Contains $focal "/") }}
+                {{ $parts := split $focal "/" }}
+                {{ $numerator := index $parts 0 | float }}
+                {{ $denominator := index $parts 1 | float }}
+                {{ $result := div $numerator $denominator }}
+                {{ $focalLength = printf "%.0fmm" $result }}
+              {{ else }}
+                {{ $focalLength = printf "%smm" $focal }}
+              {{ end }}
+              <span class="exif-value">{{ $focalLength }}</span>
+            </div>
+          {{ end }}
+
+          {{ if $exif.Tags.Model }}
+            <div class="exif-item">
+              <span class="exif-label">Camera</span>
+              <span class="exif-value">{{ $exif.Tags.Model }}</span>
+            </div>
+          {{ else if .Params.camera }}
+            <div class="exif-item">
+              <span class="exif-label">Camera</span>
+              <span class="exif-value">{{ .Params.camera }}</span>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+
+  <nav class="gallery-navigation">
+    <a href="/blog/gallery/" class="back-to-gallery">← Back to Gallery</a>
+  </nav>
+</article>
+{{ end }}

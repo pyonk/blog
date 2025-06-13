@@ -1,0 +1,71 @@
+{{ define "main" }}
+<div class="posts">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.description }}
+      <div class="page-description">
+        {{ .Params.description | markdownify }}
+      </div>
+    {{ end }}
+  </header>
+
+  {{ $paginator := .Paginate .Pages }}
+  {{ range $paginator.Pages }}
+    <article class="post-entry">
+      {{ if .Params.cover }}
+        <figure class="post-cover">
+          <a href="{{ .RelPermalink }}">
+            <img src="{{ .Params.cover | relURL }}" alt="{{ .Title }}" />
+          </a>
+        </figure>
+      {{ end }}
+
+      <header class="post-header">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="post-meta">
+          {{ if .Date }}
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{ .Date.Format (.Site.Params.dateFormatList | default "2006-01-02") }}
+            </time>
+          {{ end }}
+          {{ if .Site.Params.showReadingTime }}
+            <span class="post-reading-time">
+              · {{ .ReadingTime }} {{ i18n "minuteReadingTime" }}
+            </span>
+          {{ end }}
+        </div>
+      </header>
+
+      {{ if .Params.description }}
+        <div class="post-content">
+          {{ .Params.description }}
+        </div>
+      {{ else if .Description }}
+        <div class="post-content">
+          {{ .Description }}
+        </div>
+      {{ end }}
+
+      {{ if not .Params.hideReadMore }}
+        <footer class="post-footer">
+          <a href="{{ .RelPermalink }}" class="read-more">{{ i18n "readMore" }}</a>
+        </footer>
+      {{ end }}
+
+      {{ if .Params.tags }}
+        <div class="post-tags">
+          {{ range .Params.tags }}
+            <a href="{{ (printf "/blog/tags/%s/" (. | urlize)) }}">
+              <span class="tag-hash">#</span>{{ . }}
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </article>
+  {{ end }}
+
+  {{ if gt $paginator.TotalPages 1 }}
+    {{ partial "pagination.html" . }}
+  {{ end }}
+</div>
+{{ end }}

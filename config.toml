@@ -1,17 +1,32 @@
 baseUrl = "https://pyonk.github.io/blog/"
-theme = "hello-friend"
+theme = "pyonk"
 defaultContentLanguage = "ja"
-googleAnalytics = "G-51GX3P4YPL"
 enableEmoji = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[main]
+  content = "./content/"
+
+[services]
+  [services.googleAnalytics]
+    ID = "G-51GX3P4YPL"
 
 [params]
   # dir name of your blog content (default is `content/posts`)
-  # contentTypeName = "content/posts"
+  contentTypeName = "posts"
   # "light" or "dark"
   defaultTheme = "light"
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 0
   showReadingTime = true
+
+  # Social links
+  github = "https://github.com/pyonk"
+  linkedin = "https://www.linkedin.com/in/pyonk"
+
 
 [markup]
   [markup.blackFriday]
@@ -23,18 +38,29 @@ enableEmoji = true
 [languages]
   [languages.ja]
     title = "わいがかいた"
-    copyright = ""
 
     [languages.ja.params]
-      subtitle = ""
-      newerPosts = "Newer posts"
-      olderPosts = "Older posts"
-      menuMore = "Show more"
-      readOtherPosts = "Read other posts"
-      writtenBy = "Written by"
-      readMore = "Read more"
       keywords = "わいがかいた"
       [languages.ja.params.logo]
         logoText = "わいがかいた"
         logoHomeLink = "/blog/"
+
+    [[languages.ja.menu.main]]
+      name = "📷"
+      url = "/gallery/"
+      weight = 10
+
+  [languages.en]
+    title = "waigakaita"
+
+    [languages.en.params]
+      keywords = "waigakaita"
+      [languages.en.params.logo]
+        logoText = "waigakaita"
+        logoHomeLink = "/blog/"
+
+    [[languages.en.menu.main]]
+      name = "📷"
+      url = "/gallery/"
+      weight = 10
 

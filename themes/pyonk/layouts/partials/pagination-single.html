@@ -1,0 +1,17 @@
+{{ if or .NextInSection .PrevInSection }}
+<nav class="pagination-single">
+  {{ if .PrevInSection }}
+    <div class="pagination-single__prev">
+      <span class="pagination-single__direction">← {{ i18n "olderPosts" }}</span>
+      <a href="{{ .PrevInSection.RelPermalink }}" class="pagination-single__title">{{ .PrevInSection.Title }}</a>
+    </div>
+  {{ end }}
+  
+  {{ if .NextInSection }}
+    <div class="pagination-single__next">
+      <span class="pagination-single__direction">{{ i18n "newerPosts" }} →</span>
+      <a href="{{ .NextInSection.RelPermalink }}" class="pagination-single__title">{{ .NextInSection.Title }}</a>
+    </div>
+  {{ end }}
+</nav>
+{{ end }}

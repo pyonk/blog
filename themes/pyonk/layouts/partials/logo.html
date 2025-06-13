@@ -1,0 +1,7 @@
+<a href="{{ $.Site.Params.Logo.LogoHomeLink | default "/" }}" class="logo">
+  {{ if $.Site.Params.Logo.path }}
+    <img src="{{ $.Site.Params.Logo.path | relURL }}" alt="{{ $.Site.Params.Logo.alt }}" />
+  {{ else }}
+    <span class="logo__text">{{ $.Site.Params.Logo.logoText | default $.Site.Title }}</span>
+  {{ end }}
+</a>
