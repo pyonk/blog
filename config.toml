@@ -1,5 +1,5 @@
 baseUrl = "https://pyonk.github.io/blog/"
-theme = "pyonk"
+theme = "hugo-theme-pyonk"
 defaultContentLanguage = "ja"
 enableEmoji = true
 
