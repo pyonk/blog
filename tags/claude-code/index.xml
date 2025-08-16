@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Claude Code on わいがかいた</title><link>https://pyonk.github.io/blog/tags/claude-code/</link><description>Recent content in Claude Code on わいがかいた</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 15 Jun 2025 00:12:54 +0900</lastBuildDate><atom:link href="https://pyonk.github.io/blog/tags/claude-code/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude CodeでHugoテーマを自作した体験記 - AIペアプログラミングの新時代</title><link>https://pyonk.github.io/blog/posts/hugo-theme-pyonk/</link><pubDate>Sun, 15 Jun 2025 00:12:54 +0900</pubDate><guid>https://pyonk.github.io/blog/posts/hugo-theme-pyonk/</guid><description>&lt;p>この記事では、Claude Codeの実際の使用感、コスト、発生した問題と解決策、そして得られた学びについて記載しています。&lt;br>
+Claude Codeを使って hugo の自作テーマを作ったんですが、その作業中に雑多なメモを残しておいたので、それをベースにこの記事をClaude Codeに書いてもらいました。&lt;/p>
+&lt;p>ちなみに hugo の自作テーマを作った動機としては&lt;/p>
+&lt;ul>
+&lt;li>今まで使っていた&lt;a href="https://github.com/panr/hugo-theme-hello-friend">panr/hugo-theme-hello-friend&lt;/a>がアーカイブされていないこと&lt;/li>
+&lt;li>最近写真を撮ることにハマっているので、写真用のレイアウトを用意したかったこと&lt;/li>
+&lt;/ul>
+&lt;p>あたりです。雰囲気としては今までから変えるつもりはなかったので、hello-friendをベースに作成することを依頼してます。当初は preact ベースで作ってもらって、ついでに久々にフロントエンドの技術もキャッチアップというか触れておこうと思ったんですが、結局うまく行かなそうだったので普通に作成し直しました。&lt;/p>
+&lt;p>結論としては、満足行くものが作れました。一番安いプランで実施したのでリミットに引っかかることを危惧していましたが、引っかかることなく完成まで持っていけました。
+作成したのは6月だったんで割と旬だったんですが、もう8月ということで旬は過ぎ去った気がします。(なので記事の内容は2025-06時点の情報)それでも備忘録として残しておこうと思います。&lt;/p>
+&lt;p>ちなみにカバー画像はChatGTPに作ってもらったんですが、ずいぶんと縦長になりましたね&amp;hellip;&lt;/p>
+&lt;p>これで手書き部分は終わりです。以下はClaude Codeに書いてもらいました。&lt;/p>
+&lt;hr>
+&lt;h2 id="-claude-codeの導入">🚀 Claude Codeの導入&lt;/h2>
+&lt;h3 id="セットアップ">セットアップ&lt;/h3>
+&lt;p>まず、Claude Proプランにアップグレードしました。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>料金&lt;/strong>: $20/月&lt;/li>
+&lt;li>&lt;strong>支払い&lt;/strong>: Revolutで決済&lt;/li>
+&lt;li>&lt;strong>注意点&lt;/strong>: 継続課金するか未定だったため、すぐにプランをキャンセル&lt;/li>
+&lt;/ul>
+&lt;p>Claude Codeのインストールは驚くほど簡単でした：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install -g @anthropic-ai/claude-code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="初期設定と衝撃">初期設定と衝撃&lt;/h3>
+&lt;p>プロジェクトディレクトリで &lt;code>/init&lt;/code> コマンドを実行すると、Claude CodeがCLAUDE.mdファイルを自動生成してくれます。しかし、この時にtokensがどんどんインクリメントされていく様子を見て、正直かなり驚きました。&lt;/p>
+&lt;p>&lt;strong>実際の使用量&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/init&lt;/code>コマンドだけで約&lt;strong>182k tokens&lt;/strong>消費&lt;/li>
+&lt;li>&lt;a href="https://github.com/ryoppippi/ccusage">ryoppippi/ccusage&lt;/a>で計測&lt;/li>
+&lt;/ul>
+&lt;p>公式によると、Claude Code では &lt;strong>10-40 prompts/5h&lt;/strong> の制限があるとのことです。&lt;/p>
+&lt;h2 id="-プロジェクト目標と計画">🎯 プロジェクト目標と計画&lt;/h2>
+&lt;h3 id="やりたいこと">やりたいこと&lt;/h3>
+&lt;p>メンテナンスが停止した&lt;code>hello-friend&lt;/code>テーマに似たHugoテーマを、Preactを使って現代的に作り直すことが目標でした。&lt;/p>
+&lt;p>Claude Codeに以下のように依頼しました：&lt;/p>
+&lt;pre tabindex="0">&lt;code>I want to create my original hugo theme since the `hello-friend` theme has been no longer maintained. My original idea is using preact to make my theme, and the theme seems to be similar with `hello-friend`.
+&lt;/code>&lt;/pre>&lt;h3 id="claude-codeが提案した実装計画">Claude Codeが提案した実装計画&lt;/h3>
+&lt;p>Claude Codeは即座に以下の詳細な計画を立ててくれました：&lt;/p></description></item></channel></rss>
